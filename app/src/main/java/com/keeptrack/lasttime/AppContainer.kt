@@ -1,6 +1,7 @@
 package com.keeptrack.lasttime
 
 import android.content.Context
+import com.keeptrack.lasttime.data.PhotoStore
 import com.keeptrack.lasttime.data.TrackerRepository
 import com.keeptrack.lasttime.data.local.AppDatabase
 
@@ -8,5 +9,5 @@ import com.keeptrack.lasttime.data.local.AppDatabase
 class AppContainer(context: Context) {
     private val database = AppDatabase.build(context)
 
-    val trackerRepository = TrackerRepository(database.trackerDao())
+    val trackerRepository = TrackerRepository(database.trackerDao(), PhotoStore(context))
 }

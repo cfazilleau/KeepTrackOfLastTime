@@ -1,22 +1,30 @@
 # Last Time
 
 A small Android app that tracks *when you last did something*.
-Each card ("Watered the plants") shows how long ago it was last done ("3 days and 5 hours ago").
-Tap a card when you do it again and it resets to now.
+Each tile ("Watered the plants") shows how long ago it was last done ("3 days and 5 hours ago").
+Tap a tile when you do it again and it resets to now.
 
-- **Tap** a card: mark it as done now. A snackbar offers **Undo**.
-- **Long-press** a card: rename or delete it.
-- **+** button: add a new card.
+- **Tap** a tile: mark it as done now. A snackbar offers **Undo**.
+- **Long-press** a tile: edit it in a sheet: name, group, colour or photo background, icon,
+  size (Small / Wide / Tall), or delete it.
+- **+** button: add a new tile, pre-filed in the group currently shown.
+- **Group chips** filter the home screen; "All" shows one section per group.
+  The sliders button opens **Groups**: add, rename, delete, drag to reorder.
 
-Fully offline. All data lives in a local SQLite database in the app's private storage.
+The look is a neumorphic "bento" grid: soft pastel tiles raised off the page that sink in when pressed.
+Light and dark themes follow the system.
+
+Fully offline. All data lives in a local SQLite database in the app's private storage;
+tile photos are copied into the app's private storage too.
 
 ## Tech stack
 
 | Concern  | Choice |
 |----------|--------|
 | Language | Kotlin |
-| UI       | Jetpack Compose + Material 3 (dynamic colors on Android 12+) |
+| UI       | Jetpack Compose + Material 3, custom neumorphic palette (light & dark) |
 | Storage  | Room (SQLite) |
+| Images   | Coil (local files only), Android photo picker (no permission needed) |
 | Build    | Gradle (Kotlin DSL, version catalog), AGP 9 |
 | Min / target SDK | 26 / 37 |
 
@@ -26,22 +34,27 @@ Fully offline. All data lives in a local SQLite database in the app's private st
 app/src/main/java/com/keeptrack/lasttime/
 ├── LastTimeApplication.kt     # creates the AppContainer
 ├── AppContainer.kt            # manual dependency injection
-├── MainActivity.kt
+├── MainActivity.kt            # Home <-> Groups screen switch
 ├── data/
-│   ├── Tracker.kt             # domain model
+│   ├── Tracker.kt             # domain model: tiles, groups, colour/size/icon enums
 │   ├── TrackerRepository.kt   # the single entry point the UI uses
-│   └── local/                 # Room: entities, DAO, database
+│   ├── PhotoStore.kt          # copies picked photos into private storage
+│   └── local/                 # Room: entities, DAO, database + migrations
 └── ui/
-    ├── home/                  # home screen, cards, dialogs, ViewModel
-    ├── theme/
+    ├── components/            # neumorphic buttons, text field, segmented control
+    ├── home/                  # home screen, bento grid, tile, edit sheet, ViewModel
+    ├── groups/                # manage groups screen
+    ├── theme/                 # palette, neumorphic shadow modifiers, icons
     └── time/                  # "3 days and 5 hours ago" formatting + ticking clock
 app/schemas/                   # exported Room schemas (commit these, they back migrations)
 ```
 
 ### Data model
 
-- `trackers`: one row per card (name, creation time, display position).
-- `tracker_events`: one row per time a card was done.
+- `tracker_groups`: user-defined groups (name, display position).
+- `trackers`: one row per tile (name, group, colour, icon, size, photo file, display position).
+  Deleting a group sets its tiles' group to null ("Other").
+- `tracker_events`: one row per time a tile was done.
 
 A card's "last time" is its most recent event. Resetting a card inserts an event, and Undo deletes it.
 Because the full history is kept, future features (history view, stats, average interval, reminders)
@@ -51,7 +64,8 @@ can use data that is already there.
 
 1. Change the entities and bump `version` in `AppDatabase`.
 2. Build. Room exports the new schema to `app/schemas/`.
-3. Add a migration, for example `autoMigrations = [AutoMigration(from = 1, to = 2)]`, so existing user data is kept.
+3. Add a migration (see `AutoMigration(from = 1, to = 2)` in `AppDatabase`) so existing user data is kept.
+4. Extend `MigrationTest` and run it on a device or emulator: `./gradlew connectedDebugAndroidTest`.
 
 ## Building locally
 

@@ -41,6 +41,13 @@ class RelativeTimeTest {
     }
 
     @Test
+    fun splitSeparatesHeadlineFromRest() {
+        assertEquals(Elapsed("3 days", "and 5 hours ago"), RelativeTime.split(now - Duration.ofHours(77), now))
+        assertEquals(Elapsed("1 hour", "ago"), RelativeTime.split(now - Duration.ofMinutes(60), now))
+        assertEquals(Elapsed("just now", ""), RelativeTime.split(now, now))
+    }
+
+    @Test
     fun monthsAndYears() {
         assertEquals("2 months and 4 days ago", ago(Duration.ofDays(64)))
         assertEquals("1 year and 2 months ago", ago(Duration.ofDays(365 + 61)))
