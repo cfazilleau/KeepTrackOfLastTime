@@ -3,6 +3,7 @@ package com.keeptrack.lasttime.ui.home
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -44,7 +45,7 @@ fun NameDialog(
             OutlinedTextField(
                 value = value,
                 onValueChange = { value = it },
-                label = { Text(stringResource(R.string.dialog_name_label)) },
+                label = { Text(stringResource(R.string.label_name)) },
                 singleLine = true,
                 keyboardOptions = KeyboardOptions(
                     capitalization = KeyboardCapitalization.Sentences,
@@ -64,18 +65,21 @@ fun NameDialog(
     LaunchedEffect(Unit) { focusRequester.requestFocus() }
 }
 
+/** Asks before something destructive, e.g. deleting a tile or a group. */
 @Composable
-fun DeleteDialog(
-    name: String,
+fun ConfirmDialog(
+    title: String,
+    body: String,
+    confirmLabel: String,
     onConfirm: () -> Unit,
     onDismiss: () -> Unit,
 ) {
     AlertDialog(
         onDismissRequest = onDismiss,
-        title = { Text(stringResource(R.string.dialog_delete_title, name)) },
-        text = { Text(stringResource(R.string.dialog_delete_body)) },
+        title = { Text(title) },
+        text = { Text(body) },
         confirmButton = {
-            TextButton(onClick = onConfirm) { Text(stringResource(R.string.action_delete)) }
+            TextButton(onClick = onConfirm) { Text(confirmLabel, color = MaterialTheme.colorScheme.error) }
         },
         dismissButton = {
             TextButton(onClick = onDismiss) { Text(stringResource(R.string.action_cancel)) }

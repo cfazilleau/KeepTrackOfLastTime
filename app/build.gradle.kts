@@ -18,7 +18,9 @@ android {
         minSdk = 26
         targetSdk = 37
         versionCode = System.getenv("VERSION_CODE")?.toIntOrNull() ?: 1
-        versionName = System.getenv("VERSION_NAME") ?: "0.1.0"
+        versionName = System.getenv("VERSION_NAME") ?: "0.2.0"
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     signingConfigs {
@@ -75,5 +77,17 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
 
+    implementation(libs.coil.compose)
+    implementation(libs.reorderable)
+
     testImplementation(libs.junit)
+
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.androidx.test.runner)
+    androidTestImplementation(libs.androidx.room.testing)
+
+    constraints {
+        // room-testing needs serialization 1.8+, and test APKs must use the app's versions.
+        implementation(libs.kotlinx.serialization.core)
+    }
 }

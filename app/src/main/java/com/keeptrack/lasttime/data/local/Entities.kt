@@ -7,13 +7,39 @@ import androidx.room.ForeignKey
 import androidx.room.Index
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "trackers")
+@Entity(tableName = "tracker_groups")
+data class GroupEntity(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    val name: String,
+    /** Display order of chips and sections; lower comes first. */
+    val position: Int,
+)
+
+@Entity(
+    tableName = "trackers",
+    foreignKeys = [
+        ForeignKey(
+            entity = GroupEntity::class,
+            parentColumns = ["id"],
+            childColumns = ["group_id"],
+            // Deleting a group keeps its tiles; they become ungrouped ("Other").
+            onDelete = ForeignKey.SET_NULL,
+        ),
+    ],
+    indices = [Index("group_id")],
+)
 data class TrackerEntity(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
     val name: String,
     @ColumnInfo(name = "created_at") val createdAt: Long,
     /** Display order on the home screen; lower comes first. */
     val position: Int,
+    @ColumnInfo(name = "group_id") val groupId: Long? = null,
+    @ColumnInfo(defaultValue = "sage") val color: String = "sage",
+    @ColumnInfo(defaultValue = "check") val icon: String = "check",
+    @ColumnInfo(defaultValue = "small") val size: String = "small",
+    /** File name in the app's private photo folder. */
+    val photo: String? = null,
 )
 
 /**

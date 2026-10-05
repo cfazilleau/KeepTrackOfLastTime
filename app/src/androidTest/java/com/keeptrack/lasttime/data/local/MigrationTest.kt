@@ -1,0 +1,71 @@
+package com.keeptrack.lasttime.data.local
+
+import androidx.room.testing.MigrationTestHelper
+import androidx.sqlite.db.framework.FrameworkSQLiteOpenHelperFactory
+import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.platform.app.InstrumentationRegistry
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNull
+import org.junit.Rule
+import org.junit.Test
+import org.junit.runner.RunWith
+
+@RunWith(AndroidJUnit4::class)
+class MigrationTest {
+
+    @get:Rule
+    val helper = MigrationTestHelper(
+        InstrumentationRegistry.getInstrumentation(),
+        AppDatabase::class.java,
+        listOf(AppDatabase.Migration1To2()),
+        FrameworkSQLiteOpenHelperFactory(),
+    )
+
+    @Test
+    fun migrate1To2_keepsTrackersAndHistory_andAssignsColoursInTurn() {
+        helper.createDatabase(DB, 1).use { db ->
+            for (i in 0 until 7) {
+                db.execSQL("INSERT INTO trackers (id, name, created_at, position) VALUES (${i + 1}, 'Tracker $i', 1000, $i)")
+                db.execSQL("INSERT INTO tracker_events (tracker_id, done_at) VALUES (${i + 1}, ${2000 + i})")
+            }
+        }
+
+        // Validates the migrated schema against the v2 entities.
+        helper.runMigrationsAndValidate(DB, 2, true).use { db ->
+            db.query("SELECT name, color, icon, size, group_id, photo FROM trackers ORDER BY position").use { c ->
+                val colours = mutableListOf<String>()
+                while (c.moveToNext()) {
+                    colours += c.getString(1)
+                    assertEquals("check", c.getString(2))
+                    assertEquals("small", c.getString(3))
+                    assertNull(c.getString(4))
+                    assertNull(c.getString(5))
+                }
+                assertEquals(listOf("sage", "lavender", "peach", "sky", "butter", "rose", "sage"), colours)
+            }
+            db.query("SELECT COUNT(*) FROM tracker_events").use { c ->
+                c.moveToFirst()
+                assertEquals(7, c.getInt(0))
+            }
+        }
+    }
+
+    @Test
+    fun deletingGroupKeepsItsTrackers() {
+        helper.createDatabase(DB_V2, 2).use { db ->
+            db.execSQL("PRAGMA foreign_keys = ON")
+            db.execSQL("INSERT INTO tracker_groups (id, name, position) VALUES (1, 'Garden', 0)")
+            db.execSQL("INSERT INTO trackers (id, name, created_at, position, group_id) VALUES (1, 'Plants', 1000, 0, 1)")
+            db.execSQL("DELETE FROM tracker_groups WHERE id = 1")
+            db.query("SELECT group_id FROM trackers WHERE id = 1").use { c ->
+                c.moveToFirst()
+                assertNull(c.getString(0))
+            }
+        }
+    }
+
+    private companion object {
+        const val DB = "migration-test"
+        const val DB_V2 = "groups-test"
+    }
+}
