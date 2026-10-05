@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Last Time</string>
+
+    <string name="empty_title">Nothing tracked yet</string>
+    <string name="empty_body">Tap + to add something, like \"Watered the plants\". Tap a card whenever you do it again.</string>
+
+    <string name="action_add">Add tracker</string>
+    <string name="action_rename">Rename</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_save">Save</string>
+    <string name="action_undo">Undo</string>
+
+    <string name="dialog_add_title">New tracker</string>
+    <string name="dialog_rename_title">Rename tracker</string>
+    <string name="dialog_name_label">Name</string>
+    <string name="dialog_delete_title">Delete \"%1$s\"?</string>
+    <string name="dialog_delete_body">Its history will be deleted too.</string>
+
+    <string name="snackbar_reset">\"%1$s\" reset to now</string>
+    <string name="card_hint">Tap to mark as done now, long-press for options</string>
+</resources>

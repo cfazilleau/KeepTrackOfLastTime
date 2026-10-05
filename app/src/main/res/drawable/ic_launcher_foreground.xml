@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A clock face with a circular "reset" arrow. Drawn inside the 66dp adaptive-icon safe zone. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Reset arrow ring (open at the top-left) -->
+    <path
+        android:pathData="M54,30 A24,24 0 1,1 33.2,42"
+        android:strokeWidth="5"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+    <!-- Arrow head -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M26,37 L40,36 L33,48 Z" />
+    <!-- Clock hands -->
+    <path
+        android:pathData="M54,40 L54,54 L64,60"
+        android:strokeWidth="5"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000" />
+</vector>
