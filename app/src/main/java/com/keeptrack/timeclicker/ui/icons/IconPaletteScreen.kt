@@ -66,6 +66,7 @@ import com.keeptrack.timeclicker.data.CatalogIcon
 import com.keeptrack.timeclicker.data.IconCatalog
 import com.keeptrack.timeclicker.data.SettingsRepository
 import com.keeptrack.timeclicker.data.TileIcon
+import com.keeptrack.timeclicker.ui.components.GutteredColumn
 import com.keeptrack.timeclicker.ui.components.NeuIconButton
 import com.keeptrack.timeclicker.ui.components.NeuTextField
 import com.keeptrack.timeclicker.ui.home.ConfirmDialog
@@ -113,14 +114,14 @@ fun IconPaletteScreen(
     var query by rememberSaveable { mutableStateOf("") }
     var confirmReset by remember { mutableStateOf(false) }
 
-    Column(
+    GutteredColumn(
         Modifier
             .fillMaxSize()
             .background(palette.ground)
             .windowInsetsPadding(WindowInsets.safeDrawing.only(WindowInsetsSides.Top + WindowInsetsSides.Horizontal)),
-    ) {
+    ) { gutter ->
         Row(
-            Modifier.fillMaxWidth().padding(start = 20.dp, end = 20.dp, top = 20.dp, bottom = 8.dp),
+            Modifier.fillMaxWidth().padding(start = gutter, end = gutter, top = 20.dp, bottom = 8.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(14.dp),
         ) {
@@ -139,7 +140,7 @@ fun IconPaletteScreen(
                 shape = CircleShape,
             )
         }
-        IconSearchField(query, onQueryChange = { query = it })
+        IconSearchField(query, onQueryChange = { query = it }, gutter = gutter)
 
         if (catalog != null) {
             val selected = remember(iconPalette) { iconPalette.toSet() }
@@ -153,6 +154,7 @@ fun IconPaletteScreen(
                 highlight = palette.accent,
                 onHighlight = palette.onAccent,
                 bottomPadding = 40.dp + WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding(),
+                gutter = gutter,
             )
         }
     }
@@ -171,9 +173,9 @@ fun IconPaletteScreen(
     }
 }
 
-/** Search field for [IconGrid]. */
+/** Search field for [IconGrid]; [gutter] pads its sides. */
 @Composable
-internal fun IconSearchField(query: String, onQueryChange: (String) -> Unit) {
+internal fun IconSearchField(query: String, onQueryChange: (String) -> Unit, gutter: Dp = 20.dp) {
     val palette = TimeClickerTheme.palette
     val clearButton: @Composable () -> Unit = {
         IconButton(onClick = { onQueryChange("") }) {
@@ -188,13 +190,14 @@ internal fun IconSearchField(query: String, onQueryChange: (String) -> Unit) {
         leadingIcon = AppIcons.Search,
         capitalization = KeyboardCapitalization.None,
         trailing = clearButton.takeIf { query.isNotEmpty() },
-        modifier = Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 8.dp),
+        modifier = Modifier.fillMaxWidth().padding(horizontal = gutter, vertical = 8.dp),
     )
 }
 
 /**
  * The palette then every category; with a search, the matching icons instead.
  * [editsPalette]: tapping an icon toggles it in the palette (with hints about it), rather than choosing it.
+ * [gutter] pads the grid's sides.
  */
 @Composable
 internal fun IconGrid(
@@ -208,6 +211,7 @@ internal fun IconGrid(
     onHighlight: Color,
     bottomPadding: Dp,
     modifier: Modifier = Modifier,
+    gutter: Dp = 20.dp,
     state: LazyGridState = rememberLazyGridState(),
 ) {
     val resources = LocalResources.current
@@ -246,8 +250,8 @@ internal fun IconGrid(
         modifier = modifier.fillMaxSize(),
         state = state,
         contentPadding = PaddingValues(
-            start = 20.dp,
-            end = 20.dp,
+            start = gutter,
+            end = gutter,
             top = 12.dp,
             bottom = bottomPadding,
         ),

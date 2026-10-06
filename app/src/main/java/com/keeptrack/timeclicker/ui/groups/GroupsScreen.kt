@@ -49,6 +49,7 @@ import coil3.compose.AsyncImage
 import com.keeptrack.timeclicker.R
 import com.keeptrack.timeclicker.data.Tracker
 import com.keeptrack.timeclicker.data.TrackerGroup
+import com.keeptrack.timeclicker.ui.components.GutteredColumn
 import com.keeptrack.timeclicker.ui.components.NeuIconButton
 import com.keeptrack.timeclicker.ui.components.NeuTextField
 import com.keeptrack.timeclicker.ui.components.PillButton
@@ -91,14 +92,14 @@ fun GroupsScreen(
         }
     }
 
-    Column(
+    GutteredColumn(
         Modifier
             .fillMaxSize()
             .background(palette.ground)
             .windowInsetsPadding(WindowInsets.safeDrawing.only(WindowInsetsSides.Top + WindowInsetsSides.Horizontal)),
-    ) {
+    ) { gutter ->
         Row(
-            Modifier.fillMaxWidth().padding(start = 20.dp, end = 20.dp, top = 20.dp, bottom = 8.dp),
+            Modifier.fillMaxWidth().padding(start = gutter, end = gutter, top = 20.dp, bottom = 8.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(14.dp),
         ) {
@@ -109,7 +110,7 @@ fun GroupsScreen(
         LazyColumn(
             state = listState,
             modifier = Modifier.fillMaxSize(),
-            contentPadding = PaddingValues(start = 20.dp, end = 20.dp, top = 12.dp, bottom = 40.dp),
+            contentPadding = PaddingValues(start = gutter, end = gutter, top = 12.dp, bottom = 40.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
             item(key = "intro") {
