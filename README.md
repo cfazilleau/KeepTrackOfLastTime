@@ -7,7 +7,7 @@ Tap a tile when you do it again and it resets to now: the time disappears, then 
 The number in the tile's bottom-right corner counts how many times it was pressed.
 
 - **Tap** a tile: mark it as done now. A snackbar offers **Undo**.
-- **Long-press** a tile: edit it in a sheet: name, group, colour or photo background, icon (or none; three rows from your icon palette, plus a searchable list of every icon),
+- **Long-press** a tile: edit it in a sheet: name, group, colour or photo background, icon (or none; two rows of recent icons and your icon palette, plus a searchable list of every icon),
   size (Small / Wide / Tall), reset its press counter, add it to the home screen, or delete it.
   All sizes show the same content.
 - **+** button (bottom centre): add a new tile, pre-filed in the group currently shown.

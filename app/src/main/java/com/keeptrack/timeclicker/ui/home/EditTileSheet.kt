@@ -568,7 +568,7 @@ private fun IconPicker(selected: TileIcon, original: TileIcon, accent: TileColor
 }
 
 /** How many rows of icons the picker shows before the full list. */
-private const val IconRows = 3
+private const val IconRows = 2
 
 private val IconGap = 8.dp
 private val IconCellHeight = 46.dp
