@@ -15,11 +15,13 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -42,7 +44,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.input.nestedscroll.NestedScrollConnection
+import androidx.compose.ui.input.nestedscroll.NestedScrollSource
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
@@ -67,7 +71,6 @@ import com.keeptrack.timeclicker.ui.components.SegmentedControl
 import com.keeptrack.timeclicker.ui.theme.AppIcons
 import com.keeptrack.timeclicker.ui.theme.TimeClickerTheme
 import com.keeptrack.timeclicker.ui.theme.TileColors
-import com.keeptrack.timeclicker.ui.theme.supportsDynamicColor
 import kotlinx.coroutines.launch
 import java.io.File
 import java.time.Instant
@@ -94,14 +97,35 @@ data class TileDraft(
 }
 
 /**
- * Keeps an upward fling that reaches the end of the sheet's content from reaching the sheet.
- * The sheet is already at its top anchor and would "settle" there with that velocity,
- * overshooting and springing back on every fling: the sheet bounced while scrolling down.
- * Pulling down at the top still reaches the sheet, to drag it closed.
+ * Decides which scrolls of the sheet's content may move the sheet itself.
+ *
+ * Only a drag that starts with the content already at the top reaches the sheet, so pulling down
+ * there still drags it closed. A drag or fling that starts further down stops at the top instead:
+ * otherwise its leftover would pull the sheet down, and a fast scroll back up closed it.
+ * Upward flings never reach the sheet either: it is already fully open and would overshoot and
+ * spring back, so the sheet bounced while scrolling down.
  */
-private val KeepUpwardFlingInContent = object : NestedScrollConnection {
-    override suspend fun onPostFling(consumed: Velocity, available: Velocity): Velocity =
-        if (available.y < 0) available.copy(x = 0f) else Velocity.Zero
+private class SheetContentScroll(private val content: ScrollState) : NestedScrollConnection {
+    private var inGesture = false
+    private var startedAtTop = true
+
+    override fun onPreScroll(available: Offset, source: NestedScrollSource): Offset {
+        if (source == NestedScrollSource.UserInput && !inGesture) {
+            inGesture = true
+            startedAtTop = content.value == 0
+        }
+        return Offset.Zero
+    }
+
+    override fun onPostScroll(consumed: Offset, available: Offset, source: NestedScrollSource): Offset =
+        if (startedAtTop) Offset.Zero else available.copy(x = 0f)
+
+    override suspend fun onPostFling(consumed: Velocity, available: Velocity): Velocity {
+        val keep = !startedAtTop || available.y < 0
+        inGesture = false
+        startedAtTop = true
+        return if (keep) available.copy(x = 0f) else Velocity.Zero
+    }
 }
 
 private enum class Background { COLOUR, PHOTO }
@@ -130,6 +154,8 @@ fun EditTileSheet(
     val openedAt = remember { Instant.now() }
     val scope = rememberCoroutineScope()
     val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
+    val scrollState = rememberScrollState()
+    val contentScroll = remember(scrollState) { SheetContentScroll(scrollState) }
 
     var draft by remember { mutableStateOf(initial) }
     // Remembered so switching to Colour and back to Photo restores the picked photo.
@@ -168,8 +194,8 @@ fun EditTileSheet(
         Column(
             Modifier
                 .fillMaxWidth()
-                .nestedScroll(KeepUpwardFlingInContent)
-                .verticalScroll(rememberScrollState())
+                .nestedScroll(contentScroll)
+                .verticalScroll(scrollState)
                 .padding(start = 20.dp, end = 20.dp, bottom = 28.dp),
             verticalArrangement = Arrangement.spacedBy(22.dp),
         ) {
@@ -459,31 +485,15 @@ private fun SheetButton(text: String, onClick: () -> Unit) {
     }
 }
 
-/** The six pastel colours, then (Android 12+) the three Material You colours of the wallpaper. */
+/** The six pastel colours. */
 @Composable
 private fun ColourSwatches(selected: TileColor, onSelect: (TileColor) -> Unit) {
-    val palette = TimeClickerTheme.palette
-    val (fixed, wallpaper) = TileColor.entries.partition { it.ordinal < TileColor.PRIMARY.ordinal }
+    val colors = TileColor.pickable
     BoxWithConstraints(Modifier.fillMaxWidth()) {
         val gap = 10.dp
-        val swatchWidth = (maxWidth - gap * (fixed.size - 1)) / fixed.size
-        Column(verticalArrangement = Arrangement.spacedBy(gap)) {
-            Row(horizontalArrangement = Arrangement.spacedBy(gap)) {
-                fixed.forEach { Swatch(it, it == selected, swatchWidth, onSelect) }
-            }
-            // Before Android 12 there are no wallpaper colours; tiles already using them keep a default.
-            if (supportsDynamicColor) {
-                Row(horizontalArrangement = Arrangement.spacedBy(gap), verticalAlignment = Alignment.CenterVertically) {
-                    // Spans the first three columns, so the wallpaper swatches line up under the last three.
-                    Text(
-                        stringResource(R.string.colors_wallpaper),
-                        style = MaterialTheme.typography.labelMedium,
-                        color = palette.muted,
-                        modifier = Modifier.width(swatchWidth * 3 + gap * 2),
-                    )
-                    wallpaper.forEach { Swatch(it, it == selected, swatchWidth, onSelect) }
-                }
-            }
+        val swatchWidth = (maxWidth - gap * (colors.size - 1)) / colors.size
+        Row(horizontalArrangement = Arrangement.spacedBy(gap)) {
+            colors.forEach { Swatch(it, it == selected, swatchWidth, onSelect) }
         }
     }
 }
@@ -505,17 +515,20 @@ private fun Swatch(color: TileColor, isSelected: Boolean, width: Dp, onSelect: (
     )
 }
 
+/** "No icon", then every icon; six per row, the last row aligned to the start. */
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun IconPicker(selected: TileIcon, accent: TileColors, onSelect: (TileIcon) -> Unit) {
     val palette = TimeClickerTheme.palette
+    val columns = 6
+    val icons = TileIcon.entries
     FlowRow(
         Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.spacedBy(8.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp),
-        maxItemsInEachRow = 6,
+        maxItemsInEachRow = columns,
     ) {
-        TileIcon.entries.forEach { icon ->
+        icons.forEach { icon ->
             val isSelected = icon == selected
             val description = stringResource(R.string.icon_choice, stringResource(iconName(icon)))
             Box(
@@ -528,9 +541,17 @@ private fun IconPicker(selected: TileIcon, accent: TileColors, onSelect: (TileIc
                     .semantics { contentDescription = description },
                 contentAlignment = Alignment.Center,
             ) {
-                Icon(AppIcons.tile(icon), null, tint = if (isSelected) accent.content else palette.text, modifier = Modifier.size(22.dp))
+                val tint = if (isSelected) accent.content else palette.text
+                val vector = AppIcons.tile(icon)
+                if (vector != null) {
+                    Icon(vector, null, tint = tint, modifier = Modifier.size(22.dp))
+                } else {
+                    Icon(AppIcons.NoIcon, null, tint = tint.copy(alpha = 0.6f), modifier = Modifier.size(22.dp))
+                }
             }
         }
+        // Empty cells keep the last row's icons the same width as the others.
+        repeat((columns - icons.size % columns) % columns) { Spacer(Modifier.weight(1f)) }
     }
 }
 
@@ -547,6 +568,7 @@ private fun colorName(color: TileColor) = when (color) {
 }
 
 private fun iconName(icon: TileIcon) = when (icon) {
+    TileIcon.NONE -> R.string.icon_none
     TileIcon.CHECK -> R.string.icon_check
     TileIcon.DROP -> R.string.icon_drop
     TileIcon.LEAF -> R.string.icon_leaf

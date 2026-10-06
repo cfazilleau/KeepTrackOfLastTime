@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Home -->
-    <plurals name="things_count">
-        <item quantity="zero">%d شيء</item>
-        <item quantity="one">شيء واحد</item>
-        <item quantity="two">شيئان</item>
-        <item quantity="few">%d أشياء</item>
-        <item quantity="many">%d شيئًا</item>
-        <item quantity="other">%d شيء</item>
-    </plurals>
-    <plurals name="groups_count">
-        <item quantity="zero">%d مجموعة</item>
-        <item quantity="one">مجموعة واحدة</item>
-        <item quantity="two">مجموعتان</item>
-        <item quantity="few">%d مجموعات</item>
-        <item quantity="many">%d مجموعة</item>
-        <item quantity="other">%d مجموعة</item>
-    </plurals>
-    <string name="header_tracked">%1$s قيد التتبع</string>
-    <string name="header_grouped">%1$s في %2$s</string>
     <string name="chip_all">الكل</string>
     <string name="chip_other">أخرى</string>
     <string name="section_oldest">الأقدم: %1$s</string>
@@ -85,6 +67,7 @@
     <!-- Common actions -->
     <string name="action_add_tile">إضافة بطاقة</string>
     <string name="action_manage_groups">إدارة المجموعات</string>
+    <string name="action_settings">الإعدادات</string>
     <string name="action_undo">تراجع</string>
     <string name="action_cancel">إلغاء</string>
     <string name="action_save">حفظ</string>
@@ -128,11 +111,11 @@
     <string name="color_sky">سماوي</string>
     <string name="color_butter">زبدي</string>
     <string name="color_rose">وردي</string>
-    <string name="colors_wallpaper">من خلفية الشاشة</string>
     <string name="color_wallpaper_primary">لون الخلفية المميز</string>
     <string name="color_wallpaper_secondary">لون الخلفية الهادئ</string>
     <string name="color_wallpaper_tertiary">لون الخلفية المتباين</string>
     <string name="icon_choice">الأيقونة: %1$s</string>
+    <string name="icon_none">بلا أيقونة</string>
     <string name="icon_check">علامة صح</string>
     <string name="icon_drop">قطرة ماء</string>
     <string name="icon_leaf">ورقة شجر</string>
@@ -178,6 +161,50 @@
     <string name="groups_note">حذف المجموعة يُبقي بطاقاتها؛ إذ تنتقل إلى «أخرى»، وهو قسم لا يظهر إلا عندما يحتوي على بطاقات.</string>
     <string name="group_options">خيارات %1$s</string>
     <string name="group_drag">اسحب لإعادة ترتيب %1$s</string>
+
+    <!-- Settings screen -->
+    <string name="settings_title">الإعدادات</string>
+    <string name="settings_section_appearance">المظهر</string>
+    <string name="settings_theme">السمة</string>
+    <string name="theme_system">النظام</string>
+    <string name="theme_light">فاتح</string>
+    <string name="theme_dark">داكن</string>
+    <string name="settings_wallpaper_colors">ألوان الخلفية</string>
+    <string name="settings_wallpaper_colors_hint">تلوين التطبيق وأدواته بألوان خلفية شاشتك.</string>
+    <string name="settings_section_tiles">البطاقات</string>
+    <string name="settings_time_display">عرض الوقت</string>
+    <string name="settings_time_display_hint">كم مضى على إنجاز كل بطاقة، أو التاريخ والوقت.</string>
+    <!-- "3 days ago" -->
+    <string name="time_display_relative">منذ متى</string>
+    <!-- "6 Oct, 14:32" -->
+    <string name="time_display_absolute">التاريخ</string>
+    <string name="settings_haptics">الاهتزاز عند النقر</string>
+    <string name="settings_haptics_hint">اهتزاز قصير عند النقر على بطاقة أو الضغط عليها مطولًا.</string>
+    <string name="settings_click_sound">صوت النقر</string>
+    <string name="settings_click_sound_hint">نقرة قصيرة عند النقر على بطاقة. يكون صامتًا عندما يكون هاتفك في الوضع الصامت.</string>
+    <string name="settings_counter">إظهار عدّاد الضغطات</string>
+    <string name="settings_counter_hint">عدد مرات الضغط على كل بطاقة، في البطاقات والأدوات.</string>
+    <string name="settings_undo">عرض خيار التراجع</string>
+    <string name="settings_undo_hint">بعد النقر على بطاقة، تظهر رسالة مع زر «تراجع».</string>
+    <string name="settings_section_general">عام</string>
+    <string name="settings_groups_hint">إنشاء المجموعات وإعادة تسميتها وترتيبها وحذفها.</string>
+    <string name="settings_language">اللغة</string>
+    <string name="settings_language_hint">اختر لغة التطبيق من إعدادات Android.</string>
+    <string name="settings_section_data">بياناتك</string>
+    <string name="settings_export">تصدير</string>
+    <string name="settings_export_hint">حفظ كل البطاقات والمجموعات والسجلّ والصور والإعدادات في ملف.</string>
+    <string name="settings_import">استيراد</string>
+    <string name="settings_import_hint">استعادة ملف مُصدَّر. يستبدل كل ما في التطبيق حاليًا.</string>
+    <string name="dialog_import_title">استبدال كل شيء؟</string>
+    <string name="dialog_import_body">ستُستبدل كل البطاقات والمجموعات والسجلّ والصور والإعدادات الحالية بمحتوى النسخة الاحتياطية.</string>
+    <string name="export_done">حُفظت النسخة الاحتياطية</string>
+    <string name="export_failed">تعذّر حفظ النسخة الاحتياطية</string>
+    <!-- %1$s is a number of tiles, e.g. "3 tiles". -->
+    <string name="import_done">استُوردت النسخة الاحتياطية: %1$s</string>
+    <string name="import_failed">هذا الملف ليس نسخة احتياطية من Time Clicker، أو تعذّرت قراءته.</string>
+    <string name="support_text">نصنع ما نصنعه بشغف ولتسهيل حياة الناس. لن نضيف أبدًا إعلانات أو ميزات مدفوعة إلى التطبيق. المساهمة ليست إلزامية أبدًا.</string>
+    <string name="action_donate">ادعمنا على Ko-fi</string>
+    <string name="settings_version">الإصدار %1$s</string>
 
     <!-- Home-screen widget -->
     <string name="widget_description">بطاقة واحدة: كم مضى منذ آخر مرة فعلتها. انقر لتحديدها كمنجزة.</string>

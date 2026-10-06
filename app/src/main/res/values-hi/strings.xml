@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Home -->
-    <plurals name="things_count">
-        <item quantity="one">%d चीज़</item>
-        <item quantity="other">%d चीज़ें</item>
-    </plurals>
-    <plurals name="groups_count">
-        <item quantity="one">%d समूह</item>
-        <item quantity="other">%d समूह</item>
-    </plurals>
-    <string name="header_tracked">%1$s ट्रैक में</string>
-    <string name="header_grouped">%2$s में %1$s</string>
     <string name="chip_all">सभी</string>
     <string name="chip_other">अन्य</string>
     <string name="section_oldest">सबसे पुराना: %1$s</string>
@@ -53,6 +43,7 @@
     <!-- Common actions -->
     <string name="action_add_tile">टाइल जोड़ें</string>
     <string name="action_manage_groups">समूह मैनेज करें</string>
+    <string name="action_settings">सेटिंग</string>
     <string name="action_undo">वापस लें</string>
     <string name="action_cancel">रद्द करें</string>
     <string name="action_save">सेव करें</string>
@@ -96,11 +87,11 @@
     <string name="color_sky">आसमानी</string>
     <string name="color_butter">मक्खनी</string>
     <string name="color_rose">गुलाबी</string>
-    <string name="colors_wallpaper">आपके वॉलपेपर से</string>
     <string name="color_wallpaper_primary">वॉलपेपर एक्सेंट</string>
     <string name="color_wallpaper_secondary">वॉलपेपर सॉफ़्ट</string>
     <string name="color_wallpaper_tertiary">वॉलपेपर कंट्रास्ट</string>
     <string name="icon_choice">आइकन: %1$s</string>
+    <string name="icon_none">कोई आइकन नहीं</string>
     <string name="icon_check">सही का निशान</string>
     <string name="icon_drop">पानी की बूंद</string>
     <string name="icon_leaf">पत्ती</string>
@@ -142,6 +133,50 @@
     <string name="groups_note">समूह मिटाने पर उसकी टाइलें बनी रहती हैं; वे “अन्य” में चली जाती हैं, जो सेक्शन सिर्फ़ टाइलें होने पर दिखता है।</string>
     <string name="group_options">%1$s के विकल्प</string>
     <string name="group_drag">%1$s का क्रम बदलने के लिए खींचें</string>
+
+    <!-- Settings screen -->
+    <string name="settings_title">सेटिंग</string>
+    <string name="settings_section_appearance">दिखावट</string>
+    <string name="settings_theme">थीम</string>
+    <string name="theme_system">सिस्टम</string>
+    <string name="theme_light">लाइट</string>
+    <string name="theme_dark">डार्क</string>
+    <string name="settings_wallpaper_colors">वॉलपेपर के रंग</string>
+    <string name="settings_wallpaper_colors_hint">ऐप और उसके विजेट पर आपके वॉलपेपर के रंग लागू करें।</string>
+    <string name="settings_section_tiles">टाइलें</string>
+    <string name="settings_time_display">समय दिखाने का तरीका</string>
+    <string name="settings_time_display_hint">हर टाइल को किए हुए कितना समय हुआ, या तारीख और समय।</string>
+    <!-- "3 days ago" -->
+    <string name="time_display_relative">बीता समय</string>
+    <!-- "6 Oct, 14:32" -->
+    <string name="time_display_absolute">तारीख-समय</string>
+    <string name="settings_haptics">टैप करने पर वाइब्रेट करें</string>
+    <string name="settings_haptics_hint">किसी टाइल पर टैप करने या उसे दबाकर रखने पर हल्का वाइब्रेशन।</string>
+    <string name="settings_click_sound">क्लिक की आवाज़</string>
+    <string name="settings_click_sound_hint">किसी टाइल पर टैप करने पर हल्की क्लिक की आवाज़। फ़ोन साइलेंट पर हो तो आवाज़ नहीं आती।</string>
+    <string name="settings_counter">दबाने की गिनती दिखाएं</string>
+    <string name="settings_counter_hint">हर टाइल कितनी बार दबाई गई, यह टाइलों और विजेट पर दिखता है।</string>
+    <string name="settings_undo">वापस लेने का विकल्प दें</string>
+    <string name="settings_undo_hint">टाइल पर टैप करने के बाद “वापस लें” बटन के साथ एक मैसेज दिखाएं।</string>
+    <string name="settings_section_general">सामान्य</string>
+    <string name="settings_groups_hint">समूह बनाएं, उनका नाम बदलें, क्रम बदलें और उन्हें मिटाएं।</string>
+    <string name="settings_language">भाषा</string>
+    <string name="settings_language_hint">ऐप की भाषा Android सेटिंग में चुनें।</string>
+    <string name="settings_section_data">आपका डेटा</string>
+    <string name="settings_export">एक्सपोर्ट करें</string>
+    <string name="settings_export_hint">सभी टाइलें, समूह, इतिहास, फ़ोटो और सेटिंग एक फ़ाइल में सेव करें।</string>
+    <string name="settings_import">इंपोर्ट करें</string>
+    <string name="settings_import_hint">एक्सपोर्ट की गई फ़ाइल वापस लाएं। इससे ऐप में अभी मौजूद सब कुछ बदल जाएगा।</string>
+    <string name="dialog_import_title">सब कुछ बदलें?</string>
+    <string name="dialog_import_body">सभी मौजूदा टाइलें, समूह, इतिहास, फ़ोटो और सेटिंग बैकअप की सामग्री से बदल दी जाएंगी।</string>
+    <string name="export_done">बैकअप सेव हो गया</string>
+    <string name="export_failed">बैकअप सेव नहीं हो सका</string>
+    <!-- %1$s is a number of tiles, e.g. "3 tiles". -->
+    <string name="import_done">बैकअप इंपोर्ट हो गया: %1$s</string>
+    <string name="import_failed">यह फ़ाइल Time Clicker का बैकअप नहीं है, या इसे पढ़ा नहीं जा सका।</string>
+    <string name="support_text">हम जुनून से और लोगों की ज़िंदगी आसान बनाने के लिए चीज़ें बनाते हैं। हम ऐप में कभी भी विज्ञापन या पेड फ़ीचर नहीं जोड़ेंगे। योगदान देना कभी भी ज़रूरी नहीं है।</string>
+    <string name="action_donate">Ko-fi पर हमारा साथ दें</string>
+    <string name="settings_version">वर्शन %1$s</string>
 
     <!-- Home-screen widget -->
     <string name="widget_description">एक टाइल: आखिरी बार किए हुए कितना समय हुआ। हो गया मार्क करने के लिए टैप करें।</string>

@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Home -->
-    <plurals name="things_count">
-        <item quantity="one">%d élément</item>
-        <item quantity="many">%d éléments</item>
-        <item quantity="other">%d éléments</item>
-    </plurals>
-    <plurals name="groups_count">
-        <item quantity="one">%d groupe</item>
-        <item quantity="many">%d groupes</item>
-        <item quantity="other">%d groupes</item>
-    </plurals>
-    <string name="header_tracked">%1$s en suivi</string>
-    <string name="header_grouped">%1$s dans %2$s</string>
     <string name="chip_all">Tout</string>
     <string name="chip_other">Autres</string>
     <string name="section_oldest">plus ancien : %1$s</string>
@@ -61,6 +49,7 @@
     <!-- Common actions -->
     <string name="action_add_tile">Ajouter une tuile</string>
     <string name="action_manage_groups">Gérer les groupes</string>
+    <string name="action_settings">Paramètres</string>
     <string name="action_undo">Annuler</string>
     <string name="action_cancel">Annuler</string>
     <string name="action_save">Enregistrer</string>
@@ -104,11 +93,11 @@
     <string name="color_sky">Ciel</string>
     <string name="color_butter">Beurre</string>
     <string name="color_rose">Rose</string>
-    <string name="colors_wallpaper">De votre fond d’écran</string>
     <string name="color_wallpaper_primary">Accent du fond d’écran</string>
     <string name="color_wallpaper_secondary">Teinte douce du fond d’écran</string>
     <string name="color_wallpaper_tertiary">Contraste du fond d’écran</string>
     <string name="icon_choice">Icône : %1$s</string>
+    <string name="icon_none">Aucune icône</string>
     <string name="icon_check">Coche</string>
     <string name="icon_drop">Goutte d’eau</string>
     <string name="icon_leaf">Feuille</string>
@@ -151,6 +140,50 @@
     <string name="groups_note">Supprimer un groupe conserve ses tuiles ; elles passent dans « Autres », une section visible seulement si elle contient des tuiles.</string>
     <string name="group_options">Options de %1$s</string>
     <string name="group_drag">Faire glisser pour réorganiser %1$s</string>
+
+    <!-- Settings screen -->
+    <string name="settings_title">Paramètres</string>
+    <string name="settings_section_appearance">Apparence</string>
+    <string name="settings_theme">Thème</string>
+    <string name="theme_system">Système</string>
+    <string name="theme_light">Clair</string>
+    <string name="theme_dark">Sombre</string>
+    <string name="settings_wallpaper_colors">Couleurs du fond d’écran</string>
+    <string name="settings_wallpaper_colors_hint">Teinte l’app et ses widgets avec les couleurs de votre fond d’écran.</string>
+    <string name="settings_section_tiles">Tuiles</string>
+    <string name="settings_time_display">Affichage du temps</string>
+    <string name="settings_time_display_hint">Depuis combien de temps chaque tuile a été faite, ou bien la date et l’heure.</string>
+    <!-- "3 days ago" -->
+    <string name="time_display_relative">Relatif</string>
+    <!-- "6 Oct, 14:32" -->
+    <string name="time_display_absolute">Absolu</string>
+    <string name="settings_haptics">Vibrer au toucher</string>
+    <string name="settings_haptics_hint">Une courte vibration quand vous touchez ou maintenez une tuile.</string>
+    <string name="settings_click_sound">Son de clic</string>
+    <string name="settings_click_sound_hint">Un petit clic quand vous touchez une tuile. Muet quand le téléphone est en silencieux.</string>
+    <string name="settings_counter">Afficher le compteur d’appuis</string>
+    <string name="settings_counter_hint">Le nombre d’appuis sur chaque tuile, sur les tuiles et les widgets.</string>
+    <string name="settings_undo">Proposer d’annuler</string>
+    <string name="settings_undo_hint">Après avoir touché une tuile, affiche un message avec un bouton Annuler.</string>
+    <string name="settings_section_general">Général</string>
+    <string name="settings_groups_hint">Créer, renommer, réorganiser et supprimer des groupes.</string>
+    <string name="settings_language">Langue</string>
+    <string name="settings_language_hint">Choisissez la langue de l’app dans les paramètres d’Android.</string>
+    <string name="settings_section_data">Vos données</string>
+    <string name="settings_export">Exporter</string>
+    <string name="settings_export_hint">Enregistrer toutes les tuiles, groupes, historiques, photos et paramètres dans un fichier.</string>
+    <string name="settings_import">Importer</string>
+    <string name="settings_import_hint">Restaurer un fichier exporté. Remplace tout le contenu actuel de l’app.</string>
+    <string name="dialog_import_title">Tout remplacer ?</string>
+    <string name="dialog_import_body">Toutes les tuiles, groupes, historiques, photos et paramètres actuels seront remplacés par le contenu de la sauvegarde.</string>
+    <string name="export_done">Sauvegarde enregistrée</string>
+    <string name="export_failed">Impossible d’enregistrer la sauvegarde</string>
+    <!-- %1$s is a number of tiles, e.g. "3 tiles". -->
+    <string name="import_done">Sauvegarde importée : %1$s</string>
+    <string name="import_failed">Ce fichier n’est pas une sauvegarde Time Clicker, ou il n’a pas pu être lu.</string>
+    <string name="support_text">Nous créons par passion et pour faciliter la vie des gens. Nous n’ajouterons jamais de publicités ni de fonctionnalités payantes à l’app. Contribuer n’est jamais obligatoire.</string>
+    <string name="action_donate">Soutenez-nous sur Ko-fi</string>
+    <string name="settings_version">Version %1$s</string>
 
     <!-- Home-screen widget -->
     <string name="widget_description">Une tuile : depuis combien de temps vous l’avez fait. Touchez pour la marquer comme faite.</string>

@@ -1,6 +1,12 @@
 package com.keeptrack.timeclicker.ui.theme
 
 import android.content.Context
+import android.graphics.Color as AndroidColor
+import androidx.activity.ComponentActivity
+import androidx.activity.SystemBarStyle
+import androidx.activity.compose.LocalActivity
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.runtime.DisposableEffect
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.ColorScheme
@@ -13,6 +19,7 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.Immutable
+import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
@@ -22,6 +29,8 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
+import com.keeptrack.timeclicker.data.AppSettings
+import com.keeptrack.timeclicker.data.ThemeMode
 import com.keeptrack.timeclicker.data.TileColor
 
 /** Background, text and shadow colours of one tile style. */
@@ -156,19 +165,30 @@ private fun dynamicPalette(scheme: ColorScheme, base: TimeClickerPalette): TimeC
 /** Material You colours are available from Android 12. */
 val supportsDynamicColor: Boolean get() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
 
-/** The palette for [context]: following the wallpaper on Android 12+, the fixed one before. Also used by widgets. */
-fun timeClickerPalette(context: Context, dark: Boolean): TimeClickerPalette = when {
-    supportsDynamicColor && dark -> dynamicPalette(dynamicDarkColorScheme(context), DarkPalette)
-    supportsDynamicColor -> dynamicPalette(dynamicLightColorScheme(context), LightPalette)
-    dark -> DarkPalette
-    else -> LightPalette
+/**
+ * The palette for [context]: following the wallpaper on Android 12+ when [wallpaperColors] is on,
+ * the fixed one otherwise. Also used by widgets.
+ */
+fun timeClickerPalette(context: Context, dark: Boolean, wallpaperColors: Boolean = true): TimeClickerPalette {
+    val dynamic = supportsDynamicColor && wallpaperColors
+    return when {
+        dynamic && dark -> dynamicPalette(dynamicDarkColorScheme(context), DarkPalette)
+        dynamic -> dynamicPalette(dynamicLightColorScheme(context), LightPalette)
+        dark -> DarkPalette
+        else -> LightPalette
+    }
 }
 
 private val LocalPalette = staticCompositionLocalOf { LightPalette }
+private val LocalSettings = compositionLocalOf { AppSettings() }
 
 object TimeClickerTheme {
     val palette: TimeClickerPalette
         @Composable get() = LocalPalette.current
+
+    /** The user's settings, for components that follow them (haptics, press counter). */
+    val settings: AppSettings
+        @Composable get() = LocalSettings.current
 }
 
 // Single place to swap in a bundled typeface later.
@@ -189,14 +209,41 @@ private val AppTypography = Typography().let { base ->
     )
 }
 
+// The scrims enableEdgeToEdge() uses by default (3-button navigation only).
+private val LightNavScrim = AndroidColor.argb(0xe6, 0xFF, 0xFF, 0xFF)
+private val DarkNavScrim = AndroidColor.argb(0x80, 0x1b, 0x1b, 0x1b)
+
+/** [TimeClickerTheme] following the user's [settings]. */
+@Composable
+fun TimeClickerTheme(settings: AppSettings, content: @Composable () -> Unit) {
+    val dark = when (settings.theme) {
+        ThemeMode.SYSTEM -> isSystemInDarkTheme()
+        ThemeMode.LIGHT -> false
+        ThemeMode.DARK -> true
+    }
+    // System bar icons follow the app's theme, which may differ from the system's.
+    val activity = LocalActivity.current as? ComponentActivity
+    DisposableEffect(activity, dark) {
+        activity?.enableEdgeToEdge(
+            statusBarStyle = SystemBarStyle.auto(AndroidColor.TRANSPARENT, AndroidColor.TRANSPARENT) { dark },
+            navigationBarStyle = SystemBarStyle.auto(LightNavScrim, DarkNavScrim) { dark },
+        )
+        onDispose {}
+    }
+    CompositionLocalProvider(LocalSettings provides settings) {
+        TimeClickerTheme(darkTheme = dark, wallpaperColors = settings.wallpaperColors, content = content)
+    }
+}
+
 @Composable
 fun TimeClickerTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
+    wallpaperColors: Boolean = true,
     content: @Composable () -> Unit,
 ) {
     val context = LocalContext.current
-    val palette = remember(context, darkTheme) { timeClickerPalette(context, darkTheme) }
-    val colors = if (supportsDynamicColor) {
+    val palette = remember(context, darkTheme, wallpaperColors) { timeClickerPalette(context, darkTheme, wallpaperColors) }
+    val colors = if (supportsDynamicColor && wallpaperColors) {
         val scheme = if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
         scheme.copy(background = palette.ground, surface = palette.sheet)
     } else if (darkTheme) {

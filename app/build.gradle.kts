@@ -31,7 +31,8 @@ android {
                 storeFile = file(releaseKeystore)
                 storePassword = System.getenv("KEYSTORE_PASSWORD")
                 keyAlias = System.getenv("KEY_ALIAS")
-                keyPassword = System.getenv("KEY_PASSWORD")
+                // PKCS12 keystores (keytool's default) have no separate key password: it is the store's.
+                keyPassword = System.getenv("KEY_PASSWORD")?.takeIf { it.isNotEmpty() } ?: storePassword
             }
         }
     }

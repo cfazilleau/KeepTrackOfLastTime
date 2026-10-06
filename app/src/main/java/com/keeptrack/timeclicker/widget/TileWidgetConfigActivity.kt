@@ -36,6 +36,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.keeptrack.timeclicker.R
+import com.keeptrack.timeclicker.TimeClickerApplication
 import com.keeptrack.timeclicker.ui.home.TileCard
 import com.keeptrack.timeclicker.ui.theme.TimeClickerTheme
 import kotlinx.coroutines.launch
@@ -56,8 +57,10 @@ class TileWidgetConfigActivity : ComponentActivity() {
         }
 
         val repository = trackerRepository
+        val settingsRepository = (application as TimeClickerApplication).container.settingsRepository
         setContent {
-            TimeClickerTheme {
+            val settings by settingsRepository.settings.collectAsState()
+            TimeClickerTheme(settings) {
                 val palette = TimeClickerTheme.palette
                 val trackers by remember { repository.observeTrackers() }.collectAsState(initial = null)
                 val scope = rememberCoroutineScope()

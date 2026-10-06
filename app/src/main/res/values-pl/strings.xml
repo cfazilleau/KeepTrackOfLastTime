@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Home -->
-    <plurals name="things_count">
-        <item quantity="one">%d rzecz</item>
-        <item quantity="few">%d rzeczy</item>
-        <item quantity="many">%d rzeczy</item>
-        <item quantity="other">%d rzeczy</item>
-    </plurals>
-    <plurals name="groups_count">
-        <item quantity="one">%d grupa</item>
-        <item quantity="few">%d grupy</item>
-        <item quantity="many">%d grup</item>
-        <item quantity="other">%d grupy</item>
-    </plurals>
-    <string name="header_tracked">Śledzone: %1$s</string>
-    <string name="header_grouped">%1$s, %2$s</string>
     <string name="chip_all">Wszystko</string>
     <string name="chip_other">Inne</string>
     <string name="section_oldest">najstarsze: %1$s</string>
@@ -69,6 +55,7 @@
     <!-- Common actions -->
     <string name="action_add_tile">Dodaj kafelek</string>
     <string name="action_manage_groups">Zarządzaj grupami</string>
+    <string name="action_settings">Ustawienia</string>
     <string name="action_undo">Cofnij</string>
     <string name="action_cancel">Anuluj</string>
     <string name="action_save">Zapisz</string>
@@ -112,11 +99,11 @@
     <string name="color_sky">Błękit</string>
     <string name="color_butter">Masło</string>
     <string name="color_rose">Róż</string>
-    <string name="colors_wallpaper">Z tapety</string>
     <string name="color_wallpaper_primary">Tapeta: akcent</string>
     <string name="color_wallpaper_secondary">Tapeta: łagodny</string>
     <string name="color_wallpaper_tertiary">Tapeta: kontrast</string>
     <string name="icon_choice">Ikona: %1$s</string>
+    <string name="icon_none">Bez ikony</string>
     <string name="icon_check">Ptaszek</string>
     <string name="icon_drop">Kropla wody</string>
     <string name="icon_leaf">Liść</string>
@@ -160,6 +147,50 @@
     <string name="groups_note">Usunięcie grupy zachowuje jej kafelki; trafiają do „Inne”, sekcji widocznej tylko wtedy, gdy ma kafelki.</string>
     <string name="group_options">Opcje: %1$s</string>
     <string name="group_drag">Przeciągnij, aby przenieść: %1$s</string>
+
+    <!-- Settings screen -->
+    <string name="settings_title">Ustawienia</string>
+    <string name="settings_section_appearance">Wygląd</string>
+    <string name="settings_theme">Motyw</string>
+    <string name="theme_system">Systemowy</string>
+    <string name="theme_light">Jasny</string>
+    <string name="theme_dark">Ciemny</string>
+    <string name="settings_wallpaper_colors">Kolory tapety</string>
+    <string name="settings_wallpaper_colors_hint">Barwi aplikację i jej widżety kolorami Twojej tapety.</string>
+    <string name="settings_section_tiles">Kafelki</string>
+    <string name="settings_time_display">Wyświetlanie czasu</string>
+    <string name="settings_time_display_hint">Ile czasu minęło od wykonania każdego kafelka albo data i godzina.</string>
+    <!-- "3 days ago" -->
+    <string name="time_display_relative">Względny</string>
+    <!-- "6 Oct, 14:32" -->
+    <string name="time_display_absolute">Bezwzględny</string>
+    <string name="settings_haptics">Wibracja przy stuknięciu</string>
+    <string name="settings_haptics_hint">Krótka wibracja, gdy stukniesz lub przytrzymasz kafelek.</string>
+    <string name="settings_click_sound">Dźwięk kliknięcia</string>
+    <string name="settings_click_sound_hint">Krótkie kliknięcie, gdy stukniesz kafelek. Wyciszone, gdy telefon jest w trybie cichym.</string>
+    <string name="settings_counter">Pokazuj licznik naciśnięć</string>
+    <string name="settings_counter_hint">Ile razy naciśnięto każdy kafelek – na kafelkach i widżetach.</string>
+    <string name="settings_undo">Proponuj cofnięcie</string>
+    <string name="settings_undo_hint">Po stuknięciu kafelka pokazuje komunikat z przyciskiem Cofnij.</string>
+    <string name="settings_section_general">Ogólne</string>
+    <string name="settings_groups_hint">Twórz, zmieniaj nazwy, porządkuj i usuwaj grupy.</string>
+    <string name="settings_language">Język</string>
+    <string name="settings_language_hint">Wybierz język aplikacji w ustawieniach Androida.</string>
+    <string name="settings_section_data">Twoje dane</string>
+    <string name="settings_export">Eksportuj</string>
+    <string name="settings_export_hint">Zapisz wszystkie kafelki, grupy, historię, zdjęcia i ustawienia w pliku.</string>
+    <string name="settings_import">Importuj</string>
+    <string name="settings_import_hint">Przywróć wyeksportowany plik. Zastępuje wszystko, co jest obecnie w aplikacji.</string>
+    <string name="dialog_import_title">Zastąpić wszystko?</string>
+    <string name="dialog_import_body">Wszystkie obecne kafelki, grupy, historia, zdjęcia i ustawienia zostaną zastąpione zawartością kopii zapasowej.</string>
+    <string name="export_done">Zapisano kopię zapasową</string>
+    <string name="export_failed">Nie udało się zapisać kopii zapasowej</string>
+    <!-- %1$s is a number of tiles, e.g. "3 tiles". -->
+    <string name="import_done">Zaimportowano kopię zapasową: %1$s</string>
+    <string name="import_failed">Ten plik nie jest kopią zapasową Time Clicker albo nie udało się go odczytać.</string>
+    <string name="support_text">Tworzymy z pasji i po to, by ułatwiać ludziom życie. Nigdy nie dodamy do aplikacji reklam ani płatnych funkcji. Wsparcie nigdy nie jest obowiązkowe.</string>
+    <string name="action_donate">Wesprzyj nas na Ko-fi</string>
+    <string name="settings_version">Wersja %1$s</string>
 
     <!-- Home-screen widget -->
     <string name="widget_description">Jeden kafelek: ile czasu minęło od ostatniego razu. Stuknij, aby oznaczyć jako zrobione.</string>

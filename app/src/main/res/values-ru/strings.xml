@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Home -->
-    <plurals name="things_count">
-        <item quantity="one">%d дело</item>
-        <item quantity="few">%d дела</item>
-        <item quantity="many">%d дел</item>
-        <item quantity="other">%d дела</item>
-    </plurals>
-    <plurals name="groups_count">
-        <item quantity="one">%d группа</item>
-        <item quantity="few">%d группы</item>
-        <item quantity="many">%d групп</item>
-        <item quantity="other">%d группы</item>
-    </plurals>
-    <string name="header_tracked">Отслеживается: %1$s</string>
-    <string name="header_grouped">%1$s, %2$s</string>
     <string name="chip_all">Все</string>
     <string name="chip_other">Другое</string>
     <string name="section_oldest">самое давнее: %1$s</string>
@@ -69,6 +55,7 @@
     <!-- Common actions -->
     <string name="action_add_tile">Добавить плитку</string>
     <string name="action_manage_groups">Управление группами</string>
+    <string name="action_settings">Настройки</string>
     <string name="action_undo">Отменить</string>
     <string name="action_cancel">Отмена</string>
     <string name="action_save">Сохранить</string>
@@ -112,11 +99,11 @@
     <string name="color_sky">Небо</string>
     <string name="color_butter">Сливки</string>
     <string name="color_rose">Роза</string>
-    <string name="colors_wallpaper">Из ваших обоев</string>
     <string name="color_wallpaper_primary">Обои: акцент</string>
     <string name="color_wallpaper_secondary">Обои: мягкий</string>
     <string name="color_wallpaper_tertiary">Обои: контраст</string>
     <string name="icon_choice">Значок: %1$s</string>
+    <string name="icon_none">Без значка</string>
     <string name="icon_check">Галочка</string>
     <string name="icon_drop">Капля воды</string>
     <string name="icon_leaf">Лист</string>
@@ -160,6 +147,50 @@
     <string name="groups_note">При удалении группы плитки сохраняются и переходят в «Другое» — раздел, который виден, только когда в нём есть плитки.</string>
     <string name="group_options">Параметры: %1$s</string>
     <string name="group_drag">Перетащите, чтобы переместить: %1$s</string>
+
+    <!-- Settings screen -->
+    <string name="settings_title">Настройки</string>
+    <string name="settings_section_appearance">Оформление</string>
+    <string name="settings_theme">Тема</string>
+    <string name="theme_system">Системная</string>
+    <string name="theme_light">Светлая</string>
+    <string name="theme_dark">Тёмная</string>
+    <string name="settings_wallpaper_colors">Цвета обоев</string>
+    <string name="settings_wallpaper_colors_hint">Окрашивать приложение и его виджеты в цвета ваших обоев.</string>
+    <string name="settings_section_tiles">Плитки</string>
+    <string name="settings_time_display">Отображение времени</string>
+    <string name="settings_time_display_hint">Сколько времени прошло с последнего раза или дата и время.</string>
+    <!-- "3 days ago" -->
+    <string name="time_display_relative">Сколько прошло</string>
+    <!-- "6 Oct, 14:32" -->
+    <string name="time_display_absolute">Дата и время</string>
+    <string name="settings_haptics">Вибрация при нажатии</string>
+    <string name="settings_haptics_hint">Короткая вибрация, когда вы нажимаете на плитку или удерживаете её.</string>
+    <string name="settings_click_sound">Звук нажатия</string>
+    <string name="settings_click_sound_hint">Короткий щелчок, когда вы нажимаете на плитку. Не звучит, если на телефоне включён беззвучный режим.</string>
+    <string name="settings_counter">Показывать счётчик нажатий</string>
+    <string name="settings_counter_hint">Сколько раз нажимали на каждую плитку — на плитках и виджетах.</string>
+    <string name="settings_undo">Предлагать отмену</string>
+    <string name="settings_undo_hint">После нажатия на плитку показывать сообщение с кнопкой «Отменить».</string>
+    <string name="settings_section_general">Общие</string>
+    <string name="settings_groups_hint">Создание, переименование, сортировка и удаление групп.</string>
+    <string name="settings_language">Язык</string>
+    <string name="settings_language_hint">Язык приложения можно выбрать в настройках Android.</string>
+    <string name="settings_section_data">Ваши данные</string>
+    <string name="settings_export">Экспорт</string>
+    <string name="settings_export_hint">Сохранить все плитки, группы, историю, фото и настройки в файл.</string>
+    <string name="settings_import">Импорт</string>
+    <string name="settings_import_hint">Восстановить данные из экспортированного файла. Всё, что сейчас есть в приложении, будет заменено.</string>
+    <string name="dialog_import_title">Заменить всё?</string>
+    <string name="dialog_import_body">Все текущие плитки, группы, история, фото и настройки будут заменены содержимым резервной копии.</string>
+    <string name="export_done">Резервная копия сохранена</string>
+    <string name="export_failed">Не удалось сохранить резервную копию</string>
+    <!-- %1$s is a number of tiles, e.g. "3 tiles". -->
+    <string name="import_done">Резервная копия импортирована: %1$s</string>
+    <string name="import_failed">Этот файл не является резервной копией Time Clicker, или его не удалось прочитать.</string>
+    <string name="support_text">Мы делаем всё это из любви к своему делу и чтобы облегчить людям жизнь. Мы никогда не добавим в приложение рекламу или платные функции. Поддерживать нас никогда не обязательно.</string>
+    <string name="action_donate">Поддержите нас на Ko-fi</string>
+    <string name="settings_version">Версия %1$s</string>
 
     <!-- Home-screen widget -->
     <string name="widget_description">Одна плитка: сколько времени прошло с последнего раза. Нажмите, чтобы отметить как сделанное.</string>

@@ -47,8 +47,17 @@ jobs:
       - name: Decode signing keystore
         env:
           KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
         run: |
           if [ -n "$KEYSTORE_BASE64" ]; then
+            # KEY_PASSWORD may be left out: it then defaults to the keystore password (PKCS12).
+            for name in KEYSTORE_PASSWORD KEY_ALIAS; do
+              if [ -z "${!name}" ]; then
+                echo "::error::KEYSTORE_BASE64 is set but the $name secret is missing. See README, Release signing."
+                exit 1
+              fi
+            done
             echo "$KEYSTORE_BASE64" | base64 --decode > "$RUNNER_TEMP/release.jks"
             echo "KEYSTORE_FILE=$RUNNER_TEMP/release.jks" >> "$GITHUB_ENV"
           else

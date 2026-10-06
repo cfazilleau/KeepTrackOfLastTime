@@ -66,6 +66,7 @@ import coil3.toBitmap
 import com.keeptrack.timeclicker.MainActivity
 import com.keeptrack.timeclicker.R
 import com.keeptrack.timeclicker.data.TileColor
+import com.keeptrack.timeclicker.data.TimeDisplay
 import com.keeptrack.timeclicker.data.Tracker
 import com.keeptrack.timeclicker.ui.theme.IconPaths
 import com.keeptrack.timeclicker.ui.theme.TimeClickerPalette
@@ -74,6 +75,8 @@ import com.keeptrack.timeclicker.ui.theme.timeClickerPalette
 import com.keeptrack.timeclicker.ui.theme.supportsDynamicColor
 import com.keeptrack.timeclicker.ui.time.RelativeTime
 import com.keeptrack.timeclicker.ui.time.TimeUnit
+import com.keeptrack.timeclicker.ui.time.absoluteTime
+import com.keeptrack.timeclicker.ui.time.agoAffixes
 import com.keeptrack.timeclicker.ui.time.format
 import kotlinx.coroutines.flow.first
 import java.text.NumberFormat
@@ -133,7 +136,10 @@ private class WidgetColors(val background: ColorProvider, val content: ColorProv
 @Composable
 private fun widgetColors(tracker: Tracker, hasPhoto: Boolean): WidgetColors {
     val context = LocalContext.current
-    val (light, dark) = remember { timeClickerPalette(context, dark = false) to timeClickerPalette(context, dark = true) }
+    val wallpaperColors = context.appSettings.wallpaperColors
+    val (light, dark) = remember(wallpaperColors) {
+        timeClickerPalette(context, dark = false, wallpaperColors) to timeClickerPalette(context, dark = true, wallpaperColors)
+    }
     if (hasPhoto) {
         return WidgetColors(
             background = ColorProvider(light.photoTile.background),
@@ -144,11 +150,11 @@ private fun widgetColors(tracker: Tracker, hasPhoto: Boolean): WidgetColors {
     val glass = color(Color.White.copy(alpha = 0.55f), Color.White.copy(alpha = 0.09f))
     val theme = GlanceTheme.colors
     return when {
-        supportsDynamicColor && tracker.color == TileColor.PRIMARY ->
+        wallpaperColors && supportsDynamicColor && tracker.color == TileColor.PRIMARY ->
             WidgetColors(theme.primaryContainer, theme.onPrimaryContainer, glass)
-        supportsDynamicColor && tracker.color == TileColor.SECONDARY ->
+        wallpaperColors && supportsDynamicColor && tracker.color == TileColor.SECONDARY ->
             WidgetColors(theme.secondaryContainer, theme.onSecondaryContainer, glass)
-        supportsDynamicColor && tracker.color == TileColor.TERTIARY ->
+        wallpaperColors && supportsDynamicColor && tracker.color == TileColor.TERTIARY ->
             WidgetColors(theme.tertiaryContainer, theme.onTertiaryContainer, glass)
         else -> {
             val l: TileColors = light.tile(tracker.color)
@@ -166,8 +172,17 @@ private fun TileContent(tracker: Tracker, photo: Bitmap?) {
     val now = Instant.now() // recomposed on every refresh (see TileWidgets.REFRESHED_AT)
     val elapsed = RelativeTime.split(tracker.lastDoneAt, now, TimeUnit.MINUTE)
     val justDone = Duration.between(tracker.lastDoneAt, now) < Duration.ofMinutes(1)
-    val headline = elapsed.major?.format(context.resources)?.replaceFirstChar { it.uppercase() }
+    // "3 days" + "5 hours ago", or "il y a 3 jours" + "5 heures": "… ago" wraps the whole time.
+    val ago = agoAffixes(context.resources)
+    val absolute = if (context.appSettings.timeDisplay == TimeDisplay.ABSOLUTE) absoluteTime(context, tracker.lastDoneAt, now) else null
+    val headline = absolute?.headline
+        ?: elapsed.major?.format(context.resources)?.let { ago.prefix + it }?.replaceFirstChar { it.uppercase() }
         ?: context.getString(R.string.elapsed_just_now)
+    val subline = when {
+        absolute != null -> absolute.detail
+        elapsed.major == null -> ""
+        else -> (elapsed.minor?.format(context.resources).orEmpty() + ago.suffix).trim()
+    }
     // Every size shows the same content; small widgets just get tighter padding.
     val padding = if (size.height < 120.dp || size.width < 120.dp) 10.dp else 14.dp
 
@@ -189,20 +204,23 @@ private fun TileContent(tracker: Tracker, photo: Bitmap?) {
         }
         Column(GlanceModifier.fillMaxSize().padding(padding)) {
             Row(GlanceModifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-                Box(
-                    GlanceModifier
-                        .size(34.dp)
-                        .cornerRadius(12.dp)
-                        .background(colors.glass)
-                        .clickable(actionStartActivity(Intent(context, MainActivity::class.java))),
-                    contentAlignment = Alignment.Center,
-                ) {
-                    Image(
-                        ImageProvider(iconBitmap(context, IconPaths.tiles.getValue(tracker.icon), IconPaths.TILE_STROKE, 18)),
-                        contentDescription = context.getString(R.string.widget_open_app),
-                        colorFilter = ColorFilter.tint(colors.content),
-                        modifier = GlanceModifier.size(18.dp),
-                    )
+                // Without an icon there is no "open app" button; the whole widget still marks the tile done.
+                IconPaths.tiles[tracker.icon]?.let { path ->
+                    Box(
+                        GlanceModifier
+                            .size(34.dp)
+                            .cornerRadius(12.dp)
+                            .background(colors.glass)
+                            .clickable(actionStartActivity(Intent(context, MainActivity::class.java))),
+                        contentAlignment = Alignment.Center,
+                    ) {
+                        Image(
+                            ImageProvider(iconBitmap(context, path, IconPaths.TILE_STROKE, 18)),
+                            contentDescription = context.getString(R.string.widget_open_app),
+                            colorFilter = ColorFilter.tint(colors.content),
+                            modifier = GlanceModifier.size(18.dp),
+                        )
+                    }
                 }
                 Spacer(GlanceModifier.defaultWeight())
                 if (justDone) {
@@ -232,17 +250,19 @@ private fun TileContent(tracker: Tracker, photo: Bitmap?) {
             )
             Row(GlanceModifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
                 Text(
-                    elapsed.minor?.format(context.resources).orEmpty(),
+                    subline,
                     style = TextStyle(color = colors.content, fontSize = 12.sp, fontWeight = FontWeight.Medium),
                     maxLines = 1,
                     modifier = GlanceModifier.defaultWeight(),
                 )
-                Text(
-                    NumberFormat.getIntegerInstance().format(tracker.pressCount),
-                    style = TextStyle(color = colors.content, fontSize = 11.sp, fontWeight = FontWeight.Bold),
-                    maxLines = 1,
-                    modifier = GlanceModifier.cornerRadius(10.dp).background(colors.glass).padding(horizontal = 7.dp, vertical = 1.dp),
-                )
+                if (context.appSettings.showCounter) {
+                    Text(
+                        NumberFormat.getIntegerInstance().format(tracker.pressCount),
+                        style = TextStyle(color = colors.content, fontSize = 11.sp, fontWeight = FontWeight.Bold),
+                        maxLines = 1,
+                        modifier = GlanceModifier.cornerRadius(10.dp).background(colors.glass).padding(horizontal = 7.dp, vertical = 1.dp),
+                    )
+                }
             }
         }
     }

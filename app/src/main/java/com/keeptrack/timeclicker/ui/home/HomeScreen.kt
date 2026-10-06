@@ -3,6 +3,13 @@ package com.keeptrack.timeclicker.ui.home
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.layout.size
+import androidx.compose.material3.Icon
+import com.keeptrack.timeclicker.ui.components.TapSound
+import com.keeptrack.timeclicker.ui.components.rememberPressAmount
+import com.keeptrack.timeclicker.ui.theme.raised
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -56,7 +63,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalResources
-import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.style.TextAlign
@@ -91,6 +97,7 @@ private val SectionSpring = spring(dampingRatio = 0.75f, stiffness = Spring.Stif
 @Composable
 fun HomeScreen(
     onManageGroups: () -> Unit,
+    onOpenSettings: () -> Unit,
     viewModel: HomeViewModel = viewModel(factory = HomeViewModel.Factory),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
@@ -103,9 +110,14 @@ fun HomeScreen(
     // The draft open in the edit sheet, and the saved tile it edits (null for a new one).
     var editing by remember { mutableStateOf<Pair<TileDraft, Tracker?>?>(null) }
 
+    val undoAfterTap by rememberUpdatedState(TimeClickerTheme.settings.undoAfterTap)
+    val clickSound = TimeClickerTheme.settings.clickSound
+    // Loaded ahead of the first tap, which would otherwise be silent.
+    LaunchedEffect(clickSound) { if (clickSound) TapSound.preload(context) }
     LaunchedEffect(viewModel) {
         // collectLatest: a newer reset replaces the snackbar of an older one.
         viewModel.resets.collectLatest { reset ->
+            if (!undoAfterTap) return@collectLatest
             val result = snackbarHostState.showSnackbar(
                 message = resources.getString(R.string.snackbar_reset, reset.trackerName),
                 actionLabel = resources.getString(R.string.action_undo),
@@ -117,28 +129,37 @@ fun HomeScreen(
 
     Box(Modifier.fillMaxSize().background(palette.ground)) {
         Column(Modifier.fillMaxSize().windowInsetsPadding(WindowInsets.safeDrawing.only(WindowInsetsSides.Top + WindowInsetsSides.Horizontal))) {
-            Header(
-                state = state,
-                onAdd = { scope.launch { editing = viewModel.newDraft() to null } },
-            )
+            TitleBar(onOpenSettings)
             state?.let { s ->
                 GroupPager(
                     state = s,
                     onSelect = viewModel::select,
                     onManageGroups = onManageGroups,
                     photoFile = viewModel::photoFile,
-                    onClick = viewModel::markDone,
+                    onClick = { tracker ->
+                        if (clickSound) TapSound.play(context)
+                        viewModel.markDone(tracker)
+                    },
                     onLongClick = { editing = TileDraft.of(it) to it },
                 )
             }
         }
 
+        AddButton(
+            onClick = { scope.launch { editing = viewModel.newDraft() to null } },
+            modifier = Modifier
+                .align(Alignment.BottomCenter)
+                .windowInsetsPadding(WindowInsets.navigationBars)
+                .padding(bottom = 20.dp),
+        )
+
+        // Above the add button.
         SnackbarHost(
             snackbarHostState,
             Modifier
                 .align(Alignment.BottomCenter)
                 .windowInsetsPadding(WindowInsets.navigationBars)
-                .padding(16.dp),
+                .padding(start = 16.dp, end = 16.dp, bottom = 20.dp + AddButtonSize + 12.dp),
         ) { data ->
             Snackbar(
                 snackbarData = data,
@@ -167,27 +188,25 @@ fun HomeScreen(
     }
 }
 
+private val AddButtonSize = 64.dp
+
+/** The main action, floating at the bottom centre: a new tile, filed in the group shown. */
 @Composable
-private fun Header(state: HomeUiState?, onAdd: () -> Unit) {
+private fun AddButton(onClick: () -> Unit, modifier: Modifier = Modifier) {
     val palette = TimeClickerTheme.palette
-    Row(
-        Modifier.fillMaxWidth().padding(start = 20.dp, end = 20.dp, top = 24.dp, bottom = 12.dp),
-        verticalAlignment = Alignment.CenterVertically,
+    val interaction = remember { MutableInteractionSource() }
+    val press = rememberPressAmount(interaction)
+    Box(
+        modifier
+            .size(AddButtonSize)
+            .graphicsLayer { val s = 1f - 0.06f * press(); scaleX = s; scaleY = s }
+            .raised(CircleShape, palette.shadow, palette.highlight, distance = 6.dp, blur = 16.dp, pressed = press)
+            .clip(CircleShape)
+            .background(palette.accent)
+            .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onClick),
+        contentAlignment = Alignment.Center,
     ) {
-        Column(Modifier.weight(1f)) {
-            if (state != null && state.trackerCount > 0) {
-                val things = pluralStringResource(R.plurals.things_count, state.trackerCount, state.trackerCount)
-                val subtitle = if (state.groups.isEmpty()) {
-                    stringResource(R.string.header_tracked, things)
-                } else {
-                    val groups = pluralStringResource(R.plurals.groups_count, state.groups.size, state.groups.size)
-                    stringResource(R.string.header_grouped, things, groups)
-                }
-                Text(subtitle, style = MaterialTheme.typography.labelLarge, color = palette.muted)
-            }
-            Text(stringResource(R.string.app_name), style = MaterialTheme.typography.headlineLarge, color = palette.text)
-        }
-        NeuIconButton(AppIcons.Add, stringResource(R.string.action_add_tile), onAdd)
+        Icon(AppIcons.Add, stringResource(R.string.action_add_tile), tint = palette.onAccent, modifier = Modifier.size(28.dp))
     }
 }
 
@@ -306,8 +325,38 @@ private fun PageList(
     }
 }
 
+/** The app's name, and the settings button. */
 @Composable
-private fun FilterChips(pages: List<PageUi>, selected: Int, onSelect: (Int) -> Unit, onManageGroups: () -> Unit) {
+private fun TitleBar(onOpenSettings: () -> Unit) {
+    val palette = TimeClickerTheme.palette
+    Row(
+        Modifier.fillMaxWidth().padding(start = 20.dp, end = 20.dp, top = 20.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Text(
+            stringResource(R.string.app_name),
+            style = MaterialTheme.typography.headlineLarge,
+            color = palette.text,
+            modifier = Modifier.weight(1f),
+        )
+        NeuIconButton(
+            icon = AppIcons.Settings,
+            contentDescription = stringResource(R.string.action_settings),
+            onClick = onOpenSettings,
+            size = 48.dp,
+            shape = CircleShape,
+        )
+    }
+}
+
+/** The group chips, scrolling sideways, then the groups button. */
+@Composable
+private fun FilterChips(
+    pages: List<PageUi>,
+    selected: Int,
+    onSelect: (Int) -> Unit,
+    onManageGroups: () -> Unit,
+) {
     val palette = TimeClickerTheme.palette
     // Padding inside the scroll area so the chips' shadows aren't clipped.
     Row(

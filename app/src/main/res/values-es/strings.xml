@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Home -->
-    <plurals name="things_count">
-        <item quantity="one">%d elemento</item>
-        <item quantity="many">%d elementos</item>
-        <item quantity="other">%d elementos</item>
-    </plurals>
-    <plurals name="groups_count">
-        <item quantity="one">%d grupo</item>
-        <item quantity="many">%d grupos</item>
-        <item quantity="other">%d grupos</item>
-    </plurals>
-    <string name="header_tracked">%1$s en seguimiento</string>
-    <string name="header_grouped">%1$s en %2$s</string>
     <string name="chip_all">Todo</string>
     <string name="chip_other">Otros</string>
     <string name="section_oldest">más antiguo: %1$s</string>
@@ -61,6 +49,7 @@
     <!-- Common actions -->
     <string name="action_add_tile">Añadir tarjeta</string>
     <string name="action_manage_groups">Gestionar grupos</string>
+    <string name="action_settings">Ajustes</string>
     <string name="action_undo">Deshacer</string>
     <string name="action_cancel">Cancelar</string>
     <string name="action_save">Guardar</string>
@@ -104,11 +93,11 @@
     <string name="color_sky">Cielo</string>
     <string name="color_butter">Mantequilla</string>
     <string name="color_rose">Rosa</string>
-    <string name="colors_wallpaper">De tu fondo de pantalla</string>
     <string name="color_wallpaper_primary">Acento del fondo</string>
     <string name="color_wallpaper_secondary">Tono suave del fondo</string>
     <string name="color_wallpaper_tertiary">Contraste del fondo</string>
     <string name="icon_choice">Icono: %1$s</string>
+    <string name="icon_none">Sin icono</string>
     <string name="icon_check">Marca</string>
     <string name="icon_drop">Gota de agua</string>
     <string name="icon_leaf">Hoja</string>
@@ -151,6 +140,50 @@
     <string name="groups_note">Al eliminar un grupo se conservan sus tarjetas; pasan a «Otros», una sección que solo aparece cuando tiene tarjetas.</string>
     <string name="group_options">Opciones de %1$s</string>
     <string name="group_drag">Arrastra para reordenar %1$s</string>
+
+    <!-- Settings screen -->
+    <string name="settings_title">Ajustes</string>
+    <string name="settings_section_appearance">Apariencia</string>
+    <string name="settings_theme">Tema</string>
+    <string name="theme_system">Sistema</string>
+    <string name="theme_light">Claro</string>
+    <string name="theme_dark">Oscuro</string>
+    <string name="settings_wallpaper_colors">Colores del fondo de pantalla</string>
+    <string name="settings_wallpaper_colors_hint">Tiñe la app y sus widgets con los colores de tu fondo de pantalla.</string>
+    <string name="settings_section_tiles">Tarjetas</string>
+    <string name="settings_time_display">Formato del tiempo</string>
+    <string name="settings_time_display_hint">Cuánto hace que hiciste cada tarjeta, o la fecha y la hora.</string>
+    <!-- "3 days ago" -->
+    <string name="time_display_relative">Relativo</string>
+    <!-- "6 Oct, 14:32" -->
+    <string name="time_display_absolute">Absoluto</string>
+    <string name="settings_haptics">Vibrar al tocar</string>
+    <string name="settings_haptics_hint">Una vibración breve al tocar o mantener pulsada una tarjeta.</string>
+    <string name="settings_click_sound">Sonido de clic</string>
+    <string name="settings_click_sound_hint">Un clic breve al tocar una tarjeta. No suena si tu teléfono está en silencio.</string>
+    <string name="settings_counter">Mostrar contador de pulsaciones</string>
+    <string name="settings_counter_hint">Cuántas veces se ha pulsado cada tarjeta, en las tarjetas y los widgets.</string>
+    <string name="settings_undo">Ofrecer deshacer</string>
+    <string name="settings_undo_hint">Tras tocar una tarjeta, muestra un mensaje con un botón Deshacer.</string>
+    <string name="settings_section_general">General</string>
+    <string name="settings_groups_hint">Crea, cambia el nombre, reordena y elimina grupos.</string>
+    <string name="settings_language">Idioma</string>
+    <string name="settings_language_hint">Elige el idioma de la app en los ajustes de Android.</string>
+    <string name="settings_section_data">Tus datos</string>
+    <string name="settings_export">Exportar</string>
+    <string name="settings_export_hint">Guarda todas las tarjetas, grupos, historial, fotos y ajustes en un archivo.</string>
+    <string name="settings_import">Importar</string>
+    <string name="settings_import_hint">Restaura un archivo exportado. Sustituye todo lo que hay ahora en la app.</string>
+    <string name="dialog_import_title">¿Sustituir todo?</string>
+    <string name="dialog_import_body">Todas las tarjetas, grupos, historial, fotos y ajustes actuales se sustituirán por el contenido de la copia de seguridad.</string>
+    <string name="export_done">Copia de seguridad guardada</string>
+    <string name="export_failed">No se pudo guardar la copia de seguridad</string>
+    <!-- %1$s is a number of tiles, e.g. "3 tiles". -->
+    <string name="import_done">Copia de seguridad importada: %1$s</string>
+    <string name="import_failed">Ese archivo no es una copia de seguridad de Time Clicker o no se pudo leer.</string>
+    <string name="support_text">Creamos cosas por pasión y para hacer la vida más fácil a la gente. Nunca añadiremos anuncios ni funciones de pago a la app. Contribuir nunca es obligatorio.</string>
+    <string name="action_donate">Apóyanos en Ko-fi</string>
+    <string name="settings_version">Versión %1$s</string>
 
     <!-- Home-screen widget -->
     <string name="widget_description">Una tarjeta: cuánto hace que lo hiciste por última vez. Toca para marcarla como hecha.</string>
