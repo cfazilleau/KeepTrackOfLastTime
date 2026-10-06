@@ -21,6 +21,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -43,7 +44,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.input.nestedscroll.NestedScrollConnection
+import androidx.compose.ui.input.nestedscroll.NestedScrollSource
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
@@ -94,14 +97,35 @@ data class TileDraft(
 }
 
 /**
- * Keeps an upward fling that reaches the end of the sheet's content from reaching the sheet.
- * The sheet is already at its top anchor and would "settle" there with that velocity,
- * overshooting and springing back on every fling: the sheet bounced while scrolling down.
- * Pulling down at the top still reaches the sheet, to drag it closed.
+ * Decides which scrolls of the sheet's content may move the sheet itself.
+ *
+ * Only a drag that starts with the content already at the top reaches the sheet, so pulling down
+ * there still drags it closed. A drag or fling that starts further down stops at the top instead:
+ * otherwise its leftover would pull the sheet down, and a fast scroll back up closed it.
+ * Upward flings never reach the sheet either: it is already fully open and would overshoot and
+ * spring back, so the sheet bounced while scrolling down.
  */
-private val KeepUpwardFlingInContent = object : NestedScrollConnection {
-    override suspend fun onPostFling(consumed: Velocity, available: Velocity): Velocity =
-        if (available.y < 0) available.copy(x = 0f) else Velocity.Zero
+private class SheetContentScroll(private val content: ScrollState) : NestedScrollConnection {
+    private var inGesture = false
+    private var startedAtTop = true
+
+    override fun onPreScroll(available: Offset, source: NestedScrollSource): Offset {
+        if (source == NestedScrollSource.UserInput && !inGesture) {
+            inGesture = true
+            startedAtTop = content.value == 0
+        }
+        return Offset.Zero
+    }
+
+    override fun onPostScroll(consumed: Offset, available: Offset, source: NestedScrollSource): Offset =
+        if (startedAtTop) Offset.Zero else available.copy(x = 0f)
+
+    override suspend fun onPostFling(consumed: Velocity, available: Velocity): Velocity {
+        val keep = !startedAtTop || available.y < 0
+        inGesture = false
+        startedAtTop = true
+        return if (keep) available.copy(x = 0f) else Velocity.Zero
+    }
 }
 
 private enum class Background { COLOUR, PHOTO }
@@ -130,6 +154,8 @@ fun EditTileSheet(
     val openedAt = remember { Instant.now() }
     val scope = rememberCoroutineScope()
     val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
+    val scrollState = rememberScrollState()
+    val contentScroll = remember(scrollState) { SheetContentScroll(scrollState) }
 
     var draft by remember { mutableStateOf(initial) }
     // Remembered so switching to Colour and back to Photo restores the picked photo.
@@ -168,8 +194,8 @@ fun EditTileSheet(
         Column(
             Modifier
                 .fillMaxWidth()
-                .nestedScroll(KeepUpwardFlingInContent)
-                .verticalScroll(rememberScrollState())
+                .nestedScroll(contentScroll)
+                .verticalScroll(scrollState)
                 .padding(start = 20.dp, end = 20.dp, bottom = 28.dp),
             verticalArrangement = Arrangement.spacedBy(22.dp),
         ) {
