@@ -65,6 +65,7 @@ import coil3.request.allowHardware
 import coil3.toBitmap
 import com.keeptrack.timeclicker.MainActivity
 import com.keeptrack.timeclicker.R
+import com.keeptrack.timeclicker.data.IconCatalog
 import com.keeptrack.timeclicker.data.TileColor
 import com.keeptrack.timeclicker.data.TimeDisplay
 import com.keeptrack.timeclicker.data.Tracker
@@ -80,7 +81,6 @@ import com.keeptrack.timeclicker.ui.time.agoAffixes
 import com.keeptrack.timeclicker.ui.time.format
 import kotlinx.coroutines.flow.first
 import java.text.NumberFormat
-import java.time.Duration
 import java.time.Instant
 import kotlin.math.roundToInt
 
@@ -97,6 +97,7 @@ class TileWidget : GlanceAppWidget() {
         val initial = trackers.first()
         val shownId = getAppWidgetState(context, PreferencesGlanceStateDefinition, id)[TileWidgets.TRACKER_ID]
         val initialPhoto = initial.firstOrNull { it.id == shownId }?.photo?.let { it to loadPhoto(context, it) }
+        val icons = IconCatalog.load(context)
         TileWidgets.scheduleNextTick(context)
 
         provideContent {
@@ -113,7 +114,7 @@ class TileWidget : GlanceAppWidget() {
             }
             GlanceTheme {
                 when {
-                    tracker != null -> TileContent(tracker, photo?.takeIf { photoName != null }, now)
+                    tracker != null -> TileContent(tracker, photo?.takeIf { photoName != null }, now, icons)
                     else -> ChooseTile(deleted = trackerId != null)
                 }
             }
@@ -169,18 +170,19 @@ private fun widgetColors(tracker: Tracker, hasPhoto: Boolean): WidgetColors {
 }
 
 @Composable
-private fun TileContent(tracker: Tracker, photo: Bitmap?, now: Instant) {
+private fun TileContent(tracker: Tracker, photo: Bitmap?, now: Instant, icons: IconCatalog) {
     val context = LocalContext.current
     val size = LocalSize.current
     val colors = widgetColors(tracker, hasPhoto = photo != null)
     val elapsed = RelativeTime.split(tracker.lastDoneAt, now, TimeUnit.MINUTE)
-    val justDone = Duration.between(tracker.lastDoneAt, now) < Duration.ofMinutes(1)
     // "3 days" + "5 hours ago", or "il y a 3 jours" + "5 heures": "… ago" wraps the whole time.
     val ago = agoAffixes(context.resources)
     val absolute = if (context.appSettings.timeDisplay == TimeDisplay.ABSOLUTE) absoluteTime(context, tracker.lastDoneAt, now) else null
+    // Widgets refresh once a minute, so they can't count the seconds: under a minute, say so.
+    val underAMinute = absolute == null && elapsed.major == null
     val headline = absolute?.headline
         ?: elapsed.major?.format(context.resources)?.let { ago.prefix + it }?.replaceFirstChar { it.uppercase() }
-        ?: context.getString(R.string.elapsed_just_now)
+        ?: context.getString(R.string.elapsed_under_a_minute)
     val subline = when {
         absolute != null -> absolute.detail
         elapsed.major == null -> ""
@@ -190,9 +192,14 @@ private fun TileContent(tracker: Tracker, photo: Bitmap?, now: Instant) {
     val padding = if (size.height < 120.dp || size.width < 120.dp) 10.dp else 14.dp
 
     // Approximate auto-size: about 0.6em per character of a bold headline.
+    // "Less than a minute ago" is long, so it may wrap onto a second line.
     val available = size.width.value - padding.value * 2
     val maxHeadline = if (size.width > 200.dp && size.height > 160.dp) 40f else 30f
-    val headlineSize = (available / (headline.length * 0.6f)).coerceIn(16f, maxHeadline)
+    val headlineLines = if (underAMinute) 2 else 1
+    val minHeadline = if (underAMinute) 13f else 16f
+    // Wrapped text fills its lines less evenly, hence the margin.
+    val fill = if (underAMinute) headlineLines * 0.85f else 1f
+    val headlineSize = (available * fill / (headline.length * 0.6f)).coerceIn(minHeadline, maxHeadline)
 
     Box(
         GlanceModifier
@@ -211,7 +218,7 @@ private fun TileContent(tracker: Tracker, photo: Bitmap?, now: Instant) {
         Column(GlanceModifier.fillMaxSize().padding(padding)) {
             Row(GlanceModifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
                 // Without an icon there is no "open app" button; the whole widget still marks the tile done.
-                IconPaths.tiles[tracker.icon]?.let { path ->
+                icons.path(tracker.icon)?.let { path ->
                     Box(
                         GlanceModifier
                             .size(34.dp)
@@ -228,20 +235,6 @@ private fun TileContent(tracker: Tracker, photo: Bitmap?, now: Instant) {
                         )
                     }
                 }
-                Spacer(GlanceModifier.defaultWeight())
-                if (justDone) {
-                    Box(
-                        GlanceModifier.size(30.dp).cornerRadius(15.dp).background(colors.content),
-                        contentAlignment = Alignment.Center,
-                    ) {
-                        Image(
-                            ImageProvider(iconBitmap(context, IconPaths.CHECK, 2.6f, 14)),
-                            contentDescription = null,
-                            colorFilter = ColorFilter.tint(colors.background),
-                            modifier = GlanceModifier.size(14.dp),
-                        )
-                    }
-                }
             }
             Spacer(GlanceModifier.defaultWeight())
             Text(
@@ -252,7 +245,7 @@ private fun TileContent(tracker: Tracker, photo: Bitmap?, now: Instant) {
             Text(
                 headline,
                 style = TextStyle(color = colors.content, fontSize = headlineSize.sp, fontWeight = FontWeight.Bold),
-                maxLines = 1,
+                maxLines = headlineLines,
             )
             Row(GlanceModifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
                 Text(

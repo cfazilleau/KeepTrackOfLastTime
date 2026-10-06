@@ -2,7 +2,6 @@
 <resources>
     <!-- Home -->
     <string name="chip_all">Todo</string>
-    <string name="chip_other">Otros</string>
     <string name="section_oldest">más antiguo: %1$s</string>
     <string name="empty_title">Aún no sigues nada</string>
     <string name="empty_body">Toca + para añadir algo, como «Regar las plantas». Toca su tarjeta cada vez que lo vuelvas a hacer.</string>
@@ -40,6 +39,7 @@
     <string name="elapsed_two_units">%1$s %2$s</string>
     <string name="elapsed_ago">hace %1$s</string>
     <string name="elapsed_just_now">Ahora mismo</string>
+    <string name="elapsed_under_a_minute">Hace menos de un minuto</string>
     <plurals name="press_count">
         <item quantity="one">Pulsado %d vez</item>
         <item quantity="many">Pulsado %d veces</item>
@@ -116,6 +116,14 @@
     <string name="icon_brush">Pincel</string>
     <string name="icon_gauge">Indicador</string>
     <string name="icon_car">Coche</string>
+    <string name="icon_house">Casa</string>
+    <string name="icon_sparkles">Destellos</string>
+    <string name="icon_laundry">Lavadora</string>
+    <string name="icon_utensils">Cubiertos</string>
+    <string name="icon_dumbbell">Mancuerna</string>
+    <string name="icon_book">Libro</string>
+    <string name="icon_wrench">Llave inglesa</string>
+    <string name="icon_star">Estrella</string>
 
     <!-- Dialogs -->
     <string name="dialog_delete_title">¿Eliminar «%1$s»?</string>
@@ -123,7 +131,7 @@
     <string name="dialog_new_group_title">Nuevo grupo</string>
     <string name="dialog_rename_group_title">Cambiar nombre del grupo</string>
     <string name="dialog_delete_group_title">¿Eliminar el grupo «%1$s»?</string>
-    <string name="dialog_delete_group_body">Sus tarjetas se conservan y pasan a «Otros».</string>
+    <string name="dialog_delete_group_body">Sus tarjetas se conservan y siguen en «Todo».</string>
     <string name="dialog_reset_counter_title">¿Restablecer el contador?</string>
     <string name="dialog_reset_counter_body">Vuelve a empezar desde 0. Se conservan el historial y la última vez de la tarjeta.</string>
 
@@ -137,7 +145,7 @@
         <item quantity="other">%d tarjetas</item>
     </plurals>
     <string name="groups_new_placeholder">p. ej., Baño, Mascotas, Salud</string>
-    <string name="groups_note">Al eliminar un grupo se conservan sus tarjetas; pasan a «Otros», una sección que solo aparece cuando tiene tarjetas.</string>
+    <string name="groups_note">Al eliminar un grupo se conservan sus tarjetas; siguen en «Todo».</string>
     <string name="group_options">Opciones de %1$s</string>
     <string name="group_drag">Arrastra para reordenar %1$s</string>
 
@@ -193,4 +201,77 @@
     <string name="widget_config_pick">Mostrar en este widget</string>
     <string name="widget_preview_name">Regar las plantas</string>
     <string name="widget_preview_elapsed">3 días</string>
+
+    <!-- Icon palette -->
+    <string name="settings_icon_palette">Paleta de iconos</string>
+    <string name="settings_icon_palette_hint">Elige qué iconos puedes asignar a una tarjeta</string>
+    <string name="icon_palette_search">Buscar iconos</string>
+    <string name="icon_palette_clear_search">Borrar búsqueda</string>
+    <string name="icon_palette_yours">Tu paleta</string>
+    <string name="icon_palette_hint">Toca un icono para añadirlo a tu paleta; vuelve a tocarlo para quitarlo.</string>
+    <string name="icon_palette_empty">Tu paleta está vacía. Toca los iconos de abajo para añadirlos.</string>
+    <string name="icon_palette_results">Resultados</string>
+    <string name="icon_palette_no_results">Ningún icono coincide con «%1$s».</string>
+    <string name="icon_palette_reset">Restablecer los iconos predeterminados</string>
+    <string name="dialog_reset_palette_title">¿Restablecer la paleta de iconos?</string>
+    <string name="dialog_reset_palette_body">Vuelve a tener los iconos predeterminados. Las tarjetas conservan el icono que tienen.</string>
+    <string name="icon_palette_more">Más iconos en Ajustes › Paleta de iconos</string>
+
+    <!-- Credits -->
+    <string name="settings_credits">Créditos</string>
+    <string name="credits_intro">Time Clicker está hecho con estos proyectos de código abierto. ¡Gracias! Toca uno para leer su licencia.</string>
+    <string name="credit_icons">Iconos</string>
+    <string name="credit_ui">Interfaz de usuario</string>
+    <string name="credit_androidx">Bibliotecas de compatibilidad de Android</string>
+    <string name="credit_database">Base de datos</string>
+    <string name="credit_widgets">Widgets de la pantalla de inicio</string>
+    <string name="credit_photos">Carga de fotos</string>
+    <string name="credit_reorder">Arrastrar para reordenar</string>
+    <string name="credit_kotlin">Lenguaje de programación</string>
+    <string name="credits_website">Sitio web</string>
+    <string name="action_close">Cerrar</string>
+
+    <!-- Icon categories, from Lucide -->
+    <string name="category_accessibility">Accesibilidad</string>
+    <string name="category_account">Cuentas y acceso</string>
+    <string name="category_animals">Animales</string>
+    <string name="category_arrows">Flechas</string>
+    <string name="category_buildings">Edificios</string>
+    <string name="category_charts">Gráficos</string>
+    <string name="category_communication">Comunicación</string>
+    <string name="category_connectivity">Conectividad</string>
+    <string name="category_cursors">Cursores</string>
+    <string name="category_design">Diseño</string>
+    <string name="category_development">Programación y desarrollo</string>
+    <string name="category_devices">Dispositivos</string>
+    <string name="category_emoji">Emoji</string>
+    <string name="category_files">Archivos</string>
+    <string name="category_finance">Finanzas</string>
+    <string name="category_food_beverage">Comida y bebida</string>
+    <string name="category_gaming">Videojuegos</string>
+    <string name="category_home">Hogar</string>
+    <string name="category_layout">Maquetación</string>
+    <string name="category_mail">Correo</string>
+    <string name="category_math">Matemáticas</string>
+    <string name="category_medical">Medicina</string>
+    <string name="category_multimedia">Multimedia</string>
+    <string name="category_nature">Naturaleza</string>
+    <string name="category_navigation">Navegación y lugares</string>
+    <string name="category_notifications">Notificaciones</string>
+    <string name="category_people">Personas</string>
+    <string name="category_photography">Fotografía</string>
+    <string name="category_science">Ciencia</string>
+    <string name="category_seasons">Estaciones</string>
+    <string name="category_security">Seguridad</string>
+    <string name="category_shapes">Formas</string>
+    <string name="category_shopping">Compras</string>
+    <string name="category_social">Redes sociales</string>
+    <string name="category_sports">Deportes</string>
+    <string name="category_sustainability">Sostenibilidad</string>
+    <string name="category_text">Formato de texto</string>
+    <string name="category_time">Hora y calendario</string>
+    <string name="category_tools">Herramientas</string>
+    <string name="category_transportation">Transporte</string>
+    <string name="category_travel">Viajes</string>
+    <string name="category_weather">Meteorología</string>
 </resources>

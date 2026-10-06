@@ -29,10 +29,11 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.keeptrack.timeclicker.ui.groups.GroupsScreen
 import com.keeptrack.timeclicker.ui.home.HomeScreen
+import com.keeptrack.timeclicker.ui.icons.IconPaletteScreen
 import com.keeptrack.timeclicker.ui.settings.SettingsScreen
 import com.keeptrack.timeclicker.ui.theme.TimeClickerTheme
 
-private enum class Screen { HOME, GROUPS, SETTINGS }
+private enum class Screen { HOME, GROUPS, SETTINGS, ICON_PALETTE }
 
 private const val ScreenMillis = 300
 // Material's "shared axis": the old screen fades out quickly, then the new one fades in as both slide.
@@ -79,7 +80,12 @@ class MainActivity : ComponentActivity() {
                                 onOpenSettings = { open(Screen.SETTINGS) },
                             )
                             Screen.GROUPS -> GroupsScreen(onBack = ::back)
-                            Screen.SETTINGS -> SettingsScreen(onBack = ::back, onManageGroups = { open(Screen.GROUPS) })
+                            Screen.SETTINGS -> SettingsScreen(
+                                onBack = ::back,
+                                onManageGroups = { open(Screen.GROUPS) },
+                                onOpenIconPalette = { open(Screen.ICON_PALETTE) },
+                            )
+                            Screen.ICON_PALETTE -> IconPaletteScreen(onBack = ::back)
                         }
                     }
                 }

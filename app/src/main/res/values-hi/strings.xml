@@ -2,7 +2,6 @@
 <resources>
     <!-- Home -->
     <string name="chip_all">सभी</string>
-    <string name="chip_other">अन्य</string>
     <string name="section_oldest">सबसे पुराना: %1$s</string>
     <string name="empty_title">अभी कुछ भी ट्रैक नहीं हो रहा</string>
     <string name="empty_body">कुछ जोड़ने के लिए + पर टैप करें, जैसे “पौधों को पानी दिया”। जब भी आप इसे दोबारा करें, इसकी टाइल पर टैप करें।</string>
@@ -35,6 +34,7 @@
     <string name="elapsed_two_units">%1$s %2$s</string>
     <string name="elapsed_ago">%1$s पहले</string>
     <string name="elapsed_just_now">अभी-अभी</string>
+    <string name="elapsed_under_a_minute">एक मिनट से भी कम समय पहले</string>
     <plurals name="press_count">
         <item quantity="one">%d बार दबाया गया</item>
         <item quantity="other">%d बार दबाया गया</item>
@@ -110,6 +110,14 @@
     <string name="icon_brush">ब्रश</string>
     <string name="icon_gauge">गेज</string>
     <string name="icon_car">कार</string>
+    <string name="icon_house">घर</string>
+    <string name="icon_sparkles">चमक</string>
+    <string name="icon_laundry">वॉशिंग मशीन</string>
+    <string name="icon_utensils">कटलरी</string>
+    <string name="icon_dumbbell">डम्बल</string>
+    <string name="icon_book">किताब</string>
+    <string name="icon_wrench">रिंच</string>
+    <string name="icon_star">तारा</string>
 
     <!-- Dialogs -->
     <string name="dialog_delete_title">“%1$s” मिटाएं?</string>
@@ -117,7 +125,7 @@
     <string name="dialog_new_group_title">नया समूह</string>
     <string name="dialog_rename_group_title">समूह का नाम बदलें</string>
     <string name="dialog_delete_group_title">समूह “%1$s” मिटाएं?</string>
-    <string name="dialog_delete_group_body">इसकी टाइलें बनी रहेंगी और “अन्य” में चली जाएंगी।</string>
+    <string name="dialog_delete_group_body">इसकी टाइलें बनी रहेंगी और “सभी” में दिखती रहेंगी।</string>
     <string name="dialog_reset_counter_title">काउंटर रीसेट करें?</string>
     <string name="dialog_reset_counter_body">यह फिर से 0 से शुरू होगा। टाइल का इतिहास और पिछला समय बना रहेगा।</string>
 
@@ -130,7 +138,7 @@
         <item quantity="other">%d टाइलें</item>
     </plurals>
     <string name="groups_new_placeholder">जैसे, बाथरूम, पालतू जानवर, सेहत</string>
-    <string name="groups_note">समूह मिटाने पर उसकी टाइलें बनी रहती हैं; वे “अन्य” में चली जाती हैं, जो सेक्शन सिर्फ़ टाइलें होने पर दिखता है।</string>
+    <string name="groups_note">समूह मिटाने पर उसकी टाइलें बनी रहती हैं; वे “सभी” में दिखती रहती हैं।</string>
     <string name="group_options">%1$s के विकल्प</string>
     <string name="group_drag">%1$s का क्रम बदलने के लिए खींचें</string>
 
@@ -186,4 +194,77 @@
     <string name="widget_config_pick">इस विजेट पर दिखाएं</string>
     <string name="widget_preview_name">पौधों को पानी दिया</string>
     <string name="widget_preview_elapsed">3 दिन</string>
+
+    <!-- Icon palette -->
+    <string name="settings_icon_palette">आइकन पैलेट</string>
+    <string name="settings_icon_palette_hint">चुनें कि आप टाइल को कौन-से आइकन दे सकते हैं</string>
+    <string name="icon_palette_search">आइकन खोजें</string>
+    <string name="icon_palette_clear_search">खोज साफ़ करें</string>
+    <string name="icon_palette_yours">आपका पैलेट</string>
+    <string name="icon_palette_hint">किसी आइकन को अपने पैलेट में जोड़ने के लिए उस पर टैप करें; हटाने के लिए फिर से टैप करें।</string>
+    <string name="icon_palette_empty">आपका पैलेट खाली है। जोड़ने के लिए नीचे दिए गए आइकन पर टैप करें।</string>
+    <string name="icon_palette_results">नतीजे</string>
+    <string name="icon_palette_no_results">“%1$s” से मेल खाता कोई आइकन नहीं है।</string>
+    <string name="icon_palette_reset">डिफ़ॉल्ट आइकन पर रीसेट करें</string>
+    <string name="dialog_reset_palette_title">आइकन पैलेट रीसेट करें?</string>
+    <string name="dialog_reset_palette_body">पैलेट डिफ़ॉल्ट आइकन पर वापस आ जाएगा। टाइलों के मौजूदा आइकन बने रहेंगे।</string>
+    <string name="icon_palette_more">सेटिंग › आइकन पैलेट में और आइकन देखें</string>
+
+    <!-- Credits -->
+    <string name="settings_credits">आभार</string>
+    <string name="credits_intro">Time Clicker इन ओपन-सोर्स प्रोजेक्ट से बना है। धन्यवाद! किसी प्रोजेक्ट का लाइसेंस पढ़ने के लिए उस पर टैप करें।</string>
+    <string name="credit_icons">आइकन</string>
+    <string name="credit_ui">यूज़र इंटरफ़ेस</string>
+    <string name="credit_androidx">Android सपोर्ट लाइब्रेरी</string>
+    <string name="credit_database">डेटाबेस</string>
+    <string name="credit_widgets">होम स्क्रीन विजेट</string>
+    <string name="credit_photos">फ़ोटो लोड करना</string>
+    <string name="credit_reorder">क्रम बदलने के लिए खींचें</string>
+    <string name="credit_kotlin">प्रोग्रामिंग भाषा</string>
+    <string name="credits_website">वेबसाइट</string>
+    <string name="action_close">बंद करें</string>
+
+    <!-- Icon categories, from Lucide -->
+    <string name="category_accessibility">सुलभता</string>
+    <string name="category_account">खाते और ऐक्सेस</string>
+    <string name="category_animals">जानवर</string>
+    <string name="category_arrows">तीर</string>
+    <string name="category_buildings">इमारतें</string>
+    <string name="category_charts">चार्ट</string>
+    <string name="category_communication">संचार</string>
+    <string name="category_connectivity">कनेक्टिविटी</string>
+    <string name="category_cursors">कर्सर</string>
+    <string name="category_design">डिज़ाइन</string>
+    <string name="category_development">कोडिंग और डेवलपमेंट</string>
+    <string name="category_devices">डिवाइस</string>
+    <string name="category_emoji">इमोजी</string>
+    <string name="category_files">फ़ाइलें</string>
+    <string name="category_finance">वित्त</string>
+    <string name="category_food_beverage">खाना-पीना</string>
+    <string name="category_gaming">गेमिंग</string>
+    <string name="category_home">घर</string>
+    <string name="category_layout">लेआउट</string>
+    <string name="category_mail">मेल</string>
+    <string name="category_math">गणित</string>
+    <string name="category_medical">चिकित्सा</string>
+    <string name="category_multimedia">मल्टीमीडिया</string>
+    <string name="category_nature">प्रकृति</string>
+    <string name="category_navigation">नेविगेशन और जगहें</string>
+    <string name="category_notifications">सूचनाएं</string>
+    <string name="category_people">लोग</string>
+    <string name="category_photography">फ़ोटोग्राफ़ी</string>
+    <string name="category_science">विज्ञान</string>
+    <string name="category_seasons">ऋतुएं</string>
+    <string name="category_security">सुरक्षा</string>
+    <string name="category_shapes">आकृतियां</string>
+    <string name="category_shopping">शॉपिंग</string>
+    <string name="category_social">सोशल</string>
+    <string name="category_sports">खेल</string>
+    <string name="category_sustainability">सस्टेनेबिलिटी</string>
+    <string name="category_text">टेक्स्ट फ़ॉर्मैटिंग</string>
+    <string name="category_time">समय और कैलेंडर</string>
+    <string name="category_tools">टूल</string>
+    <string name="category_transportation">परिवहन</string>
+    <string name="category_travel">यात्रा</string>
+    <string name="category_weather">मौसम</string>
 </resources>

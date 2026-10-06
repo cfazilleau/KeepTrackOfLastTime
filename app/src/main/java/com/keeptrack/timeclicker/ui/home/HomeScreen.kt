@@ -368,9 +368,7 @@ private fun FilterChips(
         pages.forEachIndexed { index, page ->
             val chip = page.chip
             val isSelected = index == selected
-            val label = chip.label ?: stringResource(
-                if (chip.filter == GroupFilter.Ungrouped) R.string.chip_other else R.string.chip_all
-            )
+            val label = chip.label ?: stringResource(R.string.chip_all)
             // Swiping to a group scrolls its chip into view.
             val bringIntoView = remember { BringIntoViewRequester() }
             LaunchedEffect(isSelected) { if (isSelected) bringIntoView.bringIntoView() }
@@ -428,7 +426,6 @@ private fun Section(
     Column(modifier, verticalArrangement = Arrangement.spacedBy(16.dp)) {
         val title = when (val t = section.title) {
             is SectionTitle.Group -> t.name
-            SectionTitle.Other -> stringResource(R.string.chip_other)
             SectionTitle.None -> null
         }
         if (title != null) {

@@ -54,15 +54,39 @@ enum class TileSize(val key: String, val columns: Int, val rows: Int) {
     }
 }
 
-enum class TileIcon(val key: String) {
-    /** No icon: the tile shows only its text. */
-    NONE("none"),
-    CHECK("check"), DROP("drop"), LEAF("leaf"), GRASS("grass"), FLOWER("flower"),
-    BED("bed"), COFFEE("coffee"), SNOW("snow"), TRASH("trash"), CART("cart"),
-    PHONE("phone"), HEART("heart"), PILL("pill"), PAW("paw"), SCISSORS("scissors"),
-    BRUSH("brush"), GAUGE("gauge"), CAR("car");
+/**
+ * A tile's icon: the name of a Lucide icon ("circle-check"), or [NONE]. Stored by [key].
+ * A name missing from the bundled icon set (e.g. from a newer app version) shows no icon.
+ */
+@JvmInline
+value class TileIcon(val key: String) {
+    val isNone: Boolean get() = this == NONE
 
     companion object {
-        fun fromKey(key: String?) = entries.firstOrNull { it.key == key } ?: CHECK
+        /** No icon: the tile shows only its text. */
+        val NONE = TileIcon("none")
+        val DEFAULT = TileIcon("circle-check")
+
+        /** The icons offered when editing a tile, until the user picks their own palette. */
+        val defaultPalette: List<TileIcon> = listOf(
+            "circle-check", "star", "heart", "house", "sparkles", "trash", "washing-machine", "bed", "utensils",
+            "coffee", "shopping-cart", "droplet", "leaf", "sprout", "flower-2", "snowflake", "pill", "dumbbell",
+            "book-open", "phone", "paw-print", "scissors", "paintbrush", "wrench", "car", "gauge",
+        ).map(::TileIcon)
+
+        /**
+         * Before database version 4 (backup format 2), tiles stored the app's own icon names. Those that aren't
+         * also the Lucide name of the icon that replaced them map to it. Some ("check", "flower") are other Lucide
+         * icons too, so the mapping is only for old data: the database migration and old backups.
+         */
+        val legacyKeys: Map<String, String> = mapOf(
+            "check" to "circle-check", "drop" to "droplet", "grass" to "sprout", "flower" to "flower-2",
+            "snow" to "snowflake", "cart" to "shopping-cart", "paw" to "paw-print", "brush" to "paintbrush",
+        )
+
+        fun fromKey(key: String?): TileIcon = if (key.isNullOrBlank()) DEFAULT else TileIcon(key)
+
+        /** An icon name stored before database version 4 / backup format 2. */
+        fun fromLegacyKey(key: String?): TileIcon = fromKey(key?.let { legacyKeys[it] ?: it })
     }
 }

@@ -2,7 +2,6 @@
 <resources>
     <!-- Home -->
     <string name="chip_all">Alles</string>
-    <string name="chip_other">Overig</string>
     <string name="section_oldest">oudste: %1$s</string>
     <string name="empty_title">Nog niets bijgehouden</string>
     <string name="empty_body">Tik op + om iets toe te voegen, zoals „Planten water gegeven”. Tik op de tegel telkens als je het weer doet.</string>
@@ -35,6 +34,7 @@
     <string name="elapsed_two_units">%1$s %2$s</string>
     <string name="elapsed_ago">%1$s geleden</string>
     <string name="elapsed_just_now">Zojuist</string>
+    <string name="elapsed_under_a_minute">Minder dan een minuut geleden</string>
     <plurals name="press_count">
         <item quantity="one">%d keer ingedrukt</item>
         <item quantity="other">%d keer ingedrukt</item>
@@ -110,6 +110,14 @@
     <string name="icon_brush">Kwast</string>
     <string name="icon_gauge">Meter</string>
     <string name="icon_car">Auto</string>
+    <string name="icon_house">Huis</string>
+    <string name="icon_sparkles">Glinstering</string>
+    <string name="icon_laundry">Wasmachine</string>
+    <string name="icon_utensils">Bestek</string>
+    <string name="icon_dumbbell">Halter</string>
+    <string name="icon_book">Boek</string>
+    <string name="icon_wrench">Moersleutel</string>
+    <string name="icon_star">Ster</string>
 
     <!-- Dialogs -->
     <string name="dialog_delete_title">„%1$s” verwijderen?</string>
@@ -117,7 +125,7 @@
     <string name="dialog_new_group_title">Nieuwe groep</string>
     <string name="dialog_rename_group_title">Groep hernoemen</string>
     <string name="dialog_delete_group_title">Groep „%1$s” verwijderen?</string>
-    <string name="dialog_delete_group_body">De tegels blijven bewaard en gaan naar „Overig”.</string>
+    <string name="dialog_delete_group_body">De tegels blijven bewaard en staan nog steeds onder „Alles”.</string>
     <string name="dialog_reset_counter_title">Teller resetten?</string>
     <string name="dialog_reset_counter_body">Hij begint weer bij 0. De geschiedenis en de laatste keer van de tegel blijven bewaard.</string>
 
@@ -130,7 +138,7 @@
         <item quantity="other">%d tegels</item>
     </plurals>
     <string name="groups_new_placeholder">bijv. Badkamer, Huisdieren, Gezondheid</string>
-    <string name="groups_note">Als je een groep verwijdert, blijven de tegels bewaard; ze gaan naar „Overig”, een sectie die alleen verschijnt als er tegels in zitten.</string>
+    <string name="groups_note">Als je een groep verwijdert, blijven de tegels bewaard; ze staan nog steeds onder „Alles”.</string>
     <string name="group_options">Opties voor %1$s</string>
     <string name="group_drag">%1$s verslepen om te herordenen</string>
 
@@ -186,4 +194,77 @@
     <string name="widget_config_pick">Op deze widget tonen</string>
     <string name="widget_preview_name">Planten water gegeven</string>
     <string name="widget_preview_elapsed">3 dagen</string>
+
+    <!-- Icon palette -->
+    <string name="settings_icon_palette">Pictogrampalet</string>
+    <string name="settings_icon_palette_hint">Kies welke pictogrammen je aan een tegel kunt geven</string>
+    <string name="icon_palette_search">Pictogrammen zoeken</string>
+    <string name="icon_palette_clear_search">Zoekopdracht wissen</string>
+    <string name="icon_palette_yours">Jouw palet</string>
+    <string name="icon_palette_hint">Tik op een pictogram om het aan je palet toe te voegen; tik er nog een keer op om het te verwijderen.</string>
+    <string name="icon_palette_empty">Je palet is leeg. Tik hieronder op pictogrammen om ze toe te voegen.</string>
+    <string name="icon_palette_results">Resultaten</string>
+    <string name="icon_palette_no_results">Geen pictogrammen gevonden voor „%1$s”.</string>
+    <string name="icon_palette_reset">Standaardpictogrammen herstellen</string>
+    <string name="dialog_reset_palette_title">Pictogrampalet resetten?</string>
+    <string name="dialog_reset_palette_body">Het palet krijgt weer de standaardpictogrammen. Tegels houden hun huidige pictogram.</string>
+    <string name="icon_palette_more">Meer pictogrammen in Instellingen › Pictogrampalet</string>
+
+    <!-- Credits -->
+    <string name="settings_credits">Credits</string>
+    <string name="credits_intro">Time Clicker is gemaakt met deze opensourceprojecten. Bedankt! Tik op een project om de licentie te lezen.</string>
+    <string name="credit_icons">Pictogrammen</string>
+    <string name="credit_ui">Gebruikersinterface</string>
+    <string name="credit_androidx">Android-ondersteuningsbibliotheken</string>
+    <string name="credit_database">Database</string>
+    <string name="credit_widgets">Startschermwidgets</string>
+    <string name="credit_photos">Foto’s laden</string>
+    <string name="credit_reorder">Slepen om de volgorde te wijzigen</string>
+    <string name="credit_kotlin">Programmeertaal</string>
+    <string name="credits_website">Website</string>
+    <string name="action_close">Sluiten</string>
+
+    <!-- Icon categories, from Lucide -->
+    <string name="category_accessibility">Toegankelijkheid</string>
+    <string name="category_account">Accounts en toegang</string>
+    <string name="category_animals">Dieren</string>
+    <string name="category_arrows">Pijlen</string>
+    <string name="category_buildings">Gebouwen</string>
+    <string name="category_charts">Grafieken</string>
+    <string name="category_communication">Communicatie</string>
+    <string name="category_connectivity">Connectiviteit</string>
+    <string name="category_cursors">Cursors</string>
+    <string name="category_design">Ontwerp</string>
+    <string name="category_development">Programmeren en ontwikkeling</string>
+    <string name="category_devices">Apparaten</string>
+    <string name="category_emoji">Emoji</string>
+    <string name="category_files">Bestanden</string>
+    <string name="category_finance">Financiën</string>
+    <string name="category_food_beverage">Eten en drinken</string>
+    <string name="category_gaming">Gaming</string>
+    <string name="category_home">Thuis</string>
+    <string name="category_layout">Indeling</string>
+    <string name="category_mail">E-mail</string>
+    <string name="category_math">Wiskunde</string>
+    <string name="category_medical">Medisch</string>
+    <string name="category_multimedia">Multimedia</string>
+    <string name="category_nature">Natuur</string>
+    <string name="category_navigation">Navigatie en plaatsen</string>
+    <string name="category_notifications">Meldingen</string>
+    <string name="category_people">Mensen</string>
+    <string name="category_photography">Fotografie</string>
+    <string name="category_science">Wetenschap</string>
+    <string name="category_seasons">Seizoenen</string>
+    <string name="category_security">Beveiliging</string>
+    <string name="category_shapes">Vormen</string>
+    <string name="category_shopping">Winkelen</string>
+    <string name="category_social">Sociaal</string>
+    <string name="category_sports">Sport</string>
+    <string name="category_sustainability">Duurzaamheid</string>
+    <string name="category_text">Tekstopmaak</string>
+    <string name="category_time">Tijd en agenda</string>
+    <string name="category_tools">Gereedschap</string>
+    <string name="category_transportation">Vervoer</string>
+    <string name="category_travel">Reizen</string>
+    <string name="category_weather">Weer</string>
 </resources>

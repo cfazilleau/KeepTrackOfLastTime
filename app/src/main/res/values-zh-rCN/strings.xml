@@ -2,7 +2,6 @@
 <resources>
     <!-- Home -->
     <string name="chip_all">全部</string>
-    <string name="chip_other">其他</string>
     <string name="section_oldest">最久：%1$s</string>
     <string name="empty_title">还没有记录任何事项</string>
     <string name="empty_body">点按 + 添加事项，比如“给植物浇水”。每次再做这件事时，点按它的卡片即可。</string>
@@ -30,6 +29,7 @@
     <string name="elapsed_two_units">%1$s%2$s</string>
     <string name="elapsed_ago">%1$s前</string>
     <string name="elapsed_just_now">刚刚</string>
+    <string name="elapsed_under_a_minute">不到一分钟前</string>
     <plurals name="press_count">
         <item quantity="other">已按%d次</item>
     </plurals>
@@ -104,6 +104,14 @@
     <string name="icon_brush">刷子</string>
     <string name="icon_gauge">仪表</string>
     <string name="icon_car">汽车</string>
+    <string name="icon_house">房子</string>
+    <string name="icon_sparkles">闪光</string>
+    <string name="icon_laundry">洗衣机</string>
+    <string name="icon_utensils">餐具</string>
+    <string name="icon_dumbbell">哑铃</string>
+    <string name="icon_book">书</string>
+    <string name="icon_wrench">扳手</string>
+    <string name="icon_star">星星</string>
 
     <!-- Dialogs -->
     <string name="dialog_delete_title">删除“%1$s”？</string>
@@ -111,7 +119,7 @@
     <string name="dialog_new_group_title">新分组</string>
     <string name="dialog_rename_group_title">重命名分组</string>
     <string name="dialog_delete_group_title">删除分组“%1$s”？</string>
-    <string name="dialog_delete_group_body">其中的卡片会保留，并移至“其他”。</string>
+    <string name="dialog_delete_group_body">其中的卡片会保留，并仍显示在“全部”中。</string>
     <string name="dialog_reset_counter_title">重置计数器？</string>
     <string name="dialog_reset_counter_body">将从 0 重新开始计数。卡片的历史记录和上次时间会保留。</string>
 
@@ -123,7 +131,7 @@
         <item quantity="other">%d张卡片</item>
     </plurals>
     <string name="groups_new_placeholder">例如：浴室、宠物、健康</string>
-    <string name="groups_note">删除分组会保留其中的卡片；它们会移至“其他”，该版块仅在有卡片时显示。</string>
+    <string name="groups_note">删除分组会保留其中的卡片；它们仍会显示在“全部”中。</string>
     <string name="group_options">%1$s选项</string>
     <string name="group_drag">拖动以调整%1$s的顺序</string>
 
@@ -179,4 +187,77 @@
     <string name="widget_config_pick">在此小部件上显示</string>
     <string name="widget_preview_name">给植物浇水</string>
     <string name="widget_preview_elapsed">3天</string>
+
+    <!-- Icon palette -->
+    <string name="settings_icon_palette">图标集</string>
+    <string name="settings_icon_palette_hint">选择可为卡片设置的图标</string>
+    <string name="icon_palette_search">搜索图标</string>
+    <string name="icon_palette_clear_search">清除搜索</string>
+    <string name="icon_palette_yours">我的图标集</string>
+    <string name="icon_palette_hint">点按图标即可将其添加到图标集；再次点按即可移除。</string>
+    <string name="icon_palette_empty">图标集为空。点按下方的图标即可添加。</string>
+    <string name="icon_palette_results">搜索结果</string>
+    <string name="icon_palette_no_results">没有与“%1$s”匹配的图标。</string>
+    <string name="icon_palette_reset">恢复默认图标</string>
+    <string name="dialog_reset_palette_title">重置图标集？</string>
+    <string name="dialog_reset_palette_body">图标集将恢复为默认图标。卡片会保留现有图标。</string>
+    <string name="icon_palette_more">更多图标请前往“设置 › 图标集”</string>
+
+    <!-- Credits -->
+    <string name="settings_credits">致谢</string>
+    <string name="credits_intro">Time Clicker 基于以下开源项目构建。谢谢！点按任一项目即可查看其许可证。</string>
+    <string name="credit_icons">图标</string>
+    <string name="credit_ui">用户界面</string>
+    <string name="credit_androidx">Android 支持库</string>
+    <string name="credit_database">数据库</string>
+    <string name="credit_widgets">主屏幕小部件</string>
+    <string name="credit_photos">照片加载</string>
+    <string name="credit_reorder">拖动排序</string>
+    <string name="credit_kotlin">编程语言</string>
+    <string name="credits_website">网站</string>
+    <string name="action_close">关闭</string>
+
+    <!-- Icon categories, from Lucide -->
+    <string name="category_accessibility">无障碍</string>
+    <string name="category_account">账号与访问</string>
+    <string name="category_animals">动物</string>
+    <string name="category_arrows">箭头</string>
+    <string name="category_buildings">建筑</string>
+    <string name="category_charts">图表</string>
+    <string name="category_communication">通讯</string>
+    <string name="category_connectivity">连接</string>
+    <string name="category_cursors">光标</string>
+    <string name="category_design">设计</string>
+    <string name="category_development">编程与开发</string>
+    <string name="category_devices">设备</string>
+    <string name="category_emoji">表情符号</string>
+    <string name="category_files">文件</string>
+    <string name="category_finance">金融</string>
+    <string name="category_food_beverage">餐饮</string>
+    <string name="category_gaming">游戏</string>
+    <string name="category_home">家居</string>
+    <string name="category_layout">布局</string>
+    <string name="category_mail">邮件</string>
+    <string name="category_math">数学</string>
+    <string name="category_medical">医疗</string>
+    <string name="category_multimedia">多媒体</string>
+    <string name="category_nature">自然</string>
+    <string name="category_navigation">导航与地点</string>
+    <string name="category_notifications">通知</string>
+    <string name="category_people">人物</string>
+    <string name="category_photography">摄影</string>
+    <string name="category_science">科学</string>
+    <string name="category_seasons">季节</string>
+    <string name="category_security">安全</string>
+    <string name="category_shapes">形状</string>
+    <string name="category_shopping">购物</string>
+    <string name="category_social">社交</string>
+    <string name="category_sports">运动</string>
+    <string name="category_sustainability">可持续发展</string>
+    <string name="category_text">文本格式</string>
+    <string name="category_time">时间与日历</string>
+    <string name="category_tools">工具</string>
+    <string name="category_transportation">交通</string>
+    <string name="category_travel">旅行</string>
+    <string name="category_weather">天气</string>
 </resources>

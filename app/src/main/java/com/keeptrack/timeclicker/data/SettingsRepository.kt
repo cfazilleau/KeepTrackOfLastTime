@@ -39,6 +39,8 @@ data class AppSettings(
     val clickSound: Boolean = true,
     /** Show how many times each tile was pressed, on tiles and widgets. */
     val showCounter: Boolean = true,
+    /** The icons offered when editing a tile, in the order they were added. */
+    val iconPalette: List<TileIcon> = TileIcon.defaultPalette,
 )
 
 /**
@@ -64,6 +66,7 @@ class SettingsRepository(context: Context) {
         haptics = prefs.getBoolean(HAPTICS, true),
         clickSound = prefs.getBoolean(CLICK_SOUND, true),
         showCounter = prefs.getBoolean(SHOW_COUNTER, true),
+        iconPalette = prefs.getString(ICON_PALETTE, null)?.let { paletteFromKeys(it) } ?: TileIcon.defaultPalette,
     )
 
     private fun write(settings: AppSettings) = prefs.edit {
@@ -73,6 +76,7 @@ class SettingsRepository(context: Context) {
         putBoolean(HAPTICS, settings.haptics)
         putBoolean(CLICK_SOUND, settings.clickSound)
         putBoolean(SHOW_COUNTER, settings.showCounter)
+        putString(ICON_PALETTE, paletteToKeys(settings.iconPalette))
     }
 
     companion object {
@@ -83,5 +87,12 @@ class SettingsRepository(context: Context) {
         const val HAPTICS = "haptics"
         const val CLICK_SOUND = "click_sound"
         const val SHOW_COUNTER = "show_counter"
+        const val ICON_PALETTE = "icon_palette"
+
+        /** Icon names separated by commas (Lucide names have none); an empty palette is an empty string. */
+        fun paletteToKeys(palette: List<TileIcon>): String = palette.joinToString(",") { it.key }
+
+        fun paletteFromKeys(keys: String): List<TileIcon> =
+            keys.split(',').filter { it.isNotBlank() }.map { TileIcon(it) }.filter { !it.isNone }.distinct()
     }
 }

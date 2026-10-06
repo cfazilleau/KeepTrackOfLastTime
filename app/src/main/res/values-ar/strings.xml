@@ -2,7 +2,6 @@
 <resources>
     <!-- Home -->
     <string name="chip_all">الكل</string>
-    <string name="chip_other">أخرى</string>
     <string name="section_oldest">الأقدم: %1$s</string>
     <string name="empty_title">لا يوجد شيء قيد التتبع بعد</string>
     <string name="empty_body">انقر على + لإضافة شيء، مثل «سقيت النباتات». ثم انقر على بطاقته كلما فعلته مجددًا.</string>
@@ -55,6 +54,7 @@
     <string name="elapsed_two_units">%1$s و%2$s</string>
     <string name="elapsed_ago">منذ %1$s</string>
     <string name="elapsed_just_now">الآن</string>
+    <string name="elapsed_under_a_minute">منذ أقل من دقيقة</string>
     <plurals name="press_count">
         <item quantity="zero">ضُغط %d مرة</item>
         <item quantity="one">ضُغط مرة واحدة</item>
@@ -134,6 +134,14 @@
     <string name="icon_brush">فرشاة</string>
     <string name="icon_gauge">مقياس</string>
     <string name="icon_car">سيارة</string>
+    <string name="icon_house">منزل</string>
+    <string name="icon_sparkles">لمعان</string>
+    <string name="icon_laundry">غسالة</string>
+    <string name="icon_utensils">أدوات المائدة</string>
+    <string name="icon_dumbbell">دمبل</string>
+    <string name="icon_book">كتاب</string>
+    <string name="icon_wrench">مفتاح ربط</string>
+    <string name="icon_star">نجمة</string>
 
     <!-- Dialogs -->
     <string name="dialog_delete_title">حذف «%1$s»؟</string>
@@ -141,7 +149,7 @@
     <string name="dialog_new_group_title">مجموعة جديدة</string>
     <string name="dialog_rename_group_title">إعادة تسمية المجموعة</string>
     <string name="dialog_delete_group_title">حذف المجموعة «%1$s»؟</string>
-    <string name="dialog_delete_group_body">ستبقى بطاقاتها وتنتقل إلى «أخرى».</string>
+    <string name="dialog_delete_group_body">ستبقى بطاقاتها في «الكل».</string>
     <string name="dialog_reset_counter_title">إعادة ضبط العدّاد؟</string>
     <string name="dialog_reset_counter_body">سيبدأ من 0 مجددًا. يبقى سجلّ البطاقة وآخر وقت كما هما.</string>
 
@@ -158,7 +166,7 @@
         <item quantity="other">%d بطاقة</item>
     </plurals>
     <string name="groups_new_placeholder">مثال: الحمّام، الحيوانات الأليفة، الصحة</string>
-    <string name="groups_note">حذف المجموعة يُبقي بطاقاتها؛ إذ تنتقل إلى «أخرى»، وهو قسم لا يظهر إلا عندما يحتوي على بطاقات.</string>
+    <string name="groups_note">حذف المجموعة يُبقي بطاقاتها؛ إذ تبقى في «الكل».</string>
     <string name="group_options">خيارات %1$s</string>
     <string name="group_drag">اسحب لإعادة ترتيب %1$s</string>
 
@@ -214,4 +222,77 @@
     <string name="widget_config_pick">عرض في هذه الأداة</string>
     <string name="widget_preview_name">سقيت النباتات</string>
     <string name="widget_preview_elapsed">3 أيام</string>
+
+    <!-- Icon palette -->
+    <string name="settings_icon_palette">لوحة الأيقونات</string>
+    <string name="settings_icon_palette_hint">اختر الأيقونات التي يمكنك تعيينها للبطاقات</string>
+    <string name="icon_palette_search">البحث عن أيقونات</string>
+    <string name="icon_palette_clear_search">مسح البحث</string>
+    <string name="icon_palette_yours">لوحتك</string>
+    <string name="icon_palette_hint">انقر على أيقونة لإضافتها إلى لوحتك؛ وانقر عليها مجددًا لإزالتها.</string>
+    <string name="icon_palette_empty">لوحتك فارغة. انقر على الأيقونات أدناه لإضافتها.</string>
+    <string name="icon_palette_results">النتائج</string>
+    <string name="icon_palette_no_results">لا توجد أيقونات تطابق «%1$s».</string>
+    <string name="icon_palette_reset">استعادة الأيقونات الافتراضية</string>
+    <string name="dialog_reset_palette_title">إعادة ضبط لوحة الأيقونات؟</string>
+    <string name="dialog_reset_palette_body">ستعود إلى الأيقونات الافتراضية. تحتفظ البطاقات بأيقوناتها الحالية.</string>
+    <string name="icon_palette_more">المزيد من الأيقونات في الإعدادات › لوحة الأيقونات</string>
+
+    <!-- Credits -->
+    <string name="settings_credits">شكر وتقدير</string>
+    <string name="credits_intro">بُني Time Clicker باستخدام هذه المشاريع مفتوحة المصدر. شكرًا لكم! انقر على أحدها لقراءة ترخيصه.</string>
+    <string name="credit_icons">الأيقونات</string>
+    <string name="credit_ui">واجهة المستخدم</string>
+    <string name="credit_androidx">مكتبات دعم Android</string>
+    <string name="credit_database">قاعدة البيانات</string>
+    <string name="credit_widgets">أدوات الشاشة الرئيسية</string>
+    <string name="credit_photos">تحميل الصور</string>
+    <string name="credit_reorder">السحب لإعادة الترتيب</string>
+    <string name="credit_kotlin">لغة البرمجة</string>
+    <string name="credits_website">الموقع الإلكتروني</string>
+    <string name="action_close">إغلاق</string>
+
+    <!-- Icon categories, from Lucide -->
+    <string name="category_accessibility">إمكانية الوصول</string>
+    <string name="category_account">الحسابات والوصول</string>
+    <string name="category_animals">الحيوانات</string>
+    <string name="category_arrows">الأسهم</string>
+    <string name="category_buildings">المباني</string>
+    <string name="category_charts">الرسوم البيانية</string>
+    <string name="category_communication">التواصل</string>
+    <string name="category_connectivity">الاتصال</string>
+    <string name="category_cursors">المؤشرات</string>
+    <string name="category_design">التصميم</string>
+    <string name="category_development">البرمجة والتطوير</string>
+    <string name="category_devices">الأجهزة</string>
+    <string name="category_emoji">الرموز التعبيرية</string>
+    <string name="category_files">الملفات</string>
+    <string name="category_finance">المال</string>
+    <string name="category_food_beverage">الطعام والشراب</string>
+    <string name="category_gaming">الألعاب</string>
+    <string name="category_home">المنزل</string>
+    <string name="category_layout">التخطيط</string>
+    <string name="category_mail">البريد</string>
+    <string name="category_math">الرياضيات</string>
+    <string name="category_medical">الطب</string>
+    <string name="category_multimedia">الوسائط المتعددة</string>
+    <string name="category_nature">الطبيعة</string>
+    <string name="category_navigation">التنقل والأماكن</string>
+    <string name="category_notifications">الإشعارات</string>
+    <string name="category_people">الأشخاص</string>
+    <string name="category_photography">التصوير</string>
+    <string name="category_science">العلوم</string>
+    <string name="category_seasons">الفصول</string>
+    <string name="category_security">الأمان</string>
+    <string name="category_shapes">الأشكال</string>
+    <string name="category_shopping">التسوق</string>
+    <string name="category_social">التواصل الاجتماعي</string>
+    <string name="category_sports">الرياضة</string>
+    <string name="category_sustainability">الاستدامة</string>
+    <string name="category_text">تنسيق النص</string>
+    <string name="category_time">الوقت والتقويم</string>
+    <string name="category_tools">الأدوات</string>
+    <string name="category_transportation">النقل</string>
+    <string name="category_travel">السفر</string>
+    <string name="category_weather">الطقس</string>
 </resources>

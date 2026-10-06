@@ -2,7 +2,6 @@
 <resources>
     <!-- Home -->
     <string name="chip_all">Wszystko</string>
-    <string name="chip_other">Inne</string>
     <string name="section_oldest">najstarsze: %1$s</string>
     <string name="empty_title">Nic jeszcze nie śledzisz</string>
     <string name="empty_body">Stuknij +, aby coś dodać, np. „Podlanie roślin”. Stuknij kafelek za każdym razem, gdy zrobisz to ponownie.</string>
@@ -45,6 +44,7 @@
     <string name="elapsed_two_units">%1$s %2$s</string>
     <string name="elapsed_ago">%1$s temu</string>
     <string name="elapsed_just_now">Przed chwilą</string>
+    <string name="elapsed_under_a_minute">Mniej niż minutę temu</string>
     <plurals name="press_count">
         <item quantity="one">Naciśnięto %d raz</item>
         <item quantity="few">Naciśnięto %d razy</item>
@@ -122,6 +122,14 @@
     <string name="icon_brush">Pędzel</string>
     <string name="icon_gauge">Wskaźnik</string>
     <string name="icon_car">Samochód</string>
+    <string name="icon_house">Dom</string>
+    <string name="icon_sparkles">Iskierki</string>
+    <string name="icon_laundry">Pralka</string>
+    <string name="icon_utensils">Sztućce</string>
+    <string name="icon_dumbbell">Hantel</string>
+    <string name="icon_book">Książka</string>
+    <string name="icon_wrench">Klucz</string>
+    <string name="icon_star">Gwiazda</string>
 
     <!-- Dialogs -->
     <string name="dialog_delete_title">Usunąć „%1$s”?</string>
@@ -129,7 +137,7 @@
     <string name="dialog_new_group_title">Nowa grupa</string>
     <string name="dialog_rename_group_title">Zmień nazwę grupy</string>
     <string name="dialog_delete_group_title">Usunąć grupę „%1$s”?</string>
-    <string name="dialog_delete_group_body">Jej kafelki zostaną zachowane i trafią do „Inne”.</string>
+    <string name="dialog_delete_group_body">Jej kafelki zostaną zachowane i pozostaną w „Wszystko”.</string>
     <string name="dialog_reset_counter_title">Zresetować licznik?</string>
     <string name="dialog_reset_counter_body">Licznik zacznie od 0. Historia kafelka i ostatni raz zostaną zachowane.</string>
 
@@ -144,7 +152,7 @@
         <item quantity="other">%d kafelka</item>
     </plurals>
     <string name="groups_new_placeholder">np. Łazienka, Zwierzęta, Zdrowie</string>
-    <string name="groups_note">Usunięcie grupy zachowuje jej kafelki; trafiają do „Inne”, sekcji widocznej tylko wtedy, gdy ma kafelki.</string>
+    <string name="groups_note">Usunięcie grupy zachowuje jej kafelki; pozostają w „Wszystko”.</string>
     <string name="group_options">Opcje: %1$s</string>
     <string name="group_drag">Przeciągnij, aby przenieść: %1$s</string>
 
@@ -200,4 +208,77 @@
     <string name="widget_config_pick">Pokaż w tym widżecie</string>
     <string name="widget_preview_name">Podlanie roślin</string>
     <string name="widget_preview_elapsed">3 dni</string>
+
+    <!-- Icon palette -->
+    <string name="settings_icon_palette">Paleta ikon</string>
+    <string name="settings_icon_palette_hint">Wybierz, które ikony możesz przypisać kafelkowi</string>
+    <string name="icon_palette_search">Szukaj ikon</string>
+    <string name="icon_palette_clear_search">Wyczyść wyszukiwanie</string>
+    <string name="icon_palette_yours">Twoja paleta</string>
+    <string name="icon_palette_hint">Stuknij ikonę, aby dodać ją do palety; stuknij ponownie, aby ją usunąć.</string>
+    <string name="icon_palette_empty">Twoja paleta jest pusta. Stuknij ikony poniżej, aby je dodać.</string>
+    <string name="icon_palette_results">Wyniki</string>
+    <string name="icon_palette_no_results">Brak ikon pasujących do „%1$s”.</string>
+    <string name="icon_palette_reset">Przywróć domyślne ikony</string>
+    <string name="dialog_reset_palette_title">Zresetować paletę ikon?</string>
+    <string name="dialog_reset_palette_body">Paleta wróci do domyślnych ikon. Kafelki zachowają swoje obecne ikony.</string>
+    <string name="icon_palette_more">Więcej ikon w Ustawienia › Paleta ikon</string>
+
+    <!-- Credits -->
+    <string name="settings_credits">Podziękowania</string>
+    <string name="credits_intro">Time Clicker powstał dzięki tym projektom open source. Dziękujemy! Stuknij jeden z nich, aby przeczytać jego licencję.</string>
+    <string name="credit_icons">Ikony</string>
+    <string name="credit_ui">Interfejs użytkownika</string>
+    <string name="credit_androidx">Biblioteki wsparcia Androida</string>
+    <string name="credit_database">Baza danych</string>
+    <string name="credit_widgets">Widżety na ekranie głównym</string>
+    <string name="credit_photos">Wczytywanie zdjęć</string>
+    <string name="credit_reorder">Zmiana kolejności przeciąganiem</string>
+    <string name="credit_kotlin">Język programowania</string>
+    <string name="credits_website">Strona internetowa</string>
+    <string name="action_close">Zamknij</string>
+
+    <!-- Icon categories, from Lucide -->
+    <string name="category_accessibility">Ułatwienia dostępu</string>
+    <string name="category_account">Konta i dostęp</string>
+    <string name="category_animals">Zwierzęta</string>
+    <string name="category_arrows">Strzałki</string>
+    <string name="category_buildings">Budynki</string>
+    <string name="category_charts">Wykresy</string>
+    <string name="category_communication">Komunikacja</string>
+    <string name="category_connectivity">Łączność</string>
+    <string name="category_cursors">Kursory</string>
+    <string name="category_design">Projektowanie</string>
+    <string name="category_development">Programowanie</string>
+    <string name="category_devices">Urządzenia</string>
+    <string name="category_emoji">Emoji</string>
+    <string name="category_files">Pliki</string>
+    <string name="category_finance">Finanse</string>
+    <string name="category_food_beverage">Jedzenie i napoje</string>
+    <string name="category_gaming">Gry</string>
+    <string name="category_home">Dom</string>
+    <string name="category_layout">Układ</string>
+    <string name="category_mail">Poczta</string>
+    <string name="category_math">Matematyka</string>
+    <string name="category_medical">Medycyna</string>
+    <string name="category_multimedia">Multimedia</string>
+    <string name="category_nature">Przyroda</string>
+    <string name="category_navigation">Nawigacja i miejsca</string>
+    <string name="category_notifications">Powiadomienia</string>
+    <string name="category_people">Ludzie</string>
+    <string name="category_photography">Fotografia</string>
+    <string name="category_science">Nauka</string>
+    <string name="category_seasons">Pory roku</string>
+    <string name="category_security">Bezpieczeństwo</string>
+    <string name="category_shapes">Kształty</string>
+    <string name="category_shopping">Zakupy</string>
+    <string name="category_social">Społeczność</string>
+    <string name="category_sports">Sport</string>
+    <string name="category_sustainability">Zrównoważony rozwój</string>
+    <string name="category_text">Formatowanie tekstu</string>
+    <string name="category_time">Czas i kalendarz</string>
+    <string name="category_tools">Narzędzia</string>
+    <string name="category_transportation">Transport</string>
+    <string name="category_travel">Podróże</string>
+    <string name="category_weather">Pogoda</string>
 </resources>

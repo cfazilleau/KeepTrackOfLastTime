@@ -26,14 +26,12 @@ import java.io.File
 /** Which tiles the home screen shows. */
 sealed interface GroupFilter {
     data object All : GroupFilter
-    data object Ungrouped : GroupFilter
     data class Group(val id: Long) : GroupFilter
 
     /** Stable and saveable, for lazy layout keys. */
     val key: String
         get() = when (this) {
             All -> "all"
-            Ungrouped -> "other"
             is Group -> "group-$id"
         }
 }
@@ -42,9 +40,7 @@ data class FilterChipUi(val filter: GroupFilter, val label: String?, val count: 
 
 sealed interface SectionTitle {
     data class Group(val name: String) : SectionTitle
-    /** Tiles without a group, once groups exist. */
-    data object Other : SectionTitle
-    /** No groups exist yet: a plain grid without a heading. */
+    /** Tiles without a group: a plain grid without a heading, only on the All page. */
     data object None : SectionTitle
 }
 
@@ -56,7 +52,7 @@ data class PageUi(val chip: FilterChipUi, val sections: List<SectionUi>)
 data class HomeUiState(
     val trackerCount: Int,
     val groups: List<TrackerGroup>,
-    /** In chip order: All, each group, then Other. */
+    /** In chip order: All, then each group. */
     val pages: List<PageUi>,
     /** The page shown; falls back to All when its group is deleted. */
     val filter: GroupFilter,
@@ -100,7 +96,7 @@ class HomeViewModel(private val repository: TrackerRepository) : ViewModel() {
         name = "",
         groupId = (state.value?.filter as? GroupFilter.Group)?.id,
         color = repository.nextColor(),
-        icon = TileIcon.CHECK,
+        icon = TileIcon.DEFAULT,
         size = TileSize.SMALL,
         photo = null,
     )
@@ -135,30 +131,25 @@ class HomeViewModel(private val repository: TrackerRepository) : ViewModel() {
     private fun buildState(trackers: List<Tracker>, groups: List<TrackerGroup>, requested: GroupFilter): HomeUiState {
         val byGroup = trackers.groupBy { it.groupId }
         val ungrouped = byGroup[null].orEmpty()
-        // A deleted group, or "Other" once it empties, falls back to everything.
+        // A deleted group falls back to everything.
         val current = when (requested) {
             is GroupFilter.Group -> if (groups.any { it.id == requested.id }) requested else GroupFilter.All
-            GroupFilter.Ungrouped -> if (ungrouped.isNotEmpty() && groups.isNotEmpty()) requested else GroupFilter.All
             GroupFilter.All -> requested
         }
 
-        val otherTitle = if (groups.isEmpty()) SectionTitle.None else SectionTitle.Other
         val pages = buildList {
+            // Tiles without a group only show on All, first and without a heading, so they don't read as part of a group.
             val all = buildList {
+                if (ungrouped.isNotEmpty()) add(SectionUi("ungrouped", SectionTitle.None, ungrouped))
                 groups.forEach { g ->
                     byGroup[g.id]?.let { add(SectionUi("group-${g.id}", SectionTitle.Group(g.name), it)) }
                 }
-                if (ungrouped.isNotEmpty()) add(SectionUi("other", otherTitle, ungrouped))
             }
             add(PageUi(FilterChipUi(GroupFilter.All, null, trackers.size), all))
             groups.forEach { g ->
                 val inGroup = byGroup[g.id].orEmpty()
                 val section = SectionUi("group-${g.id}", SectionTitle.Group(g.name), inGroup)
                 add(PageUi(FilterChipUi(GroupFilter.Group(g.id), g.name, inGroup.size), listOf(section)))
-            }
-            if (groups.isNotEmpty() && ungrouped.isNotEmpty()) {
-                val section = SectionUi("other", otherTitle, ungrouped)
-                add(PageUi(FilterChipUi(GroupFilter.Ungrouped, null, ungrouped.size), listOf(section)))
             }
         }
         return HomeUiState(trackers.size, groups, pages, current)
