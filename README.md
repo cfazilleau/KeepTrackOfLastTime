@@ -127,7 +127,7 @@ Then add these repository secrets (Settings → Secrets and variables → Action
 | `KEYSTORE_BASE64` | `base64 -w0 release.jks` (on macOS: `base64 -i release.jks`) |
 | `KEYSTORE_PASSWORD` | the keystore password |
 | `KEY_ALIAS` | `timeclicker` (whatever alias you used) |
-| `KEY_PASSWORD` | the key password |
+| `KEY_PASSWORD` | the key password (optional: defaults to the keystore password, which is what `keytool` uses by default) |
 
 Back up `release.jks` and its passwords outside the repo. If you lose them, you can't ship updates to an existing install.
 `*.jks` is git-ignored.
