@@ -148,7 +148,6 @@ class BackupRepository(
         .put(SettingsRepository.HAPTICS, s.haptics)
         .put(SettingsRepository.CLICK_SOUND, s.clickSound)
         .put(SettingsRepository.SHOW_COUNTER, s.showCounter)
-        .put(SettingsRepository.UNDO_AFTER_TAP, s.undoAfterTap)
 
     /** Missing keys keep their default. */
     private fun settingsFromJson(json: JSONObject): AppSettings {
@@ -160,7 +159,6 @@ class BackupRepository(
             haptics = json.optBoolean(SettingsRepository.HAPTICS, d.haptics),
             clickSound = json.optBoolean(SettingsRepository.CLICK_SOUND, d.clickSound),
             showCounter = json.optBoolean(SettingsRepository.SHOW_COUNTER, d.showCounter),
-            undoAfterTap = json.optBoolean(SettingsRepository.UNDO_AFTER_TAP, d.undoAfterTap),
         )
     }
 

@@ -181,11 +181,9 @@
     <string name="settings_haptics">الاهتزاز عند النقر</string>
     <string name="settings_haptics_hint">اهتزاز قصير عند النقر على بطاقة أو الضغط عليها مطولًا.</string>
     <string name="settings_click_sound">صوت النقر</string>
-    <string name="settings_click_sound_hint">نقرة قصيرة عند النقر على بطاقة. يكون صامتًا عندما يكون هاتفك في الوضع الصامت.</string>
+    <string name="settings_click_sound_hint">نقرة قصيرة عند النقر على بطاقة أو أداة. تُشغَّل بمستوى صوت الوسائط، حتى عندما يكون هاتفك في الوضع الصامت.</string>
     <string name="settings_counter">إظهار عدّاد الضغطات</string>
     <string name="settings_counter_hint">عدد مرات الضغط على كل بطاقة، في البطاقات والأدوات.</string>
-    <string name="settings_undo">عرض خيار التراجع</string>
-    <string name="settings_undo_hint">بعد النقر على بطاقة، تظهر رسالة مع زر «تراجع».</string>
     <string name="settings_section_general">عام</string>
     <string name="settings_groups_hint">إنشاء المجموعات وإعادة تسميتها وترتيبها وحذفها.</string>
     <string name="settings_language">اللغة</string>

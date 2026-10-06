@@ -160,11 +160,9 @@
     <string name="settings_haptics">Vibrar al tocar</string>
     <string name="settings_haptics_hint">Una vibración breve al tocar o mantener pulsada una tarjeta.</string>
     <string name="settings_click_sound">Sonido de clic</string>
-    <string name="settings_click_sound_hint">Un clic breve al tocar una tarjeta. No suena si tu teléfono está en silencio.</string>
+    <string name="settings_click_sound_hint">Un clic breve al tocar una tarjeta o un widget. Suena con el volumen multimedia, aunque tu teléfono esté en silencio.</string>
     <string name="settings_counter">Mostrar contador de pulsaciones</string>
     <string name="settings_counter_hint">Cuántas veces se ha pulsado cada tarjeta, en las tarjetas y los widgets.</string>
-    <string name="settings_undo">Ofrecer deshacer</string>
-    <string name="settings_undo_hint">Tras tocar una tarjeta, muestra un mensaje con un botón Deshacer.</string>
     <string name="settings_section_general">General</string>
     <string name="settings_groups_hint">Crea, cambia el nombre, reordena y elimina grupos.</string>
     <string name="settings_language">Idioma</string>

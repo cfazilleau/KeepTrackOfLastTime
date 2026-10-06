@@ -110,14 +110,12 @@ fun HomeScreen(
     // The draft open in the edit sheet, and the saved tile it edits (null for a new one).
     var editing by remember { mutableStateOf<Pair<TileDraft, Tracker?>?>(null) }
 
-    val undoAfterTap by rememberUpdatedState(TimeClickerTheme.settings.undoAfterTap)
     val clickSound = TimeClickerTheme.settings.clickSound
     // Loaded ahead of the first tap, which would otherwise be silent.
     LaunchedEffect(clickSound) { if (clickSound) TapSound.preload(context) }
     LaunchedEffect(viewModel) {
         // collectLatest: a newer reset replaces the snackbar of an older one.
         viewModel.resets.collectLatest { reset ->
-            if (!undoAfterTap) return@collectLatest
             val result = snackbarHostState.showSnackbar(
                 message = resources.getString(R.string.snackbar_reset, reset.trackerName),
                 actionLabel = resources.getString(R.string.action_undo),

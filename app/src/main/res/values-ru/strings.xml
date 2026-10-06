@@ -167,11 +167,9 @@
     <string name="settings_haptics">Вибрация при нажатии</string>
     <string name="settings_haptics_hint">Короткая вибрация, когда вы нажимаете на плитку или удерживаете её.</string>
     <string name="settings_click_sound">Звук нажатия</string>
-    <string name="settings_click_sound_hint">Короткий щелчок, когда вы нажимаете на плитку. Не звучит, если на телефоне включён беззвучный режим.</string>
+    <string name="settings_click_sound_hint">Короткий щелчок, когда вы нажимаете на плитку или виджет. Звучит с громкостью медиа, даже если на телефоне включён беззвучный режим.</string>
     <string name="settings_counter">Показывать счётчик нажатий</string>
     <string name="settings_counter_hint">Сколько раз нажимали на каждую плитку — на плитках и виджетах.</string>
-    <string name="settings_undo">Предлагать отмену</string>
-    <string name="settings_undo_hint">После нажатия на плитку показывать сообщение с кнопкой «Отменить».</string>
     <string name="settings_section_general">Общие</string>
     <string name="settings_groups_hint">Создание, переименование, сортировка и удаление групп.</string>
     <string name="settings_language">Язык</string>

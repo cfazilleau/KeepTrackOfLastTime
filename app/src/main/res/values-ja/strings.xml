@@ -146,11 +146,9 @@
     <string name="settings_haptics">タップ時に振動</string>
     <string name="settings_haptics_hint">タイルをタップまたは長押ししたときに短く振動します。</string>
     <string name="settings_click_sound">クリック音</string>
-    <string name="settings_click_sound_hint">タイルをタップしたときに短いクリック音を鳴らします。マナーモード中は鳴りません。</string>
+    <string name="settings_click_sound_hint">タイルやウィジェットをタップしたときに短いクリック音を鳴らします。メディアの音量で鳴り、マナーモード中も鳴ります。</string>
     <string name="settings_counter">押した回数を表示</string>
     <string name="settings_counter_hint">各タイルを押した回数をタイルとウィジェットに表示します。</string>
-    <string name="settings_undo">元に戻す操作を表示</string>
-    <string name="settings_undo_hint">タイルをタップした後、「元に戻す」ボタン付きのメッセージを表示します。</string>
     <string name="settings_section_general">一般</string>
     <string name="settings_groups_hint">グループの作成、名前の変更、並べ替え、削除を行います。</string>
     <string name="settings_language">言語</string>

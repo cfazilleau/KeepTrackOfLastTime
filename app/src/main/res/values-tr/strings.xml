@@ -153,11 +153,9 @@
     <string name="settings_haptics">Dokununca titret</string>
     <string name="settings_haptics_hint">Bir kutucuğa dokunduğunuzda veya basılı tuttuğunuzda kısa bir titreşim.</string>
     <string name="settings_click_sound">Tıklama sesi</string>
-    <string name="settings_click_sound_hint">Bir kutucuğa dokunduğunuzda kısa bir tıklama sesi. Telefonunuz sessizdeyken çalmaz.</string>
+    <string name="settings_click_sound_hint">Bir kutucuğa veya widget\'a dokunduğunuzda kısa bir tıklama sesi. Telefonunuz sessizdeyken bile medya ses düzeyinde çalar.</string>
     <string name="settings_counter">Basma sayacını göster</string>
     <string name="settings_counter_hint">Her kutucuğa kaç kez basıldığı; kutucuklarda ve widget’larda.</string>
-    <string name="settings_undo">Geri almayı öner</string>
-    <string name="settings_undo_hint">Bir kutucuğa dokunduktan sonra Geri al düğmesi içeren bir mesaj gösterir.</string>
     <string name="settings_section_general">Genel</string>
     <string name="settings_groups_hint">Grup oluşturun, yeniden adlandırın, sıralayın ve silin.</string>
     <string name="settings_language">Dil</string>

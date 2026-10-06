@@ -1,11 +1,14 @@
 package com.keeptrack.timeclicker.ui.components
 
-import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.LinearOutSlowInEasing
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.InteractionSource
 import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.interaction.collectIsPressedAsState
+import androidx.compose.foundation.interaction.PressInteraction
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -22,7 +25,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -43,14 +46,44 @@ import androidx.compose.ui.unit.dp
 import com.keeptrack.timeclicker.ui.theme.TimeClickerTheme
 import com.keeptrack.timeclicker.ui.theme.pressedIn
 import com.keeptrack.timeclicker.ui.theme.raised
+import kotlinx.coroutines.flow.collectLatest
+import kotlin.math.roundToInt
 
-/** Animated 0..1 press amount for the neumorphic "sink in" effect. */
+/**
+ * Animated 0..1 press amount for the neumorphic "sink in" effect.
+ *
+ * A quick tap is pressed and released in the same instant (in a scrolling list the press is only
+ * reported on release), so a released press first finishes sinking in, then comes back up:
+ * every tap shows the whole effect, not only a long hold.
+ */
 @Composable
-fun rememberPressAmount(interaction: MutableInteractionSource): () -> Float {
-    val pressed by interaction.collectIsPressedAsState()
-    val amount by animateFloatAsState(if (pressed) 1f else 0f, tween(120), label = "press")
-    return { amount }
+fun rememberPressAmount(interaction: InteractionSource): () -> Float {
+    val amount = remember { Animatable(0f) }
+    LaunchedEffect(interaction) {
+        val presses = mutableSetOf<PressInteraction.Press>()
+        // Latest: a new press interrupts the release animation, and a release the press one.
+        interaction.interactions.collectLatest { event ->
+            when (event) {
+                is PressInteraction.Press -> presses += event
+                is PressInteraction.Release -> presses -= event.press
+                // Cancelled (e.g. the list scrolled instead): no click, so no need to finish the press.
+                is PressInteraction.Cancel -> {
+                    presses -= event.press
+                    if (presses.isEmpty()) amount.animateTo(0f, tween(PressOutMillis, easing = FastOutSlowInEasing))
+                    return@collectLatest
+                }
+                else -> return@collectLatest
+            }
+            val remaining = (PressInMillis * (1f - amount.value)).roundToInt()
+            amount.animateTo(1f, tween(remaining, easing = LinearOutSlowInEasing))
+            if (presses.isEmpty()) amount.animateTo(0f, tween(PressOutMillis, easing = FastOutSlowInEasing))
+        }
+    }
+    return { amount.value }
 }
+
+private const val PressInMillis = 90
+private const val PressOutMillis = 220
 
 /** A button raised off the ground that sinks in while pressed. */
 @Composable

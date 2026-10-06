@@ -9,15 +9,17 @@ import androidx.glance.action.ActionParameters
 import androidx.glance.appwidget.GlanceAppWidget
 import androidx.glance.appwidget.GlanceAppWidgetReceiver
 import androidx.glance.appwidget.action.ActionCallback
+import com.keeptrack.timeclicker.ui.components.TapSound
 
 class TileWidgetReceiver : GlanceAppWidgetReceiver() {
     override val glanceAppWidget: GlanceAppWidget = TileWidget()
 }
 
-/** Tapping a widget marks its tile as done now, like tapping the tile in the app. */
+/** Tapping a widget marks its tile as done now, like tapping the tile in the app (click sound included). */
 class MarkDoneAction : ActionCallback {
     override suspend fun onAction(context: Context, glanceId: GlanceId, parameters: ActionParameters) {
         val trackerId = parameters[TileWidgets.TrackerIdParam] ?: return
+        if (context.appSettings.clickSound) TapSound.play(context)
         context.trackerRepository.markDone(trackerId)
         TileWidgets.refresh(context)
     }

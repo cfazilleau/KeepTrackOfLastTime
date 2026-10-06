@@ -146,11 +146,9 @@
     <string name="settings_haptics">Getar saat diketuk</string>
     <string name="settings_haptics_hint">Getaran singkat saat kamu mengetuk atau menahan kartu.</string>
     <string name="settings_click_sound">Suara klik</string>
-    <string name="settings_click_sound_hint">Bunyi klik singkat saat kamu mengetuk kartu. Tidak berbunyi saat ponsel dalam mode senyap.</string>
+    <string name="settings_click_sound_hint">Bunyi klik singkat saat kamu mengetuk kartu atau widget. Berbunyi dengan volume media, meski ponsel dalam mode senyap.</string>
     <string name="settings_counter">Tampilkan penghitung tekan</string>
     <string name="settings_counter_hint">Berapa kali setiap kartu ditekan, di kartu dan widget.</string>
-    <string name="settings_undo">Tawarkan urungkan</string>
-    <string name="settings_undo_hint">Setelah mengetuk kartu, tampilkan pesan dengan tombol Urungkan.</string>
     <string name="settings_section_general">Umum</string>
     <string name="settings_groups_hint">Buat, ganti nama, ubah urutan, dan hapus grup.</string>
     <string name="settings_language">Bahasa</string>

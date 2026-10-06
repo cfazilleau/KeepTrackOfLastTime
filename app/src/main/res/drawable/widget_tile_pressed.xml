@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Drawn over a widget tile: it darkens while pressed, like the in-app tile sinking in.
+  The slow fade-out keeps a quick tap visible after the finger is lifted.
+-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:enterFadeDuration="60"
+    android:exitFadeDuration="260">
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="#33000000" />
+        </shape>
+    </item>
+    <item android:drawable="@android:color/transparent" />
+</selector>

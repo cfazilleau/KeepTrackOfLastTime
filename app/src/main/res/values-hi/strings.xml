@@ -153,11 +153,9 @@
     <string name="settings_haptics">टैप करने पर वाइब्रेट करें</string>
     <string name="settings_haptics_hint">किसी टाइल पर टैप करने या उसे दबाकर रखने पर हल्का वाइब्रेशन।</string>
     <string name="settings_click_sound">क्लिक की आवाज़</string>
-    <string name="settings_click_sound_hint">किसी टाइल पर टैप करने पर हल्की क्लिक की आवाज़। फ़ोन साइलेंट पर हो तो आवाज़ नहीं आती।</string>
+    <string name="settings_click_sound_hint">किसी टाइल या विजेट पर टैप करने पर हल्की क्लिक की आवाज़। मीडिया वॉल्यूम पर बजती है, फ़ोन साइलेंट पर हो तब भी।</string>
     <string name="settings_counter">दबाने की गिनती दिखाएं</string>
     <string name="settings_counter_hint">हर टाइल कितनी बार दबाई गई, यह टाइलों और विजेट पर दिखता है।</string>
-    <string name="settings_undo">वापस लेने का विकल्प दें</string>
-    <string name="settings_undo_hint">टाइल पर टैप करने के बाद “वापस लें” बटन के साथ एक मैसेज दिखाएं।</string>
     <string name="settings_section_general">सामान्य</string>
     <string name="settings_groups_hint">समूह बनाएं, उनका नाम बदलें, क्रम बदलें और उन्हें मिटाएं।</string>
     <string name="settings_language">भाषा</string>

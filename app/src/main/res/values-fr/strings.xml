@@ -160,11 +160,9 @@
     <string name="settings_haptics">Vibrer au toucher</string>
     <string name="settings_haptics_hint">Une courte vibration quand vous touchez ou maintenez une tuile.</string>
     <string name="settings_click_sound">Son de clic</string>
-    <string name="settings_click_sound_hint">Un petit clic quand vous touchez une tuile. Muet quand le téléphone est en silencieux.</string>
+    <string name="settings_click_sound_hint">Un petit clic quand vous touchez une tuile ou un widget. Joué au volume multimédia, même quand le téléphone est en silencieux.</string>
     <string name="settings_counter">Afficher le compteur d’appuis</string>
     <string name="settings_counter_hint">Le nombre d’appuis sur chaque tuile, sur les tuiles et les widgets.</string>
-    <string name="settings_undo">Proposer d’annuler</string>
-    <string name="settings_undo_hint">Après avoir touché une tuile, affiche un message avec un bouton Annuler.</string>
     <string name="settings_section_general">Général</string>
     <string name="settings_groups_hint">Créer, renommer, réorganiser et supprimer des groupes.</string>
     <string name="settings_language">Langue</string>
