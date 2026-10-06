@@ -206,6 +206,7 @@
 
     <!-- Credits -->
     <string name="settings_credits">Kredit</string>
+    <string name="settings_credits_hint">Proyek open source dan lisensinya</string>
     <string name="credits_intro">Time Clicker dibuat dengan proyek open source berikut. Terima kasih! Ketuk salah satunya untuk membaca lisensinya.</string>
     <string name="credit_icons">Ikon</string>
     <string name="credit_ui">Antarmuka pengguna</string>

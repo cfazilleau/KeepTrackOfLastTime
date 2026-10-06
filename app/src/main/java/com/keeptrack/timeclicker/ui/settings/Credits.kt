@@ -3,13 +3,24 @@ package com.keeptrack.timeclicker.ui.settings
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import androidx.annotation.StringRes
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.WindowInsetsSides
+import androidx.compose.foundation.layout.asPaddingValues
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.navigationBars
+import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawing
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.MaterialTheme
@@ -21,6 +32,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
@@ -30,6 +42,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.net.toUri
 import com.keeptrack.timeclicker.R
+import com.keeptrack.timeclicker.ui.components.NeuIconButton
+import com.keeptrack.timeclicker.ui.theme.AppIcons
 import com.keeptrack.timeclicker.ui.theme.TimeClickerTheme
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -71,26 +85,55 @@ private val credits = listOf(
 
 /** The open-source projects the app is built with; tapping one shows its licence. */
 @Composable
-internal fun CreditsSection() {
+fun CreditsScreen(onBack: () -> Unit) {
+    val palette = TimeClickerTheme.palette
     var shown by remember { mutableStateOf<Credit?>(null) }
-    Section(stringResource(R.string.settings_credits)) {
-        Text(
-            stringResource(R.string.credits_intro),
-            style = MaterialTheme.typography.bodySmall,
-            color = TimeClickerTheme.palette.muted,
-            modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 14.dp, bottom = 4.dp),
-        )
-        credits.forEachIndexed { index, credit ->
-            if (index > 0) RowDivider()
-            Column(
-                Modifier
-                    .fillMaxWidth()
-                    .clickable(role = Role.Button) { shown = credit }
-                    .padding(horizontal = 16.dp, vertical = 12.dp),
-                verticalArrangement = Arrangement.spacedBy(2.dp),
-            ) {
-                RowTexts(credit.name, stringResource(credit.usedFor))
-                Text(credit.licence, style = MaterialTheme.typography.labelSmall, color = TimeClickerTheme.palette.muted)
+    Column(
+        Modifier
+            .fillMaxSize()
+            .background(palette.ground)
+            .windowInsetsPadding(WindowInsets.safeDrawing.only(WindowInsetsSides.Top + WindowInsetsSides.Horizontal)),
+    ) {
+        Row(
+            Modifier.fillMaxWidth().padding(start = 20.dp, end = 20.dp, top = 20.dp, bottom = 8.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(14.dp),
+        ) {
+            NeuIconButton(AppIcons.Back, stringResource(R.string.action_back), onBack, size = 44.dp, shape = RoundedCornerShape(15.dp))
+            Text(stringResource(R.string.settings_credits), style = MaterialTheme.typography.headlineSmall, color = palette.text)
+        }
+        Column(
+            Modifier
+                .fillMaxSize()
+                .verticalScroll(rememberScrollState())
+                .padding(
+                    start = 20.dp,
+                    end = 20.dp,
+                    top = 16.dp,
+                    bottom = 40.dp + WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding(),
+                ),
+            verticalArrangement = Arrangement.spacedBy(16.dp),
+        ) {
+            Text(
+                stringResource(R.string.credits_intro),
+                style = MaterialTheme.typography.bodySmall,
+                color = palette.muted,
+                modifier = Modifier.padding(horizontal = 4.dp),
+            )
+            Section(title = null) {
+                credits.forEachIndexed { index, credit ->
+                    if (index > 0) RowDivider()
+                    Column(
+                        Modifier
+                            .fillMaxWidth()
+                            .clickable(role = Role.Button) { shown = credit }
+                            .padding(horizontal = 16.dp, vertical = 12.dp),
+                        verticalArrangement = Arrangement.spacedBy(2.dp),
+                    ) {
+                        RowTexts(credit.name, stringResource(credit.usedFor))
+                        Text(credit.licence, style = MaterialTheme.typography.labelSmall, color = palette.muted)
+                    }
+                }
             }
         }
     }

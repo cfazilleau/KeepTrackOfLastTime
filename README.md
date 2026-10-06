@@ -21,7 +21,7 @@ The number in the tile's bottom-right corner counts how many times it was presse
 - **Settings** (gear button, next to the title): theme (system / light / dark), system colours, time shown as
   "3 days ago" or as a date and time, vibration, click sound, press counter, **icon palette**, groups, language,
   **export / import** of everything (tiles, groups, history, photos, settings) as one `.zip` file,
-  and credits for the open-source projects the app uses, with their licences.
+  and a **Credits** page for the open-source projects the app uses, with their licences.
 - **Icon palette** (Settings): every [Lucide](https://lucide.dev) icon (about 1,900), by category, with search
   (in English, and in French when the app is in French: "poubelle", "anniversaire", "lave-linge").
   Tap icons to add them to, or remove them from, the icons offered when editing a tile.
