@@ -6,8 +6,8 @@
     <string name="empty_title">Nada acompanhado ainda</string>
     <string name="empty_body">Toque em + para adicionar algo, como “Regar as plantas”. Toque no card sempre que fizer de novo.</string>
     <string name="empty_group">Ainda não há cards neste grupo. Toque em + para adicionar um.</string>
-    <string name="snackbar_reset">“%1$s” marcado como feito agora</string>
     <string name="tile_click_label">Marcar como feito agora</string>
+    <string name="tile_undo_hint">Toque de novo para desfazer</string>
     <string name="tile_long_click_label">Editar card</string>
 
     <!-- Elapsed time -->

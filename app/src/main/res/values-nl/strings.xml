@@ -6,8 +6,8 @@
     <string name="empty_title">Nog niets bijgehouden</string>
     <string name="empty_body">Tik op + om iets toe te voegen, zoals „Planten water gegeven”. Tik op de tegel telkens als je het weer doet.</string>
     <string name="empty_group">Nog geen tegels in deze groep. Tik op + om er een toe te voegen.</string>
-    <string name="snackbar_reset">„%1$s” teruggezet naar nu</string>
     <string name="tile_click_label">Nu als gedaan markeren</string>
+    <string name="tile_undo_hint">Tik nogmaals: ongedaan maken</string>
     <string name="tile_long_click_label">Tegel bewerken</string>
 
     <!-- Elapsed time -->

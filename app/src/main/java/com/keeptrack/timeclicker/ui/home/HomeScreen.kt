@@ -39,13 +39,7 @@ import androidx.compose.foundation.relocation.bringIntoViewRequester
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Snackbar
-import androidx.compose.material3.SnackbarDuration
-import androidx.compose.material3.SnackbarHost
-import androidx.compose.material3.SnackbarHostState
-import androidx.compose.material3.SnackbarResult
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -72,6 +66,7 @@ import androidx.compose.ui.util.lerp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.keeptrack.timeclicker.R
+import com.keeptrack.timeclicker.data.PendingUndo
 import com.keeptrack.timeclicker.data.Tracker
 import com.keeptrack.timeclicker.ui.components.NeuButton
 import com.keeptrack.timeclicker.ui.components.NeuIconButton
@@ -82,7 +77,6 @@ import com.keeptrack.timeclicker.ui.time.TimeUnit
 import com.keeptrack.timeclicker.ui.time.format
 import com.keeptrack.timeclicker.ui.time.rememberNow
 import com.keeptrack.timeclicker.widget.TileWidgets
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import java.io.File
 import kotlin.math.absoluteValue
@@ -101,9 +95,8 @@ fun HomeScreen(
     viewModel: HomeViewModel = viewModel(factory = HomeViewModel.Factory),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
+    val undoable by viewModel.undoable.collectAsStateWithLifecycle()
     val palette = TimeClickerTheme.palette
-    val snackbarHostState = remember { SnackbarHostState() }
-    val resources = LocalResources.current
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
 
@@ -113,17 +106,6 @@ fun HomeScreen(
     val clickSound = TimeClickerTheme.settings.clickSound
     // Loaded ahead of the first tap, which would otherwise be silent.
     LaunchedEffect(clickSound) { if (clickSound) TapSound.preload(context) }
-    LaunchedEffect(viewModel) {
-        // collectLatest: a newer reset replaces the snackbar of an older one.
-        viewModel.resets.collectLatest { reset ->
-            val result = snackbarHostState.showSnackbar(
-                message = resources.getString(R.string.snackbar_reset, reset.trackerName),
-                actionLabel = resources.getString(R.string.action_undo),
-                duration = SnackbarDuration.Long,
-            )
-            if (result == SnackbarResult.ActionPerformed) viewModel.undoReset(reset)
-        }
-    }
 
     Box(Modifier.fillMaxSize().background(palette.ground)) {
         Column(Modifier.fillMaxSize().windowInsetsPadding(WindowInsets.safeDrawing.only(WindowInsetsSides.Top + WindowInsetsSides.Horizontal))) {
@@ -131,12 +113,14 @@ fun HomeScreen(
             state?.let { s ->
                 GroupPager(
                     state = s,
+                    undoable = undoable,
                     onSelect = viewModel::select,
                     onManageGroups = onManageGroups,
                     photoFile = viewModel::photoFile,
                     onClick = { tracker ->
-                        if (clickSound) TapSound.play(context)
-                        viewModel.markDone(tracker)
+                        // The click is for marking done; an undo stays quiet.
+                        if (clickSound && tracker.id !in undoable) TapSound.play(context)
+                        viewModel.press(tracker)
                     },
                     onLongClick = { editing = TileDraft.of(it) to it },
                 )
@@ -150,23 +134,6 @@ fun HomeScreen(
                 .windowInsetsPadding(WindowInsets.navigationBars)
                 .padding(bottom = 20.dp),
         )
-
-        // Above the add button.
-        SnackbarHost(
-            snackbarHostState,
-            Modifier
-                .align(Alignment.BottomCenter)
-                .windowInsetsPadding(WindowInsets.navigationBars)
-                .padding(start = 16.dp, end = 16.dp, bottom = 20.dp + AddButtonSize + 12.dp),
-        ) { data ->
-            Snackbar(
-                snackbarData = data,
-                shape = RoundedCornerShape(18.dp),
-                containerColor = palette.toastBackground,
-                contentColor = palette.toastContent,
-                actionColor = palette.toastAction,
-            )
-        }
     }
 
     editing?.let { (draft, saved) ->
@@ -215,6 +182,7 @@ private fun AddButton(onClick: () -> Unit, modifier: Modifier = Modifier) {
 @Composable
 private fun GroupPager(
     state: HomeUiState,
+    undoable: Map<Long, PendingUndo>,
     onSelect: (GroupFilter) -> Unit,
     onManageGroups: () -> Unit,
     photoFile: (String) -> File,
@@ -268,7 +236,7 @@ private fun GroupPager(
                 if (state.trackerCount == 0) {
                     EmptyState(Modifier.fillMaxSize())
                 } else {
-                    PageList(page, photoFile, onClick, onLongClick)
+                    PageList(page, undoable, photoFile, onClick, onLongClick)
                 }
             }
         }
@@ -281,6 +249,7 @@ private fun pageDistance(state: PagerState, page: Int): Float =
 @Composable
 private fun PageList(
     page: PageUi,
+    undoable: Map<Long, PendingUndo>,
     photoFile: (String) -> File,
     onClick: (Tracker) -> Unit,
     onLongClick: (Tracker) -> Unit,
@@ -314,6 +283,7 @@ private fun PageList(
         items(page.sections, key = { it.key }) { section ->
             Section(
                 section = section,
+                undoable = undoable,
                 photoFile = photoFile,
                 onClick = onClick,
                 onLongClick = onLongClick,
@@ -417,6 +387,7 @@ private fun FilterChips(
 @Composable
 private fun Section(
     section: SectionUi,
+    undoable: Map<Long, PendingUndo>,
     photoFile: (String) -> File,
     onClick: (Tracker) -> Unit,
     onLongClick: (Tracker) -> Unit,
@@ -456,6 +427,7 @@ private fun Section(
             ) { tracker ->
                 TileCard(
                     tracker = tracker,
+                    undoUntil = undoable[tracker.id]?.until,
                     photoFile = photoFile,
                     onClick = { onClick(tracker) },
                     onLongClick = { onLongClick(tracker) },

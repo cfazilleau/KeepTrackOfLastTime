@@ -7,19 +7,18 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.keeptrack.timeclicker.TimeClickerApplication
+import com.keeptrack.timeclicker.data.PendingUndo
 import com.keeptrack.timeclicker.data.SettingsRepository
 import com.keeptrack.timeclicker.data.TileIcon
+import com.keeptrack.timeclicker.data.TilePresses
 import com.keeptrack.timeclicker.data.TileSize
 import com.keeptrack.timeclicker.data.Tracker
 import com.keeptrack.timeclicker.data.TrackerGroup
 import com.keeptrack.timeclicker.data.TrackerRepository
-import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import java.io.File
@@ -61,12 +60,10 @@ data class HomeUiState(
     val selectedPage: Int get() = pages.indexOfFirst { it.chip.filter == filter }.coerceAtLeast(0)
 }
 
-/** Emitted after a card is reset so the UI can offer an undo. */
-data class ResetDone(val trackerName: String, val eventId: Long)
-
 class HomeViewModel(
     private val repository: TrackerRepository,
     private val settings: SettingsRepository,
+    private val presses: TilePresses,
 ) : ViewModel() {
 
     private val filter = MutableStateFlow<GroupFilter>(GroupFilter.All)
@@ -76,22 +73,16 @@ class HomeViewModel(
         combine(repository.observeTrackers(), repository.observeGroups(), filter, ::buildState)
             .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
 
-    private val resetEvents = Channel<ResetDone>(Channel.BUFFERED)
-    val resets: Flow<ResetDone> = resetEvents.receiveAsFlow()
+    /** By tracker id: the tiles a press would undo rather than mark done. */
+    val undoable: StateFlow<Map<Long, PendingUndo>> = presses.undoable
 
     fun select(newFilter: GroupFilter) {
         filter.value = newFilter
     }
 
-    fun markDone(tracker: Tracker) {
-        viewModelScope.launch {
-            val eventId = repository.markDone(tracker.id)
-            resetEvents.send(ResetDone(tracker.name, eventId))
-        }
-    }
-
-    fun undoReset(reset: ResetDone) {
-        viewModelScope.launch { repository.undoMarkDone(reset.eventId) }
+    /** A tile was tapped: marks it done now, or undoes that if it is still in its undo window. */
+    fun press(tracker: Tracker) {
+        viewModelScope.launch { presses.press(tracker.id) }
     }
 
     /** A blank tile for the "+" button, pre-filed in the group currently shown. */
@@ -166,7 +157,7 @@ class HomeViewModel(
         val Factory = viewModelFactory {
             initializer {
                 val app = this[APPLICATION_KEY] as TimeClickerApplication
-                HomeViewModel(app.container.trackerRepository, app.container.settingsRepository)
+                HomeViewModel(app.container.trackerRepository, app.container.settingsRepository, app.container.tilePresses)
             }
         }
     }
