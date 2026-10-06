@@ -206,6 +206,7 @@
 
     <!-- Credits -->
     <string name="settings_credits">크레딧</string>
+    <string name="settings_credits_hint">오픈소스 프로젝트와 라이선스</string>
     <string name="credits_intro">Time Clicker는 다음 오픈소스 프로젝트로 만들어졌어요. 감사합니다! 프로젝트를 누르면 라이선스를 볼 수 있어요.</string>
     <string name="credit_icons">아이콘</string>
     <string name="credit_ui">사용자 인터페이스</string>

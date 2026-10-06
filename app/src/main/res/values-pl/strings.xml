@@ -227,6 +227,7 @@
 
     <!-- Credits -->
     <string name="settings_credits">Podziękowania</string>
+    <string name="settings_credits_hint">Projekty open source i ich licencje</string>
     <string name="credits_intro">Time Clicker powstał dzięki tym projektom open source. Dziękujemy! Stuknij jeden z nich, aby przeczytać jego licencję.</string>
     <string name="credit_icons">Ikony</string>
     <string name="credit_ui">Interfejs użytkownika</string>

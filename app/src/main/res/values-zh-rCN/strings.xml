@@ -206,6 +206,7 @@
 
     <!-- Credits -->
     <string name="settings_credits">致谢</string>
+    <string name="settings_credits_hint">开源项目及其许可证</string>
     <string name="credits_intro">Time Clicker 基于以下开源项目构建。谢谢！点按任一项目即可查看其许可证。</string>
     <string name="credit_icons">图标</string>
     <string name="credit_ui">用户界面</string>

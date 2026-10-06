@@ -220,6 +220,7 @@
 
     <!-- Credits -->
     <string name="settings_credits">Créditos</string>
+    <string name="settings_credits_hint">Proyectos de código abierto y sus licencias</string>
     <string name="credits_intro">Time Clicker está hecho con estos proyectos de código abierto. ¡Gracias! Toca uno para leer su licencia.</string>
     <string name="credit_icons">Iconos</string>
     <string name="credit_ui">Interfaz de usuario</string>

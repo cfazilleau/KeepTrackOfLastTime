@@ -80,6 +80,7 @@ fun SettingsScreen(
     onBack: () -> Unit,
     onManageGroups: () -> Unit,
     onOpenIconPalette: () -> Unit,
+    onOpenCredits: () -> Unit,
     viewModel: SettingsViewModel = viewModel(factory = SettingsViewModel.Factory),
 ) {
     val palette = TimeClickerTheme.palette
@@ -244,6 +245,13 @@ fun SettingsScreen(
                             },
                         )
                     }
+                    RowDivider()
+                    ActionRow(
+                        icon = AppIcons.Info,
+                        title = stringResource(R.string.settings_credits),
+                        hint = stringResource(R.string.settings_credits_hint),
+                        onClick = onOpenCredits,
+                    )
                 }
 
                 Section(stringResource(R.string.settings_section_data)) {
@@ -273,8 +281,6 @@ fun SettingsScreen(
                         }
                     },
                 )
-
-                CreditsSection()
 
                 Text(
                     stringResource(R.string.settings_version, appVersion(context)),
@@ -323,18 +329,20 @@ private const val BACKUP_MIME = "application/zip"
 private fun appVersion(context: android.content.Context): String =
     context.packageManager.getPackageInfo(context.packageName, 0).versionName.orEmpty()
 
-/** A titled group of rows on a raised card. */
+/** A group of rows on a raised card, under its title if it has one. */
 @Composable
-internal fun Section(title: String, content: @Composable () -> Unit) {
+internal fun Section(title: String?, content: @Composable () -> Unit) {
     val palette = TimeClickerTheme.palette
     val shape = RoundedCornerShape(24.dp)
     Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-        Text(
-            title,
-            style = MaterialTheme.typography.labelLarge,
-            color = palette.muted,
-            modifier = Modifier.padding(start = 4.dp),
-        )
+        if (title != null) {
+            Text(
+                title,
+                style = MaterialTheme.typography.labelLarge,
+                color = palette.muted,
+                modifier = Modifier.padding(start = 4.dp),
+            )
+        }
         Column(
             Modifier
                 .fillMaxWidth()
