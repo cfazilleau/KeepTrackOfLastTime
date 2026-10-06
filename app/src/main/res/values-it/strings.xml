@@ -159,6 +159,8 @@
     <string name="time_display_absolute">Assoluto</string>
     <string name="settings_haptics">Vibra al tocco</string>
     <string name="settings_haptics_hint">Una breve vibrazione quando tocchi o tieni premuto un riquadro.</string>
+    <string name="settings_click_sound">Suono del clic</string>
+    <string name="settings_click_sound_hint">Un breve clic quando tocchi un riquadro. Silenzioso quando il telefono è in modalità silenziosa.</string>
     <string name="settings_counter">Mostra contatore pressioni</string>
     <string name="settings_counter_hint">Quante volte è stato premuto ogni riquadro, sui riquadri e nei widget.</string>
     <string name="settings_undo">Proponi di annullare</string>

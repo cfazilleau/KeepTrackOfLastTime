@@ -159,6 +159,8 @@
     <string name="time_display_absolute">Absolu</string>
     <string name="settings_haptics">Vibrer au toucher</string>
     <string name="settings_haptics_hint">Une courte vibration quand vous touchez ou maintenez une tuile.</string>
+    <string name="settings_click_sound">Son de clic</string>
+    <string name="settings_click_sound_hint">Un petit clic quand vous touchez une tuile. Muet quand le téléphone est en silencieux.</string>
     <string name="settings_counter">Afficher le compteur d’appuis</string>
     <string name="settings_counter_hint">Le nombre d’appuis sur chaque tuile, sur les tuiles et les widgets.</string>
     <string name="settings_undo">Proposer d’annuler</string>

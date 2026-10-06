@@ -146,6 +146,7 @@ class BackupRepository(
         .put(SettingsRepository.WALLPAPER_COLORS, s.wallpaperColors)
         .put(SettingsRepository.TIME_DISPLAY, s.timeDisplay.key)
         .put(SettingsRepository.HAPTICS, s.haptics)
+        .put(SettingsRepository.CLICK_SOUND, s.clickSound)
         .put(SettingsRepository.SHOW_COUNTER, s.showCounter)
         .put(SettingsRepository.UNDO_AFTER_TAP, s.undoAfterTap)
 
@@ -157,6 +158,7 @@ class BackupRepository(
             wallpaperColors = json.optBoolean(SettingsRepository.WALLPAPER_COLORS, d.wallpaperColors),
             timeDisplay = TimeDisplay.fromKey(json.optString(SettingsRepository.TIME_DISPLAY, d.timeDisplay.key)),
             haptics = json.optBoolean(SettingsRepository.HAPTICS, d.haptics),
+            clickSound = json.optBoolean(SettingsRepository.CLICK_SOUND, d.clickSound),
             showCounter = json.optBoolean(SettingsRepository.SHOW_COUNTER, d.showCounter),
             undoAfterTap = json.optBoolean(SettingsRepository.UNDO_AFTER_TAP, d.undoAfterTap),
         )

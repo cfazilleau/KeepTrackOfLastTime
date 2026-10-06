@@ -159,6 +159,8 @@
     <string name="time_display_absolute">Absoluto</string>
     <string name="settings_haptics">Vibrar ao tocar</string>
     <string name="settings_haptics_hint">Uma vibração curta ao tocar ou pressionar um card.</string>
+    <string name="settings_click_sound">Som de clique</string>
+    <string name="settings_click_sound_hint">Um clique curto ao tocar em um card. Fica mudo quando o celular está no silencioso.</string>
     <string name="settings_counter">Mostrar contador de toques</string>
     <string name="settings_counter_hint">Quantas vezes cada card foi tocado, nos cards e nos widgets.</string>
     <string name="settings_undo">Oferecer desfazer</string>

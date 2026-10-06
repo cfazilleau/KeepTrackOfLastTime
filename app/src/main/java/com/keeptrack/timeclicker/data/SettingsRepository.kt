@@ -35,6 +35,8 @@ data class AppSettings(
     val timeDisplay: TimeDisplay = TimeDisplay.RELATIVE,
     /** Vibrate when a tile is tapped or long-pressed. */
     val haptics: Boolean = true,
+    /** Play a short click when a tile is tapped. */
+    val clickSound: Boolean = true,
     /** Show how many times each tile was pressed, on tiles and widgets. */
     val showCounter: Boolean = true,
     /** After tapping a tile, offer to undo it. */
@@ -62,6 +64,7 @@ class SettingsRepository(context: Context) {
         wallpaperColors = prefs.getBoolean(WALLPAPER_COLORS, true),
         timeDisplay = TimeDisplay.fromKey(prefs.getString(TIME_DISPLAY, null)),
         haptics = prefs.getBoolean(HAPTICS, true),
+        clickSound = prefs.getBoolean(CLICK_SOUND, true),
         showCounter = prefs.getBoolean(SHOW_COUNTER, true),
         undoAfterTap = prefs.getBoolean(UNDO_AFTER_TAP, true),
     )
@@ -71,6 +74,7 @@ class SettingsRepository(context: Context) {
         putBoolean(WALLPAPER_COLORS, settings.wallpaperColors)
         putString(TIME_DISPLAY, settings.timeDisplay.key)
         putBoolean(HAPTICS, settings.haptics)
+        putBoolean(CLICK_SOUND, settings.clickSound)
         putBoolean(SHOW_COUNTER, settings.showCounter)
         putBoolean(UNDO_AFTER_TAP, settings.undoAfterTap)
     }
@@ -81,6 +85,7 @@ class SettingsRepository(context: Context) {
         const val WALLPAPER_COLORS = "wallpaper_colors"
         const val TIME_DISPLAY = "time_display"
         const val HAPTICS = "haptics"
+        const val CLICK_SOUND = "click_sound"
         const val SHOW_COUNTER = "show_counter"
         const val UNDO_AFTER_TAP = "undo_after_tap"
     }

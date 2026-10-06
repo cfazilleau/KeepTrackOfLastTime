@@ -145,6 +145,8 @@
     <string name="time_display_absolute">日時</string>
     <string name="settings_haptics">タップ時に振動</string>
     <string name="settings_haptics_hint">タイルをタップまたは長押ししたときに短く振動します。</string>
+    <string name="settings_click_sound">クリック音</string>
+    <string name="settings_click_sound_hint">タイルをタップしたときに短いクリック音を鳴らします。マナーモード中は鳴りません。</string>
     <string name="settings_counter">押した回数を表示</string>
     <string name="settings_counter_hint">各タイルを押した回数をタイルとウィジェットに表示します。</string>
     <string name="settings_undo">元に戻す操作を表示</string>

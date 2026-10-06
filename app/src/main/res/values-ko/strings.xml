@@ -145,6 +145,8 @@
     <string name="time_display_absolute">날짜와 시간</string>
     <string name="settings_haptics">누를 때 진동</string>
     <string name="settings_haptics_hint">타일을 누르거나 길게 누르면 짧게 진동해요.</string>
+    <string name="settings_click_sound">클릭 소리</string>
+    <string name="settings_click_sound_hint">타일을 누르면 짧은 클릭 소리가 나요. 휴대전화가 무음일 때는 소리가 나지 않아요.</string>
     <string name="settings_counter">누른 횟수 표시</string>
     <string name="settings_counter_hint">각 타일을 누른 횟수를 타일과 위젯에 표시해요.</string>
     <string name="settings_undo">실행 취소 제안</string>

@@ -158,6 +158,8 @@
     <string name="time_display_absolute">Absolute</string>
     <string name="settings_haptics">Vibrate on tap</string>
     <string name="settings_haptics_hint">A short vibration when you tap or hold a tile.</string>
+    <string name="settings_click_sound">Click sound</string>
+    <string name="settings_click_sound_hint">A short click when you tap a tile. Silent when your phone is on silent.</string>
     <string name="settings_counter">Show press counter</string>
     <string name="settings_counter_hint">How many times each tile was pressed, on tiles and widgets.</string>
     <string name="settings_undo">Offer to undo</string>

@@ -152,6 +152,8 @@
     <string name="time_display_absolute">Absoluut</string>
     <string name="settings_haptics">Trillen bij tikken</string>
     <string name="settings_haptics_hint">Een korte trilling als je op een tegel tikt of hem vasthoudt.</string>
+    <string name="settings_click_sound">Klikgeluid</string>
+    <string name="settings_click_sound_hint">Een korte klik als je op een tegel tikt. Stil als je telefoon op stil staat.</string>
     <string name="settings_counter">Teller tonen</string>
     <string name="settings_counter_hint">Hoe vaak elke tegel is ingedrukt, op tegels en widgets.</string>
     <string name="settings_undo">Ongedaan maken aanbieden</string>

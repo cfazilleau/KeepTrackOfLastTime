@@ -7,6 +7,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
+import com.keeptrack.timeclicker.ui.components.TapSound
 import com.keeptrack.timeclicker.ui.components.rememberPressAmount
 import com.keeptrack.timeclicker.ui.theme.raised
 import androidx.compose.foundation.horizontalScroll
@@ -110,6 +111,9 @@ fun HomeScreen(
     var editing by remember { mutableStateOf<Pair<TileDraft, Tracker?>?>(null) }
 
     val undoAfterTap by rememberUpdatedState(TimeClickerTheme.settings.undoAfterTap)
+    val clickSound = TimeClickerTheme.settings.clickSound
+    // Loaded ahead of the first tap, which would otherwise be silent.
+    LaunchedEffect(clickSound) { if (clickSound) TapSound.preload(context) }
     LaunchedEffect(viewModel) {
         // collectLatest: a newer reset replaces the snackbar of an older one.
         viewModel.resets.collectLatest { reset ->
@@ -125,14 +129,17 @@ fun HomeScreen(
 
     Box(Modifier.fillMaxSize().background(palette.ground)) {
         Column(Modifier.fillMaxSize().windowInsetsPadding(WindowInsets.safeDrawing.only(WindowInsetsSides.Top + WindowInsetsSides.Horizontal))) {
+            TitleBar(onOpenSettings)
             state?.let { s ->
                 GroupPager(
                     state = s,
                     onSelect = viewModel::select,
                     onManageGroups = onManageGroups,
-                    onOpenSettings = onOpenSettings,
                     photoFile = viewModel::photoFile,
-                    onClick = viewModel::markDone,
+                    onClick = { tracker ->
+                        if (clickSound) TapSound.play(context)
+                        viewModel.markDone(tracker)
+                    },
                     onLongClick = { editing = TileDraft.of(it) to it },
                 )
             }
@@ -212,7 +219,6 @@ private fun GroupPager(
     state: HomeUiState,
     onSelect: (GroupFilter) -> Unit,
     onManageGroups: () -> Unit,
-    onOpenSettings: () -> Unit,
     photoFile: (String) -> File,
     onClick: (Tracker) -> Unit,
     onLongClick: (Tracker) -> Unit,
@@ -241,7 +247,6 @@ private fun GroupPager(
             selected = pagerState.currentPage,
             onSelect = { index -> scope.launch { pagerState.animateScrollToPage(index, animationSpec = PageSpring) } },
             onManageGroups = onManageGroups,
-            onOpenSettings = onOpenSettings,
         )
         HorizontalPager(
             state = pagerState,
@@ -320,42 +325,45 @@ private fun PageList(
     }
 }
 
-/** The group chips (scrolling), then the settings button, always in reach at the end of the row. */
+/** The app's name, and the settings button. */
+@Composable
+private fun TitleBar(onOpenSettings: () -> Unit) {
+    val palette = TimeClickerTheme.palette
+    Row(
+        Modifier.fillMaxWidth().padding(start = 20.dp, end = 20.dp, top = 20.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Text(
+            stringResource(R.string.app_name),
+            style = MaterialTheme.typography.headlineLarge,
+            color = palette.text,
+            modifier = Modifier.weight(1f),
+        )
+        NeuIconButton(
+            icon = AppIcons.Settings,
+            contentDescription = stringResource(R.string.action_settings),
+            onClick = onOpenSettings,
+            size = 48.dp,
+            shape = CircleShape,
+        )
+    }
+}
+
+/** The group chips, scrolling sideways, then the groups button. */
 @Composable
 private fun FilterChips(
     pages: List<PageUi>,
     selected: Int,
     onSelect: (Int) -> Unit,
     onManageGroups: () -> Unit,
-    onOpenSettings: () -> Unit,
-) {
-    Row(Modifier.fillMaxWidth().padding(top = 12.dp), verticalAlignment = Alignment.CenterVertically) {
-        ChipsRow(pages, selected, onSelect, onManageGroups, Modifier.weight(1f))
-        NeuIconButton(
-            icon = AppIcons.Settings,
-            contentDescription = stringResource(R.string.action_settings),
-            onClick = onOpenSettings,
-            size = 44.dp,
-            shape = CircleShape,
-            modifier = Modifier.padding(start = 4.dp, end = 20.dp, top = 8.dp),
-        )
-    }
-}
-
-@Composable
-private fun ChipsRow(
-    pages: List<PageUi>,
-    selected: Int,
-    onSelect: (Int) -> Unit,
-    onManageGroups: () -> Unit,
-    modifier: Modifier = Modifier,
 ) {
     val palette = TimeClickerTheme.palette
     // Padding inside the scroll area so the chips' shadows aren't clipped.
     Row(
-        modifier
+        Modifier
+            .fillMaxWidth()
             .horizontalScroll(rememberScrollState())
-            .padding(start = 20.dp, end = 12.dp, top = 14.dp, bottom = 6.dp),
+            .padding(start = 20.dp, end = 20.dp, top = 14.dp, bottom = 6.dp),
         horizontalArrangement = Arrangement.spacedBy(10.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {

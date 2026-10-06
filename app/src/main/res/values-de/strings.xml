@@ -152,6 +152,8 @@
     <string name="time_display_absolute">Absolut</string>
     <string name="settings_haptics">Beim Tippen vibrieren</string>
     <string name="settings_haptics_hint">Eine kurze Vibration, wenn du auf eine Kachel tippst oder sie gedrückt hältst.</string>
+    <string name="settings_click_sound">Klickton</string>
+    <string name="settings_click_sound_hint">Ein kurzes Klicken, wenn du auf eine Kachel tippst. Stumm, wenn dein Telefon lautlos ist.</string>
     <string name="settings_counter">Zähler anzeigen</string>
     <string name="settings_counter_hint">Wie oft jede Kachel gedrückt wurde, auf Kacheln und Widgets.</string>
     <string name="settings_undo">Rückgängig machen anbieten</string>

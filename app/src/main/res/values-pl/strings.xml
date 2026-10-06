@@ -166,6 +166,8 @@
     <string name="time_display_absolute">Bezwzględny</string>
     <string name="settings_haptics">Wibracja przy stuknięciu</string>
     <string name="settings_haptics_hint">Krótka wibracja, gdy stukniesz lub przytrzymasz kafelek.</string>
+    <string name="settings_click_sound">Dźwięk kliknięcia</string>
+    <string name="settings_click_sound_hint">Krótkie kliknięcie, gdy stukniesz kafelek. Wyciszone, gdy telefon jest w trybie cichym.</string>
     <string name="settings_counter">Pokazuj licznik naciśnięć</string>
     <string name="settings_counter_hint">Ile razy naciśnięto każdy kafelek – na kafelkach i widżetach.</string>
     <string name="settings_undo">Proponuj cofnięcie</string>

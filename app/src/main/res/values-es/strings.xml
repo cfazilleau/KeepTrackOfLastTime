@@ -159,6 +159,8 @@
     <string name="time_display_absolute">Absoluto</string>
     <string name="settings_haptics">Vibrar al tocar</string>
     <string name="settings_haptics_hint">Una vibración breve al tocar o mantener pulsada una tarjeta.</string>
+    <string name="settings_click_sound">Sonido de clic</string>
+    <string name="settings_click_sound_hint">Un clic breve al tocar una tarjeta. No suena si tu teléfono está en silencio.</string>
     <string name="settings_counter">Mostrar contador de pulsaciones</string>
     <string name="settings_counter_hint">Cuántas veces se ha pulsado cada tarjeta, en las tarjetas y los widgets.</string>
     <string name="settings_undo">Ofrecer deshacer</string>

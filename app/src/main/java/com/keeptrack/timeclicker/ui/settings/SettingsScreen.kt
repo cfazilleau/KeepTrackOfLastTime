@@ -198,6 +198,13 @@ fun SettingsScreen(
                     )
                     RowDivider()
                     SwitchRow(
+                        title = stringResource(R.string.settings_click_sound),
+                        hint = stringResource(R.string.settings_click_sound_hint),
+                        checked = settings.clickSound,
+                        onCheckedChange = { on -> update { it.copy(clickSound = on) } },
+                    )
+                    RowDivider()
+                    SwitchRow(
                         title = stringResource(R.string.settings_counter),
                         hint = stringResource(R.string.settings_counter_hint),
                         checked = settings.showCounter,
