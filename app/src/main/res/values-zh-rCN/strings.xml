@@ -85,6 +85,8 @@
     <string name="color_system_secondary">系统柔和色</string>
     <string name="color_system_tertiary">系统对比色</string>
     <string name="icon_choice">图标：%1$s</string>
+    <string name="icon_all">所有图标</string>
+    <string name="icon_chooser_title">选择图标</string>
     <string name="icon_none">无图标</string>
     <string name="icon_check">对勾</string>
     <string name="icon_drop">水滴</string>
@@ -201,7 +203,6 @@
     <string name="icon_palette_reset">恢复默认图标</string>
     <string name="dialog_reset_palette_title">重置图标集？</string>
     <string name="dialog_reset_palette_body">图标集将恢复为默认图标。卡片会保留现有图标。</string>
-    <string name="icon_palette_more">更多图标请前往“设置 › 图标集”</string>
 
     <!-- Credits -->
     <string name="settings_credits">致谢</string>

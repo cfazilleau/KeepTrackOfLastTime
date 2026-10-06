@@ -21,8 +21,11 @@ import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyGridScope
+import androidx.compose.foundation.lazy.grid.LazyGridState
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.lazy.grid.rememberLazyGridState
+import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -39,6 +42,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.stringResource
@@ -47,6 +51,7 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.input.KeyboardCapitalization
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
@@ -105,11 +110,6 @@ fun IconPaletteScreen(
     val catalog = rememberIconCatalog()
     var query by rememberSaveable { mutableStateOf("") }
     var confirmReset by remember { mutableStateOf(false) }
-    val clearButton: @Composable () -> Unit = {
-        IconButton(onClick = { query = "" }) {
-            Icon(AppIcons.Close, stringResource(R.string.icon_palette_clear_search), tint = palette.muted, modifier = Modifier.size(20.dp))
-        }
-    }
 
     Column(
         Modifier
@@ -137,18 +137,22 @@ fun IconPaletteScreen(
                 shape = CircleShape,
             )
         }
-        NeuTextField(
-            value = query,
-            onValueChange = { query = it },
-            label = stringResource(R.string.icon_palette_search),
-            placeholder = stringResource(R.string.icon_palette_search),
-            leadingIcon = AppIcons.Search,
-            capitalization = KeyboardCapitalization.None,
-            trailing = clearButton.takeIf { query.isNotEmpty() },
-            modifier = Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 8.dp),
-        )
+        IconSearchField(query, onQueryChange = { query = it })
 
-        if (catalog != null) PaletteGrid(catalog, query, iconPalette, onToggle = viewModel::toggle)
+        if (catalog != null) {
+            val selected = remember(iconPalette) { iconPalette.toSet() }
+            IconGrid(
+                catalog,
+                query,
+                iconPalette,
+                isHighlighted = { it in selected },
+                onClick = viewModel::toggle,
+                editsPalette = true,
+                highlight = palette.accent,
+                onHighlight = palette.onAccent,
+                bottomPadding = 40.dp + WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding(),
+            )
+        }
     }
 
     if (confirmReset) {
@@ -165,9 +169,45 @@ fun IconPaletteScreen(
     }
 }
 
-/** The palette then every category; with a search, the matching icons instead. */
+/** Search field for [IconGrid]. */
 @Composable
-private fun PaletteGrid(catalog: IconCatalog, query: String, iconPalette: List<TileIcon>, onToggle: (TileIcon) -> Unit) {
+internal fun IconSearchField(query: String, onQueryChange: (String) -> Unit) {
+    val palette = TimeClickerTheme.palette
+    val clearButton: @Composable () -> Unit = {
+        IconButton(onClick = { onQueryChange("") }) {
+            Icon(AppIcons.Close, stringResource(R.string.icon_palette_clear_search), tint = palette.muted, modifier = Modifier.size(20.dp))
+        }
+    }
+    NeuTextField(
+        value = query,
+        onValueChange = onQueryChange,
+        label = stringResource(R.string.icon_palette_search),
+        placeholder = stringResource(R.string.icon_palette_search),
+        leadingIcon = AppIcons.Search,
+        capitalization = KeyboardCapitalization.None,
+        trailing = clearButton.takeIf { query.isNotEmpty() },
+        modifier = Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 8.dp),
+    )
+}
+
+/**
+ * The palette then every category; with a search, the matching icons instead.
+ * [editsPalette]: tapping an icon toggles it in the palette (with hints about it), rather than choosing it.
+ */
+@Composable
+internal fun IconGrid(
+    catalog: IconCatalog,
+    query: String,
+    iconPalette: List<TileIcon>,
+    isHighlighted: (TileIcon) -> Boolean,
+    onClick: (TileIcon) -> Unit,
+    editsPalette: Boolean,
+    highlight: Color,
+    onHighlight: Color,
+    bottomPadding: Dp,
+    modifier: Modifier = Modifier,
+    state: LazyGridState = rememberLazyGridState(),
+) {
     val resources = LocalResources.current
     val locale = LocalConfiguration.current.locales[0]
     val categories = remember(catalog, resources, locale) {
@@ -188,31 +228,35 @@ private fun PaletteGrid(catalog: IconCatalog, query: String, iconPalette: List<T
     val results = remember(searchText, words) {
         if (words.isEmpty()) emptyList() else catalog.icons.filter { icon -> words.all { it in searchText.getValue(icon) } }
     }
-    val selected = remember(iconPalette) { iconPalette.toSet() }
     val chosen = remember(catalog, iconPalette) { iconPalette.mapNotNull { catalog[it] } }
 
     LazyVerticalGrid(
         columns = GridCells.Adaptive(56.dp),
-        modifier = Modifier.fillMaxSize(),
+        modifier = modifier.fillMaxSize(),
+        state = state,
         contentPadding = PaddingValues(
             start = 20.dp,
             end = 20.dp,
             top = 12.dp,
-            bottom = 40.dp + WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding(),
+            bottom = bottomPadding,
         ),
         horizontalArrangement = Arrangement.spacedBy(8.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         val cell: @Composable (CatalogIcon) -> Unit = { icon ->
-            IconCell(catalog, icon.icon, iconLabel(resources, icon.icon), icon.icon in selected) { onToggle(icon.icon) }
+            IconCell(
+                catalog, icon.icon, iconLabel(resources, icon.icon), isHighlighted(icon.icon), editsPalette, highlight, onHighlight,
+            ) { onClick(icon.icon) }
         }
         if (words.isNotEmpty()) {
             header("results", resources.getString(R.string.icon_palette_results), results.size)
             if (results.isEmpty()) note("no-results", resources.getString(R.string.icon_palette_no_results, query.trim()))
             items(results, key = { "r:${it.icon.key}" }, contentType = { "icon" }) { cell(it) }
         } else {
-            header("yours", resources.getString(R.string.icon_palette_yours), chosen.size)
-            note("hint", resources.getString(if (chosen.isEmpty()) R.string.icon_palette_empty else R.string.icon_palette_hint))
+            if (editsPalette || chosen.isNotEmpty()) header("yours", resources.getString(R.string.icon_palette_yours), chosen.size)
+            if (editsPalette) {
+                note("hint", resources.getString(if (chosen.isEmpty()) R.string.icon_palette_empty else R.string.icon_palette_hint))
+            }
             items(chosen, key = { "p:${it.icon.key}" }, contentType = { "icon" }) { cell(it) }
             categories.forEach { category ->
                 header("h:${category.id}", category.name, category.icons.size)
@@ -248,22 +292,37 @@ private fun LazyGridScope.note(key: String, text: String) {
     }
 }
 
-/** One icon; highlighted when it is in the palette. */
+/** One icon; highlighted when it is in the palette ([toggles]) or chosen. */
 @Composable
-private fun IconCell(catalog: IconCatalog, icon: TileIcon, label: String, inPalette: Boolean, onToggle: () -> Unit) {
+private fun IconCell(
+    catalog: IconCatalog,
+    icon: TileIcon,
+    label: String,
+    highlighted: Boolean,
+    toggles: Boolean,
+    highlight: Color,
+    onHighlight: Color,
+    onClick: () -> Unit,
+) {
     val palette = TimeClickerTheme.palette
     val vector = remember(catalog, icon) { AppIcons.tile(catalog, icon) }
     Box(
         Modifier
             .aspectRatio(1f)
             .clip(RoundedCornerShape(14.dp))
-            .background(if (inPalette) palette.accent else palette.field)
-            .toggleable(value = inPalette, role = Role.Checkbox, onValueChange = { onToggle() })
+            .background(if (highlighted) highlight else palette.field)
+            .then(
+                if (toggles) {
+                    Modifier.toggleable(value = highlighted, role = Role.Checkbox, onValueChange = { onClick() })
+                } else {
+                    Modifier.selectable(selected = highlighted, role = Role.RadioButton, onClick = onClick)
+                }
+            )
             .semantics { contentDescription = label },
         contentAlignment = Alignment.Center,
     ) {
         if (vector != null) {
-            Icon(vector, null, tint = if (inPalette) palette.onAccent else palette.text, modifier = Modifier.size(24.dp))
+            Icon(vector, null, tint = if (highlighted) onHighlight else palette.text, modifier = Modifier.size(24.dp))
         }
     }
 }

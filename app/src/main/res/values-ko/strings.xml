@@ -85,6 +85,8 @@
     <string name="color_system_secondary">시스템 부드러운 색</string>
     <string name="color_system_tertiary">시스템 대비색</string>
     <string name="icon_choice">아이콘: %1$s</string>
+    <string name="icon_all">모든 아이콘</string>
+    <string name="icon_chooser_title">아이콘 선택</string>
     <string name="icon_none">아이콘 없음</string>
     <string name="icon_check">체크</string>
     <string name="icon_drop">물방울</string>
@@ -201,7 +203,6 @@
     <string name="icon_palette_reset">기본 아이콘으로 재설정</string>
     <string name="dialog_reset_palette_title">아이콘 팔레트를 재설정할까요?</string>
     <string name="dialog_reset_palette_body">기본 아이콘으로 돌아가요. 타일은 현재 아이콘을 그대로 유지해요.</string>
-    <string name="icon_palette_more">설정 › 아이콘 팔레트에서 더 많은 아이콘을 찾아보세요</string>
 
     <!-- Credits -->
     <string name="settings_credits">크레딧</string>

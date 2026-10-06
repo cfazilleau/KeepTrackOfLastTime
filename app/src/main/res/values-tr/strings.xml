@@ -91,6 +91,8 @@
     <string name="color_system_secondary">Sistem: yumuşak</string>
     <string name="color_system_tertiary">Sistem: kontrast</string>
     <string name="icon_choice">Simge: %1$s</string>
+    <string name="icon_all">Tüm simgeler</string>
+    <string name="icon_chooser_title">Simge seçin</string>
     <string name="icon_none">Simge yok</string>
     <string name="icon_check">Onay işareti</string>
     <string name="icon_drop">Su damlası</string>
@@ -208,7 +210,6 @@
     <string name="icon_palette_reset">Varsayılan simgelere sıfırla</string>
     <string name="dialog_reset_palette_title">Simge paleti sıfırlansın mı?</string>
     <string name="dialog_reset_palette_body">Palet varsayılan simgelere döner. Kutucuklar mevcut simgelerini korur.</string>
-    <string name="icon_palette_more">Daha fazla simge için: Ayarlar › Simge paleti</string>
 
     <!-- Credits -->
     <string name="settings_credits">Emeği geçenler</string>

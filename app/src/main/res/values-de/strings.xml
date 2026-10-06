@@ -91,6 +91,8 @@
     <string name="color_system_secondary">System: sanft</string>
     <string name="color_system_tertiary">System: Kontrast</string>
     <string name="icon_choice">Symbol: %1$s</string>
+    <string name="icon_all">Alle Symbole</string>
+    <string name="icon_chooser_title">Symbol auswählen</string>
     <string name="icon_none">Kein Symbol</string>
     <string name="icon_check">Häkchen</string>
     <string name="icon_drop">Wassertropfen</string>
@@ -208,7 +210,6 @@
     <string name="icon_palette_reset">Auf Standardsymbole zurücksetzen</string>
     <string name="dialog_reset_palette_title">Symbolpalette zurücksetzen?</string>
     <string name="dialog_reset_palette_body">Die Palette enthält dann wieder die Standardsymbole. Kacheln behalten ihr aktuelles Symbol.</string>
-    <string name="icon_palette_more">Weitere Symbole unter Einstellungen › Symbolpalette</string>
 
     <!-- Credits -->
     <string name="settings_credits">Danksagungen</string>

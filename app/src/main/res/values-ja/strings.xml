@@ -85,6 +85,8 @@
     <string name="color_system_secondary">システムのソフト</string>
     <string name="color_system_tertiary">システムのコントラスト</string>
     <string name="icon_choice">アイコン: %1$s</string>
+    <string name="icon_all">すべてのアイコン</string>
+    <string name="icon_chooser_title">アイコンを選択</string>
     <string name="icon_none">アイコンなし</string>
     <string name="icon_check">チェック</string>
     <string name="icon_drop">しずく</string>
@@ -201,7 +203,6 @@
     <string name="icon_palette_reset">デフォルトのアイコンに戻す</string>
     <string name="dialog_reset_palette_title">アイコンパレットをリセットしますか？</string>
     <string name="dialog_reset_palette_body">デフォルトのアイコンに戻ります。タイルのアイコンはそのまま残ります。</string>
-    <string name="icon_palette_more">その他のアイコンは「設定 › アイコンパレット」にあります</string>
 
     <!-- Credits -->
     <string name="settings_credits">クレジット</string>

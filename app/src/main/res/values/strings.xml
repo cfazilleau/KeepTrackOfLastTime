@@ -97,6 +97,8 @@
     <string name="color_system_secondary">System soft</string>
     <string name="color_system_tertiary">System contrast</string>
     <string name="icon_choice">Icon: %1$s</string>
+    <string name="icon_all">All icons</string>
+    <string name="icon_chooser_title">Choose an icon</string>
     <string name="icon_none">No icon</string>
     <string name="icon_check">Check</string>
     <string name="icon_drop">Water drop</string>
@@ -214,7 +216,6 @@
     <string name="icon_palette_reset">Reset to default icons</string>
     <string name="dialog_reset_palette_title">Reset the icon palette?</string>
     <string name="dialog_reset_palette_body">It goes back to the default icons. Tiles keep the icon they have.</string>
-    <string name="icon_palette_more">More icons in Settings › Icon palette</string>
 
     <!-- Credits -->
     <string name="settings_credits">Credits</string>
