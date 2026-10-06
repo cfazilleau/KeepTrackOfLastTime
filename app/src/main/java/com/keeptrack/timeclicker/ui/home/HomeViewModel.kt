@@ -8,8 +8,10 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.keeptrack.timeclicker.TimeClickerApplication
 import com.keeptrack.timeclicker.data.SettingsRepository
+import com.keeptrack.timeclicker.data.TileColor
 import com.keeptrack.timeclicker.data.TileIcon
 import com.keeptrack.timeclicker.data.TileSize
+import com.keeptrack.timeclicker.data.TileSpec
 import com.keeptrack.timeclicker.data.Tracker
 import com.keeptrack.timeclicker.data.TrackerGroup
 import com.keeptrack.timeclicker.data.TrackerRepository
@@ -94,29 +96,21 @@ class HomeViewModel(
         viewModelScope.launch { repository.undoMarkDone(reset.eventId) }
     }
 
-    /** A blank tile for the "+" button, pre-filed in the group currently shown. */
-    suspend fun newDraft(): TileDraft = TileDraft(
-        trackerId = null,
-        name = "",
-        groupId = (state.value?.filter as? GroupFilter.Group)?.id,
-        color = repository.nextColor(),
-        icon = TileIcon.DEFAULT,
-        size = TileSize.SMALL,
-        photo = null,
-    )
-
-    /** Saves the sheet's [draft]; [saved] is the tile as it was before, null for a new one. */
-    fun save(draft: TileDraft, saved: Tracker?) {
-        // Only a newly given icon counts as used: reopening a tile to rename it doesn't reorder the history.
-        if (draft.icon != saved?.icon) settings.recordIconUse(draft.icon)
+    /** A new small tile from the "+" button: a random colour, no icon, filed in the group currently shown. */
+    fun create(name: String) {
+        val groupId = (state.value?.filter as? GroupFilter.Group)?.id
         viewModelScope.launch {
-            val spec = draft.toSpec()
-            if (draft.trackerId == null) {
-                repository.addTracker(spec)
-            } else {
-                repository.updateTracker(draft.trackerId, spec)
-                if (draft.resetCount) repository.resetCount(draft.trackerId)
-            }
+            repository.addTracker(TileSpec(name.trim(), groupId, TileColor.pickable.random(), TileIcon.NONE, TileSize.SMALL, photo = null))
+        }
+    }
+
+    /** Saves the edit sheet's [draft] of the [saved] tile. */
+    fun save(draft: TileDraft, saved: Tracker) {
+        // Only a newly given icon counts as used: reopening a tile to rename it doesn't reorder the history.
+        if (draft.icon != saved.icon) settings.recordIconUse(draft.icon)
+        viewModelScope.launch {
+            repository.updateTracker(saved.id, draft.toSpec())
+            if (draft.resetCount) repository.resetCount(saved.id)
         }
     }
 

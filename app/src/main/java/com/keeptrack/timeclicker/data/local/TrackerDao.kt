@@ -39,9 +39,6 @@ interface TrackerDao {
     @Query("SELECT COALESCE(MAX(position), -1) + 1 FROM trackers")
     suspend fun nextTrackerPosition(): Int
 
-    @Query("SELECT COUNT(*) FROM trackers")
-    suspend fun trackerCount(): Int
-
     /** Inserts the tracker and its first event; the press counter starts after that event. */
     @Transaction
     suspend fun createTracker(tracker: TrackerEntity): Long {
