@@ -107,8 +107,9 @@ fun HomeScreen(
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
 
-    // The draft open in the edit sheet, and the saved tile it edits (null for a new one).
-    var editing by remember { mutableStateOf<Pair<TileDraft, Tracker?>?>(null) }
+    // The tile open in the edit sheet.
+    var editing by remember { mutableStateOf<Tracker?>(null) }
+    var creating by remember { mutableStateOf(false) }
 
     val clickSound = TimeClickerTheme.settings.clickSound
     // Loaded ahead of the first tap, which would otherwise be silent.
@@ -138,13 +139,13 @@ fun HomeScreen(
                         if (clickSound) TapSound.play(context)
                         viewModel.markDone(tracker)
                     },
-                    onLongClick = { editing = TileDraft.of(it) to it },
+                    onLongClick = { editing = it },
                 )
             }
         }
 
         AddButton(
-            onClick = { scope.launch { editing = viewModel.newDraft() to null } },
+            onClick = { creating = true },
             modifier = Modifier
                 .align(Alignment.BottomCenter)
                 .windowInsetsPadding(WindowInsets.navigationBars)
@@ -169,10 +170,15 @@ fun HomeScreen(
         }
     }
 
-    editing?.let { (draft, saved) ->
+    if (creating) {
+        NewTileSheet(
+            onCreate = { viewModel.create(it); creating = false },
+            onDismiss = { creating = false },
+        )
+    }
+    editing?.let { saved ->
         val canPin = remember { TileWidgets.canPin(context) }
         EditTileSheet(
-            initial = draft,
             saved = saved,
             groups = state?.groups.orEmpty(),
             photoFile = viewModel::photoFile,
@@ -180,8 +186,8 @@ fun HomeScreen(
             createGroup = viewModel::createGroup,
             onSave = { viewModel.save(it, saved); editing = null },
             onDiscard = { viewModel.discard(); editing = null },
-            onDelete = { draft.trackerId?.let(viewModel::delete); editing = null },
-            onAddWidget = saved?.takeIf { canPin }?.let { tile -> { scope.launch { TileWidgets.requestPin(context, tile.id) } } },
+            onDelete = { viewModel.delete(saved.id); editing = null },
+            onAddWidget = if (canPin) ({ scope.launch { TileWidgets.requestPin(context, saved.id) } }) else null,
         )
     }
 }
