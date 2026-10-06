@@ -6,6 +6,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
 import androidx.activity.compose.LocalActivity
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.tween
 import androidx.compose.runtime.DisposableEffect
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -18,11 +21,16 @@ import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.compositionLocalOf
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.lerp
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
@@ -242,7 +250,8 @@ fun TimeClickerTheme(
     content: @Composable () -> Unit,
 ) {
     val context = LocalContext.current
-    val palette = remember(context, darkTheme, dynamicColors) { timeClickerPalette(context, darkTheme, dynamicColors) }
+    val target = remember(context, darkTheme, dynamicColors) { timeClickerPalette(context, darkTheme, dynamicColors) }
+    val palette = animatePalette(target)
     val colors = if (supportsDynamicColor && dynamicColors) {
         val scheme = if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
         scheme.copy(background = palette.ground, surface = palette.sheet)
@@ -269,3 +278,46 @@ fun TimeClickerTheme(
         MaterialTheme(colorScheme = colors, typography = AppTypography, content = content)
     }
 }
+
+private const val ThemeFadeMillis = 350
+
+/** Fades from the current palette to [target] when it changes (theme or system colours switched). */
+@Composable
+private fun animatePalette(target: TimeClickerPalette): TimeClickerPalette {
+    var from by remember { mutableStateOf(target) }
+    var to by remember { mutableStateOf(target) }
+    val progress = remember { Animatable(1f) }
+    LaunchedEffect(target) {
+        if (target == to) return@LaunchedEffect
+        // Start from what is on screen, even if an earlier fade hasn't finished.
+        from = lerp(from, to, progress.value)
+        to = target
+        progress.snapTo(0f)
+        progress.animateTo(1f, tween(ThemeFadeMillis, easing = FastOutSlowInEasing))
+    }
+    val t = progress.value
+    return if (t >= 1f) to else lerp(from, to, t)
+}
+
+private fun lerp(a: TimeClickerPalette, b: TimeClickerPalette, t: Float) = TimeClickerPalette(
+    isDark = if (t < 0.5f) a.isDark else b.isDark,
+    ground = lerp(a.ground, b.ground, t),
+    sheet = lerp(a.sheet, b.sheet, t),
+    field = lerp(a.field, b.field, t),
+    text = lerp(a.text, b.text, t),
+    muted = lerp(a.muted, b.muted, t),
+    shadow = lerp(a.shadow, b.shadow, t),
+    highlight = lerp(a.highlight, b.highlight, t),
+    danger = lerp(a.danger, b.danger, t),
+    accent = lerp(a.accent, b.accent, t),
+    onAccent = lerp(a.onAccent, b.onAccent, t),
+    segment = lerp(a.segment, b.segment, t),
+    toastBackground = lerp(a.toastBackground, b.toastBackground, t),
+    toastContent = lerp(a.toastContent, b.toastContent, t),
+    toastAction = lerp(a.toastAction, b.toastAction, t),
+    tiles = b.tiles.mapValues { (color, tile) -> lerp(a.tiles[color] ?: tile, tile, t) },
+    photoTile = lerp(a.photoTile, b.photoTile, t),
+)
+
+private fun lerp(a: TileColors, b: TileColors, t: Float) =
+    TileColors(lerp(a.background, b.background, t), lerp(a.content, b.content, t), lerp(a.shadow, b.shadow, t))

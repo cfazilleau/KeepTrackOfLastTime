@@ -20,7 +20,8 @@ The number in the tile's bottom-right corner counts how many times it was presse
   and **export / import** of everything (tiles, groups, history, photos, settings) as one `.zip` file.
 
 The look is a neumorphic "bento" grid: soft pastel tiles raised off the page that sink in when pressed,
-and glide to their new place when the grid changes. Light and dark themes follow the system unless
+and glide to their new place when the grid changes. Screens slide in and out, and switching the theme
+fades the colours instead of flashing. Light and dark themes follow the system unless
 picked in the settings. On Android 12+ the app can follow the system's **Material You** colours:
 surfaces and accents, with the pastel tile colours nudged toward their hue to match.
 
