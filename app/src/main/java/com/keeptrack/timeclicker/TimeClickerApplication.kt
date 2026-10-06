@@ -8,6 +8,7 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.drop
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
 class TimeClickerApplication : Application() {
@@ -23,6 +24,14 @@ class TimeClickerApplication : Application() {
             container.trackerRepository.observeTrackers()
                 .distinctUntilChanged()
                 .drop(1) // the tiles as they are at start-up: nothing changed yet
+                .collectLatest { TileWidgets.refresh(this@TimeClickerApplication) }
+        }
+        // ...and the settings they follow (press counter, wallpaper colours, time display).
+        CoroutineScope(SupervisorJob() + Dispatchers.Default).launch {
+            container.settingsRepository.settings
+                .map { Triple(it.showCounter, it.wallpaperColors, it.timeDisplay) }
+                .distinctUntilChanged()
+                .drop(1)
                 .collectLatest { TileWidgets.refresh(this@TimeClickerApplication) }
         }
     }

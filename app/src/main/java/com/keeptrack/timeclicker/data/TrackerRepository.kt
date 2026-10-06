@@ -27,7 +27,7 @@ class TrackerRepository(
     }
 
     /** New tiles cycle through the palette so neighbours differ. */
-    suspend fun nextColor(): TileColor = TileColor.entries[dao.trackerCount() % TileColor.entries.size]
+    suspend fun nextColor(): TileColor = TileColor.pickable[dao.trackerCount() % TileColor.pickable.size]
 
     /** Restarts the tile's press counter at 0; its history is kept. */
     suspend fun resetCount(trackerId: Long) = dao.resetCount(trackerId, clock.millis())

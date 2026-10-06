@@ -112,4 +112,44 @@ interface TrackerDao {
     suspend fun reorderGroups(orderedIds: List<Long>) {
         orderedIds.forEachIndexed { index, id -> setGroupPosition(id, index) }
     }
+
+    // --- Backups ---
+
+    @Query("SELECT * FROM tracker_groups")
+    suspend fun allGroups(): List<GroupEntity>
+
+    @Query("SELECT * FROM trackers")
+    suspend fun allTrackers(): List<TrackerEntity>
+
+    @Query("SELECT * FROM tracker_events")
+    suspend fun allEvents(): List<TrackerEventEntity>
+
+    @Insert
+    suspend fun insertGroups(groups: List<GroupEntity>)
+
+    @Insert
+    suspend fun insertTrackers(trackers: List<TrackerEntity>)
+
+    @Insert
+    suspend fun insertEvents(events: List<TrackerEventEntity>)
+
+    @Query("DELETE FROM tracker_events")
+    suspend fun deleteAllEvents()
+
+    @Query("DELETE FROM trackers")
+    suspend fun deleteAllTrackers()
+
+    @Query("DELETE FROM tracker_groups")
+    suspend fun deleteAllGroups()
+
+    /** Replaces everything with a backup's content, keeping its ids (widgets and events refer to them). */
+    @Transaction
+    suspend fun replaceAll(groups: List<GroupEntity>, trackers: List<TrackerEntity>, events: List<TrackerEventEntity>) {
+        deleteAllEvents()
+        deleteAllTrackers()
+        deleteAllGroups()
+        insertGroups(groups)
+        insertTrackers(trackers)
+        insertEvents(events)
+    }
 }

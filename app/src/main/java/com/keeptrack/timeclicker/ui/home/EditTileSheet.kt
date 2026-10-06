@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -67,7 +68,6 @@ import com.keeptrack.timeclicker.ui.components.SegmentedControl
 import com.keeptrack.timeclicker.ui.theme.AppIcons
 import com.keeptrack.timeclicker.ui.theme.TimeClickerTheme
 import com.keeptrack.timeclicker.ui.theme.TileColors
-import com.keeptrack.timeclicker.ui.theme.supportsDynamicColor
 import kotlinx.coroutines.launch
 import java.io.File
 import java.time.Instant
@@ -459,31 +459,15 @@ private fun SheetButton(text: String, onClick: () -> Unit) {
     }
 }
 
-/** The six pastel colours, then (Android 12+) the three Material You colours of the wallpaper. */
+/** The six pastel colours. */
 @Composable
 private fun ColourSwatches(selected: TileColor, onSelect: (TileColor) -> Unit) {
-    val palette = TimeClickerTheme.palette
-    val (fixed, wallpaper) = TileColor.entries.partition { it.ordinal < TileColor.PRIMARY.ordinal }
+    val colors = TileColor.pickable
     BoxWithConstraints(Modifier.fillMaxWidth()) {
         val gap = 10.dp
-        val swatchWidth = (maxWidth - gap * (fixed.size - 1)) / fixed.size
-        Column(verticalArrangement = Arrangement.spacedBy(gap)) {
-            Row(horizontalArrangement = Arrangement.spacedBy(gap)) {
-                fixed.forEach { Swatch(it, it == selected, swatchWidth, onSelect) }
-            }
-            // Before Android 12 there are no wallpaper colours; tiles already using them keep a default.
-            if (supportsDynamicColor) {
-                Row(horizontalArrangement = Arrangement.spacedBy(gap), verticalAlignment = Alignment.CenterVertically) {
-                    // Spans the first three columns, so the wallpaper swatches line up under the last three.
-                    Text(
-                        stringResource(R.string.colors_wallpaper),
-                        style = MaterialTheme.typography.labelMedium,
-                        color = palette.muted,
-                        modifier = Modifier.width(swatchWidth * 3 + gap * 2),
-                    )
-                    wallpaper.forEach { Swatch(it, it == selected, swatchWidth, onSelect) }
-                }
-            }
+        val swatchWidth = (maxWidth - gap * (colors.size - 1)) / colors.size
+        Row(horizontalArrangement = Arrangement.spacedBy(gap)) {
+            colors.forEach { Swatch(it, it == selected, swatchWidth, onSelect) }
         }
     }
 }
@@ -505,17 +489,20 @@ private fun Swatch(color: TileColor, isSelected: Boolean, width: Dp, onSelect: (
     )
 }
 
+/** "No icon", then every icon; six per row, the last row aligned to the start. */
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun IconPicker(selected: TileIcon, accent: TileColors, onSelect: (TileIcon) -> Unit) {
     val palette = TimeClickerTheme.palette
+    val columns = 6
+    val icons = TileIcon.entries
     FlowRow(
         Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.spacedBy(8.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp),
-        maxItemsInEachRow = 6,
+        maxItemsInEachRow = columns,
     ) {
-        TileIcon.entries.forEach { icon ->
+        icons.forEach { icon ->
             val isSelected = icon == selected
             val description = stringResource(R.string.icon_choice, stringResource(iconName(icon)))
             Box(
@@ -528,9 +515,17 @@ private fun IconPicker(selected: TileIcon, accent: TileColors, onSelect: (TileIc
                     .semantics { contentDescription = description },
                 contentAlignment = Alignment.Center,
             ) {
-                Icon(AppIcons.tile(icon), null, tint = if (isSelected) accent.content else palette.text, modifier = Modifier.size(22.dp))
+                val tint = if (isSelected) accent.content else palette.text
+                val vector = AppIcons.tile(icon)
+                if (vector != null) {
+                    Icon(vector, null, tint = tint, modifier = Modifier.size(22.dp))
+                } else {
+                    Icon(AppIcons.NoIcon, null, tint = tint.copy(alpha = 0.6f), modifier = Modifier.size(22.dp))
+                }
             }
         }
+        // Empty cells keep the last row's icons the same width as the others.
+        repeat((columns - icons.size % columns) % columns) { Spacer(Modifier.weight(1f)) }
     }
 }
 
@@ -547,6 +542,7 @@ private fun colorName(color: TileColor) = when (color) {
 }
 
 private fun iconName(icon: TileIcon) = when (icon) {
+    TileIcon.NONE -> R.string.icon_none
     TileIcon.CHECK -> R.string.icon_check
     TileIcon.DROP -> R.string.icon_drop
     TileIcon.LEAF -> R.string.icon_leaf

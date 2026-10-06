@@ -8,7 +8,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -34,13 +33,18 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -49,6 +53,7 @@ import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import com.keeptrack.timeclicker.R
 import com.keeptrack.timeclicker.data.TileSize
+import com.keeptrack.timeclicker.data.TimeDisplay
 import com.keeptrack.timeclicker.data.Tracker
 import com.keeptrack.timeclicker.ui.components.rememberPressAmount
 import com.keeptrack.timeclicker.ui.theme.AppIcons
@@ -57,6 +62,8 @@ import com.keeptrack.timeclicker.ui.theme.pressedIn
 import com.keeptrack.timeclicker.ui.theme.raised
 import com.keeptrack.timeclicker.ui.time.Elapsed
 import com.keeptrack.timeclicker.ui.time.RelativeTime
+import com.keeptrack.timeclicker.ui.time.absoluteTime
+import com.keeptrack.timeclicker.ui.time.agoAffixes
 import com.keeptrack.timeclicker.ui.time.format
 import com.keeptrack.timeclicker.ui.time.rememberNow
 import java.io.File
@@ -94,14 +101,19 @@ fun TileCard(
     val colors = if (hasPhoto) palette.photoTile else palette.tile(tracker.color)
     val interaction = remember { MutableInteractionSource() }
     val press = rememberPressAmount(interaction)
+    val settings = TimeClickerTheme.settings
     val haptics = LocalHapticFeedback.current
     val now = rememberNow(tracker.lastDoneAt)
     val elapsed = RelativeTime.split(tracker.lastDoneAt, now)
     val justDone = Duration.between(tracker.lastDoneAt, now) < Duration.ofMinutes(1)
-    // Hidden at once on a reset, then fades in when the first second is shown.
+    val context = LocalContext.current
+    val absolute = settings.timeDisplay == TimeDisplay.ABSOLUTE
+    val absoluteTime = if (absolute) remember(tracker.lastDoneAt) { absoluteTime(context, tracker.lastDoneAt) } else null
+    // Relative time: hidden at once on a reset, then fades in when the first second is shown.
+    val hidden = elapsed.isEmpty && !absolute
     val textAlpha by animateFloatAsState(
-        targetValue = if (elapsed.isEmpty) 0f else 1f,
-        animationSpec = if (elapsed.isEmpty) snap() else tween(durationMillis = 700),
+        targetValue = if (hidden) 0f else 1f,
+        animationSpec = if (hidden) snap() else tween(durationMillis = 700),
         label = "elapsedAlpha",
     )
 
@@ -116,10 +128,10 @@ fun TileCard(
 
     val longClickLabel = stringResource(R.string.tile_long_click_label)
     val resources = LocalResources.current
-    val description = listOf(
+    val description = listOfNotNull(
         tracker.name,
         if (elapsed.isEmpty) stringResource(R.string.elapsed_just_now) else stringResource(R.string.elapsed_ago, elapsed.format(resources)),
-        pluralStringResource(R.plurals.press_count, tracker.pressCount, tracker.pressCount),
+        pluralStringResource(R.plurals.press_count, tracker.pressCount, tracker.pressCount).takeIf { settings.showCounter },
     ).joinToString(", ")
 
     Box(
@@ -136,12 +148,12 @@ fun TileCard(
                         onClickLabel = onClickLabel,
                         onLongClickLabel = longClickLabel.takeIf { onLongClick != null },
                         onClick = {
-                            haptics.performHapticFeedback(HapticFeedbackType.Confirm)
+                            if (settings.haptics) haptics.performHapticFeedback(HapticFeedbackType.Confirm)
                             onClick()
                         },
                         onLongClick = onLongClick?.let {
                             {
-                                haptics.performHapticFeedback(HapticFeedbackType.LongPress)
+                                if (settings.haptics) haptics.performHapticFeedback(HapticFeedbackType.LongPress)
                                 it()
                             }
                         },
@@ -165,17 +177,20 @@ fun TileCard(
         Box(Modifier.fillMaxSize().pressedIn(TileShape, colors.shadow, palette.highlight, amount = press))
 
         Column(Modifier.fillMaxSize().padding(16.dp)) {
-            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
-                Box(
-                    Modifier
-                        .size(38.dp)
-                        .clip(RoundedCornerShape(13.dp))
-                        .background(glass)
-                        .border(1.dp, glassBorder, RoundedCornerShape(13.dp)),
-                    contentAlignment = Alignment.Center,
-                ) {
-                    Icon(AppIcons.tile(tracker.icon), null, tint = colors.content, modifier = Modifier.size(20.dp))
+            Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                AppIcons.tile(tracker.icon)?.let { icon ->
+                    Box(
+                        Modifier
+                            .size(38.dp)
+                            .clip(RoundedCornerShape(13.dp))
+                            .background(glass)
+                            .border(1.dp, glassBorder, RoundedCornerShape(13.dp)),
+                        contentAlignment = Alignment.Center,
+                    ) {
+                        Icon(icon, null, tint = colors.content, modifier = Modifier.size(20.dp))
+                    }
                 }
+                Spacer(Modifier.weight(1f))
                 Box(
                     Modifier
                         .size(34.dp)
@@ -193,10 +208,17 @@ fun TileCard(
                 }
             }
             Spacer(Modifier.weight(1f))
-            TileTexts(tracker, elapsed, { textAlpha }, colors.content, textShadow)
+            val ago = agoAffixes(resources)
+            val headline = absoluteTime?.let { AnnotatedString(it.headline) } ?: relativeHeadline(elapsed, ago.prefix)
+            TileTexts(tracker, headline, { textAlpha }, colors.content, textShadow)
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text(
-                    text = elapsed.minor?.format(resources).orEmpty(),
+                    text = when {
+                        absoluteTime != null -> absoluteTime.detail
+                        elapsed.isEmpty -> ""
+                        // "5 hours ago": the next unit, then the end of "… ago" (if the language puts it after).
+                        else -> (elapsed.minor?.format(resources).orEmpty() + ago.suffix).trim()
+                    },
                     style = TextStyle(fontSize = 12.5.sp, fontWeight = FontWeight.SemiBold, shadow = textShadow),
                     color = colors.content,
                     maxLines = 1,
@@ -204,7 +226,7 @@ fun TileCard(
                     modifier = Modifier.weight(1f).graphicsLayer { alpha = textAlpha },
                 )
                 // How many times the tile was pressed (since created, or since its counter was reset).
-                Text(
+                if (settings.showCounter) Text(
                     text = NumberFormat.getIntegerInstance().format(tracker.pressCount),
                     style = TextStyle(fontSize = 11.sp, fontWeight = FontWeight.Bold, lineHeight = 14.sp),
                     color = colors.content,
@@ -221,9 +243,29 @@ fun TileCard(
     }
 }
 
-/** Name and the headline unit of the elapsed time ("2 minutes"); the next unit goes on the bottom row. */
+/**
+ * The headline unit of the elapsed time ("2 minutes"); the next unit goes on the bottom row.
+ * Languages that put "ago" first ("il y a 2 minutes") get it before the headline, in smaller type.
+ */
 @Composable
-private fun TileTexts(tracker: Tracker, elapsed: Elapsed, textAlpha: () -> Float, color: Color, shadow: TextShadow?) {
+private fun relativeHeadline(elapsed: Elapsed, agoPrefix: String): AnnotatedString {
+    val major = elapsed.major?.format(LocalResources.current)
+    return when {
+        // Keeps its line while hidden, so the tile doesn't jump when the text fades in.
+        major == null -> AnnotatedString(" ")
+        agoPrefix.isBlank() -> AnnotatedString(major.replaceFirstChar { it.uppercase() })
+        else -> buildAnnotatedString {
+            withStyle(SpanStyle(fontSize = 0.55.em, fontWeight = FontWeight.Bold, letterSpacing = 0.em)) {
+                append(agoPrefix.replaceFirstChar { it.uppercase() })
+            }
+            append(major)
+        }
+    }
+}
+
+/** Name and the big time text: how long ago, or the day it was done. */
+@Composable
+private fun TileTexts(tracker: Tracker, headline: AnnotatedString, textAlpha: () -> Float, color: Color, shadow: TextShadow?) {
     val headlineSize = when (tracker.size) {
         TileSize.TALL -> 44.sp
         TileSize.WIDE -> 32.sp
@@ -236,10 +278,8 @@ private fun TileTexts(tracker: Tracker, elapsed: Elapsed, textAlpha: () -> Float
         maxLines = 2,
         overflow = TextOverflow.Ellipsis,
     )
-    val resources = LocalResources.current
     Text(
-        // Keeps its line while hidden, so the tile doesn't jump when the text fades in.
-        text = elapsed.major?.format(resources)?.replaceFirstChar { it.uppercase() } ?: " ",
+        text = headline,
         style = TextStyle(
             fontSize = headlineSize,
             fontWeight = FontWeight.ExtraBold,

@@ -35,6 +35,7 @@ object IconPaths {
     const val REFRESH = "M20 12a8 8 0 1 1-2.4-5.7M20 4v5h-5"
     const val CHECK = "M5 12.5l4.5 4.5L19 7.5"
 
+    /** Every tile icon but [TileIcon.NONE]. */
     val tiles: Map<TileIcon, String> = mapOf(
         TileIcon.CHECK to "M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 12.5l2.8 2.8L16 10",
         TileIcon.DROP to "M12 3c3.2 4.2 6 7.3 6 11a6 6 0 0 1-12 0c0-3.7 2.8-6.8 6-11z",
@@ -66,6 +67,28 @@ object AppIcons {
     val Groups = strokeIcon("groups", "M4 7h10M18 7h2M4 17h4M12 17h8M16 4.5v5M10 14.5v5", 2f)
     val Info = strokeIcon("info", "M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 11v5M12 7.5h.01", 2f)
     val Widget = strokeIcon("widget", "M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM16.5 13v7M13 16.5h7", 2f)
+    val Settings = strokeIcon(
+        "settings",
+        "M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06" +
+            "a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4" +
+            "a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3" +
+            "a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06" +
+            "a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33" +
+            "l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09" +
+            "a1.65 1.65 0 0 0-1.51 1z",
+        1.8f,
+    )
+    val Export = strokeIcon("export", "M12 15V3M7 8l5-5 5 5M4 15v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4", 2f)
+    val Import = strokeIcon("import", "M12 3v12M7 10l5 5 5-5M4 15v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4", 2f)
+    val Language = strokeIcon(
+        "language",
+        "M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z",
+        1.9f,
+    )
+    val Heart = strokeIcon("heart", IconPaths.tiles.getValue(TileIcon.HEART), 2f)
+    val Chevron = strokeIcon("chevron", "M9 5l7 7-7 7", 2.2f)
+    /** The "no icon" choice in the icon picker. */
+    val NoIcon = strokeIcon("none", "M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM5.6 5.6l12.8 12.8", IconPaths.TILE_STROKE)
     val More = fillIcon("more", dot(12f, 5.5f, 1.8f) + dot(12f, 12f, 1.8f) + dot(12f, 18.5f, 1.8f))
     val DragHandle = fillIcon(
         "drag",
@@ -75,5 +98,6 @@ object AppIcons {
     private val tileIcons: Map<TileIcon, ImageVector> =
         IconPaths.tiles.mapValues { (icon, path) -> strokeIcon(icon.key, path, IconPaths.TILE_STROKE) }
 
-    fun tile(icon: TileIcon): ImageVector = tileIcons.getValue(icon)
+    /** Null for [TileIcon.NONE]. */
+    fun tile(icon: TileIcon): ImageVector? = tileIcons[icon]
 }

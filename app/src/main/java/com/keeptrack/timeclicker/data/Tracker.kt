@@ -39,6 +39,9 @@ enum class TileColor(val key: String) {
     PRIMARY("primary"), SECONDARY("secondary"), TERTIARY("tertiary");
 
     companion object {
+        /** The colours offered when editing a tile. Wallpaper colours are no longer offered; tiles using them keep them. */
+        val pickable: List<TileColor> = entries.filter { it.ordinal < PRIMARY.ordinal }
+
         fun fromKey(key: String?) = entries.firstOrNull { it.key == key } ?: SAGE
     }
 }
@@ -52,6 +55,8 @@ enum class TileSize(val key: String, val columns: Int, val rows: Int) {
 }
 
 enum class TileIcon(val key: String) {
+    /** No icon: the tile shows only its text. */
+    NONE("none"),
     CHECK("check"), DROP("drop"), LEAF("leaf"), GRASS("grass"), FLOWER("flower"),
     BED("bed"), COFFEE("coffee"), SNOW("snow"), TRASH("trash"), CART("cart"),
     PHONE("phone"), HEART("heart"), PILL("pill"), PAW("paw"), SCISSORS("scissors"),

@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Home -->
-    <plurals name="things_count">
-        <item quantity="one">%d ding</item>
-        <item quantity="other">%d dingen</item>
-    </plurals>
-    <plurals name="groups_count">
-        <item quantity="one">%d groep</item>
-        <item quantity="other">%d groepen</item>
-    </plurals>
-    <string name="header_tracked">%1$s bijgehouden</string>
-    <string name="header_grouped">%1$s in %2$s</string>
     <string name="chip_all">Alles</string>
     <string name="chip_other">Overig</string>
     <string name="section_oldest">oudste: %1$s</string>
@@ -53,6 +43,7 @@
     <!-- Common actions -->
     <string name="action_add_tile">Tegel toevoegen</string>
     <string name="action_manage_groups">Groepen beheren</string>
+    <string name="action_settings">Instellingen</string>
     <string name="action_undo">Ongedaan maken</string>
     <string name="action_cancel">Annuleren</string>
     <string name="action_save">Opslaan</string>
@@ -96,11 +87,11 @@
     <string name="color_sky">Hemelsblauw</string>
     <string name="color_butter">Botergeel</string>
     <string name="color_rose">Roze</string>
-    <string name="colors_wallpaper">Uit je achtergrond</string>
     <string name="color_wallpaper_primary">Achtergrond: accent</string>
     <string name="color_wallpaper_secondary">Achtergrond: zacht</string>
     <string name="color_wallpaper_tertiary">Achtergrond: contrast</string>
     <string name="icon_choice">Pictogram: %1$s</string>
+    <string name="icon_none">Geen pictogram</string>
     <string name="icon_check">Vinkje</string>
     <string name="icon_drop">Waterdruppel</string>
     <string name="icon_leaf">Blad</string>
@@ -142,6 +133,48 @@
     <string name="groups_note">Als je een groep verwijdert, blijven de tegels bewaard; ze gaan naar „Overig”, een sectie die alleen verschijnt als er tegels in zitten.</string>
     <string name="group_options">Opties voor %1$s</string>
     <string name="group_drag">%1$s verslepen om te herordenen</string>
+
+    <!-- Settings screen -->
+    <string name="settings_title">Instellingen</string>
+    <string name="settings_section_appearance">Weergave</string>
+    <string name="settings_theme">Thema</string>
+    <string name="theme_system">Systeem</string>
+    <string name="theme_light">Licht</string>
+    <string name="theme_dark">Donker</string>
+    <string name="settings_wallpaper_colors">Achtergrondkleuren</string>
+    <string name="settings_wallpaper_colors_hint">Kleur de app en de widgets met de kleuren van je achtergrond.</string>
+    <string name="settings_section_tiles">Tegels</string>
+    <string name="settings_time_display">Tijdweergave</string>
+    <string name="settings_time_display_hint">Hoe lang geleden elke tegel is gedaan, of de datum en tijd.</string>
+    <!-- "3 days ago" -->
+    <string name="time_display_relative">Relatief</string>
+    <!-- "6 Oct, 14:32" -->
+    <string name="time_display_absolute">Absoluut</string>
+    <string name="settings_haptics">Trillen bij tikken</string>
+    <string name="settings_haptics_hint">Een korte trilling als je op een tegel tikt of hem vasthoudt.</string>
+    <string name="settings_counter">Teller tonen</string>
+    <string name="settings_counter_hint">Hoe vaak elke tegel is ingedrukt, op tegels en widgets.</string>
+    <string name="settings_undo">Ongedaan maken aanbieden</string>
+    <string name="settings_undo_hint">Toon na het tikken op een tegel een melding met een knop Ongedaan maken.</string>
+    <string name="settings_section_general">Algemeen</string>
+    <string name="settings_groups_hint">Groepen maken, hernoemen, herordenen en verwijderen.</string>
+    <string name="settings_language">Taal</string>
+    <string name="settings_language_hint">Kies de taal van de app in de Android-instellingen.</string>
+    <string name="settings_section_data">Je gegevens</string>
+    <string name="settings_export">Exporteren</string>
+    <string name="settings_export_hint">Alle tegels, groepen, geschiedenis, foto’s en instellingen in een bestand opslaan.</string>
+    <string name="settings_import">Importeren</string>
+    <string name="settings_import_hint">Een geëxporteerd bestand terugzetten. Vervangt alles wat nu in de app staat.</string>
+    <string name="dialog_import_title">Alles vervangen?</string>
+    <string name="dialog_import_body">Alle huidige tegels, groepen, geschiedenis, foto’s en instellingen worden vervangen door de inhoud van de back-up.</string>
+    <string name="export_done">Back-up opgeslagen</string>
+    <string name="export_failed">Kan de back-up niet opslaan</string>
+    <!-- %1$s is a number of tiles, e.g. "3 tiles". -->
+    <string name="import_done">Back-up geïmporteerd: %1$s</string>
+    <string name="import_failed">Dat bestand is geen Time Clicker-back-up of kan niet worden gelezen.</string>
+    <string name="support_text">We maken dingen uit passie en om het leven van mensen makkelijker te maken. We voegen nooit advertenties of betaalde functies toe aan de app. Bijdragen is nooit verplicht.</string>
+    <string name="action_donate">Steun ons op Ko-fi</string>
+    <string name="settings_version">Versie %1$s</string>
 
     <!-- Home-screen widget -->
     <string name="widget_description">Eén tegel: hoe lang geleden je het voor het laatst deed. Tik om als gedaan te markeren.</string>

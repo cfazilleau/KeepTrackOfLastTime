@@ -7,19 +7,22 @@ Tap a tile when you do it again and it resets to now: the time disappears, then 
 The number in the tile's bottom-right corner counts how many times it was pressed.
 
 - **Tap** a tile: mark it as done now. A snackbar offers **Undo**.
-- **Long-press** a tile: edit it in a sheet: name, group, colour or photo background, icon,
+- **Long-press** a tile: edit it in a sheet: name, group, colour or photo background, icon (or none),
   size (Small / Wide / Tall), reset its press counter, add it to the home screen, or delete it.
   All sizes show the same content.
-- **+** button: add a new tile, pre-filed in the group currently shown.
+- **+** button (bottom centre): add a new tile, pre-filed in the group currently shown.
 - **Group chips**, or **swiping left/right**, move between groups; "All" shows one section per group.
   The sliders button opens **Groups**: add, rename, delete, drag to reorder.
 - **Widgets**: any tile can live on the home screen (from the widget picker, or "Add to home screen"
   in its edit sheet). Tapping the widget marks it as done; its icon opens the app.
+- **Settings** (gear button): theme (system / light / dark), wallpaper colours, time shown as
+  "3 days ago" or as a date and time, vibration, press counter, the Undo message, groups, language,
+  and **export / import** of everything (tiles, groups, history, photos, settings) as one `.zip` file.
 
 The look is a neumorphic "bento" grid: soft pastel tiles raised off the page that sink in when pressed,
-and glide to their new place when the grid changes. Light and dark themes follow the system.
-On Android 12+ the app follows the wallpaper's **Material You** colours: surfaces, accents and three
-"From your wallpaper" tile colours; the pastel colours are nudged toward the wallpaper's hue to match.
+and glide to their new place when the grid changes. Light and dark themes follow the system unless
+picked in the settings. On Android 12+ the app can follow the wallpaper's **Material You** colours:
+surfaces and accents, with the pastel tile colours nudged toward the wallpaper's hue to match.
 
 Translated into English, French, Spanish, German, Italian, Portuguese, Dutch, Polish, Russian, Turkish,
 Indonesian, Arabic, Hindi, Japanese, Korean and Simplified Chinese. On Android 13+ the language can be
