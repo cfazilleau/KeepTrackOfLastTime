@@ -99,9 +99,9 @@
     <string name="color_sky">Błękit</string>
     <string name="color_butter">Masło</string>
     <string name="color_rose">Róż</string>
-    <string name="color_wallpaper_primary">Tapeta: akcent</string>
-    <string name="color_wallpaper_secondary">Tapeta: łagodny</string>
-    <string name="color_wallpaper_tertiary">Tapeta: kontrast</string>
+    <string name="color_system_primary">System: akcent</string>
+    <string name="color_system_secondary">System: łagodny</string>
+    <string name="color_system_tertiary">System: kontrast</string>
     <string name="icon_choice">Ikona: %1$s</string>
     <string name="icon_none">Bez ikony</string>
     <string name="icon_check">Ptaszek</string>
@@ -155,8 +155,8 @@
     <string name="theme_system">Systemowy</string>
     <string name="theme_light">Jasny</string>
     <string name="theme_dark">Ciemny</string>
-    <string name="settings_wallpaper_colors">Kolory tapety</string>
-    <string name="settings_wallpaper_colors_hint">Barwi aplikację i jej widżety kolorami Twojej tapety.</string>
+    <string name="settings_system_colors">Kolory systemowe</string>
+    <string name="settings_system_colors_hint">Barwi aplikację i jej widżety kolorami Material You Twojego telefonu.</string>
     <string name="settings_section_tiles">Kafelki</string>
     <string name="settings_time_display">Wyświetlanie czasu</string>
     <string name="settings_time_display_hint">Ile czasu minęło od wykonania każdego kafelka albo data i godzina.</string>

@@ -93,9 +93,9 @@
     <string name="color_sky">Céu</string>
     <string name="color_butter">Manteiga</string>
     <string name="color_rose">Rosa</string>
-    <string name="color_wallpaper_primary">Destaque do plano de fundo</string>
-    <string name="color_wallpaper_secondary">Tom suave do plano de fundo</string>
-    <string name="color_wallpaper_tertiary">Contraste do plano de fundo</string>
+    <string name="color_system_primary">Destaque do sistema</string>
+    <string name="color_system_secondary">Tom suave do sistema</string>
+    <string name="color_system_tertiary">Contraste do sistema</string>
     <string name="icon_choice">Ícone: %1$s</string>
     <string name="icon_none">Sem ícone</string>
     <string name="icon_check">Marca de seleção</string>
@@ -148,8 +148,8 @@
     <string name="theme_system">Sistema</string>
     <string name="theme_light">Claro</string>
     <string name="theme_dark">Escuro</string>
-    <string name="settings_wallpaper_colors">Cores do plano de fundo</string>
-    <string name="settings_wallpaper_colors_hint">Aplica as cores do seu plano de fundo ao app e aos widgets.</string>
+    <string name="settings_system_colors">Cores do sistema</string>
+    <string name="settings_system_colors_hint">Aplica as cores Material You do seu dispositivo ao app e aos widgets.</string>
     <string name="settings_section_tiles">Cards</string>
     <string name="settings_time_display">Exibição do tempo</string>
     <string name="settings_time_display_hint">Há quanto tempo cada card foi feito, ou a data e a hora.</string>

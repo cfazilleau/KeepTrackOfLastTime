@@ -93,9 +93,9 @@
     <string name="color_sky">Cielo</string>
     <string name="color_butter">Mantequilla</string>
     <string name="color_rose">Rosa</string>
-    <string name="color_wallpaper_primary">Acento del fondo</string>
-    <string name="color_wallpaper_secondary">Tono suave del fondo</string>
-    <string name="color_wallpaper_tertiary">Contraste del fondo</string>
+    <string name="color_system_primary">Acento del sistema</string>
+    <string name="color_system_secondary">Tono suave del sistema</string>
+    <string name="color_system_tertiary">Contraste del sistema</string>
     <string name="icon_choice">Icono: %1$s</string>
     <string name="icon_none">Sin icono</string>
     <string name="icon_check">Marca</string>
@@ -148,8 +148,8 @@
     <string name="theme_system">Sistema</string>
     <string name="theme_light">Claro</string>
     <string name="theme_dark">Oscuro</string>
-    <string name="settings_wallpaper_colors">Colores del fondo de pantalla</string>
-    <string name="settings_wallpaper_colors_hint">Tiñe la app y sus widgets con los colores de tu fondo de pantalla.</string>
+    <string name="settings_system_colors">Colores del sistema</string>
+    <string name="settings_system_colors_hint">Tiñe la app y sus widgets con los colores Material You de tu teléfono.</string>
     <string name="settings_section_tiles">Tarjetas</string>
     <string name="settings_time_display">Formato del tiempo</string>
     <string name="settings_time_display_hint">Cuánto hace que hiciste cada tarjeta, o la fecha y la hora.</string>

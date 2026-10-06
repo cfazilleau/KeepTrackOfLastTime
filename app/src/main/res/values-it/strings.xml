@@ -93,9 +93,9 @@
     <string name="color_sky">Cielo</string>
     <string name="color_butter">Burro</string>
     <string name="color_rose">Rosa</string>
-    <string name="color_wallpaper_primary">Accento dello sfondo</string>
-    <string name="color_wallpaper_secondary">Tono tenue dello sfondo</string>
-    <string name="color_wallpaper_tertiary">Contrasto dello sfondo</string>
+    <string name="color_system_primary">Accento di sistema</string>
+    <string name="color_system_secondary">Tono tenue di sistema</string>
+    <string name="color_system_tertiary">Contrasto di sistema</string>
     <string name="icon_choice">Icona: %1$s</string>
     <string name="icon_none">Nessuna icona</string>
     <string name="icon_check">Spunta</string>
@@ -148,8 +148,8 @@
     <string name="theme_system">Sistema</string>
     <string name="theme_light">Chiaro</string>
     <string name="theme_dark">Scuro</string>
-    <string name="settings_wallpaper_colors">Colori dello sfondo</string>
-    <string name="settings_wallpaper_colors_hint">Colora l’app e i suoi widget con i colori del tuo sfondo.</string>
+    <string name="settings_system_colors">Colori di sistema</string>
+    <string name="settings_system_colors_hint">Colora l’app e i suoi widget con i colori Material You del tuo telefono.</string>
     <string name="settings_section_tiles">Riquadri</string>
     <string name="settings_time_display">Visualizzazione del tempo</string>
     <string name="settings_time_display_hint">Quanto tempo fa è stato fatto ogni riquadro, oppure la data e l’ora.</string>

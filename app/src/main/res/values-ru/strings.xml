@@ -99,9 +99,9 @@
     <string name="color_sky">Небо</string>
     <string name="color_butter">Сливки</string>
     <string name="color_rose">Роза</string>
-    <string name="color_wallpaper_primary">Обои: акцент</string>
-    <string name="color_wallpaper_secondary">Обои: мягкий</string>
-    <string name="color_wallpaper_tertiary">Обои: контраст</string>
+    <string name="color_system_primary">Система: акцент</string>
+    <string name="color_system_secondary">Система: мягкий</string>
+    <string name="color_system_tertiary">Система: контраст</string>
     <string name="icon_choice">Значок: %1$s</string>
     <string name="icon_none">Без значка</string>
     <string name="icon_check">Галочка</string>
@@ -155,8 +155,8 @@
     <string name="theme_system">Системная</string>
     <string name="theme_light">Светлая</string>
     <string name="theme_dark">Тёмная</string>
-    <string name="settings_wallpaper_colors">Цвета обоев</string>
-    <string name="settings_wallpaper_colors_hint">Окрашивать приложение и его виджеты в цвета ваших обоев.</string>
+    <string name="settings_system_colors">Системные цвета</string>
+    <string name="settings_system_colors_hint">Окрашивать приложение и его виджеты в цвета Material You вашего телефона.</string>
     <string name="settings_section_tiles">Плитки</string>
     <string name="settings_time_display">Отображение времени</string>
     <string name="settings_time_display_hint">Сколько времени прошло с последнего раза или дата и время.</string>

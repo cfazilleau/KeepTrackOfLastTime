@@ -92,10 +92,10 @@
     <string name="color_sky">Sky</string>
     <string name="color_butter">Butter</string>
     <string name="color_rose">Rose</string>
-    <!-- Material You: colours taken from the wallpaper (Android 12+), kept for tiles that already use them. -->
-    <string name="color_wallpaper_primary">Wallpaper accent</string>
-    <string name="color_wallpaper_secondary">Wallpaper soft</string>
-    <string name="color_wallpaper_tertiary">Wallpaper contrast</string>
+    <!-- Material You: the system colours (Android 12+), kept for tiles that already use them. -->
+    <string name="color_system_primary">System accent</string>
+    <string name="color_system_secondary">System soft</string>
+    <string name="color_system_tertiary">System contrast</string>
     <string name="icon_choice">Icon: %1$s</string>
     <string name="icon_none">No icon</string>
     <string name="icon_check">Check</string>
@@ -147,8 +147,8 @@
     <string name="theme_system">System</string>
     <string name="theme_light">Light</string>
     <string name="theme_dark">Dark</string>
-    <string name="settings_wallpaper_colors">Wallpaper colours</string>
-    <string name="settings_wallpaper_colors_hint">Tint the app and its widgets with your wallpaper’s colours.</string>
+    <string name="settings_system_colors">System colours</string>
+    <string name="settings_system_colors_hint">Tint the app and its widgets with your phone’s Material You colours.</string>
     <string name="settings_section_tiles">Tiles</string>
     <string name="settings_time_display">Time display</string>
     <string name="settings_time_display_hint">How long ago each tile was done, or the date and time.</string>

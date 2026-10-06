@@ -87,9 +87,9 @@
     <string name="color_sky">Gökyüzü</string>
     <string name="color_butter">Tereyağı</string>
     <string name="color_rose">Gül</string>
-    <string name="color_wallpaper_primary">Duvar kâğıdı: vurgu</string>
-    <string name="color_wallpaper_secondary">Duvar kâğıdı: yumuşak</string>
-    <string name="color_wallpaper_tertiary">Duvar kâğıdı: kontrast</string>
+    <string name="color_system_primary">Sistem: vurgu</string>
+    <string name="color_system_secondary">Sistem: yumuşak</string>
+    <string name="color_system_tertiary">Sistem: kontrast</string>
     <string name="icon_choice">Simge: %1$s</string>
     <string name="icon_none">Simge yok</string>
     <string name="icon_check">Onay işareti</string>
@@ -141,8 +141,8 @@
     <string name="theme_system">Sistem</string>
     <string name="theme_light">Açık</string>
     <string name="theme_dark">Koyu</string>
-    <string name="settings_wallpaper_colors">Duvar kâğıdı renkleri</string>
-    <string name="settings_wallpaper_colors_hint">Uygulamayı ve widget’larını duvar kâğıdınızın renkleriyle renklendirir.</string>
+    <string name="settings_system_colors">Sistem renkleri</string>
+    <string name="settings_system_colors_hint">Uygulamayı ve widget’larını telefonunuzun Material You renkleriyle renklendirir.</string>
     <string name="settings_section_tiles">Kutucuklar</string>
     <string name="settings_time_display">Zaman gösterimi</string>
     <string name="settings_time_display_hint">Her kutucuğun ne kadar önce yapıldığı veya tarih ve saat.</string>

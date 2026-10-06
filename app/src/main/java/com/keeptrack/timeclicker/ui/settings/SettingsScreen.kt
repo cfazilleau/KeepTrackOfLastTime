@@ -169,10 +169,10 @@ fun SettingsScreen(
                     if (supportsDynamicColor) {
                         RowDivider()
                         SwitchRow(
-                            title = stringResource(R.string.settings_wallpaper_colors),
-                            hint = stringResource(R.string.settings_wallpaper_colors_hint),
-                            checked = settings.wallpaperColors,
-                            onCheckedChange = { on -> update { it.copy(wallpaperColors = on) } },
+                            title = stringResource(R.string.settings_system_colors),
+                            hint = stringResource(R.string.settings_system_colors_hint),
+                            checked = settings.dynamicColors,
+                            onCheckedChange = { on -> update { it.copy(dynamicColors = on) } },
                         )
                     }
                 }

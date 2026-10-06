@@ -26,10 +26,10 @@ class TimeClickerApplication : Application() {
                 .drop(1) // the tiles as they are at start-up: nothing changed yet
                 .collectLatest { TileWidgets.refresh(this@TimeClickerApplication) }
         }
-        // ...and the settings they follow (press counter, wallpaper colours, time display).
+        // ...and the settings they follow (press counter, system colours, time display).
         CoroutineScope(SupervisorJob() + Dispatchers.Default).launch {
             container.settingsRepository.settings
-                .map { Triple(it.showCounter, it.wallpaperColors, it.timeDisplay) }
+                .map { Triple(it.showCounter, it.dynamicColors, it.timeDisplay) }
                 .distinctUntilChanged()
                 .drop(1)
                 .collectLatest { TileWidgets.refresh(this@TimeClickerApplication) }

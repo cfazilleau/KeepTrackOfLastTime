@@ -562,9 +562,9 @@ private fun colorName(color: TileColor) = when (color) {
     TileColor.SKY -> R.string.color_sky
     TileColor.BUTTER -> R.string.color_butter
     TileColor.ROSE -> R.string.color_rose
-    TileColor.PRIMARY -> R.string.color_wallpaper_primary
-    TileColor.SECONDARY -> R.string.color_wallpaper_secondary
-    TileColor.TERTIARY -> R.string.color_wallpaper_tertiary
+    TileColor.PRIMARY -> R.string.color_system_primary
+    TileColor.SECONDARY -> R.string.color_system_secondary
+    TileColor.TERTIARY -> R.string.color_system_tertiary
 }
 
 private fun iconName(icon: TileIcon) = when (icon) {

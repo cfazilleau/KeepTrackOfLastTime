@@ -81,9 +81,9 @@
     <string name="color_sky">スカイ</string>
     <string name="color_butter">バター</string>
     <string name="color_rose">ローズ</string>
-    <string name="color_wallpaper_primary">壁紙のアクセント</string>
-    <string name="color_wallpaper_secondary">壁紙のソフト</string>
-    <string name="color_wallpaper_tertiary">壁紙のコントラスト</string>
+    <string name="color_system_primary">システムのアクセント</string>
+    <string name="color_system_secondary">システムのソフト</string>
+    <string name="color_system_tertiary">システムのコントラスト</string>
     <string name="icon_choice">アイコン: %1$s</string>
     <string name="icon_none">アイコンなし</string>
     <string name="icon_check">チェック</string>
@@ -134,8 +134,8 @@
     <string name="theme_system">システム</string>
     <string name="theme_light">ライト</string>
     <string name="theme_dark">ダーク</string>
-    <string name="settings_wallpaper_colors">壁紙の色</string>
-    <string name="settings_wallpaper_colors_hint">アプリとウィジェットを壁紙の色に合わせます。</string>
+    <string name="settings_system_colors">システムの色</string>
+    <string name="settings_system_colors_hint">アプリとウィジェットをスマートフォンの Material You の色に合わせます。</string>
     <string name="settings_section_tiles">タイル</string>
     <string name="settings_time_display">時間の表示</string>
     <string name="settings_time_display_hint">各タイルを最後にやってからの経過時間、または日時を表示します。</string>

@@ -81,9 +81,9 @@
     <string name="color_sky">하늘색</string>
     <string name="color_butter">버터</string>
     <string name="color_rose">로즈</string>
-    <string name="color_wallpaper_primary">배경화면 강조색</string>
-    <string name="color_wallpaper_secondary">배경화면 부드러운 색</string>
-    <string name="color_wallpaper_tertiary">배경화면 대비색</string>
+    <string name="color_system_primary">시스템 강조색</string>
+    <string name="color_system_secondary">시스템 부드러운 색</string>
+    <string name="color_system_tertiary">시스템 대비색</string>
     <string name="icon_choice">아이콘: %1$s</string>
     <string name="icon_none">아이콘 없음</string>
     <string name="icon_check">체크</string>
@@ -134,8 +134,8 @@
     <string name="theme_system">시스템 설정</string>
     <string name="theme_light">밝게</string>
     <string name="theme_dark">어둡게</string>
-    <string name="settings_wallpaper_colors">배경화면 색상</string>
-    <string name="settings_wallpaper_colors_hint">앱과 위젯에 배경화면 색상을 적용해요.</string>
+    <string name="settings_system_colors">시스템 색상</string>
+    <string name="settings_system_colors_hint">앱과 위젯에 휴대전화의 Material You 색상을 적용해요.</string>
     <string name="settings_section_tiles">타일</string>
     <string name="settings_time_display">시간 표시</string>
     <string name="settings_time_display_hint">각 타일을 한 지 얼마나 지났는지 또는 날짜와 시간을 표시해요.</string>
