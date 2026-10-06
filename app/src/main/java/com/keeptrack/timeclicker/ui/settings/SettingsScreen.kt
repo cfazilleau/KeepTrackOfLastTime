@@ -79,6 +79,7 @@ private const val DONATE_URL = "https://ko-fi.com/cfaz"
 fun SettingsScreen(
     onBack: () -> Unit,
     onManageGroups: () -> Unit,
+    onOpenIconPalette: () -> Unit,
     viewModel: SettingsViewModel = viewModel(factory = SettingsViewModel.Factory),
 ) {
     val palette = TimeClickerTheme.palette
@@ -210,6 +211,13 @@ fun SettingsScreen(
                         checked = settings.showCounter,
                         onCheckedChange = { on -> update { it.copy(showCounter = on) } },
                     )
+                    RowDivider()
+                    ActionRow(
+                        icon = AppIcons.Palette,
+                        title = stringResource(R.string.settings_icon_palette),
+                        hint = stringResource(R.string.settings_icon_palette_hint),
+                        onClick = onOpenIconPalette,
+                    )
                 }
 
                 Section(stringResource(R.string.settings_section_general)) {
@@ -266,6 +274,8 @@ fun SettingsScreen(
                     },
                 )
 
+                CreditsSection()
+
                 Text(
                     stringResource(R.string.settings_version, appVersion(context)),
                     style = MaterialTheme.typography.labelMedium,
@@ -315,7 +325,7 @@ private fun appVersion(context: android.content.Context): String =
 
 /** A titled group of rows on a raised card. */
 @Composable
-private fun Section(title: String, content: @Composable () -> Unit) {
+internal fun Section(title: String, content: @Composable () -> Unit) {
     val palette = TimeClickerTheme.palette
     val shape = RoundedCornerShape(24.dp)
     Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
@@ -336,12 +346,12 @@ private fun Section(title: String, content: @Composable () -> Unit) {
 }
 
 @Composable
-private fun RowDivider() {
+internal fun RowDivider() {
     HorizontalDivider(Modifier.padding(horizontal = 16.dp), color = TimeClickerTheme.palette.field)
 }
 
 @Composable
-private fun RowTexts(title: String, hint: String?, modifier: Modifier = Modifier) {
+internal fun RowTexts(title: String, hint: String?, modifier: Modifier = Modifier) {
     val palette = TimeClickerTheme.palette
     Column(modifier, verticalArrangement = Arrangement.spacedBy(2.dp)) {
         Text(title, style = MaterialTheme.typography.titleMedium, color = palette.text)

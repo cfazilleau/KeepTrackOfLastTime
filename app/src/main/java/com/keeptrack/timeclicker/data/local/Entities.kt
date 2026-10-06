@@ -22,7 +22,7 @@ data class GroupEntity(
             entity = GroupEntity::class,
             parentColumns = ["id"],
             childColumns = ["group_id"],
-            // Deleting a group keeps its tiles; they become ungrouped ("Other").
+            // Deleting a group keeps its tiles; they become ungrouped (shown only under "All").
             onDelete = ForeignKey.SET_NULL,
         ),
     ],

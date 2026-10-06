@@ -7,17 +7,21 @@ Tap a tile when you do it again and it resets to now: the time disappears, then 
 The number in the tile's bottom-right corner counts how many times it was pressed.
 
 - **Tap** a tile: mark it as done now. A snackbar offers **Undo**.
-- **Long-press** a tile: edit it in a sheet: name, group, colour or photo background, icon (or none),
+- **Long-press** a tile: edit it in a sheet: name, group, colour or photo background, icon (or none, from your icon palette),
   size (Small / Wide / Tall), reset its press counter, add it to the home screen, or delete it.
   All sizes show the same content.
 - **+** button (bottom centre): add a new tile, pre-filed in the group currently shown.
-- **Group chips**, or **swiping left/right**, move between groups; "All" shows one section per group.
+- **Group chips**, or **swiping left/right**, move between groups; "All" shows the tiles without a group,
+  then one section per group.
   The sliders button opens **Groups**: add, rename, delete, drag to reorder.
 - **Widgets**: any tile can live on the home screen (from the widget picker, or "Add to home screen"
   in its edit sheet). Tapping the widget marks it as done (with the click sound); its icon opens the app.
 - **Settings** (gear button, next to the title): theme (system / light / dark), system colours, time shown as
-  "3 days ago" or as a date and time, vibration, click sound, press counter, groups, language,
-  and **export / import** of everything (tiles, groups, history, photos, settings) as one `.zip` file.
+  "3 days ago" or as a date and time, vibration, click sound, press counter, **icon palette**, groups, language,
+  **export / import** of everything (tiles, groups, history, photos, settings) as one `.zip` file,
+  and credits for the open-source projects the app uses, with their licences.
+- **Icon palette** (Settings): every [Lucide](https://lucide.dev) icon (about 1,900), by category, with search.
+  Tap icons to add them to, or remove them from, the icons offered when editing a tile.
 
 The look is a neumorphic "bento" grid: soft pastel tiles raised off the page that sink in when pressed,
 and glide to their new place when the grid changes. Screens slide in and out, and switching the theme
@@ -41,6 +45,7 @@ tile photos are copied into the app's private storage too.
 | Widgets  | Jetpack Glance |
 | Storage  | Room (SQLite) |
 | Images   | Coil (local files only), Android photo picker (no permission needed) |
+| Icons    | [Lucide](https://lucide.dev) (ISC), bundled as path data in `assets/lucide/icons.tsv` |
 | Build    | Gradle (Kotlin DSL, version catalog), AGP 9 |
 | Min / target SDK | 26 / 37 |
 
@@ -52,7 +57,8 @@ app/src/main/java/com/keeptrack/timeclicker/
 ├── AppContainer.kt            # manual dependency injection
 ├── MainActivity.kt            # Home <-> Groups screen switch
 ├── data/
-│   ├── Tracker.kt             # domain model: tiles, groups, colour/size/icon enums
+│   ├── Tracker.kt             # domain model: tiles, groups, colour/size enums, icon (a Lucide name)
+│   ├── IconCatalog.kt         # the bundled Lucide icons: path data, categories, search tags
 │   ├── TrackerRepository.kt   # the single entry point the UI uses
 │   ├── PhotoStore.kt          # copies picked photos into private storage
 │   └── local/                 # Room: entities, DAO, database + migrations
@@ -60,18 +66,31 @@ app/src/main/java/com/keeptrack/timeclicker/
     ├── components/            # neumorphic buttons, text field, segmented control
     ├── home/                  # home screen (group pager), bento grid, tile, edit sheet, ViewModel
     ├── groups/                # manage groups screen
+    ├── icons/                 # icon palette screen, icon and category names
+    ├── settings/              # settings screen, credits
     ├── theme/                 # palette (+ Material You), neumorphic shadow modifiers, icons
     └── time/                  # "2 minutes 45 seconds" formatting + ticking clock
 └── widget/                    # home-screen widgets (Glance): widget, tile picker, refresh alarm
+app/src/main/assets/lucide/    # icons.tsv (generated) and the Lucide licence
+app/src/main/assets/licenses/  # licence texts shown in the credits
 app/schemas/                   # exported Room schemas (commit these, they back migrations)
+tools/lucide/generate_icons.py # regenerates icons.tsv from the latest Lucide release
 ```
+
+### Icons
+
+Tile icons are [Lucide](https://lucide.dev) icons, stored by name (`circle-check`). Earlier versions stored their
+own names (`check`, `paw`…); database migration 3 → 4 and the import of format-1 backups rename them. `python tools/lucide/generate_icons.py`
+downloads the latest Lucide release and its categories and rewrites `assets/lucide/icons.tsv`, each icon
+flattened to one path for both Compose and the widgets. Before committing a regenerated file, check its diff
+for removed icons: a tile using one would lose its icon (the unit tests check the default ones).
 
 ### Data model
 
 - `tracker_groups`: user-defined groups (name, display position).
 - `trackers`: one row per tile (name, group, colour, icon, size, photo file, display position,
   and `count_since`: the press counter counts events after this time).
-  Deleting a group sets its tiles' group to null ("Other").
+  Deleting a group sets its tiles' group to null (they then only show under "All").
 - `tracker_events`: one row per time a tile was done.
 
 A card's "last time" is its most recent event. Resetting a card inserts an event, and Undo deletes it.

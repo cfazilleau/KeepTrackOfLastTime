@@ -76,6 +76,23 @@ class MigrationTest {
     }
 
     @Test
+    fun migrate3To4_renamesIconsToLucide() {
+        helper.createDatabase(DB_V4, 3).use { db ->
+            listOf("check", "paw", "leaf", "flower").forEachIndexed { i, icon ->
+                db.execSQL("INSERT INTO trackers (id, name, created_at, position, icon) VALUES (${i + 1}, 'T$i', 1000, $i, '$icon')")
+            }
+        }
+
+        helper.runMigrationsAndValidate(DB_V4, 4, true, AppDatabase.MIGRATION_3_4).use { db ->
+            db.query("SELECT icon FROM trackers ORDER BY id").use { c ->
+                val icons = mutableListOf<String>()
+                while (c.moveToNext()) icons += c.getString(0)
+                assertEquals(listOf("circle-check", "paw-print", "leaf", "flower-2"), icons)
+            }
+        }
+    }
+
+    @Test
     fun deletingGroupKeepsItsTrackers() {
         helper.createDatabase(DB_V2, 2).use { db ->
             db.execSQL("PRAGMA foreign_keys = ON")
@@ -93,5 +110,6 @@ class MigrationTest {
         const val DB = "migration-test"
         const val DB_V2 = "groups-test"
         const val DB_V3 = "counter-test"
+        const val DB_V4 = "icons-test"
     }
 }

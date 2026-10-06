@@ -60,6 +60,8 @@ import com.keeptrack.timeclicker.ui.theme.AppIcons
 import com.keeptrack.timeclicker.ui.theme.TimeClickerTheme
 import com.keeptrack.timeclicker.ui.theme.pressedIn
 import com.keeptrack.timeclicker.ui.theme.raised
+import com.keeptrack.timeclicker.ui.theme.rememberIconCatalog
+import com.keeptrack.timeclicker.ui.theme.rememberTileIcon
 import com.keeptrack.timeclicker.ui.time.Elapsed
 import com.keeptrack.timeclicker.ui.time.RelativeTime
 import com.keeptrack.timeclicker.ui.time.absoluteTime
@@ -68,7 +70,6 @@ import com.keeptrack.timeclicker.ui.time.format
 import com.keeptrack.timeclicker.ui.time.rememberNow
 import java.io.File
 import java.text.NumberFormat
-import java.time.Duration
 import androidx.compose.ui.graphics.Shadow as TextShadow
 
 private val TileShape = RoundedCornerShape(28.dp)
@@ -105,7 +106,6 @@ fun TileCard(
     val haptics = LocalHapticFeedback.current
     val now = rememberNow(tracker.lastDoneAt)
     val elapsed = RelativeTime.split(tracker.lastDoneAt, now)
-    val justDone = Duration.between(tracker.lastDoneAt, now) < Duration.ofMinutes(1)
     val context = LocalContext.current
     val absolute = settings.timeDisplay == TimeDisplay.ABSOLUTE
     val absoluteTime = if (absolute) remember(tracker.lastDoneAt) { absoluteTime(context, tracker.lastDoneAt) } else null
@@ -178,7 +178,10 @@ fun TileCard(
 
         Column(Modifier.fillMaxSize().padding(16.dp)) {
             Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-                AppIcons.tile(tracker.icon)?.let { icon ->
+                // The chip keeps its place while the icon catalog loads, so the tile doesn't shift.
+                val catalog = rememberIconCatalog()
+                val icon = rememberTileIcon(tracker.icon)
+                if (!tracker.icon.isNone && (icon != null || catalog == null)) {
                     Box(
                         Modifier
                             .size(38.dp)
@@ -187,7 +190,7 @@ fun TileCard(
                             .border(1.dp, glassBorder, RoundedCornerShape(13.dp)),
                         contentAlignment = Alignment.Center,
                     ) {
-                        Icon(icon, null, tint = colors.content, modifier = Modifier.size(20.dp))
+                        if (icon != null) Icon(icon, null, tint = colors.content, modifier = Modifier.size(20.dp))
                     }
                 }
                 Spacer(Modifier.weight(1f))
@@ -195,16 +198,11 @@ fun TileCard(
                     Modifier
                         .size(34.dp)
                         .clip(CircleShape)
-                        .background(if (justDone) colors.content else glass)
-                        .border(1.dp, if (justDone) Color.Transparent else glassBorder, CircleShape),
+                        .background(glass)
+                        .border(1.dp, glassBorder, CircleShape),
                     contentAlignment = Alignment.Center,
                 ) {
-                    Icon(
-                        if (justDone) AppIcons.Check else AppIcons.Refresh,
-                        null,
-                        tint = if (justDone) colors.background else colors.content,
-                        modifier = Modifier.size(16.dp),
-                    )
+                    Icon(AppIcons.Refresh, null, tint = colors.content, modifier = Modifier.size(16.dp))
                 }
             }
             Spacer(Modifier.weight(1f))

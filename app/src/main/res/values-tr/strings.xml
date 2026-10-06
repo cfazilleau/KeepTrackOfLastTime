@@ -2,7 +2,6 @@
 <resources>
     <!-- Home -->
     <string name="chip_all">Tümü</string>
-    <string name="chip_other">Diğer</string>
     <string name="section_oldest">en eski: %1$s</string>
     <string name="empty_title">Henüz takip edilen bir şey yok</string>
     <string name="empty_body">Bir şey eklemek için + simgesine dokunun, örneğin “Bitkiler sulandı”. Her tekrar yaptığınızda kutucuğuna dokunun.</string>
@@ -35,6 +34,7 @@
     <string name="elapsed_two_units">%1$s %2$s</string>
     <string name="elapsed_ago">%1$s önce</string>
     <string name="elapsed_just_now">Az önce</string>
+    <string name="elapsed_under_a_minute">Bir dakikadan az önce</string>
     <plurals name="press_count">
         <item quantity="one">%d kez basıldı</item>
         <item quantity="other">%d kez basıldı</item>
@@ -110,6 +110,14 @@
     <string name="icon_brush">Fırça</string>
     <string name="icon_gauge">Gösterge</string>
     <string name="icon_car">Araba</string>
+    <string name="icon_house">Ev</string>
+    <string name="icon_sparkles">Parıltı</string>
+    <string name="icon_laundry">Çamaşır makinesi</string>
+    <string name="icon_utensils">Çatal bıçak</string>
+    <string name="icon_dumbbell">Dambıl</string>
+    <string name="icon_book">Kitap</string>
+    <string name="icon_wrench">İngiliz anahtarı</string>
+    <string name="icon_star">Yıldız</string>
 
     <!-- Dialogs -->
     <string name="dialog_delete_title">“%1$s” silinsin mi?</string>
@@ -117,7 +125,7 @@
     <string name="dialog_new_group_title">Yeni grup</string>
     <string name="dialog_rename_group_title">Grubu yeniden adlandır</string>
     <string name="dialog_delete_group_title">“%1$s” grubu silinsin mi?</string>
-    <string name="dialog_delete_group_body">Kutucukları korunur ve “Diğer” bölümüne taşınır.</string>
+    <string name="dialog_delete_group_body">Kutucukları korunur ve “Tümü” bölümünde kalır.</string>
     <string name="dialog_reset_counter_title">Sayaç sıfırlansın mı?</string>
     <string name="dialog_reset_counter_body">0’dan yeniden başlar. Kutucuğun geçmişi ve son zamanı korunur.</string>
 
@@ -130,7 +138,7 @@
         <item quantity="other">%d kutucuk</item>
     </plurals>
     <string name="groups_new_placeholder">ör. Banyo, Evcil hayvanlar, Sağlık</string>
-    <string name="groups_note">Bir grubu silmek kutucuklarını korur; kutucuklar, yalnızca içinde kutucuk olduğunda görünen “Diğer” bölümüne taşınır.</string>
+    <string name="groups_note">Bir grubu silmek kutucuklarını korur; kutucuklar “Tümü” bölümünde kalır.</string>
     <string name="group_options">%1$s seçenekleri</string>
     <string name="group_drag">%1$s öğesini sıralamak için sürükleyin</string>
 
@@ -186,4 +194,77 @@
     <string name="widget_config_pick">Bu widget’ta göster</string>
     <string name="widget_preview_name">Bitkiler sulandı</string>
     <string name="widget_preview_elapsed">3 gün</string>
+
+    <!-- Icon palette -->
+    <string name="settings_icon_palette">Simge paleti</string>
+    <string name="settings_icon_palette_hint">Bir kutucuğa verebileceğiniz simgeleri seçin</string>
+    <string name="icon_palette_search">Simge ara</string>
+    <string name="icon_palette_clear_search">Aramayı temizle</string>
+    <string name="icon_palette_yours">Paletiniz</string>
+    <string name="icon_palette_hint">Paletinize eklemek için bir simgeye dokunun; kaldırmak için yeniden dokunun.</string>
+    <string name="icon_palette_empty">Paletiniz boş. Eklemek için aşağıdaki simgelere dokunun.</string>
+    <string name="icon_palette_results">Sonuçlar</string>
+    <string name="icon_palette_no_results">“%1$s” ile eşleşen simge yok.</string>
+    <string name="icon_palette_reset">Varsayılan simgelere sıfırla</string>
+    <string name="dialog_reset_palette_title">Simge paleti sıfırlansın mı?</string>
+    <string name="dialog_reset_palette_body">Palet varsayılan simgelere döner. Kutucuklar mevcut simgelerini korur.</string>
+    <string name="icon_palette_more">Daha fazla simge için: Ayarlar › Simge paleti</string>
+
+    <!-- Credits -->
+    <string name="settings_credits">Emeği geçenler</string>
+    <string name="credits_intro">Time Clicker bu açık kaynak projelerle geliştirildi. Teşekkürler! Lisansını okumak için birine dokunun.</string>
+    <string name="credit_icons">Simgeler</string>
+    <string name="credit_ui">Kullanıcı arayüzü</string>
+    <string name="credit_androidx">Android destek kitaplıkları</string>
+    <string name="credit_database">Veritabanı</string>
+    <string name="credit_widgets">Ana ekran widget’ları</string>
+    <string name="credit_photos">Fotoğraf yükleme</string>
+    <string name="credit_reorder">Sürükleyerek sıralama</string>
+    <string name="credit_kotlin">Programlama dili</string>
+    <string name="credits_website">Web sitesi</string>
+    <string name="action_close">Kapat</string>
+
+    <!-- Icon categories, from Lucide -->
+    <string name="category_accessibility">Erişilebilirlik</string>
+    <string name="category_account">Hesaplar ve erişim</string>
+    <string name="category_animals">Hayvanlar</string>
+    <string name="category_arrows">Oklar</string>
+    <string name="category_buildings">Binalar</string>
+    <string name="category_charts">Grafikler</string>
+    <string name="category_communication">İletişim</string>
+    <string name="category_connectivity">Bağlantı</string>
+    <string name="category_cursors">İmleçler</string>
+    <string name="category_design">Tasarım</string>
+    <string name="category_development">Kodlama ve geliştirme</string>
+    <string name="category_devices">Cihazlar</string>
+    <string name="category_emoji">Emoji</string>
+    <string name="category_files">Dosyalar</string>
+    <string name="category_finance">Finans</string>
+    <string name="category_food_beverage">Yiyecek ve içecek</string>
+    <string name="category_gaming">Oyun</string>
+    <string name="category_home">Ev</string>
+    <string name="category_layout">Düzen</string>
+    <string name="category_mail">Posta</string>
+    <string name="category_math">Matematik</string>
+    <string name="category_medical">Tıp</string>
+    <string name="category_multimedia">Multimedya</string>
+    <string name="category_nature">Doğa</string>
+    <string name="category_navigation">Navigasyon ve yerler</string>
+    <string name="category_notifications">Bildirimler</string>
+    <string name="category_people">İnsanlar</string>
+    <string name="category_photography">Fotoğrafçılık</string>
+    <string name="category_science">Bilim</string>
+    <string name="category_seasons">Mevsimler</string>
+    <string name="category_security">Güvenlik</string>
+    <string name="category_shapes">Şekiller</string>
+    <string name="category_shopping">Alışveriş</string>
+    <string name="category_social">Sosyal</string>
+    <string name="category_sports">Spor</string>
+    <string name="category_sustainability">Sürdürülebilirlik</string>
+    <string name="category_text">Metin biçimlendirme</string>
+    <string name="category_time">Zaman ve takvim</string>
+    <string name="category_tools">Araçlar</string>
+    <string name="category_transportation">Ulaşım</string>
+    <string name="category_travel">Seyahat</string>
+    <string name="category_weather">Hava durumu</string>
 </resources>

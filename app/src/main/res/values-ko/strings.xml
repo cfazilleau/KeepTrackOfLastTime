@@ -2,7 +2,6 @@
 <resources>
     <!-- Home -->
     <string name="chip_all">전체</string>
-    <string name="chip_other">기타</string>
     <string name="section_oldest">가장 오래됨: %1$s</string>
     <string name="empty_title">아직 기록한 항목이 없어요</string>
     <string name="empty_body">+를 눌러 “화분에 물 주기” 같은 항목을 추가하세요. 다시 할 때마다 해당 타일을 누르면 돼요.</string>
@@ -30,6 +29,7 @@
     <string name="elapsed_two_units">%1$s %2$s</string>
     <string name="elapsed_ago">%1$s 전</string>
     <string name="elapsed_just_now">방금</string>
+    <string name="elapsed_under_a_minute">1분 이내</string>
     <plurals name="press_count">
         <item quantity="other">%d번 누름</item>
     </plurals>
@@ -104,6 +104,14 @@
     <string name="icon_brush">붓</string>
     <string name="icon_gauge">게이지</string>
     <string name="icon_car">자동차</string>
+    <string name="icon_house">집</string>
+    <string name="icon_sparkles">반짝임</string>
+    <string name="icon_laundry">세탁기</string>
+    <string name="icon_utensils">식기</string>
+    <string name="icon_dumbbell">덤벨</string>
+    <string name="icon_book">책</string>
+    <string name="icon_wrench">렌치</string>
+    <string name="icon_star">별</string>
 
     <!-- Dialogs -->
     <string name="dialog_delete_title">“%1$s”을(를) 삭제할까요?</string>
@@ -111,7 +119,7 @@
     <string name="dialog_new_group_title">새 그룹</string>
     <string name="dialog_rename_group_title">그룹 이름 변경</string>
     <string name="dialog_delete_group_title">“%1$s” 그룹을 삭제할까요?</string>
-    <string name="dialog_delete_group_body">타일은 유지되고 “기타”로 이동해요.</string>
+    <string name="dialog_delete_group_body">타일은 유지되고 “전체”에 계속 표시돼요.</string>
     <string name="dialog_reset_counter_title">카운터를 재설정할까요?</string>
     <string name="dialog_reset_counter_body">0부터 다시 시작해요. 타일의 기록과 마지막 시간은 유지돼요.</string>
 
@@ -123,7 +131,7 @@
         <item quantity="other">타일 %d개</item>
     </plurals>
     <string name="groups_new_placeholder">예: 욕실, 반려동물, 건강</string>
-    <string name="groups_note">그룹을 삭제해도 타일은 유지돼요. 타일은 “기타”로 이동하며, 이 섹션은 타일이 있을 때만 표시돼요.</string>
+    <string name="groups_note">그룹을 삭제해도 타일은 유지되고 “전체”에 계속 표시돼요.</string>
     <string name="group_options">%1$s 옵션</string>
     <string name="group_drag">드래그해서 %1$s 순서 변경</string>
 
@@ -179,4 +187,77 @@
     <string name="widget_config_pick">이 위젯에 표시</string>
     <string name="widget_preview_name">화분에 물 주기</string>
     <string name="widget_preview_elapsed">3일</string>
+
+    <!-- Icon palette -->
+    <string name="settings_icon_palette">아이콘 팔레트</string>
+    <string name="settings_icon_palette_hint">타일에 지정할 수 있는 아이콘을 선택하세요</string>
+    <string name="icon_palette_search">아이콘 검색</string>
+    <string name="icon_palette_clear_search">검색어 지우기</string>
+    <string name="icon_palette_yours">내 팔레트</string>
+    <string name="icon_palette_hint">아이콘을 누르면 팔레트에 추가되고, 다시 누르면 삭제돼요.</string>
+    <string name="icon_palette_empty">팔레트가 비어 있어요. 아래 아이콘을 눌러 추가하세요.</string>
+    <string name="icon_palette_results">검색 결과</string>
+    <string name="icon_palette_no_results">“%1$s”와(과) 일치하는 아이콘이 없어요.</string>
+    <string name="icon_palette_reset">기본 아이콘으로 재설정</string>
+    <string name="dialog_reset_palette_title">아이콘 팔레트를 재설정할까요?</string>
+    <string name="dialog_reset_palette_body">기본 아이콘으로 돌아가요. 타일은 현재 아이콘을 그대로 유지해요.</string>
+    <string name="icon_palette_more">설정 › 아이콘 팔레트에서 더 많은 아이콘을 찾아보세요</string>
+
+    <!-- Credits -->
+    <string name="settings_credits">크레딧</string>
+    <string name="credits_intro">Time Clicker는 다음 오픈소스 프로젝트로 만들어졌어요. 감사합니다! 프로젝트를 누르면 라이선스를 볼 수 있어요.</string>
+    <string name="credit_icons">아이콘</string>
+    <string name="credit_ui">사용자 인터페이스</string>
+    <string name="credit_androidx">Android 지원 라이브러리</string>
+    <string name="credit_database">데이터베이스</string>
+    <string name="credit_widgets">홈 화면 위젯</string>
+    <string name="credit_photos">사진 불러오기</string>
+    <string name="credit_reorder">드래그하여 순서 변경</string>
+    <string name="credit_kotlin">프로그래밍 언어</string>
+    <string name="credits_website">웹사이트</string>
+    <string name="action_close">닫기</string>
+
+    <!-- Icon categories, from Lucide -->
+    <string name="category_accessibility">접근성</string>
+    <string name="category_account">계정 및 접근</string>
+    <string name="category_animals">동물</string>
+    <string name="category_arrows">화살표</string>
+    <string name="category_buildings">건물</string>
+    <string name="category_charts">차트</string>
+    <string name="category_communication">커뮤니케이션</string>
+    <string name="category_connectivity">연결</string>
+    <string name="category_cursors">커서</string>
+    <string name="category_design">디자인</string>
+    <string name="category_development">코딩 및 개발</string>
+    <string name="category_devices">기기</string>
+    <string name="category_emoji">이모지</string>
+    <string name="category_files">파일</string>
+    <string name="category_finance">금융</string>
+    <string name="category_food_beverage">음식 및 음료</string>
+    <string name="category_gaming">게임</string>
+    <string name="category_home">집</string>
+    <string name="category_layout">레이아웃</string>
+    <string name="category_mail">메일</string>
+    <string name="category_math">수학</string>
+    <string name="category_medical">의료</string>
+    <string name="category_multimedia">멀티미디어</string>
+    <string name="category_nature">자연</string>
+    <string name="category_navigation">내비게이션 및 장소</string>
+    <string name="category_notifications">알림</string>
+    <string name="category_people">사람</string>
+    <string name="category_photography">사진</string>
+    <string name="category_science">과학</string>
+    <string name="category_seasons">계절</string>
+    <string name="category_security">보안</string>
+    <string name="category_shapes">도형</string>
+    <string name="category_shopping">쇼핑</string>
+    <string name="category_social">소셜</string>
+    <string name="category_sports">스포츠</string>
+    <string name="category_sustainability">지속 가능성</string>
+    <string name="category_text">텍스트 서식</string>
+    <string name="category_time">시간 및 캘린더</string>
+    <string name="category_tools">도구</string>
+    <string name="category_transportation">교통</string>
+    <string name="category_travel">여행</string>
+    <string name="category_weather">날씨</string>
 </resources>

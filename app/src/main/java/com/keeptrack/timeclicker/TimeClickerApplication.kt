@@ -1,6 +1,7 @@
 package com.keeptrack.timeclicker
 
 import android.app.Application
+import com.keeptrack.timeclicker.data.IconCatalog
 import com.keeptrack.timeclicker.widget.TileWidgets
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -18,6 +19,11 @@ class TimeClickerApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         container = AppContainer(this)
+        // Read ahead, so tiles have their icons by the time the home screen shows them.
+        // A failure here only means no icons: tiles still work.
+        CoroutineScope(SupervisorJob() + Dispatchers.Default).launch {
+            runCatching { IconCatalog.load(this@TimeClickerApplication) }
+        }
 
         // Home-screen widgets follow every change to the tiles (done, undone, edited, deleted).
         CoroutineScope(SupervisorJob() + Dispatchers.Default).launch {

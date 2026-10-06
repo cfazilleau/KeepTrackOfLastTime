@@ -2,7 +2,6 @@
 <resources>
     <!-- Home -->
     <string name="chip_all">すべて</string>
-    <string name="chip_other">その他</string>
     <string name="section_oldest">最も古い: %1$s</string>
     <string name="empty_title">まだ何も記録していません</string>
     <string name="empty_body">+ をタップして「植物に水をやった」などを追加しましょう。またやったら、そのタイルをタップします。</string>
@@ -30,6 +29,7 @@
     <string name="elapsed_two_units">%1$s%2$s</string>
     <string name="elapsed_ago">%1$s前</string>
     <string name="elapsed_just_now">たった今</string>
+    <string name="elapsed_under_a_minute">1分以内</string>
     <plurals name="press_count">
         <item quantity="other">%d回押しました</item>
     </plurals>
@@ -104,6 +104,14 @@
     <string name="icon_brush">ブラシ</string>
     <string name="icon_gauge">メーター</string>
     <string name="icon_car">車</string>
+    <string name="icon_house">家</string>
+    <string name="icon_sparkles">きらめき</string>
+    <string name="icon_laundry">洗濯機</string>
+    <string name="icon_utensils">カトラリー</string>
+    <string name="icon_dumbbell">ダンベル</string>
+    <string name="icon_book">本</string>
+    <string name="icon_wrench">レンチ</string>
+    <string name="icon_star">星</string>
 
     <!-- Dialogs -->
     <string name="dialog_delete_title">「%1$s」を削除しますか？</string>
@@ -111,7 +119,7 @@
     <string name="dialog_new_group_title">新しいグループ</string>
     <string name="dialog_rename_group_title">グループ名を変更</string>
     <string name="dialog_delete_group_title">グループ「%1$s」を削除しますか？</string>
-    <string name="dialog_delete_group_body">タイルは残り、「その他」に移動します。</string>
+    <string name="dialog_delete_group_body">タイルは残り、「すべて」に表示されたままです。</string>
     <string name="dialog_reset_counter_title">カウンターをリセットしますか？</string>
     <string name="dialog_reset_counter_body">0から数え直します。タイルの履歴と最後の日時は残ります。</string>
 
@@ -123,7 +131,7 @@
         <item quantity="other">タイル%d個</item>
     </plurals>
     <string name="groups_new_placeholder">例: お風呂、ペット、健康</string>
-    <string name="groups_note">グループを削除してもタイルは残り、「その他」に移動します。「その他」はタイルがあるときだけ表示されます。</string>
+    <string name="groups_note">グループを削除してもタイルは残り、「すべて」に表示されたままです。</string>
     <string name="group_options">%1$sのオプション</string>
     <string name="group_drag">%1$sをドラッグして並べ替え</string>
 
@@ -179,4 +187,77 @@
     <string name="widget_config_pick">このウィジェットに表示</string>
     <string name="widget_preview_name">植物に水をやった</string>
     <string name="widget_preview_elapsed">3日</string>
+
+    <!-- Icon palette -->
+    <string name="settings_icon_palette">アイコンパレット</string>
+    <string name="settings_icon_palette_hint">タイルに設定できるアイコンを選びます</string>
+    <string name="icon_palette_search">アイコンを検索</string>
+    <string name="icon_palette_clear_search">検索をクリア</string>
+    <string name="icon_palette_yours">マイパレット</string>
+    <string name="icon_palette_hint">アイコンをタップするとパレットに追加され、もう一度タップすると削除されます。</string>
+    <string name="icon_palette_empty">パレットは空です。下のアイコンをタップして追加しましょう。</string>
+    <string name="icon_palette_results">検索結果</string>
+    <string name="icon_palette_no_results">「%1$s」に一致するアイコンはありません。</string>
+    <string name="icon_palette_reset">デフォルトのアイコンに戻す</string>
+    <string name="dialog_reset_palette_title">アイコンパレットをリセットしますか？</string>
+    <string name="dialog_reset_palette_body">デフォルトのアイコンに戻ります。タイルのアイコンはそのまま残ります。</string>
+    <string name="icon_palette_more">その他のアイコンは「設定 › アイコンパレット」にあります</string>
+
+    <!-- Credits -->
+    <string name="settings_credits">クレジット</string>
+    <string name="credits_intro">Time Clicker は以下のオープンソースプロジェクトを利用して作られています。ありがとうございます！タップするとライセンスを確認できます。</string>
+    <string name="credit_icons">アイコン</string>
+    <string name="credit_ui">ユーザーインターフェース</string>
+    <string name="credit_androidx">Android サポートライブラリ</string>
+    <string name="credit_database">データベース</string>
+    <string name="credit_widgets">ホーム画面ウィジェット</string>
+    <string name="credit_photos">写真の読み込み</string>
+    <string name="credit_reorder">ドラッグで並べ替え</string>
+    <string name="credit_kotlin">プログラミング言語</string>
+    <string name="credits_website">ウェブサイト</string>
+    <string name="action_close">閉じる</string>
+
+    <!-- Icon categories, from Lucide -->
+    <string name="category_accessibility">アクセシビリティ</string>
+    <string name="category_account">アカウントとアクセス</string>
+    <string name="category_animals">動物</string>
+    <string name="category_arrows">矢印</string>
+    <string name="category_buildings">建物</string>
+    <string name="category_charts">グラフ</string>
+    <string name="category_communication">コミュニケーション</string>
+    <string name="category_connectivity">接続</string>
+    <string name="category_cursors">カーソル</string>
+    <string name="category_design">デザイン</string>
+    <string name="category_development">コーディングと開発</string>
+    <string name="category_devices">デバイス</string>
+    <string name="category_emoji">絵文字</string>
+    <string name="category_files">ファイル</string>
+    <string name="category_finance">金融</string>
+    <string name="category_food_beverage">食べ物と飲み物</string>
+    <string name="category_gaming">ゲーム</string>
+    <string name="category_home">家</string>
+    <string name="category_layout">レイアウト</string>
+    <string name="category_mail">メール</string>
+    <string name="category_math">数学</string>
+    <string name="category_medical">医療</string>
+    <string name="category_multimedia">マルチメディア</string>
+    <string name="category_nature">自然</string>
+    <string name="category_navigation">ナビゲーションと場所</string>
+    <string name="category_notifications">通知</string>
+    <string name="category_people">人物</string>
+    <string name="category_photography">写真</string>
+    <string name="category_science">科学</string>
+    <string name="category_seasons">季節</string>
+    <string name="category_security">セキュリティ</string>
+    <string name="category_shapes">図形</string>
+    <string name="category_shopping">ショッピング</string>
+    <string name="category_social">ソーシャル</string>
+    <string name="category_sports">スポーツ</string>
+    <string name="category_sustainability">サステナビリティ</string>
+    <string name="category_text">テキスト書式</string>
+    <string name="category_time">時間とカレンダー</string>
+    <string name="category_tools">ツール</string>
+    <string name="category_transportation">交通</string>
+    <string name="category_travel">旅行</string>
+    <string name="category_weather">天気</string>
 </resources>

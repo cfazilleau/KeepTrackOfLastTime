@@ -2,7 +2,6 @@
 <resources>
     <!-- Home -->
     <string name="chip_all">Alle</string>
-    <string name="chip_other">Sonstige</string>
     <string name="section_oldest">älteste: %1$s</string>
     <string name="empty_title">Noch nichts erfasst</string>
     <string name="empty_body">Tippe auf +, um etwas hinzuzufügen, z. B. „Pflanzen gegossen“. Tippe auf die Kachel, sobald du es wieder machst.</string>
@@ -35,6 +34,7 @@
     <string name="elapsed_two_units">%1$s %2$s</string>
     <string name="elapsed_ago">%1$s her</string>
     <string name="elapsed_just_now">Gerade eben</string>
+    <string name="elapsed_under_a_minute">Vor weniger als einer Minute</string>
     <plurals name="press_count">
         <item quantity="one">%d-mal gedrückt</item>
         <item quantity="other">%d-mal gedrückt</item>
@@ -110,6 +110,14 @@
     <string name="icon_brush">Pinsel</string>
     <string name="icon_gauge">Anzeige</string>
     <string name="icon_car">Auto</string>
+    <string name="icon_house">Haus</string>
+    <string name="icon_sparkles">Funkeln</string>
+    <string name="icon_laundry">Waschmaschine</string>
+    <string name="icon_utensils">Besteck</string>
+    <string name="icon_dumbbell">Hantel</string>
+    <string name="icon_book">Buch</string>
+    <string name="icon_wrench">Schraubenschlüssel</string>
+    <string name="icon_star">Stern</string>
 
     <!-- Dialogs -->
     <string name="dialog_delete_title">„%1$s“ löschen?</string>
@@ -117,7 +125,7 @@
     <string name="dialog_new_group_title">Neue Gruppe</string>
     <string name="dialog_rename_group_title">Gruppe umbenennen</string>
     <string name="dialog_delete_group_title">Gruppe „%1$s“ löschen?</string>
-    <string name="dialog_delete_group_body">Die Kacheln bleiben erhalten und kommen zu „Sonstige“.</string>
+    <string name="dialog_delete_group_body">Die Kacheln bleiben erhalten und weiterhin unter „Alle“ sichtbar.</string>
     <string name="dialog_reset_counter_title">Zähler zurücksetzen?</string>
     <string name="dialog_reset_counter_body">Er beginnt wieder bei 0. Verlauf und letztes Mal der Kachel bleiben erhalten.</string>
 
@@ -130,7 +138,7 @@
         <item quantity="other">%d Kacheln</item>
     </plurals>
     <string name="groups_new_placeholder">z. B. Bad, Haustiere, Gesundheit</string>
-    <string name="groups_note">Beim Löschen einer Gruppe bleiben ihre Kacheln erhalten; sie kommen zu „Sonstige“, einem Abschnitt, der nur erscheint, wenn er Kacheln enthält.</string>
+    <string name="groups_note">Beim Löschen einer Gruppe bleiben ihre Kacheln erhalten; sie sind weiterhin unter „Alle“ sichtbar.</string>
     <string name="group_options">Optionen für %1$s</string>
     <string name="group_drag">%1$s zum Sortieren ziehen</string>
 
@@ -186,4 +194,77 @@
     <string name="widget_config_pick">Auf diesem Widget anzeigen</string>
     <string name="widget_preview_name">Pflanzen gegossen</string>
     <string name="widget_preview_elapsed">3 Tage</string>
+
+    <!-- Icon palette -->
+    <string name="settings_icon_palette">Symbolpalette</string>
+    <string name="settings_icon_palette_hint">Wähle, welche Symbole du einer Kachel geben kannst</string>
+    <string name="icon_palette_search">Symbole suchen</string>
+    <string name="icon_palette_clear_search">Suche löschen</string>
+    <string name="icon_palette_yours">Deine Palette</string>
+    <string name="icon_palette_hint">Tippe auf ein Symbol, um es deiner Palette hinzuzufügen; tippe erneut darauf, um es zu entfernen.</string>
+    <string name="icon_palette_empty">Deine Palette ist leer. Tippe unten auf Symbole, um sie hinzuzufügen.</string>
+    <string name="icon_palette_results">Ergebnisse</string>
+    <string name="icon_palette_no_results">Keine Symbole für „%1$s“ gefunden.</string>
+    <string name="icon_palette_reset">Auf Standardsymbole zurücksetzen</string>
+    <string name="dialog_reset_palette_title">Symbolpalette zurücksetzen?</string>
+    <string name="dialog_reset_palette_body">Die Palette enthält dann wieder die Standardsymbole. Kacheln behalten ihr aktuelles Symbol.</string>
+    <string name="icon_palette_more">Weitere Symbole unter Einstellungen › Symbolpalette</string>
+
+    <!-- Credits -->
+    <string name="settings_credits">Danksagungen</string>
+    <string name="credits_intro">Time Clicker basiert auf diesen Open-Source-Projekten. Danke! Tippe auf eines, um seine Lizenz zu lesen.</string>
+    <string name="credit_icons">Symbole</string>
+    <string name="credit_ui">Benutzeroberfläche</string>
+    <string name="credit_androidx">Android-Supportbibliotheken</string>
+    <string name="credit_database">Datenbank</string>
+    <string name="credit_widgets">Startbildschirm-Widgets</string>
+    <string name="credit_photos">Laden von Fotos</string>
+    <string name="credit_reorder">Zum Sortieren ziehen</string>
+    <string name="credit_kotlin">Programmiersprache</string>
+    <string name="credits_website">Website</string>
+    <string name="action_close">Schließen</string>
+
+    <!-- Icon categories, from Lucide -->
+    <string name="category_accessibility">Barrierefreiheit</string>
+    <string name="category_account">Konten &amp; Zugriff</string>
+    <string name="category_animals">Tiere</string>
+    <string name="category_arrows">Pfeile</string>
+    <string name="category_buildings">Gebäude</string>
+    <string name="category_charts">Diagramme</string>
+    <string name="category_communication">Kommunikation</string>
+    <string name="category_connectivity">Konnektivität</string>
+    <string name="category_cursors">Mauszeiger</string>
+    <string name="category_design">Design</string>
+    <string name="category_development">Programmierung &amp; Entwicklung</string>
+    <string name="category_devices">Geräte</string>
+    <string name="category_emoji">Emoji</string>
+    <string name="category_files">Dateien</string>
+    <string name="category_finance">Finanzen</string>
+    <string name="category_food_beverage">Essen &amp; Trinken</string>
+    <string name="category_gaming">Gaming</string>
+    <string name="category_home">Zuhause</string>
+    <string name="category_layout">Layout</string>
+    <string name="category_mail">E-Mail</string>
+    <string name="category_math">Mathematik</string>
+    <string name="category_medical">Medizin</string>
+    <string name="category_multimedia">Multimedia</string>
+    <string name="category_nature">Natur</string>
+    <string name="category_navigation">Navigation &amp; Orte</string>
+    <string name="category_notifications">Benachrichtigungen</string>
+    <string name="category_people">Personen</string>
+    <string name="category_photography">Fotografie</string>
+    <string name="category_science">Wissenschaft</string>
+    <string name="category_seasons">Jahreszeiten</string>
+    <string name="category_security">Sicherheit</string>
+    <string name="category_shapes">Formen</string>
+    <string name="category_shopping">Einkaufen</string>
+    <string name="category_social">Soziales</string>
+    <string name="category_sports">Sport</string>
+    <string name="category_sustainability">Nachhaltigkeit</string>
+    <string name="category_text">Textformatierung</string>
+    <string name="category_time">Zeit &amp; Kalender</string>
+    <string name="category_tools">Werkzeuge</string>
+    <string name="category_transportation">Verkehr</string>
+    <string name="category_travel">Reisen</string>
+    <string name="category_weather">Wetter</string>
 </resources>

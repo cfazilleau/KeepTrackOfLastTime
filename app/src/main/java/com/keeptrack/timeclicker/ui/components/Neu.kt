@@ -156,6 +156,11 @@ fun NeuTextField(
     placeholder: String,
     modifier: Modifier = Modifier,
     onDone: () -> Unit = {},
+    /** Drawn at the start, e.g. a magnifier for a search field. */
+    leadingIcon: ImageVector? = null,
+    /** Drawn at the end, e.g. a button clearing the field. */
+    trailing: (@Composable () -> Unit)? = null,
+    capitalization: KeyboardCapitalization = KeyboardCapitalization.Sentences,
 ) {
     val palette = TimeClickerTheme.palette
     val shape = RoundedCornerShape(16.dp)
@@ -165,7 +170,7 @@ fun NeuTextField(
         singleLine = true,
         textStyle = MaterialTheme.typography.bodyLarge.copy(color = palette.text, fontWeight = FontWeight.SemiBold),
         cursorBrush = SolidColor(palette.text),
-        keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Sentences, imeAction = ImeAction.Done),
+        keyboardOptions = KeyboardOptions(capitalization = capitalization, imeAction = ImeAction.Done),
         keyboardActions = KeyboardActions(onDone = { onDone() }),
         modifier = modifier
             .height(50.dp)
@@ -174,9 +179,17 @@ fun NeuTextField(
             .background(palette.field)
             .pressedIn(shape, palette.shadow, palette.highlight, distance = 3.dp, blur = 7.dp),
         decorationBox = { inner ->
-            Box(Modifier.padding(horizontal = 16.dp), contentAlignment = Alignment.CenterStart) {
-                if (value.isEmpty()) Text(placeholder, style = MaterialTheme.typography.bodyLarge, color = palette.muted)
-                inner()
+            Row(
+                Modifier.padding(start = if (leadingIcon != null) 14.dp else 16.dp, end = if (trailing != null) 4.dp else 16.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(10.dp),
+            ) {
+                if (leadingIcon != null) Icon(leadingIcon, null, tint = palette.muted, modifier = Modifier.size(20.dp))
+                Box(Modifier.weight(1f), contentAlignment = Alignment.CenterStart) {
+                    if (value.isEmpty()) Text(placeholder, style = MaterialTheme.typography.bodyLarge, color = palette.muted)
+                    inner()
+                }
+                trailing?.invoke()
             }
         },
     )

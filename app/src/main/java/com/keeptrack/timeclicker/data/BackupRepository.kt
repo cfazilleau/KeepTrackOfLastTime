@@ -112,7 +112,10 @@ class BackupRepository(
     private fun parse(text: String): Backup {
         val json = JSONObject(text)
         if (json.optString("format") != FORMAT) throw InvalidBackupException("Not a Time Clicker backup")
-        if (json.optInt("version") > VERSION) throw InvalidBackupException("Made by a newer version of the app")
+        val version = json.optInt("version")
+        if (version > VERSION) throw InvalidBackupException("Made by a newer version of the app")
+        // Format 1 stored the app's own icon names; format 2 stores Lucide names.
+        val iconFromKey: (String?) -> TileIcon = if (version < 2) TileIcon.Companion::fromLegacyKey else TileIcon.Companion::fromKey
 
         val groups = json.getJSONArray("groups").objects().map {
             GroupEntity(id = it.getLong("id"), name = it.getString("name"), position = it.getInt("position"))
@@ -127,7 +130,7 @@ class BackupRepository(
                 position = it.getInt("position"),
                 groupId = it.optLongOrNull("groupId")?.takeIf { id -> id in groupIds },
                 color = TileColor.fromKey(it.optString("color")).key,
-                icon = TileIcon.fromKey(it.optString("icon")).key,
+                icon = iconFromKey(it.optString("icon")).key,
                 size = TileSize.fromKey(it.optString("size")).key,
                 photo = it.optStringOrNull("photo")?.takeIf { name -> SafeName.matches(name) },
                 countSince = it.optLong("countSince", createdAt),
@@ -148,6 +151,7 @@ class BackupRepository(
         .put(SettingsRepository.HAPTICS, s.haptics)
         .put(SettingsRepository.CLICK_SOUND, s.clickSound)
         .put(SettingsRepository.SHOW_COUNTER, s.showCounter)
+        .put(SettingsRepository.ICON_PALETTE, SettingsRepository.paletteToKeys(s.iconPalette))
 
     /** Missing keys keep their default. */
     private fun settingsFromJson(json: JSONObject): AppSettings {
@@ -159,12 +163,15 @@ class BackupRepository(
             haptics = json.optBoolean(SettingsRepository.HAPTICS, d.haptics),
             clickSound = json.optBoolean(SettingsRepository.CLICK_SOUND, d.clickSound),
             showCounter = json.optBoolean(SettingsRepository.SHOW_COUNTER, d.showCounter),
+            iconPalette = json.optStringOrNull(SettingsRepository.ICON_PALETTE)
+                ?.let { SettingsRepository.paletteFromKeys(it) } ?: d.iconPalette,
         )
     }
 
     private companion object {
         const val FORMAT = "time-clicker-backup"
-        const val VERSION = 1
+        /** 2: tile icons are Lucide names. */
+        const val VERSION = 2
         const val JSON_ENTRY = "backup.json"
         const val PHOTOS_DIR = "photos/"
         val SafeName = Regex("[A-Za-z0-9_-][A-Za-z0-9._-]*")

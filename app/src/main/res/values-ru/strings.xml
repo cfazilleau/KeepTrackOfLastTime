@@ -2,7 +2,6 @@
 <resources>
     <!-- Home -->
     <string name="chip_all">Все</string>
-    <string name="chip_other">Другое</string>
     <string name="section_oldest">самое давнее: %1$s</string>
     <string name="empty_title">Пока ничего не отслеживается</string>
     <string name="empty_body">Нажмите +, чтобы что-то добавить, например «Полить цветы». Нажимайте на плитку каждый раз, когда делаете это снова.</string>
@@ -45,6 +44,7 @@
     <string name="elapsed_two_units">%1$s %2$s</string>
     <string name="elapsed_ago">%1$s назад</string>
     <string name="elapsed_just_now">Только что</string>
+    <string name="elapsed_under_a_minute">Меньше минуты назад</string>
     <plurals name="press_count">
         <item quantity="one">Нажато %d раз</item>
         <item quantity="few">Нажато %d раза</item>
@@ -122,6 +122,14 @@
     <string name="icon_brush">Кисть</string>
     <string name="icon_gauge">Датчик</string>
     <string name="icon_car">Автомобиль</string>
+    <string name="icon_house">Дом</string>
+    <string name="icon_sparkles">Блеск</string>
+    <string name="icon_laundry">Стиральная машина</string>
+    <string name="icon_utensils">Столовые приборы</string>
+    <string name="icon_dumbbell">Гантель</string>
+    <string name="icon_book">Книга</string>
+    <string name="icon_wrench">Гаечный ключ</string>
+    <string name="icon_star">Звезда</string>
 
     <!-- Dialogs -->
     <string name="dialog_delete_title">Удалить «%1$s»?</string>
@@ -129,7 +137,7 @@
     <string name="dialog_new_group_title">Новая группа</string>
     <string name="dialog_rename_group_title">Переименовать группу</string>
     <string name="dialog_delete_group_title">Удалить группу «%1$s»?</string>
-    <string name="dialog_delete_group_body">Её плитки сохранятся и перейдут в «Другое».</string>
+    <string name="dialog_delete_group_body">Её плитки сохранятся и останутся в разделе «Все».</string>
     <string name="dialog_reset_counter_title">Сбросить счётчик?</string>
     <string name="dialog_reset_counter_body">Отсчёт начнётся с 0. История плитки и время последнего раза сохранятся.</string>
 
@@ -144,7 +152,7 @@
         <item quantity="other">%d плитки</item>
     </plurals>
     <string name="groups_new_placeholder">например, Ванная, Питомцы, Здоровье</string>
-    <string name="groups_note">При удалении группы плитки сохраняются и переходят в «Другое» — раздел, который виден, только когда в нём есть плитки.</string>
+    <string name="groups_note">При удалении группы плитки сохраняются и остаются в разделе «Все».</string>
     <string name="group_options">Параметры: %1$s</string>
     <string name="group_drag">Перетащите, чтобы переместить: %1$s</string>
 
@@ -200,4 +208,77 @@
     <string name="widget_config_pick">Показать на этом виджете</string>
     <string name="widget_preview_name">Полить цветы</string>
     <string name="widget_preview_elapsed">3 дня</string>
+
+    <!-- Icon palette -->
+    <string name="settings_icon_palette">Палитра значков</string>
+    <string name="settings_icon_palette_hint">Выберите, какие значки можно назначать плиткам</string>
+    <string name="icon_palette_search">Поиск значков</string>
+    <string name="icon_palette_clear_search">Очистить поиск</string>
+    <string name="icon_palette_yours">Ваша палитра</string>
+    <string name="icon_palette_hint">Нажмите на значок, чтобы добавить его в палитру; нажмите ещё раз, чтобы убрать.</string>
+    <string name="icon_palette_empty">Ваша палитра пуста. Нажмите на значки ниже, чтобы добавить их.</string>
+    <string name="icon_palette_results">Результаты</string>
+    <string name="icon_palette_no_results">Нет значков по запросу «%1$s».</string>
+    <string name="icon_palette_reset">Вернуть значки по умолчанию</string>
+    <string name="dialog_reset_palette_title">Сбросить палитру значков?</string>
+    <string name="dialog_reset_palette_body">В ней снова будут значки по умолчанию. У плиток останутся их текущие значки.</string>
+    <string name="icon_palette_more">Больше значков в разделе Настройки › Палитра значков</string>
+
+    <!-- Credits -->
+    <string name="settings_credits">Благодарности</string>
+    <string name="credits_intro">Time Clicker создан на основе этих проектов с открытым исходным кодом. Спасибо! Нажмите на проект, чтобы прочитать его лицензию.</string>
+    <string name="credit_icons">Значки</string>
+    <string name="credit_ui">Пользовательский интерфейс</string>
+    <string name="credit_androidx">Библиотеки поддержки Android</string>
+    <string name="credit_database">База данных</string>
+    <string name="credit_widgets">Виджеты главного экрана</string>
+    <string name="credit_photos">Загрузка фото</string>
+    <string name="credit_reorder">Сортировка перетаскиванием</string>
+    <string name="credit_kotlin">Язык программирования</string>
+    <string name="credits_website">Сайт</string>
+    <string name="action_close">Закрыть</string>
+
+    <!-- Icon categories, from Lucide -->
+    <string name="category_accessibility">Доступность</string>
+    <string name="category_account">Аккаунты и доступ</string>
+    <string name="category_animals">Животные</string>
+    <string name="category_arrows">Стрелки</string>
+    <string name="category_buildings">Здания</string>
+    <string name="category_charts">Диаграммы</string>
+    <string name="category_communication">Общение</string>
+    <string name="category_connectivity">Подключение</string>
+    <string name="category_cursors">Курсоры</string>
+    <string name="category_design">Дизайн</string>
+    <string name="category_development">Программирование</string>
+    <string name="category_devices">Устройства</string>
+    <string name="category_emoji">Эмодзи</string>
+    <string name="category_files">Файлы</string>
+    <string name="category_finance">Финансы</string>
+    <string name="category_food_beverage">Еда и напитки</string>
+    <string name="category_gaming">Игры</string>
+    <string name="category_home">Дом</string>
+    <string name="category_layout">Макет</string>
+    <string name="category_mail">Почта</string>
+    <string name="category_math">Математика</string>
+    <string name="category_medical">Медицина</string>
+    <string name="category_multimedia">Мультимедиа</string>
+    <string name="category_nature">Природа</string>
+    <string name="category_navigation">Навигация и места</string>
+    <string name="category_notifications">Уведомления</string>
+    <string name="category_people">Люди</string>
+    <string name="category_photography">Фотография</string>
+    <string name="category_science">Наука</string>
+    <string name="category_seasons">Времена года</string>
+    <string name="category_security">Безопасность</string>
+    <string name="category_shapes">Фигуры</string>
+    <string name="category_shopping">Покупки</string>
+    <string name="category_social">Соцсети</string>
+    <string name="category_sports">Спорт</string>
+    <string name="category_sustainability">Экология</string>
+    <string name="category_text">Форматирование текста</string>
+    <string name="category_time">Время и календарь</string>
+    <string name="category_tools">Инструменты</string>
+    <string name="category_transportation">Транспорт</string>
+    <string name="category_travel">Путешествия</string>
+    <string name="category_weather">Погода</string>
 </resources>

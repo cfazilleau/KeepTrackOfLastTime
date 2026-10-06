@@ -48,6 +48,7 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.input.nestedscroll.NestedScrollConnection
 import androidx.compose.ui.input.nestedscroll.NestedScrollSource
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
@@ -68,9 +69,11 @@ import com.keeptrack.timeclicker.ui.components.NeuButton
 import com.keeptrack.timeclicker.ui.components.NeuTextField
 import com.keeptrack.timeclicker.ui.components.PillButton
 import com.keeptrack.timeclicker.ui.components.SegmentedControl
+import com.keeptrack.timeclicker.ui.icons.iconLabel
 import com.keeptrack.timeclicker.ui.theme.AppIcons
 import com.keeptrack.timeclicker.ui.theme.TimeClickerTheme
 import com.keeptrack.timeclicker.ui.theme.TileColors
+import com.keeptrack.timeclicker.ui.theme.rememberIconCatalog
 import kotlinx.coroutines.launch
 import java.io.File
 import java.time.Instant
@@ -306,7 +309,12 @@ fun EditTileSheet(
 
             Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 SectionLabel(stringResource(R.string.label_icon))
-                IconPicker(selected = draft.icon, accent = palette.tile(draft.color), onSelect = { draft = draft.copy(icon = it) })
+                IconPicker(
+                    selected = draft.icon,
+                    original = initial.icon,
+                    accent = palette.tile(draft.color),
+                    onSelect = { draft = draft.copy(icon = it) },
+                )
             }
 
             Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
@@ -515,13 +523,20 @@ private fun Swatch(color: TileColor, isSelected: Boolean, width: Dp, onSelect: (
     )
 }
 
-/** "No icon", then every icon; six per row, the last row aligned to the start. */
+/**
+ * "No icon", the tile's own icon if the palette no longer has it, then the user's icon palette
+ * (chosen in Settings); six per row, the last row aligned to the start.
+ */
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-private fun IconPicker(selected: TileIcon, accent: TileColors, onSelect: (TileIcon) -> Unit) {
+private fun IconPicker(selected: TileIcon, original: TileIcon, accent: TileColors, onSelect: (TileIcon) -> Unit) {
     val palette = TimeClickerTheme.palette
+    val resources = LocalResources.current
+    val catalog = rememberIconCatalog()
     val columns = 6
-    val icons = TileIcon.entries
+    val iconPalette = TimeClickerTheme.settings.iconPalette
+    val icons = (listOf(TileIcon.NONE, original) + iconPalette).distinct()
+        .filter { it.isNone || catalog?.get(it) != null }
     FlowRow(
         Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.spacedBy(8.dp),
@@ -530,7 +545,7 @@ private fun IconPicker(selected: TileIcon, accent: TileColors, onSelect: (TileIc
     ) {
         icons.forEach { icon ->
             val isSelected = icon == selected
-            val description = stringResource(R.string.icon_choice, stringResource(iconName(icon)))
+            val description = stringResource(R.string.icon_choice, iconLabel(resources, icon))
             Box(
                 Modifier
                     .weight(1f)
@@ -542,7 +557,7 @@ private fun IconPicker(selected: TileIcon, accent: TileColors, onSelect: (TileIc
                 contentAlignment = Alignment.Center,
             ) {
                 val tint = if (isSelected) accent.content else palette.text
-                val vector = AppIcons.tile(icon)
+                val vector = catalog?.let { AppIcons.tile(it, icon) }
                 if (vector != null) {
                     Icon(vector, null, tint = tint, modifier = Modifier.size(22.dp))
                 } else {
@@ -553,6 +568,7 @@ private fun IconPicker(selected: TileIcon, accent: TileColors, onSelect: (TileIc
         // Empty cells keep the last row's icons the same width as the others.
         repeat((columns - icons.size % columns) % columns) { Spacer(Modifier.weight(1f)) }
     }
+    Text(stringResource(R.string.icon_palette_more), style = MaterialTheme.typography.bodySmall, color = palette.muted)
 }
 
 private fun colorName(color: TileColor) = when (color) {
@@ -565,26 +581,4 @@ private fun colorName(color: TileColor) = when (color) {
     TileColor.PRIMARY -> R.string.color_system_primary
     TileColor.SECONDARY -> R.string.color_system_secondary
     TileColor.TERTIARY -> R.string.color_system_tertiary
-}
-
-private fun iconName(icon: TileIcon) = when (icon) {
-    TileIcon.NONE -> R.string.icon_none
-    TileIcon.CHECK -> R.string.icon_check
-    TileIcon.DROP -> R.string.icon_drop
-    TileIcon.LEAF -> R.string.icon_leaf
-    TileIcon.GRASS -> R.string.icon_grass
-    TileIcon.FLOWER -> R.string.icon_flower
-    TileIcon.BED -> R.string.icon_bed
-    TileIcon.COFFEE -> R.string.icon_coffee
-    TileIcon.SNOW -> R.string.icon_snow
-    TileIcon.TRASH -> R.string.icon_trash
-    TileIcon.CART -> R.string.icon_cart
-    TileIcon.PHONE -> R.string.icon_phone
-    TileIcon.HEART -> R.string.icon_heart
-    TileIcon.PILL -> R.string.icon_pill
-    TileIcon.PAW -> R.string.icon_paw
-    TileIcon.SCISSORS -> R.string.icon_scissors
-    TileIcon.BRUSH -> R.string.icon_brush
-    TileIcon.GAUGE -> R.string.icon_gauge
-    TileIcon.CAR -> R.string.icon_car
 }

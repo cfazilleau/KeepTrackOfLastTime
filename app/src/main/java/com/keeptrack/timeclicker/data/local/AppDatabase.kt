@@ -6,7 +6,9 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.migration.AutoMigrationSpec
+import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.keeptrack.timeclicker.data.TileIcon
 
 /**
  * Local SQLite database stored in the app's private storage.
@@ -16,7 +18,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
  */
 @Database(
     entities = [GroupEntity::class, TrackerEntity::class, TrackerEventEntity::class],
-    version = 3,
+    version = 4,
     exportSchema = true,
     autoMigrations = [
         AutoMigration(from = 1, to = 2, spec = AppDatabase.Migration1To2::class),
@@ -51,7 +53,18 @@ abstract class AppDatabase : RoomDatabase() {
         /** Named after the app's first name; kept so existing data is found. */
         const val NAME = "last_time.db"
 
+        /**
+         * v4 stores tile icons by their Lucide name: the app's own names become the Lucide icon that replaced them.
+         * Same schema, so a plain migration.
+         */
+        val MIGRATION_3_4 = object : Migration(3, 4) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                val cases = TileIcon.legacyKeys.entries.joinToString(" ") { (old, new) -> "WHEN '$old' THEN '$new'" }
+                db.execSQL("UPDATE trackers SET icon = CASE icon $cases ELSE icon END")
+            }
+        }
+
         fun build(context: Context): AppDatabase =
-            Room.databaseBuilder(context, AppDatabase::class.java, NAME).build()
+            Room.databaseBuilder(context, AppDatabase::class.java, NAME).addMigrations(MIGRATION_3_4).build()
     }
 }
