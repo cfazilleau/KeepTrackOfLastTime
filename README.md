@@ -20,7 +20,8 @@ The number in the tile's bottom-right corner counts how many times it was presse
   "3 days ago" or as a date and time, vibration, click sound, press counter, **icon palette**, groups, language,
   **export / import** of everything (tiles, groups, history, photos, settings) as one `.zip` file,
   and credits for the open-source projects the app uses, with their licences.
-- **Icon palette** (Settings): every [Lucide](https://lucide.dev) icon (about 1,900), by category, with search.
+- **Icon palette** (Settings): every [Lucide](https://lucide.dev) icon (about 1,900), by category, with search
+  (in English, and in French when the app is in French: "poubelle", "anniversaire", "lave-linge").
   Tap icons to add them to, or remove them from, the icons offered when editing a tile.
 
 The look is a neumorphic "bento" grid: soft pastel tiles raised off the page that sink in when pressed,
@@ -84,6 +85,11 @@ own names (`check`, `paw`…); database migration 3 → 4 and the import of form
 downloads the latest Lucide release and its categories and rewrites `assets/lucide/icons.tsv`, each icon
 flattened to one path for both Compose and the widgets. Before committing a regenerated file, check its diff
 for removed icons: a tile using one would lose its icon (the unit tests check the default ones).
+
+Lucide's search tags are only in English. `assets/lucide/tags-<language>.tsv` adds search words in another language
+(one icon per line: name, tab, comma-separated words), used when the app is in that language; `tags-fr.tsv` covers
+every icon. They are written by hand, not generated: the script lists the icons a file is missing after an update,
+and the unit tests fail on lines for icons Lucide no longer has. Another language only needs its own file.
 
 ### Data model
 

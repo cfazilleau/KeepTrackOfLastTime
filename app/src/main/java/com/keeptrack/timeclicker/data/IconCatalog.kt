@@ -8,6 +8,8 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
+import java.io.FileNotFoundException
+import java.util.concurrent.ConcurrentHashMap
 
 /** One icon of the bundled Lucide set: Lucide's category ids and English search tags, and its path data. */
 class CatalogIcon(val icon: TileIcon, val categories: List<String>, val tags: List<String>, val path: String)
@@ -34,6 +36,7 @@ class IconCatalog(val icons: List<CatalogIcon>) {
         private const val ASSET = "lucide/icons.tsv"
         private val state = MutableStateFlow<IconCatalog?>(null)
         private val mutex = Mutex()
+        private val localTagsByLanguage = ConcurrentHashMap<String, Map<String, List<String>>>()
 
         /** Null until [load] has finished once. */
         val loaded: StateFlow<IconCatalog?> = state.asStateFlow()
@@ -55,6 +58,28 @@ class IconCatalog(val icons: List<CatalogIcon>) {
                 }
                 .toList()
         )
+
+        /**
+         * Search words in [language] (the locale's language code, "fr") for each icon name, read from
+         * `assets/lucide/tags-<language>.tsv` the first time. Lucide's tags are only in English; these files
+         * are written by hand. Empty for a language without one.
+         */
+        suspend fun localTags(context: Context, language: String): Map<String, List<String>> =
+            localTagsByLanguage[language] ?: withContext(Dispatchers.IO) {
+                try {
+                    parseTags(context.assets.open("lucide/tags-$language.tsv").bufferedReader().use { it.readText() })
+                } catch (e: FileNotFoundException) {
+                    emptyMap()
+                }
+            }.also { localTagsByLanguage[language] = it }
+
+        /** One icon per line: name and its search words (comma-separated), separated by a tab. "#" starts a comment. */
+        fun parseTags(text: String): Map<String, List<String>> = text.lineSequence()
+            .filter { it.isNotBlank() && !it.startsWith("#") }
+            .associate { line ->
+                val (name, tags) = line.split('\t', limit = 2)
+                name to tags.trim().splitList()
+            }
 
         private fun String.splitList(): List<String> = if (isBlank()) emptyList() else split(',')
     }
