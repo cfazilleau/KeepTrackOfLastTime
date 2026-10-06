@@ -32,6 +32,10 @@ fades the colours instead of flashing. Light and dark themes follow the system u
 picked in the settings. On Android 12+ the app can follow the system's **Material You** colours:
 surfaces and accents, with the pastel tile colours nudged toward their hue to match.
 
+On **tablets**, in landscape and in split screen, the grid gets as many columns as fit (two on a phone,
+four on a tablet held upright, seven across a landscape tablet), so tiles keep their phone size.
+Settings, Groups, Credits and the icon palette stay a readable width, centred.
+
 Translated into English, French, Spanish, German, Italian, Portuguese, Dutch, Polish, Russian, Turkish,
 Indonesian, Arabic, Hindi, Japanese, Korean and Simplified Chinese. On Android 13+ the language can be
 picked per app in the system settings.
@@ -66,7 +70,7 @@ app/src/main/java/com/keeptrack/timeclicker/
 │   ├── PhotoStore.kt          # copies picked photos into private storage
 │   └── local/                 # Room: entities, DAO, database + migrations
 └── ui/
-    ├── components/            # neumorphic buttons, text field, segmented control
+    ├── components/            # neumorphic buttons, text field, segmented control, tablet gutters
     ├── home/                  # home screen (group pager), bento grid, tile, edit sheet, ViewModel
     ├── groups/                # manage groups screen
     ├── icons/                 # icon palette screen, full icon chooser, icon and category names

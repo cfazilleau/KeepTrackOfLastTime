@@ -42,6 +42,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.net.toUri
 import com.keeptrack.timeclicker.R
+import com.keeptrack.timeclicker.ui.components.GutteredColumn
 import com.keeptrack.timeclicker.ui.components.NeuIconButton
 import com.keeptrack.timeclicker.ui.theme.AppIcons
 import com.keeptrack.timeclicker.ui.theme.TimeClickerTheme
@@ -88,14 +89,14 @@ private val credits = listOf(
 fun CreditsScreen(onBack: () -> Unit) {
     val palette = TimeClickerTheme.palette
     var shown by remember { mutableStateOf<Credit?>(null) }
-    Column(
+    GutteredColumn(
         Modifier
             .fillMaxSize()
             .background(palette.ground)
             .windowInsetsPadding(WindowInsets.safeDrawing.only(WindowInsetsSides.Top + WindowInsetsSides.Horizontal)),
-    ) {
+    ) { gutter ->
         Row(
-            Modifier.fillMaxWidth().padding(start = 20.dp, end = 20.dp, top = 20.dp, bottom = 8.dp),
+            Modifier.fillMaxWidth().padding(start = gutter, end = gutter, top = 20.dp, bottom = 8.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(14.dp),
         ) {
@@ -107,8 +108,8 @@ fun CreditsScreen(onBack: () -> Unit) {
                 .fillMaxSize()
                 .verticalScroll(rememberScrollState())
                 .padding(
-                    start = 20.dp,
-                    end = 20.dp,
+                    start = gutter,
+                    end = gutter,
                     top = 16.dp,
                     bottom = 40.dp + WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding(),
                 ),
