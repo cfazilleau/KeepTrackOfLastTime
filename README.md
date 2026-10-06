@@ -14,7 +14,7 @@ The number in the tile's bottom-right corner counts how many times it was presse
   All sizes show the same content.
 - **Reminders**: a tile can notify you when it hasn't been done for a while (N hours, days or weeks since
   its last tap). It notifies once; tapping the tile (or "Mark as done" on the notification) starts the wait over.
-  Tiles with a reminder show a bell next to their reset button.
+  Tiles with a reminder show a bell in their top-right corner.
 - **+** button (bottom centre): add a new tile, pre-filed in the group currently shown.
 - **Group chips**, or **swiping left/right**, move between groups; "All" shows the tiles without a group,
   then one section per group.
@@ -108,7 +108,7 @@ and the unit tests fail on lines for icons Lucide no longer has. Another languag
 - `tracker_events`: one row per time a tile was done.
 
 A card's "last time" is its most recent event. Resetting a card inserts an event, and tapping it again to undo deletes it.
-Because the full history is kept, future features (history view, stats, average interval, reminders)
+Because the full history is kept, future features (history view, stats, average interval)
 can use data that is already there.
 
 ### Extending the database
