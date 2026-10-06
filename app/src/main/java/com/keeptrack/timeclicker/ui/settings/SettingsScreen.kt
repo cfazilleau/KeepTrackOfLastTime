@@ -73,7 +73,7 @@ import com.keeptrack.timeclicker.ui.theme.supportsDynamicColor
 import java.time.LocalDate
 
 /** Where the "Support us" button leads. */
-private const val DONATE_URL = "https://ko-fi.com/cfazilleau"
+private const val DONATE_URL = "https://ko-fi.com/cfaz"
 
 @Composable
 fun SettingsScreen(
