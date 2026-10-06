@@ -6,32 +6,43 @@ import android.media.SoundPool
 import com.keeptrack.timeclicker.R
 
 /**
- * The short click played when a tile is marked as done. One small pool for the whole app.
+ * The short click played when a tile is marked as done, in the app or from a widget. One small pool
+ * for the whole app.
  *
- * It plays as a system sound (sonification), so it is silent when the phone is on silent or vibrate.
- * Loading is asynchronous: call [preload] early so the first tap is heard.
+ * It plays on the media stream (like a game's sounds), so it is heard when the phone is on silent or
+ * vibrate, at the media volume. Loading is asynchronous: call [preload] early. A click requested before
+ * the sound is loaded (a widget tap that just started the app) plays as soon as it is.
  */
 object TapSound {
     private var pool: SoundPool? = null
     private var soundId = 0
-    @Volatile private var loaded = false
+    private var loaded = false
+    private var playWhenLoaded = false
 
     @Synchronized
     fun preload(context: Context) {
         if (pool != null) return
         val attributes = AudioAttributes.Builder()
-            .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
+            .setUsage(AudioAttributes.USAGE_GAME)
             .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
             .build()
         pool = SoundPool.Builder().setMaxStreams(2).setAudioAttributes(attributes).build().apply {
-            setOnLoadCompleteListener { _, _, status -> loaded = status == 0 }
+            setOnLoadCompleteListener { pool, _, status -> onLoaded(pool, status == 0) }
             soundId = load(context.applicationContext, R.raw.tile_click, 1)
         }
     }
 
+    @Synchronized
     fun play(context: Context) {
         preload(context)
-        if (loaded) pool?.play(soundId, VOLUME, VOLUME, 1, 0, 1f)
+        if (loaded) pool?.play(soundId, VOLUME, VOLUME, 1, 0, 1f) else playWhenLoaded = true
+    }
+
+    @Synchronized
+    private fun onLoaded(pool: SoundPool, success: Boolean) {
+        loaded = success
+        if (success && playWhenLoaded) pool.play(soundId, VOLUME, VOLUME, 1, 0, 1f)
+        playWhenLoaded = false
     }
 
     private const val VOLUME = 0.7f

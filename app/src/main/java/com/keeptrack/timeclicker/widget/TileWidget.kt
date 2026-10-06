@@ -196,7 +196,10 @@ private fun TileContent(tracker: Tracker, photo: Bitmap?) {
             .fillMaxSize()
             .widgetShape()
             .background(colors.background)
-            .clickable(actionRunCallback<MarkDoneAction>(actionParametersOf(TileWidgets.TrackerIdParam to tracker.id))),
+            .clickable(
+                actionRunCallback<MarkDoneAction>(actionParametersOf(TileWidgets.TrackerIdParam to tracker.id)),
+                rippleOverride = R.drawable.widget_tile_pressed,
+            ),
     ) {
         if (photo != null) {
             Image(ImageProvider(photo), null, GlanceModifier.fillMaxSize(), contentScale = ContentScale.Crop)
