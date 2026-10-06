@@ -42,6 +42,9 @@ data class TrackerEntity(
     val photo: String? = null,
     /** The press counter counts events after this time (millis); reset by the user. */
     @ColumnInfo(name = "count_since", defaultValue = "0") val countSince: Long = 0,
+    /** Reminder after [reminderEvery] [reminderUnit] ("hours", "days", "weeks") without being done; null for none. */
+    @ColumnInfo(name = "reminder_every") val reminderEvery: Int? = null,
+    @ColumnInfo(name = "reminder_unit") val reminderUnit: String? = null,
 )
 
 /**

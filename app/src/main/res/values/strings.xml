@@ -82,6 +82,29 @@
     <string name="counter_reset">Reset</string>
     <string name="widget_add">Add to home screen</string>
     <string name="widget_add_hint">Shows this tile as a widget. Tap the widget to mark it as done.</string>
+    <string name="label_reminder">Reminder</string>
+    <string name="reminder_add">Add a reminder</string>
+    <string name="reminder_add_hint">Get a notification when it hasn’t been done for a while.</string>
+    <string name="reminder_after">Notify after</string>
+    <string name="reminder_less">Decrease</string>
+    <string name="reminder_more">Increase</string>
+    <string name="reminder_unit_hours">Hours</string>
+    <string name="reminder_unit_days">Days</string>
+    <string name="reminder_unit_weeks">Weeks</string>
+    <plurals name="reminder_weeks">
+        <item quantity="one">%d week</item>
+        <item quantity="other">%d weeks</item>
+    </plurals>
+    <string name="reminder_remove">Remove</string>
+    <!-- %1$s is how long, e.g. "3 days". -->
+    <string name="reminder_hint">You’ll get a notification if it hasn’t been done for %1$s.</string>
+    <string name="reminder_notifications_off">Notifications are off for Time Clicker, so reminders can’t show. Tap to allow them.</string>
+    <!-- In the notification: "Not done for 3 days 2 hours". -->
+    <string name="reminder_notification_text">Not done for %1$s</string>
+    <string name="reminder_mark_done">Mark as done</string>
+    <string name="reminder_channel">Reminders</string>
+    <string name="reminder_channel_description">When a tile with a reminder hasn’t been done for a while.</string>
+    <string name="tile_reminder_description">Reminder: %1$s</string>
     <string name="delete_tile">Delete tile</string>
     <string name="tile_preview">Preview</string>
     <string name="tile_preview_name">New tile</string>

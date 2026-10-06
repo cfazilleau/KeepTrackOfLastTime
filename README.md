@@ -8,8 +8,11 @@ The number in the tile's bottom-right corner counts how many times it was presse
 
 - **Tap** a tile: mark it as done now. A snackbar offers **Undo**.
 - **Long-press** a tile: edit it in a sheet: name, group, colour or photo background, icon (or none; two rows of recent icons and your icon palette, plus a searchable list of every icon),
-  size (Small / Wide / Tall), reset its press counter, add it to the home screen, or delete it.
+  size (Small / Wide / Tall), a reminder, reset its press counter, add it to the home screen, or delete it.
   All sizes show the same content.
+- **Reminders**: a tile can notify you when it hasn't been done for a while (N hours, days or weeks since
+  its last tap). It notifies once; tapping the tile (or "Mark as done" on the notification) starts the wait over.
+  Tiles with a reminder show a bell next to their reset button.
 - **+** button (bottom centre): add a new tile, pre-filed in the group currently shown.
 - **Group chips**, or **swiping left/right**, move between groups; "All" shows the tiles without a group,
   then one section per group.
@@ -59,6 +62,7 @@ app/src/main/java/com/keeptrack/timeclicker/
 ├── MainActivity.kt            # Home <-> Groups screen switch
 ├── data/
 │   ├── Tracker.kt             # domain model: tiles, groups, colour/size enums, icon (a Lucide name)
+│   ├── Reminder.kt            # a tile's reminder: after how long without being done
 │   ├── IconCatalog.kt         # the bundled Lucide icons: path data, categories, search tags
 │   ├── TrackerRepository.kt   # the single entry point the UI uses
 │   ├── PhotoStore.kt          # copies picked photos into private storage
@@ -71,6 +75,7 @@ app/src/main/java/com/keeptrack/timeclicker/
     ├── settings/              # settings screen, credits
     ├── theme/                 # palette (+ Material You), neumorphic shadow modifiers, icons
     └── time/                  # "2 minutes 45 seconds" formatting + ticking clock
+├── reminder/                  # reminder notifications: one alarm for the next due tile, "Mark as done"
 └── widget/                    # home-screen widgets (Glance): widget, tile picker, refresh alarm
 app/src/main/assets/lucide/    # icons.tsv (generated) and the Lucide licence
 app/src/main/assets/licenses/  # licence texts shown in the credits
@@ -95,7 +100,8 @@ and the unit tests fail on lines for icons Lucide no longer has. Another languag
 
 - `tracker_groups`: user-defined groups (name, display position).
 - `trackers`: one row per tile (name, group, colour, icon, size, photo file, display position,
-  and `count_since`: the press counter counts events after this time).
+  `count_since`: the press counter counts events after this time, and the reminder: `reminder_every` +
+  `reminder_unit`, null for none).
   Deleting a group sets its tiles' group to null (they then only show under "All").
 - `tracker_events`: one row per time a tile was done.
 

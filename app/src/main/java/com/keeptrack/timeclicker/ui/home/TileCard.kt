@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.TextAutoSize
@@ -133,6 +134,7 @@ fun TileCard(
         tracker.name,
         if (elapsed.isEmpty) stringResource(R.string.elapsed_just_now) else stringResource(R.string.elapsed_ago, elapsed.format(resources)),
         pluralStringResource(R.plurals.press_count, tracker.pressCount, tracker.pressCount).takeIf { settings.showCounter },
+        tracker.reminder?.let { stringResource(R.string.tile_reminder_description, reminderDelay(context, it)) },
     ).joinToString(", ")
 
     Box(
@@ -195,6 +197,20 @@ fun TileCard(
                     }
                 }
                 Spacer(Modifier.weight(1f))
+                // A regular reminder is set.
+                if (tracker.reminder != null) {
+                    Box(
+                        Modifier
+                            .size(34.dp)
+                            .clip(CircleShape)
+                            .background(glass)
+                            .border(1.dp, glassBorder, CircleShape),
+                        contentAlignment = Alignment.Center,
+                    ) {
+                        Icon(AppIcons.Bell, null, tint = colors.content, modifier = Modifier.size(16.dp))
+                    }
+                    Spacer(Modifier.width(6.dp))
+                }
                 Box(
                     Modifier
                         .size(34.dp)

@@ -93,6 +93,22 @@ class MigrationTest {
     }
 
     @Test
+    fun migrate4To5_addsRemindersOff() {
+        helper.createDatabase(DB_V5, 4).use { db ->
+            db.execSQL("INSERT INTO trackers (id, name, created_at, position) VALUES (1, 'Plants', 1000, 0)")
+        }
+
+        helper.runMigrationsAndValidate(DB_V5, 5, true).use { db ->
+            db.query("SELECT name, reminder_every, reminder_unit FROM trackers WHERE id = 1").use { c ->
+                c.moveToFirst()
+                assertEquals("Plants", c.getString(0))
+                assertNull(c.getString(1))
+                assertNull(c.getString(2))
+            }
+        }
+    }
+
+    @Test
     fun deletingGroupKeepsItsTrackers() {
         helper.createDatabase(DB_V2, 2).use { db ->
             db.execSQL("PRAGMA foreign_keys = ON")
@@ -111,5 +127,6 @@ class MigrationTest {
         const val DB_V2 = "groups-test"
         const val DB_V3 = "counter-test"
         const val DB_V4 = "icons-test"
+        const val DB_V5 = "reminders-test"
     }
 }
