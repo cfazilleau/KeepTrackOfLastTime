@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Home -->
+    <plurals name="things_count">
+        <item quantity="one">%d дело</item>
+        <item quantity="few">%d дела</item>
+        <item quantity="many">%d дел</item>
+        <item quantity="other">%d дела</item>
+    </plurals>
+    <plurals name="groups_count">
+        <item quantity="one">%d группа</item>
+        <item quantity="few">%d группы</item>
+        <item quantity="many">%d групп</item>
+        <item quantity="other">%d группы</item>
+    </plurals>
+    <string name="header_tracked">Отслеживается: %1$s</string>
+    <string name="header_grouped">%1$s, %2$s</string>
+    <string name="chip_all">Все</string>
+    <string name="chip_other">Другое</string>
+    <string name="section_oldest">самое давнее: %1$s</string>
+    <string name="empty_title">Пока ничего не отслеживается</string>
+    <string name="empty_body">Нажмите +, чтобы что-то добавить, например «Полить цветы». Нажимайте на плитку каждый раз, когда делаете это снова.</string>
+    <string name="empty_group">В этой группе пока нет плиток. Нажмите +, чтобы добавить.</string>
+    <string name="snackbar_reset">«%1$s»: отмечено сейчас</string>
+    <string name="tile_click_label">Отметить как сделанное сейчас</string>
+    <string name="tile_long_click_label">Изменить плитку</string>
+
+    <!-- Elapsed time -->
+    <plurals name="elapsed_seconds">
+        <item quantity="one">%d секунда</item>
+        <item quantity="few">%d секунды</item>
+        <item quantity="many">%d секунд</item>
+        <item quantity="other">%d секунды</item>
+    </plurals>
+    <plurals name="elapsed_minutes">
+        <item quantity="one">%d минута</item>
+        <item quantity="few">%d минуты</item>
+        <item quantity="many">%d минут</item>
+        <item quantity="other">%d минуты</item>
+    </plurals>
+    <plurals name="elapsed_hours">
+        <item quantity="one">%d час</item>
+        <item quantity="few">%d часа</item>
+        <item quantity="many">%d часов</item>
+        <item quantity="other">%d часа</item>
+    </plurals>
+    <plurals name="elapsed_days">
+        <item quantity="one">%d день</item>
+        <item quantity="few">%d дня</item>
+        <item quantity="many">%d дней</item>
+        <item quantity="other">%d дня</item>
+    </plurals>
+    <plurals name="elapsed_years">
+        <item quantity="one">%d год</item>
+        <item quantity="few">%d года</item>
+        <item quantity="many">%d лет</item>
+        <item quantity="other">%d года</item>
+    </plurals>
+    <string name="elapsed_two_units">%1$s %2$s</string>
+    <string name="elapsed_ago">%1$s назад</string>
+    <string name="elapsed_just_now">Только что</string>
+    <plurals name="press_count">
+        <item quantity="one">Нажато %d раз</item>
+        <item quantity="few">Нажато %d раза</item>
+        <item quantity="many">Нажато %d раз</item>
+        <item quantity="other">Нажато %d раза</item>
+    </plurals>
+
+    <!-- Common actions -->
+    <string name="action_add_tile">Добавить плитку</string>
+    <string name="action_manage_groups">Управление группами</string>
+    <string name="action_undo">Отменить</string>
+    <string name="action_cancel">Отмена</string>
+    <string name="action_save">Сохранить</string>
+    <string name="action_done">Готово</string>
+    <string name="action_add">Добавить</string>
+    <string name="action_rename">Переименовать</string>
+    <string name="action_delete">Удалить</string>
+    <string name="action_back">Назад</string>
+
+    <!-- Edit tile sheet -->
+    <string name="sheet_new_title">Новая плитка</string>
+    <string name="sheet_edit_title">Изменить плитку</string>
+    <string name="label_name">Название</string>
+    <string name="name_placeholder">например, Полить цветы</string>
+    <string name="label_group">Группа</string>
+    <string name="group_none">Без группы</string>
+    <string name="group_new">Новая группа</string>
+    <string name="label_background">Фон</string>
+    <string name="background_colour">Цвет</string>
+    <string name="background_photo">Фото</string>
+    <string name="photo_change">Сменить фото</string>
+    <string name="photo_remove">Удалить</string>
+    <string name="photo_hint">Копируется в приложение, поэтому работает и офлайн.</string>
+    <string name="photo_error">Не удалось прочитать фото. Попробуйте другое.</string>
+    <string name="label_icon">Значок</string>
+    <string name="label_size">Размер</string>
+    <string name="size_small">Маленькая</string>
+    <string name="size_wide">Широкая</string>
+    <string name="size_tall">Высокая</string>
+    <string name="label_counter">Счётчик</string>
+    <string name="counter_reset">Сбросить</string>
+    <string name="widget_add">Добавить на главный экран</string>
+    <string name="widget_add_hint">Показывает эту плитку как виджет. Нажмите на виджет, чтобы отметить как сделанное.</string>
+    <string name="delete_tile">Удалить плитку</string>
+    <string name="tile_preview">Предпросмотр</string>
+    <string name="tile_preview_name">Новая плитка</string>
+
+    <string name="color_sage">Шалфей</string>
+    <string name="color_lavender">Лаванда</string>
+    <string name="color_peach">Персик</string>
+    <string name="color_sky">Небо</string>
+    <string name="color_butter">Сливки</string>
+    <string name="color_rose">Роза</string>
+    <string name="colors_wallpaper">Из ваших обоев</string>
+    <string name="color_wallpaper_primary">Обои: акцент</string>
+    <string name="color_wallpaper_secondary">Обои: мягкий</string>
+    <string name="color_wallpaper_tertiary">Обои: контраст</string>
+    <string name="icon_choice">Значок: %1$s</string>
+    <string name="icon_check">Галочка</string>
+    <string name="icon_drop">Капля воды</string>
+    <string name="icon_leaf">Лист</string>
+    <string name="icon_grass">Трава</string>
+    <string name="icon_flower">Цветок</string>
+    <string name="icon_bed">Кровать</string>
+    <string name="icon_coffee">Кофе</string>
+    <string name="icon_snow">Снежинка</string>
+    <string name="icon_trash">Мусорное ведро</string>
+    <string name="icon_cart">Тележка</string>
+    <string name="icon_phone">Телефон</string>
+    <string name="icon_heart">Сердце</string>
+    <string name="icon_pill">Таблетка</string>
+    <string name="icon_paw">Лапа</string>
+    <string name="icon_scissors">Ножницы</string>
+    <string name="icon_brush">Кисть</string>
+    <string name="icon_gauge">Датчик</string>
+    <string name="icon_car">Автомобиль</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_delete_title">Удалить «%1$s»?</string>
+    <string name="dialog_delete_body">Её история тоже будет удалена.</string>
+    <string name="dialog_new_group_title">Новая группа</string>
+    <string name="dialog_rename_group_title">Переименовать группу</string>
+    <string name="dialog_delete_group_title">Удалить группу «%1$s»?</string>
+    <string name="dialog_delete_group_body">Её плитки сохранятся и перейдут в «Другое».</string>
+    <string name="dialog_reset_counter_title">Сбросить счётчик?</string>
+    <string name="dialog_reset_counter_body">Отсчёт начнётся с 0. История плитки и время последнего раза сохранятся.</string>
+
+    <!-- Groups screen -->
+    <string name="groups_title">Группы</string>
+    <string name="groups_intro">Перетаскивайте, чтобы изменить порядок. Он определяет порядок чипов и разделов на главном экране.</string>
+    <string name="groups_empty">Групп пока нет. Добавьте группу ниже, затем выберите её при редактировании плитки.</string>
+    <plurals name="tiles_count">
+        <item quantity="one">%d плитка</item>
+        <item quantity="few">%d плитки</item>
+        <item quantity="many">%d плиток</item>
+        <item quantity="other">%d плитки</item>
+    </plurals>
+    <string name="groups_new_placeholder">например, Ванная, Питомцы, Здоровье</string>
+    <string name="groups_note">При удалении группы плитки сохраняются и переходят в «Другое» — раздел, который виден, только когда в нём есть плитки.</string>
+    <string name="group_options">Параметры: %1$s</string>
+    <string name="group_drag">Перетащите, чтобы переместить: %1$s</string>
+
+    <!-- Home-screen widget -->
+    <string name="widget_description">Одна плитка: сколько времени прошло с последнего раза. Нажмите, чтобы отметить как сделанное.</string>
+    <string name="widget_open_app">Открыть Time Clicker</string>
+    <string name="widget_choose_tile">Нажмите, чтобы выбрать плитку</string>
+    <string name="widget_tile_deleted">Эта плитка удалена</string>
+    <string name="widget_config_title">Выберите плитку для этого виджета</string>
+    <string name="widget_config_empty">Плиток пока нет. Откройте приложение и нажмите +, чтобы добавить.</string>
+    <string name="widget_config_pick">Показать на этом виджете</string>
+    <string name="widget_preview_name">Полить цветы</string>
+    <string name="widget_preview_elapsed">3 дня</string>
+</resources>

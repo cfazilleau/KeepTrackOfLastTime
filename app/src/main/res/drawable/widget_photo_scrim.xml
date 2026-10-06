@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Darkens the bottom of a photo widget so its white text stays readable (as on the in-app tile). -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:angle="270"
+        android:centerColor="#14000000"
+        android:centerY="0.35"
+        android:endColor="#B3000000"
+        android:startColor="#1F000000" />
+</shape>

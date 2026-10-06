@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Home -->
+    <plurals name="things_count">
+        <item quantity="one">%d élément</item>
+        <item quantity="many">%d éléments</item>
+        <item quantity="other">%d éléments</item>
+    </plurals>
+    <plurals name="groups_count">
+        <item quantity="one">%d groupe</item>
+        <item quantity="many">%d groupes</item>
+        <item quantity="other">%d groupes</item>
+    </plurals>
+    <string name="header_tracked">%1$s en suivi</string>
+    <string name="header_grouped">%1$s dans %2$s</string>
+    <string name="chip_all">Tout</string>
+    <string name="chip_other">Autres</string>
+    <string name="section_oldest">plus ancien : %1$s</string>
+    <string name="empty_title">Rien n’est encore suivi</string>
+    <string name="empty_body">Touchez + pour ajouter quelque chose, comme « Arroser les plantes ». Touchez sa tuile chaque fois que vous le refaites.</string>
+    <string name="empty_group">Aucune tuile dans ce groupe. Touchez + pour en ajouter une.</string>
+    <string name="snackbar_reset">« %1$s » fait à l’instant</string>
+    <string name="tile_click_label">Marquer comme fait maintenant</string>
+    <string name="tile_long_click_label">Modifier la tuile</string>
+
+    <!-- Elapsed time -->
+    <plurals name="elapsed_seconds">
+        <item quantity="one">%d seconde</item>
+        <item quantity="many">%d secondes</item>
+        <item quantity="other">%d secondes</item>
+    </plurals>
+    <plurals name="elapsed_minutes">
+        <item quantity="one">%d minute</item>
+        <item quantity="many">%d minutes</item>
+        <item quantity="other">%d minutes</item>
+    </plurals>
+    <plurals name="elapsed_hours">
+        <item quantity="one">%d heure</item>
+        <item quantity="many">%d heures</item>
+        <item quantity="other">%d heures</item>
+    </plurals>
+    <plurals name="elapsed_days">
+        <item quantity="one">%d jour</item>
+        <item quantity="many">%d jours</item>
+        <item quantity="other">%d jours</item>
+    </plurals>
+    <plurals name="elapsed_years">
+        <item quantity="one">%d an</item>
+        <item quantity="many">%d ans</item>
+        <item quantity="other">%d ans</item>
+    </plurals>
+    <string name="elapsed_two_units">%1$s %2$s</string>
+    <string name="elapsed_ago">il y a %1$s</string>
+    <string name="elapsed_just_now">À l’instant</string>
+    <plurals name="press_count">
+        <item quantity="one">%d appui</item>
+        <item quantity="many">%d appuis</item>
+        <item quantity="other">%d appuis</item>
+    </plurals>
+
+    <!-- Common actions -->
+    <string name="action_add_tile">Ajouter une tuile</string>
+    <string name="action_manage_groups">Gérer les groupes</string>
+    <string name="action_undo">Annuler</string>
+    <string name="action_cancel">Annuler</string>
+    <string name="action_save">Enregistrer</string>
+    <string name="action_done">Terminé</string>
+    <string name="action_add">Ajouter</string>
+    <string name="action_rename">Renommer</string>
+    <string name="action_delete">Supprimer</string>
+    <string name="action_back">Retour</string>
+
+    <!-- Edit tile sheet -->
+    <string name="sheet_new_title">Nouvelle tuile</string>
+    <string name="sheet_edit_title">Modifier la tuile</string>
+    <string name="label_name">Nom</string>
+    <string name="name_placeholder">ex. Arroser les plantes</string>
+    <string name="label_group">Groupe</string>
+    <string name="group_none">Aucun groupe</string>
+    <string name="group_new">Nouveau groupe</string>
+    <string name="label_background">Fond</string>
+    <string name="background_colour">Couleur</string>
+    <string name="background_photo">Photo</string>
+    <string name="photo_change">Changer de photo</string>
+    <string name="photo_remove">Retirer</string>
+    <string name="photo_hint">Copiée dans l’app, elle reste disponible hors ligne.</string>
+    <string name="photo_error">Impossible de lire cette photo. Essayez-en une autre.</string>
+    <string name="label_icon">Icône</string>
+    <string name="label_size">Taille</string>
+    <string name="size_small">Petite</string>
+    <string name="size_wide">Large</string>
+    <string name="size_tall">Haute</string>
+    <string name="label_counter">Compteur</string>
+    <string name="counter_reset">Réinitialiser</string>
+    <string name="widget_add">Ajouter à l’écran d’accueil</string>
+    <string name="widget_add_hint">Affiche cette tuile en widget. Touchez le widget pour la marquer comme faite.</string>
+    <string name="delete_tile">Supprimer la tuile</string>
+    <string name="tile_preview">Aperçu</string>
+    <string name="tile_preview_name">Nouvelle tuile</string>
+
+    <string name="color_sage">Sauge</string>
+    <string name="color_lavender">Lavande</string>
+    <string name="color_peach">Pêche</string>
+    <string name="color_sky">Ciel</string>
+    <string name="color_butter">Beurre</string>
+    <string name="color_rose">Rose</string>
+    <string name="colors_wallpaper">De votre fond d’écran</string>
+    <string name="color_wallpaper_primary">Accent du fond d’écran</string>
+    <string name="color_wallpaper_secondary">Teinte douce du fond d’écran</string>
+    <string name="color_wallpaper_tertiary">Contraste du fond d’écran</string>
+    <string name="icon_choice">Icône : %1$s</string>
+    <string name="icon_check">Coche</string>
+    <string name="icon_drop">Goutte d’eau</string>
+    <string name="icon_leaf">Feuille</string>
+    <string name="icon_grass">Herbe</string>
+    <string name="icon_flower">Fleur</string>
+    <string name="icon_bed">Lit</string>
+    <string name="icon_coffee">Café</string>
+    <string name="icon_snow">Flocon de neige</string>
+    <string name="icon_trash">Poubelle</string>
+    <string name="icon_cart">Panier</string>
+    <string name="icon_phone">Téléphone</string>
+    <string name="icon_heart">Cœur</string>
+    <string name="icon_pill">Comprimé</string>
+    <string name="icon_paw">Patte</string>
+    <string name="icon_scissors">Ciseaux</string>
+    <string name="icon_brush">Pinceau</string>
+    <string name="icon_gauge">Jauge</string>
+    <string name="icon_car">Voiture</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_delete_title">Supprimer « %1$s » ?</string>
+    <string name="dialog_delete_body">Son historique sera aussi supprimé.</string>
+    <string name="dialog_new_group_title">Nouveau groupe</string>
+    <string name="dialog_rename_group_title">Renommer le groupe</string>
+    <string name="dialog_delete_group_title">Supprimer le groupe « %1$s » ?</string>
+    <string name="dialog_delete_group_body">Ses tuiles sont conservées et passent dans « Autres ».</string>
+    <string name="dialog_reset_counter_title">Réinitialiser le compteur ?</string>
+    <string name="dialog_reset_counter_body">Il repart de 0. L’historique de la tuile et sa dernière fois sont conservés.</string>
+
+    <!-- Groups screen -->
+    <string name="groups_title">Groupes</string>
+    <string name="groups_intro">Faites glisser pour réorganiser. Cet ordre est celui des filtres et des sections de l’écran d’accueil.</string>
+    <string name="groups_empty">Aucun groupe pour l’instant. Ajoutez-en un ci-dessous, puis choisissez-le en modifiant une tuile.</string>
+    <plurals name="tiles_count">
+        <item quantity="one">%d tuile</item>
+        <item quantity="many">%d tuiles</item>
+        <item quantity="other">%d tuiles</item>
+    </plurals>
+    <string name="groups_new_placeholder">ex. Salle de bain, Animaux, Santé</string>
+    <string name="groups_note">Supprimer un groupe conserve ses tuiles ; elles passent dans « Autres », une section visible seulement si elle contient des tuiles.</string>
+    <string name="group_options">Options de %1$s</string>
+    <string name="group_drag">Faire glisser pour réorganiser %1$s</string>
+
+    <!-- Home-screen widget -->
+    <string name="widget_description">Une tuile : depuis combien de temps vous l’avez fait. Touchez pour la marquer comme faite.</string>
+    <string name="widget_open_app">Ouvrir Time Clicker</string>
+    <string name="widget_choose_tile">Touchez pour choisir une tuile</string>
+    <string name="widget_tile_deleted">Cette tuile a été supprimée</string>
+    <string name="widget_config_title">Choisissez une tuile pour ce widget</string>
+    <string name="widget_config_empty">Aucune tuile. Ouvrez l’app et touchez + pour en ajouter une.</string>
+    <string name="widget_config_pick">Afficher sur ce widget</string>
+    <string name="widget_preview_name">Arroser les plantes</string>
+    <string name="widget_preview_elapsed">3 jours</string>
+</resources>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Home -->
+    <plurals name="things_count">
+        <item quantity="one">%d şey</item>
+        <item quantity="other">%d şey</item>
+    </plurals>
+    <plurals name="groups_count">
+        <item quantity="one">%d grup</item>
+        <item quantity="other">%d grup</item>
+    </plurals>
+    <string name="header_tracked">%1$s takip ediliyor</string>
+    <string name="header_grouped">%2$s içinde %1$s</string>
+    <string name="chip_all">Tümü</string>
+    <string name="chip_other">Diğer</string>
+    <string name="section_oldest">en eski: %1$s</string>
+    <string name="empty_title">Henüz takip edilen bir şey yok</string>
+    <string name="empty_body">Bir şey eklemek için + simgesine dokunun, örneğin “Bitkiler sulandı”. Her tekrar yaptığınızda kutucuğuna dokunun.</string>
+    <string name="empty_group">Bu grupta henüz kutucuk yok. Eklemek için + simgesine dokunun.</string>
+    <string name="snackbar_reset">“%1$s” şimdiye sıfırlandı</string>
+    <string name="tile_click_label">Şimdi yapıldı olarak işaretle</string>
+    <string name="tile_long_click_label">Kutucuğu düzenle</string>
+
+    <!-- Elapsed time -->
+    <plurals name="elapsed_seconds">
+        <item quantity="one">%d saniye</item>
+        <item quantity="other">%d saniye</item>
+    </plurals>
+    <plurals name="elapsed_minutes">
+        <item quantity="one">%d dakika</item>
+        <item quantity="other">%d dakika</item>
+    </plurals>
+    <plurals name="elapsed_hours">
+        <item quantity="one">%d saat</item>
+        <item quantity="other">%d saat</item>
+    </plurals>
+    <plurals name="elapsed_days">
+        <item quantity="one">%d gün</item>
+        <item quantity="other">%d gün</item>
+    </plurals>
+    <plurals name="elapsed_years">
+        <item quantity="one">%d yıl</item>
+        <item quantity="other">%d yıl</item>
+    </plurals>
+    <string name="elapsed_two_units">%1$s %2$s</string>
+    <string name="elapsed_ago">%1$s önce</string>
+    <string name="elapsed_just_now">Az önce</string>
+    <plurals name="press_count">
+        <item quantity="one">%d kez basıldı</item>
+        <item quantity="other">%d kez basıldı</item>
+    </plurals>
+
+    <!-- Common actions -->
+    <string name="action_add_tile">Kutucuk ekle</string>
+    <string name="action_manage_groups">Grupları yönet</string>
+    <string name="action_undo">Geri al</string>
+    <string name="action_cancel">İptal</string>
+    <string name="action_save">Kaydet</string>
+    <string name="action_done">Bitti</string>
+    <string name="action_add">Ekle</string>
+    <string name="action_rename">Yeniden adlandır</string>
+    <string name="action_delete">Sil</string>
+    <string name="action_back">Geri</string>
+
+    <!-- Edit tile sheet -->
+    <string name="sheet_new_title">Yeni kutucuk</string>
+    <string name="sheet_edit_title">Kutucuğu düzenle</string>
+    <string name="label_name">Ad</string>
+    <string name="name_placeholder">ör. Bitkiler sulandı</string>
+    <string name="label_group">Grup</string>
+    <string name="group_none">Grup yok</string>
+    <string name="group_new">Yeni grup</string>
+    <string name="label_background">Arka plan</string>
+    <string name="background_colour">Renk</string>
+    <string name="background_photo">Fotoğraf</string>
+    <string name="photo_change">Fotoğrafı değiştir</string>
+    <string name="photo_remove">Kaldır</string>
+    <string name="photo_hint">Uygulamaya kopyalanır, böylece çevrimdışı da çalışır.</string>
+    <string name="photo_error">Bu fotoğraf okunamadı. Başka birini deneyin.</string>
+    <string name="label_icon">Simge</string>
+    <string name="label_size">Boyut</string>
+    <string name="size_small">Küçük</string>
+    <string name="size_wide">Geniş</string>
+    <string name="size_tall">Uzun</string>
+    <string name="label_counter">Sayaç</string>
+    <string name="counter_reset">Sıfırla</string>
+    <string name="widget_add">Ana ekrana ekle</string>
+    <string name="widget_add_hint">Bu kutucuğu widget olarak gösterir. Yapıldı olarak işaretlemek için widget’a dokunun.</string>
+    <string name="delete_tile">Kutucuğu sil</string>
+    <string name="tile_preview">Önizleme</string>
+    <string name="tile_preview_name">Yeni kutucuk</string>
+
+    <string name="color_sage">Adaçayı</string>
+    <string name="color_lavender">Lavanta</string>
+    <string name="color_peach">Şeftali</string>
+    <string name="color_sky">Gökyüzü</string>
+    <string name="color_butter">Tereyağı</string>
+    <string name="color_rose">Gül</string>
+    <string name="colors_wallpaper">Duvar kâğıdınızdan</string>
+    <string name="color_wallpaper_primary">Duvar kâğıdı: vurgu</string>
+    <string name="color_wallpaper_secondary">Duvar kâğıdı: yumuşak</string>
+    <string name="color_wallpaper_tertiary">Duvar kâğıdı: kontrast</string>
+    <string name="icon_choice">Simge: %1$s</string>
+    <string name="icon_check">Onay işareti</string>
+    <string name="icon_drop">Su damlası</string>
+    <string name="icon_leaf">Yaprak</string>
+    <string name="icon_grass">Çimen</string>
+    <string name="icon_flower">Çiçek</string>
+    <string name="icon_bed">Yatak</string>
+    <string name="icon_coffee">Kahve</string>
+    <string name="icon_snow">Kar tanesi</string>
+    <string name="icon_trash">Çöp kutusu</string>
+    <string name="icon_cart">Alışveriş arabası</string>
+    <string name="icon_phone">Telefon</string>
+    <string name="icon_heart">Kalp</string>
+    <string name="icon_pill">Hap</string>
+    <string name="icon_paw">Pati</string>
+    <string name="icon_scissors">Makas</string>
+    <string name="icon_brush">Fırça</string>
+    <string name="icon_gauge">Gösterge</string>
+    <string name="icon_car">Araba</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_delete_title">“%1$s” silinsin mi?</string>
+    <string name="dialog_delete_body">Geçmişi de silinecek.</string>
+    <string name="dialog_new_group_title">Yeni grup</string>
+    <string name="dialog_rename_group_title">Grubu yeniden adlandır</string>
+    <string name="dialog_delete_group_title">“%1$s” grubu silinsin mi?</string>
+    <string name="dialog_delete_group_body">Kutucukları korunur ve “Diğer” bölümüne taşınır.</string>
+    <string name="dialog_reset_counter_title">Sayaç sıfırlansın mı?</string>
+    <string name="dialog_reset_counter_body">0’dan yeniden başlar. Kutucuğun geçmişi ve son zamanı korunur.</string>
+
+    <!-- Groups screen -->
+    <string name="groups_title">Gruplar</string>
+    <string name="groups_intro">Sıralamak için sürükleyin. Buradaki sıra, ana ekrandaki çiplerin ve bölümlerin sırasıdır.</string>
+    <string name="groups_empty">Henüz grup yok. Aşağıdan bir tane ekleyin, ardından bir kutucuğu düzenlerken seçin.</string>
+    <plurals name="tiles_count">
+        <item quantity="one">%d kutucuk</item>
+        <item quantity="other">%d kutucuk</item>
+    </plurals>
+    <string name="groups_new_placeholder">ör. Banyo, Evcil hayvanlar, Sağlık</string>
+    <string name="groups_note">Bir grubu silmek kutucuklarını korur; kutucuklar, yalnızca içinde kutucuk olduğunda görünen “Diğer” bölümüne taşınır.</string>
+    <string name="group_options">%1$s seçenekleri</string>
+    <string name="group_drag">%1$s öğesini sıralamak için sürükleyin</string>
+
+    <!-- Home-screen widget -->
+    <string name="widget_description">Tek kutucuk: en son ne zaman yaptığınız. Yapıldı olarak işaretlemek için dokunun.</string>
+    <string name="widget_open_app">Time Clicker’ı aç</string>
+    <string name="widget_choose_tile">Kutucuk seçmek için dokunun</string>
+    <string name="widget_tile_deleted">Bu kutucuk silindi</string>
+    <string name="widget_config_title">Bu widget için bir kutucuk seçin</string>
+    <string name="widget_config_empty">Henüz kutucuk yok. Uygulamayı açın ve eklemek için + simgesine dokunun.</string>
+    <string name="widget_config_pick">Bu widget’ta göster</string>
+    <string name="widget_preview_name">Bitkiler sulandı</string>
+    <string name="widget_preview_elapsed">3 gün</string>
+</resources>

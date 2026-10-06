@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "KeepTrackOfLastTime"
+rootProject.name = "TimeClicker"
 include(":app")

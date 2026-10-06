@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">Last Time</string>
+    <!-- The brand: never translated. -->
+    <string name="app_name" translatable="false">Time Clicker</string>
 
     <!-- Home -->
     <plurals name="things_count">
@@ -21,6 +22,38 @@
     <string name="snackbar_reset">“%1$s” reset to now</string>
     <string name="tile_click_label">Mark as done now</string>
     <string name="tile_long_click_label">Edit tile</string>
+
+    <!-- Elapsed time: the two largest units, e.g. "2 minutes 45 seconds", "1 year 12 days". -->
+    <plurals name="elapsed_seconds">
+        <item quantity="one">%d second</item>
+        <item quantity="other">%d seconds</item>
+    </plurals>
+    <plurals name="elapsed_minutes">
+        <item quantity="one">%d minute</item>
+        <item quantity="other">%d minutes</item>
+    </plurals>
+    <plurals name="elapsed_hours">
+        <item quantity="one">%d hour</item>
+        <item quantity="other">%d hours</item>
+    </plurals>
+    <plurals name="elapsed_days">
+        <item quantity="one">%d day</item>
+        <item quantity="other">%d days</item>
+    </plurals>
+    <plurals name="elapsed_years">
+        <item quantity="one">%d year</item>
+        <item quantity="other">%d years</item>
+    </plurals>
+    <!-- Joins the two units: "2 minutes" + "45 seconds". Languages written without spaces can drop it. -->
+    <string name="elapsed_two_units">%1$s %2$s</string>
+    <!-- Screen readers: "2 minutes 45 seconds ago". -->
+    <string name="elapsed_ago">%1$s ago</string>
+    <string name="elapsed_just_now">Just now</string>
+    <!-- How many times a tile was pressed since it was created or its counter was reset. -->
+    <plurals name="press_count">
+        <item quantity="one">Pressed %d time</item>
+        <item quantity="other">Pressed %d times</item>
+    </plurals>
 
     <!-- Common actions -->
     <string name="action_add_tile">Add tile</string>
@@ -54,6 +87,10 @@
     <string name="size_small">Small</string>
     <string name="size_wide">Wide</string>
     <string name="size_tall">Tall</string>
+    <string name="label_counter">Counter</string>
+    <string name="counter_reset">Reset</string>
+    <string name="widget_add">Add to home screen</string>
+    <string name="widget_add_hint">Shows this tile as a widget. Tap the widget to mark it as done.</string>
     <string name="delete_tile">Delete tile</string>
     <string name="tile_preview">Preview</string>
     <string name="tile_preview_name">New tile</string>
@@ -64,7 +101,30 @@
     <string name="color_sky">Sky</string>
     <string name="color_butter">Butter</string>
     <string name="color_rose">Rose</string>
+    <!-- Material You: colours taken from the wallpaper (Android 12+). -->
+    <string name="colors_wallpaper">From your wallpaper</string>
+    <string name="color_wallpaper_primary">Wallpaper accent</string>
+    <string name="color_wallpaper_secondary">Wallpaper soft</string>
+    <string name="color_wallpaper_tertiary">Wallpaper contrast</string>
     <string name="icon_choice">Icon: %1$s</string>
+    <string name="icon_check">Check</string>
+    <string name="icon_drop">Water drop</string>
+    <string name="icon_leaf">Leaf</string>
+    <string name="icon_grass">Grass</string>
+    <string name="icon_flower">Flower</string>
+    <string name="icon_bed">Bed</string>
+    <string name="icon_coffee">Coffee</string>
+    <string name="icon_snow">Snowflake</string>
+    <string name="icon_trash">Bin</string>
+    <string name="icon_cart">Shopping cart</string>
+    <string name="icon_phone">Phone</string>
+    <string name="icon_heart">Heart</string>
+    <string name="icon_pill">Pill</string>
+    <string name="icon_paw">Paw</string>
+    <string name="icon_scissors">Scissors</string>
+    <string name="icon_brush">Brush</string>
+    <string name="icon_gauge">Gauge</string>
+    <string name="icon_car">Car</string>
 
     <!-- Dialogs -->
     <string name="dialog_delete_title">Delete “%1$s”?</string>
@@ -73,6 +133,8 @@
     <string name="dialog_rename_group_title">Rename group</string>
     <string name="dialog_delete_group_title">Delete group “%1$s”?</string>
     <string name="dialog_delete_group_body">Its tiles are kept and move to “Other”.</string>
+    <string name="dialog_reset_counter_title">Reset the counter?</string>
+    <string name="dialog_reset_counter_body">It starts again from 0. The tile’s history and last time are kept.</string>
 
     <!-- Groups screen -->
     <string name="groups_title">Groups</string>
@@ -86,4 +148,15 @@
     <string name="groups_note">Deleting a group keeps its tiles; they move to “Other”, a section that only shows up when it has tiles.</string>
     <string name="group_options">%1$s options</string>
     <string name="group_drag">Drag to reorder %1$s</string>
+
+    <!-- Home-screen widget -->
+    <string name="widget_description">One tile: how long since you last did it. Tap to mark it as done.</string>
+    <string name="widget_open_app">Open Time Clicker</string>
+    <string name="widget_choose_tile">Tap to choose a tile</string>
+    <string name="widget_tile_deleted">This tile was deleted</string>
+    <string name="widget_config_title">Choose a tile for this widget</string>
+    <string name="widget_config_empty">No tiles yet. Open the app and tap + to add one.</string>
+    <string name="widget_config_pick">Show on this widget</string>
+    <string name="widget_preview_name">Watered the plants</string>
+    <string name="widget_preview_elapsed">3 days</string>
 </resources>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Home -->
+    <plurals name="things_count">
+        <item quantity="one">%d Eintrag</item>
+        <item quantity="other">%d Einträge</item>
+    </plurals>
+    <plurals name="groups_count">
+        <item quantity="one">%d Gruppe</item>
+        <item quantity="other">%d Gruppen</item>
+    </plurals>
+    <string name="header_tracked">%1$s erfasst</string>
+    <string name="header_grouped">%1$s in %2$s</string>
+    <string name="chip_all">Alle</string>
+    <string name="chip_other">Sonstige</string>
+    <string name="section_oldest">älteste: %1$s</string>
+    <string name="empty_title">Noch nichts erfasst</string>
+    <string name="empty_body">Tippe auf +, um etwas hinzuzufügen, z. B. „Pflanzen gegossen“. Tippe auf die Kachel, sobald du es wieder machst.</string>
+    <string name="empty_group">Noch keine Kacheln in dieser Gruppe. Tippe auf +, um eine hinzuzufügen.</string>
+    <string name="snackbar_reset">„%1$s“ auf jetzt gesetzt</string>
+    <string name="tile_click_label">Jetzt als erledigt markieren</string>
+    <string name="tile_long_click_label">Kachel bearbeiten</string>
+
+    <!-- Elapsed time -->
+    <plurals name="elapsed_seconds">
+        <item quantity="one">%d Sekunde</item>
+        <item quantity="other">%d Sekunden</item>
+    </plurals>
+    <plurals name="elapsed_minutes">
+        <item quantity="one">%d Minute</item>
+        <item quantity="other">%d Minuten</item>
+    </plurals>
+    <plurals name="elapsed_hours">
+        <item quantity="one">%d Stunde</item>
+        <item quantity="other">%d Stunden</item>
+    </plurals>
+    <plurals name="elapsed_days">
+        <item quantity="one">%d Tag</item>
+        <item quantity="other">%d Tage</item>
+    </plurals>
+    <plurals name="elapsed_years">
+        <item quantity="one">%d Jahr</item>
+        <item quantity="other">%d Jahre</item>
+    </plurals>
+    <string name="elapsed_two_units">%1$s %2$s</string>
+    <string name="elapsed_ago">%1$s her</string>
+    <string name="elapsed_just_now">Gerade eben</string>
+    <plurals name="press_count">
+        <item quantity="one">%d-mal gedrückt</item>
+        <item quantity="other">%d-mal gedrückt</item>
+    </plurals>
+
+    <!-- Common actions -->
+    <string name="action_add_tile">Kachel hinzufügen</string>
+    <string name="action_manage_groups">Gruppen verwalten</string>
+    <string name="action_undo">Rückgängig</string>
+    <string name="action_cancel">Abbrechen</string>
+    <string name="action_save">Speichern</string>
+    <string name="action_done">Fertig</string>
+    <string name="action_add">Hinzufügen</string>
+    <string name="action_rename">Umbenennen</string>
+    <string name="action_delete">Löschen</string>
+    <string name="action_back">Zurück</string>
+
+    <!-- Edit tile sheet -->
+    <string name="sheet_new_title">Neue Kachel</string>
+    <string name="sheet_edit_title">Kachel bearbeiten</string>
+    <string name="label_name">Name</string>
+    <string name="name_placeholder">z. B. Pflanzen gegossen</string>
+    <string name="label_group">Gruppe</string>
+    <string name="group_none">Keine Gruppe</string>
+    <string name="group_new">Neue Gruppe</string>
+    <string name="label_background">Hintergrund</string>
+    <string name="background_colour">Farbe</string>
+    <string name="background_photo">Foto</string>
+    <string name="photo_change">Foto ändern</string>
+    <string name="photo_remove">Entfernen</string>
+    <string name="photo_hint">Wird in die App kopiert und funktioniert so auch offline.</string>
+    <string name="photo_error">Foto konnte nicht gelesen werden. Versuch ein anderes.</string>
+    <string name="label_icon">Symbol</string>
+    <string name="label_size">Größe</string>
+    <string name="size_small">Klein</string>
+    <string name="size_wide">Breit</string>
+    <string name="size_tall">Hoch</string>
+    <string name="label_counter">Zähler</string>
+    <string name="counter_reset">Zurücksetzen</string>
+    <string name="widget_add">Zum Startbildschirm hinzufügen</string>
+    <string name="widget_add_hint">Zeigt diese Kachel als Widget. Tippe auf das Widget, um sie als erledigt zu markieren.</string>
+    <string name="delete_tile">Kachel löschen</string>
+    <string name="tile_preview">Vorschau</string>
+    <string name="tile_preview_name">Neue Kachel</string>
+
+    <string name="color_sage">Salbei</string>
+    <string name="color_lavender">Lavendel</string>
+    <string name="color_peach">Pfirsich</string>
+    <string name="color_sky">Himmel</string>
+    <string name="color_butter">Butter</string>
+    <string name="color_rose">Rosé</string>
+    <string name="colors_wallpaper">Aus deinem Hintergrundbild</string>
+    <string name="color_wallpaper_primary">Hintergrund: Akzent</string>
+    <string name="color_wallpaper_secondary">Hintergrund: sanft</string>
+    <string name="color_wallpaper_tertiary">Hintergrund: Kontrast</string>
+    <string name="icon_choice">Symbol: %1$s</string>
+    <string name="icon_check">Häkchen</string>
+    <string name="icon_drop">Wassertropfen</string>
+    <string name="icon_leaf">Blatt</string>
+    <string name="icon_grass">Gras</string>
+    <string name="icon_flower">Blume</string>
+    <string name="icon_bed">Bett</string>
+    <string name="icon_coffee">Kaffee</string>
+    <string name="icon_snow">Schneeflocke</string>
+    <string name="icon_trash">Mülleimer</string>
+    <string name="icon_cart">Einkaufswagen</string>
+    <string name="icon_phone">Telefon</string>
+    <string name="icon_heart">Herz</string>
+    <string name="icon_pill">Tablette</string>
+    <string name="icon_paw">Pfote</string>
+    <string name="icon_scissors">Schere</string>
+    <string name="icon_brush">Pinsel</string>
+    <string name="icon_gauge">Anzeige</string>
+    <string name="icon_car">Auto</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_delete_title">„%1$s“ löschen?</string>
+    <string name="dialog_delete_body">Der Verlauf wird ebenfalls gelöscht.</string>
+    <string name="dialog_new_group_title">Neue Gruppe</string>
+    <string name="dialog_rename_group_title">Gruppe umbenennen</string>
+    <string name="dialog_delete_group_title">Gruppe „%1$s“ löschen?</string>
+    <string name="dialog_delete_group_body">Die Kacheln bleiben erhalten und kommen zu „Sonstige“.</string>
+    <string name="dialog_reset_counter_title">Zähler zurücksetzen?</string>
+    <string name="dialog_reset_counter_body">Er beginnt wieder bei 0. Verlauf und letztes Mal der Kachel bleiben erhalten.</string>
+
+    <!-- Groups screen -->
+    <string name="groups_title">Gruppen</string>
+    <string name="groups_intro">Zum Sortieren ziehen. Diese Reihenfolge gilt für die Chips und Abschnitte auf dem Startbildschirm.</string>
+    <string name="groups_empty">Noch keine Gruppen. Füge unten eine hinzu und wähle sie beim Bearbeiten einer Kachel aus.</string>
+    <plurals name="tiles_count">
+        <item quantity="one">%d Kachel</item>
+        <item quantity="other">%d Kacheln</item>
+    </plurals>
+    <string name="groups_new_placeholder">z. B. Bad, Haustiere, Gesundheit</string>
+    <string name="groups_note">Beim Löschen einer Gruppe bleiben ihre Kacheln erhalten; sie kommen zu „Sonstige“, einem Abschnitt, der nur erscheint, wenn er Kacheln enthält.</string>
+    <string name="group_options">Optionen für %1$s</string>
+    <string name="group_drag">%1$s zum Sortieren ziehen</string>
+
+    <!-- Home-screen widget -->
+    <string name="widget_description">Eine Kachel: wie lange es her ist, dass du es zuletzt gemacht hast. Tippen, um sie als erledigt zu markieren.</string>
+    <string name="widget_open_app">Time Clicker öffnen</string>
+    <string name="widget_choose_tile">Tippen, um eine Kachel zu wählen</string>
+    <string name="widget_tile_deleted">Diese Kachel wurde gelöscht</string>
+    <string name="widget_config_title">Kachel für dieses Widget wählen</string>
+    <string name="widget_config_empty">Noch keine Kacheln. Öffne die App und tippe auf +, um eine hinzuzufügen.</string>
+    <string name="widget_config_pick">Auf diesem Widget anzeigen</string>
+    <string name="widget_preview_name">Pflanzen gegossen</string>
+    <string name="widget_preview_elapsed">3 Tage</string>
+</resources>

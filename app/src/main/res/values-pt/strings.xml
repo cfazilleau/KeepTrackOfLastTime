@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Home -->
+    <plurals name="things_count">
+        <item quantity="one">%d item</item>
+        <item quantity="many">%d itens</item>
+        <item quantity="other">%d itens</item>
+    </plurals>
+    <plurals name="groups_count">
+        <item quantity="one">%d grupo</item>
+        <item quantity="many">%d grupos</item>
+        <item quantity="other">%d grupos</item>
+    </plurals>
+    <string name="header_tracked">Acompanhando %1$s</string>
+    <string name="header_grouped">%1$s em %2$s</string>
+    <string name="chip_all">Todos</string>
+    <string name="chip_other">Outros</string>
+    <string name="section_oldest">mais antigo: %1$s</string>
+    <string name="empty_title">Nada acompanhado ainda</string>
+    <string name="empty_body">Toque em + para adicionar algo, como “Regar as plantas”. Toque no card sempre que fizer de novo.</string>
+    <string name="empty_group">Ainda não há cards neste grupo. Toque em + para adicionar um.</string>
+    <string name="snackbar_reset">“%1$s” marcado como feito agora</string>
+    <string name="tile_click_label">Marcar como feito agora</string>
+    <string name="tile_long_click_label">Editar card</string>
+
+    <!-- Elapsed time -->
+    <plurals name="elapsed_seconds">
+        <item quantity="one">%d segundo</item>
+        <item quantity="many">%d segundos</item>
+        <item quantity="other">%d segundos</item>
+    </plurals>
+    <plurals name="elapsed_minutes">
+        <item quantity="one">%d minuto</item>
+        <item quantity="many">%d minutos</item>
+        <item quantity="other">%d minutos</item>
+    </plurals>
+    <plurals name="elapsed_hours">
+        <item quantity="one">%d hora</item>
+        <item quantity="many">%d horas</item>
+        <item quantity="other">%d horas</item>
+    </plurals>
+    <plurals name="elapsed_days">
+        <item quantity="one">%d dia</item>
+        <item quantity="many">%d dias</item>
+        <item quantity="other">%d dias</item>
+    </plurals>
+    <plurals name="elapsed_years">
+        <item quantity="one">%d ano</item>
+        <item quantity="many">%d anos</item>
+        <item quantity="other">%d anos</item>
+    </plurals>
+    <string name="elapsed_two_units">%1$s %2$s</string>
+    <string name="elapsed_ago">há %1$s</string>
+    <string name="elapsed_just_now">Agora mesmo</string>
+    <plurals name="press_count">
+        <item quantity="one">Tocado %d vez</item>
+        <item quantity="many">Tocado %d vezes</item>
+        <item quantity="other">Tocado %d vezes</item>
+    </plurals>
+
+    <!-- Common actions -->
+    <string name="action_add_tile">Adicionar card</string>
+    <string name="action_manage_groups">Gerenciar grupos</string>
+    <string name="action_undo">Desfazer</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="action_save">Salvar</string>
+    <string name="action_done">Concluído</string>
+    <string name="action_add">Adicionar</string>
+    <string name="action_rename">Renomear</string>
+    <string name="action_delete">Excluir</string>
+    <string name="action_back">Voltar</string>
+
+    <!-- Edit tile sheet -->
+    <string name="sheet_new_title">Novo card</string>
+    <string name="sheet_edit_title">Editar card</string>
+    <string name="label_name">Nome</string>
+    <string name="name_placeholder">ex.: Regar as plantas</string>
+    <string name="label_group">Grupo</string>
+    <string name="group_none">Sem grupo</string>
+    <string name="group_new">Novo grupo</string>
+    <string name="label_background">Fundo</string>
+    <string name="background_colour">Cor</string>
+    <string name="background_photo">Foto</string>
+    <string name="photo_change">Trocar foto</string>
+    <string name="photo_remove">Remover</string>
+    <string name="photo_hint">Copiada para o app, então funciona offline.</string>
+    <string name="photo_error">Não foi possível ler essa foto. Tente outra.</string>
+    <string name="label_icon">Ícone</string>
+    <string name="label_size">Tamanho</string>
+    <string name="size_small">Pequeno</string>
+    <string name="size_wide">Largo</string>
+    <string name="size_tall">Alto</string>
+    <string name="label_counter">Contador</string>
+    <string name="counter_reset">Zerar</string>
+    <string name="widget_add">Adicionar à tela inicial</string>
+    <string name="widget_add_hint">Mostra este card como widget. Toque no widget para marcá-lo como feito.</string>
+    <string name="delete_tile">Excluir card</string>
+    <string name="tile_preview">Prévia</string>
+    <string name="tile_preview_name">Novo card</string>
+
+    <string name="color_sage">Sálvia</string>
+    <string name="color_lavender">Lavanda</string>
+    <string name="color_peach">Pêssego</string>
+    <string name="color_sky">Céu</string>
+    <string name="color_butter">Manteiga</string>
+    <string name="color_rose">Rosa</string>
+    <string name="colors_wallpaper">Do seu plano de fundo</string>
+    <string name="color_wallpaper_primary">Destaque do plano de fundo</string>
+    <string name="color_wallpaper_secondary">Tom suave do plano de fundo</string>
+    <string name="color_wallpaper_tertiary">Contraste do plano de fundo</string>
+    <string name="icon_choice">Ícone: %1$s</string>
+    <string name="icon_check">Marca de seleção</string>
+    <string name="icon_drop">Gota d’água</string>
+    <string name="icon_leaf">Folha</string>
+    <string name="icon_grass">Grama</string>
+    <string name="icon_flower">Flor</string>
+    <string name="icon_bed">Cama</string>
+    <string name="icon_coffee">Café</string>
+    <string name="icon_snow">Floco de neve</string>
+    <string name="icon_trash">Lixeira</string>
+    <string name="icon_cart">Carrinho de compras</string>
+    <string name="icon_phone">Telefone</string>
+    <string name="icon_heart">Coração</string>
+    <string name="icon_pill">Comprimido</string>
+    <string name="icon_paw">Pata</string>
+    <string name="icon_scissors">Tesoura</string>
+    <string name="icon_brush">Pincel</string>
+    <string name="icon_gauge">Medidor</string>
+    <string name="icon_car">Carro</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_delete_title">Excluir “%1$s”?</string>
+    <string name="dialog_delete_body">O histórico também será excluído.</string>
+    <string name="dialog_new_group_title">Novo grupo</string>
+    <string name="dialog_rename_group_title">Renomear grupo</string>
+    <string name="dialog_delete_group_title">Excluir o grupo “%1$s”?</string>
+    <string name="dialog_delete_group_body">Os cards são mantidos e vão para “Outros”.</string>
+    <string name="dialog_reset_counter_title">Zerar o contador?</string>
+    <string name="dialog_reset_counter_body">Ele recomeça do 0. O histórico e a última vez do card são mantidos.</string>
+
+    <!-- Groups screen -->
+    <string name="groups_title">Grupos</string>
+    <string name="groups_intro">Arraste para reordenar. Esta é a ordem dos chips e das seções na tela inicial.</string>
+    <string name="groups_empty">Nenhum grupo ainda. Adicione um abaixo e escolha-o ao editar um card.</string>
+    <plurals name="tiles_count">
+        <item quantity="one">%d card</item>
+        <item quantity="many">%d cards</item>
+        <item quantity="other">%d cards</item>
+    </plurals>
+    <string name="groups_new_placeholder">ex.: Banheiro, Pets, Saúde</string>
+    <string name="groups_note">Excluir um grupo mantém os cards; eles vão para “Outros”, uma seção que só aparece quando tem cards.</string>
+    <string name="group_options">Opções de %1$s</string>
+    <string name="group_drag">Arraste para reordenar %1$s</string>
+
+    <!-- Home-screen widget -->
+    <string name="widget_description">Um card: quanto tempo faz desde a última vez. Toque para marcá-lo como feito.</string>
+    <string name="widget_open_app">Abrir Time Clicker</string>
+    <string name="widget_choose_tile">Toque para escolher um card</string>
+    <string name="widget_tile_deleted">Este card foi excluído</string>
+    <string name="widget_config_title">Escolha um card para este widget</string>
+    <string name="widget_config_empty">Nenhum card ainda. Abra o app e toque em + para adicionar um.</string>
+    <string name="widget_config_pick">Mostrar neste widget</string>
+    <string name="widget_preview_name">Regar as plantas</string>
+    <string name="widget_preview_elapsed">3 dias</string>
+</resources>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Home -->
+    <plurals name="things_count">
+        <item quantity="one">%d rzecz</item>
+        <item quantity="few">%d rzeczy</item>
+        <item quantity="many">%d rzeczy</item>
+        <item quantity="other">%d rzeczy</item>
+    </plurals>
+    <plurals name="groups_count">
+        <item quantity="one">%d grupa</item>
+        <item quantity="few">%d grupy</item>
+        <item quantity="many">%d grup</item>
+        <item quantity="other">%d grupy</item>
+    </plurals>
+    <string name="header_tracked">Śledzone: %1$s</string>
+    <string name="header_grouped">%1$s, %2$s</string>
+    <string name="chip_all">Wszystko</string>
+    <string name="chip_other">Inne</string>
+    <string name="section_oldest">najstarsze: %1$s</string>
+    <string name="empty_title">Nic jeszcze nie śledzisz</string>
+    <string name="empty_body">Stuknij +, aby coś dodać, np. „Podlanie roślin”. Stuknij kafelek za każdym razem, gdy zrobisz to ponownie.</string>
+    <string name="empty_group">Brak kafelków w tej grupie. Stuknij +, aby dodać.</string>
+    <string name="snackbar_reset">„%1$s”: ustawiono na teraz</string>
+    <string name="tile_click_label">Oznacz jako zrobione teraz</string>
+    <string name="tile_long_click_label">Edytuj kafelek</string>
+
+    <!-- Elapsed time -->
+    <plurals name="elapsed_seconds">
+        <item quantity="one">%d sekunda</item>
+        <item quantity="few">%d sekundy</item>
+        <item quantity="many">%d sekund</item>
+        <item quantity="other">%d sekundy</item>
+    </plurals>
+    <plurals name="elapsed_minutes">
+        <item quantity="one">%d minuta</item>
+        <item quantity="few">%d minuty</item>
+        <item quantity="many">%d minut</item>
+        <item quantity="other">%d minuty</item>
+    </plurals>
+    <plurals name="elapsed_hours">
+        <item quantity="one">%d godzina</item>
+        <item quantity="few">%d godziny</item>
+        <item quantity="many">%d godzin</item>
+        <item quantity="other">%d godziny</item>
+    </plurals>
+    <plurals name="elapsed_days">
+        <item quantity="one">%d dzień</item>
+        <item quantity="few">%d dni</item>
+        <item quantity="many">%d dni</item>
+        <item quantity="other">%d dnia</item>
+    </plurals>
+    <plurals name="elapsed_years">
+        <item quantity="one">%d rok</item>
+        <item quantity="few">%d lata</item>
+        <item quantity="many">%d lat</item>
+        <item quantity="other">%d roku</item>
+    </plurals>
+    <string name="elapsed_two_units">%1$s %2$s</string>
+    <string name="elapsed_ago">%1$s temu</string>
+    <string name="elapsed_just_now">Przed chwilą</string>
+    <plurals name="press_count">
+        <item quantity="one">Naciśnięto %d raz</item>
+        <item quantity="few">Naciśnięto %d razy</item>
+        <item quantity="many">Naciśnięto %d razy</item>
+        <item quantity="other">Naciśnięto %d razy</item>
+    </plurals>
+
+    <!-- Common actions -->
+    <string name="action_add_tile">Dodaj kafelek</string>
+    <string name="action_manage_groups">Zarządzaj grupami</string>
+    <string name="action_undo">Cofnij</string>
+    <string name="action_cancel">Anuluj</string>
+    <string name="action_save">Zapisz</string>
+    <string name="action_done">Gotowe</string>
+    <string name="action_add">Dodaj</string>
+    <string name="action_rename">Zmień nazwę</string>
+    <string name="action_delete">Usuń</string>
+    <string name="action_back">Wstecz</string>
+
+    <!-- Edit tile sheet -->
+    <string name="sheet_new_title">Nowy kafelek</string>
+    <string name="sheet_edit_title">Edytuj kafelek</string>
+    <string name="label_name">Nazwa</string>
+    <string name="name_placeholder">np. Podlanie roślin</string>
+    <string name="label_group">Grupa</string>
+    <string name="group_none">Bez grupy</string>
+    <string name="group_new">Nowa grupa</string>
+    <string name="label_background">Tło</string>
+    <string name="background_colour">Kolor</string>
+    <string name="background_photo">Zdjęcie</string>
+    <string name="photo_change">Zmień zdjęcie</string>
+    <string name="photo_remove">Usuń</string>
+    <string name="photo_hint">Kopiowane do aplikacji, więc działa też offline.</string>
+    <string name="photo_error">Nie udało się odczytać zdjęcia. Spróbuj innego.</string>
+    <string name="label_icon">Ikona</string>
+    <string name="label_size">Rozmiar</string>
+    <string name="size_small">Mały</string>
+    <string name="size_wide">Szeroki</string>
+    <string name="size_tall">Wysoki</string>
+    <string name="label_counter">Licznik</string>
+    <string name="counter_reset">Resetuj</string>
+    <string name="widget_add">Dodaj do ekranu głównego</string>
+    <string name="widget_add_hint">Pokazuje ten kafelek jako widżet. Stuknij widżet, aby oznaczyć jako zrobione.</string>
+    <string name="delete_tile">Usuń kafelek</string>
+    <string name="tile_preview">Podgląd</string>
+    <string name="tile_preview_name">Nowy kafelek</string>
+
+    <string name="color_sage">Szałwia</string>
+    <string name="color_lavender">Lawenda</string>
+    <string name="color_peach">Brzoskwinia</string>
+    <string name="color_sky">Błękit</string>
+    <string name="color_butter">Masło</string>
+    <string name="color_rose">Róż</string>
+    <string name="colors_wallpaper">Z tapety</string>
+    <string name="color_wallpaper_primary">Tapeta: akcent</string>
+    <string name="color_wallpaper_secondary">Tapeta: łagodny</string>
+    <string name="color_wallpaper_tertiary">Tapeta: kontrast</string>
+    <string name="icon_choice">Ikona: %1$s</string>
+    <string name="icon_check">Ptaszek</string>
+    <string name="icon_drop">Kropla wody</string>
+    <string name="icon_leaf">Liść</string>
+    <string name="icon_grass">Trawa</string>
+    <string name="icon_flower">Kwiat</string>
+    <string name="icon_bed">Łóżko</string>
+    <string name="icon_coffee">Kawa</string>
+    <string name="icon_snow">Płatek śniegu</string>
+    <string name="icon_trash">Kosz</string>
+    <string name="icon_cart">Wózek sklepowy</string>
+    <string name="icon_phone">Telefon</string>
+    <string name="icon_heart">Serce</string>
+    <string name="icon_pill">Tabletka</string>
+    <string name="icon_paw">Łapa</string>
+    <string name="icon_scissors">Nożyczki</string>
+    <string name="icon_brush">Pędzel</string>
+    <string name="icon_gauge">Wskaźnik</string>
+    <string name="icon_car">Samochód</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_delete_title">Usunąć „%1$s”?</string>
+    <string name="dialog_delete_body">Jego historia też zostanie usunięta.</string>
+    <string name="dialog_new_group_title">Nowa grupa</string>
+    <string name="dialog_rename_group_title">Zmień nazwę grupy</string>
+    <string name="dialog_delete_group_title">Usunąć grupę „%1$s”?</string>
+    <string name="dialog_delete_group_body">Jej kafelki zostaną zachowane i trafią do „Inne”.</string>
+    <string name="dialog_reset_counter_title">Zresetować licznik?</string>
+    <string name="dialog_reset_counter_body">Licznik zacznie od 0. Historia kafelka i ostatni raz zostaną zachowane.</string>
+
+    <!-- Groups screen -->
+    <string name="groups_title">Grupy</string>
+    <string name="groups_intro">Przeciągnij, aby zmienić kolejność. Ta kolejność decyduje o kolejności chipów i sekcji na ekranie głównym.</string>
+    <string name="groups_empty">Nie ma jeszcze grup. Dodaj grupę poniżej, a potem wybierz ją podczas edycji kafelka.</string>
+    <plurals name="tiles_count">
+        <item quantity="one">%d kafelek</item>
+        <item quantity="few">%d kafelki</item>
+        <item quantity="many">%d kafelków</item>
+        <item quantity="other">%d kafelka</item>
+    </plurals>
+    <string name="groups_new_placeholder">np. Łazienka, Zwierzęta, Zdrowie</string>
+    <string name="groups_note">Usunięcie grupy zachowuje jej kafelki; trafiają do „Inne”, sekcji widocznej tylko wtedy, gdy ma kafelki.</string>
+    <string name="group_options">Opcje: %1$s</string>
+    <string name="group_drag">Przeciągnij, aby przenieść: %1$s</string>
+
+    <!-- Home-screen widget -->
+    <string name="widget_description">Jeden kafelek: ile czasu minęło od ostatniego razu. Stuknij, aby oznaczyć jako zrobione.</string>
+    <string name="widget_open_app">Otwórz Time Clicker</string>
+    <string name="widget_choose_tile">Stuknij, aby wybrać kafelek</string>
+    <string name="widget_tile_deleted">Ten kafelek został usunięty</string>
+    <string name="widget_config_title">Wybierz kafelek dla tego widżetu</string>
+    <string name="widget_config_empty">Brak kafelków. Otwórz aplikację i stuknij +, aby dodać.</string>
+    <string name="widget_config_pick">Pokaż w tym widżecie</string>
+    <string name="widget_preview_name">Podlanie roślin</string>
+    <string name="widget_preview_elapsed">3 dni</string>
+</resources>
