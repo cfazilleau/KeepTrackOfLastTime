@@ -15,11 +15,14 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.animation.togetherWith
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.saveable.rememberSaveableStateHolder
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.LayoutDirection
@@ -64,6 +67,9 @@ class MainActivity : ComponentActivity() {
                 AnimatedContent(
                     targetState = stack.last(),
                     transitionSpec = { screenTransition(forward = !goingBack, rtl = rtl) },
+                    // Between the old screen fading out and the new one fading in, show the app's ground,
+                    // not the (white) window behind it.
+                    modifier = Modifier.fillMaxSize().background(TimeClickerTheme.palette.ground),
                     label = "screen",
                 ) { screen ->
                     screenStates.SaveableStateProvider(screen.name) {
