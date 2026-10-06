@@ -15,7 +15,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -42,9 +41,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.drawBehind
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalResources
@@ -276,15 +272,12 @@ fun EditTileSheet(
                 }
             }
 
-            Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                SectionLabel(stringResource(R.string.label_icon))
-                IconPicker(
-                    selected = draft.icon,
-                    original = initial.icon,
-                    accent = palette.tile(draft.color),
-                    onSelect = { draft = draft.copy(icon = it) },
-                )
-            }
+            IconPicker(
+                selected = draft.icon,
+                original = initial.icon,
+                accent = palette.tile(draft.color),
+                onSelect = { draft = draft.copy(icon = it) },
+            )
 
             Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 SectionLabel(stringResource(R.string.label_size))
@@ -493,10 +486,10 @@ private fun Swatch(color: TileColor, isSelected: Boolean, width: Dp, onSelect: (
 }
 
 /**
- * A first row with "All icons" and "No icon", raised so they stand apart from the icons, then the icons
- * last given to a tile (latest first, those just picked from the full list in front); then the tile's own
- * icon if not shown yet, and the user's icon palette (chosen in Settings): [IconRows] rows of six in all.
- * The palette fills the first row while there's little history. The last row is aligned to the start.
+ * The section's label, with an "All icons" link to the full list, then [IconRows] rows of six: "No icon" first,
+ * then the icons last given to a tile (latest first, those just picked from the full list in front), the tile's
+ * own icon if not shown yet, and the user's icon palette (chosen in Settings), which fills the rows while there's
+ * little history. The last row is aligned to the start.
  */
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
@@ -511,74 +504,52 @@ private fun IconPicker(selected: TileIcon, original: TileIcon, accent: TileColor
     var showAll by remember { mutableStateOf(false) }
     val icons = (picked + settings.recentIcons + original + settings.iconPalette).distinct()
         .filter { !it.isNone && catalog?.get(it) != null }
-        .take(IconRows * columns - SpecialCells)
-    val firstRow = icons.take(columns - SpecialCells)
-    val otherRows = icons.drop(columns - SpecialCells)
+        .take(IconRows * columns - 1)
+    val choices = listOf(TileIcon.NONE) + icons
 
-    @Composable
-    fun RowScope.Choice(icon: TileIcon) {
-        val isSelected = icon == selected
-        val description = stringResource(R.string.icon_choice, iconLabel(resources, icon))
-        IconPickerCell(
-            background = if (isSelected) accent.background else palette.field,
-            modifier = Modifier
-                .selectable(selected = isSelected, role = Role.RadioButton, onClick = { onSelect(icon) })
-                .semantics { contentDescription = description },
-        ) {
-            val vector = catalog?.let { AppIcons.tile(it, icon) }
-            if (vector != null) {
-                Icon(vector, null, tint = if (isSelected) accent.content else palette.text, modifier = Modifier.size(22.dp))
-            }
-        }
-    }
-
-    Column(verticalArrangement = Arrangement.spacedBy(IconGap)) {
-        val separator = palette.muted.copy(alpha = 0.5f)
-        Row(
-            Modifier
-                .fillMaxWidth()
-                // A short line in the gap after the special cells.
-                .drawBehind {
-                    val gap = IconGap.toPx()
-                    val x = (size.width - gap * (columns - 1)) / columns * SpecialCells + gap * (SpecialCells - 0.5f)
-                    val inset = size.height * 0.2f
-                    drawLine(separator, Offset(x, inset), Offset(x, size.height - inset), 1.5.dp.toPx(), StrokeCap.Round)
-                },
-            horizontalArrangement = Arrangement.spacedBy(IconGap),
-        ) {
-            val allIcons = stringResource(R.string.icon_all)
-            SpecialCell(onClick = { showAll = true }, modifier = Modifier.semantics { contentDescription = allIcons }) {
-                Icon(AppIcons.AllIcons, null, tint = palette.text, modifier = Modifier.size(22.dp))
-            }
-            val noIconSelected = selected.isNone
-            val noIcon = stringResource(R.string.icon_choice, iconLabel(resources, TileIcon.NONE))
-            val noIconSemantics = Modifier.semantics {
-                contentDescription = noIcon
-                this.selected = noIconSelected
-            }
-            if (noIconSelected) {
-                IconPickerCell(background = accent.background, modifier = noIconSemantics) {
-                    Icon(AppIcons.NoIcon, null, tint = accent.content, modifier = Modifier.size(22.dp))
-                }
-            } else {
-                SpecialCell(onClick = { onSelect(TileIcon.NONE) }, modifier = noIconSemantics) {
-                    Icon(AppIcons.NoIcon, null, tint = palette.text, modifier = Modifier.size(22.dp))
-                }
-            }
-            firstRow.forEach { Choice(it) }
-            repeat(columns - SpecialCells - firstRow.size) { Spacer(Modifier.weight(1f)) }
-        }
-        if (otherRows.isNotEmpty()) {
-            FlowRow(
-                Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(IconGap),
-                verticalArrangement = Arrangement.spacedBy(IconGap),
-                maxItemsInEachRow = columns,
+    Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+            SectionLabel(stringResource(R.string.label_icon))
+            Spacer(Modifier.weight(1f))
+            Row(
+                Modifier
+                    .clip(RoundedCornerShape(999.dp))
+                    .clickable(role = Role.Button) { showAll = true }
+                    .padding(start = 10.dp, end = 4.dp, top = 4.dp, bottom = 4.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(2.dp),
             ) {
-                otherRows.forEach { Choice(it) }
-                // Empty cells keep the last row's icons the same width as the others.
-                repeat((columns - otherRows.size % columns) % columns) { Spacer(Modifier.weight(1f)) }
+                Text(stringResource(R.string.icon_all), style = MaterialTheme.typography.titleSmall, color = palette.text)
+                Icon(AppIcons.Chevron, null, tint = palette.text, modifier = Modifier.size(16.dp))
             }
+        }
+        FlowRow(
+            Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(IconGap),
+            verticalArrangement = Arrangement.spacedBy(IconGap),
+            maxItemsInEachRow = columns,
+        ) {
+            choices.forEach { icon ->
+                val isSelected = icon == selected
+                val description = stringResource(R.string.icon_choice, iconLabel(resources, icon))
+                Box(
+                    Modifier
+                        .weight(1f)
+                        .height(IconCellHeight)
+                        .clip(IconCellShape)
+                        .background(if (isSelected) accent.background else palette.field)
+                        .selectable(selected = isSelected, role = Role.RadioButton, onClick = { onSelect(icon) })
+                        .semantics { contentDescription = description },
+                    contentAlignment = Alignment.Center,
+                ) {
+                    val vector = if (icon.isNone) AppIcons.NoIcon else catalog?.let { AppIcons.tile(it, icon) }
+                    if (vector != null) {
+                        Icon(vector, null, tint = if (isSelected) accent.content else palette.text, modifier = Modifier.size(22.dp))
+                    }
+                }
+            }
+            // Empty cells keep the last row's icons the same width as the others.
+            repeat((columns - choices.size % columns) % columns) { Spacer(Modifier.weight(1f)) }
         }
     }
 
@@ -587,7 +558,8 @@ private fun IconPicker(selected: TileIcon, original: TileIcon, accent: TileColor
             selected = selected,
             accent = accent,
             onSelect = { icon ->
-                if (!icon.isNone && icon !in firstRow) picked = listOf(icon) + picked
+                // Brought to the first row, where it can be seen.
+                if (!icon.isNone && icon !in choices.take(columns)) picked = listOf(icon) + picked
                 onSelect(icon)
             },
             onDismiss = { showAll = false },
@@ -596,40 +568,11 @@ private fun IconPicker(selected: TileIcon, original: TileIcon, accent: TileColor
 }
 
 /** How many rows of icons the picker shows before the full list. */
-private const val IconRows = 3
-
-/** "All icons" and "No icon", at the start of the first row. */
-private const val SpecialCells = 2
+private const val IconRows = 2
 
 private val IconGap = 8.dp
 private val IconCellHeight = 46.dp
 private val IconCellShape = RoundedCornerShape(14.dp)
-
-@Composable
-private fun RowScope.IconPickerCell(background: Color, modifier: Modifier, content: @Composable () -> Unit) {
-    Box(
-        Modifier
-            .weight(1f)
-            .height(IconCellHeight)
-            .clip(IconCellShape)
-            .background(background)
-            .then(modifier),
-        contentAlignment = Alignment.Center,
-    ) { content() }
-}
-
-/** A raised cell, standing out from the flat icon cells: the picker's own buttons. */
-@Composable
-private fun RowScope.SpecialCell(onClick: () -> Unit, modifier: Modifier, content: @Composable () -> Unit) {
-    NeuButton(
-        onClick = onClick,
-        shape = IconCellShape,
-        background = TimeClickerTheme.palette.sheet,
-        distance = 4.dp,
-        blur = 10.dp,
-        modifier = modifier.weight(1f).height(IconCellHeight),
-    ) { content() }
-}
 
 private fun colorName(color: TileColor) = when (color) {
     TileColor.SAGE -> R.string.color_sage

@@ -79,6 +79,7 @@ import com.keeptrack.timeclicker.ui.time.TimeUnit
 import com.keeptrack.timeclicker.ui.time.absoluteTime
 import com.keeptrack.timeclicker.ui.time.agoAffixes
 import com.keeptrack.timeclicker.ui.time.format
+import com.keeptrack.timeclicker.ui.time.formatAsSecond
 import kotlinx.coroutines.flow.first
 import java.text.NumberFormat
 import java.time.Instant
@@ -175,7 +176,7 @@ private fun TileContent(tracker: Tracker, photo: Bitmap?, now: Instant, icons: I
     val size = LocalSize.current
     val colors = widgetColors(tracker, hasPhoto = photo != null)
     val elapsed = RelativeTime.split(tracker.lastDoneAt, now, TimeUnit.MINUTE)
-    // "3 days" + "5 hours ago", or "il y a 3 jours" + "5 heures": "… ago" wraps the whole time.
+    // "3 days" + "5 hours ago", or "il y a 3 jours" + "et 5 heures": "… ago" wraps the whole time.
     val ago = agoAffixes(context.resources)
     val absolute = if (context.appSettings.timeDisplay == TimeDisplay.ABSOLUTE) absoluteTime(context, tracker.lastDoneAt, now) else null
     // Widgets refresh once a minute, so they can't count the seconds: under a minute, say so.
@@ -186,7 +187,7 @@ private fun TileContent(tracker: Tracker, photo: Bitmap?, now: Instant, icons: I
     val subline = when {
         absolute != null -> absolute.detail
         elapsed.major == null -> ""
-        else -> (elapsed.minor?.format(context.resources).orEmpty() + ago.suffix).trim()
+        else -> (elapsed.minor?.formatAsSecond(context.resources).orEmpty() + ago.suffix).trim()
     }
     // Every size shows the same content; small widgets just get tighter padding.
     val padding = if (size.height < 120.dp || size.width < 120.dp) 10.dp else 14.dp

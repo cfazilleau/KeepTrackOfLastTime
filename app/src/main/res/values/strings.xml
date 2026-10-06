@@ -33,7 +33,7 @@
         <item quantity="one">%d year</item>
         <item quantity="other">%d years</item>
     </plurals>
-    <!-- Joins the two units: "2 minutes" + "45 seconds". Languages written without spaces can drop it. -->
+    <!-- Joins the two units: "2 minutes" + "45 seconds", or "5 heures et 3 minutes". Languages written without spaces can drop the space. On tiles the second unit has its own line, with the words before it ("et 3 minutes"). -->
     <string name="elapsed_two_units">%1$s %2$s</string>
     <!-- Screen readers: "2 minutes 45 seconds ago". -->
     <string name="elapsed_ago">%1$s ago</string>

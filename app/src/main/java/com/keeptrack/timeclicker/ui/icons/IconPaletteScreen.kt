@@ -36,6 +36,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
@@ -44,6 +45,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
@@ -98,7 +100,7 @@ private class CategoryUi(val id: String, val name: String, val icons: List<Catal
 /**
  * Every Lucide icon, by category, to choose the icons offered when editing a tile.
  * The palette comes first; tapping any icon adds it to the palette or removes it. Search looks at the
- * icon names, Lucide's (English) tags and the translated category names.
+ * icon names, Lucide's (English) tags, the search words in the app's language and the translated category names.
  */
 @Composable
 fun IconPaletteScreen(
@@ -209,24 +211,33 @@ internal fun IconGrid(
     state: LazyGridState = rememberLazyGridState(),
 ) {
     val resources = LocalResources.current
+    val context = LocalContext.current
     val locale = LocalConfiguration.current.locales[0]
+    // Lucide's tags are English: search also looks at the words in the app's language, where there are some.
+    val localTags by produceState(emptyMap<String, List<String>>(), locale.language) {
+        value = IconCatalog.localTags(context.applicationContext, locale.language)
+    }
     val categories = remember(catalog, resources, locale) {
         val collator = Collator.getInstance(locale)
         catalog.categories.mapNotNull { (id, icons) ->
             categoryNames[id]?.let { CategoryUi(id, resources.getString(it), icons) }
         }.sortedWith(compareBy(collator) { it.name })
     }
-    // Every icon's searchable text, lower-cased and without accents ("étoile" is found with "etoile").
-    val searchText = remember(catalog, categories) {
+    // Every icon's searchable words, lower-cased and without accents ("étoile" is found with "etoile").
+    val searchWords = remember(catalog, categories, localTags) {
         val categoryLabels = categories.associate { it.id to it.name }
         catalog.icons.associateWith { icon ->
-            (listOf(icon.icon.key.replace('-', ' '), iconLabel(resources, icon.icon)) + icon.tags +
-                icon.categories.mapNotNull(categoryLabels::get)).joinToString(" ").simplified()
+            (listOf(icon.icon.key, iconLabel(resources, icon.icon)) + icon.tags + localTags[icon.icon.key].orEmpty() +
+                icon.categories.mapNotNull(categoryLabels::get)).flatMap { it.searchWords() }.toSet()
         }
     }
-    val words = query.simplified().split(' ').filter { it.isNotBlank() }
-    val results = remember(searchText, words) {
-        if (words.isEmpty()) emptyList() else catalog.icons.filter { icon -> words.all { it in searchText.getValue(icon) } }
+    // Each word typed must start one of the icon's words: "vélo" finds "vélo" but not "développer".
+    val words = query.searchWords()
+    val results = remember(searchWords, words) {
+        if (words.isEmpty()) emptyList() else catalog.icons.filter { icon ->
+            val iconWords = searchWords.getValue(icon)
+            words.all { word -> iconWords.any { it.startsWith(word) } }
+        }
     }
     val chosen = remember(catalog, iconPalette) { iconPalette.mapNotNull { catalog[it] } }
 
@@ -327,6 +338,11 @@ private fun IconCell(
     }
 }
 
-/** Lower case, without accents, for matching search words. */
-private fun String.simplified(): String =
-    Normalizer.normalize(lowercase(), Normalizer.Form.NFD).replace(Regex("\\p{Mn}+"), "")
+private val accents = Regex("\\p{Mn}+")
+private val separators = Regex("[^\\p{L}\\p{N}]+")
+
+/** The words of a text, in lower case, without accents or ligatures: "Lave-linge, cœur" → lave, linge, coeur. */
+internal fun String.searchWords(): List<String> =
+    Normalizer.normalize(lowercase(), Normalizer.Form.NFD).replace(accents, "")
+        .replace("œ", "oe").replace("æ", "ae")
+        .split(separators).filter { it.isNotEmpty() }

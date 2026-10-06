@@ -1,0 +1,1867 @@
+# French search words for the Lucide icons, one icon per line: name <TAB> words (comma-separated). Written by hand, see tools/lucide/generate_icons.py.
+a-arrow-down	lettre avec flèche vers le bas,réduire,taille de police,texte,rapetisser,mise en forme,petit
+a-arrow-up	lettre avec flèche vers le haut,agrandir,taille de police,texte,mise en forme,grand
+a-large-small	grande et petite lettre,taille de police,texte,mise en forme,majuscule,minuscule,casse
+accessibility	accessibilité,handicap,fauteuil roulant,personne handicapée,mobilité réduite
+activity	pouls,activité,rythme cardiaque,électrocardiogramme,ecg,santé,fitness,exercice,mouvement,urgences,hôpital,signes vitaux
+ad	publicité,pub,annonce,marketing,campagne,promotion,sponsor,partenaire,audiodescription
+air-vent	bouche d'aération,climatisation,ventilation,aération,refroidissement,air conditionné
+airplay	diffusion d'écran,airplay,streaming,caster,miroir,écran,partage d'écran,apple
+alarm-clock	réveil,alarme,matin,heure,horloge
+alarm-clock-check	réveil avec coche,alarme validée,terminé,tâche,fait,réveil
+alarm-clock-minus	réveil avec moins,supprimer l'alarme,retirer,enlever,réveil
+alarm-clock-off	réveil désactivé,alarme désactivée,éteindre,matin,désactiver,réveil
+alarm-clock-plus	réveil avec plus,ajouter une alarme,ajouter,nouveau,réveil
+alarm-smoke	détecteur de fumée,incendie,feu,alerte,alarme,avertissement,monoxyde de carbone,sécurité
+align-center-horizontal	alignement centré horizontalement,aligner au centre,éléments,centrer,disposition,justifier
+align-center-vertical	alignement centré verticalement,aligner au centre,éléments,centrer,disposition,justifier
+align-end-horizontal	alignement en bas,aligner en bas,éléments,bas,disposition,justifier
+align-end-vertical	alignement à droite,aligner à droite,éléments,droite,disposition,justifier
+align-horizontal-distribute-center	distribution horizontale centrée,répartir,espacement égal,éléments,espace,centre,disposition
+align-horizontal-distribute-end	distribution horizontale à droite,répartir,droite,éléments,espacement,disposition
+align-horizontal-distribute-start	distribution horizontale à gauche,répartir,gauche,éléments,espacement,disposition
+align-horizontal-justify-center	justification horizontale centrée,centre,éléments,justifier,disposition,alignement
+align-horizontal-justify-end	justification horizontale à droite,droite,éléments,justifier,disposition,alignement
+align-horizontal-justify-start	justification horizontale à gauche,gauche,éléments,justifier,disposition,alignement
+align-horizontal-space-around	espacement horizontal autour,centre,éléments,répartir,distribuer,entre,disposition
+align-horizontal-space-between	espacement horizontal entre,autour,éléments,bas,répartir,justifier,disposition
+align-start-horizontal	alignement en haut,aligner en haut,éléments,haut,disposition,justifier
+align-start-vertical	alignement à gauche,aligner à gauche,éléments,gauche,disposition,justifier
+align-vertical-distribute-center	distribution verticale centrée,répartir,espacement égal,éléments,espace,centre,disposition
+align-vertical-distribute-end	distribution verticale en bas,répartir,bas,éléments,espacement,disposition
+align-vertical-distribute-start	distribution verticale en haut,répartir,haut,éléments,espacement,disposition
+align-vertical-justify-center	justification verticale centrée,centre,éléments,justifier,répartir,entre,disposition
+align-vertical-justify-end	justification verticale en bas,bas,éléments,justifier,répartir,entre,disposition
+align-vertical-justify-start	justification verticale en haut,haut,éléments,justifier,répartir,entre,disposition
+align-vertical-space-around	espacement vertical autour,centre,éléments,répartir,distribuer,entre,disposition
+align-vertical-space-between	espacement vertical entre,centre,éléments,répartir,distribuer,disposition
+ambulance	ambulance,urgence,médical,véhicule,sirène,santé,secours,urgent,premiers secours,samu
+ampersand	esperluette,et,typographie,opérateur,joindre,concaténer,code
+ampersands	double esperluette,et logique,et,opérateur,puis,code
+amphora	amphore,poterie,vase,céramique,argile,archéologie,musée,vin,huile,antique
+anchor	ancre,bateau,navire,marine,port,mouiller
+angle	angle,degré,coin,géométrie,mesure,mathématiques,rapporteur,pente,arc,dessin
+antenna	antenne,signal,connexion,télévision,tv,diffusion,fréquence,chaînes,réception,satellite,câble
+anvil	enclume,métal,fer,forgeron,forge,lourd,poids,matériaux
+aperture	ouverture,diaphragme,appareil photo,photo,obturateur,exposition,objectif
+app-window	fenêtre d'application,application,barre de menu,panneau,exécutable,programme
+app-window-mac	fenêtre d'application mac,application,barre de menu,panneau,préférences,macos,exécutable
+apple	pomme,fruit,nourriture,santé,collation,nutrition,frais,verger,vitamine,régime
+archive	archive,sauvegarde,boîte,stockage,index,documents,ranger
+archive-restore	restaurer une archive,désarchiver,sauvegarde,boîte,stockage,récupérer,archive
+archive-x	archive avec croix,supprimer,indésirable,spam,boîte,stockage,courrier indésirable
+armchair	fauteuil,canapé,meuble,détente,salon,sofa
+armenian-dram	dram arménien,symbole,finance,banque,économie,monnaie,argent,paiement,devise
+arrow-big-down	grosse flèche vers le bas,flèche,bas,arrière,inverser,direction,sud
+arrow-big-down-dash	grosse flèche vers le bas avec tiret,flèche,bas,ralentir,direction,sud,télécharger
+arrow-big-left	grosse flèche vers la gauche,flèche,gauche,précédent,retour,direction,ouest,tourner
+arrow-big-left-dash	grosse flèche vers la gauche avec tiret,flèche,gauche,précédent,retour,direction,ouest,virage
+arrow-big-right	grosse flèche vers la droite,flèche,droite,suivant,avancer,direction,est,tourner
+arrow-big-right-dash	grosse flèche vers la droite avec tiret,flèche,droite,suivant,avancer,direction,est,virage
+arrow-big-up	grosse flèche vers le haut,flèche,haut,majuscule,shift,clavier,touche,direction,nord
+arrow-big-up-dash	grosse flèche vers le haut avec tiret,flèche,haut,verrouillage majuscules,verr maj,clavier,touche,accélérer,vitesse,direction
+arrow-down	flèche vers le bas,flèche,bas,arrière,inverser,direction,sud
+arrow-down-0-1	tri numérique croissant,flèche vers le bas,tri,trier,croissant,nombres,chiffres,filtre,ordre
+arrow-down-1-0	tri numérique décroissant,flèche vers le bas,tri,trier,décroissant,nombres,chiffres,filtre,ordre
+arrow-down-a-z	tri alphabétique croissant,flèche vers le bas,tri,trier,ordre alphabétique,filtre,a à z
+arrow-down-from-line	flèche vers le bas depuis une ligne,flèche,bas,télécharger,déplier,développer,vertical,sud
+arrow-down-left	flèche vers le bas à gauche,flèche,bas,gauche,diagonale,sud-ouest,direction
+arrow-down-narrow-wide	tri croissant,flèche vers le bas,tri,trier,du plus petit au plus grand,filtre,ordre
+arrow-down-right	flèche vers le bas à droite,flèche,bas,droite,diagonale,sud-est,direction
+arrow-down-to-dot	flèche vers le bas vers un point,flèche,bas,point,destination,position,étape,sud,direction
+arrow-down-to-line	flèche vers le bas jusqu'à une ligne,flèche,bas,télécharger,enregistrer,sauvegarder,git,tirer,réduire,replier,vertical
+arrow-down-up	flèche haut et bas,flèches,échanger,permuter,bidirectionnel,réseau,trafic,données mobiles,internet,trier,réorganiser,déplacer
+arrow-down-wide-narrow	tri décroissant,flèche vers le bas,tri,trier,du plus grand au plus petit,filtre,ordre
+arrow-down-z-a	tri alphabétique décroissant,flèche vers le bas,tri,trier,ordre alphabétique inverse,filtre,z à a
+arrow-left	flèche vers la gauche,flèche,gauche,précédent,retour,direction,ouest
+arrow-left-from-line	flèche vers la gauche depuis une ligne,flèche,gauche,précédent,retour,déplier,développer,horizontal,ouest
+arrow-left-right	flèche gauche et droite,flèches,échanger,permuter,bidirectionnel,transaction,réorganiser,déplacer
+arrow-left-to-line	flèche vers la gauche jusqu'à une ligne,flèche,gauche,précédent,retour,réduire,replier,horizontal,début
+arrow-right	flèche vers la droite,flèche,droite,suivant,avancer,direction,est
+arrow-right-from-line	flèche vers la droite depuis une ligne,flèche,droite,suivant,exporter,déplier,développer,horizontal,est
+arrow-right-left	flèche droite et gauche,flèches,échanger,permuter,bidirectionnel,transaction,réorganiser,déplacer
+arrow-right-to-line	flèche vers la droite jusqu'à une ligne,flèche,droite,suivant,tabulation,clavier,indentation,retrait,réduire,replier,fin
+arrow-up	flèche vers le haut,flèche,haut,avancer,direction,nord
+arrow-up-0-1	tri numérique croissant,flèche vers le haut,tri,trier,croissant,nombres,chiffres,filtre,ordre
+arrow-up-1-0	tri numérique décroissant,flèche vers le haut,tri,trier,décroissant,nombres,chiffres,filtre,ordre
+arrow-up-a-z	tri alphabétique croissant,flèche vers le haut,tri,trier,ordre alphabétique,filtre,a à z
+arrow-up-down	flèche haut et bas,flèches,échanger,permuter,bidirectionnel,réseau,données mobiles,internet,trier,réorganiser,déplacer
+arrow-up-from-dot	flèche vers le haut depuis un point,flèche,haut,point,sortir,étape,nord,direction
+arrow-up-from-line	flèche vers le haut depuis une ligne,flèche,haut,téléverser,envoyer,uploader,git,pousser,déplier,développer,vertical
+arrow-up-left	flèche vers le haut à gauche,flèche,haut,gauche,diagonale,nord-ouest,direction
+arrow-up-narrow-wide	tri croissant,flèche vers le haut,tri,trier,du plus petit au plus grand,filtre,ordre
+arrow-up-right	flèche vers le haut à droite,flèche,haut,droite,diagonale,nord-est,direction
+arrow-up-to-line	flèche vers le haut jusqu'à une ligne,flèche,haut,téléverser,envoyer,réduire,replier,vertical
+arrow-up-wide-narrow	tri décroissant,flèche vers le haut,tri,trier,du plus grand au plus petit,filtre,ordre
+arrow-up-z-a	tri alphabétique décroissant,flèche vers le haut,tri,trier,ordre alphabétique inverse,filtre,z à a
+arrows-up-from-line	flèches vers le haut depuis une ligne,haut,orientation,fragile,colis,carton,paquet,expédition,livraison,poste
+asterisk	astérisque,étoile,symbole,marque,référence,multiplier,multiplication,opérateur,joker,caractère générique
+astroid	astroïde,étoile,forme,courbe,mathématiques,géométrie,quatre pointes,hypocycloïde
+at-sign	arobase,@,mention,email,courriel,message,adresse
+atom	atome,nucléaire,physique,particule,élément,molécule,électricité,énergie,chimie,science
+audio-lines	lignes audio,égaliseur,son,bruit,écouter,audition,fréquence,onde,vibration,musique,radio,voix
+audio-lines-off	lignes audio barrées,son désactivé,muet,silence,désactivé,inactif,écouter,égaliseur,fréquence,onde,audio
+audio-lines-x	lignes audio avec croix,son,muet,silence,désactivé,annuler,supprimer,indisponible,égaliseur,onde
+audio-waveform	forme d'onde audio,onde sonore,son,bruit,écouter,fréquence,vibration,musique,voix,enregistrement,radio
+award	récompense,médaille,prix,trophée,réussite,succès,rosette,gagnant,distinction
+axe	hache,hachette,arme,couper,outil,bûcheron,pompier,bois,forêt
+axis-3d	axes 3d,trois dimensions,repère,coordonnées,gizmo,espace,design
+baby	bébé,enfant,nourrisson,petit,sécurité enfant,accessibilité
+backpack	sac à dos,sac,randonnée,voyage,camping,école,enfance,bagage
+badge	badge,insigne,écusson,vérifié,certifié,compte,coche
+badge-alert	badge d'alerte,insigne,vérifié,non vérifié,sécurité,problème,attention,avertissement
+badge-cent	badge centime,réduction,offre,solde,bon,étiquette,monétisation,marketing,finance,transaction,paiement,centime,cent,dollar
+badge-check	badge vérifié,coche,certifié,vérifié,insigne,validé,compte certifié
+badge-dollar-sign	badge dollar,réduction,offre,solde,bon,étiquette,monétisation,marketing,finance,transaction,paiement,usd,monnaie
+badge-euro	badge euro,réduction,offre,solde,bon,étiquette,monétisation,marketing,finance,transaction,paiement,monnaie
+badge-indian-rupee	badge roupie indienne,réduction,offre,solde,bon,étiquette,monétisation,marketing,finance,transaction,paiement,monnaie,inde
+badge-info	badge d'information,info,aide,vérifié,non vérifié,insigne,renseignement
+badge-japanese-yen	badge yen,réduction,offre,solde,bon,étiquette,monétisation,marketing,finance,transaction,paiement,monnaie,japon
+badge-minus	badge avec moins,vérifié,non vérifié,supprimer,retirer,effacer,insigne
+badge-percent	badge pourcentage,pourcent,solde,réduction,promotion,offre,marketing,autocollant,étiquette de prix,vérifié
+badge-plus	badge avec plus,ajouter,créer,nouveau,vérifié,non vérifié,insigne
+badge-pound-sterling	badge livre sterling,réduction,offre,solde,bon,étiquette,monétisation,marketing,finance,transaction,paiement,monnaie,britannique
+badge-question-mark	badge point d'interrogation,question,aide,vérifié,non vérifié,insigne
+badge-russian-ruble	badge rouble russe,réduction,offre,solde,bon,étiquette,monétisation,marketing,finance,transaction,paiement,monnaie,russie
+badge-swiss-franc	badge franc suisse,réduction,offre,solde,bon,étiquette,monétisation,marketing,finance,transaction,paiement,monnaie,suisse
+badge-turkish-lira	badge livre turque,réduction,offre,solde,bon,étiquette,monétisation,marketing,finance,transaction,paiement,monnaie,turquie
+badge-x	badge avec croix,vérifié,non vérifié,perdu,supprimer,retirer,insigne,refusé
+baggage-claim	livraison des bagages,bagage,valise,voyage,chariot,aéroport,tapis à bagages
+balloon	ballon,ballon de baudruche,fête,anniversaire,célébration,félicitations,décoration,festival,événement
+ban	interdit,sens interdit,annuler,non,stop,interdiction,erreur,incorrect,échec,cercle barré,bloquer
+banana	banane,fruit,nourriture,alimentation
+bandage	pansement,bandage,sparadrap,premiers secours,blessure,santé,soin,guérison,médical,plaie
+bangladeshi-taka	taka bangladais,monnaie,argent,paiement,devise,symbole,espèces,billet,prix,bangladesh
+banknote	billet de banque,billet,argent,monnaie,paiement,espèces,devise
+banknote-arrow-down	billet avec flèche vers le bas,billet,argent,paiement,retrait,retirer,dépense,sortie,remboursement,débit,baisse
+banknote-arrow-up	billet avec flèche vers le haut,billet,argent,paiement,dépôt,revenu,entrée,crédit,croissance,hausse,gain
+banknote-check	billet avec coche,billet,argent,paiement,vérifié,accepté,terminé,payé,validé,succès,tâche
+banknote-x	billet avec croix,billet,argent,paiement,erreur,échec,rejeté,annulé,refusé,perdu,supprimer
+barcode	code-barres,code barre,scanner,caisse,panier,achat,produit,emballage,commerce,étiquette
+barrel	tonneau,fût,baril,fût de chêne,vin,bière,bois,cave,brasserie,distillerie,vignoble
+baseline	couleur du texte,ligne de base,texte,mise en forme,couleur,souligné,typographie
+bath	baignoire,bain,salle de bain,douche,services,hôtel,toilette
+battery	batterie,pile,énergie,électricité,accumulateur,charge,alimentation
+battery-charging	batterie en charge,pile en charge,charger,recharge,énergie,électricité,accumulateur,alimentation
+battery-full	batterie pleine,pile pleine,chargée,énergie,électricité,accumulateur,charge,alimentation
+battery-low	batterie faible,pile faible,presque vide,énergie,électricité,accumulateur,charge,alimentation
+battery-medium	batterie moyenne,pile à moitié,demi-charge,énergie,électricité,accumulateur,charge,alimentation
+battery-plus	batterie avec plus,pile,ajouter,économie,santé,maximum,amélioration,supplémentaire,énergie,charge,accumulateur
+battery-warning	batterie avec avertissement,batterie faible,pile,alerte,point d'exclamation,énergie,électricité,charge,accumulateur
+beaker	bécher,gobelet,laboratoire,chimie,expérience,test,science,éprouvette
+bean	haricot,graine,légumineuse,soja,fève,nourriture,alimentation
+bean-off	sans soja,haricot barré,légumineuse,soja,graine,allergie,intolérance,régime
+bed	lit,dormir,sommeil,hôtel,meuble,chambre,couchage
+bed-double	lit double,lit deux places,dormir,sommeil,hôtel,meuble,chambre
+bed-single	lit simple,lit une place,dormir,sommeil,hôtel,meuble,chambre
+beef	boeuf,viande,steak,barbecue,plat,restaurant,repas,nourriture,bœuf
+beef-off	sans viande,boeuf barré,viande,steak,végétarien,plat,repas,nourriture,bœuf
+beer	bière,alcool,bar,boisson,brasserie,chope,verre,pinte
+beer-off	sans alcool,bière barrée,alcool,bar,boisson,brasserie,chope,interdit
+bell	cloche,notification,alarme,son,rappel,sonnerie,alerte
+bell-check	cloche avec coche,notification,alarme,son,rappel,validé,terminé,alerte
+bell-dot	cloche avec point,notification,alarme,son,rappel,non lu,nouveau,alerte
+bell-electric	sonnette électrique,alarme incendie,sonnerie,flammes,fumée,pompier,caserne,urgence,alerte,sécurité,cloche d'école,récréation,porte,entrée
+bell-minus	cloche avec moins,notification,alarme,silencieux,rappel,supprimer,retirer,effacer
+bell-off	cloche barrée,notification désactivée,alarme,silencieux,muet,rappel,ne pas déranger,silence
+bell-plus	cloche avec plus,notification,silencieux,rappel,ajouter,créer,nouveau
+bell-ring	cloche qui sonne,sonnerie,notification,alarme,son,rappel,alerte
+between-horizontal-end	insérer à gauche,ajouter,colonne,fente,espace,tableau,grille,lignes,cellules,excel,tableur,données,blocs,rectangles,chevron
+between-horizontal-start	insérer à droite,ajouter,colonne,fente,espace,tableau,grille,lignes,cellules,excel,tableur,données,blocs,rectangles,chevron
+between-vertical-end	insérer en haut,ajouter,ligne,fente,espace,tableau,grille,colonnes,cellules,données,blocs,rectangles,chevron
+between-vertical-start	insérer en bas,ajouter,ligne,fente,espace,tableau,grille,colonnes,cellules,données,blocs,rectangles,chevron
+biceps-flexed	biceps contracté,bras,muscle,fort,force,musculation,sport,athlétique,musclé
+bike	vélo,bicyclette,transport,balade,cyclisme,deux-roues
+binary	binaire,code,chiffres,ordinateur,zéro,un,booléen,informatique
+binoculars	jumelles,observation,longue-vue,nature,faune,ornithologie,voyage,tourisme,surveillance,explorer
+biohazard	danger biologique,risque biologique,contamination,déchets,biologie,chimie,toxique,radiation
+bird	oiseau,paix,liberté,aile,tweet,volatile,animal
+birdhouse	nichoir,cabane à oiseaux,oiseau,jardin,maison,bois,nature
+bitcoin	bitcoin,cryptomonnaie,monnaie numérique,blockchain,finance,pièce,marché,investissement,crypto,argent,paiement
+blend	fusion,mode de fusion,superposition,opacité,transparence,filtre,mélange,teintes,luminosité,saturation,chevauchement,design
+blender	mixeur,blender,robot de cuisine,électroménager,smoothie,jus,mélanger,cuisine,milkshake,cocktail,boisson
+blinds	store,stores,volet roulant,rideau,persienne,fenêtre,occultant,maison,éclairage
+blocks	blocs,briques,jeu de construction,module,extension,plugin,intégration,paquet,empiler,jouets,enfants,apprentissage,carrés
+bluetooth	bluetooth,sans fil,connexion,appareil,connectivité
+bluetooth-connected	bluetooth connecté,appairé,jumelé,connexion,sans fil,appareil
+bluetooth-off	bluetooth désactivé,perdu,éteint,déconnecté,sans fil,appareil
+bluetooth-searching	bluetooth en recherche,appairage,jumelage,recherche,sans fil,appareil
+bold	gras,texte,fort,mise en forme,format,typographie,éditeur
+bolt	boulon,écrou,vis,paramètres,préférences,configuration,réglages,éditer,bricolage,construction,pièces,foudre
+bomb	bombe,erreur fatale,plantage,crash,mine,explosion,exploser,explosif,danger
+bone	os,santé,squelette,crâne,mort,animaux,chien,ossement
+bone-fracture	fracture,os cassé,os,blessure,orthopédie,médical,anatomie,squelette,radio,traumatisme,santé,vétérinaire,fêlure
+book	livre,lecture,brochure,magazine,bibliothèque,écriture,auteur,histoire,roman,fiction,connaissance,éducation
+book-a	livre avec lettre a,dictionnaire,définition,thésaurus,encyclopédie,lecture,bibliothèque,vocabulaire,glossaire
+book-alert	livre avec alerte,livre,lecture,attention,avertissement,bibliothèque,important,problème
+book-audio	livre audio,audio,lecture,écoute,son,histoire,roman,éducation,étude,apprentissage
+book-bookmark	livre avec marque-page,livre,dictionnaire,lecture,signet,bibliothèque,favori,sauvegarder
+book-check	livre avec coche,livre,lu,lecture,bibliothèque,terminé,devoirs,validé,instruit,éducation
+book-copy	livres copiés,livre,copier,dupliquer,plusieurs livres,bibliothèque,exemplaires,plagiat,cloner,dépôt,code,git
+book-dashed	livre en pointillés,livre,brouillon,modèle,modèle de document,scénario,écriture,non publié,inédit,ébauche,code,git
+book-down	livre avec flèche vers le bas,livre,télécharger,tirer,récupérer,dépôt,code,git
+book-headphones	livre avec casque,livre audio,casque,audio,lecture,écoute,son,histoire,roman,éducation,étude
+book-heart	livre avec coeur,livre,journal intime,journal,roman,romance,amour,coup de coeur,favori,personnel,secret,émotion,thérapie,cœur
+book-image	livre d'images,album photo,images,photos,album,collection,magazine,catalogue,brochure,galerie,parcourir
+book-key	livre avec clé,livre,clé,secret,privé,caché,connaissance,apprentissage,sécurité,code,dépôt
+book-lock	livre verrouillé,livre,cadenas,verrou,privé,secret,caché,connaissance,sécurité,code,dépôt
+book-minus	livre avec moins,livre,supprimer,retirer,effacer,censurer,interdire,annuler,rétrograder,code,dépôt
+book-open	livre ouvert,livre,lecture,pages,brochure,magazine,bibliothèque,écriture,auteur,histoire,roman,éducation
+book-open-check	livre ouvert avec coche,livre,lu,lecture,pages,bibliothèque,terminé,devoirs,validé,éducation
+book-open-text	livre ouvert avec texte,livre,lecture,pages,brochure,bibliothèque,écriture,auteur,histoire,roman,éducation
+book-plus	livre avec plus,livre,ajouter,nouveau,créer,lire,écrire,publier,étudier,apprendre,recherche,code,dépôt
+book-search	livre avec loupe,livre,recherche,rechercher,bibliothèque,étude,éducation,recherche documentaire,parcourir,chercher,trouver
+book-text	livre avec texte,livre,lecture,brochure,magazine,bibliothèque,écriture,auteur,histoire,roman,éducation
+book-type	livre avec lettre,livre,dictionnaire des synonymes,thésaurus,synonyme,lecture,bibliothèque,écriture,typographie,police
+book-up	livre avec flèche vers le haut,livre,envoyer,pousser,téléverser,dépôt,code,git
+book-up-2	livre avec double flèche vers le haut,livre,envoyer,pousser,forcer,téléverser,dépôt,code,git
+book-user	carnet d'adresses,répertoire,personne,contacts,famille,amis,connaissances,coordonnées,adresses,numéros de téléphone,annuaire,réseau
+book-x	livre avec croix,livre,supprimer,retirer,effacer,désinformation,fausse information,mensonge,faux,propagande,interdit,code,dépôt
+bookmark	marque-page,signet,favori,enregistrer,sauvegarder,marquer,étiquette,ruban,épingler,lire
+bookmark-check	marque-page avec coche,signet,lu,terminé,fini,étiquette,tâche,fait,favori
+bookmark-minus	marque-page avec moins,signet,supprimer,retirer,favori
+bookmark-off	marque-page barré,signet désactivé,non enregistré,retiré,désépingler,non lu,favori,désactivé
+bookmark-plus	marque-page avec plus,signet,ajouter,favori,nouveau
+bookmark-x	marque-page avec croix,signet,annuler,fermer,supprimer,retirer,effacer,favori
+boom-box	radio cassette,poste de radio,enceintes,haut-parleurs,audio,musique,son,diffusion,fréquence,ghetto blaster
+bot	robot,ia,intelligence artificielle,discussion,assistant,chatbot
+bot-message-square	robot avec bulle,robot,ia,intelligence artificielle,discussion,message,assistant,chatbot
+bot-off	robot désactivé,robot,ia,intelligence artificielle,discussion,assistant,chatbot
+bottle-wine	bouteille de vin,vin,alcool,boisson,verre,vignoble,rouge,blanc,rosé,bar,fête,sommelier,restaurant,dîner
+bow-arrow	arc et flèche,arc,flèche,archer,tir à l'arc,jeu,guerre,arme
+box	boîte,cube,carton,colis,paquet,conteneur,stockage,géométrie,3d,isométrique
+boxes	boîtes,cubes,cartons,colis,paquets,pièces,groupe,unités,collection,ensemble,géométrie
+braces	accolades,json,code,jeton,données,crochets,syntaxe,développement
+brackets	crochets,code,jeton,tableau,liste,carré,syntaxe,développement
+brain	cerveau,esprit,mental,intellect,cérébral,conscience,génie,intelligence artificielle,ia,penser,pensée,intelligent,médical
+brain-circuit	cerveau avec circuit,cerveau,esprit,intellect,intelligence artificielle,ia,apprentissage profond,apprentissage automatique,informatique,réseau de neurones
+brain-cog	cerveau avec engrenage,cerveau,esprit,intellect,intelligence artificielle,ia,apprentissage profond,apprentissage automatique,informatique,réglages
+brick-wall	mur de briques,briques,mortier,ciment,matériaux,construction,maçon,blocs,pierre,mur
+brick-wall-fire	pare-feu,mur de briques en feu,sécurité,briques,mortier,construction,feu de camp,camping,réseau,flammes
+brick-wall-shield	pare-feu avec bouclier,mur de briques avec bouclier,sécurité,cybersécurité,briques,protection,réseau,construction
+bridge	pont,viaduc,passage,franchir,traverser,infrastructure,transport,route,rivière,suspendu,voyage,monument,itinéraire
+briefcase	mallette,serviette,porte-documents,travail,sac,bagage,dossier,bureau
+briefcase-business	mallette d'affaires,serviette,porte-documents,travail,sac,bagage,dossier,portfolio,bureau,entreprise
+briefcase-conveyor-belt	valise sur tapis roulant,bagage,valise,voyage,tapis à bagages,carrousel,aéroport,convoyeur
+briefcase-medical	mallette médicale,trousse de secours,médecin,médecine,premiers secours,santé,docteur
+briefcase-plus	mallette avec plus,serviette,travail,ajouter,nouveau,créer,augmenter,emploi,carrière,professionnel,portfolio,entreprise
+bring-to-front	mettre au premier plan,amener devant,envoyer,déplacer,devant,avant,chevauchement,calque,ordre,superposition
+broccoli	brocoli,légume,vert,frais,culinaire,nourriture,santé,végétalien,végétarien,nutrition,régime,plante
+broom	balai,balayer,balayage,sol,nettoyage,ménage,corvées,propre,poussière,débris,sorcière,halloween,concierge,entretien
+broom-sparkles	balai avec étincelles,balai,balayer,nettoyage,ménage,magie,étincelles,ia,intelligent,automatisation,propre,poussière,sorcière
+brush	pinceau,brosse,nettoyer,balayer,effacer,dessiner,peindre,couleur,artiste,peinture,refactoriser
+brush-cleaning	brosse de nettoyage,brosse,nettoyage,ménage,ustensile,balayer,frotter,hygiène,entretien,outil,corvées,nettoyer,poils
+bubbles	bulles,savon,eau,nettoyage,bain,hygiène,fraîcheur,laver,mousse,propreté,shampoing,éclaboussure,spa,détente
+bug	bogue,bug,insecte,erreur,défaut,problème,débogage,test,signaler,code,coccinelle,scarabée
+bug-off	bogue corrigé,bug barré,insecte,résolu,corrigé,test,débogage,code,tuer,exterminer,antiparasitaire,désinsectisation
+bug-play	bogue avec lecture,bug,insecte,test,débogage,reproduire,exécuter,code,lecture,problème
+building	bâtiment,immeuble,organisation,entreprise,société,bureau,ville,édifice
+building-complex	complexe de bâtiments,immeubles,entreprise,société,gratte-ciel,organisation,ville,tour,bureaux
+building-complex-plus	complexe de bâtiments avec plus,immeubles,entreprise,société,gratte-ciel,organisation,ville,nouveau,ajouter,créer,siège,bureaux,startup
+bus	bus,autobus,véhicule,transport,trajet,transport en commun
+bus-front	bus vu de face,autocar,car,véhicule,trajet,route,transport en commun,autobus
+cable	câble,fil,cordon,connecteur,connexion,lien,signal,ordinateur,électricité,énergie,électronique,chargeur,recharge,alimentation
+cable-car	téléphérique,télécabine,remontée mécanique,ski,vacances d'hiver,alpin,station,montagne,téléski
+cake	gâteau,anniversaire,date de naissance,célébration,fête,surprise,dessert,glaçage,sucré,pâtisserie
+cake-slice	part de gâteau,gâteau,tranche,anniversaire,date de naissance,célébration,fête,surprise,dessert,bougies,vœu,sucré,pâtisserie
+calculator	calculatrice,calculer,compter,calcul,mathématiques,machine à calculer
+calendar	calendrier,date,mois,année,événement,anniversaire,agenda,planning
+calendar-1	calendrier jour 1,date,mois,année,événement,unique,une fois,premier,agenda
+calendar-arrow-down	calendrier avec flèche vers le bas,date,mois,année,événement,trier,tri,ordre,croissant,décroissant,agenda
+calendar-arrow-up	calendrier avec flèche vers le haut,date,mois,année,événement,trier,tri,ordre,croissant,décroissant,agenda
+calendar-check	calendrier avec coche,date,jour,mois,année,événement,confirmer,s'abonner,planifier,terminé,à faire,validé,tâche,agenda
+calendar-check-2	calendrier avec coche,date,jour,mois,année,événement,confirmer,s'abonner,planifier,terminé,à faire,validé,tâche,agenda
+calendar-chevrons-right	calendrier avec chevrons vers la droite,navigation,flèche,droite,chevron,direction,suivant,menu,date,jour,mois,année,événements
+calendar-clock	calendrier avec horloge,date,jour,mois,année,événement,horloge,heure,rendez-vous,agenda
+calendar-cog	calendrier avec engrenage,date,jour,mois,année,événements,paramètres,réglages,configuration,agenda
+calendar-days	calendrier avec jours,date,mois,année,événement,agenda,planning
+calendar-fold	calendrier plié,date,mois,année,événement,anniversaire,date de naissance,ics,agenda
+calendar-heart	calendrier avec coeur,date,mois,année,événement,favori,s'abonner,saint-valentin,amour,agenda,cœur
+calendar-minus	calendrier avec moins,date,jour,mois,année,événement,supprimer,retirer,agenda
+calendar-minus-2	calendrier avec moins,date,jour,mois,année,événement,supprimer,retirer,agenda
+calendar-off	calendrier barré,date,jour,mois,année,événement,supprimer,retirer,désactivé,agenda
+calendar-plus	calendrier avec plus,date,jour,mois,année,événement,ajouter,s'abonner,créer,nouveau,agenda
+calendar-plus-2	calendrier avec plus,date,jour,mois,année,événement,ajouter,s'abonner,créer,nouveau,agenda
+calendar-range	calendrier avec plage,date,jour,mois,année,événement,plage,période,intervalle,agenda
+calendar-search	calendrier avec loupe,date,jour,mois,année,événements,recherche,rechercher,chercher,agenda
+calendar-sync	calendrier synchronisé,répéter,actualiser,rafraîchir,reconnecter,transférer,sauvegarde,date,mois,année,événement,récurrent,planifier,rappel,automatique,agenda,synchroniser
+calendar-x	calendrier avec croix,date,jour,mois,année,événement,supprimer,retirer,occupé,annuler,agenda
+calendar-x-2	calendrier avec croix,date,jour,mois,année,événement,supprimer,retirer,annuler,agenda
+calendars	calendriers,dates,mois,années,événements,plusieurs calendriers,agenda,planning
+camera	appareil photo,caméra,photographie,objectif,mise au point,capturer,photo,image,webcam,vidéo
+camera-off	appareil photo désactivé,caméra désactivée,caméra barrée,photo,webcam,vidéo,éteindre
+can	boîte de conserve,conserve,canette,nourriture,stockage,courses,métal,recyclable,récipient,garde-manger
+can-soda	canette de soda,canette,boisson,soda,bière,alcool,déchets,métal,limonade
+candy	bonbon,sucre,sucrerie,confiserie,friandise,nourriture,sucré
+candy-cane	sucre d'orge,bonbon,canne en sucre,sucre,sucrerie,noël,friandise,sucré
+candy-off	sans sucre,bonbon barré,sucre,sucrerie,allergie,intolérance,régime,sucré
+cannabis	cannabis,feuille de cannabis,marijuana,herbe,feuille,drogue,chanvre,weed
+cannabis-off	cannabis interdit,cannabis barré,marijuana,herbe,feuille,drogue,chanvre,weed,interdit
+captions	sous-titres,légendes,sous-titrage,transcription,dialogue,accessibilité,cc,malentendant
+captions-off	sous-titres désactivés,sous-titrage désactivé,légendes,transcription,dialogue,accessibilité,cc,malentendant
+car	voiture,auto,automobile,véhicule,conduire,trajet,voyage,transport
+car-battery	batterie de voiture,batterie,accumulateur,automobile,électrique,électricité,énergie,charge,transport,véhicule,voiture
+car-front	voiture vue de face,voiture,auto,automobile,véhicule,conduire,trajet,voyage
+car-taxi-front	taxi,voiture de taxi,véhicule,conduire,trajet,voyage,course,transport
+caravan	caravane,remorque,camping,camping-car,mobil-home,vacances,nomade,nature,plein air,tracter
+card-sim	carte sim,sim,téléphone portable,smartphone,mobile,réseau,cellulaire,opérateur,signal,couverture,carte mémoire,données,stockage,flash
+carrot	carotte,légume,orange,santé,nature,frais,racine,bio,nutrition,nourriture,manger
+carton	brique de lait,brique,carton,lait,produit laitier,boisson,régime,lactose,liquide,litre,jus,crème,emballage,courses,vache
+carton-off	sans lait,brique de lait barrée,brique,lait,produit laitier,boisson,sans lactose,liquide,litre,emballage,allergie,intolérance,végétal
+case-lower	minuscule,casse minuscule,texte,lettres,caractères,police,typographie,ab
+case-sensitive	sensible à la casse,casse,majuscule,minuscule,texte,lettres,caractères,police,typographie,aa
+case-upper	majuscule,casse,texte,lettre,caractère,police,typographie
+cassette-tape	cassette audio,cassette,musique,enregistrement,lecture,bande magnétique,audio
+cast	diffusion d'écran,diffuser,caster,écran,affichage,sans fil,streaming,télécommande,partage d'écran,récepteur
+castle	château,forteresse,palais,bâtiment,jeu,citadelle
+cat	chat,animal,animal de compagnie,chaton,félin
+cctv	caméra de surveillance,vidéosurveillance,caméra,surveillance,enregistrement,film,sécurité,espionner
+cctv-off	caméra de surveillance désactivée,vidéosurveillance,caméra,surveillance,désactivé,arrêt,sécurité
+chart-area	graphique en aires,aire,statistiques,analyse,diagramme,graphique
+chart-bar	graphique en barres,histogramme,barres,statistiques,analyse,diagramme,graphique
+chart-bar-big	grand graphique en barres,histogramme,barres,statistiques,analyse,diagramme,graphique
+chart-bar-decreasing	graphique en barres décroissant,histogramme,baisse,tendance à la baisse,diminution,statistiques,diagramme,graphique
+chart-bar-increasing	graphique en barres croissant,histogramme,hausse,tendance à la hausse,croissance,statistiques,diagramme,graphique
+chart-bar-stacked	graphique en barres empilées,histogramme,empilé,comparaison,catégories,statistiques,diagramme,graphique
+chart-candlestick	graphique en chandeliers,chandelier japonais,bourse,trading,finance,marché,actions,cours,investissement,statistiques,graphique
+chart-column	graphique en colonnes,histogramme,colonnes,statistiques,analyse,diagramme,graphique
+chart-column-big	grand graphique en colonnes,histogramme,colonnes,statistiques,analyse,diagramme,graphique
+chart-column-decreasing	graphique en colonnes décroissant,histogramme,baisse,tendance à la baisse,diminution,statistiques,diagramme,graphique
+chart-column-increasing	graphique en colonnes croissant,histogramme,hausse,tendance à la hausse,croissance,statistiques,diagramme,graphique
+chart-column-stacked	graphique en colonnes empilées,histogramme,empilé,comparaison,catégories,statistiques,diagramme,graphique
+chart-gantt	diagramme de gantt,gantt,planning,calendrier,chronologie,planification,projet,diagramme,graphique
+chart-line	graphique en courbe,courbe,ligne,statistiques,analyse,diagramme,graphique,évolution
+chart-network	graphique en réseau,réseau,topologie,nœuds,connexions,liens,grappe,toile,statistiques,diagramme
+chart-no-axes-column	graphique en colonnes sans axes,histogramme,colonnes,statistiques,analyse,diagramme,graphique
+chart-no-axes-column-decreasing	graphique en colonnes décroissant sans axes,histogramme,baisse,tendance à la baisse,diminution,statistiques,graphique
+chart-no-axes-column-increasing	graphique en colonnes croissant sans axes,histogramme,hausse,tendance à la hausse,croissance,statistiques,graphique
+chart-no-axes-combined	graphique combiné sans axes,graphique combiné,hausse,tendance à la hausse,statistiques,analyse,diagramme,graphique
+chart-no-axes-gantt	diagramme de gantt sans axes,gantt,planning,projet,feuille de route,calendrier,chronologie,échéance,période,productivité,planification,agile
+chart-pie	graphique en secteurs,camembert,diagramme circulaire,statistiques,analyse,présentation,diagramme
+chart-scatter	nuage de points,graphique de dispersion,dispersion,points,statistiques,analyse,diagramme,graphique
+chart-spline	courbe lissée,spline,courbe,fonction,interpolation,polynôme,continu,statistiques,analyse,graphique
+check	coche,valider,fait,terminé,tâche,à faire,ok,validation
+check-check	double coche,reçu,lu,fait,terminé,tâche,valider,validation
+check-line	coche avec ligne,coche,valider,fait,terminé,tâche,à faire,validation
+chef-hat	toque de chef,toque,cuisinier,cuisine,cuisiner,restaurant,nourriture,chef
+cherry	cerise,fruit,nourriture,cerises
+chess-bishop	fou d'échecs,fou,échecs,pièce,jeu de plateau,mitre,religion,évêque
+chess-king	roi d'échecs,roi,échecs,pièce,jeu de plateau,couronne,pat,souverain
+chess-knight	cavalier d'échecs,cavalier,échecs,pièce,cheval,jeu de plateau
+chess-pawn	pion d'échecs,pion,échecs,pièce,jeu de plateau
+chess-queen	reine d'échecs,dame,reine,échecs,pièce,couronne,jeu de plateau,pat
+chess-rook	tour d'échecs,tour,échecs,pièce,jeu de plateau,château,forteresse
+chevron-down	chevron bas,flèche bas,bas,déroulant,liste déroulante,menu déroulant,ralentir,reculer
+chevron-first	chevron premier,premier,début,précédent,musique,piste précédente,retour au début
+chevron-last	chevron dernier,dernier,fin,suivant,musique,piste suivante,passer,aller à la fin
+chevron-left	chevron gauche,flèche gauche,gauche,retour,précédent,inférieur à,moins,menu,<
+chevron-right	chevron droit,flèche droite,droite,suivant,avancer,supérieur à,plus,menu,invite de commandes,terminal,console,code,>
+chevron-up	chevron haut,flèche haut,haut,accent circonflexe,clavier,contrôle,ctrl,exposant,puissance,avancer,rapide,^,déroulant
+chevrons-down	double chevron bas,double flèche bas,bas,reculer,ralentir,marche arrière
+chevrons-down-up	chevrons bas haut,réduire,replier,rétrécir,vertical,fermer,flèches
+chevrons-left	double chevron gauche,double flèche gauche,gauche,retour rapide,rembobiner,tourner,coin
+chevrons-left-right	chevrons gauche droite,développer,étendre,agrandir,horizontal,déplier,flèches
+chevrons-left-right-ellipsis	chevrons gauche droite avec points,internet,réseau,connexion,câble,lan,port,routeur,commutateur,modem,prise,ethernet,web,en ligne
+chevrons-right	double chevron droit,double flèche droite,droite,avance rapide,tourner,coin
+chevrons-right-left	chevrons droite gauche,réduire,replier,rétrécir,horizontal,fermer,flèches
+chevrons-up	double chevron haut,double flèche haut,haut,avancer,accélérer,rapide,vitesse,booster
+chevrons-up-down	chevrons haut bas,développer,étendre,agrandir,vertical,déplier,flèches,trier
+church	église,temple,bâtiment,chapelle,religion,clocher
+cigarette	cigarette,fumer,tabac,fumeur,clope
+cigarette-off	cigarette barrée,interdit de fumer,non-fumeur,fumer,tabac,cigarette,interdiction
+circle	cercle,rond,forme,disque,enregistrer,zéro,désactivé
+circle-alert	cercle d'alerte,alerte,avertissement,danger,point d'exclamation,attention,erreur
+circle-arrow-down	flèche bas dans un cercle,cercle,flèche,bas,sud,direction,bouton,reculer,descendre
+circle-arrow-left	flèche gauche dans un cercle,cercle,flèche,gauche,ouest,direction,précédent,retour,bouton
+circle-arrow-out-down-left	flèche vers le bas à gauche dans un cercle,cercle,flèche,diagonale,bas,gauche,sud-ouest,sortir,vers l'extérieur
+circle-arrow-out-down-right	flèche vers le bas à droite dans un cercle,cercle,flèche,diagonale,bas,droite,sud-est,sortir,vers l'extérieur
+circle-arrow-out-up-left	flèche vers le haut à gauche dans un cercle,cercle,flèche,diagonale,haut,gauche,nord-ouest,échap,échappement,touche,sortir
+circle-arrow-out-up-right	flèche vers le haut à droite dans un cercle,cercle,flèche,diagonale,haut,droite,nord-est,sortir,vers l'extérieur
+circle-arrow-right	flèche droite dans un cercle,cercle,flèche,droite,est,direction,suivant,avancer,bouton
+circle-arrow-up	flèche haut dans un cercle,cercle,flèche,haut,nord,direction,avancer,monter,bouton
+circle-check	coche dans un cercle,coche,cercle,valider,fait,terminé,tâche,validation,ok
+circle-check-big	grande coche dans un cercle,coche,cercle,valider,fait,terminé,tâche,validation,ok
+circle-chevron-down	chevron bas dans un cercle,cercle,chevron,flèche,bas,menu,retour,déroulant
+circle-chevron-left	chevron gauche dans un cercle,cercle,chevron,flèche,gauche,retour,précédent,menu,inférieur à
+circle-chevron-right	chevron droit dans un cercle,cercle,chevron,flèche,droite,suivant,menu,supérieur à
+circle-chevron-up	chevron haut dans un cercle,cercle,chevron,flèche,haut,accent circonflexe,menu,avancer
+circle-dashed	cercle en pointillés,cercle,pointillés,tirets,en attente,progression,brouillon,ticket,contrôle de version
+circle-dashed-check	cercle en pointillés avec coche,cercle,pointillés,coche,approuvé,en attente,révision,validé,publié,planification,demande,progression,brouillon
+circle-divide	cercle avec division,division,diviser,calculer,mathématiques,opérateur,÷
+circle-dollar-sign	cercle avec dollar,dollar,monnaie,argent,paiement,devise,monétisation,marketing
+circle-dot	cercle avec point,point,cercle,en attente,progression,ticket,choix,choix multiple,bouton radio,album,disque,musique,cd,dvd,vinyle
+circle-dot-dashed	cercle en pointillés avec point,point,cercle,pointillés,en attente,progression,brouillon,ticket,contrôle de version
+circle-ellipsis	cercle avec points de suspension,points de suspension,etc,chargement,en cours,en attente,menu,options,plus,supplémentaire,trois points
+circle-equal	cercle avec égal,égal,égalité,calculer,mathématiques,forme,=
+circle-euro	cercle avec euro,euro,monnaie,argent,paiement,devise,banque,économie,europe,finance,pièce,change,€
+circle-fading-arrow-up	flèche haut dans un cercle estompé,flèche,haut,nord,mise à niveau,améliorer,mettre à jour,bouton,cercle
+circle-fading-plus	cercle estompé avec plus,plus,ajouter,story,stories,réseaux sociaux,partage,contenu,publication
+circle-gauge	jauge,compteur,cadran,tableau de bord,vitesse,pression,mesure,niveau,indicateur,compteur de vitesse
+circle-minus	cercle avec moins,moins,soustraire,retirer,supprimer,diminuer,réduire,calculer,opérateur,-
+circle-off	cercle barré,cercle,interdit,annuler,non,stop,erreur,diamètre,zéro,vide,nul,échec,faux,Ø
+circle-parking	parking dans un cercle,parking,stationnement,place de parking,voiture,garer,panneau
+circle-parking-off	parking interdit,stationnement interdit,parking,stationnement,interdit,voiture,garer,défense de stationner
+circle-pause	pause dans un cercle,pause,cercle,musique,audio,arrêt,suspendre,lecture
+circle-percent	cercle avec pourcentage,pourcentage,soldes,réduction,promotion,offre,remise,vérifié,étiquette,prix,marketing,autocollant
+circle-pile	pile de cercles,pile,cercles,empilement,couche,groupe,collection,stock,inventaire,matériaux,entrepôt,forme
+circle-play	lecture dans un cercle,lecture,play,démarrer,lancer,musique,cercle,bouton
+circle-plus	cercle avec plus,plus,ajouter,nouveau,augmenter,incrémenter,positif,calculer,viseur,cible,agrandir,créer,+
+circle-pound-sterling	cercle avec livre sterling,livre sterling,livre,monnaie,argent,paiement,devise,britannique,gbp,£,pièce
+circle-power	bouton marche arrêt,marche arrêt,alimentation,allumer,éteindre,power,interrupteur,redémarrer,appareil,bouton,dépannage
+circle-question-mark	point d'interrogation dans un cercle,point d'interrogation,question,aide,cercle,faq,support
+circle-slash	cercle barré d'une diagonale,cercle,barre oblique,interdit,annuler,non,stop,erreur,diamètre,zéro,vide,nul,diviser,division,ou,Ø
+circle-slash-2	cercle barré d'une diagonale,diamètre,zéro,vide,nul,interdit,diviser,division,moitié,diviser en deux,moyenne,médiane,Ø
+circle-small	petit cercle,puce,point,forme,genre,sans genre,rond
+circle-star	étoile dans un cercle,étoile,médaille,badge,honneur,décoration,trophée,laurier,récompense,or,argent,bronze,insigne
+circle-stop	stop dans un cercle,stop,arrêt,arrêter,cercle,média,musique
+circle-user	utilisateur dans un cercle,utilisateur,personne,compte,contact,profil,avatar
+circle-user-round	utilisateur rond dans un cercle,utilisateur,personne,compte,contact,profil,avatar
+circle-x	croix dans un cercle,croix,annuler,fermer,supprimer,retirer,effacer,erreur,incorrect,faux,échec,multiplier,multiplication
+circuit-board	carte électronique,circuit imprimé,circuit,électronique,électricité,informatique,carte mère
+citrus	agrume,citron,orange,pamplemousse,fruit,nourriture
+clapperboard	clap de cinéma,clap,cinéma,film,vidéo,caméra,action,coupez,télévision,spectacle,divertissement,tournage
+clef-alto	clé d'ut,clé,ut,do,musique,note,alto,portée,hauteur,solfège
+clef-bass	clé de fa,clé,fa,musique,note,basse,portée,baryton,solfège
+clef-treble	clé de sol,clé,sol,musique,note,aigu,portée,violon,solfège
+clipboard	presse-papiers,bloc-notes,planchette,copier,coller,papier
+clipboard-check	presse-papiers avec coche,presse-papiers,coche,copié,collé,fait,terminé,tâche,valider,à faire
+clipboard-clock	presse-papiers avec horloge,presse-papiers,horloge,historique,journal,heure,rappel,planifié,échéance,en attente,pointage,feuille de temps,rendez-vous
+clipboard-copy	presse-papiers avec copie,copier,presse-papiers,coller,flèche,dupliquer
+clipboard-list	presse-papiers avec liste,liste,tâches,presse-papiers,copier,coller,à faire,check-list
+clipboard-minus	presse-papiers avec moins,moins,retirer,supprimer,effacer,document,médical,rapport,docteur,presse-papiers
+clipboard-paste	coller,presse-papiers,flèche,copier,insérer
+clipboard-pen	presse-papiers avec stylo,stylo,signature,signer,presse-papiers,coller,écrire,formulaire
+clipboard-pen-line	presse-papiers avec stylo et ligne,stylo,signature,signer,presse-papiers,coller,écrire,formulaire
+clipboard-plus	presse-papiers avec plus,plus,ajouter,créer,nouveau,document,médical,rapport,docteur,presse-papiers
+clipboard-type	presse-papiers avec texte,texte,format,mise en forme,presse-papiers,coller,saisie
+clipboard-x	presse-papiers avec croix,croix,rejeter,retirer,supprimer,annuler,presse-papiers,copier
+clock	horloge,heure,montre,alarme,temps,réveil,pendule
+clock-1	horloge une heure,horloge,1 heure,heure,montre,alarme,temps
+clock-10	horloge dix heures,horloge,10 heures,heure,montre,alarme,temps
+clock-11	horloge onze heures,horloge,11 heures,heure,montre,alarme,temps
+clock-12	horloge midi,horloge,12 heures,midi,minuit,heure,montre,alarme,temps
+clock-2	horloge deux heures,horloge,2 heures,heure,montre,alarme,temps
+clock-3	horloge trois heures,horloge,3 heures,heure,montre,alarme,temps
+clock-4	horloge quatre heures,horloge,4 heures,heure,montre,alarme,temps
+clock-5	horloge cinq heures,horloge,5 heures,heure,montre,alarme,temps
+clock-6	horloge six heures,horloge,6 heures,heure,montre,alarme,temps
+clock-7	horloge sept heures,horloge,7 heures,heure,montre,alarme,temps
+clock-8	horloge huit heures,horloge,8 heures,heure,montre,alarme,temps
+clock-9	horloge neuf heures,horloge,9 heures,heure,montre,alarme,temps
+clock-alert	horloge avec alerte,horloge,alerte,avertissement,erreur,heure,alarme,temps,attention,problème
+clock-arrow-down	horloge avec flèche bas,horloge,flèche,bas,trier,ordre,décroissant,croissant,baisse,heure,temps,alarme
+clock-arrow-left	horloge avec flèche gauche,horloge,flèche,gauche,assigner,plage,période,heure,temps,alarme
+clock-arrow-right	horloge avec flèche droite,horloge,flèche,droite,plage,période,retirer l'attribution,heure,temps,alarme
+clock-arrow-up	horloge avec flèche haut,horloge,flèche,haut,trier,ordre,croissant,décroissant,hausse,heure,temps,alarme
+clock-check	horloge avec coche,horloge,coche,valider,heure,montre,alarme,temps,terminé
+clock-fading	horloge estompée,horloge,estompé,heure,montre,alarme,temps,flou,passé
+clock-plus	horloge avec plus,horloge,plus,ajouter,créer,nouveau,heure,alarme,temps
+closed-caption	sous-titres,sous-titrage,télévision,film,vidéo,transcription,dialogue,accessibilité,malentendant,cc
+cloud	nuage,météo,cloud,ciel,stockage en ligne
+cloud-alert	nuage avec alerte,nuage,alerte,avertissement,danger,erreur,synchronisation,réseau,point d'exclamation,météo
+cloud-backup	sauvegarde dans le cloud,sauvegarde,cloud,nuage,stockage,mémoire,serveur,synchronisation,transfert,données,envoi,sécurité,restauration
+cloud-check	nuage avec coche,nuage,cloud,coche,synchronisation,réseau,succès,terminé,enregistré,sauvegardé
+cloud-cog	nuage avec engrenage,nuage,cloud,engrenage,réglages,paramètres,informatique,ia,grappe,réseau
+cloud-download	téléchargement depuis le cloud,télécharger,nuage,cloud,importer,descendre,flèche
+cloud-drizzle	nuage avec bruine,bruine,nuage,météo,averse,petite pluie,crachin
+cloud-fog	nuage avec brouillard,brouillard,brume,nuage,météo
+cloud-hail	nuage avec grêle,grêle,nuage,météo,précipitations,grêlons
+cloud-lightning	nuage avec éclair,orage,éclair,foudre,nuage,météo,tonnerre
+cloud-moon	nuage avec lune,nuit nuageuse,nuage,lune,météo,nuit
+cloud-moon-rain	nuage avec lune et pluie,pluie,nuit,nuage,lune,météo,éclaircies,averse
+cloud-off	nuage barré,cloud désactivé,nuage,déconnecter,déconnexion,hors ligne,désactivé,météo
+cloud-rain	nuage avec pluie,pluie,nuage,météo,averse,précipitations
+cloud-rain-wind	nuage avec pluie et vent,pluie,vent,nuage,météo,tempête,précipitations
+cloud-snow	nuage avec neige,neige,nuage,météo,blizzard,tempête de neige,flocon
+cloud-sun	nuage avec soleil,éclaircies,partiellement nuageux,soleil,nuage,météo
+cloud-sun-rain	nuage avec soleil et pluie,pluie,soleil,éclaircies,nuage,météo,averse,précipitations
+cloud-sync	synchronisation cloud,synchroniser,synchronisation,nuage,cloud,actualiser,transfert,sauvegarde,stockage,envoi,téléchargement,connexion,réseau,données
+cloud-upload	envoi vers le cloud,envoyer,téléverser,nuage,cloud,fichier,charger,flèche,exporter
+cloudy	nuageux,nuages,météo,temps couvert,ciel couvert,nuage
+clover	trèfle,chance,feuille,plante,porte-bonheur,jeu
+club	trèfle,carte à jouer,couleur,jeu de cartes,forme,cartes,jeu
+code	code,chevrons,source,programmation,développement,html,xml,balises
+code-xml	code xml,balises,chevrons,source,programmation,développement,html,xml,code
+coffee	café,tasse,mug,boisson,thé,boisson chaude,pause café,cafétéria
+cog	engrenage,paramètres,réglages,roue dentée,préférences,configuration,options,informatique,mécanique,construction,pièce
+coins	pièces,pièce de monnaie,argent,monnaie,finance,jeu,espèces,jeton
+columns-2	deux colonnes,colonnes,2 colonnes,mise en page,panneau,volet,séparer,diviser,moitié,liste,barre latérale,pagination,affichage
+columns-3	trois colonnes,colonnes,3 colonnes,mise en page,tiers,séparer,diviser,alignement,barres latérales,liste,pagination,affichage
+columns-3-cog	trois colonnes avec engrenage,colonnes,engrenage,réglages,paramètres,personnaliser,tableau,grille,ajuster,configuration,mise en page,panneau
+columns-4	quatre colonnes,colonnes,4 colonnes,mise en page,séparer,diviser,alignement,barres latérales,liste,pagination,affichage
+combine	combiner,fusionner,assembler,regrouper,cubes,paquets,pièces,unités,collection,rassembler,grappe
+command	touche commande,commande,cmd,clavier,touche,mac,raccourci,bouton
+compass	boussole,direction,nord,est,sud,ouest,navigateur,navigation,orientation,explorer
+component	composant,élément,module,pièce,symbole,groupe,design,conception
+computer	ordinateur,pc,unité centrale,tour,boîtier,codespaces,informatique,poste de travail
+concierge-bell	sonnette de réception,sonnette,cloche,réception,accueil,hôtel,concierge,porteur,voyage
+cone	cône,conique,triangle,triangulaire,géométrie,entonnoir,filtre,projecteur,forme
+construction	travaux,chantier,maintenance,barrière,barricade,route,signalisation,cône,développement
+contact	contact,carnet d'adresses,utilisateur,personne,famille,ami,connaissance,liste,répertoire,réseau
+contact-round	contact rond,contact,carnet d'adresses,utilisateur,personne,famille,ami,connaissance,liste,répertoire,réseau
+container	conteneur,container,stockage,expédition,fret,chaîne logistique,environnement,devops,transport,docker,code
+contrast	contraste,affichage,accessibilité,luminosité,demi-cercle,écran
+cookie	cookie,biscuit,gâteau,snack,dessert,sucrerie,boulangerie,consentement,confidentialité,traçage,navigateur,site web,juridique
+cooking-pot	marmite,casserole,faitout,cuisiner,cuisine,recette,nourriture,chef,restaurant,dîner,déjeuner,petit-déjeuner,repas,manger
+copy	copier,cloner,dupliquer,multiple,copie,duplication
+copy-check	copie avec coche,copier,coche,cloner,dupliquer,fait,valider,multiple
+copy-minus	copie avec moins,copier,moins,cloner,dupliquer,retirer,supprimer,réduire,soustraire,multiple,-
+copy-plus	copie avec plus,copier,plus,cloner,dupliquer,ajouter,multiple,développer,+
+copy-slash	copie barrée,copier,barre oblique,cloner,dupliquer,annuler,interdit,non,stop,erreur,multiple,diviser,division,ou,/
+copy-x	copie avec croix,copier,croix,annuler,fermer,supprimer,retirer,effacer,multiple,multiplier,multiplication
+copyleft	copyleft,licence,gauche d'auteur,droit d'auteur,licence libre,logiciel libre
+copyright	copyright,droit d'auteur,licence,propriété intellectuelle,droits réservés,©
+corner-down-left	flèche coudée bas gauche,flèche,retour,entrée,retour chariot,coin,bas,gauche,touche entrée
+corner-down-right	flèche coudée bas droite,flèche,retrait,indentation,tabulation,coin,bas,droite
+corner-left-down	flèche coudée gauche bas,flèche,coin,gauche,bas,virage
+corner-left-up	flèche coudée gauche haut,flèche,coin,gauche,haut,virage
+corner-right-down	flèche coudée droite bas,flèche,coin,droite,bas,virage
+corner-right-up	flèche coudée droite haut,flèche,coin,droite,haut,virage
+corner-up-left	flèche coudée haut gauche,flèche,coin,haut,gauche,virage,annuler,répondre
+corner-up-right	flèche coudée haut droite,flèche,coin,haut,droite,virage,transférer,suivre
+cpu	processeur,puce,cpu,cœurs,technologie,ordinateur,circuit,mémoire,ram,gigahertz,caractéristiques,microprocesseur
+creative-commons	creative commons,licence,cc,licence libre,droit d'auteur,partage
+credit-card	carte bancaire,carte de crédit,carte,banque,achat,paiement,cb
+credit-card-check	carte bancaire avec coche,carte bancaire,coche,paiement,validé,approuvé,autorisé,valide,succès,banque,transaction,portefeuille,achat,facturation,débit
+credit-card-minus	carte bancaire avec moins,carte bancaire,moins,paiement,retirer,supprimer,dissocier,refuser,annulé,banque,transaction,portefeuille,facturation,débit
+credit-card-plus	carte bancaire avec plus,carte bancaire,plus,ajouter,nouveau,paiement,lier,enregistrer,méthode de paiement,banque,transaction,portefeuille,facturation,débit
+credit-card-reader	lecteur de carte bancaire,terminal de paiement,tpe,carte bancaire,banque,achat,paiement,distributeur,caisse,borne,sans contact,puce,transaction,point de vente
+credit-card-x	carte bancaire avec croix,carte bancaire,croix,paiement,refusé,rejeté,échec,invalide,annulé,erreur,banque,transaction,portefeuille,facturation,débit
+croissant	croissant,viennoiserie,boulangerie,pâtisserie,cuisine,nourriture,petit-déjeuner
+crop	recadrer,rogner,couper,recadrage,photo,image,découper
+cross	croix,croix médicale,santé,premiers secours,pharmacie,religion,forme
+crosshair	viseur,réticule,cible,visée,mire,photographie,cibler
+crown	couronne,diadème,tiare,roi,reine,souverain,gagnant,vainqueur,favori,royal
+cuboid	pavé droit,parallélépipède,cuboïde,brique,bloc,boîte,3d,solide,volume,conteneur,carton,colis,paquet,caisse,beurre,tofu,savon,fromage
+cup-soda	gobelet de soda,soda,gobelet,verre,boisson,paille,eau,tasse,fast-food
+cupcake	cupcake,petit gâteau,muffin,gâteau,dessert,fête,sucré,pâtisserie,cuisine,célébration
+currency	devise,monnaie,argent,finance,change,symbole monétaire
+cylinder	cylindre,forme,elliptique,géométrie,conteneur,stockage,boîte de conserve,pot,fût
+dam	barrage,électricité,énergie,eau,hydroélectrique,retenue d'eau,bâtiment
+database	base de données,données,stockage,mémoire,serveur,octets,bdd,sql
+database-arrow-down	base de données avec flèche bas,base de données,flèche,bas,stockage,serveur,exporter,télécharger,sauvegarde,récupérer,données
+database-arrow-up	base de données avec flèche haut,base de données,flèche,haut,stockage,serveur,importer,envoyer,téléverser,sauvegarde,données
+database-backup	sauvegarde de base de données,base de données,sauvegarde,restaurer,stockage,serveur,données,rotation,flèche,retour en arrière
+database-check	base de données avec coche,base de données,coche,stockage,serveur,succès,valide,vérifié,confirmé,terminé,données
+database-minus	base de données avec moins,base de données,moins,stockage,serveur,retirer,supprimer,réduire,données
+database-plus	base de données avec plus,base de données,plus,stockage,serveur,ajouter,créer,insérer,nouveau,agrandir,données
+database-search	recherche dans la base de données,base de données,recherche,rechercher,loupe,stockage,serveur,requête,données
+database-x	base de données avec croix,base de données,croix,stockage,serveur,erreur,échec,invalide,rejeté,refusé,effacer,supprimer,déconnecter,données
+database-zap	base de données avec éclair,base de données,éclair,cache,vider le cache,stockage,serveur,alimentation,panne,plantage,données
+decimals-arrow-left	décimales flèche gauche,décimales,flèche,gauche,diminuer,moins,précision,arrondi,chiffres,fraction,nombre,virgule,numérique
+decimals-arrow-right	décimales flèche droite,décimales,flèche,droite,augmenter,plus,précision,arrondi,chiffres,fraction,nombre,virgule,numérique
+delete	effacer,touche retour arrière,retour arrière,supprimer,retirer,backspace,corriger,clavier
+dessert	dessert,glace,crème glacée,gâteau,pudding,flan,sundae,boule,sucre,sucré,nourriture,noël,pâtisserie
+diameter	diamètre,cercle,géométrie,trigonométrie,largeur,hauteur,taille,calculer,mesurer,forme
+diamond	losange,carreau,carte à jouer,forme,couleur,jeu de cartes,carré,rectangle,oblique
+diamond-minus	losange avec moins,losange,moins,image clé,soustraire,retirer,réduire,diminuer,calculatrice,séparateur,ligne,opérateur,-
+diamond-percent	losange avec pourcentage,pourcentage,soldes,réduction,promotion,offre,remise,vérifié,étiquette,prix,marketing,autocollant
+diamond-plus	losange avec plus,losange,plus,image clé,ajouter,nouveau,augmenter,positif,calculer,barre d'outils,viseur,cible,agrandir,+
+dice-1	dé face 1,dé,un,1,aléatoire,hasard,jeu de société,jeu,plateau
+dice-2	dé face 2,dé,deux,2,aléatoire,hasard,jeu de société,jeu,plateau
+dice-3	dé face 3,dé,trois,3,aléatoire,hasard,jeu de société,jeu,plateau
+dice-4	dé face 4,dé,quatre,4,aléatoire,hasard,jeu de société,jeu,plateau
+dice-5	dé face 5,dé,cinq,5,aléatoire,hasard,jeu de société,jeu,plateau
+dice-6	dé face 6,dé,six,6,aléatoire,hasard,jeu de société,jeu,plateau
+dices	dés,deux dés,dé,aléatoire,hasard,jeu de société,jeu,plateau,lancer
+diff	différence,diff,comparer,comparaison,correctif,patch,plus moins,mathématiques,fichiers,développement
+disc	disque,cd,dvd,album,musique,chansons,vinyle,pochette,compilation,enregistrement,lecture,platine,dj,rotation
+disc-2	disque vinyle,disque,vinyle,album,musique,cd,dvd,dj,platine,rotation,33 tours
+disc-3	disque vinyle,disque,vinyle,album,musique,cd,dvd,dj,platine,rotation,33 tours
+disc-album	disque album,disque,album,cd,dvd,musique,chansons,vinyle,pochette,compilation,enregistrement,lecture,platine,dj
+divide	diviser,division,calculer,mathématiques,opérateur,÷,/,code
+dna	adn,gène,hélice,génétique,hérédité,chromosome,acide nucléique,ogm,biologie
+dna-off	adn barré,sans ogm,adn,gène,hélice,génétique,hérédité,chromosome,acide nucléique,ogm,interdit
+dock	dock,barre des tâches,bureau,applications,lancer,accueil,barre de menus,bas,ligne,macos,mise en page
+dog	chien,animal,animal de compagnie,chiot,toutou,canin
+dollar-sign	dollar,symbole dollar,monnaie,argent,paiement,devise,$
+dome	dôme,coupole,toit,rotonde,abri,bâtiment,architecture,structure,église,cathédrale,basilique,chapelle,monument,musée,observatoire,patrimoine
+donut	beignet,donut,doughnut,pépites,glaçage,fast-food,malbouffe,snack,sucré,sucre,dessert,gâteau,anneau
+door-closed	porte fermée,porte,entrée,sortie,accès,portail,issue de secours,maison
+door-closed-cog	porte fermée avec engrenage,porte,engrenage,pièce,entrée,réglages,paramètres,accès,automatisation,domotique
+door-closed-locked	porte fermée à clé,porte,verrouillée,verrou,cadenas,fermé à clé,entrée,sortie,accès,sécurité,serrure
+door-closed-package	porte avec colis,porte,colis,paquet,livraison,expédition,coursier,seuil,dépôt,transporteur
+door-open	porte ouverte,porte,ouvrir,entrée,sortie,accès,portail,issue de secours,maison
+door-stairwell	cage d'escalier,escalier,marches,échelle,porte,accès,structure,spirale,bâtiment,étage,niveau,entrée,sortie,issue de secours,intérieur
+dot	point,point médian,puce,ponctuation,fin,caractère,police,typographie,centre,.
+download	télécharger,téléchargement,importer,exporter,enregistrer,flèche,bas,récupérer
+drafting-compass	compas,compas de dessin,géométrie,trigonométrie,rayon,diamètre,circonférence,calculer,mesurer,arc,courbe,dessiner,croquis,outil
+drama	théâtre,masques,comédie,tragédie,spectacle,divertissement,drame,scène,art dramatique
+drill	perceuse,visseuse,perforateur,mèche,trou,bricolage,outil,caisse à outils,construction,électroportatif
+drone	drone,quadricoptère,quadrirotor,aérien,vol,volant,technologie,robotique,avion,uav
+droplet	goutte,goutte d'eau,eau,météo,liquide,fluide,humide,humidité,perle,gouttelette
+droplet-off	goutte barrée,goutte d'eau,sans eau,eau,météo,liquide,fluide,sec,désactivé,gouttelette
+droplets	gouttes,gouttes d'eau,eau,météo,liquide,fluide,humide,humidité,gouttelettes
+drum	tambour,batterie,batteur,baguettes,instrument,rythme,percussion,groupe,jouer,concert,musique,audio,son,bruit
+drumstick	pilon,pilon de poulet,cuisse de poulet,poulet,viande,nourriture,volaille
+dumbbell	haltère,musculation,poids,entraînement,salle de sport,sport,fitness,gym,barre
+ear	oreille,audition,ouïe,bruit,audio,accessibilité,écouter,entendre
+ear-off	oreille barrée,sourd,surdité,malentendant,perte auditive,audition,ouïe,bruit,silence,audio,accessibilité
+earth	terre,globe,planète,monde,langue,traduire,navigateur,international,internet
+earth-lock	terre avec cadenas,globe,cadenas,verrou,vpn,privé,confidentialité,réseau,monde,navigateur,sécurité,chiffrement,protection,connexion
+eclipse	éclipse,lune,soleil,croissant,jour,nuit,planète,espace,mode sombre,thème,clair,sombre,basculer,couleur,affichage,accessibilité,contraste
+egg	œuf,oeuf,oiseau,poule,nid,éclore,coquille,couver,petit-déjeuner,brunch,pâques,matin
+egg-fried	œuf au plat,oeuf au plat,œuf,oeuf,poêlé,nourriture,petit-déjeuner,cuisine
+egg-off	sans œuf,sans oeuf,œuf barré,œuf,oeuf,végan,végétalien,allergie,pourri,éclos
+eject	éjecter,éjection,disque,lecteur,dvd,blu-ray,cd,média,optique,support amovible,stockage,plateau,démonter,usb
+ellipse	ellipse,ovale,forme,géométrie,arrondi,contour,courbe,cercle
+ellipsis	points de suspension,trois points,etc,chargement,en cours,en attente,menu,options,plus,supplémentaire,débordement,…,...
+ellipsis-vertical	points de suspension verticaux,trois points verticaux,menu,options,plus,supplémentaire,débordement,kebab,…
+engine	moteur,véhicule,puissance,énergie,voiture,réparation,mécanique,diagnostic,maintenance,avertissement,tableau de bord,pièces,voyant moteur
+equal	égal,égalité,calculer,mathématiques,opérateur,affectation,code,=
+equal-approximately	environ égal,approximativement égal,à peu près,environ,calculer,mathématiques,opérateur,approximation,≈
+equal-approximately-not	n'est pas environ égal,pas approximativement égal,différent,environ,approximation,opérateur,calculer,mathématiques,tolérance,seuil,écart,comparaison,≇
+equal-not	différent,pas égal,inégal,inégalité,calculer,mathématiques,opérateur,code,≠
+eraser	gomme,effacer,crayon,dessin,annuler,supprimer,nettoyer,retirer,corriger
+ethernet-port	port ethernet,ethernet,internet,réseau,connexion,câble,lan,port,routeur,commutateur,modem,prise,web,en ligne,connecteur,rj45
+euro	euro,symbole euro,monnaie,argent,paiement,devise,€
+ev-charger	borne de recharge,recharge voiture électrique,voiture électrique,chargeur,station,véhicule,rapide,prise,électricité,énergie,accumulateur,batterie,charge
+expand	agrandir,plein écran,étendre,maximiser,mettre à l'échelle,minimiser,réduire,développer
+external-link	lien externe,ouvrir,lien,sortant,partager,nouvelle fenêtre,nouvel onglet,flèche
+eye	œil,oeil,voir,regarder,afficher,montrer,visible,visibilité,vision,aperçu,lire,révéler,vue
+eye-closed	œil fermé,oeil fermé,cacher,masquer,caché,invisible,visibilité,voir,vision,dissimuler
+eye-dashed	œil en pointillés,oeil en pointillés,cacher,masquer,caché,invisible,visibilité,voir,vision,dissimuler
+eye-off	œil barré,cacher,masquer,invisible,caché,visibilité,vue,confidentialité
+face-angry	visage en colère,colère,rage,fureur,irritation,dégoût,émoji,émotion
+face-expressionless	visage sans expression,agacé,ennui,frustration,contrariété,émoji,émotion
+face-grinning	visage souriant,content,heureux,joie,rire,sourire,plaisir,humour,drôle,émoji
+face-neutral	visage neutre,neutre,émotion,bof,indifférent,impassible,inquiétude,émoji
+face-slightly-frowning	visage légèrement triste,triste,tristesse,déception,inquiétude,mauvais,émoji,émotion
+face-slightly-smiling	visage légèrement souriant,sourire,content,heureux,positif,amical,ironique,émoji,émotion
+face-slightly-smiling-plus	ajouter une réaction,réaction,sourire,émoji,content,ajouter,émotion,message
+factory	usine,bâtiment,industrie,entreprise,énergie,fabrication,secteur
+fan	ventilateur,air,climatisation,ventilation,refroidir,souffleur
+fast-forward	avance rapide,lecture,musique,suivant,multimédia
+faucet	robinet,eau,plomberie,plombier,évier,lavabo,cuisine,salle de bain,boire
+feather	plume,écrire,écriture,auteur,littérature,poésie,manuscrit,oiseau,léger,doux
+fence	clôture,barrière,palissade,jardin,bois,propriété,bricolage,territoire
+ferris-wheel	grande roue,attraction,parc d'attractions,fête foraine,divertissement,manège,observation
+file	fichier,document,page
+file-archive	fichier d'archive,archive,zip,paquet,compresser
+file-axis-3d	fichier 3d,modèle,axes,coordonnées,3d
+file-badge	fichier avec badge,récompense,distinction,badge,rosette,prix,gagnant,réussite
+file-box	fichier 3d,document,cube,boîte,modèle,objet,géométrie,réalité augmentée,cao,plan,brouillon
+file-braces	fichier de code,code,json,accolades
+file-braces-corner	fichier de code,code,json,accolades
+file-chart-column	fichier de statistiques,statistiques,analyse,diagramme,graphique,présentation,histogramme
+file-chart-column-increasing	fichier de statistiques,statistiques,analyse,diagramme,graphique,présentation,croissance,hausse,histogramme
+file-chart-line	fichier de courbe,statistiques,analyse,diagramme,graphique,présentation,courbe
+file-chart-pie	fichier de camembert,statistiques,analyse,diagramme,graphique,présentation,camembert,secteurs
+file-check	fichier validé,terminé,document,tâche,coche,valider,fait,à faire
+file-check-corner	fichier validé,terminé,document,tâche,coche,valider,fait,à faire
+file-clock	fichier avec horloge,historique,journal,horloge,heure,document
+file-code	fichier de code,script,document,html,xml,code,programmation
+file-code-corner	fichier de code,script,document,html,xml,code,programmation
+file-cog	fichier exécutable,réglages,paramètres,engrenage,modifier,configuration,document
+file-diff	fichier de différences,différence,comparer,correctif,patch,développement
+file-digit	fichier de chiffres,nombre,chiffre,document,numérique
+file-down	fichier vers le bas,télécharger,importer,exporter,flèche,document,bas
+file-exclamation-point	fichier avec avertissement,avertissement,alerte,danger,protégé,point d'exclamation,caché,attention
+file-headphone	fichier audio,musique,son,casque,audio,écouteurs
+file-heart	fichier favori,coeur,favori,signet,lien rapide,aimer,document
+file-image	fichier image,image,graphique,photo,illustration
+file-input	fichier entrant,document,importer,entrée,flèche
+file-key	fichier avec clé,clé,privé,public,sécurité,chiffrement,document
+file-lock	fichier verrouillé,cadenas,verrou,mot de passe,sécurité,protégé,document
+file-minus	fichier moins,supprimer,retirer,effacer,document,enlever
+file-minus-corner	fichier moins,document,supprimer,retirer,enlever
+file-music	fichier musical,audio,son,piste,enregistrement,musique,partition,notes,piano,clavier
+file-output	fichier sortant,document,exporter,sortie,flèche
+file-pen	fichier avec stylo,signature,signer,stylo,modifier,document
+file-pen-line	fichier avec stylo,modifier,éditer,stylo,document,écrire
+file-play	fichier vidéo,film,vidéo,lecture,lire,cinéma
+file-plus	nouveau fichier,ajouter,créer,nouveau,document,plus
+file-plus-corner	nouveau fichier,ajouter,créer,nouveau,document,plus
+file-question-mark	fichier avec point d'interrogation,aide,question,lisez-moi,readme,document
+file-scan	fichier scanné,scanner,code,qr code,numériser,document
+file-search	fichier recherché,recherche,rechercher,trouver,perdu,document,loupe,navigateur
+file-search-corner	fichier recherché,recherche,rechercher,trouver,perdu,document,loupe,navigateur
+file-signal	fichier audio,audio,musique,volume,son,signal,document
+file-sliders	fichier de configuration,curseurs,configuration,préférences,réglages,paramètres,système,engrenage,modifier,exécutable
+file-spreadsheet	feuille de calcul,tableur,tableau,excel,fichier,grille
+file-stack	pile de fichiers,versions,copies,documents,révisions,historique,gestion de versions,multiple
+file-symlink	fichier lien symbolique,lien symbolique,raccourci,lien,alias,document
+file-terminal	fichier de script,terminal,bash,script,exécutable,console,ligne de commande
+file-text	fichier texte,document,texte,données,pdf,txt,contenu
+file-type	fichier de police,police,texte,typographie,caractère,document
+file-type-corner	fichier de police,police,texte,typographie,caractère,document
+file-up	fichier vers le haut,téléverser,envoyer,importer,exporter,flèche,haut,document
+file-user	fichier de personne,personne,informations personnelles,contact,cv,curriculum vitae,lettre de motivation,candidature,profil,document
+file-video-camera	fichier vidéo,film,vidéo,caméra,cinéma,document
+file-volume	fichier audio,audio,musique,volume,son,haut-parleur,document
+file-x	fichier supprimé,perdu,supprimer,retirer,croix,erreur,document
+file-x-corner	fichier supprimé,perdu,supprimer,retirer,croix,erreur,document
+files	fichiers,copier,copie,documents,multiple,dupliquer
+film	pellicule,film,vidéo,bobine,cinéma,caméra,divertissement,séquence
+fingerprint-pattern	empreinte digitale,authentification,biométrie,identité,sécurité,double authentification,identification
+fire-extinguisher	extincteur,incendie,feu,flammes,fumée,mousse,pompier,urgence,sécurité,sapeur-pompier
+fish	poisson,plat,restaurant,repas,fruits de mer,animal,mer,marin,aquarium
+fish-off	sans poisson,poisson,allergie,intolérance,régime,fruits de mer,interdit,alimentation
+fish-symbol	poisson,symbole,fruits de mer,animal,mer,marin,restaurant,plat
+fishing-hook	hameçon,pêche,pêcheur,appât,mer,bateau,plein air,matériel,loisir
+fishing-rod	canne à pêche,pêche,pêcheur,loisir,moulinet,matériel
+flag	drapeau,signaler,signalement,marqueur,notification,avertissement,étape,objectif,bannière,attention
+flag-off	drapeau barré,retirer le drapeau,désignaler,démarquer,signalement,marqueur,notification,avertissement,bannière
+flag-triangle-left	fanion gauche,fanion,drapeau,rapport,chronologie,marqueur,repère,épingle,triangle
+flag-triangle-right	fanion droit,fanion,drapeau,rapport,chronologie,marqueur,repère,épingle,triangle
+flame	flamme,feu,chaleur,brûler,lumière,allumer,passion,braise,étincelle,fumée,pompier,tendance
+flame-kindling	feu de camp,flamme,camping,bois,brindilles,allumer,plein air,chaleur,nature,bûcher
+flashlight	lampe de poche,torche,lumière,faisceau,urgence,sécurité,outil,éclairage
+flashlight-off	lampe de poche éteinte,torche,éteindre,lumière,faisceau,urgence,éclairage,désactivé
+flask-conical	fiole conique,erlenmeyer,bécher,laboratoire,chimie,expérience,test,science
+flask-conical-off	fiole conique barrée,erlenmeyer,bécher,non toxique,laboratoire,chimie,expérience,test,science
+flask-round	ballon,fiole ronde,bécher,laboratoire,chimie,expérience,test,science
+flower	fleur,nature,plante,printemps,durable,jardin,pétale
+flower-2	fleur,nature,plante,durabilité,jardin,saisons,pétale
+focus	mise au point,focus,appareil photo,objectif,photo,cadrage,viseur,pointillés
+fold-horizontal	plier horizontalement,réduire,replier,flèche,vertical,pointillés,horizontal
+fold-vertical	plier verticalement,réduire,replier,flèche,vertical,pointillés,horizontal
+folder	dossier,répertoire,fichiers,classeur
+folder-archive	dossier d'archives,archive,zip,paquet,compresser,répertoire
+folder-bookmark	dossier de favoris,favori,signet,marque-page,stockage,archive,répertoire,projet,enregistrer,lire plus tard
+folder-check	dossier validé,terminé,répertoire,tâche,coche,valider,fait,à faire
+folder-clock	dossier avec horloge,historique,répertoire,horloge,heure,récent
+folder-closed	dossier fermé,répertoire,fermé,classeur
+folder-code	dossier de code,répertoire,programmation,développement,logiciel,code,projet
+folder-cog	dossier de configuration,répertoire,réglages,paramètres,contrôle,préférences,engrenage,modifier
+folder-dot	dossier avec point,répertoire,racine,projet,épinglé,actif,courant,configuration,point
+folder-down	dossier vers le bas,répertoire,télécharger,importer,exporter,flèche,bas
+folder-git	dossier git,répertoire,racine,projet,dépôt,git,gestion de versions
+folder-git-2	dossier git,répertoire,racine,projet,dépôt,git,gestion de versions
+folder-heart	dossier favori,répertoire,coeur,favori,signet,lien rapide,aimer
+folder-input	dossier entrant,répertoire,importer,exporter,entrée,flèche
+folder-kanban	dossier kanban,projets,gérer,tableau,tickets,tâches,feuille de route,plan,productivité,travail,agile,répertoire
+folder-key	dossier avec clé,répertoire,clé,privé,sécurité,protégé,chiffrement
+folder-lock	dossier verrouillé,répertoire,cadenas,verrou,privé,sécurité,protégé
+folder-minus	dossier moins,répertoire,retirer,supprimer,enlever
+folder-open	dossier ouvert,répertoire,ouvrir,fichiers
+folder-open-dot	dossier ouvert avec point,répertoire,racine,projet,actif,courant,épinglé,point
+folder-output	dossier sortant,répertoire,importer,exporter,sortie,flèche
+folder-pen	dossier avec stylo,répertoire,renommer,modifier,éditer,stylo
+folder-plus	nouveau dossier,répertoire,ajouter,créer,nouveau,plus
+folder-root	dossier racine,répertoire,racine,projet,dépôt,git
+folder-search	dossier recherché,répertoire,rechercher,recherche,trouver,perdu,navigateur,loupe
+folder-search-2	dossier recherché,répertoire,rechercher,recherche,trouver,perdu,navigateur,loupe
+folder-symlink	dossier lien symbolique,répertoire,lien symbolique,raccourci,lien,alias
+folder-sync	synchronisation de dossier,répertoire,synchroniser,actualiser,rafraîchir,reconnecter,transfert,sauvegarde
+folder-tree	arborescence de dossiers,répertoire,arbre,arborescence,navigateur,hiérarchie
+folder-up	dossier vers le haut,répertoire,téléverser,envoyer,importer,exporter,flèche,haut
+folder-x	dossier supprimé,répertoire,retirer,supprimer,croix,enlever
+folders	dossiers,multiple,copie,répertoires,classeurs
+footprints	traces de pas,pas,marche,marcher,pied,pieds,sentier,chaussure,empreinte,randonnée
+forklift	chariot élévateur,élévateur,manutention,entrepôt,levage,stockage,industrie,engin,véhicule,logistique,cariste
+form	formulaire,document,page,fichier,mise en page,papier,modèle,champs,saisie,structure
+forward	transférer,faire suivre,envoyer,partager,email,courriel,flèche,message
+frame	cadre,logo,design,outil,cadrage,conception
+fuel	carburant,station-service,essence,gazole,pompe à essence,réservoir,plein,pompe
+fullscreen	plein écran,agrandir,zoom,aperçu,focus,appareil photo,objectif,image,cadre
+funnel	entonnoir,filtre,filtrer,trémie,tri
+funnel-plus	entonnoir avec plus,filtre,filtrer,ajouter,créer,nouveau,plus
+funnel-x	entonnoir avec croix,filtre,filtrer,supprimer,retirer,effacer,croix
+galaxy	galaxie,astronomie,espace,étoiles,cosmos,univers,spirale,voie lactée,nébuleuse,constellation
+gallery-horizontal	galerie horizontale,carrousel,images,photos,défiler,balayer,album,portfolio,diaporama
+gallery-horizontal-end	galerie horizontale fin,carrousel,images,photos,défiler,balayer,album,portfolio,historique,versions,fin
+gallery-thumbnails	galerie de miniatures,miniatures,carrousel,images,photos,album,portfolio,aperçu
+gallery-vertical	galerie verticale,carrousel,images,photos,défiler,balayer,album,portfolio,diaporama
+gallery-vertical-end	galerie verticale fin,carrousel,images,photos,défiler,balayer,album,portfolio,historique,versions,fin
+gamepad	manette de jeu,manette,console,jeu vidéo,jeu,contrôleur
+gamepad-2	manette de jeu,manette,console,jeu vidéo,jeu,contrôleur
+gamepad-directional	manette directionnelle,croix directionnelle,direction,flèche,manette,contrôleur,navigation,bouton,déplacer,console,jeu
+gap-horizontal	espacement horizontal,espace,écart,marge,marge intérieure,distance,répartir,disposition,cadre,horizontal
+gap-vertical	espacement vertical,espace,écart,marge,marge intérieure,distance,répartir,disposition,cadre,vertical
+gauge	jauge,tableau de bord,cadran,compteur,vitesse,pression,mesure,niveau,indicateur
+gavel	marteau de juge,maillet,justice,loi,tribunal,jugement,juridique,peine,décision,autorité,enchères
+gem	gemme,diamant,cristal,rubis,bijou,pierre précieuse,prix,spécial,cadeau,bague,mariage,joyau
+georgian-lari	lari géorgien,lari,monnaie,devise,argent,paiement,géorgie
+germ	germe,virus,microbe,bactérie,organisme,pathogène,infection,maladie,contagion,contamination,microbiologie
+germ-off	sans germes,germe,virus,microbe,bactérie,antibactérien,désinfecter,infection,maladie,contamination,hygiène
+ghost	fantôme,esprit,hanter,apparition,spectre,ombre,halloween,hanté,invisible,effrayant,pac-man
+gift	cadeau,présent,boîte,anniversaire,fête,paquet,offrir,noël
+git-branch	branche git,branche,code,gestion de versions,dépôt,développement
+git-branch-minus	supprimer une branche git,branche,code,gestion de versions,dépôt,supprimer,retirer,moins
+git-branch-plus	créer une branche git,branche,code,gestion de versions,dépôt,ajouter,créer,plus
+git-commit-horizontal	commit git horizontal,commit,code,gestion de versions,étape,arrêt,station,point
+git-commit-vertical	commit git vertical,commit,code,gestion de versions,étape,arrêt,station,point
+git-compare	comparer git,comparaison,code,gestion de versions,différence,comparer
+git-compare-arrows	comparer git,comparaison,code,gestion de versions,différence,comparer,flèches
+git-fork	fork git,bifurcation,dupliquer,code,gestion de versions,fourche,copie
+git-graph	graphe git,graphe des commits,historique,commits,code,gestion de versions,arbre
+git-merge	fusion git,fusionner,fusion,code,gestion de versions,branches
+git-merge-conflict	conflit de fusion git,conflit,fusion,erreur,code,gestion de versions,différence,commits
+git-pull-request	demande de fusion,pull request,merge request,code,gestion de versions,ouvrir,revue
+git-pull-request-arrow	demande de fusion,pull request,merge request,code,gestion de versions,ouvrir,flèche,revue
+git-pull-request-closed	demande de fusion fermée,pull request fermée,rejeté,fermé,annulé,croix,code,gestion de versions
+git-pull-request-create	créer une demande de fusion,pull request,merge request,code,gestion de versions,ouvrir,plus,ajouter,créer
+git-pull-request-create-arrow	créer une demande de fusion,pull request,merge request,code,gestion de versions,ouvrir,plus,ajouter,flèche
+git-pull-request-draft	demande de fusion brouillon,pull request,brouillon,code,gestion de versions,ouvrir,pointillés
+glass-water	verre d'eau,verre,eau,boisson,boire,gobelet
+glasses	lunettes,lunettes de vue,vue,vision,accessoires,optique
+globe	globe,monde,terre,planète,navigateur,langue,traduire,internet,web,international
+globe-check	globe validé,monde,navigateur,langue,internet,web,coche,vérifié,succès,valide,disponible,en ligne,statut
+globe-code	globe avec code,site web,internet,connexion,réseau,numérique,accès,mondial,lien,monde,navigateur,code,développement
+globe-lock	globe verrouillé,vpn,privé,confidentialité,réseau,monde,navigateur,sécurité,chiffrement,protection,connexion,cadenas
+globe-off	globe barré,terre,planète,désactiver,couper,muet,masquer,éviter,monde,navigateur,langue,internet,hors ligne
+globe-x	globe avec croix,internet,hors ligne,déconnecté,réseau,connexion,monde,pas de connexion,panne réseau,erreur
+goal	but,objectif,cible,drapeau,mouche,cible de tir,atteindre,jeu
+gpu	carte graphique,gpu,processeur,coeurs,technologie,ordinateur,puce,circuit,spécifications,carte vidéo,jeu
+graduation-cap	chapeau de diplômé,mortier,école,université,apprendre,étudier,éducation,cérémonie,diplôme,licence,master,remise de diplôme
+grape	raisin,grappe,fruit,vin,nourriture,vigne
+grid-2x2	grille 2x2,grille,tableau,lignes,colonnes,blocs,carrés,quadrillage,géométrie,mesure,surface
+grid-2x2-check	grille 2x2 validée,grille,tableau,lignes,colonnes,blocs,coche,données,valider,carrés,quadrillage
+grid-2x2-plus	grille 2x2 avec plus,grille,tableau,lignes,colonnes,blocs,ajouter,plus,carrés,quadrillage
+grid-2x2-x	grille 2x2 avec croix,grille,tableau,lignes,colonnes,données,blocs,supprimer,croix,carrés,quadrillage
+grid-3x2	grille 3x2,grille,tableau,lignes,colonnes,blocs,quadrillage,rectangles,géométrie,mesure,surface
+grid-3x3	grille 3x3,grille,tableau,lignes,colonnes,quadrillage,carrés,cellules,blocs
+grip	poignée,saisir,prise,points,déplacer,glisser,glisser-déposer,manipuler
+grip-horizontal	poignée horizontale,saisir,prise,points,déplacer,glisser,glisser-déposer,réorganiser
+grip-vertical	poignée verticale,saisir,prise,points,déplacer,glisser,glisser-déposer,réorganiser
+group	groupe,grouper,cubes,paquets,parties,unités,collection,regrouper,rassembler,pointillés,sélection
+guitar	guitare,instrument,cordes,riff,rock,groupe,concert,musique,jouer,son,audio,acoustique
+ham	jambon,porc,cochon,viande,os,jarret,cuit,charcuterie,nourriture
+hamburger	hamburger,burger,cheeseburger,viande,boeuf,steak,pain,fast-food,restauration rapide,à emporter,snack,plat,restaurant,déjeuner
+hammer	marteau,maillet,clous,bricolage,boîte à outils,construire,construction,outil
+hand	main,paume,saluer,déplacer,souris,saisir,curseur,stop
+hand-coins	main avec pièces,pièces,économies,banque,argent,finance,offre,prêt,paiement,reçu,salaire,paie,allocation,argent de poche
+hand-fist	poing,poing fermé,serrer,force,pouvoir,unité,solidarité,rébellion,victoire,triomphe,soutien,combat,lutte
+hand-grab	main qui saisit,main,saisir,attraper,agripper,curseur,déplacer,glisser
+hand-heart	main avec coeur,coeur,amour,aimer,émotion,don,solidarité,soin
+hand-helping	main tendue,aide,aider,accord,proposition,charité,mendier,conditions,entraide,soutien
+hand-metal	cornes du diable,rock,métal,main,concert,musique,geste
+hand-platter	main avec plateau,serveur,serveuse,restaurant,service à table,servi,dîner,repas,plat,luxe,cloche
+handbag	sac à main,sac,bagage,pochette,mode,valise,fourre-tout,voyage,accessoire
+handshake	poignée de main,accord,partenariat,affaire,contrat,assistance,coopération,amitié,union,entente
+hard-drive	disque dur,ordinateur,serveur,mémoire,données,ssd,disque,stockage,matériel,sauvegarde,support
+hard-drive-download	disque dur téléchargement,disque dur,ordinateur,serveur,mémoire,données,ssd,disque,enregistrer,télécharger,flèche bas
+hard-drive-upload	disque dur envoi,disque dur,ordinateur,serveur,mémoire,données,ssd,disque,enregistrer,téléverser,flèche haut
+hard-hat	casque de chantier,casque,construction,sécurité,chantier,bâtiment,ouvrier,protection
+hash	dièse,hashtag,mot-dièse,nombre,numéro,croisillon,symbole
+hat-glasses	chapeau et lunettes,incognito,déguisement,costume,masqué,anonyme,anonymat,confidentialité,navigation privée,discret,caché,espion
+haze	brume,brouillard,météo,temps,voile,nuageux
+hd	haute définition,hd,télévision,résolution,vidéo,720p,1080p,qualité,écran
+hdmi-port	port hdmi,hdmi,prise,connecteur,slot,interface,console,signal,audio,vidéo,données,entrée,télévision
+heading	titre,en-tête,intertitre,h1,html,balisage,markdown,texte
+heading-1	titre 1,titre de niveau 1,en-tête,h1,html,balisage,markdown,texte
+heading-2	titre 2,titre de niveau 2,en-tête,h2,html,balisage,markdown,texte
+heading-3	titre 3,titre de niveau 3,en-tête,h3,html,balisage,markdown,texte
+heading-4	titre 4,titre de niveau 4,en-tête,h4,html,balisage,markdown,texte
+heading-5	titre 5,titre de niveau 5,en-tête,h5,html,balisage,markdown,texte
+heading-6	titre 6,titre de niveau 6,en-tête,h6,html,balisage,markdown,texte
+headphone-off	casque désactivé,casque barré,écouteurs,musique,audio,son,muet,couper,désactiver
+headphones	casque audio,casque,écouteurs,musique,audio,son,écoute
+headset	casque micro,casque,micro,écouteurs,musique,audio,son,jeu,appel,centre d'appels,téléphone,voip,assistance
+heart	coeur,amour,aimer,j'aime,favori,émotion,carte à jouer,santé,vie
+heart-crack	coeur brisé,chagrin d'amour,tristesse,émotion,rupture,peine,coeur
+heart-handshake	coeur et poignée de main,accord,charité,aide,contrat,conditions,émotion,ensemble,solidarité,poignée de main
+heart-minus	coeur moins,ne plus aimer,retirer des favoris,supprimer,retirer,dégâts,coeur,vie perdue
+heart-off	coeur barré,ne plus aimer,détester,haïr,émotion,désactiver,coeur
+heart-plus	coeur plus,ajouter aux favoris,aimer,favori,ajouter,santé,soutien,coeur,vie en plus
+heart-pulse	coeur et pouls,rythme cardiaque,battement,pouls,santé,médical,tension,cardiaque,cardiologie,électrocardiogramme
+heart-x	coeur croix,ne plus aimer,retirer des favoris,supprimer,rejeter,effacer,croix,coeur
+heater	radiateur,chauffage,chauffer,chaleur,confort,feu,poêle,électrique,appareil,hiver
+helicopter	hélicoptère,transport,voler,rotor,aviation,hélistation,aéronef,véhicule,vol,aérien
+hexagon	hexagone,forme,polygone,node.js,logo,six côtés
+highlighter	surligneur,marquer,surligner,texte,stylo,fluo,marqueur
+hop	houblon,bière,brasserie,boisson,brasser,plante,alcool
+hop-off	sans houblon,houblon,bière,brasserie,boisson,allergie,intolérance,régime,sans alcool
+hospital	hôpital,infirmerie,sanatorium,santé,médecin,clinique,urgences,service,bâtiment,médical,soins
+hotel	hôtel,bâtiment,auberge,motel,hébergement,voyage,chambre,séjour,logement
+hourglass	sablier,minuteur,temps,attente,chargement,durée,patienter,chrono
+hourglass-cog	sablier avec engrenage,sablier,minuteur,temps,durée,réglages,paramètres,engrenage,modifier,configuration,compte à rebours,expiration
+house	maison,accueil,domicile,habitation,logement,bâtiment,résidence,architecture,foyer
+house-cog	maison avec engrenage,maison,domicile,bâtiment,résidence,réglages,paramètres,engrenage,configuration,propriété,automatisation,domotique
+house-heart	maison avec coeur,maison,foyer,chez soi,domicile,bâtiment,résidence,vie saine,mode de vie,coeur
+house-plug	maison avec prise,maison,domicile,habitation,bâtiment,résidence,architecture,autonomie,énergie,électricité,prise
+house-plus	maison avec plus,maison,domicile,habitation,médical,nouveau,ajout,extension,bâtiment,résidence,architecture,ajouter
+house-wifi	maison connectée,maison,domicile,habitation,bâtiment,wifi,connectivité,réseau,domotique,internet
+houses	maisons,logements,habitations,immobilier,quartier,village,lotissement,résidences,résidentiel,hébergement,bâtiments
+ice-cream-bowl	coupe de glace,glace,crème glacée,gelato,dessert,plat,restaurant,repas,sundae,nourriture
+ice-cream-cone	cornet de glace,glace,crème glacée,gelato,dessert,cornet,nourriture,été
+id-card	carte d'identité,carte,badge,identité,authentification,sécurisé,pièce d'identité,papiers
+id-card-lanyard	badge avec tour de cou,badge,carte d'identité,identité,employé,laissez-passer,tour de cou,accès,carte
+image	image,photo,photographie,tableau,illustration,galerie,paysage
+image-down	image avec flèche vers le bas,image,photo,télécharger,enregistrer,exporter,flèche,bas
+image-minus	image moins,image,photo,retirer,supprimer,enlever,moins
+image-off	image barrée,image,photo,image désactivée,pas d'image,masquer,cassée
+image-play	image animée,image,gif,photo,lecture,lire,animation,vidéo
+image-plus	nouvelle image,image,photo,ajouter,créer,plus,insérer
+image-up	image avec flèche vers le haut,image,photo,téléverser,envoyer,importer,flèche,haut
+image-upscale	agrandir une image,redimensionner,image,photo,netteté,augmenter,agrandir,résolution,améliorer
+images	images,photos,plusieurs,copie,galerie,album,collection,diaporama,présentation
+import	importer,importation,enregistrer,flèche,entrée,récupérer,charger
+inbox	boîte de réception,courrier,email,messages,réception,courriel,bannette
+indian-rupee	roupie indienne,roupie,monnaie,devise,argent,paiement,inde
+infinity	infini,illimité,pour toujours,boucle,mathématiques,éternel,sans fin
+info	information,info,à propos,conseil,indice,détails,aide,astuce,indicateur,connaissance,avis,statut,support,infobulle
+inspection-panel	trappe de visite,panneau d'inspection,accès,couvercle,carrelage,métal,matériaux,vis,trappe,maintenance
+italic	italique,oblique,texte,format,mise en forme,police,typographie
+iteration-ccw	itération antihoraire,boucle,répéter,rotation,sens inverse,flèche,antihoraire,droite,recommencer
+iteration-cw	itération horaire,boucle,répéter,rotation,sens horaire,flèche,horaire,gauche,recommencer
+iv-bag	poche de perfusion,perfusion,intraveineux,thérapie,médecine,médicament,traitement,santé,hydratation,vitamine,complément,sang,don,hôpital
+japanese-yen	yen japonais,yen,monnaie,devise,argent,paiement,japon
+joystick	manette,joystick,jeu,console,levier de commande,jeu vidéo,contrôleur,arcade
+kanban	kanban,projets,gérer,tableau,tickets,tâches,feuille de route,plan,productivité,travail,agile,colonnes,gestion de projet
+kayak	kayak,bateau,pagaie,eau,sport,loisir,aventure,plein air,équipement,lac,océan,canoë,rivière
+kazakh-tenge	tenge kazakh,tenge,monnaie,devise,argent,paiement,kazakhstan,symbole monétaire,change,espèces
+key	clé,clef,mot de passe,connexion,authentification,sécurisé,déverrouiller,porte-clés,trousseau
+key-round	clé ronde,clé,clef,mot de passe,connexion,authentification,sécurisé,déverrouiller
+key-square	clé carrée,clé,clef,mot de passe,connexion,authentification,sécurisé,déverrouiller,clé de voiture
+keyboard	clavier,mise en page,orthographe,réglages,souris,saisie,touches,frappe,ordinateur,taper
+keyboard-music	clavier de musique,piano,synthétiseur,musique,audio,son,notes,touches,accord,octave,midi,contrôleur,instrument,électrique
+keyboard-off	clavier désactivé,clavier barré,clavier,saisie,désactiver,touches,mise en page,orthographe,réglages,souris
+lambda	lambda,symbole grec,grec,mathématiques,fonction,programmation,serverless,anonyme,fonctionnel,cloud,longueur d'onde,calcul
+lamp	lampe,éclairage,luminaire,ménage,maison,meuble,lumière,décoration
+lamp-ceiling	plafonnier,lampe,suspension,éclairage,luminaire,maison,meuble,lumière,plafond
+lamp-desk	lampe de bureau,lampe,éclairage,luminaire,bureau,maison,meuble,lumière,travail
+lamp-floor	lampadaire,lampe,éclairage,luminaire,sol,maison,meuble,lumière,salon
+lamp-wall-down	applique murale vers le bas,applique,lampe,éclairage,luminaire,mur,maison,meuble,lumière,bas
+lamp-wall-up	applique murale vers le haut,applique,lampe,éclairage,luminaire,mur,maison,meuble,lumière,haut
+land-plot	parcelle de terrain,terrain,parcelle,zone,surface,mètres carrés,lotissement,propriété,plan,hectare,mesure,distance,cadastre,golf
+landmark	monument,banque,bâtiment,capitole,finance,argent,musée,galerie d'art,institut,fronton,portique,colonnes,tribunal,édifice
+languages	langues,traduire,traduction,langage,bilingue,international,multilingue
+laptop	ordinateur portable,portable,ordinateur,écran,distance,pc,laptop,à distance
+laptop-minimal	ordinateur portable,portable,ordinateur,écran,à distance,pc,laptop,minimal
+laptop-minimal-check	ordinateur portable validé,portable,ordinateur,écran,à distance,succès,terminé,à faire,coche,tâche,pc,valider
+lasso	lasso,sélectionner,sélection,curseur,main levée,corde,outil
+lasso-select	sélection au lasso,lasso,sélectionner,sélection,curseur,main levée,pointillés,outil
+layer-arrow-down	calque vers le bas,reculer,arrière,abaisser,rétrograder,derrière,réorganiser,organiser,calque,calques,pile,ordre,flèche
+layer-arrow-up	calque vers le haut,avancer,avant,monter,élever,promouvoir,réorganiser,organiser,calque,calques,pile,ordre,flèche
+layers	calques,couches,pile,empiler,pages,feuilles,paperasse,copies,copier,superposition
+layers-2	deux calques,calques,couches,pile,empiler,pages,feuilles,copies,copier,dupliquer,double,doublon
+layers-arrow-down	envoyer à l'arrière-plan,arrière-plan,arrière,fond,bas,abaisser,rétrograder,derrière,réorganiser,organiser,calques,flèche
+layers-arrow-up	amener au premier plan,premier plan,avant,haut,élever,promouvoir,réorganiser,organiser,calques,flèche
+layers-minus	calques moins,calques,couches,pile,pages,feuilles,copies,supprimer,retirer,enlever,moins
+layers-plus	calques plus,calques,couches,pile,ajouter,nouveau,augmenter,créer,positif,copie,plus
+layout-arrow-down	mise en page vers le bas,mise en page,disposition,direction,flex,flexbox,colonne,vertical,organiser,ordre,flux,empiler,flèche,bas
+layout-arrow-right	mise en page flèche droite,disposition,flexbox,ligne,horizontal,direction,flux,organiser,empiler
+layout-dashboard	tableau de bord,mise en page,disposition,maçonnerie,briques,blocs,colonnes
+layout-freeform	mise en page libre,disposition libre,position absolue,éparpillé,blocs,canevas,cadre,non aligné
+layout-grid	grille,mise en page,disposition,application,accueil,démarrer,tuiles
+layout-grid-circles	grille de cercles,menu,applications,accueil,tableau de bord,collection,aperçu,lanceur,widgets,raccourcis,points,matrice
+layout-list	mise en page liste,liste,tâches,à faire,éléments,en attente,image,photo
+layout-panel-left	panneau gauche,mise en page,disposition,barre latérale,grille,application,accueil
+layout-panel-top	panneau haut,mise en page,fenêtre,page web,bloc,section,grille,modèle,structure
+layout-template	modèle de mise en page,gabarit,template,fenêtre,page web,bloc,section
+leaf	feuille,nature,durabilité,écologie,énergie,plante,automne,saison
+leafy-green	légume vert,salade,laitue,blette,chou,pak choï,végétal,aliment
+lectern	pupitre,lutrin,podium,chaire,conférence,discours,estrade
+lens-concave	lentille concave,optique,lumière,loupe,courbe,foyer,réfraction,physique,science,lunettes,télescope,microscope
+lens-convex	lentille convexe,optique,loupe,grossissement,foyer,lumière,réfraction,physique,lunettes,télescope,microscope,science
+letters	lettres,abc,alphabet,alphabétique,texte,caractères,langue,typographie,orthographe,alphabétisation
+library	bibliothèque,livres,lecture,auteurs,histoires,fiction,romans,information,connaissance,éducation,lycée,université,école,étude,recherche,collection,disques,vinyle,musique
+library-big	grande bibliothèque,bibliothèque,livres,lecture,auteurs,romans,savoir,éducation,lycée,université,école,étude,recherche,collection,disques,vinyle,musique
+life-buoy	bouée de sauvetage,bouée,aide,secours,sauvetage,navire,bateau,gonflable,anneau,radeau,assistance
+ligature	ligature,texte,police,typographie,alternatives,caractère
+lightbulb	ampoule,idée,lumière,éclairage,lampe,brillant
+lightbulb-off	ampoule éteinte,lumière éteinte,éclairage,lampe,éteindre,idée
+lighthouse	phare,balise,côte,navigation,tour,mer,océan,maritime,guide,sécurité,lumière,port,signal,rivage,repère,aide
+line-dot-bottom-vertical	ligne point bas,code,version,contrôle de version,station,étape,départ,premier,vertical,historique
+line-dot-left-horizontal	ligne point gauche,ligne,point,horizontal,navigation,flèche,code,contrôle de version,étape,arrêt,départ,premier,station
+line-dot-right-horizontal	ligne point droite,code,contrôle de version,étape,arrêt,station,dernier,fin,horizontal
+line-dot-top-vertical	ligne point haut,flèche,direction,indicateur,code,version,contrôle de version,étape,arrêt,station,dernier,fin,vertical
+line-squiggle	ligne ondulée,gribouillis,annoter,courbe,trait,stylo,outil,geste,dessiner,vague,art,route,serpent
+line-style	style de ligne,trait,pointillé,tirets,bordure,contour
+link	lien,chaîne,url,hyperlien,adresse
+link-2	lien,chaîne,url,hyperlien,adresse
+link-2-off	lien rompu,dissocier,délier,chaîne,supprimer le lien,désactivé
+list	liste,options,puces,énumération
+list-check	liste de contrôle,liste à cocher,fait,coche,terminé,à faire,nomenclature,validé
+list-checks	liste de tâches,liste à cocher,à faire,fait,coche,terminé,tâches,éléments,en attente,validé
+list-chevrons-down-up	liste réduire,options,éléments,réduire,développer,détails,afficher,masquer,basculer,accordéon,plus,moins,plier,déplier,vertical
+list-chevrons-up-down	liste développer,options,éléments,réduire,développer,détails,afficher,masquer,basculer,accordéon,plus,moins,plier,déplier,vertical
+list-clock	liste historique,historique,journal,horloge,heure,récent,mis à jour,révision,activité,horodatage,audit
+list-collapse	liste réduire,éléments,réduire,développer,détails,afficher,masquer,basculer,accordéon,plus,moins,plier,déplier
+list-end	fin de liste,file d'attente,bas,fin,liste de lecture,ajouter à la fin
+list-filter	liste filtrée,filtre,filtrer,options,trier,liste
+list-filter-plus	liste filtre plus,filtre,ajouter,plus,options,liste,filtrer
+list-indent-decrease	réduire le retrait,retrait,désindenter,texte,tabulation,indentation,liste,diminuer
+list-indent-increase	augmenter le retrait,retrait,indenter,texte,tabulation,indentation,liste,augmenter
+list-minus	liste moins,liste de lecture,retirer,chanson,soustraire,supprimer,enlever de la file,moins
+list-music	liste de lecture,playlist,file d'attente,musique,audio,lecture,chansons,morceaux
+list-ordered	liste numérotée,liste ordonnée,numéro,ordre,file d'attente,numérotation,classement
+list-plus	liste plus,liste de lecture,ajouter,chanson,morceau,nouveau,plus,playlist
+list-restart	liste relancer,réinitialiser,actualiser,recharger,liste de lecture,rejouer,recommencer,playlist
+list-sort-ascending	tri croissant,liste,ordre,classement,organisation,séquence,catégories,filtre,trier,croissant,décroissant,monter
+list-sort-descending	tri décroissant,liste,ordre,classement,organisation,séquence,catégories,filtre,trier,croissant,décroissant,descendre
+list-start	début de liste,file d'attente,haut,début,suivant,liste de lecture,ajouter au début
+list-todo	liste de tâches,à faire,fait,coche,terminé,tâches,éléments,en attente,todo
+list-tree	liste arborescente,arbre,arborescence,navigateur,hiérarchie,fichiers,dossiers,structure
+list-video	liste de vidéos,playlist,vidéo,lecture,liste de lecture,film
+list-x	liste croix,liste de lecture,soustraire,retirer,supprimer,enlever de la file,effacer
+loader	chargement,attente,occupé,progression,indicateur de chargement,patienter,en cours,spinner
+loader-circle	chargement circulaire,chargement,attente,occupé,progression,indicateur de chargement,patienter,rotation,cercle,spinner
+loader-pinwheel	chargement moulinet,chargement,attente,occupé,progression,roue,moulinet,balle de plage,figé,bloqué,gelé,spinner
+locate	localiser,position,carte,gps,localisation,croix,cible,viseur,ma position
+locate-fixed	position fixe,localiser,carte,gps,localisation,croix,cible,viseur,ma position
+locate-off	localisation désactivée,localiser,carte,gps,position,croix,cible,désactiver,hors ligne
+lock	cadenas,verrou,sécurité,mot de passe,sécurisé,admin,verrouiller,fermé
+lock-keyhole	cadenas trou de serrure,serrure,verrou,sécurité,mot de passe,sécurisé,admin,verrouiller,fermé
+lock-keyhole-open	cadenas ouvert,serrure ouverte,déverrouiller,sécurité,déverrouillé,ouvert
+lock-open	cadenas ouvert,déverrouiller,sécurité,déverrouillé,ouvert,verrou ouvert
+log-in	connexion,se connecter,entrer,flèche,authentification,identifier,login,ouvrir une session
+log-out	déconnexion,se déconnecter,sortir,quitter,flèche,authentification,logout,fermer la session
+logs	journaux,logs,options,liste,menu,ordre,file d'attente,tâches,historique
+lollipop	sucette,bonbon,sucre,friandise,dessert,spirale,confiserie,sucré
+luggage	valise,bagage,voyage,malle,départ,vacances,transport
+magnet	aimant,fer à cheval,magnétisme,verrou,science,accrocher,magnétique,attirer
+mail	courrier,email,message,lettre,enveloppe,non lu,mail,courriel
+mail-badge	courrier certifié,email,message,lettre,recommandé,sceau,tampon,vérifié,enveloppe,rosette,signé,officiel,livraison
+mail-check	courrier vérifié,email,message,lettre,abonner,livré,succès,lu,fait,coche,terminé,tâche,reçu
+mail-clock	courrier programmé,email,message,lettre,non lu,planifié,différé,envoyer plus tard,livraison,rappel,en attente,sortant,minuteur,horloge
+mail-minus	courrier moins,email,message,lettre,retirer,supprimer,enlever
+mail-open	courrier ouvert,email,message,lettre,lu,enveloppe ouverte
+mail-pen	écrire un courrier,email,message,lettre,stylo,modifier,rédiger,brouillon,écrire,créer,répondre
+mail-plus	courrier plus,email,message,lettre,ajouter,créer,nouveau,rédiger,nouveau message
+mail-question-mark	courrier point d'interrogation,email,message,lettre,livraison,non distribué,question,aide
+mail-search	recherche de courrier,email,message,lettre,rechercher,loupe,chercher
+mail-warning	courrier avertissement,email,message,lettre,erreur de livraison,point d'exclamation,alerte,attention
+mail-x	courrier croix,email,message,lettre,retirer,supprimer,effacer
+mailbox	boîte aux lettres,courriers,emails,messages,lettres,liste de diffusion,newsletter,courrier
+mails	courriers,emails,messages,lettres,multiple,liste de diffusion,newsletter,copie,boîte de réception
+map	carte,plan,localisation,navigation,voyage,géographie
+map-minus	carte moins,localisation,navigation,voyage,déposer,supprimer,retirer,effacer,plan
+map-pin	épingle de carte,repère,localisation,point de repère,marqueur,position,lieu,adresse,géolocalisation
+map-pin-check	épingle validée,repère,localisation,marqueur,fait,coche,terminé,tâche,ajouté,lieu,validé
+map-pin-check-inside	épingle validée,repère,localisation,marqueur,fait,coche,terminé,tâche,ajouté,lieu,validé
+map-pin-house	épingle maison,domicile,maison,résidence,bâtiment,architecture,adresse,point d'intérêt,immobilier,propriété,destination,géolocalisation,lieu,localisation
+map-pin-minus	épingle moins,repère,localisation,marqueur,supprimer,retirer,effacer,lieu
+map-pin-minus-inside	épingle moins,repère,localisation,marqueur,supprimer,retirer,effacer,lieu
+map-pin-off	épingle désactivée,repère,localisation,marqueur,retirer,lieu,désactiver,sans position
+map-pin-pen	épingle modifier,repère,localisation,marqueur,modifier,éditer,stylo,lieu
+map-pin-plus	épingle plus,repère,localisation,marqueur,ajouter,créer,nouveau,lieu
+map-pin-plus-inside	épingle plus,repère,localisation,marqueur,ajouter,créer,nouveau,lieu
+map-pin-search	recherche de lieu,épingle,repère,localisation,navigation,voyage,marqueur,rechercher,loupe,chercher
+map-pin-x	épingle croix,repère,localisation,marqueur,supprimer,retirer,effacer,lieu
+map-pin-x-inside	épingle croix,repère,localisation,marqueur,supprimer,retirer,effacer,lieu
+map-pinned	carte épinglée,épingle,repère,localisation,marqueur,lieu,point de repère
+map-plus	carte plus,localisation,navigation,voyage,nouveau,ajouter,créer,plan
+mars	symbole mars,genre,sexe,mâle,masculin,homme,garçon,homme symbole
+mars-stroke	mars barré,genre,androgyne,transgenre,symbole,mâle,trait
+martini	martini,cocktail,alcool,boisson,bar,verre,spiritueux,fête,célébration,apéritif,apéro
+maximize	agrandir,plein écran,étendre,maximiser,pointillé,élargir
+maximize-2	agrandir,plein écran,flèches,étendre,maximiser,élargir
+medal	médaille,prix,sport,gagnant,trophée,récompense,réussite,victoire,podium
+megaphone	mégaphone,porte-voix,publicité,annonce,attention,alerte,haut-parleur,notification,communiqué
+megaphone-off	mégaphone désactivé,porte-voix barré,publicité,annonce,attention,alerte,haut-parleur,notification,désactiver,silencieux,muet
+memory-stick	barrette de mémoire,ram,mémoire vive,technologie,ordinateur,puce,circuit,spécifications,capacité,gigaoctets,go
+menu	menu,barres,navigation,hamburger,options,lignes,burger
+merge	fusionner,fusion,combiner,joindre,unir,rassembler,branche,git
+message-circle	bulle de discussion,commentaire,discussion,conversation,dialogue,avis,message,bulle,chat
+message-circle-check	bulle validée,commentaire,discussion,conversation,dialogue,avis,message,modérer,coche,fait,à faire,terminé,approuvé
+message-circle-code	bulle code,commentaire,discussion,conversation,dialogue,message,revue de code,programmation,développement
+message-circle-dashed	bulle brouillon,commentaire,discussion,conversation,dialogue,message,brouillon,pointillé,tirets
+message-circle-dashed-check	bulle brouillon validée,commentaire,discussion,conversation,dialogue,message,brouillon,en attente,provisoire,vérification,confirmation,succès,statut,coche,approbation,modérer,résolu,fait,terminé
+message-circle-heart	bulle cœur,commentaire,discussion,conversation,dialogue,message,positif,aimer,amour,intérêt,saint-valentin,rencontre,rendez-vous,j'aime
+message-circle-more	bulle points de suspension,commentaire,discussion,conversation,dialogue,message,saisie,écrire,répondre,ellipse,etc,en train d'écrire,trois points
+message-circle-off	bulle désactivée,commentaire,discussion,conversation,dialogue,message,effacer,fermer,supprimer,retirer,annuler,silence,muet,modérer
+message-circle-plus	bulle plus,commentaire,discussion,conversation,dialogue,message,ajouter,nouveau,nouveau message
+message-circle-question-mark	bulle point d'interrogation,commentaire,discussion,conversation,dialogue,message,aide,question,assistance
+message-circle-reply	bulle réponse,commentaire,discussion,conversation,dialogue,message,répondre,réponse
+message-circle-warning	bulle avertissement,commentaire,discussion,conversation,dialogue,message,signaler,abus,infraction,alerte,danger,attention,protégé,point d'exclamation
+message-circle-x	bulle croix,commentaire,discussion,conversation,dialogue,message,effacer,fermer,supprimer,retirer,annuler,silence,muet,modérer
+message-square	bulle carrée,message,commentaire,discussion,conversation,dialogue,avis,chat,bulle
+message-square-check	message validé,commentaire,discussion,conversation,dialogue,avis,bulle,modérer,coche,fait,à faire,terminé,approuvé
+message-square-code	message code,commentaire,discussion,conversation,dialogue,bulle,revue de code,programmation,développement
+message-square-dashed	message brouillon,commentaire,discussion,conversation,dialogue,bulle,brouillon,pointillé,tirets
+message-square-diff	message différence,commentaire,discussion,conversation,dialogue,bulle,ajouter,correctif,patch,plus,moins,plus-moins,maths,revue de code,programmation,contrôle de version,git
+message-square-dot	message non lu,non résolu,commentaire,discussion,conversation,dialogue,bulle,notification,point,pastille
+message-square-heart	message cœur,commentaire,discussion,conversation,dialogue,positif,aimer,amour,intérêt,saint-valentin,rencontre,rendez-vous,bulle,j'aime
+message-square-lock	message verrouillé,commentaire,discussion,conversation,dialogue,bulle,sécurisé,chiffré,cadenas,privé
+message-square-more	message points de suspension,commentaire,discussion,conversation,dialogue,bulle,saisie,écrire,répondre,ellipse,etc,en train d'écrire,trois points
+message-square-off	message désactivé,commentaire,discussion,conversation,dialogue,bulle,effacer,fermer,supprimer,retirer,annuler,silence,muet,modérer
+message-square-plus	message plus,commentaire,discussion,conversation,dialogue,bulle,ajouter,nouveau,nouveau message
+message-square-quote	message citation,commentaire,discussion,conversation,dialogue,bulle,citation,guillemets,retrait,répondre,réponse
+message-square-reply	message réponse,commentaire,discussion,conversation,dialogue,bulle,répondre,réponse
+message-square-share	message partager,commentaire,discussion,conversation,dialogue,bulle,réseau,transférer,partage
+message-square-text	message texte,commentaire,discussion,conversation,dialogue,avis,bulle,chat
+message-square-warning	message avertissement,commentaire,discussion,conversation,dialogue,bulle,signaler,abus,infraction,alerte,danger,attention,protégé,point d'exclamation
+message-square-x	message croix,commentaire,discussion,conversation,dialogue,bulle,effacer,fermer,supprimer,retirer,annuler,silence,muet,modérer
+messages-circle	bulles de discussion,commentaires,discussion,conversation,dialogue,avis,copie,multiple,entretien,débat,groupe,fils,non lu,messagerie
+messages-square	bulles de messages,commentaires,discussion,conversation,dialogue,avis,copie,multiple,entretien,débat,messagerie
+metronome	métronome,tempo,rythme,battement,bpm,musique,audio,son,pratique,minuterie,pulsation,cadence,studio,outil
+mic	microphone,micro,enregistrer,son,écouter,radio,podcast,voix,enregistrement
+mic-audio-lines	microphone audio,micro,podcast,forme d'onde,ondes sonores,parler,voix,discours,diffusion,enregistrement,transcription,dictée,assistant vocal,réduction de bruit
+mic-off	microphone désactivé,micro coupé,enregistrer,son,muet,couper le micro,silence
+mic-signal	microphone signal,micro,podcast,audio,diffusion,sans fil,radio,ondes,parler,voix,direct,chat vocal,émission,transmission
+mic-vocal	micro de chant,microphone,paroles,voix,écouter,son,musique,radio,podcast,karaoké,chanter,chanteur
+microchip	puce électronique,processeur,cœurs,technologie,ordinateur,puce,circuit intégré,mémoire,ram,gpu,gigahertz,ghz,cpu
+microscope	microscope,médical,éducation,science,imagerie,recherche,laboratoire,biologie,observer
+microwave	micro-ondes,four,cuisinière,four grille-pain,cuire,cuisine,électroménager,réchauffer
+midi-port	port midi,connecteur,prise,jack,din,5 broches,audio,musique,synthétiseur,clavier,contrôleur,interface,entrée,sortie,instrument de musique
+milestone	jalon,panneau,direction,droite,est,avant,contrôle de version,étape,borne,signalisation
+milk	lait,lactose,bouteille,boisson,eau,régime,produit laitier
+milk-off	sans lait,sans lactose,lait barré,bouteille,boisson,allergie,intolérance,régime
+minimize	réduire,quitter le plein écran,fermer,rétrécir,minimiser,diminuer
+minimize-2	réduire,quitter le plein écran,flèches,fermer,rétrécir,minimiser,diminuer
+minus	moins,soustraire,retirer,diminuer,décrémenter,réduire,négatif,calculer,ligne,séparateur,trait,règle horizontale,markdown,opérateur,minimum,tiret
+mirror-rectangular	miroir rectangulaire,miroir,reflet,optique,verre,surface,image,physique,science,salle de bain,décoration,cosmétique,brillant,périscope,coiffeuse
+mirror-round	miroir rond,miroir,reflet,optique,verre,surface,image,physique,science,salle de bain,coiffeuse,maquillage,décoration,cosmétique,brillant,périscope
+monitor	écran,moniteur,télévision,tv,ordinateur,bureau,affichage,écran externe,partage d'écran,machine virtuelle
+monitor-check	écran validé,moniteur,télévision,ordinateur,bureau,affichage,écran externe,partage d'écran,connecté,succès,vérifié,en cours,actif,machine virtuelle,coche
+monitor-cloud	écran cloud,moniteur,ordinateur,bureau,affichage,machine virtuelle,bureau virtuel,informatique en nuage,télétravail,surveillance,infrastructure,saas,poste de travail,environnement,nuage
+monitor-cog	écran paramètres,moniteur,ordinateur,bureau,affichage,machine virtuelle,exécutable,réglages,modifier,engrenage,configuration,préférences,système,panneau de configuration,réseau
+monitor-dot	écran notification,moniteur,ordinateur,bureau,affichage,partage d'écran,statut,pastille,indicateur,en cours,actif,machine virtuelle,point
+monitor-down	écran télécharger,moniteur,ordinateur,bureau,affichage,partage d'écran,téléchargement,à distance,diffuser,flèche bas
+monitor-off	écran éteint,moniteur,télévision,ordinateur,bureau,affichage,partage d'écran,hors ligne,désactivé,déconnecté,alimentation,éteindre
+monitor-pause	écran pause,moniteur,télévision,ordinateur,bureau,affichage,partage d'écran,vidéo,film,suspendre,veille,hibernation,démarrage,machine virtuelle
+monitor-pc	ordinateur de bureau,pc,écran,moniteur,affichage,poste de travail,tour,boîtier,matériel,installation,gaming,unité centrale
+monitor-play	écran lecture,moniteur,télévision,ordinateur,bureau,affichage,partage d'écran,vidéo,film,lecture,en cours,démarrer,démarrage,machine virtuelle
+monitor-smartphone	écran et smartphone,téléphone,portable,appareil,mobile,bureau,moniteur,affichage,partage d'écran,adaptatif,écrans,synchroniser,diffuser
+monitor-speaker	écran haut-parleur,moniteur,télévision,ordinateur,bureau,affichage,écran externe,connecter,diffuser,audio,son,volume,présentation
+monitor-stop	écran arrêt,moniteur,télévision,ordinateur,bureau,affichage,partage d'écran,vidéo,film,arrêter,éteindre,machine virtuelle,stop
+monitor-up	écran téléverser,moniteur,télévision,ordinateur,bureau,affichage,envoyer,connecter,à distance,partage d'écran,diffuser,flèche haut
+monitor-x	écran croix,moniteur,télévision,ordinateur,bureau,affichage,partage d'écran,machine virtuelle,fermer,erreur,échec,déconnecté,arrêter,suspendre,supprimer,effacer
+moon	lune,sombre,nuit,mode sombre,croissant,thème sombre,nocturne
+moon-star	lune et étoile,lune,étoile,sombre,nuit,mode sombre,croissant,nocturne
+mop	serpillière,balai à franges,nettoyage,balayage,récurage,ménage,hygiène,corvées,ranger,sol,concierge,entretien,laver,essuyer,impeccable,désinfecter,seau
+mop-sparkles	serpillière étincelles,nettoyage,récurage,balayage,ia,magie,étincelle,intelligent,automatisation,ménage,hygiène,corvées,ranger,sol,impeccable,polir,propre
+mosque	mosquée,masjid,islam,musulman,ramadan,aïd,prière,culte,bâtiment,minaret,dôme,architecture,foi,religion,sacré,monument,communauté,spirituel,tourisme
+motorbike	moto,motocyclette,transport,véhicule,conduire,rouler,voyage,course,trajet,livraison,deux-roues,scooter
+mountain	montagne,escalade,randonnée,rocher,sommet,alpinisme,nature,pic
+mountain-snow	montagne enneigée,alpin,escalade,neige,sommet,montagne,hiver,ski,pic
+mouse	souris,périphérique,molette,défilement,clic,ordinateur,matériel
+mouse-left	souris clic gauche,clic gauche,souris,périphérique,molette,défilement,clic,bouton gauche
+mouse-off	souris désactivée,souris,périphérique,molette,défilement,clic,désactivé,sans souris
+mouse-pointer	pointeur de souris,curseur,flèche,clic,sélectionner,sélection,souris
+mouse-pointer-2	pointeur de souris,curseur,flèche,clic,sélectionner,sélection,souris
+mouse-pointer-2-off	pointeur désactivé,pointeur,souris,curseur,désactiver,flèche,navigation,sélection,sélectionner,clic,sans clic,interaction
+mouse-pointer-ban	pointeur interdit,curseur interdit,attente,occupé,chargement,bloqué,figé,gelé,pointeur,souris,interdiction
+mouse-pointer-click	clic de souris,pointeur,curseur,clic,sélectionner,cliquer,souris,sélection
+mouse-right	souris clic droit,clic droit,souris,périphérique,molette,défilement,clic,bouton droit
+mouth	bouche,parole,voix,parler,goût,goûter,saveur,palais,langue,gustatif,oral,dentaire,expression,communication,accessibilité,lèvres
+mouth-off	bouche barrée,parole,voix,parler,muet,silence,sans voix,perte de goût,perte de saveur,agueusie,sans goût,gustatif,oral,dentaire,communication,accessibilité
+move	déplacer,flèches,bouger,déplacement,quatre directions,translation
+move-3d	déplacer 3d,flèches,axe,gizmo,coordonnées,transformer,translation,trois dimensions,3d,déplacement
+move-diagonal	déplacement diagonal,double flèche,flèche,redimensionner,diagonale,étirer,agrandir
+move-diagonal-2	déplacement diagonal,double flèche,flèche,redimensionner,diagonale,étirer,agrandir
+move-down	déplacer vers le bas,flèche,bas,direction,descendre,sud,flèche vers le bas
+move-down-left	déplacer vers le bas à gauche,flèche,bas,gauche,direction,diagonale,sud-ouest
+move-down-right	déplacer vers le bas à droite,flèche,bas,droite,direction,diagonale,sud-est
+move-horizontal	déplacement horizontal,double flèche,flèche,gauche,droite,horizontal,redimensionner,étirer
+move-left	déplacer vers la gauche,flèche,gauche,direction,retour,ouest,flèche vers la gauche
+move-right	déplacer vers la droite,flèche,droite,direction,tendance stable,est,flèche vers la droite
+move-up	déplacer vers le haut,flèche,haut,direction,monter,nord,flèche vers le haut
+move-up-left	déplacer vers le haut à gauche,flèche,haut,gauche,direction,diagonale,nord-ouest
+move-up-right	déplacer vers le haut à droite,flèche,haut,droite,direction,diagonale,nord-est
+move-vertical	déplacement vertical,double flèche,flèche,haut,bas,vertical,redimensionner,étirer
+music	note de musique,croche,musique,note,mélodie,audio,son,chanson
+music-2	note de musique,croche,musique,note,mélodie,audio,son,chanson
+music-3	note de musique,noire,blanche,musique,note,mélodie,audio,son,chanson
+music-4	note de musique,double croche,musique,note,mélodie,audio,son,chanson
+navigation	navigation,localisation,voyage,gps,flèche,direction,boussole,itinéraire,pointeur
+navigation-2	navigation,localisation,voyage,gps,flèche,direction,boussole,itinéraire,pointeur
+navigation-2-off	navigation désactivée,localisation,voyage,gps,flèche,direction,désactiver,itinéraire,hors ligne
+navigation-off	navigation désactivée,localisation,voyage,gps,flèche,direction,désactiver,itinéraire,hors ligne
+nepali-rupee	roupie népalaise,monnaie,devise,argent,népal,roupie,npr
+network	réseau,arbre,arborescence,hiérarchie,organigramme,nœuds,connexions,structure
+newspaper	journal,presse,actualités,fil d'actualité,accueil,magazine,article,gros titre,infos,quotidien
+nfc	nfc,sans contact,paiement,communication en champ proche,carte,mobile,payer
+non-binary	non binaire,genre,nonbinaire,enby,symbole,identité de genre
+notebook	carnet,bloc-notes,notes,papeterie,cahier de croquis,moleskine,fermeture,sangle,bande,élastique,organiseur,agenda,planificateur,journal,écriture,lecture,lycée,université,école,étude
+notebook-dot	carnet notification,document,fichier,journal,page,papier,enregistrement,entrée,carnet,non lu,note,pastille,point
+notebook-pen	carnet stylo,crayon,bloc-notes,notes,papeterie,cahier de croquis,organiseur,agenda,planificateur,journal,écriture,écrire,lecture,lycée,université,école,étude,modifier
+notebook-tabs	carnet d'adresses,répertoire,bloc-notes,notes,personnes,famille,amis,connaissances,contacts,coordonnées,adresses,numéros de téléphone,annuaire,liste,réseautage,alphabétique,a-z,organiseur,onglets
+notebook-text	carnet texte,bloc-notes,notes,pages,papier,papeterie,cahier de croquis,organiseur,agenda,planificateur,journal,écriture,écrire,lecture,lycée,université,école,étude
+notepad-text	bloc-notes,carnet,notes,pages,papier,papeterie,cahier de croquis,organiseur,agenda,planificateur,journal,écriture,écrire,lecture,lycée,université,école,étude
+notepad-text-dashed	bloc-notes brouillon,carnet,notes,pages,papier,papeterie,agenda,journal,écriture,écrire,brouillon,modèle,lignes,pointillé
+nut	noisette,gland,noix,fruit à coque,aliment,régime,cacahuète,allergène
+nut-off	sans noix,sans fruits à coque,noisette,gland,aliment,allergie,intolérance,régime,sans noisette
+octagon	octogone,arrêt,forme,stop,huit côtés,polygone
+octagon-alert	octogone alerte,avertissement,alerte,danger,point d'exclamation,attention,stop,panneau
+octagon-minus	octogone moins,arrêt,interdit,soustraire,retirer,diminuer,réduire,trafic,halte,restreint,stop,sens interdit
+octagon-pause	octogone pause,musique,audio,arrêt,pause,stop,suspendre
+octagon-x	octogone croix,supprimer,arrêt,alerte,avertissement,fois,effacer,maths,stop,fermer,erreur
+omega	oméga,grec,symbole,mathématiques,éducation,physique,ingénierie,ohms,résistance électrique,fréquence angulaire,systèmes dynamiques,astronomie,constellations,philosophie,lettre grecque
+option	touche option,clavier,touche,mac,alt,bouton,raccourci
+orbit	orbite,planète,espace,physique,satellites,lunes,astronomie,système solaire,rotation
+origami	origami,papier,oiseau,pliage,grue,art du papier
+package	colis,paquet,boîte,conteneur,stockage,scellé,livraison,non livré,fermé,emballé,archive,zip,module,carton
+package-2	colis,paquet,boîte,conteneur,stockage,scellé,emballé,fermé,non livré,archive,zip,carton
+package-check	colis validé,paquet,boîte,confirmer,vérifié,fait,coche,terminé,tâche,livré,reçu
+package-minus	colis moins,paquet,boîte,supprimer,retirer,enlever
+package-open	colis ouvert,paquet,boîte,conteneur,stockage,déballer,décompresser,désarchiver,dézipper,ouvert,livré,carton
+package-plus	colis plus,paquet,boîte,nouveau,ajouter,créer
+package-search	recherche de colis,paquet,boîte,trouver,rechercher,suivi,produit,processus,loupe,chercher
+package-x	colis croix,paquet,boîte,supprimer,retirer,effacer
+paint-bucket	pot de peinture,seau de peinture,remplir,remplissage,peinture,seau,couleur,pot,pinceau
+paint-roller	rouleau de peinture,rouleau,pinceau,couleur,décoration,bricolage,peindre,peinture,mur
+paintbrush	pinceau,brosse,peinture,design,couleur,décoration,bricolage,peindre,art
+paintbrush-vertical	pinceau vertical,pinceau,brosse,peinture,design,couleur,décoration,bricolage,peindre,art
+palette	palette de peinture,palette,couleurs,thème,schéma,peinture,aquarelle,artiste,art,personnalisation
+panda	panda,animal,faune,ours,zoo,bambou,mammifère
+panel-bottom	panneau bas,tiroir,barre inférieure,dock,volet,mise en page,panneau inférieur
+panel-bottom-close	fermer le panneau bas,tiroir,dock,masquer,chevron,bas,volet,réduire
+panel-bottom-dashed	panneau bas pointillé,tiroir,dock,afficher,révéler,marge,remplissage,guide,mise en page,fond perdu,pointillé
+panel-bottom-open	ouvrir le panneau bas,tiroir,dock,afficher,révéler,chevron,haut,volet,développer
+panel-left	panneau gauche,barre latérale,tiroir,primaire,volet,menu latéral,mise en page
+panel-left-close	fermer le panneau gauche,barre latérale,tiroir,primaire,masquer,chevron,volet,réduire,menu latéral
+panel-left-dashed	panneau gauche pointillé,barre latérale,primaire,tiroir,afficher,révéler,marge,remplissage,guide,mise en page,fond perdu,pointillé
+panel-left-open	ouvrir le panneau gauche,barre latérale,primaire,tiroir,afficher,révéler,chevron,droite,volet,développer,menu latéral
+panel-left-right-dashed	panneaux gauche et droit pointillés,barre latérale,primaire,tiroir,afficher,révéler,marge,remplissage,guide,mise en page,vertical,fond perdu,pointillé
+panel-right	panneau droit,barre latérale,secondaire,tiroir,volet,menu latéral,mise en page
+panel-right-close	fermer le panneau droit,barre latérale,secondaire,tiroir,masquer,chevron,volet,réduire
+panel-right-dashed	panneau droit pointillé,barre latérale,secondaire,tiroir,afficher,révéler,marge,remplissage,guide,mise en page,fond perdu,pointillé
+panel-right-open	ouvrir le panneau droit,barre latérale,secondaire,tiroir,afficher,révéler,chevron,gauche,volet,développer
+panel-top	panneau haut,tiroir,navigateur,page web,volet,barre supérieure,en-tête,mise en page
+panel-top-bottom-dashed	panneaux haut et bas pointillés,barre latérale,primaire,tiroir,afficher,révéler,marge,remplissage,guide,mise en page,horizontal,fond perdu,pointillé
+panel-top-close	fermer le panneau haut,barre de menu,tiroir,masquer,chevron,haut,volet,réduire
+panel-top-dashed	panneau haut pointillé,barre de menu,tiroir,afficher,révéler,marge,remplissage,guide,mise en page,fond perdu,pointillé
+panel-top-open	ouvrir le panneau haut,barre de menu,tiroir,afficher,révéler,chevron,bas,volet,développer
+panels-left-bottom	panneaux gauche et bas,tiroirs,barre latérale,primaire,mise en page,volets,dock
+panels-right-bottom	panneaux droit et bas,tiroirs,barre latérale,secondaire,mise en page,volets,dock
+panels-top-left	panneaux haut et gauche,barre de menu,barre latérale,primaire,tiroirs,fenêtre,page web,projets,aperçu,mise en page,volets
+paper-bag	sac en papier,sac,stockage,emballage,déjeuner,à emporter,écologique,kraft,commerce,doggy bag,cabas
+paperclip	trombone,pièce jointe,fichier,attache,joindre,attachement
+parasol	parasol,ombrelle,parapluie,plage,ombre,soleil,protection,abri,jardin,extérieur,station balnéaire,voyage,vacances,été,accessoire,bronzer,détente,tropical
+parentheses	parenthèses,code,jeton,paramètres,arguments,entrée,appel,maths,formule,fonction,crochets,programmation
+park	parc,nature,vert,arbres,paysage,repos,promenade,loisirs,environnement,arbre,banc,extérieur,détente,jardin public
+parking-meter	parcmètre,horodateur,conduite,stationnement,parking,payer,trottoir,voiture,place de parking
+party-popper	cotillons,fête,félicitations,célébration,tada,émoji,confettis,excitation,anniversaire,pétard,réjouissance,canon à confettis
+pause	pause,musique,arrêt,suspendre,lecture,stop,mettre en pause
+paw-print	empreinte de patte,patte,animaux de compagnie,vétérinaire,domestique,chat,chien,ours,animal,trace,pas
+pc-case	boîtier de pc,tour,unité centrale,ordinateur,châssis,boîtier,matériel,pc,gaming
+pen	stylo,crayon,modifier,créer,dessiner,écrivain,écriture,stylo à bille,encre,marqueur,feutre,papeterie,artiste,écrire,éditer
+pen-line	stylo ligne,stylo,crayon,modifier,créer,dessiner,écrivain,écriture,stylo à bille,encre,marqueur,feutre,papeterie,artiste,écrire,éditer
+pen-off	stylo désactivé,désactivé,inactif,non modifiable,verrouillé,lecture seule,figé,restreint,crayon,modifier,écriture,stylo,interdit,éditer
+pen-tool	plume vectorielle,outil plume,vecteur,dessin,tracé,courbe de bézier,chemin,design,illustration
+pencil	crayon,gomme,modifier,créer,dessiner,esquisse,brouillon,écrivain,écriture,papeterie,artiste,éditer,écrire,crayon à papier
+pencil-line	crayon ligne,crayon,modifier,créer,dessiner,esquisse,brouillon,écrivain,écriture,stylo à bille,encre,marqueur,feutre,papeterie,artiste,éditer,écrire
+pencil-off	crayon désactivé,désactivé,inactif,non modifiable,verrouillé,lecture seule,figé,restreint,gomme,modifier,créer,dessiner,esquisse,écriture,papeterie,interdit,éditer
+pencil-ruler	crayon et règle,règle,modifier,créer,dessiner,esquisse,brouillon,écriture,papeterie,artiste,mesures,centimètres,cm,millimètres,mm,mètre,pied,pouces,unités,taille,longueur,dimensions,conception
+pencil-sparkles	crayon étincelles,modifier,ia,outils,intelligent,créer,dessiner,esquisse,brouillon,écriture,papeterie,artiste,magie,magicien,assistant,intelligence artificielle
+pentagon	pentagone,forme,cinq côtés,polygone,géométrie
+percent	pourcentage,pour cent,modulo,reste,%,soldes,réduction,remise,offre,marketing,promotion,promo
+person-standing	personne debout,personne,gens,humain,accessibilité,bonhomme,silhouette,homme,figurine
+phi	phi,maths,nombre d'or,symbole,grec,lettre,typographie,constante,flux,flux magnétique,lettre grecque
+philippine-peso	peso philippin,monnaie,devise,peso,argent,php,philippines
+phone	téléphone,appel,combiné,appeler,téléphoner,contact
+phone-call	appel téléphonique,sonnerie,téléphone,appel,combiné,appeler,sonner
+phone-forwarded	renvoi d'appel,téléphone,appel,combiné,transférer,rediriger,appel transféré,flèche
+phone-incoming	appel entrant,téléphone,appel,combiné,recevoir,réception,flèche
+phone-missed	appel manqué,téléphone,appel,combiné,manqué,raté,non répondu
+phone-off	téléphone désactivé,appel,combiné,muet,raccrocher,hors ligne,désactiver,couper,silence,terminer l'appel
+phone-outgoing	appel sortant,téléphone,appel,combiné,émettre,émission,flèche,appeler
+pi	pi,constante,code,programmation,symbole,trigonométrie,géométrie,formule,maths,nombre pi,lettre grecque,3,14
+piano	piano,musique,audio,son,bruit,notes,accord,touches,octave,acoustique,instrument,jouer,pianiste,performance,concert,clavier
+pickaxe	pioche,exploitation minière,mine,mineur,extraction,travail,construction,progrès,avancement,artisanat,création,outil,creuser,forage
+picture-in-picture	image dans l'image,fenêtre,vidéo,incrustation,flottant,multitâche,toujours au premier plan
+picture-in-picture-2	image dans l'image,fenêtre,vidéo,incrustation,flottant,multitâche,toujours au premier plan
+piggy-bank	tirelire,cochon,épargne,économies,argent,banque
+pilcrow	pied-de-mouche,paragraphe,alinéa,typographie,texte,symbole,marque
+pilcrow-left	pied-de-mouche gauche,paragraphe,alinéa,direction,typographie,texte,symbole
+pilcrow-right	pied-de-mouche droit,paragraphe,alinéa,direction,typographie,texte,symbole
+pill	pilule,médicament,comprimé,cachet,pharmacie,ordonnance,médecine
+pill-bottle	flacon de pilules,pilulier,médicament,vitamine,complément,gélule,ordonnance,pharmacie,santé
+pin	épingle,punaise,épingler,fixer,carte,verrouiller,enregistrer,localisation
+pin-off	épingle barrée,désépingler,détacher,retirer,déverrouiller,carte,supprimer
+pipette	pipette,compte-gouttes,sélecteur de couleur,pipette de couleur,laboratoire,chimie,science
+pizza	pizza,tarte,quiche,nourriture,repas,italien
+plane	avion,voyage,vol,transport,aérien,trajet
+plane-landing	avion qui atterrit,atterrissage,arrivée,avion,voyage,vol
+plane-takeoff	avion qui décolle,décollage,départ,avion,voyage,vol
+plant-pot	plante en pot,pot de fleurs,plante verte,feuille,nature,jardinage,décoration,intérieur,jardinière
+play	lecture,jouer,démarrer,lancer,musique,audio,vidéo,triangle
+play-off	lecture désactivée,pause,jouer,audio,vidéo,musique,bloqué,interdit,désactivé
+playing-card	carte à jouer,jeu de cartes,piocher,hasard,poker,casino,jeu,carte mémoire,apprentissage
+playing-cards	cartes à jouer,jeu de cartes,paquet,mélanger,distribuer,piocher,poker,casino,jeu,collection
+playing-cards-fan	cartes en éventail,cartes à jouer,main,éventail,distribuer,piocher,poker,jeu de société,planning poker
+plug	prise,fiche,branchement,électricité,énergie,secteur,courant,chargeur,tension
+plug-2	prise,fiche,branchement,électricité,énergie,secteur,courant
+plug-zap	prise éclair,branchement,charge,recharge,batterie,électricité,énergie,connecter
+plus	plus,ajouter,nouveau,augmenter,positif,créer,addition,viseur,cible,croix
+pocket-knife	couteau suisse,canif,couteau de poche,multifonction,lame,outil,tire-bouchon
+podium	podium,récompense,vainqueur,gagnant,médaille,classement,première place,victoire,succès,scène
+pointer	pointeur,curseur,souris,main,cliquer,doigt
+pointer-off	pointeur désactivé,curseur,souris,main,barré,désactivé
+popcorn	pop-corn,cinéma,film,snack,salé,sucré,friandise
+popsicle	glace à l'eau,sucette glacée,esquimau,glace,dessert,sucré,nourriture
+pound-sterling	livre sterling,devise,monnaie,argent,paiement,livre
+power	alimentation,marche arrêt,allumer,éteindre,bouton,interrupteur,redémarrer,démarrer,appareil
+power-off	éteindre,arrêt,alimentation coupée,bouton,interrupteur,appareil,allumer
+presentation	présentation,tableau,écran,chevalet,tableau blanc,marqueur,réunion,cours,école,bureau,projet
+printer	imprimante,imprimer,impression,fax,bureau,appareil
+printer-3d	imprimante 3d,impression 3d,fabrication,filament,buse,prototype,usine,machine,technologie,modèle
+printer-check	imprimante validée,imprimer,impression terminée,succès,coche,bureau,appareil
+printer-x	imprimante en erreur,imprimer,annuler,erreur,croix,supprimer,bureau,appareil
+projector	projecteur,vidéoprojecteur,cinéma,film,présentation,diaporama,réunion,bureau
+proportions	proportions,format d'image,rapport d'aspect,écran,taille,rotation,ajuster,résolution,orientation,portrait,paysage,16:9
+puzzle	puzzle,pièce de puzzle,casse-tête,composant,module,extension,jeu
+pyramid	pyramide,triangle,prisme,hiérarchie,structure,géométrie,égyptien,monument,tourisme
+qr-code	code qr,qr code,code-barres,scanner,lien,url,information,numérique
+quote	citation,guillemets,texte,quote
+rabbit	lapin,lièvre,animal,rongeur,vitesse,rapide,sauter,animal de compagnie
+radar	radar,sonar,balayage,détecter,chercher,localiser,scanner,navigation
+radiation	radiation,radioactivité,nucléaire,atomique,déchets,physique,danger,particule
+radical	racine carrée,radical,calcul,formule,mathématiques,opérateur,symbole
+radio	radio,signal,diffusion,fréquence,connectivité,direct,antenne
+radio-off	radio désactivée,signal,diffusion,fréquence,connectivité,barré,antenne
+radio-receiver	poste de radio,radio,récepteur,musique,appareil,connecter
+radio-tower	antenne radio,tour radio,pylône,émetteur,signal,diffusion,connectivité,fréquence
+radius	rayon,cercle,géométrie,trigonométrie,mesure,calcul,taille,forme
+rainbow	arc-en-ciel,couleurs,spectre,lumière,météo,soleil,arc
+rat	rat,souris,rongeur,nuisible,peste,maladie,animal
+ratio	rapport d'aspect,format,ratio,proportions,écran,taille,rotation,résolution,orientation,portrait,paysage,16:9
+receipt	reçu,ticket de caisse,facture,addition,bon,quittance,note,dollar,devise
+receipt-cent	reçu en centimes,ticket de caisse,facture,addition,cent,dollar,devise,monnaie
+receipt-euro	reçu en euros,ticket de caisse,facture,addition,euro,devise,monnaie
+receipt-indian-rupee	reçu en roupies,ticket de caisse,facture,addition,roupie indienne,devise,monnaie
+receipt-japanese-yen	reçu en yens,ticket de caisse,facture,addition,yen,devise,monnaie
+receipt-pound-sterling	reçu en livres sterling,ticket de caisse,facture,addition,livre,britannique,devise,monnaie
+receipt-russian-ruble	reçu en roubles,ticket de caisse,facture,addition,rouble,devise,monnaie
+receipt-swiss-franc	reçu en francs suisses,ticket de caisse,facture,addition,franc suisse,devise,monnaie
+receipt-text	reçu détaillé,ticket de caisse,facture,addition,détails,conditions,contrat,mentions légales
+receipt-turkish-lira	reçu en livres turques,ticket de caisse,facture,addition,livre turque,lire,devise,monnaie
+rectangle-circle	rectangle et cercle,composer,clavier,touche,bouton,forme
+rectangle-ellipsis	champ de saisie,points de suspension,mot de passe,connexion,authentification,chargement,en attente,menu,options,plus
+rectangle-goggles	casque de réalité virtuelle,lunettes vr,réalité virtuelle,réalité augmentée,casque,lunettes,immersion
+rectangle-horizontal	rectangle horizontal,rectangle,paysage,format,forme,16:9
+rectangle-vertical	rectangle vertical,rectangle,portrait,format,forme,9:16
+recycle	recyclage,recycler,écologie,développement durable,flèches,environnement,tri
+redo	rétablir,refaire,annuler,historique,flèche,rejouer
+redo-2	rétablir,refaire,annuler,historique,flèche,rejouer
+redo-dot	rétablir,refaire,historique,pas à pas,avancer,flèche,point
+refresh-ccw	actualiser,rafraîchir,recharger,synchroniser,rotation,flèches circulaires,cycle,sens antihoraire
+refresh-ccw-dot	actualiser,rafraîchir,recharger,synchroniser,flèches circulaires,cycle,point,contrôle de version,code
+refresh-cw	actualiser,rafraîchir,recharger,synchroniser,rotation,flèches circulaires,cycle,sens horaire
+refresh-cw-off	actualisation désactivée,synchronisation désactivée,annuler,stop,erreur,déconnecter,ignorer,barré
+refrigerator	réfrigérateur,frigo,congélateur,glacière,froid,cuisine,électroménager,conservation
+regex	expression régulière,regex,recherche,texte,code,motif
+remove-formatting	supprimer la mise en forme,effacer le formatage,texte,police,typographie,format,croix,nettoyer
+repeat	répéter,boucle,flèches,lecture en boucle,répétition,cycle
+repeat-1	répéter une fois,répéter un titre,boucle,rejouer,lecture,musique
+repeat-2	répéter,partager,republier,boucle,flèches,retweet,cycle
+repeat-off	répétition désactivée,boucle désactivée,flèches,récurrent,encore,barré
+replace	remplacer,rechercher et remplacer,substituer,échanger,changer,texte
+replace-all	tout remplacer,remplacer partout,rechercher et remplacer,substituer,échanger,changer,texte
+reply	répondre,réponse,courrier,email,message,flèche
+reply-all	répondre à tous,réponse,courrier,email,message,flèche
+rewind	retour rapide,rembobiner,reculer,musique,lecture,flèches,multimédia
+ribbon	ruban,rosette,sensibilisation,bande,ceinture,ruban de sensibilisation,cordon,ruban rose
+road	route,rue,autoroute,chemin,trajet,circulation,conduite,transport,carte
+robot-arm	bras robotisé,bras robot,robot,automatisation,usine,industrie,fabrication,mécanique,machine,technologie
+robot-vacuum	robot aspirateur,aspirateur,ménage,nettoyage,électroménager,domotique,sol,poussière,corvée,maison intelligente
+rocket	fusée,lancement,espace,décollage,version,booster,publication
+rocking-chair	fauteuil à bascule,chaise,meuble,siège,confort,détente,relaxation
+roller-coaster	montagnes russes,attraction,parc d'attractions,manège,fête foraine,divertissement,loisirs
+rose	rose,fleur,épines,pétales,plante,tige,printemps,jardinage,bouquet,cadeau,romantique,saint-valentin
+rotate-3d	rotation 3d,orbite,axe,orientation,transformation,design,manipulateur
+rotate-ccw	rotation antihoraire,flèche circulaire,tourner à gauche,recommencer,recharger,annuler,rétablir,réessayer,rembobiner,inverser
+rotate-ccw-clock	historique,horloge,annuler,rembobiner,chronologie,version,sauvegarde,remonter le temps,antihoraire
+rotate-ccw-key	changer le mot de passe,clé,mot de passe,actualiser,renouveler,rotation antihoraire
+rotate-ccw-square	rotation à gauche,pivoter,carré,image,90 degrés,antihoraire,angle,orientation
+rotate-cw	rotation horaire,flèche circulaire,tourner à droite,actualiser,recharger,refaire,rétablir
+rotate-cw-clock	horloge,modifier,actualiser,synchroniser,renouveler,mise à jour,révision,historique,chronologie,version,sauvegarde,sens horaire
+rotate-cw-fading-clock	horloge en attente,attente,planifier,sablier,chargement,pause,temps,montre,horaire
+rotate-cw-square	rotation à droite,pivoter,carré,image,90 degrés,horaire,angle,orientation
+route	itinéraire,trajet,parcours,chemin,voyage,planificateur,étapes,arrêts,stations
+route-off	itinéraire désactivé,parcours annulé,trajet fermé,chemin bloqué,réinitialiser,effacer,étapes,barré
+router	routeur,box internet,modem,réseau,ordinateur,serveur,wifi,connectivité
+rows-2	deux lignes,lignes,liste,division,panneau,paragraphes,horizontal,moitié,tiroir,mise en page
+rows-3	trois lignes,lignes,liste,division,paragraphes,horizontal,tiers,tiroirs,mise en page
+rows-4	quatre lignes,lignes,liste,division,paragraphes,horizontal,tiroirs,grille,mise en page
+rss	flux rss,rss,abonnement,actualités,mises à jour,notifications,blog,articles,newsletter,podcast,suivre
+rugby-ball	ballon de rugby,rugby,ballon,football américain,sport,but
+ruler	règle,mesure,centimètre,millimètre,longueur,largeur,hauteur,dimensions,taille,papeterie,graduation
+ruler-dimension-line	règle avec cotation,règle,cote,ligne de dimension,mesure,longueur,largeur,hauteur,dimensions,taille
+russian-ruble	rouble russe,rouble,devise,monnaie,argent,paiement
+sailboat	voilier,bateau,bateau à voile,navire,port,quai,voile,mer
+salad	salade,nourriture,végétarien,légumes,repas,entrée,plat,restaurant,santé
+sandwich	sandwich,casse-croûte,nourriture,déjeuner,repas,snack,restaurant
+satellite	satellite,station spatiale,orbite,émetteur,espace,communication
+satellite-dish	antenne parabolique,parabole,récepteur,antenne,communication,diffusion,signal,télévision
+saudi-riyal	riyal saoudien,riyal,devise,monnaie,argent,paiement
+save	enregistrer,sauvegarder,disquette,sauvegarde,fichier
+save-all	tout enregistrer,tout sauvegarder,disquettes,copie,fichiers
+save-check	enregistrement réussi,sauvegardé,disquette,coche,succès,enregistrer,validé
+save-off	enregistrement désactivé,sauvegarde impossible,disquette,barré,enregistrer
+save-pen	enregistrer sous,renommer,disquette,crayon,dossier,sauvegarder,modifier
+save-plus	nouvel enregistrement,ajouter,créer,disquette,plus,mettre à jour,enregistrer,sauvegarder
+scale	balance,justice,loi,droit,juridique,poids,mesurer,comparer,juger,équité,éthique,décision
+scale-3d	échelle 3d,redimensionner,taille,axe,transformation,design,manipulateur
+scaling	mise à l'échelle,redimensionner,échelle,agrandir,design,taille
+scan	scanner,cadre,viseur,sélection,code-barres,réalité augmentée,caméra,mise au point,pointillés,surveillance
+scan-barcode	scanner un code-barres,code-barres,caisse,achat,produit,panier,commerce,emballage
+scan-box	scanner un objet,boîte,cube,réalité augmentée,3d,reconnaissance d'objet,capture,caméra,lidar,cadre
+scan-eye	scanner l'œil,œil,rétine,biométrie,identification,authentification,aperçu,zoom,caméra,surveillance,plein écran
+scan-face	reconnaissance faciale,visage,biométrie,identification,authentification,connexion,accès,scanner
+scan-heart	scanner le cœur,santé,rythme cardiaque,pouls,surveillance,dépistage,médical,cardiaque
+scan-line	scanner une ligne,code-barres,caisse,achat,produit,emballage,qr code,pointillés,scanner
+scan-qr-code	scanner un code qr,code qr,qr code,code-barres,lien,url,information,numérique,scanner
+scan-search	scanner et rechercher,loupe,aperçu,zoom,agrandir,plein écran,image,mise au point,galerie
+scan-square	scanner un carré,cadre,détection,reconnaissance,sélection,objet,viseur,capture,caméra,recadrer,mise au point
+scan-text	scanner du texte,reconnaissance de texte,lire,traduire,copier,lignes,ocr,document
+school	école,bâtiment,éducation,université,collège,lycée,apprentissage,étudiant,classe,cours,enseignement,diplôme
+scissors	ciseaux,couper,découper,papeterie,loisirs créatifs,bricolage,coupe
+scissors-line-dashed	ciseaux avec pointillés,couper ici,découper,pointillés,ligne de coupe,papeterie,bricolage,instructions
+scooter	trottinette,scooter,véhicule,transport,électrique,déplacement,urbain,trajet,vitesse
+screen-share	partage d'écran,partager l'écran,bureau,moniteur,hôte,connexion,communication
+screen-share-off	partage d'écran désactivé,arrêter le partage,bureau,moniteur,déconnecter,barré
+scroll	parchemin,rouleau,papier,journal,écriture,document,notes,liste,script,histoire,code
+scroll-text	parchemin avec texte,rouleau,papier,journal,écriture,document,notes,liste,script,histoire,code
+search	rechercher,recherche,loupe,chercher,trouver,localiser,explorer,zoom,agrandir
+search-alert	recherche avec alerte,loupe,rechercher,avertissement,erreur,anomalie,attention,trouver
+search-check	recherche réussie,loupe,rechercher,trouvé,correct,coche,valider,terminé
+search-code	recherche de code,loupe,rechercher,grep,chevrons,code,programmation,trouver
+search-slash	recherche annulée,loupe,rechercher,barre oblique,annuler,effacer,stop,abandonner
+search-x	effacer la recherche,loupe,rechercher,croix,annuler,effacer,stop,abandonner
+section	signe de paragraphe,paragraphe,section,typographie,ponctuation,juridique,symbole,texte
+send	envoyer,avion en papier,message,email,courrier,soumettre,expédier
+send-horizontal	envoyer,avion en papier,message,email,courrier,soumettre,expédier,horizontal
+send-to-back	mettre en arrière-plan,envoyer à l'arrière,arrière-plan,calque,ordre,superposition,déplacer,dessous
+separator-horizontal	séparateur horizontal,diviser,séparer,déplacer,ligne,mise en page
+separator-vertical	séparateur vertical,diviser,séparer,déplacer,ligne,mise en page
+server	serveur,baie,nuage,stockage,hébergement,informatique,datacenter
+server-cog	serveur avec engrenage,serveur,configuration,paramètres,nuage,stockage,informatique,engrenage
+server-crash	serveur en panne,panne de serveur,plantage,erreur,problème,nuage,stockage,incident
+server-off	serveur hors ligne,serveur éteint,nuage,stockage,barré,déconnecté,informatique
+server-plus	serveur avec plus,serveur,ajouter,créer,nouveau,nuage,stockage,informatique
+settings	paramètres,réglages,engrenage,préférences,configuration,options,modifier
+settings-2	paramètres,réglages,curseurs,engrenage,préférences,configuration,options,modifier
+shapes	formes,triangle,carré,cercle,classification,collection,jouet,blocs,apprentissage
+share	partager,partage,réseau,connexions,envoyer,diffuser
+share-2	partager,partage,réseau,connexions,envoyer,diffuser
+sheet	feuille de calcul,tableur,tableau,excel,feuille,cellules
+shell	coquillage,plage,sable,vacances,vie marine,fossile,ammonite,océan,mer,biologie,terminal,ligne de commande
+shelving-unit	étagère,rayonnage,rangement,meuble,inventaire,casier,étagères,organiser,entrepôt,présentoir
+shield	bouclier,sécurité,protection,défense,cybersécurité,sûr,antivirus,menace,garde,armure
+shield-alert	bouclier avec alerte,bouclier,danger,avertissement,alerte,non sécurisé,vulnérable,protection,sécurité,cybersécurité
+shield-ban	bouclier interdit,bouclier,bloquer,interdit,sans protection,non sécurisé,sécurité,protection,cybersécurité
+shield-check	bouclier validé,bouclier,coche,sécurisé,protégé,protection,sécurité,vérifié,antivirus,cybersécurité
+shield-cog	bouclier avec engrenage,bouclier,paramètres de sécurité,configuration,administration,sécurité,protection,cybersécurité
+shield-cog-corner	bouclier avec engrenage,bouclier,paramètres de sécurité,configuration,administration,sécurité,protection,cybersécurité
+shield-ellipsis	bouclier en cours,bouclier,points de suspension,analyse en cours,vérification,audit,sécurité,protection,cybersécurité
+shield-half	demi-bouclier,bouclier,moitié,protection partielle,sécurité,protection,défense,cybersécurité
+shield-keyhole	bouclier serrure,bouclier,serrure,trou de serrure,sécurité,protection,confidentialité,cybersécurité,mot de passe
+shield-lock	bouclier cadenas,bouclier,cadenas,verrou,chiffrement,confidentialité,authentification,mot de passe,connexion,sécurité,protection des données
+shield-minus	bouclier moins,bouclier,retirer,affaibli,endommagé,supprimer,réduire,désinfecter,sécurité,protection
+shield-off	bouclier désactivé,bouclier barré,non protégé,non sécurisé,vulnérable,sécurité,protection,cybersécurité
+shield-plus	bouclier plus,bouclier,ajouter,renforcer,santé,protection,sécurité,défense,cybersécurité
+shield-question-mark	bouclier point d'interrogation,bouclier,question,incertain,inconnu,sécurité,protection,aide,cybersécurité
+shield-user	bouclier utilisateur,bouclier,utilisateur,administrateur,protection,sécurité,garde,compte
+shield-x	bouclier croix,bouclier,croix,non protégé,non sécurisé,vulnérable,erreur,sécurité,protection,cybersécurité
+ship	navire,bateau,paquebot,croisière,maritime,voilier,mer,océan,transport,voyage,pétrolier
+ship-cargo	cargo,navire,bateau,porte-conteneurs,conteneur,fret,marchandises,port,quai,logistique,transport maritime,expédition
+ship-wheel	barre de bateau,gouvernail,roue de navire,timon,bateau,navire,maritime,navigation,direction,mer
+shirt	t-shirt,chemise,vêtement,habit,boutique,magasin,haut,shopping
+shopping-bag	sac de courses,sac,shopping,achat,boutique,magasin,commerce en ligne,panier
+shopping-basket	panier,panier de courses,courses,achat,magasin,commerce en ligne,produits,ingrédients
+shopping-cart	chariot,caddie,panier,courses,achat,magasin,commerce en ligne,produits,commande
+shopping-cart-minus	chariot moins,caddie,panier,retirer,enlever,diminuer,quantité,soustraire,achat,commande
+shopping-cart-plus	chariot plus,caddie,panier,ajouter,augmenter,quantité,acheter,achat,commande
+shovel	pelle,creuser,bêche,trésor,jardinage,outil,terre
+shower-head	pommeau de douche,douche,bain,salle de bain,équipements,services,eau
+shredder	déchiqueteuse,broyeur,destructeur de documents,papier,détruire,supprimer,effacer,confidentiel,sécurité,déchets
+shrimp	crevette,fruits de mer,crustacé,gambas,marin,océan,cuisine,pêche,nourriture
+shrimp-off	sans crustacés,crevette barrée,allergie,intolérance,régime,fruits de mer,crustacé,crevette,gambas
+shrink	réduire,rétrécir,plein écran,échelle,diminuer,flèches,quitter le plein écran
+shrub	arbuste,buisson,broussaille,forêt,parc,nature,plante,haie
+shuffle	lecture aléatoire,mélanger,aléatoire,musique,réordonner,flèches,hasard
+sigma	sigma,somme,calcul,formule,mathématiques,énumération,addition,symbole
+signal	signal,réseau,connexion,sans fil,gsm,téléphone,antenne,couverture,barres
+signal-high	signal fort,réseau,connexion,sans fil,gsm,téléphone,couverture,barres,4g,5g
+signal-low	signal faible,réseau,connexion,sans fil,gsm,téléphone,couverture,barres
+signal-medium	signal moyen,réseau,connexion,sans fil,gsm,téléphone,couverture,barres
+signal-zero	aucun signal,pas de réseau,signal perdu,connexion,sans fil,gsm,téléphone,couverture,barres
+signature	signature,signer,autographe,écriture manuscrite,contrat,paraphe,encre,accord,document,approbation,identité
+signpost	panneau indicateur,poteau indicateur,direction,flèche,orientation,navigation,itinéraire,gauche,droite,est,ouest
+signpost-big	grand panneau indicateur,panneau,direction,flèche,orientation,gauche,droite,est,ouest
+siren	sirène,gyrophare,urgence,alarme,alerte,police,ambulance,sécurité,lumière
+skip-back	piste précédente,précédent,retour,flèche,musique,reculer,lecture
+skip-forward	piste suivante,suivant,passer,avancer,flèche,musique,lecture
+skull	tête de mort,crâne,mort,danger,os,squelette,poison,jeu
+slash	barre oblique,slash,diviser,division,ou,symbole
+slice	trancher,couper,lame,couteau,scalpel,découpe,outil,design
+sliders-horizontal	curseurs horizontaux,curseur,réglages,paramètres,filtres,contrôles,égaliseur
+sliders-vertical	curseurs verticaux,curseur,réglages,paramètres,contrôles,égaliseur,filtres
+smartphone	smartphone,téléphone,portable,mobile,appareil,écran,tactile,téléphone portable,application
+smartphone-charging	smartphone en charge,téléphone en charge,recharge,batterie,portable,mobile,alimentation,chargeur
+smartphone-nfc	paiement sans contact,smartphone,nfc,sans contact,paiement,communication en champ proche,téléphone,mobile
+snail	escargot,limaçon,animal,lent,lenteur,spirale,gastronomie,coquille
+snowflake	flocon de neige,neige,froid,hiver,gel,glace,météo,givre
+soap-dispenser-droplet	distributeur de savon,savon liquide,savon,laver,lavage des mains,hygiène,eau,liquide,goutte,salle de bain
+sofa	canapé,sofa,fauteuil,divan,meuble,salon,détente,banquette
+solar-panel	panneau solaire,énergie solaire,solaire,soleil,énergie,électricité,photovoltaïque,écologie
+soup	soupe,potage,bol,nourriture,repas,entrée,plat,restaurant,bouillon
+space	espace,barre d'espace,texte,caractère,lettres,typographie,police,sélection
+spade	pique,carte à jouer,cartes,jeu,forme,casino,poker,symbole
+sparkle	étincelle,scintillement,étoile,effet,magie,brillant,paillettes,célébration,nouveauté
+sparkles	étincelles,scintillements,étoiles,effet,magie,ia,intelligence artificielle,nuit,paillettes,nouveauté
+speaker	haut-parleur,enceinte,son,audio,musique,basse,caisson de basses,dj,production
+speech	parole,voix,discours,accessibilité,handicap,personne,son,parler,visage
+spell-check	correcteur orthographique,vérification orthographique,orthographe,faute,erreur,correction,coquille,texte,code
+spell-check-2	correcteur orthographique,vérification orthographique,orthographe,faute,erreur,correction,coquille,texte,code
+spline	courbe,spline,courbe de bézier,tracé,plume,outil,forme,dessiner,vecteur
+spline-pointer	courbe avec pointeur,spline,tracé,outil,courbe,nœud,clic,pointeur,cible,vecteur
+split	diviser,séparer,scinder,branche,fractionner,rompre,bifurquer
+spool	bobine,fil,fuseau,ficelle,couture,laine,travaux d'aiguille,broderie,canette
+sport-shoe	chaussure de sport,basket,chaussure de course,sneaker,baskets,running,entraînement,exercice,remise en forme,sport
+spotlight	projecteur,spot,projecteur de scène,lumière,scène,spectacle,théâtre,concert,vedette,acteur,chanteur,focus,performance
+spray-can	bombe aérosol,aérosol,bombe de peinture,spray,peinture,couleur,graffiti,décoration,déodorant,désodorisant
+sprout	pousse,germe,jeune pousse,plante,graine,croissance,feuille,nature,écologie,printemps,vert
+square	carré,stop,arrêt,rectangle,forme,lecture,musique,audio,vidéo,1:1
+square-activity	activité,carré,pouls,battement,rythme cardiaque,électrocardiogramme,constantes vitales,santé,hôpital,exercice,mouvement
+square-arrow-down	flèche vers le bas,carré,bas,sud,direction,bouton,touche,clavier,reculer
+square-arrow-down-left	flèche vers le bas à gauche,carré,bas,gauche,sud-ouest,diagonale,direction,bouton,touche
+square-arrow-down-right	flèche vers le bas à droite,carré,bas,droite,sud-est,diagonale,direction,bouton,touche
+square-arrow-left	flèche vers la gauche,carré,gauche,ouest,précédent,retour,direction,bouton,touche,clavier
+square-arrow-out-down-left	flèche sortante en bas à gauche,carré,bas,gauche,sud-ouest,diagonale,vers l'extérieur,direction
+square-arrow-out-down-right	flèche sortante en bas à droite,carré,bas,droite,sud-est,diagonale,vers l'extérieur,direction
+square-arrow-out-up-left	flèche sortante en haut à gauche,carré,haut,gauche,nord-ouest,diagonale,vers l'extérieur,direction
+square-arrow-out-up-right	flèche sortante en haut à droite,carré,haut,droite,nord-est,diagonale,lien externe,ouvrir,partager,vers l'extérieur
+square-arrow-right	flèche vers la droite,carré,droite,est,suivant,avancer,direction,bouton,touche,clavier
+square-arrow-right-enter	flèche entrante dans un carré,entrer,importer,insérer,entrée,dedans,intérieur,placer,source,carré
+square-arrow-right-exit	flèche sortante d'un carré,sortir,exporter,sortie,dehors,extérieur,carré,quitter
+square-arrow-up	flèche vers le haut,carré,haut,nord,direction,avancer,bouton,touche,clavier
+square-arrow-up-left	flèche vers le haut à gauche,carré,haut,gauche,nord-ouest,diagonale,direction,bouton,touche
+square-arrow-up-right	flèche vers le haut à droite,carré,haut,droite,nord-est,diagonale,direction,bouton,touche,partager
+square-asterisk	astérisque,carré,mot de passe,secret,accès,clé,multiplication,joker,caractère générique,étoile
+square-bookmark	marque-page,carré,signet,photo,livre,favori,image
+square-bottom-dashed-scissors	ciseaux avec pointillés,carré,couper,extrait,découper,papeterie,bricolage,snippet
+square-centerline-dashed-horizontal	axe horizontal en pointillés,carré,miroir,réfléchir,symétrie,alignement,pointillés,retourner
+square-centerline-dashed-vertical	axe vertical en pointillés,carré,miroir,réfléchir,symétrie,alignement,pointillés,retourner
+square-chart-gantt	diagramme de gantt,gantt,planning,projet,gérer,calendrier,feuille de route,chronologie,échéance,productivité,agile,carré
+square-check	case cochée,carré,coche,fait,terminé,tâche,valider,à faire,validation
+square-check-big	case cochée,grande coche,carré,coche,fait,terminé,tâche,valider,à faire,validation
+square-chevron-down	chevron vers le bas,carré,bas,retour,menu,panneau,flèche
+square-chevron-left	chevron vers la gauche,carré,gauche,précédent,retour,inférieur à,menu,panneau,bouton,touche
+square-chevron-right	chevron vers la droite,carré,droite,suivant,avancer,supérieur à,menu,panneau,invite de commandes,terminal,console,shell
+square-chevron-up	chevron vers le haut,carré,haut,accent circonflexe,exposant,puissance,menu,panneau,touche,contrôle
+square-code	code,carré,programmation,source,html,xml,développement,extrait de code
+square-dashed	sélection,carré en pointillés,carré,pointillés,rectangle,cadre,outil de sélection,boîte
+square-dashed-bottom	carré pointillé en bas,carré,rectangle,forme,extrait de code,code,pointillés,1:1
+square-dashed-bottom-code	carré pointillé avec code,carré,rectangle,forme,extrait de code,code,programmation,pointillés
+square-dashed-kanban	kanban en pointillés,kanban,tableau,projet,gérer,tickets,brouillon,modèle,feuille de route,productivité,agile,carré
+square-dashed-mouse-pointer	inspecteur d'élément,carré en pointillés,souris,clic,pointeur,sélecteur,navigateur,cible,dom,élément
+square-dashed-plus	ajouter une sélection,carré en pointillés,plus,nouveau,ajouter,insérer,cadre,vide,espace réservé,sélection
+square-dashed-text	sélection de texte,carré en pointillés,rechercher,chercher,sélection,texte,pointillés
+square-dashed-top-solid	carré bordure haute,carré,pointillés,bordure,largeur,mise en page,style,rectangle,cadre,sélection
+square-dashed-x	désélectionner,carré en pointillés,croix,supprimer,sélection,bordure,mise en page,rectangle,cadre,annuler la sélection
+square-dashed-x-corner	désélectionner,carré en pointillés,croix,supprimer,sélection,bordure,mise en page,rectangle,cadre,annuler la sélection
+square-dimensions	dimensions,carré,taille,largeur,hauteur,redimensionner,échelle,cadre,proportions,mesures,canevas
+square-divide	division,carré,diviser,calcul,mathématiques,opérateur,÷
+square-dot	carré avec point,point,modifié,git,différence,carré,modification
+square-equal	égal,carré,signe égal,calcul,mathématiques,égalité,opérateur
+square-exclamation-point	point d'exclamation,carré,avertissement,alerte,danger,attention,notification,important,prudence
+square-function	fonction,carré,programmation,code,automatisation,mathématiques,formule
+square-kanban	kanban,tableau kanban,carré,tableau,projet,gérer,tickets,feuille de route,productivité,agile,colonnes
+square-library	bibliothèque,carré,livres,lecture,auteurs,romans,savoir,éducation,université,apprentissage,connaissance
+square-m	métro,carré,m,station de métro,souterrain,ligne,transport,navigation
+square-menu	menu,carré,hamburger,barres,navigation,options,barre de menu,panneau
+square-minus	moins,carré,soustraire,retirer,diminuer,réduire,ligne,séparateur,règle horizontale,calcul,opérateur
+square-mouse-pointer	pointeur de souris,carré,souris,clic,inspecteur,élément,sélecteur,navigateur,cible,dom
+square-off	carré barré,barre oblique,désactivé,inactif,annuler,aucun,bloquer,interdit,indisponible,case décochée,négation
+square-parking	parking,carré,stationnement,place de parking,parc de stationnement,voiture,p
+square-parking-off	stationnement interdit,parking barré,parking,carré,défense de stationner,place de parking,voiture
+square-pause	pause,carré,musique,audio,arrêt,lecture,vidéo
+square-pen	modifier,carré avec crayon,crayon,éditer,changer,créer,dessiner,écrire,rédaction,stylo,encre,papeterie,artiste
+square-percent	pourcentage,carré,promotion,remise,réduction,solde,offre,marketing,vérifié,étiquette,prix
+square-pi	carré pi,constante,code,programmation,symbole,trigonométrie,géométrie,formule,mathématiques
+square-pilcrow	carré pied-de-mouche,paragraphe,alinéa,typographie,texte,symbole,marque
+square-play	carré lecture,lecture,musique,audio,vidéo,démarrer,lancer
+square-plus	carré plus,ajouter,nouveau,augmenter,incrémenter,calculatrice,bouton,créer,addition
+square-power	carré marche arrêt,allumer,éteindre,alimentation,interrupteur,bascule,redémarrer,bouton,appareil
+square-radical	carré racine carrée,racine,calcul,formule,mathématiques,opérateur,symbole
+square-round-corner	carré à coins arrondis,bordure,rayon,style,design,coin,mise en page,arrondi
+square-scissors	carré ciseaux,ciseaux,couper,découper,extrait,papeterie,bricolage,bouton
+square-sigma	carré sigma,somme,calcul,formule,mathématiques,énumération,total
+square-slash	carré barre oblique,barre oblique,git,diff,ignoré,diviser,division,raccourci,ou
+square-sparkles	carré étincelles,image,photo,étincelles,brillant,magie,ia
+square-split-horizontal	carré divisé horizontalement,diviser,séparer,scinder,horizontal,partager
+square-split-vertical	carré divisé verticalement,diviser,séparer,scinder,vertical,partager
+square-square	carré dans carré,carré,rectangle,flottant,centrer,centré
+square-stack	piles de carrés,versions,cloner,copie,dupliquer,multiple,révisions,sauvegarde,historique,empiler
+square-star	carré étoile,badge,médaille,honneur,décoration,ordre,épingle,laurier,trophée,médaillon,bronze,argent,or
+square-stop	carré arrêt,arrêter,stop,média,musique,lecteur
+square-terminal	terminal,code,ligne de commande,invite de commande,console,shell,carré
+square-text	carré texte,texte,paragraphe,contenu,note,document,corps,copier,article,conteneur,bloc,carte,page,papier,feuille,liste,script,éditeur
+square-user	carré utilisateur,utilisateur,personne,compte,contact,profil
+square-user-round	carré utilisateur rond,utilisateur,personne,compte,contact,profil
+square-x	carré croix,croix,annuler,fermer,supprimer,retirer,effacer,multiplier,multiplication
+squares-exclude	carrés exclusion,carrés,exclure,inverser,ou exclusif,forme,vectoriel,tracé,pathfinder
+squares-intersect	carrés intersection,carrés,intersection,croiser,forme,inclure,vectoriel,tracé,pathfinder
+squares-subtract	carrés soustraction,carrés,soustraire,soustraction,moins,forme,avant,vectoriel,tracé,pathfinder
+squares-unite	carrés union,carrés,unir,union,fusionner,forme,vectoriel,tracé,pathfinder
+squircle	superellipse,forme,carré arrondi,arrondi,squircle
+squircle-dashed	superellipse en pointillés,pointillés,forme,en attente,progression,problème,brouillon,code,gestion de versions
+squirrel	écureuil,animal,rongeur,noisette,noix,récupérer,mises à jour,stockage,réserve
+stamp	tampon,marque,imprimer,cloner,fidélité,bibliothèque,cachet
+star	étoile,signet,favori,aimer,avis,note,évaluation
+star-check	étoile cochée,étoile,coche,valider,favori,signet,aimer,avis,note,évaluation
+star-half	demi-étoile,étoile,moitié,favori,signet,aimer,avis,note,évaluation
+star-minus	étoile moins,étoile,moins,retirer,désélectionner,favori,signet,aimer,note
+star-off	étoile barrée,étoile,ne plus aimer,retirer,supprimer la note,désactivé,favori
+star-plus	étoile plus,étoile,plus,ajouter,favori,signet,aimer,note,évaluation
+star-x	étoile croix,étoile,croix,annuler,rejeter,favori,signet,aimer,note,symbole,forme,graphisme
+step-back	reculer,flèche,précédent,musique,gauche,retour,piste précédente
+step-forward	avancer,flèche,suivant,musique,droite,continuer,piste suivante
+stethoscope	stéthoscope,médical,médecin,cœur,poumons,santé,auscultation,docteur
+sticker	autocollant,réaction,émotion,sourire,heureux,retour,avis,émoji
+sticky-note	note adhésive,post-it,commentaire,annotation,mémo,rappel,tâche,idée,remue-méninges,document,page,papier,feuille,bureau
+sticky-note-check	note adhésive cochée,post-it,note,coche,terminé,fait,réussi,valider,vérifié,mémo,rappel,tâche
+sticky-note-minus	note adhésive moins,post-it,note,moins,retirer,supprimer,mémo,rappel,annotation
+sticky-note-off	note adhésive désactivée,post-it,note,désactivé,masqué,muet,inactif,mémo,annotation
+sticky-note-plus	note adhésive plus,post-it,note,plus,ajouter,créer,nouveau,mémo,annotation
+sticky-note-x	note adhésive croix,post-it,note,croix,fermer,annuler,supprimer,retirer,mémo,annotation
+sticky-notes	notes adhésives,post-it,notes,annotation,mémo,rappel,tâches,idées,documents,collection,groupe,pile,cloner,dupliquer,copier
+stone	pierre,caillou,minéral,géologie,nature,solide,galet,cristal,minerai,charbon,roche,rocher
+store	magasin,boutique,commerce,supermarché,étal,bâtiment,échoppe
+stretch-horizontal	étirer horizontalement,éléments,flex,justifier,distribuer,étirement,répartir,horizontal
+stretch-vertical	étirer verticalement,éléments,flex,justifier,distribuer,étirement,répartir,vertical
+strikethrough	barré,texte barré,rayer,supprimer,format,mise en forme
+subscript	indice,texte,mise en forme,format,bas de ligne
+summary	résumé,bref,synthèse,rapport,aperçu,récapitulatif,condensé,ia,texte,vue d'ensemble
+sun	soleil,luminosité,météo,lumière,été,clair,jour
+sun-dim	soleil tamisé,luminosité faible,luminosité,atténuer,faible,soleil,baisse
+sun-medium	soleil moyen,luminosité moyenne,luminosité,moyen,soleil
+sun-moon	soleil et lune,thème automatique,thème système,sombre,clair,luminosité,thème,apparence,mode
+sun-snow	soleil et neige,climatisation,température,chaud,froid,saisons,météo,flocon
+sunrise	lever du soleil,aube,météo,heure,matin,jour,soleil levant
+sunset	coucher du soleil,crépuscule,météo,heure,soir,nuit,soleil couchant
+superscript	exposant,texte,mise en forme,format,puissance
+swatch-book	nuancier,couleurs,échantillons,pantone,teintes,nuances,palette,saturation,luminosité,thème,textile,moquette
+swiss-franc	franc suisse,chf,devise,monnaie,argent,paiement,suisse
+switch-camera	changer de caméra,inverser caméra,photo,selfie,avant,arrière,appareil photo,retourner
+sword	épée,bataille,défi,combat,duel,fantasy,jeu,chevalier,médiéval,arme,guerre,guerrier,lame
+swords	épées croisées,épées,bataille,défi,combat,conflit,croisées,duel,faction,fantasy,jeu,médiéval,rivalité,versus,arme,guerre,guerrier
+syringe	seringue,médecine,médical,aiguille,piqûre,injection,sang,vaccin,pompe
+table	tableau,tableur,grille,feuille de calcul,table,lignes,colonnes
+table-2	tableau,tableur,grille,feuille de calcul,table,lignes,colonnes
+table-cells-merge	fusionner les cellules,tableau,tableur,grille,ligne,cellule,fusion,table
+table-cells-split	diviser les cellules,scinder les cellules,tableau,tableur,grille,ligne,cellule,table
+table-columns-split	diviser les colonnes,tableau,tableur,grille,couper,séparer,segmenter,colonne,table
+table-of-contents	table des matières,sommaire,plan,navigation,structure du document,index,aperçu,sections,chapitres,contenu,documentation,manuel,base de connaissances,faq
+table-properties	tableau de propriétés,liste de propriétés,tableur,grille,dictionnaire,objet,table de hachage,table
+table-rows-split	diviser les lignes,tableau,tableur,grille,couper,séparer,segmenter,ligne,table
+tablet	tablette,appareil,mobile,écran,affichage,tactile,portable,responsive,ipad
+tablet-smartphone	tablette et téléphone,téléphone,portable,smartphone,appareil,mobile,écran,tactile,responsive,navigateur,test
+tablets	comprimés,médicament,médecine,ordonnance,pilules,pharmacie,cachets,gélules,drogue
+tag	étiquette,badge,ticket,marque,libellé,tag
+tag-plus	étiquette plus,étiquette,nouveau,ajouter,créer,libellé,plus,badge
+tag-x	étiquette croix,étiquette,croix,supprimer,retirer,libellé,badge
+tags	étiquettes,badges,tickets,marques,copier,multiple,libellés,tags
+tally-1	trait de comptage un,compter,score,énumérer,jours,un,1,barre,prison,cellule,peine,pointage
+tally-2	traits de comptage deux,compter,score,énumérer,jours,deux,2,double,barres,prison,cellule,peine,pointage
+tally-3	traits de comptage trois,compter,score,énumérer,jours,trois,3,triple,barres,prison,cellule,peine,pointage
+tally-4	traits de comptage quatre,compter,score,énumérer,jours,quatre,4,quadruple,barres,prison,cellule,peine,pointage
+tally-5	traits de comptage cinq,compter,score,énumérer,jours,cinq,5,barres,prison,cellule,peine,barre oblique,pointage
+tangent	tangente,tangentiel,forme,cercle,géométrie,trigonométrie,courbe de bézier,courbe
+target	cible,logo,mille,objectif,échéance,projets,aperçu,travail,productivité,but
+telescope	télescope,astronomie,espace,découverte,exploration,explorer,vision,perspective,observer,étoiles,observation,lunette
+tent	tente,tipi,wigwam,camping,campement,vacances,retraite,nomade,amérindien,nature,plein air
+tent-tree	tente et arbre,tente,camping,campement,vacances,retraite,nomade,nature,plein air,arbre,forêt
+terminal	terminal,code,ligne de commande,invite de commande,console,shell
+test-tube	tube à essai,éprouvette,tube,fiole,flacon,ampoule,laboratoire,chimie,expérience,test
+test-tube-diagonal	tube à essai en diagonale,éprouvette,tube,fiole,flacon,ampoule,laboratoire,chimie,expérience,test
+test-tubes	tubes à essai,éprouvettes,tubes,fioles,flacons,ampoules,laboratoire,chimie,expérience,test
+text-align-center	alignement centré,texte,alignement,centre,centrer,centré
+text-align-end	alignement à droite,texte,alignement,droite,fin
+text-align-justify	texte justifié,justifier,texte,alignement,justifié,menu,liste
+text-align-justify-center	justifié centré,paragraphe,alignement,justifié,centre,milieu,typographie,éditeur,document
+text-align-justify-end	justifié à droite,paragraphe,alignement,justifié,droite,fin,typographie,éditeur,document
+text-align-justify-start	justifié à gauche,paragraphe,alignement,justifié,gauche,début,typographie,éditeur,document
+text-align-start	alignement à gauche,texte,alignement,gauche,début,liste
+text-cursor	curseur de texte,sélectionner,curseur,saisir,saisie,écrire,écriture,modifier,insérer,champ de texte,zone de texte
+text-cursor-input	champ de saisie,curseur de texte,sélectionner,saisie,formulaire,champ de texte,zone de texte,entrée
+text-initial	lettrine,texte,format,mise en forme,typographie,lettre,taille de police,initiale
+text-quote	citation,bloc de citation,guillemets,retrait,réponse,répondre,texte
+text-search	recherche dans le texte,rechercher,trouver,données,copie,txt,pdf,document,scanner,loupe,lentille
+text-wrap	retour à la ligne,mots,lignes,saut,paragraphe,césure,texte,habillage
+theater	théâtre,spectacle,divertissement,podium,scène,comédie musicale,masques
+thermometer	thermomètre,température,celsius,fahrenheit,météo,fièvre
+thermometer-snowflake	thermomètre flocon,thermomètre,température,celsius,fahrenheit,météo,froid,gel,congélation,glacial
+thermometer-sun	thermomètre soleil,thermomètre,température,celsius,fahrenheit,météo,chaud,chaleur,canicule
+thumbs-down	pouce vers le bas,pouce en bas,je n'aime pas,mauvais,émotion,désapprouver,dislike
+thumbs-up	pouce vers le haut,pouce en l'air,j'aime,bien,bon,émotion,approuver,like
+tic-tac-toe	morpion,jeu,plateau,grille,stratégie,croix et ronds
+ticket	billet,ticket,entrée,pass,bon,événement,concert,spectacle,perforé,pointillés
+ticket-check	billet validé,billet,ticket,coche,entrée,pass,bon,événement,concert,spectacle,réservé,acheté,reçu,utilisé,vérifié,certifié
+ticket-minus	billet moins,billet,ticket,moins,retirer,annuler,soustraire,diminuer,entrée,événement,spectacle
+ticket-percent	billet de réduction,billet,ticket,pourcentage,réduction,remise,promo,offre,bon,entrée,événement,concert,spectacle,acheter
+ticket-plus	billet plus,billet,ticket,plus,ajouter,réserver,acheter,entrée,événement,concert,spectacle
+ticket-slash	billet barré,billet,ticket,barre oblique,annulé,annulation,invalide,refusé,interdit,remboursé,supprimer,effacer,erreur,utilisé,nul
+ticket-x	billet croix,billet,ticket,croix,annulé,annulation,remboursé,utilisé,nul,invalide,refusé,interdit,supprimer,effacer,erreur
+tickets	billets,tickets,voyage,pass,entrée,bon,événement,concert,spectacle,perforé,pointillés
+tickets-plane	billets d'avion,billet,avion,voyage,vol,décoller,vacances,passager,pass,enregistrement,aéroport,carte d'embarquement
+timeline	chronologie,frise chronologique,étiquettes,historique,ligne du temps
+timer	minuteur,chronomètre,minuterie,temps,compte à rebours,timer
+timer-off	minuteur désactivé,minuteur,chronomètre,minuterie,temps,désactivé,arrêt,timer
+timer-reset	minuteur réinitialisé,minuteur,chronomètre,minuterie,temps,réinitialiser,remettre à zéro,timer
+toggle-left	interrupteur à gauche,interrupteur,bascule,activé,désactivé,on,off,booléen,commutateur,gauche
+toggle-right	interrupteur à droite,interrupteur,bascule,activé,désactivé,on,off,booléen,commutateur,droite
+toilet	toilettes,wc,cabinet,salle de bain,lavabo,w-c
+tool-case	mallette à outils,outils,maintenance,réparation,caisse à outils,boîte à outils
+toolbox	boîte à outils,caisse à outils,outils,coffre,boîte,rangement,utilitaire,conteneur,kit,réparation,dépannage,entretien,maintenance,mécanicien,atelier,construction,quincaillerie,équipement,bricoleur,ingénierie,bricolage
+toothbrush	brosse à dents,hygiène dentaire,hygiène bucco-dentaire,brossage,dents,dentiste,salle de bain,toilette,soins personnels,nettoyage,poils,plaque,dentifrice,soin
+toothbrush-sparkles	brosse à dents brillante,brosse à dents,hygiène dentaire,brossage,dents,dentiste,salle de bain,dentifrice,propre,frais,étincelles,soin
+tornado	tornade,météo,vent,tempête,ouragan,cyclone
+torus	tore,beignet,donut,anneau,creux,3d,restauration rapide,malbouffe,snack,friandise,sucré,sucre,dessert
+touchpad	pavé tactile,trackpad,curseur,souris,touchpad,ordinateur portable
+touchpad-off	pavé tactile désactivé,pavé tactile,trackpad,curseur,désactivé,touchpad,souris
+towel-rack	porte-serviettes,serviette,salle de bain,toilette,hygiène,propre,frais,sec,linge,laverie,hôtellerie,ménage,room service,spa,suspendu,sèche-serviettes
+tower-control	tour de contrôle,aéroport,voyage,tour,transport,phare,aviation
+toy-brick	brique de jouet,lego,bloc,brique,extension,module,plugin,intégration,jouet
+tractor	tracteur,agriculture,agriculteur,ferme,récolte,équipement,véhicule,champ
+traffic-cone	cône de signalisation,plot,cône,travaux,chantier,route,sécurité,bloquer,balise
+trailer	remorque,caravane,tracter,expédition,livraison,transport routier,véhicule,équipement,fret
+train-front	train,chemin de fer,métro,souterrain,tgv,grande vitesse,rapide,voie,ligne,locomotive
+train-front-tunnel	train dans un tunnel,train,tunnel,chemin de fer,métro,souterrain,vitesse,tgv,rapide,voie,ligne
+train-track	voie ferrée,rails,chemin de fer,ligne,train,voie
+tram-front	tramway,tram,chemin de fer,métro,souterrain,voie,ligne,tourisme,transport
+transgender	transgenre,genre,trans,inclusif,symbole,identité de genre
+trash	poubelle,corbeille,supprimer,déchets,ordures,vider,suppression,nettoyer,effacer,retirer,recycler,jeter,détritus
+trash-off	poubelle barrée,poubelle,corbeille,supprimer,déchets,ordures,désactivé,empêcher,verrouillé,indisponible,protégé,interdit
+tree-deciduous	arbre feuillu,arbre,forêt,parc,nature,feuillage,chêne
+tree-palm	palmier,vacances,loisirs,île,plage,tropical,arbre,cocotier
+tree-pine	pin,sapin,arbre,conifère,forêt,parc,nature,noël
+trees	arbres,arbre,forêt,parc,nature,bois,bosquet
+trending-down	tendance à la baisse,baisse,statistiques,diminution,déclin,chute,courbe descendante,graphique
+trending-up	tendance à la hausse,hausse,statistiques,croissance,augmentation,progression,courbe ascendante,graphique
+trending-up-down	tendance variable,flèches,estimé,indéterminé,fluctuation,incertain,prévision,variable,prédiction,dynamique,volatil,hausse et baisse
+triangle	triangle,équilatéral,delta,forme,pyramide,hiérarchie,géométrie
+triangle-alert	triangle d'avertissement,avertissement,alerte,danger,point d'exclamation,attention,erreur,warning,linter
+triangle-dashed	triangle en pointillés,triangle,pointillés,équilatéral,delta,forme,pyramide,hiérarchie
+triangle-right	triangle rectangle,triangle,volume,contrôles,télécommande,géométrie,delta,rampe,pente,inclinaison,augmenter
+triangles-centerline-dashed-horizontal	triangles miroir horizontal,triangles,réfléchir,miroir,symétrie,alignement,pointillés,axe horizontal
+triangles-centerline-dashed-vertical	triangles miroir vertical,triangles,réfléchir,miroir,symétrie,alignement,pointillés,axe vertical
+trophy	trophée,coupe,prix,sport,gagnant,vainqueur,réussite,récompense,champion,célébration,victoire,compétition,tournoi,classement,première place,or
+truck	camion,livraison,fourgon,expédition,transport,poids lourd,fourgonnette,transport routier
+truck-electric	camion électrique,camion,livraison,fourgon,expédition,transport,électrique,véhicule électrique
+tube-lotion	tube de crème,crème solaire,écran total,indice,uv,crème,soin de la peau,dentifrice,pommade,flacon,salle de bain,plage,été,lotion
+turkish-lira	livre turque,lire turque,devise,monnaie,argent,paiement,turquie
+turntable	platine vinyle,tourne-disque,électrophone,gramophone,stéréo,phonographe,vinyle,disque,musique,analogique,rétro,dj,scratch
+turtle	tortue,animal,animal de compagnie,lent,lenteur,vitesse,carapace
+tv	télévision,télé,téléviseur,écran,diffusion,streaming,haute définition,numérique,vidéo,divertissement,chaînes,antenne,satellite,câble,signal,connexion
+tv-minimal	télévision,télé,écran plat,téléviseur,streaming,écran,haute définition,numérique,vidéo,home cinéma,divertissement,chaînes,replay
+tv-minimal-play	télévision lecture,télé,écran plat,téléviseur,lecture,streaming,écran,numérique,vidéo,film,direct,démarrer,home cinéma,divertissement,chaînes,replay
+type	texte,police,typographie,caractère,écriture,fonte
+type-outline	texte contour,texte,police,typographie,silhouette,profil,contour,trait,ligne,caractère
+umbrella	parapluie,pluie,météo,protection,averse
+umbrella-off	parapluie barré,parapluie,pluie,météo,découvert,non assuré,antivirus,non protégé,risqué,sans protection
+underline	souligné,souligner,texte,format,mise en forme
+undo	annuler,rétablir,refaire,relancer,historique,retour en arrière
+undo-2	annuler,rétablir,refaire,relancer,historique,retour,retour en arrière,inverser,restaurer,direction,demi-tour
+undo-dot	annuler une étape,annuler,rétablir,historique,étape,retour,point,retour en arrière
+unfold-horizontal	déplier horizontalement,flèche,réduire,plier,déplier,vertical,pointillés,développer,agrandir
+unfold-vertical	déplier verticalement,flèche,développer,déplier,agrandir,vertical,pointillés
+ungroup	dissocier,dégrouper,cubes,paquets,pièces,unités,collection,groupe,séparer
+university	université,bâtiment,éducation,enfance,école,collège,académie,institut,faculté,fac
+unlink	délier,supprimer le lien,lien,url,déchaîner,rompre,dissocier,chaîne
+unlink-2	délier,supprimer le lien,lien,url,déchaîner,rompre,dissocier,chaîne
+unplug	débrancher,électricité,énergie,électronique,prise,secteur,déconnecter,fiche,courant
+upload	téléverser,envoyer,téléverser un fichier,fichier,charger,importer,mettre en ligne,uploader,flèche haut
+usb	usb,bus série universel,contrôleur,connecteur,interface,clé usb,port,branchement
+usb-c-port	port usb-c,usb c,bus série universel,contrôleur,connecteur,interface,prise,fiche,emplacement,données,entrée,sortie,port,chargeur
+user	utilisateur,personne,compte,contact,profil,membre
+user-check	utilisateur validé,utilisateur,coche,suivi,abonné,fait,à faire,terminé,tâche,valider,personne,vérifié
+user-cog	utilisateur paramètres,utilisateur,réglages,paramètres,modifier,engrenage,roue dentée,compte,profil,personne
+user-group	groupe d'utilisateurs,groupe,personnes,équipe,membres,communauté,adhésion,collaboration,organisation,contacts,annuaire,personnel,famille,ascendance,ancêtres,lignée,parents
+user-key	utilisateur clé,clé d'accès,mot de passe,connexion,authentification,autorisation,rôles,permissions,privé,public,sécurité,personne,compte,contact
+user-lock	utilisateur verrouillé,utilisateur,personne,cadenas,verrou,verrouillé,compte,sécurisé,sécurité
+user-minus	utilisateur moins,utilisateur,supprimer,retirer,ne plus suivre,se désabonner,désabonner,personne,moins
+user-pen	utilisateur modifier,utilisateur,personne,compte,contact,profil,modifier,changer,éditer,stylo
+user-plus	utilisateur plus,utilisateur,nouveau,ajouter,créer,suivre,s'abonner,abonner,personne,inviter,inscription
+user-round	utilisateur rond,utilisateur,personne,compte,contact,profil,membre
+user-round-arrow-left	utilisateur flèche gauche,utilisateur,personne,assigner,déplacer,donner,configurer,moi,profil,avatar,entrant,destinataire,responsable,flèche,gauche
+user-round-check	utilisateur validé,utilisateur,coche,suivi,abonné,fait,à faire,terminé,tâche,valider,personne,vérifié
+user-round-cog	utilisateur paramètres,utilisateur,réglages,paramètres,modifier,engrenage,roue dentée,compte,profil,personne
+user-round-group	groupe d'utilisateurs,groupe,personnes,équipe,membres,communauté,adhésion,collaboration,organisation,contacts,annuaire,personnel,famille,ascendance,ancêtres,lignée,parents
+user-round-key	utilisateur clé,clé d'accès,mot de passe,connexion,authentification,autorisation,rôles,permissions,privé,public,sécurité,personne,compte,contact
+user-round-minus	utilisateur moins,utilisateur,supprimer,retirer,ne plus suivre,se désabonner,désabonner,personne,moins
+user-round-pen	utilisateur modifier,utilisateur,personne,compte,contact,profil,modifier,changer,éditer,stylo
+user-round-plus	utilisateur plus,utilisateur,nouveau,ajouter,créer,suivre,s'abonner,abonner,personne,inviter,inscription
+user-round-search	utilisateur recherche,utilisateur,personne,compte,contact,rechercher,trouver,scanner,loupe,lentille
+user-round-x	utilisateur croix,utilisateur,supprimer,retirer,ne plus suivre,se désabonner,indisponible,personne,croix
+user-search	utilisateur recherche,utilisateur,personne,compte,contact,rechercher,trouver,scanner,loupe,lentille
+user-shield	utilisateur protégé,utilisateur,bouclier,administrateur,admin,protégé,garde,profil,sécurité,confidentialité,permissions,rôle
+user-star	utilisateur étoile,utilisateur,personne,compte,favori,contact,aimer,avis,note,évaluation,administrateur,admin,étoile
+user-x	utilisateur croix,utilisateur,supprimer,retirer,ne plus suivre,se désabonner,indisponible,personne,croix
+users	utilisateurs,groupe,personnes,équipe,membres,foule
+users-round	utilisateurs,groupe,personnes,équipe,membres,foule
+utensils	couverts,fourchette,couteau,coutellerie,vaisselle,argenterie,nourriture,restaurant,repas,petit-déjeuner,dîner,souper,manger
+utensils-crossed	couverts croisés,couverts,fourchette,couteau,coutellerie,vaisselle,argenterie,nourriture,restaurant,repas,petit-déjeuner,dîner,souper,manger
+utility-pole	poteau électrique,poteau,électricité,énergie,ligne de transmission,poteau télégraphique,lignes électriques,téléphone,câbles
+van	camionnette,fourgonnette,fourgon,minibus,chariot,camion,remorque,camping-car,véhicule,conduire,voyage,transport,livraison,utilitaire
+variable	variable,code,programmation,symbole,calcul,algèbre,x,parenthèses,crochets,paramètre,fonction
+vault	coffre-fort,coffre,dépôt,casier,sécurité,sécurisé,stockage,objets de valeur,banque,chambre forte
+vector-polygon	polygone vectoriel,polygone,carte,vecteur,géométrie,coordonnées,forme,emplacement,limite,zone,région,sig,géospatial,sommets,points,contour,dessin,design,mathématiques
+vector-square	carré vectoriel,carré,forme,géométrie,art,largeur,hauteur,taille,calculer,mesurer,sélectionner,graphisme,boîte,vecteur
+vegan	végan,végétalien,végétarien,frugivore,herbivore,droits des animaux,régime,alimentation,feuille
+venetian-mask	masque vénitien,masque,mascarade,carnaval,usurper,secret,incognito,déguisement
+venus	vénus,genre,sexe,femelle,féminin,femme,fille,symbole féminin
+venus-and-mars	vénus et mars,genre,sexe,intersexe,androgyne,hermaphrodite,homme et femme,symbole
+vibrate	vibration,vibrer,smartphone,notification,vibreur,retour haptique,écran,téléphone
+vibrate-off	vibration désactivée,vibrer,smartphone,notification,vibreur,retour haptique,notifications,écran,désactivé,téléphone
+video	vidéo,caméra,film,enregistrement,cinéma,caméscope,bobine,tournage
+video-off	vidéo désactivée,vidéo,caméra,film,désactivé,caméra coupée
+videotape	cassette vidéo,vhs,film,enregistrement,cinéma,démo,cassette,bande
+view	œil,regarder,voir,vue,afficher,visibilité,visible
+virus	virus,pathogène,infection,maladie,contagion,épidémie,pandémie,covid,coronavirus,germe,microbe,micro-organisme,biologie,médical,santé,logiciel malveillant,cybersécurité,menace
+virus-off	virus barré,virus,pathogène,infection,maladie,contagion,épidémie,pandémie,covid,coronavirus,germe,microbe,biologie,médical,santé,logiciel malveillant,cybersécurité,menace,antivirus,bloqué,supprimé,propre,sûr,prévention,quarantaine
+voicemail	messagerie vocale,répondeur,téléphone,cassette,bande,bobine,enregistrement,audio,message vocal
+volleyball	volley-ball,ballon,plage,sable,filet,vacances,été,sport,balle,jeu
+volume	volume,musique,son,sourdine,muet,haut-parleur,enceinte,audio
+volume-1	volume faible,volume,musique,son,haut-parleur,enceinte,audio,bas
+volume-2	volume fort,volume,musique,son,haut-parleur,enceinte,audio,élevé
+volume-off	volume coupé,volume,musique,son,muet,sourdine,haut-parleur,enceinte,audio,désactivé
+volume-x	volume muet,volume,musique,son,muet,sourdine,haut-parleur,enceinte,audio,croix
+vote	voter,vote,urne,sondage,bulletin,scrutin,politique,social,coche,élection
+wallet	portefeuille,porte-monnaie,argent,finance,poche,paiement
+wallet-cards	portefeuille avec cartes,portefeuille,cartes,banque,espèces,carte de débit,transport,argent,finance,poche,carte de crédit,achat,paiement,shopping,carte bancaire
+wallet-minimal	portefeuille,porte-monnaie,finance,poche,argent,paiement
+wallpaper	fond d'écran,arrière-plan,texture,image,art,design,visuel,décor,motif,écran,couverture,écran de verrouillage,papier peint
+wand	baguette magique,baguette,magie,sélection,sorcier,magicien
+wand-sparkles	baguette magique étincelles,baguette,magie,étincelles,sorcier,magicien,enchantement
+warehouse	entrepôt,stockage,dépôt,magasin,réserve,logistique,bâtiment,hangar
+washing-machine	machine à laver,lave-linge,sèche-linge,électroménager,électronique,cycle,vêtements,linge,rinçage,essorage,tambour,lessive
+watch	montre,horloge,heure,temps,bracelet,montre connectée
+waves-arrow-down	vagues flèche bas,vagues,eau,mer,niveau,son,hertz,longueur d'onde,vibrer,bas,marée basse,océan,baisse,descendre,flèche
+waves-arrow-up	vagues flèche haut,vagues,eau,mer,niveau,son,hertz,longueur d'onde,vibrer,haut,marée haute,océan,montée,monter,flèche
+waves-horizontal	vagues,eau,mer,son,hertz,longueur d'onde,vibrer,océan,natation,fréquence,ondes,ondulation
+waves-ladder	piscine,échelle de piscine,natation,nager,eau,maître-nageur,océan,vagues,bassin,baignade,plongée
+waves-vertical	vapeur,chaleur,température,brûlure,chaud,ébullition,fumée,odeur,arôme,sauna,vagues,bouillant
+waypoints	points de passage,itinéraire,indirection,vpn,réseau privé virtuel,proxy,connexions,rebond,chemin,voyage,planificateur,arrêts,stations,partagé,viral,étapes
+webcam	webcam,caméra,sécurité,vidéo,surveillance,visioconférence
+webcam-off	webcam désactivée,webcam,caméra,sécurité,désactivé,caméra coupée
+webhook	webhook,api push,interface,rappel,callback,crochet web
+webhook-off	webhook désactivé,webhook,api push,interface,rappel,callback,désactivé
+weight	poids,masse,lourd,plomb,métal,mesure,géométrie,balance,équilibre,haltère
+weight-tilde	poids estimé,poids,mesure,balance,estimation,environ,charge,équilibre,taille,quantité,masse,approximatif
+wheat	blé,maïs,céréale,grain,gluten,épi,agriculture
+wheat-off	sans gluten,blé barré,blé,maïs,céréale,grain,allergie,intolérance,régime,alimentation
+whistle	sifflet,alerte,signal,son,souffler,bruit,entraîneur,arbitre,gym,jeu,entraînement,sport,police,maître-nageur,sécurité,secours,urgence
+whole-word	mot entier,texte,sélection,lettres,caractères,police,typographie,recherche
+wifi	wifi,connexion,signal,sans fil,réseau,internet,wi-fi
+wifi-cog	wifi paramètres,wifi,connexion,signal,sans fil,répertoire,réglages,contrôle,préférences,engrenage,modifier,roue dentée
+wifi-high	wifi fort,wifi,connexion,signal,sans fil,signal élevé,réseau
+wifi-low	wifi faible,wifi,connexion,signal,sans fil,signal faible,réseau
+wifi-off	wifi désactivé,wifi,désactivé,sans fil,déconnecté,pas de réseau,connexion coupée
+wifi-pen	wifi modifier,wifi,modifier,stylo,changer,réseau,éditer,sans fil
+wifi-sync	synchronisation wifi,wifi,connexion,signal,sans fil,synchroniser,reconnecter,réinitialiser,redémarrer,actualiser
+wifi-zero	wifi aucun signal,wifi,connexion,signal,sans fil,pas de signal,aucun signal,réseau
+wind	vent,météo,air,souffler,brise,bourrasque
+wind-arrow-down	vent flèche bas,vent,météo,air,pression,souffler,flèche,bas,baisse
+wind-arrow-up	vent flèche haut,vent,météo,air,pression,souffler,rafale,venteux,trier,augmenter,flèche,haut,hausse
+wine	vin,verre de vin,alcool,boisson,bar,verre,sommelier,vignoble,viticulture,cave
+wine-off	sans alcool,vin barré,vin,verre de vin,alcool,boisson,verre,abstinence,abstinent,allergie,intolérance
+workflow	flux de travail,workflow,action,intégration continue,ci,automatisation,devops,réseau,nœud,connexion,processus
+worm	ver,invertébré,larve,serpent,ramper,se tortiller,ver de terre,lutte antiparasitaire,virus informatique,logiciel malveillant,asticot
+wrench	clé à molette,clé plate,clé,compte,paramètres,réglages,bricolage,boîte à outils,construire,construction,outil
+wrench-off	clé à molette barrée,clé à molette,clé,compte,paramètres,réglages,bricolage,boîte à outils,construction,désactivé,entretien,maintenance,service
+x	croix,annuler,fermer,supprimer,retirer,multiplier,multiplication,effacer,x,close
+x-line-top	x barre,croix,ligne,haut,flèche,navigation,pointeur,direction,vecteur,symbole,annuler,fermer,supprimer,multiplier,moyenne,médiane,statistiques
+zap	éclair,flash,appareil photo,foudre,électricité,énergie,puissance,rapide,orage,rapidité
+zap-off	éclair barré,éclair,flash,appareil photo,foudre,électricité,énergie,puissance,désactivé,flash désactivé
+zodiac-aquarius	verseau,signe du zodiaque,porteur d'eau,vagues,innovation,air,avenir,astrologie,horoscope,constellation,céleste
+zodiac-aries	bélier,signe du zodiaque,cornes,feu,énergie,initiative,astrologie,horoscope,constellation,céleste
+zodiac-cancer	cancer,signe du zodiaque,crabe,carapace,protection,eau,intuition,astrologie,horoscope,constellation,céleste
+zodiac-capricorn	capricorne,signe du zodiaque,chèvre,montagne,ambition,terre,discipline,astrologie,horoscope,constellation,céleste
+zodiac-gemini	gémeaux,signe du zodiaque,jumeaux,dualité,communication,air,adaptabilité,astrologie,horoscope,constellation,céleste
+zodiac-leo	lion,signe du zodiaque,couronne,leadership,feu,confiance,astrologie,horoscope,constellation,céleste
+zodiac-libra	balance,signe du zodiaque,équilibre,justice,air,harmonie,astrologie,horoscope,constellation,céleste
+zodiac-ophiuchus	ophiuchus,signe du zodiaque,serpentaire,serpent,guérison,connaissance,astronomie,astrologie,horoscope,constellation,céleste
+zodiac-pisces	poissons,signe du zodiaque,poisson,dualité,eau,rêves,empathie,astrologie,horoscope,constellation,céleste
+zodiac-sagittarius	sagittaire,signe du zodiaque,archer,flèche,exploration,feu,philosophie,astrologie,horoscope,constellation,céleste
+zodiac-scorpio	scorpion,signe du zodiaque,dard,intensité,eau,transformation,astrologie,horoscope,constellation,céleste
+zodiac-taurus	taureau,signe du zodiaque,force,stabilité,terre,endurance,astrologie,horoscope,constellation,céleste
+zodiac-virgo	vierge,signe du zodiaque,jeune fille,moisson,précision,terre,analyse,astrologie,horoscope,constellation,céleste
+zoom-in	zoom avant,agrandir,zoomer,loupe,plus,grossir,agrandissement
+zoom-out	zoom arrière,réduire,dézoomer,loupe,moins,rétrécir,réduction

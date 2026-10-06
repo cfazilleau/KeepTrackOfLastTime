@@ -36,7 +36,7 @@
         <item quantity="many">%d ans</item>
         <item quantity="other">%d ans</item>
     </plurals>
-    <string name="elapsed_two_units">%1$s %2$s</string>
+    <string name="elapsed_two_units">%1$s et %2$s</string>
     <string name="elapsed_ago">il y a %1$s</string>
     <string name="elapsed_just_now">À l’instant</string>
     <string name="elapsed_under_a_minute">Il y a moins d’une minute</string>
