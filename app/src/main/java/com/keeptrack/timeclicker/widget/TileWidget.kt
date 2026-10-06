@@ -134,15 +134,15 @@ private fun GlanceModifier.widgetShape(): GlanceModifier =
 
 private fun color(light: Color, dark: Color) = ColorProvider(day = light, night = dark)
 
-/** Background and content colours of a tile in both themes. Wallpaper tiles use the live system colours. */
+/** Background and content colours of a tile in both themes. System-colour tiles use the live Material You colours. */
 private class WidgetColors(val background: ColorProvider, val content: ColorProvider, val glass: ColorProvider)
 
 @Composable
 private fun widgetColors(tracker: Tracker, hasPhoto: Boolean): WidgetColors {
     val context = LocalContext.current
-    val wallpaperColors = context.appSettings.wallpaperColors
-    val (light, dark) = remember(wallpaperColors) {
-        timeClickerPalette(context, dark = false, wallpaperColors) to timeClickerPalette(context, dark = true, wallpaperColors)
+    val dynamicColors = context.appSettings.dynamicColors
+    val (light, dark) = remember(dynamicColors) {
+        timeClickerPalette(context, dark = false, dynamicColors) to timeClickerPalette(context, dark = true, dynamicColors)
     }
     if (hasPhoto) {
         return WidgetColors(
@@ -154,11 +154,11 @@ private fun widgetColors(tracker: Tracker, hasPhoto: Boolean): WidgetColors {
     val glass = color(Color.White.copy(alpha = 0.55f), Color.White.copy(alpha = 0.09f))
     val theme = GlanceTheme.colors
     return when {
-        wallpaperColors && supportsDynamicColor && tracker.color == TileColor.PRIMARY ->
+        dynamicColors && supportsDynamicColor && tracker.color == TileColor.PRIMARY ->
             WidgetColors(theme.primaryContainer, theme.onPrimaryContainer, glass)
-        wallpaperColors && supportsDynamicColor && tracker.color == TileColor.SECONDARY ->
+        dynamicColors && supportsDynamicColor && tracker.color == TileColor.SECONDARY ->
             WidgetColors(theme.secondaryContainer, theme.onSecondaryContainer, glass)
-        wallpaperColors && supportsDynamicColor && tracker.color == TileColor.TERTIARY ->
+        dynamicColors && supportsDynamicColor && tracker.color == TileColor.TERTIARY ->
             WidgetColors(theme.tertiaryContainer, theme.onTertiaryContainer, glass)
         else -> {
             val l: TileColors = light.tile(tracker.color)

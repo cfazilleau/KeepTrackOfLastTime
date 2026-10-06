@@ -111,9 +111,9 @@
     <string name="color_sky">سماوي</string>
     <string name="color_butter">زبدي</string>
     <string name="color_rose">وردي</string>
-    <string name="color_wallpaper_primary">لون الخلفية المميز</string>
-    <string name="color_wallpaper_secondary">لون الخلفية الهادئ</string>
-    <string name="color_wallpaper_tertiary">لون الخلفية المتباين</string>
+    <string name="color_system_primary">لون النظام المميز</string>
+    <string name="color_system_secondary">لون النظام الهادئ</string>
+    <string name="color_system_tertiary">لون النظام المتباين</string>
     <string name="icon_choice">الأيقونة: %1$s</string>
     <string name="icon_none">بلا أيقونة</string>
     <string name="icon_check">علامة صح</string>
@@ -169,8 +169,8 @@
     <string name="theme_system">النظام</string>
     <string name="theme_light">فاتح</string>
     <string name="theme_dark">داكن</string>
-    <string name="settings_wallpaper_colors">ألوان الخلفية</string>
-    <string name="settings_wallpaper_colors_hint">تلوين التطبيق وأدواته بألوان خلفية شاشتك.</string>
+    <string name="settings_system_colors">ألوان النظام</string>
+    <string name="settings_system_colors_hint">تلوين التطبيق وأدواته بألوان Material You في هاتفك.</string>
     <string name="settings_section_tiles">البطاقات</string>
     <string name="settings_time_display">عرض الوقت</string>
     <string name="settings_time_display_hint">كم مضى على إنجاز كل بطاقة، أو التاريخ والوقت.</string>

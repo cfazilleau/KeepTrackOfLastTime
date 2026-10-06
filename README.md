@@ -15,14 +15,14 @@ The number in the tile's bottom-right corner counts how many times it was presse
   The sliders button opens **Groups**: add, rename, delete, drag to reorder.
 - **Widgets**: any tile can live on the home screen (from the widget picker, or "Add to home screen"
   in its edit sheet). Tapping the widget marks it as done (with the click sound); its icon opens the app.
-- **Settings** (gear button, next to the title): theme (system / light / dark), wallpaper colours, time shown as
+- **Settings** (gear button, next to the title): theme (system / light / dark), system colours, time shown as
   "3 days ago" or as a date and time, vibration, click sound, press counter, groups, language,
   and **export / import** of everything (tiles, groups, history, photos, settings) as one `.zip` file.
 
 The look is a neumorphic "bento" grid: soft pastel tiles raised off the page that sink in when pressed,
 and glide to their new place when the grid changes. Light and dark themes follow the system unless
-picked in the settings. On Android 12+ the app can follow the wallpaper's **Material You** colours:
-surfaces and accents, with the pastel tile colours nudged toward the wallpaper's hue to match.
+picked in the settings. On Android 12+ the app can follow the system's **Material You** colours:
+surfaces and accents, with the pastel tile colours nudged toward their hue to match.
 
 Translated into English, French, Spanish, German, Italian, Portuguese, Dutch, Polish, Russian, Turkish,
 Indonesian, Arabic, Hindi, Japanese, Korean and Simplified Chinese. On Android 13+ the language can be

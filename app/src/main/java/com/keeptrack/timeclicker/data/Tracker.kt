@@ -35,11 +35,11 @@ data class TileSpec(
 enum class TileColor(val key: String) {
     SAGE("sage"), LAVENDER("lavender"), PEACH("peach"), SKY("sky"), BUTTER("butter"), ROSE("rose"),
 
-    /** Material You: follow the system (wallpaper) colours on Android 12+. */
+    /** Material You: follow the system colours on Android 12+. */
     PRIMARY("primary"), SECONDARY("secondary"), TERTIARY("tertiary");
 
     companion object {
-        /** The colours offered when editing a tile. Wallpaper colours are no longer offered; tiles using them keep them. */
+        /** The colours offered when editing a tile. System colours are no longer offered; tiles using them keep them. */
         val pickable: List<TileColor> = entries.filter { it.ordinal < PRIMARY.ordinal }
 
         fun fromKey(key: String?) = entries.firstOrNull { it.key == key } ?: SAGE

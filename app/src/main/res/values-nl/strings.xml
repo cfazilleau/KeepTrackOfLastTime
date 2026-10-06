@@ -87,9 +87,9 @@
     <string name="color_sky">Hemelsblauw</string>
     <string name="color_butter">Botergeel</string>
     <string name="color_rose">Roze</string>
-    <string name="color_wallpaper_primary">Achtergrond: accent</string>
-    <string name="color_wallpaper_secondary">Achtergrond: zacht</string>
-    <string name="color_wallpaper_tertiary">Achtergrond: contrast</string>
+    <string name="color_system_primary">Systeem: accent</string>
+    <string name="color_system_secondary">Systeem: zacht</string>
+    <string name="color_system_tertiary">Systeem: contrast</string>
     <string name="icon_choice">Pictogram: %1$s</string>
     <string name="icon_none">Geen pictogram</string>
     <string name="icon_check">Vinkje</string>
@@ -141,8 +141,8 @@
     <string name="theme_system">Systeem</string>
     <string name="theme_light">Licht</string>
     <string name="theme_dark">Donker</string>
-    <string name="settings_wallpaper_colors">Achtergrondkleuren</string>
-    <string name="settings_wallpaper_colors_hint">Kleur de app en de widgets met de kleuren van je achtergrond.</string>
+    <string name="settings_system_colors">Systeemkleuren</string>
+    <string name="settings_system_colors_hint">Kleur de app en de widgets met de Material You-kleuren van je telefoon.</string>
     <string name="settings_section_tiles">Tegels</string>
     <string name="settings_time_display">Tijdweergave</string>
     <string name="settings_time_display_hint">Hoe lang geleden elke tegel is gedaan, of de datum en tijd.</string>

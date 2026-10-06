@@ -81,9 +81,9 @@
     <string name="color_sky">天空蓝</string>
     <string name="color_butter">奶油黄</string>
     <string name="color_rose">玫瑰粉</string>
-    <string name="color_wallpaper_primary">壁纸强调色</string>
-    <string name="color_wallpaper_secondary">壁纸柔和色</string>
-    <string name="color_wallpaper_tertiary">壁纸对比色</string>
+    <string name="color_system_primary">系统强调色</string>
+    <string name="color_system_secondary">系统柔和色</string>
+    <string name="color_system_tertiary">系统对比色</string>
     <string name="icon_choice">图标：%1$s</string>
     <string name="icon_none">无图标</string>
     <string name="icon_check">对勾</string>
@@ -134,8 +134,8 @@
     <string name="theme_system">跟随系统</string>
     <string name="theme_light">浅色</string>
     <string name="theme_dark">深色</string>
-    <string name="settings_wallpaper_colors">壁纸颜色</string>
-    <string name="settings_wallpaper_colors_hint">使用壁纸的颜色为应用及其小部件着色。</string>
+    <string name="settings_system_colors">系统颜色</string>
+    <string name="settings_system_colors_hint">使用手机的 Material You 颜色为应用及其小部件着色。</string>
     <string name="settings_section_tiles">卡片</string>
     <string name="settings_time_display">时间显示</string>
     <string name="settings_time_display_hint">显示每张卡片距上次完成过了多久，或具体的日期和时间。</string>

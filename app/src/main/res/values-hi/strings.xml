@@ -87,9 +87,9 @@
     <string name="color_sky">आसमानी</string>
     <string name="color_butter">मक्खनी</string>
     <string name="color_rose">गुलाबी</string>
-    <string name="color_wallpaper_primary">वॉलपेपर एक्सेंट</string>
-    <string name="color_wallpaper_secondary">वॉलपेपर सॉफ़्ट</string>
-    <string name="color_wallpaper_tertiary">वॉलपेपर कंट्रास्ट</string>
+    <string name="color_system_primary">सिस्टम एक्सेंट</string>
+    <string name="color_system_secondary">सिस्टम सॉफ़्ट</string>
+    <string name="color_system_tertiary">सिस्टम कंट्रास्ट</string>
     <string name="icon_choice">आइकन: %1$s</string>
     <string name="icon_none">कोई आइकन नहीं</string>
     <string name="icon_check">सही का निशान</string>
@@ -141,8 +141,8 @@
     <string name="theme_system">सिस्टम</string>
     <string name="theme_light">लाइट</string>
     <string name="theme_dark">डार्क</string>
-    <string name="settings_wallpaper_colors">वॉलपेपर के रंग</string>
-    <string name="settings_wallpaper_colors_hint">ऐप और उसके विजेट पर आपके वॉलपेपर के रंग लागू करें।</string>
+    <string name="settings_system_colors">सिस्टम के रंग</string>
+    <string name="settings_system_colors_hint">ऐप और उसके विजेट पर आपके फ़ोन के Material You रंग लागू करें।</string>
     <string name="settings_section_tiles">टाइलें</string>
     <string name="settings_time_display">समय दिखाने का तरीका</string>
     <string name="settings_time_display_hint">हर टाइल को किए हुए कितना समय हुआ, या तारीख और समय।</string>

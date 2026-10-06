@@ -30,8 +30,8 @@ enum class TimeDisplay(val key: String) {
 /** User preferences from the settings screen. */
 data class AppSettings(
     val theme: ThemeMode = ThemeMode.SYSTEM,
-    /** Android 12+: tint the app with the wallpaper's colours (Material You). */
-    val wallpaperColors: Boolean = true,
+    /** Android 12+: tint the app with the system's Material You (dynamic) colours. */
+    val dynamicColors: Boolean = true,
     val timeDisplay: TimeDisplay = TimeDisplay.RELATIVE,
     /** Vibrate when a tile is tapped or long-pressed. */
     val haptics: Boolean = true,
@@ -59,7 +59,7 @@ class SettingsRepository(context: Context) {
 
     private fun read() = AppSettings(
         theme = ThemeMode.fromKey(prefs.getString(THEME, null)),
-        wallpaperColors = prefs.getBoolean(WALLPAPER_COLORS, true),
+        dynamicColors = prefs.getBoolean(DYNAMIC_COLORS, true),
         timeDisplay = TimeDisplay.fromKey(prefs.getString(TIME_DISPLAY, null)),
         haptics = prefs.getBoolean(HAPTICS, true),
         clickSound = prefs.getBoolean(CLICK_SOUND, true),
@@ -68,7 +68,7 @@ class SettingsRepository(context: Context) {
 
     private fun write(settings: AppSettings) = prefs.edit {
         putString(THEME, settings.theme.key)
-        putBoolean(WALLPAPER_COLORS, settings.wallpaperColors)
+        putBoolean(DYNAMIC_COLORS, settings.dynamicColors)
         putString(TIME_DISPLAY, settings.timeDisplay.key)
         putBoolean(HAPTICS, settings.haptics)
         putBoolean(CLICK_SOUND, settings.clickSound)
@@ -78,7 +78,7 @@ class SettingsRepository(context: Context) {
     companion object {
         // Also the keys of the "settings" object in backups.
         const val THEME = "theme"
-        const val WALLPAPER_COLORS = "wallpaper_colors"
+        const val DYNAMIC_COLORS = "wallpaper_colors" // Old name, kept so saved settings and backups still load.
         const val TIME_DISPLAY = "time_display"
         const val HAPTICS = "haptics"
         const val CLICK_SOUND = "click_sound"

@@ -59,7 +59,7 @@ data class TimeClickerPalette(
     /** Light source glow above-left of raised elements. */
     val highlight: Color,
     val danger: Color,
-    /** Filled selected chips and the primary button: near-black, or the wallpaper's primary colour. */
+    /** Filled selected chips and the primary button: near-black, or the system's primary colour. */
     val accent: Color,
     val onAccent: Color,
     /** The selected option in a segmented control, lifted off the field. */
@@ -138,7 +138,7 @@ private fun schemeTiles(scheme: ColorScheme, isDark: Boolean): Map<TileColor, Ti
     )
 }
 
-/** The neumorphic palette re-tinted with a dynamic (wallpaper) [scheme]. */
+/** The neumorphic palette re-tinted with a dynamic (Material You) [scheme]. */
 private fun dynamicPalette(scheme: ColorScheme, base: TimeClickerPalette): TimeClickerPalette {
     val dark = base.isDark
     val fixedTiles = base.tiles.filterKeys { it.ordinal < TileColor.PRIMARY.ordinal }.mapValues { (_, t) ->
@@ -166,11 +166,11 @@ private fun dynamicPalette(scheme: ColorScheme, base: TimeClickerPalette): TimeC
 val supportsDynamicColor: Boolean get() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
 
 /**
- * The palette for [context]: following the wallpaper on Android 12+ when [wallpaperColors] is on,
+ * The palette for [context]: following the system's Material You colours on Android 12+ when [dynamicColors] is on,
  * the fixed one otherwise. Also used by widgets.
  */
-fun timeClickerPalette(context: Context, dark: Boolean, wallpaperColors: Boolean = true): TimeClickerPalette {
-    val dynamic = supportsDynamicColor && wallpaperColors
+fun timeClickerPalette(context: Context, dark: Boolean, dynamicColors: Boolean = true): TimeClickerPalette {
+    val dynamic = supportsDynamicColor && dynamicColors
     return when {
         dynamic && dark -> dynamicPalette(dynamicDarkColorScheme(context), DarkPalette)
         dynamic -> dynamicPalette(dynamicLightColorScheme(context), LightPalette)
@@ -231,19 +231,19 @@ fun TimeClickerTheme(settings: AppSettings, content: @Composable () -> Unit) {
         onDispose {}
     }
     CompositionLocalProvider(LocalSettings provides settings) {
-        TimeClickerTheme(darkTheme = dark, wallpaperColors = settings.wallpaperColors, content = content)
+        TimeClickerTheme(darkTheme = dark, dynamicColors = settings.dynamicColors, content = content)
     }
 }
 
 @Composable
 fun TimeClickerTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    wallpaperColors: Boolean = true,
+    dynamicColors: Boolean = true,
     content: @Composable () -> Unit,
 ) {
     val context = LocalContext.current
-    val palette = remember(context, darkTheme, wallpaperColors) { timeClickerPalette(context, darkTheme, wallpaperColors) }
-    val colors = if (supportsDynamicColor && wallpaperColors) {
+    val palette = remember(context, darkTheme, dynamicColors) { timeClickerPalette(context, darkTheme, dynamicColors) }
+    val colors = if (supportsDynamicColor && dynamicColors) {
         val scheme = if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
         scheme.copy(background = palette.ground, surface = palette.sheet)
     } else if (darkTheme) {

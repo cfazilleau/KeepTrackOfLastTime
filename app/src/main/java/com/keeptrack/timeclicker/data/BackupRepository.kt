@@ -143,7 +143,7 @@ class BackupRepository(
 
     private fun settingsToJson(s: AppSettings) = JSONObject()
         .put(SettingsRepository.THEME, s.theme.key)
-        .put(SettingsRepository.WALLPAPER_COLORS, s.wallpaperColors)
+        .put(SettingsRepository.DYNAMIC_COLORS, s.dynamicColors)
         .put(SettingsRepository.TIME_DISPLAY, s.timeDisplay.key)
         .put(SettingsRepository.HAPTICS, s.haptics)
         .put(SettingsRepository.CLICK_SOUND, s.clickSound)
@@ -154,7 +154,7 @@ class BackupRepository(
         val d = AppSettings()
         return AppSettings(
             theme = ThemeMode.fromKey(json.optString(SettingsRepository.THEME, d.theme.key)),
-            wallpaperColors = json.optBoolean(SettingsRepository.WALLPAPER_COLORS, d.wallpaperColors),
+            dynamicColors = json.optBoolean(SettingsRepository.DYNAMIC_COLORS, d.dynamicColors),
             timeDisplay = TimeDisplay.fromKey(json.optString(SettingsRepository.TIME_DISPLAY, d.timeDisplay.key)),
             haptics = json.optBoolean(SettingsRepository.HAPTICS, d.haptics),
             clickSound = json.optBoolean(SettingsRepository.CLICK_SOUND, d.clickSound),
