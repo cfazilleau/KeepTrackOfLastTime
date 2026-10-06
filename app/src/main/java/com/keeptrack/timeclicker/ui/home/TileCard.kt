@@ -164,6 +164,7 @@ fun TileCard(
         tracker.name,
         if (elapsed.isEmpty) stringResource(R.string.elapsed_just_now) else stringResource(R.string.elapsed_ago, elapsed.format(resources)),
         pluralStringResource(R.plurals.press_count, tracker.pressCount, tracker.pressCount).takeIf { settings.showCounter },
+        tracker.reminder?.let { stringResource(R.string.tile_reminder_description, reminderDelay(context, it)) },
         undoHint.takeIf { undoing },
     ).joinToString(", ")
 
@@ -233,6 +234,7 @@ fun TileCard(
                 AnimatedVisibility(undoing, enter = fadeIn() + scaleIn(initialScale = 0.6f), exit = fadeOut() + scaleOut(targetScale = 0.6f)) {
                     Box(
                         Modifier
+                            .padding(end = if (tracker.reminder != null) 6.dp else 0.dp)
                             .size(34.dp)
                             .clip(CircleShape)
                             .background(glass)
@@ -256,6 +258,19 @@ fun TileCard(
                         contentAlignment = Alignment.Center,
                     ) {
                         Icon(AppIcons.Undo, null, tint = colors.content, modifier = Modifier.size(16.dp))
+                    }
+                }
+                // A reminder is set: the bell, in the corner.
+                if (tracker.reminder != null) {
+                    Box(
+                        Modifier
+                            .size(34.dp)
+                            .clip(CircleShape)
+                            .background(glass)
+                            .border(1.dp, glassBorder, CircleShape),
+                        contentAlignment = Alignment.Center,
+                    ) {
+                        Icon(AppIcons.Bell, null, tint = colors.content, modifier = Modifier.size(16.dp))
                     }
                 }
             }

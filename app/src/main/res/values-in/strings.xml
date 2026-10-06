@@ -71,6 +71,26 @@
     <string name="counter_reset">Reset</string>
     <string name="widget_add">Tambahkan ke layar utama</string>
     <string name="widget_add_hint">Menampilkan kartu ini sebagai widget. Ketuk widget untuk menandainya selesai.</string>
+    <string name="label_reminder">Pengingat</string>
+    <string name="reminder_add">Tambahkan pengingat</string>
+    <string name="reminder_add_hint">Dapatkan notifikasi jika sudah lama tidak dilakukan.</string>
+    <string name="reminder_after">Beri tahu setelah</string>
+    <string name="reminder_less">Kurangi</string>
+    <string name="reminder_more">Tambah</string>
+    <string name="reminder_unit_hours">Jam</string>
+    <string name="reminder_unit_days">Hari</string>
+    <string name="reminder_unit_weeks">Minggu</string>
+    <plurals name="reminder_weeks">
+        <item quantity="other">%d minggu</item>
+    </plurals>
+    <string name="reminder_remove">Hapus</string>
+    <string name="reminder_hint">Anda akan mendapat notifikasi jika tidak dilakukan selama %1$s.</string>
+    <string name="reminder_notifications_off">Notifikasi Time Clicker nonaktif, jadi pengingat tidak dapat muncul. Ketuk untuk mengizinkannya.</string>
+    <string name="reminder_notification_text">Belum dilakukan selama %1$s</string>
+    <string name="reminder_mark_done">Tandai selesai</string>
+    <string name="reminder_channel">Pengingat</string>
+    <string name="reminder_channel_description">Saat kartu dengan pengingat sudah lama tidak dilakukan.</string>
+    <string name="tile_reminder_description">Pengingat: %1$s</string>
     <string name="delete_tile">Hapus kartu</string>
     <string name="tile_preview">Pratinjau</string>
     <string name="tile_preview_name">Kartu baru</string>

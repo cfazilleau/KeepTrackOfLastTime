@@ -77,6 +77,27 @@
     <string name="counter_reset">Sıfırla</string>
     <string name="widget_add">Ana ekrana ekle</string>
     <string name="widget_add_hint">Bu kutucuğu widget olarak gösterir. Yapıldı olarak işaretlemek için widget’a dokunun.</string>
+    <string name="label_reminder">Hatırlatıcı</string>
+    <string name="reminder_add">Hatırlatıcı ekle</string>
+    <string name="reminder_add_hint">Bir süredir yapılmadığında bildirim alın.</string>
+    <string name="reminder_after">Şu süre sonra bildir</string>
+    <string name="reminder_less">Azalt</string>
+    <string name="reminder_more">Artır</string>
+    <string name="reminder_unit_hours">Saat</string>
+    <string name="reminder_unit_days">Gün</string>
+    <string name="reminder_unit_weeks">Hafta</string>
+    <plurals name="reminder_weeks">
+        <item quantity="one">%d hafta</item>
+        <item quantity="other">%d hafta</item>
+    </plurals>
+    <string name="reminder_remove">Kaldır</string>
+    <string name="reminder_hint">%1$s boyunca yapılmazsa bildirim alırsınız.</string>
+    <string name="reminder_notifications_off">Time Clicker bildirimleri kapalı, bu yüzden hatırlatıcılar görünemez. İzin vermek için dokunun.</string>
+    <string name="reminder_notification_text">%1$s boyunca yapılmadı</string>
+    <string name="reminder_mark_done">Yapıldı olarak işaretle</string>
+    <string name="reminder_channel">Hatırlatıcılar</string>
+    <string name="reminder_channel_description">Hatırlatıcılı bir kutucuk bir süredir yapılmadığında.</string>
+    <string name="tile_reminder_description">Hatırlatıcı: %1$s</string>
     <string name="delete_tile">Kutucuğu sil</string>
     <string name="tile_preview">Önizleme</string>
     <string name="tile_preview_name">Yeni kutucuk</string>

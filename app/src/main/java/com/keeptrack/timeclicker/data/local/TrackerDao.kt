@@ -50,7 +50,8 @@ interface TrackerDao {
     @Query(
         """
         UPDATE trackers
-        SET name = :name, group_id = :groupId, color = :color, icon = :icon, size = :size, photo = :photo
+        SET name = :name, group_id = :groupId, color = :color, icon = :icon, size = :size, photo = :photo,
+            reminder_every = :reminderEvery, reminder_unit = :reminderUnit
         WHERE id = :id
         """
     )
@@ -62,6 +63,8 @@ interface TrackerDao {
         icon: String,
         size: String,
         photo: String?,
+        reminderEvery: Int?,
+        reminderUnit: String?,
     )
 
     @Query("DELETE FROM trackers WHERE id = :id")

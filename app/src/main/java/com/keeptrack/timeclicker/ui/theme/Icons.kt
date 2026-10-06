@@ -41,9 +41,16 @@ object IconPaths {
 
 object AppIcons {
     val Add = strokeIcon("add", "M5 12h14M12 5v14", 2.2f)
+    val Remove = strokeIcon("remove", "M5 12h14", 2.2f)
     val Refresh = strokeIcon("refresh", "M21 12a9 9 0 1 1 -9 -9c2.52 0 4.93 1 6.74 2.74L21 8M21 3v5h-5", 2.4f)
+    /** A tile with a reminder. */
+    val Bell = strokeIcon(
+        "bell",
+        "M10.268 21a2 2 0 0 0 3.464 0M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74 -1.673C19.41 13.956 18 12.499 18 8" +
+            "A6 6 0 0 0 6 8c0 4.499 -1.411 5.956 -2.738 7.326",
+    )
     val Undo = strokeIcon("undo", IconPaths.UNDO, IconPaths.UNDO_STROKE)
-    val Back =strokeIcon("back", "M15 18l-6 -6 6 -6", 2.2f)
+    val Back = strokeIcon("back", "M15 18l-6 -6 6 -6", 2.2f)
     val Groups = strokeIcon("groups", "M10 5H3M12 19H3M14 3v4M16 17v4M21 12h-9M21 19h-5M21 5h-7M8 10v4M8 12H3")
     val Info = strokeIcon("info", "M2 12a10 10 0 1 0 20 0a10 10 0 1 0 -20 0zM12 16v-4M12 8h.01")
     val Widget = strokeIcon(

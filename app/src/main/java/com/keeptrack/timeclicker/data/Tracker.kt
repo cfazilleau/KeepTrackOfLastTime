@@ -14,6 +14,7 @@ data class Tracker(
     val photo: String?,
     /** Times the tile was pressed since it was created or its counter was reset. */
     val pressCount: Int = 0,
+    val reminder: Reminder? = null,
 )
 
 data class TrackerGroup(
@@ -29,6 +30,7 @@ data class TileSpec(
     val icon: TileIcon,
     val size: TileSize,
     val photo: String?,
+    val reminder: Reminder? = null,
 )
 
 /** Stored by [key]; unknown keys (e.g. from a newer app version) fall back to the first entry. */

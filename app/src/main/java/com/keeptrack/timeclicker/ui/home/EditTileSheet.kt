@@ -54,6 +54,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import com.keeptrack.timeclicker.R
+import com.keeptrack.timeclicker.data.Reminder
 import com.keeptrack.timeclicker.data.TileColor
 import com.keeptrack.timeclicker.data.TileIcon
 import com.keeptrack.timeclicker.data.TileSize
@@ -81,14 +82,15 @@ data class TileDraft(
     val icon: TileIcon,
     val size: TileSize,
     val photo: String?,
+    val reminder: Reminder? = null,
     /** Restart the press counter at 0 when saved. */
     val resetCount: Boolean = false,
 ) {
-    fun toSpec() = TileSpec(name.trim(), groupId, color, icon, size, photo)
+    fun toSpec() = TileSpec(name.trim(), groupId, color, icon, size, photo, reminder)
 
     companion object {
         fun of(tracker: Tracker) = TileDraft(
-            tracker.name, tracker.groupId, tracker.color, tracker.icon, tracker.size, tracker.photo,
+            tracker.name, tracker.groupId, tracker.color, tracker.icon, tracker.size, tracker.photo, tracker.reminder,
         )
     }
 }
@@ -190,6 +192,7 @@ fun EditTileSheet(
                         size = TileSize.SMALL,
                         photo = draft.photo,
                         pressCount = if (draft.resetCount) 0 else saved.pressCount,
+                        reminder = draft.reminder,
                     ),
                     photoFile = photoFile,
                     onClick = {},
@@ -288,6 +291,8 @@ fun EditTileSheet(
                 )
             }
 
+            ReminderSection(reminder = draft.reminder, onChange = { draft = draft.copy(reminder = it) })
+
             val count = if (draft.resetCount) 0 else saved.pressCount
             Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 SectionLabel(stringResource(R.string.label_counter))
@@ -367,7 +372,7 @@ fun EditTileSheet(
 }
 
 @Composable
-private fun SectionLabel(text: String) {
+internal fun SectionLabel(text: String) {
     Text(text, style = MaterialTheme.typography.labelMedium, color = TimeClickerTheme.palette.muted)
 }
 
@@ -428,7 +433,7 @@ private fun PhotoRow(file: File, onChange: () -> Unit, onRemove: () -> Unit) {
 
 /** A small raised button on the sheet. */
 @Composable
-private fun SheetButton(text: String, onClick: () -> Unit) {
+internal fun SheetButton(text: String, onClick: () -> Unit) {
     val palette = TimeClickerTheme.palette
     NeuButton(
         onClick = onClick,

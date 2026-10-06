@@ -2,6 +2,7 @@ package com.keeptrack.timeclicker
 
 import android.app.Application
 import com.keeptrack.timeclicker.data.IconCatalog
+import com.keeptrack.timeclicker.reminder.Reminders
 import com.keeptrack.timeclicker.widget.TileWidgets
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -43,6 +44,13 @@ class TimeClickerApplication : Application() {
                 .distinctUntilChanged()
                 .drop(1)
                 .collectLatest { TileWidgets.refresh(this@TimeClickerApplication) }
+        }
+        // Reminders follow the tiles' last times and reminder settings; checked at start-up too.
+        CoroutineScope(SupervisorJob() + Dispatchers.Default).launch {
+            container.trackerRepository.observeTrackers()
+                .map { trackers -> trackers.map { Triple(it.id, it.lastDoneAt, it.reminder) } }
+                .distinctUntilChanged()
+                .collectLatest { Reminders.update(this@TimeClickerApplication) }
         }
     }
 }
