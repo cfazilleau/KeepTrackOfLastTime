@@ -152,6 +152,7 @@ class BackupRepository(
         .put(SettingsRepository.CLICK_SOUND, s.clickSound)
         .put(SettingsRepository.SHOW_COUNTER, s.showCounter)
         .put(SettingsRepository.ICON_PALETTE, SettingsRepository.paletteToKeys(s.iconPalette))
+        .put(SettingsRepository.RECENT_ICONS, SettingsRepository.paletteToKeys(s.recentIcons))
 
     /** Missing keys keep their default. */
     private fun settingsFromJson(json: JSONObject): AppSettings {
@@ -165,6 +166,8 @@ class BackupRepository(
             showCounter = json.optBoolean(SettingsRepository.SHOW_COUNTER, d.showCounter),
             iconPalette = json.optStringOrNull(SettingsRepository.ICON_PALETTE)
                 ?.let { SettingsRepository.paletteFromKeys(it) } ?: d.iconPalette,
+            recentIcons = json.optStringOrNull(SettingsRepository.RECENT_ICONS)
+                ?.let { SettingsRepository.paletteFromKeys(it) } ?: d.recentIcons,
         )
     }
 

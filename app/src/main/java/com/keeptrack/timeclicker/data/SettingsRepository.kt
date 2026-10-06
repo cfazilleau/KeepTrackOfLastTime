@@ -41,6 +41,8 @@ data class AppSettings(
     val showCounter: Boolean = true,
     /** The icons offered when editing a tile, in the order they were added. */
     val iconPalette: List<TileIcon> = TileIcon.defaultPalette,
+    /** The icons last given to a tile, latest first: offered first when editing a tile. */
+    val recentIcons: List<TileIcon> = emptyList(),
 )
 
 /**
@@ -59,6 +61,12 @@ class SettingsRepository(context: Context) {
         state.value = new
     }
 
+    /** [icon] was just given to a tile: it moves to the front of [AppSettings.recentIcons]. */
+    fun recordIconUse(icon: TileIcon) {
+        if (icon.isNone) return
+        update { it.copy(recentIcons = (listOf(icon) + it.recentIcons).distinct().take(RECENT_ICONS_KEPT)) }
+    }
+
     private fun read() = AppSettings(
         theme = ThemeMode.fromKey(prefs.getString(THEME, null)),
         dynamicColors = prefs.getBoolean(DYNAMIC_COLORS, true),
@@ -67,6 +75,7 @@ class SettingsRepository(context: Context) {
         clickSound = prefs.getBoolean(CLICK_SOUND, true),
         showCounter = prefs.getBoolean(SHOW_COUNTER, true),
         iconPalette = prefs.getString(ICON_PALETTE, null)?.let { paletteFromKeys(it) } ?: TileIcon.defaultPalette,
+        recentIcons = prefs.getString(RECENT_ICONS, null)?.let { paletteFromKeys(it) }.orEmpty(),
     )
 
     private fun write(settings: AppSettings) = prefs.edit {
@@ -77,6 +86,7 @@ class SettingsRepository(context: Context) {
         putBoolean(CLICK_SOUND, settings.clickSound)
         putBoolean(SHOW_COUNTER, settings.showCounter)
         putString(ICON_PALETTE, paletteToKeys(settings.iconPalette))
+        putString(RECENT_ICONS, paletteToKeys(settings.recentIcons))
     }
 
     companion object {
@@ -88,6 +98,10 @@ class SettingsRepository(context: Context) {
         const val CLICK_SOUND = "click_sound"
         const val SHOW_COUNTER = "show_counter"
         const val ICON_PALETTE = "icon_palette"
+        const val RECENT_ICONS = "recent_icons"
+
+        /** A few more than the icon picker shows: icons missing from the catalog are skipped. */
+        private const val RECENT_ICONS_KEPT = 8
 
         /** Icon names separated by commas (Lucide names have none); an empty palette is an empty string. */
         fun paletteToKeys(palette: List<TileIcon>): String = palette.joinToString(",") { it.key }

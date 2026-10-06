@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.keeptrack.timeclicker.TimeClickerApplication
+import com.keeptrack.timeclicker.data.SettingsRepository
 import com.keeptrack.timeclicker.data.TileIcon
 import com.keeptrack.timeclicker.data.TileSize
 import com.keeptrack.timeclicker.data.Tracker
@@ -63,7 +64,10 @@ data class HomeUiState(
 /** Emitted after a card is reset so the UI can offer an undo. */
 data class ResetDone(val trackerName: String, val eventId: Long)
 
-class HomeViewModel(private val repository: TrackerRepository) : ViewModel() {
+class HomeViewModel(
+    private val repository: TrackerRepository,
+    private val settings: SettingsRepository,
+) : ViewModel() {
 
     private val filter = MutableStateFlow<GroupFilter>(GroupFilter.All)
 
@@ -101,7 +105,10 @@ class HomeViewModel(private val repository: TrackerRepository) : ViewModel() {
         photo = null,
     )
 
-    fun save(draft: TileDraft) {
+    /** Saves the sheet's [draft]; [saved] is the tile as it was before, null for a new one. */
+    fun save(draft: TileDraft, saved: Tracker?) {
+        // Only a newly given icon counts as used: reopening a tile to rename it doesn't reorder the history.
+        if (draft.icon != saved?.icon) settings.recordIconUse(draft.icon)
         viewModelScope.launch {
             val spec = draft.toSpec()
             if (draft.trackerId == null) {
@@ -159,7 +166,7 @@ class HomeViewModel(private val repository: TrackerRepository) : ViewModel() {
         val Factory = viewModelFactory {
             initializer {
                 val app = this[APPLICATION_KEY] as TimeClickerApplication
-                HomeViewModel(app.container.trackerRepository)
+                HomeViewModel(app.container.trackerRepository, app.container.settingsRepository)
             }
         }
     }

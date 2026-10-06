@@ -42,14 +42,17 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -65,7 +68,6 @@ import com.keeptrack.timeclicker.ui.components.NeuButton
 import com.keeptrack.timeclicker.ui.components.NeuTextField
 import com.keeptrack.timeclicker.ui.components.PillButton
 import com.keeptrack.timeclicker.ui.components.SegmentedControl
-import com.keeptrack.timeclicker.ui.components.SheetContentScroll
 import com.keeptrack.timeclicker.ui.icons.IconChooserSheet
 import com.keeptrack.timeclicker.ui.icons.iconLabel
 import com.keeptrack.timeclicker.ui.theme.AppIcons
@@ -100,8 +102,8 @@ data class TileDraft(
 private enum class Background { COLOUR, PHOTO }
 
 /**
- * Bottom sheet to create or edit a tile. Edits are kept when the sheet is swiped away;
- * a new tile is only created with the Add button.
+ * Bottom sheet to create or edit a tile. It can't be dragged, so scrolling never closes it by accident:
+ * Back or a tap above it closes it, keeping edits; a new tile is only created with the Add button.
  */
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
 @Composable
@@ -124,7 +126,6 @@ fun EditTileSheet(
     val scope = rememberCoroutineScope()
     val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
     val scrollState = rememberScrollState()
-    val contentScroll = remember(scrollState) { SheetContentScroll { scrollState.value == 0 } }
 
     var draft by remember { mutableStateOf(initial) }
     // Remembered so switching to Colour and back to Photo restores the picked photo.
@@ -158,14 +159,16 @@ fun EditTileSheet(
     ModalBottomSheet(
         onDismissRequest = { if (isNew || !canSave) onDiscard() else onSave(draft) },
         sheetState = sheetState,
+        sheetGesturesEnabled = false,
+        // No handle: the sheet can't be dragged.
+        dragHandle = null,
         containerColor = palette.sheet,
     ) {
         Column(
             Modifier
                 .fillMaxWidth()
-                .nestedScroll(contentScroll)
                 .verticalScroll(scrollState)
-                .padding(start = 20.dp, end = 20.dp, bottom = 28.dp),
+                .padding(start = 20.dp, top = 24.dp, end = 20.dp, bottom = 28.dp),
             verticalArrangement = Arrangement.spacedBy(22.dp),
         ) {
             Row(verticalAlignment = Alignment.CenterVertically) {
@@ -490,9 +493,10 @@ private fun Swatch(color: TileColor, isSelected: Boolean, width: Dp, onSelect: (
 }
 
 /**
- * "No icon", icons picked from the full list, the tile's own icon if the palette no longer has it, then
- * the user's icon palette (chosen in Settings): at most [IconRows] rows of six, the last cell opening
- * every icon. The last row is aligned to the start.
+ * A first row with "All icons" and "No icon", raised so they stand apart from the icons, then the icons
+ * last given to a tile (latest first, those just picked from the full list in front); then the tile's own
+ * icon if not shown yet, and the user's icon palette (chosen in Settings): [IconRows] rows of six in all.
+ * The palette fills the first row while there's little history. The last row is aligned to the start.
  */
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
@@ -501,48 +505,81 @@ private fun IconPicker(selected: TileIcon, original: TileIcon, accent: TileColor
     val resources = LocalResources.current
     val catalog = rememberIconCatalog()
     val columns = 6
-    val iconPalette = TimeClickerTheme.settings.iconPalette
+    val settings = TimeClickerTheme.settings
     // Icons chosen from the full list, latest first: kept in view even after tapping another icon.
     var picked by remember { mutableStateOf(emptyList<TileIcon>()) }
     var showAll by remember { mutableStateOf(false) }
-    val icons = (listOf(TileIcon.NONE) + picked + original + iconPalette).distinct()
-        .filter { it.isNone || catalog?.get(it) != null }
-        .take(IconRows * columns - 1)
-    FlowRow(
-        Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.spacedBy(8.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp),
-        maxItemsInEachRow = columns,
-    ) {
-        icons.forEach { icon ->
-            val isSelected = icon == selected
-            val description = stringResource(R.string.icon_choice, iconLabel(resources, icon))
-            IconPickerCell(
-                background = if (isSelected) accent.background else palette.field,
-                modifier = Modifier
-                    .selectable(selected = isSelected, role = Role.RadioButton, onClick = { onSelect(icon) })
-                    .semantics { contentDescription = description },
-            ) {
-                val tint = if (isSelected) accent.content else palette.text
-                val vector = catalog?.let { AppIcons.tile(it, icon) }
-                if (vector != null) {
-                    Icon(vector, null, tint = tint, modifier = Modifier.size(22.dp))
-                } else {
-                    Icon(AppIcons.NoIcon, null, tint = tint.copy(alpha = 0.6f), modifier = Modifier.size(22.dp))
-                }
+    val icons = (picked + settings.recentIcons + original + settings.iconPalette).distinct()
+        .filter { !it.isNone && catalog?.get(it) != null }
+        .take(IconRows * columns - SpecialCells)
+    val firstRow = icons.take(columns - SpecialCells)
+    val otherRows = icons.drop(columns - SpecialCells)
+
+    @Composable
+    fun RowScope.Choice(icon: TileIcon) {
+        val isSelected = icon == selected
+        val description = stringResource(R.string.icon_choice, iconLabel(resources, icon))
+        IconPickerCell(
+            background = if (isSelected) accent.background else palette.field,
+            modifier = Modifier
+                .selectable(selected = isSelected, role = Role.RadioButton, onClick = { onSelect(icon) })
+                .semantics { contentDescription = description },
+        ) {
+            val vector = catalog?.let { AppIcons.tile(it, icon) }
+            if (vector != null) {
+                Icon(vector, null, tint = if (isSelected) accent.content else palette.text, modifier = Modifier.size(22.dp))
             }
         }
-        val allIcons = stringResource(R.string.icon_all)
-        IconPickerCell(
-            background = palette.field,
-            modifier = Modifier
-                .clickable(role = Role.Button) { showAll = true }
-                .semantics { contentDescription = allIcons },
+    }
+
+    Column(verticalArrangement = Arrangement.spacedBy(IconGap)) {
+        val separator = palette.muted.copy(alpha = 0.5f)
+        Row(
+            Modifier
+                .fillMaxWidth()
+                // A short line in the gap after the special cells.
+                .drawBehind {
+                    val gap = IconGap.toPx()
+                    val x = (size.width - gap * (columns - 1)) / columns * SpecialCells + gap * (SpecialCells - 0.5f)
+                    val inset = size.height * 0.2f
+                    drawLine(separator, Offset(x, inset), Offset(x, size.height - inset), 1.5.dp.toPx(), StrokeCap.Round)
+                },
+            horizontalArrangement = Arrangement.spacedBy(IconGap),
         ) {
-            Icon(AppIcons.AllIcons, null, tint = palette.text, modifier = Modifier.size(22.dp))
+            val allIcons = stringResource(R.string.icon_all)
+            SpecialCell(onClick = { showAll = true }, modifier = Modifier.semantics { contentDescription = allIcons }) {
+                Icon(AppIcons.AllIcons, null, tint = palette.text, modifier = Modifier.size(22.dp))
+            }
+            val noIconSelected = selected.isNone
+            val noIcon = stringResource(R.string.icon_choice, iconLabel(resources, TileIcon.NONE))
+            val noIconSemantics = Modifier.semantics {
+                contentDescription = noIcon
+                this.selected = noIconSelected
+            }
+            if (noIconSelected) {
+                IconPickerCell(background = accent.background, modifier = noIconSemantics) {
+                    Icon(AppIcons.NoIcon, null, tint = accent.content, modifier = Modifier.size(22.dp))
+                }
+            } else {
+                SpecialCell(onClick = { onSelect(TileIcon.NONE) }, modifier = noIconSemantics) {
+                    Icon(AppIcons.NoIcon, null, tint = palette.text, modifier = Modifier.size(22.dp))
+                }
+            }
+            firstRow.forEach { Choice(it) }
+            repeat(columns - SpecialCells - firstRow.size) { Spacer(Modifier.weight(1f)) }
         }
-        // Empty cells keep the last row's icons the same width as the others.
-        repeat((columns - (icons.size + 1) % columns) % columns) { Spacer(Modifier.weight(1f)) }
+        if (otherRows.isNotEmpty()) {
+            FlowRow(
+                Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(IconGap),
+                verticalArrangement = Arrangement.spacedBy(IconGap),
+                maxItemsInEachRow = columns,
+            ) {
+                otherRows.forEach { Choice(it) }
+                // Empty cells keep the last row's icons the same width as the others.
+                repeat((columns - otherRows.size % columns) % columns) { Spacer(Modifier.weight(1f)) }
+            }
+        }
     }
 
     if (showAll) {
@@ -550,7 +587,7 @@ private fun IconPicker(selected: TileIcon, original: TileIcon, accent: TileColor
             selected = selected,
             accent = accent,
             onSelect = { icon ->
-                if (icon !in icons) picked = listOf(icon) + picked
+                if (!icon.isNone && icon !in firstRow) picked = listOf(icon) + picked
                 onSelect(icon)
             },
             onDismiss = { showAll = false },
@@ -561,16 +598,36 @@ private fun IconPicker(selected: TileIcon, original: TileIcon, accent: TileColor
 /** How many rows of icons the picker shows before the full list. */
 private const val IconRows = 3
 
+/** "All icons" and "No icon", at the start of the first row. */
+private const val SpecialCells = 2
+
+private val IconGap = 8.dp
+private val IconCellHeight = 46.dp
+private val IconCellShape = RoundedCornerShape(14.dp)
+
 @Composable
 private fun RowScope.IconPickerCell(background: Color, modifier: Modifier, content: @Composable () -> Unit) {
     Box(
         Modifier
             .weight(1f)
-            .height(46.dp)
-            .clip(RoundedCornerShape(14.dp))
+            .height(IconCellHeight)
+            .clip(IconCellShape)
             .background(background)
             .then(modifier),
         contentAlignment = Alignment.Center,
+    ) { content() }
+}
+
+/** A raised cell, standing out from the flat icon cells: the picker's own buttons. */
+@Composable
+private fun RowScope.SpecialCell(onClick: () -> Unit, modifier: Modifier, content: @Composable () -> Unit) {
+    NeuButton(
+        onClick = onClick,
+        shape = IconCellShape,
+        background = TimeClickerTheme.palette.sheet,
+        distance = 4.dp,
+        blur = 10.dp,
+        modifier = modifier.weight(1f).height(IconCellHeight),
     ) { content() }
 }
 
