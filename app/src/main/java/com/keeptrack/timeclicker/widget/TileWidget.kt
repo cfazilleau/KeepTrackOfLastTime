@@ -101,7 +101,11 @@ class TileWidget : GlanceAppWidget() {
 
         provideContent {
             val all by remember { trackers }.collectAsState(initial)
-            val trackerId = currentState<Preferences>()[TileWidgets.TRACKER_ID]
+            val state = currentState<Preferences>()
+            val trackerId = state[TileWidgets.TRACKER_ID]
+            // Passed down so the tile recomposes on every refresh: with the same tile and photo,
+            // it would otherwise be skipped and keep showing the time of its last change.
+            val now = remember(state[TileWidgets.REFRESHED_AT], all) { Instant.now() }
             val tracker = all.firstOrNull { it.id == trackerId }
             val photoName = tracker?.photo
             val photo by produceState(initialPhoto?.takeIf { it.first == photoName }?.second, photoName) {
@@ -109,7 +113,7 @@ class TileWidget : GlanceAppWidget() {
             }
             GlanceTheme {
                 when {
-                    tracker != null -> TileContent(tracker, photo?.takeIf { photoName != null })
+                    tracker != null -> TileContent(tracker, photo?.takeIf { photoName != null }, now)
                     else -> ChooseTile(deleted = trackerId != null)
                 }
             }
@@ -165,11 +169,10 @@ private fun widgetColors(tracker: Tracker, hasPhoto: Boolean): WidgetColors {
 }
 
 @Composable
-private fun TileContent(tracker: Tracker, photo: Bitmap?) {
+private fun TileContent(tracker: Tracker, photo: Bitmap?, now: Instant) {
     val context = LocalContext.current
     val size = LocalSize.current
     val colors = widgetColors(tracker, hasPhoto = photo != null)
-    val now = Instant.now() // recomposed on every refresh (see TileWidgets.REFRESHED_AT)
     val elapsed = RelativeTime.split(tracker.lastDoneAt, now, TimeUnit.MINUTE)
     val justDone = Duration.between(tracker.lastDoneAt, now) < Duration.ofMinutes(1)
     // "3 days" + "5 hours ago", or "il y a 3 jours" + "5 heures": "… ago" wraps the whole time.

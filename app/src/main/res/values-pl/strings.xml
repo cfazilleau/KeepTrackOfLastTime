@@ -170,8 +170,6 @@
     <string name="settings_click_sound_hint">Krótkie kliknięcie, gdy stukniesz kafelek lub widżet. Odtwarzane z głośnością multimediów, także gdy telefon jest w trybie cichym.</string>
     <string name="settings_counter">Pokazuj licznik naciśnięć</string>
     <string name="settings_counter_hint">Ile razy naciśnięto każdy kafelek – na kafelkach i widżetach.</string>
-    <string name="settings_undo">Proponuj cofnięcie</string>
-    <string name="settings_undo_hint">Po stuknięciu kafelka pokazuje komunikat z przyciskiem Cofnij.</string>
     <string name="settings_section_general">Ogólne</string>
     <string name="settings_groups_hint">Twórz, zmieniaj nazwy, porządkuj i usuwaj grupy.</string>
     <string name="settings_language">Język</string>

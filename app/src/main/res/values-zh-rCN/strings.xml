@@ -149,8 +149,6 @@
     <string name="settings_click_sound_hint">点按卡片或小部件时发出短促的点击声。使用媒体音量播放，手机处于静音模式时也会发声。</string>
     <string name="settings_counter">显示按下次数</string>
     <string name="settings_counter_hint">在卡片和小部件上显示每张卡片被按下的次数。</string>
-    <string name="settings_undo">提供撤消选项</string>
-    <string name="settings_undo_hint">点按卡片后，显示带有“撤消”按钮的消息。</string>
     <string name="settings_section_general">常规</string>
     <string name="settings_groups_hint">创建、重命名、排序和删除分组。</string>
     <string name="settings_language">语言</string>

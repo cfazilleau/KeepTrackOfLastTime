@@ -14,9 +14,9 @@ The number in the tile's bottom-right corner counts how many times it was presse
 - **Group chips**, or **swiping left/right**, move between groups; "All" shows one section per group.
   The sliders button opens **Groups**: add, rename, delete, drag to reorder.
 - **Widgets**: any tile can live on the home screen (from the widget picker, or "Add to home screen"
-  in its edit sheet). Tapping the widget marks it as done; its icon opens the app.
+  in its edit sheet). Tapping the widget marks it as done (with the click sound); its icon opens the app.
 - **Settings** (gear button, next to the title): theme (system / light / dark), wallpaper colours, time shown as
-  "3 days ago" or as a date and time, vibration, click sound, press counter, the Undo message, groups, language,
+  "3 days ago" or as a date and time, vibration, click sound, press counter, groups, language,
   and **export / import** of everything (tiles, groups, history, photos, settings) as one `.zip` file.
 
 The look is a neumorphic "bento" grid: soft pastel tiles raised off the page that sink in when pressed,

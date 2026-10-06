@@ -162,8 +162,6 @@
     <string name="settings_click_sound_hint">A short click when you tap a tile or a widget. Plays at media volume, even when your phone is on silent.</string>
     <string name="settings_counter">Show press counter</string>
     <string name="settings_counter_hint">How many times each tile was pressed, on tiles and widgets.</string>
-    <string name="settings_undo">Offer to undo</string>
-    <string name="settings_undo_hint">After tapping a tile, show a message with an Undo button.</string>
     <string name="settings_section_general">General</string>
     <string name="settings_groups_hint">Create, rename, reorder and delete groups.</string>
     <string name="settings_language">Language</string>

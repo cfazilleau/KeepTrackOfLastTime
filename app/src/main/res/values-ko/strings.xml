@@ -149,8 +149,6 @@
     <string name="settings_click_sound_hint">타일이나 위젯을 누르면 짧은 클릭 소리가 나요. 미디어 볼륨으로 재생되며, 휴대전화가 무음일 때도 소리가 나요.</string>
     <string name="settings_counter">누른 횟수 표시</string>
     <string name="settings_counter_hint">각 타일을 누른 횟수를 타일과 위젯에 표시해요.</string>
-    <string name="settings_undo">실행 취소 제안</string>
-    <string name="settings_undo_hint">타일을 누른 후 실행 취소 버튼이 있는 메시지를 표시해요.</string>
     <string name="settings_section_general">일반</string>
     <string name="settings_groups_hint">그룹을 만들고, 이름을 바꾸고, 순서를 정하고, 삭제해요.</string>
     <string name="settings_language">언어</string>

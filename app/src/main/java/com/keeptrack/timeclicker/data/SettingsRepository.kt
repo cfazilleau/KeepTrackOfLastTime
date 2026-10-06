@@ -39,8 +39,6 @@ data class AppSettings(
     val clickSound: Boolean = true,
     /** Show how many times each tile was pressed, on tiles and widgets. */
     val showCounter: Boolean = true,
-    /** After tapping a tile, offer to undo it. */
-    val undoAfterTap: Boolean = true,
 )
 
 /**
@@ -66,7 +64,6 @@ class SettingsRepository(context: Context) {
         haptics = prefs.getBoolean(HAPTICS, true),
         clickSound = prefs.getBoolean(CLICK_SOUND, true),
         showCounter = prefs.getBoolean(SHOW_COUNTER, true),
-        undoAfterTap = prefs.getBoolean(UNDO_AFTER_TAP, true),
     )
 
     private fun write(settings: AppSettings) = prefs.edit {
@@ -76,7 +73,6 @@ class SettingsRepository(context: Context) {
         putBoolean(HAPTICS, settings.haptics)
         putBoolean(CLICK_SOUND, settings.clickSound)
         putBoolean(SHOW_COUNTER, settings.showCounter)
-        putBoolean(UNDO_AFTER_TAP, settings.undoAfterTap)
     }
 
     companion object {
@@ -87,6 +83,5 @@ class SettingsRepository(context: Context) {
         const val HAPTICS = "haptics"
         const val CLICK_SOUND = "click_sound"
         const val SHOW_COUNTER = "show_counter"
-        const val UNDO_AFTER_TAP = "undo_after_tap"
     }
 }

@@ -156,8 +156,6 @@
     <string name="settings_click_sound_hint">Ein kurzes Klicken, wenn du auf eine Kachel oder ein Widget tippst. Mit Medienlautstärke, auch wenn dein Telefon lautlos ist.</string>
     <string name="settings_counter">Zähler anzeigen</string>
     <string name="settings_counter_hint">Wie oft jede Kachel gedrückt wurde, auf Kacheln und Widgets.</string>
-    <string name="settings_undo">Rückgängig machen anbieten</string>
-    <string name="settings_undo_hint">Zeigt nach dem Tippen auf eine Kachel eine Meldung mit der Schaltfläche „Rückgängig“.</string>
     <string name="settings_section_general">Allgemein</string>
     <string name="settings_groups_hint">Gruppen erstellen, umbenennen, sortieren und löschen.</string>
     <string name="settings_language">Sprache</string>

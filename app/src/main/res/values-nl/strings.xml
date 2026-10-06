@@ -156,8 +156,6 @@
     <string name="settings_click_sound_hint">Een korte klik als je op een tegel of widget tikt. Speelt af op mediavolume, ook als je telefoon op stil staat.</string>
     <string name="settings_counter">Teller tonen</string>
     <string name="settings_counter_hint">Hoe vaak elke tegel is ingedrukt, op tegels en widgets.</string>
-    <string name="settings_undo">Ongedaan maken aanbieden</string>
-    <string name="settings_undo_hint">Toon na het tikken op een tegel een melding met een knop Ongedaan maken.</string>
     <string name="settings_section_general">Algemeen</string>
     <string name="settings_groups_hint">Groepen maken, hernoemen, herordenen en verwijderen.</string>
     <string name="settings_language">Taal</string>

@@ -210,13 +210,6 @@ fun SettingsScreen(
                         checked = settings.showCounter,
                         onCheckedChange = { on -> update { it.copy(showCounter = on) } },
                     )
-                    RowDivider()
-                    SwitchRow(
-                        title = stringResource(R.string.settings_undo),
-                        hint = stringResource(R.string.settings_undo_hint),
-                        checked = settings.undoAfterTap,
-                        onCheckedChange = { on -> update { it.copy(undoAfterTap = on) } },
-                    )
                 }
 
                 Section(stringResource(R.string.settings_section_general)) {
