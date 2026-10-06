@@ -67,6 +67,7 @@ import com.keeptrack.timeclicker.ui.time.RelativeTime
 import com.keeptrack.timeclicker.ui.time.absoluteTime
 import com.keeptrack.timeclicker.ui.time.agoAffixes
 import com.keeptrack.timeclicker.ui.time.format
+import com.keeptrack.timeclicker.ui.time.formatAsSecond
 import com.keeptrack.timeclicker.ui.time.rememberNow
 import java.io.File
 import java.text.NumberFormat
@@ -214,8 +215,8 @@ fun TileCard(
                     text = when {
                         absoluteTime != null -> absoluteTime.detail
                         elapsed.isEmpty -> ""
-                        // "5 hours ago": the next unit, then the end of "… ago" (if the language puts it after).
-                        else -> (elapsed.minor?.format(resources).orEmpty() + ago.suffix).trim()
+                        // "5 hours ago" or "et 5 heures": the next unit, then the end of "… ago" (if the language puts it after).
+                        else -> (elapsed.minor?.formatAsSecond(resources).orEmpty() + ago.suffix).trim()
                     },
                     style = TextStyle(fontSize = 12.5.sp, fontWeight = FontWeight.SemiBold, shadow = textShadow),
                     color = colors.content,
