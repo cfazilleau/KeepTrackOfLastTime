@@ -178,7 +178,7 @@ fun HomeScreen(
             photoFile = viewModel::photoFile,
             importPhoto = viewModel::importPhoto,
             createGroup = viewModel::createGroup,
-            onSave = { viewModel.save(it); editing = null },
+            onSave = { viewModel.save(it, saved); editing = null },
             onDiscard = { viewModel.discard(); editing = null },
             onDelete = { draft.trackerId?.let(viewModel::delete); editing = null },
             onAddWidget = saved?.takeIf { canPin }?.let { tile -> { scope.launch { TileWidgets.requestPin(context, tile.id) } } },
