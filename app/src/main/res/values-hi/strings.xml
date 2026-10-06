@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Home -->
+    <plurals name="things_count">
+        <item quantity="one">%d चीज़</item>
+        <item quantity="other">%d चीज़ें</item>
+    </plurals>
+    <plurals name="groups_count">
+        <item quantity="one">%d समूह</item>
+        <item quantity="other">%d समूह</item>
+    </plurals>
+    <string name="header_tracked">%1$s ट्रैक में</string>
+    <string name="header_grouped">%2$s में %1$s</string>
+    <string name="chip_all">सभी</string>
+    <string name="chip_other">अन्य</string>
+    <string name="section_oldest">सबसे पुराना: %1$s</string>
+    <string name="empty_title">अभी कुछ भी ट्रैक नहीं हो रहा</string>
+    <string name="empty_body">कुछ जोड़ने के लिए + पर टैप करें, जैसे “पौधों को पानी दिया”। जब भी आप इसे दोबारा करें, इसकी टाइल पर टैप करें।</string>
+    <string name="empty_group">इस समूह में अभी कोई टाइल नहीं है। जोड़ने के लिए + पर टैप करें।</string>
+    <string name="snackbar_reset">“%1$s” को अभी पर रीसेट किया गया</string>
+    <string name="tile_click_label">अभी हो गया मार्क करें</string>
+    <string name="tile_long_click_label">टाइल बदलें</string>
+
+    <!-- Elapsed time -->
+    <plurals name="elapsed_seconds">
+        <item quantity="one">%d सेकंड</item>
+        <item quantity="other">%d सेकंड</item>
+    </plurals>
+    <plurals name="elapsed_minutes">
+        <item quantity="one">%d मिनट</item>
+        <item quantity="other">%d मिनट</item>
+    </plurals>
+    <plurals name="elapsed_hours">
+        <item quantity="one">%d घंटा</item>
+        <item quantity="other">%d घंटे</item>
+    </plurals>
+    <plurals name="elapsed_days">
+        <item quantity="one">%d दिन</item>
+        <item quantity="other">%d दिन</item>
+    </plurals>
+    <plurals name="elapsed_years">
+        <item quantity="one">%d साल</item>
+        <item quantity="other">%d साल</item>
+    </plurals>
+    <string name="elapsed_two_units">%1$s %2$s</string>
+    <string name="elapsed_ago">%1$s पहले</string>
+    <string name="elapsed_just_now">अभी-अभी</string>
+    <plurals name="press_count">
+        <item quantity="one">%d बार दबाया गया</item>
+        <item quantity="other">%d बार दबाया गया</item>
+    </plurals>
+
+    <!-- Common actions -->
+    <string name="action_add_tile">टाइल जोड़ें</string>
+    <string name="action_manage_groups">समूह मैनेज करें</string>
+    <string name="action_undo">वापस लें</string>
+    <string name="action_cancel">रद्द करें</string>
+    <string name="action_save">सेव करें</string>
+    <string name="action_done">हो गया</string>
+    <string name="action_add">जोड़ें</string>
+    <string name="action_rename">नाम बदलें</string>
+    <string name="action_delete">मिटाएं</string>
+    <string name="action_back">वापस</string>
+
+    <!-- Edit tile sheet -->
+    <string name="sheet_new_title">नई टाइल</string>
+    <string name="sheet_edit_title">टाइल बदलें</string>
+    <string name="label_name">नाम</string>
+    <string name="name_placeholder">जैसे, पौधों को पानी दिया</string>
+    <string name="label_group">समूह</string>
+    <string name="group_none">कोई समूह नहीं</string>
+    <string name="group_new">नया समूह</string>
+    <string name="label_background">बैकग्राउंड</string>
+    <string name="background_colour">रंग</string>
+    <string name="background_photo">फ़ोटो</string>
+    <string name="photo_change">फ़ोटो बदलें</string>
+    <string name="photo_remove">हटाएं</string>
+    <string name="photo_hint">यह ऐप में कॉपी हो जाती है, इसलिए ऑफ़लाइन भी दिखती रहती है।</string>
+    <string name="photo_error">वह फ़ोटो पढ़ी नहीं जा सकी। कोई दूसरी फ़ोटो आज़माएं।</string>
+    <string name="label_icon">आइकन</string>
+    <string name="label_size">आकार</string>
+    <string name="size_small">छोटा</string>
+    <string name="size_wide">चौड़ा</string>
+    <string name="size_tall">लंबा</string>
+    <string name="label_counter">काउंटर</string>
+    <string name="counter_reset">रीसेट करें</string>
+    <string name="widget_add">होम स्क्रीन पर जोड़ें</string>
+    <string name="widget_add_hint">इस टाइल को विजेट के रूप में दिखाता है। हो गया मार्क करने के लिए विजेट पर टैप करें।</string>
+    <string name="delete_tile">टाइल मिटाएं</string>
+    <string name="tile_preview">झलक</string>
+    <string name="tile_preview_name">नई टाइल</string>
+
+    <string name="color_sage">सेज</string>
+    <string name="color_lavender">लैवेंडर</string>
+    <string name="color_peach">पीच</string>
+    <string name="color_sky">आसमानी</string>
+    <string name="color_butter">मक्खनी</string>
+    <string name="color_rose">गुलाबी</string>
+    <string name="colors_wallpaper">आपके वॉलपेपर से</string>
+    <string name="color_wallpaper_primary">वॉलपेपर एक्सेंट</string>
+    <string name="color_wallpaper_secondary">वॉलपेपर सॉफ़्ट</string>
+    <string name="color_wallpaper_tertiary">वॉलपेपर कंट्रास्ट</string>
+    <string name="icon_choice">आइकन: %1$s</string>
+    <string name="icon_check">सही का निशान</string>
+    <string name="icon_drop">पानी की बूंद</string>
+    <string name="icon_leaf">पत्ती</string>
+    <string name="icon_grass">घास</string>
+    <string name="icon_flower">फूल</string>
+    <string name="icon_bed">बिस्तर</string>
+    <string name="icon_coffee">कॉफ़ी</string>
+    <string name="icon_snow">बर्फ़ का टुकड़ा</string>
+    <string name="icon_trash">कूड़ेदान</string>
+    <string name="icon_cart">शॉपिंग कार्ट</string>
+    <string name="icon_phone">फ़ोन</string>
+    <string name="icon_heart">दिल</string>
+    <string name="icon_pill">गोली</string>
+    <string name="icon_paw">पंजा</string>
+    <string name="icon_scissors">कैंची</string>
+    <string name="icon_brush">ब्रश</string>
+    <string name="icon_gauge">गेज</string>
+    <string name="icon_car">कार</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_delete_title">“%1$s” मिटाएं?</string>
+    <string name="dialog_delete_body">इसका इतिहास भी मिट जाएगा।</string>
+    <string name="dialog_new_group_title">नया समूह</string>
+    <string name="dialog_rename_group_title">समूह का नाम बदलें</string>
+    <string name="dialog_delete_group_title">समूह “%1$s” मिटाएं?</string>
+    <string name="dialog_delete_group_body">इसकी टाइलें बनी रहेंगी और “अन्य” में चली जाएंगी।</string>
+    <string name="dialog_reset_counter_title">काउंटर रीसेट करें?</string>
+    <string name="dialog_reset_counter_body">यह फिर से 0 से शुरू होगा। टाइल का इतिहास और पिछला समय बना रहेगा।</string>
+
+    <!-- Groups screen -->
+    <string name="groups_title">समूह</string>
+    <string name="groups_intro">क्रम बदलने के लिए खींचें। यहां का क्रम ही होम स्क्रीन पर चिप्स और सेक्शन का क्रम है।</string>
+    <string name="groups_empty">अभी कोई समूह नहीं है। नीचे एक जोड़ें, फिर टाइल बदलते समय उसे चुनें।</string>
+    <plurals name="tiles_count">
+        <item quantity="one">%d टाइल</item>
+        <item quantity="other">%d टाइलें</item>
+    </plurals>
+    <string name="groups_new_placeholder">जैसे, बाथरूम, पालतू जानवर, सेहत</string>
+    <string name="groups_note">समूह मिटाने पर उसकी टाइलें बनी रहती हैं; वे “अन्य” में चली जाती हैं, जो सेक्शन सिर्फ़ टाइलें होने पर दिखता है।</string>
+    <string name="group_options">%1$s के विकल्प</string>
+    <string name="group_drag">%1$s का क्रम बदलने के लिए खींचें</string>
+
+    <!-- Home-screen widget -->
+    <string name="widget_description">एक टाइल: आखिरी बार किए हुए कितना समय हुआ। हो गया मार्क करने के लिए टैप करें।</string>
+    <string name="widget_open_app">Time Clicker खोलें</string>
+    <string name="widget_choose_tile">टाइल चुनने के लिए टैप करें</string>
+    <string name="widget_tile_deleted">यह टाइल मिटा दी गई</string>
+    <string name="widget_config_title">इस विजेट के लिए टाइल चुनें</string>
+    <string name="widget_config_empty">अभी कोई टाइल नहीं है। ऐप खोलें और जोड़ने के लिए + पर टैप करें।</string>
+    <string name="widget_config_pick">इस विजेट पर दिखाएं</string>
+    <string name="widget_preview_name">पौधों को पानी दिया</string>
+    <string name="widget_preview_elapsed">3 दिन</string>
+</resources>

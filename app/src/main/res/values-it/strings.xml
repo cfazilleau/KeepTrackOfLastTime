@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Home -->
+    <plurals name="things_count">
+        <item quantity="one">%d elemento</item>
+        <item quantity="many">%d elementi</item>
+        <item quantity="other">%d elementi</item>
+    </plurals>
+    <plurals name="groups_count">
+        <item quantity="one">%d gruppo</item>
+        <item quantity="many">%d gruppi</item>
+        <item quantity="other">%d gruppi</item>
+    </plurals>
+    <string name="header_tracked">%1$s in elenco</string>
+    <string name="header_grouped">%1$s in %2$s</string>
+    <string name="chip_all">Tutti</string>
+    <string name="chip_other">Altro</string>
+    <string name="section_oldest">più vecchio: %1$s</string>
+    <string name="empty_title">Ancora niente in elenco</string>
+    <string name="empty_body">Tocca + per aggiungere qualcosa, come «Annaffiare le piante». Tocca il suo riquadro ogni volta che lo rifai.</string>
+    <string name="empty_group">Nessun riquadro in questo gruppo. Tocca + per aggiungerne uno.</string>
+    <string name="snackbar_reset">«%1$s» segnato come fatto ora</string>
+    <string name="tile_click_label">Segna come fatto ora</string>
+    <string name="tile_long_click_label">Modifica riquadro</string>
+
+    <!-- Elapsed time -->
+    <plurals name="elapsed_seconds">
+        <item quantity="one">%d secondo</item>
+        <item quantity="many">%d secondi</item>
+        <item quantity="other">%d secondi</item>
+    </plurals>
+    <plurals name="elapsed_minutes">
+        <item quantity="one">%d minuto</item>
+        <item quantity="many">%d minuti</item>
+        <item quantity="other">%d minuti</item>
+    </plurals>
+    <plurals name="elapsed_hours">
+        <item quantity="one">%d ora</item>
+        <item quantity="many">%d ore</item>
+        <item quantity="other">%d ore</item>
+    </plurals>
+    <plurals name="elapsed_days">
+        <item quantity="one">%d giorno</item>
+        <item quantity="many">%d giorni</item>
+        <item quantity="other">%d giorni</item>
+    </plurals>
+    <plurals name="elapsed_years">
+        <item quantity="one">%d anno</item>
+        <item quantity="many">%d anni</item>
+        <item quantity="other">%d anni</item>
+    </plurals>
+    <string name="elapsed_two_units">%1$s %2$s</string>
+    <string name="elapsed_ago">%1$s fa</string>
+    <string name="elapsed_just_now">Proprio ora</string>
+    <plurals name="press_count">
+        <item quantity="one">Premuto %d volta</item>
+        <item quantity="many">Premuto %d volte</item>
+        <item quantity="other">Premuto %d volte</item>
+    </plurals>
+
+    <!-- Common actions -->
+    <string name="action_add_tile">Aggiungi riquadro</string>
+    <string name="action_manage_groups">Gestisci gruppi</string>
+    <string name="action_undo">Annulla</string>
+    <string name="action_cancel">Annulla</string>
+    <string name="action_save">Salva</string>
+    <string name="action_done">Fine</string>
+    <string name="action_add">Aggiungi</string>
+    <string name="action_rename">Rinomina</string>
+    <string name="action_delete">Elimina</string>
+    <string name="action_back">Indietro</string>
+
+    <!-- Edit tile sheet -->
+    <string name="sheet_new_title">Nuovo riquadro</string>
+    <string name="sheet_edit_title">Modifica riquadro</string>
+    <string name="label_name">Nome</string>
+    <string name="name_placeholder">es. Annaffiare le piante</string>
+    <string name="label_group">Gruppo</string>
+    <string name="group_none">Nessun gruppo</string>
+    <string name="group_new">Nuovo gruppo</string>
+    <string name="label_background">Sfondo</string>
+    <string name="background_colour">Colore</string>
+    <string name="background_photo">Foto</string>
+    <string name="photo_change">Cambia foto</string>
+    <string name="photo_remove">Rimuovi</string>
+    <string name="photo_hint">Viene copiata nell’app, così funziona anche offline.</string>
+    <string name="photo_error">Impossibile leggere la foto. Provane un’altra.</string>
+    <string name="label_icon">Icona</string>
+    <string name="label_size">Dimensione</string>
+    <string name="size_small">Piccolo</string>
+    <string name="size_wide">Largo</string>
+    <string name="size_tall">Alto</string>
+    <string name="label_counter">Contatore</string>
+    <string name="counter_reset">Azzera</string>
+    <string name="widget_add">Aggiungi alla schermata Home</string>
+    <string name="widget_add_hint">Mostra questo riquadro come widget. Tocca il widget per segnarlo come fatto.</string>
+    <string name="delete_tile">Elimina riquadro</string>
+    <string name="tile_preview">Anteprima</string>
+    <string name="tile_preview_name">Nuovo riquadro</string>
+
+    <string name="color_sage">Salvia</string>
+    <string name="color_lavender">Lavanda</string>
+    <string name="color_peach">Pesca</string>
+    <string name="color_sky">Cielo</string>
+    <string name="color_butter">Burro</string>
+    <string name="color_rose">Rosa</string>
+    <string name="colors_wallpaper">Dal tuo sfondo</string>
+    <string name="color_wallpaper_primary">Accento dello sfondo</string>
+    <string name="color_wallpaper_secondary">Tono tenue dello sfondo</string>
+    <string name="color_wallpaper_tertiary">Contrasto dello sfondo</string>
+    <string name="icon_choice">Icona: %1$s</string>
+    <string name="icon_check">Spunta</string>
+    <string name="icon_drop">Goccia d’acqua</string>
+    <string name="icon_leaf">Foglia</string>
+    <string name="icon_grass">Erba</string>
+    <string name="icon_flower">Fiore</string>
+    <string name="icon_bed">Letto</string>
+    <string name="icon_coffee">Caffè</string>
+    <string name="icon_snow">Fiocco di neve</string>
+    <string name="icon_trash">Cestino</string>
+    <string name="icon_cart">Carrello</string>
+    <string name="icon_phone">Telefono</string>
+    <string name="icon_heart">Cuore</string>
+    <string name="icon_pill">Pillola</string>
+    <string name="icon_paw">Zampa</string>
+    <string name="icon_scissors">Forbici</string>
+    <string name="icon_brush">Pennello</string>
+    <string name="icon_gauge">Indicatore</string>
+    <string name="icon_car">Auto</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_delete_title">Eliminare «%1$s»?</string>
+    <string name="dialog_delete_body">Anche la cronologia verrà eliminata.</string>
+    <string name="dialog_new_group_title">Nuovo gruppo</string>
+    <string name="dialog_rename_group_title">Rinomina gruppo</string>
+    <string name="dialog_delete_group_title">Eliminare il gruppo «%1$s»?</string>
+    <string name="dialog_delete_group_body">I riquadri vengono mantenuti e spostati in «Altro».</string>
+    <string name="dialog_reset_counter_title">Azzerare il contatore?</string>
+    <string name="dialog_reset_counter_body">Riparte da 0. La cronologia e l’ultima volta del riquadro vengono mantenute.</string>
+
+    <!-- Groups screen -->
+    <string name="groups_title">Gruppi</string>
+    <string name="groups_intro">Trascina per riordinare. Questo è l’ordine dei filtri e delle sezioni nella schermata Home.</string>
+    <string name="groups_empty">Ancora nessun gruppo. Aggiungine uno qui sotto, poi sceglilo quando modifichi un riquadro.</string>
+    <plurals name="tiles_count">
+        <item quantity="one">%d riquadro</item>
+        <item quantity="many">%d riquadri</item>
+        <item quantity="other">%d riquadri</item>
+    </plurals>
+    <string name="groups_new_placeholder">es. Bagno, Animali, Salute</string>
+    <string name="groups_note">Eliminando un gruppo i suoi riquadri restano; vanno in «Altro», una sezione che compare solo quando contiene riquadri.</string>
+    <string name="group_options">Opzioni di %1$s</string>
+    <string name="group_drag">Trascina per riordinare %1$s</string>
+
+    <!-- Home-screen widget -->
+    <string name="widget_description">Un riquadro: quanto tempo è passato dall’ultima volta. Tocca per segnarlo come fatto.</string>
+    <string name="widget_open_app">Apri Time Clicker</string>
+    <string name="widget_choose_tile">Tocca per scegliere un riquadro</string>
+    <string name="widget_tile_deleted">Questo riquadro è stato eliminato</string>
+    <string name="widget_config_title">Scegli un riquadro per questo widget</string>
+    <string name="widget_config_empty">Ancora nessun riquadro. Apri l’app e tocca + per aggiungerne uno.</string>
+    <string name="widget_config_pick">Mostra in questo widget</string>
+    <string name="widget_preview_name">Annaffiare le piante</string>
+    <string name="widget_preview_elapsed">3 giorni</string>
+</resources>

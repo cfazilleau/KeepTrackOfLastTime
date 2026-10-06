@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Home -->
+    <plurals name="things_count">
+        <item quantity="other">%d项</item>
+    </plurals>
+    <plurals name="groups_count">
+        <item quantity="other">%d个分组</item>
+    </plurals>
+    <string name="header_tracked">已记录%1$s</string>
+    <string name="header_grouped">%1$s，分为%2$s</string>
+    <string name="chip_all">全部</string>
+    <string name="chip_other">其他</string>
+    <string name="section_oldest">最久：%1$s</string>
+    <string name="empty_title">还没有记录任何事项</string>
+    <string name="empty_body">点按 + 添加事项，比如“给植物浇水”。每次再做这件事时，点按它的卡片即可。</string>
+    <string name="empty_group">此分组中还没有卡片。点按 + 添加一个。</string>
+    <string name="snackbar_reset">已将“%1$s”重置为现在</string>
+    <string name="tile_click_label">标记为刚刚完成</string>
+    <string name="tile_long_click_label">编辑卡片</string>
+
+    <!-- Elapsed time -->
+    <plurals name="elapsed_seconds">
+        <item quantity="other">%d秒</item>
+    </plurals>
+    <plurals name="elapsed_minutes">
+        <item quantity="other">%d分钟</item>
+    </plurals>
+    <plurals name="elapsed_hours">
+        <item quantity="other">%d小时</item>
+    </plurals>
+    <plurals name="elapsed_days">
+        <item quantity="other">%d天</item>
+    </plurals>
+    <plurals name="elapsed_years">
+        <item quantity="other">%d年</item>
+    </plurals>
+    <string name="elapsed_two_units">%1$s%2$s</string>
+    <string name="elapsed_ago">%1$s前</string>
+    <string name="elapsed_just_now">刚刚</string>
+    <plurals name="press_count">
+        <item quantity="other">已按%d次</item>
+    </plurals>
+
+    <!-- Common actions -->
+    <string name="action_add_tile">添加卡片</string>
+    <string name="action_manage_groups">管理分组</string>
+    <string name="action_undo">撤消</string>
+    <string name="action_cancel">取消</string>
+    <string name="action_save">保存</string>
+    <string name="action_done">完成</string>
+    <string name="action_add">添加</string>
+    <string name="action_rename">重命名</string>
+    <string name="action_delete">删除</string>
+    <string name="action_back">返回</string>
+
+    <!-- Edit tile sheet -->
+    <string name="sheet_new_title">新卡片</string>
+    <string name="sheet_edit_title">编辑卡片</string>
+    <string name="label_name">名称</string>
+    <string name="name_placeholder">例如：给植物浇水</string>
+    <string name="label_group">分组</string>
+    <string name="group_none">无分组</string>
+    <string name="group_new">新分组</string>
+    <string name="label_background">背景</string>
+    <string name="background_colour">颜色</string>
+    <string name="background_photo">照片</string>
+    <string name="photo_change">更换照片</string>
+    <string name="photo_remove">移除</string>
+    <string name="photo_hint">照片会复制到应用中，离线也能正常显示。</string>
+    <string name="photo_error">无法读取该照片，请换一张试试。</string>
+    <string name="label_icon">图标</string>
+    <string name="label_size">尺寸</string>
+    <string name="size_small">小</string>
+    <string name="size_wide">宽</string>
+    <string name="size_tall">高</string>
+    <string name="label_counter">计数器</string>
+    <string name="counter_reset">重置</string>
+    <string name="widget_add">添加到主屏幕</string>
+    <string name="widget_add_hint">以小部件形式显示此卡片。点按小部件即可标记为已完成。</string>
+    <string name="delete_tile">删除卡片</string>
+    <string name="tile_preview">预览</string>
+    <string name="tile_preview_name">新卡片</string>
+
+    <string name="color_sage">鼠尾草绿</string>
+    <string name="color_lavender">薰衣草紫</string>
+    <string name="color_peach">蜜桃粉</string>
+    <string name="color_sky">天空蓝</string>
+    <string name="color_butter">奶油黄</string>
+    <string name="color_rose">玫瑰粉</string>
+    <string name="colors_wallpaper">取自壁纸</string>
+    <string name="color_wallpaper_primary">壁纸强调色</string>
+    <string name="color_wallpaper_secondary">壁纸柔和色</string>
+    <string name="color_wallpaper_tertiary">壁纸对比色</string>
+    <string name="icon_choice">图标：%1$s</string>
+    <string name="icon_check">对勾</string>
+    <string name="icon_drop">水滴</string>
+    <string name="icon_leaf">叶子</string>
+    <string name="icon_grass">草</string>
+    <string name="icon_flower">花</string>
+    <string name="icon_bed">床</string>
+    <string name="icon_coffee">咖啡</string>
+    <string name="icon_snow">雪花</string>
+    <string name="icon_trash">垃圾桶</string>
+    <string name="icon_cart">购物车</string>
+    <string name="icon_phone">电话</string>
+    <string name="icon_heart">爱心</string>
+    <string name="icon_pill">药丸</string>
+    <string name="icon_paw">爪印</string>
+    <string name="icon_scissors">剪刀</string>
+    <string name="icon_brush">刷子</string>
+    <string name="icon_gauge">仪表</string>
+    <string name="icon_car">汽车</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_delete_title">删除“%1$s”？</string>
+    <string name="dialog_delete_body">其历史记录也会被删除。</string>
+    <string name="dialog_new_group_title">新分组</string>
+    <string name="dialog_rename_group_title">重命名分组</string>
+    <string name="dialog_delete_group_title">删除分组“%1$s”？</string>
+    <string name="dialog_delete_group_body">其中的卡片会保留，并移至“其他”。</string>
+    <string name="dialog_reset_counter_title">重置计数器？</string>
+    <string name="dialog_reset_counter_body">将从 0 重新开始计数。卡片的历史记录和上次时间会保留。</string>
+
+    <!-- Groups screen -->
+    <string name="groups_title">分组</string>
+    <string name="groups_intro">拖动以调整顺序。此处的顺序即主屏幕上标签和版块的顺序。</string>
+    <string name="groups_empty">还没有分组。在下方添加一个，然后在编辑卡片时选择它。</string>
+    <plurals name="tiles_count">
+        <item quantity="other">%d张卡片</item>
+    </plurals>
+    <string name="groups_new_placeholder">例如：浴室、宠物、健康</string>
+    <string name="groups_note">删除分组会保留其中的卡片；它们会移至“其他”，该版块仅在有卡片时显示。</string>
+    <string name="group_options">%1$s选项</string>
+    <string name="group_drag">拖动以调整%1$s的顺序</string>
+
+    <!-- Home-screen widget -->
+    <string name="widget_description">单张卡片：显示距上次完成过了多久。点按即可标记为已完成。</string>
+    <string name="widget_open_app">打开 Time Clicker</string>
+    <string name="widget_choose_tile">点按以选择卡片</string>
+    <string name="widget_tile_deleted">此卡片已被删除</string>
+    <string name="widget_config_title">为此小部件选择卡片</string>
+    <string name="widget_config_empty">还没有卡片。打开应用并点按 + 添加一个。</string>
+    <string name="widget_config_pick">在此小部件上显示</string>
+    <string name="widget_preview_name">给植物浇水</string>
+    <string name="widget_preview_elapsed">3天</string>
+</resources>

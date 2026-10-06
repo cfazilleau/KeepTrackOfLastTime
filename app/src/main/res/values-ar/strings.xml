@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Home -->
+    <plurals name="things_count">
+        <item quantity="zero">%d شيء</item>
+        <item quantity="one">شيء واحد</item>
+        <item quantity="two">شيئان</item>
+        <item quantity="few">%d أشياء</item>
+        <item quantity="many">%d شيئًا</item>
+        <item quantity="other">%d شيء</item>
+    </plurals>
+    <plurals name="groups_count">
+        <item quantity="zero">%d مجموعة</item>
+        <item quantity="one">مجموعة واحدة</item>
+        <item quantity="two">مجموعتان</item>
+        <item quantity="few">%d مجموعات</item>
+        <item quantity="many">%d مجموعة</item>
+        <item quantity="other">%d مجموعة</item>
+    </plurals>
+    <string name="header_tracked">%1$s قيد التتبع</string>
+    <string name="header_grouped">%1$s في %2$s</string>
+    <string name="chip_all">الكل</string>
+    <string name="chip_other">أخرى</string>
+    <string name="section_oldest">الأقدم: %1$s</string>
+    <string name="empty_title">لا يوجد شيء قيد التتبع بعد</string>
+    <string name="empty_body">انقر على + لإضافة شيء، مثل «سقيت النباتات». ثم انقر على بطاقته كلما فعلته مجددًا.</string>
+    <string name="empty_group">لا توجد بطاقات في هذه المجموعة بعد. انقر على + لإضافة واحدة.</string>
+    <string name="snackbar_reset">أُعيد ضبط «%1$s» إلى الآن</string>
+    <string name="tile_click_label">تحديد كمنجز الآن</string>
+    <string name="tile_long_click_label">تعديل البطاقة</string>
+
+    <!-- Elapsed time -->
+    <plurals name="elapsed_seconds">
+        <item quantity="zero">%d ثانية</item>
+        <item quantity="one">%d ثانية</item>
+        <item quantity="two">%d ثانيتان</item>
+        <item quantity="few">%d ثوانٍ</item>
+        <item quantity="many">%d ثانية</item>
+        <item quantity="other">%d ثانية</item>
+    </plurals>
+    <plurals name="elapsed_minutes">
+        <item quantity="zero">%d دقيقة</item>
+        <item quantity="one">%d دقيقة</item>
+        <item quantity="two">%d دقيقتان</item>
+        <item quantity="few">%d دقائق</item>
+        <item quantity="many">%d دقيقة</item>
+        <item quantity="other">%d دقيقة</item>
+    </plurals>
+    <plurals name="elapsed_hours">
+        <item quantity="zero">%d ساعة</item>
+        <item quantity="one">%d ساعة</item>
+        <item quantity="two">%d ساعتان</item>
+        <item quantity="few">%d ساعات</item>
+        <item quantity="many">%d ساعة</item>
+        <item quantity="other">%d ساعة</item>
+    </plurals>
+    <plurals name="elapsed_days">
+        <item quantity="zero">%d يوم</item>
+        <item quantity="one">%d يوم</item>
+        <item quantity="two">%d يومان</item>
+        <item quantity="few">%d أيام</item>
+        <item quantity="many">%d يومًا</item>
+        <item quantity="other">%d يوم</item>
+    </plurals>
+    <plurals name="elapsed_years">
+        <item quantity="zero">%d سنة</item>
+        <item quantity="one">%d سنة</item>
+        <item quantity="two">%d سنتان</item>
+        <item quantity="few">%d سنوات</item>
+        <item quantity="many">%d سنة</item>
+        <item quantity="other">%d سنة</item>
+    </plurals>
+    <string name="elapsed_two_units">%1$s و%2$s</string>
+    <string name="elapsed_ago">منذ %1$s</string>
+    <string name="elapsed_just_now">الآن</string>
+    <plurals name="press_count">
+        <item quantity="zero">ضُغط %d مرة</item>
+        <item quantity="one">ضُغط مرة واحدة</item>
+        <item quantity="two">ضُغط مرتين</item>
+        <item quantity="few">ضُغط %d مرات</item>
+        <item quantity="many">ضُغط %d مرة</item>
+        <item quantity="other">ضُغط %d مرة</item>
+    </plurals>
+
+    <!-- Common actions -->
+    <string name="action_add_tile">إضافة بطاقة</string>
+    <string name="action_manage_groups">إدارة المجموعات</string>
+    <string name="action_undo">تراجع</string>
+    <string name="action_cancel">إلغاء</string>
+    <string name="action_save">حفظ</string>
+    <string name="action_done">تم</string>
+    <string name="action_add">إضافة</string>
+    <string name="action_rename">إعادة تسمية</string>
+    <string name="action_delete">حذف</string>
+    <string name="action_back">رجوع</string>
+
+    <!-- Edit tile sheet -->
+    <string name="sheet_new_title">بطاقة جديدة</string>
+    <string name="sheet_edit_title">تعديل البطاقة</string>
+    <string name="label_name">الاسم</string>
+    <string name="name_placeholder">مثال: سقيت النباتات</string>
+    <string name="label_group">المجموعة</string>
+    <string name="group_none">بلا مجموعة</string>
+    <string name="group_new">مجموعة جديدة</string>
+    <string name="label_background">الخلفية</string>
+    <string name="background_colour">لون</string>
+    <string name="background_photo">صورة</string>
+    <string name="photo_change">تغيير الصورة</string>
+    <string name="photo_remove">إزالة</string>
+    <string name="photo_hint">تُنسخ داخل التطبيق، لذا تبقى متاحة دون اتصال.</string>
+    <string name="photo_error">تعذّرت قراءة هذه الصورة. جرّب صورة أخرى.</string>
+    <string name="label_icon">الأيقونة</string>
+    <string name="label_size">الحجم</string>
+    <string name="size_small">صغير</string>
+    <string name="size_wide">عريض</string>
+    <string name="size_tall">طويل</string>
+    <string name="label_counter">العدّاد</string>
+    <string name="counter_reset">إعادة الضبط</string>
+    <string name="widget_add">إضافة إلى الشاشة الرئيسية</string>
+    <string name="widget_add_hint">تعرض هذه البطاقة كأداة. انقر على الأداة لتحديدها كمنجزة.</string>
+    <string name="delete_tile">حذف البطاقة</string>
+    <string name="tile_preview">معاينة</string>
+    <string name="tile_preview_name">بطاقة جديدة</string>
+
+    <string name="color_sage">مريمية</string>
+    <string name="color_lavender">خزامى</string>
+    <string name="color_peach">خوخي</string>
+    <string name="color_sky">سماوي</string>
+    <string name="color_butter">زبدي</string>
+    <string name="color_rose">وردي</string>
+    <string name="colors_wallpaper">من خلفية الشاشة</string>
+    <string name="color_wallpaper_primary">لون الخلفية المميز</string>
+    <string name="color_wallpaper_secondary">لون الخلفية الهادئ</string>
+    <string name="color_wallpaper_tertiary">لون الخلفية المتباين</string>
+    <string name="icon_choice">الأيقونة: %1$s</string>
+    <string name="icon_check">علامة صح</string>
+    <string name="icon_drop">قطرة ماء</string>
+    <string name="icon_leaf">ورقة شجر</string>
+    <string name="icon_grass">عشب</string>
+    <string name="icon_flower">زهرة</string>
+    <string name="icon_bed">سرير</string>
+    <string name="icon_coffee">قهوة</string>
+    <string name="icon_snow">ندفة ثلج</string>
+    <string name="icon_trash">سلة المهملات</string>
+    <string name="icon_cart">عربة تسوق</string>
+    <string name="icon_phone">هاتف</string>
+    <string name="icon_heart">قلب</string>
+    <string name="icon_pill">حبة دواء</string>
+    <string name="icon_paw">أثر مخلب</string>
+    <string name="icon_scissors">مقص</string>
+    <string name="icon_brush">فرشاة</string>
+    <string name="icon_gauge">مقياس</string>
+    <string name="icon_car">سيارة</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_delete_title">حذف «%1$s»؟</string>
+    <string name="dialog_delete_body">سيُحذف سجلّها أيضًا.</string>
+    <string name="dialog_new_group_title">مجموعة جديدة</string>
+    <string name="dialog_rename_group_title">إعادة تسمية المجموعة</string>
+    <string name="dialog_delete_group_title">حذف المجموعة «%1$s»؟</string>
+    <string name="dialog_delete_group_body">ستبقى بطاقاتها وتنتقل إلى «أخرى».</string>
+    <string name="dialog_reset_counter_title">إعادة ضبط العدّاد؟</string>
+    <string name="dialog_reset_counter_body">سيبدأ من 0 مجددًا. يبقى سجلّ البطاقة وآخر وقت كما هما.</string>
+
+    <!-- Groups screen -->
+    <string name="groups_title">المجموعات</string>
+    <string name="groups_intro">اسحب لإعادة الترتيب. هذا الترتيب هو ترتيب الشرائح والأقسام في الشاشة الرئيسية.</string>
+    <string name="groups_empty">لا توجد مجموعات بعد. أضف واحدة أدناه، ثم اخترها عند تعديل بطاقة.</string>
+    <plurals name="tiles_count">
+        <item quantity="zero">%d بطاقة</item>
+        <item quantity="one">بطاقة واحدة</item>
+        <item quantity="two">بطاقتان</item>
+        <item quantity="few">%d بطاقات</item>
+        <item quantity="many">%d بطاقة</item>
+        <item quantity="other">%d بطاقة</item>
+    </plurals>
+    <string name="groups_new_placeholder">مثال: الحمّام، الحيوانات الأليفة، الصحة</string>
+    <string name="groups_note">حذف المجموعة يُبقي بطاقاتها؛ إذ تنتقل إلى «أخرى»، وهو قسم لا يظهر إلا عندما يحتوي على بطاقات.</string>
+    <string name="group_options">خيارات %1$s</string>
+    <string name="group_drag">اسحب لإعادة ترتيب %1$s</string>
+
+    <!-- Home-screen widget -->
+    <string name="widget_description">بطاقة واحدة: كم مضى منذ آخر مرة فعلتها. انقر لتحديدها كمنجزة.</string>
+    <string name="widget_open_app">فتح Time Clicker</string>
+    <string name="widget_choose_tile">انقر لاختيار بطاقة</string>
+    <string name="widget_tile_deleted">حُذفت هذه البطاقة</string>
+    <string name="widget_config_title">اختر بطاقة لهذه الأداة</string>
+    <string name="widget_config_empty">لا توجد بطاقات بعد. افتح التطبيق وانقر على + لإضافة واحدة.</string>
+    <string name="widget_config_pick">عرض في هذه الأداة</string>
+    <string name="widget_preview_name">سقيت النباتات</string>
+    <string name="widget_preview_elapsed">3 أيام</string>
+</resources>

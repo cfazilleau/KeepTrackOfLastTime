@@ -1,18 +1,29 @@
-# Last Time
+# Time Clicker
 
 A small Android app that tracks *when you last did something*.
-Each tile ("Watered the plants") shows how long ago it was last done ("3 days and 5 hours ago").
-Tap a tile when you do it again and it resets to now.
+Each tile ("Watered the plants") shows how long ago it was last done, as its two largest units
+("37 seconds", "2 minutes 45 seconds", "3 days 5 hours", "1 year 12 days"), ticking live.
+Tap a tile when you do it again and it resets to now: the time disappears, then fades back in after a second.
+The number in the tile's bottom-right corner counts how many times it was pressed.
 
 - **Tap** a tile: mark it as done now. A snackbar offers **Undo**.
 - **Long-press** a tile: edit it in a sheet: name, group, colour or photo background, icon,
-  size (Small / Wide / Tall), or delete it.
+  size (Small / Wide / Tall), reset its press counter, add it to the home screen, or delete it.
+  All sizes show the same content.
 - **+** button: add a new tile, pre-filed in the group currently shown.
-- **Group chips** filter the home screen; "All" shows one section per group.
+- **Group chips**, or **swiping left/right**, move between groups; "All" shows one section per group.
   The sliders button opens **Groups**: add, rename, delete, drag to reorder.
+- **Widgets**: any tile can live on the home screen (from the widget picker, or "Add to home screen"
+  in its edit sheet). Tapping the widget marks it as done; its icon opens the app.
 
-The look is a neumorphic "bento" grid: soft pastel tiles raised off the page that sink in when pressed.
-Light and dark themes follow the system.
+The look is a neumorphic "bento" grid: soft pastel tiles raised off the page that sink in when pressed,
+and glide to their new place when the grid changes. Light and dark themes follow the system.
+On Android 12+ the app follows the wallpaper's **Material You** colours: surfaces, accents and three
+"From your wallpaper" tile colours; the pastel colours are nudged toward the wallpaper's hue to match.
+
+Translated into English, French, Spanish, German, Italian, Portuguese, Dutch, Polish, Russian, Turkish,
+Indonesian, Arabic, Hindi, Japanese, Korean and Simplified Chinese. On Android 13+ the language can be
+picked per app in the system settings.
 
 Fully offline. All data lives in a local SQLite database in the app's private storage;
 tile photos are copied into the app's private storage too.
@@ -22,7 +33,8 @@ tile photos are copied into the app's private storage too.
 | Concern  | Choice |
 |----------|--------|
 | Language | Kotlin |
-| UI       | Jetpack Compose + Material 3, custom neumorphic palette (light & dark) |
+| UI       | Jetpack Compose + Material 3, custom neumorphic palette (light & dark, Material You on Android 12+) |
+| Widgets  | Jetpack Glance |
 | Storage  | Room (SQLite) |
 | Images   | Coil (local files only), Android photo picker (no permission needed) |
 | Build    | Gradle (Kotlin DSL, version catalog), AGP 9 |
@@ -31,8 +43,8 @@ tile photos are copied into the app's private storage too.
 ## Project layout
 
 ```
-app/src/main/java/com/keeptrack/lasttime/
-├── LastTimeApplication.kt     # creates the AppContainer
+app/src/main/java/com/keeptrack/timeclicker/
+├── TimeClickerApplication.kt  # creates the AppContainer
 ├── AppContainer.kt            # manual dependency injection
 ├── MainActivity.kt            # Home <-> Groups screen switch
 ├── data/
@@ -42,17 +54,19 @@ app/src/main/java/com/keeptrack/lasttime/
 │   └── local/                 # Room: entities, DAO, database + migrations
 └── ui/
     ├── components/            # neumorphic buttons, text field, segmented control
-    ├── home/                  # home screen, bento grid, tile, edit sheet, ViewModel
+    ├── home/                  # home screen (group pager), bento grid, tile, edit sheet, ViewModel
     ├── groups/                # manage groups screen
-    ├── theme/                 # palette, neumorphic shadow modifiers, icons
-    └── time/                  # "3 days and 5 hours ago" formatting + ticking clock
+    ├── theme/                 # palette (+ Material You), neumorphic shadow modifiers, icons
+    └── time/                  # "2 minutes 45 seconds" formatting + ticking clock
+└── widget/                    # home-screen widgets (Glance): widget, tile picker, refresh alarm
 app/schemas/                   # exported Room schemas (commit these, they back migrations)
 ```
 
 ### Data model
 
 - `tracker_groups`: user-defined groups (name, display position).
-- `trackers`: one row per tile (name, group, colour, icon, size, photo file, display position).
+- `trackers`: one row per tile (name, group, colour, icon, size, photo file, display position,
+  and `count_since`: the press counter counts events after this time).
   Deleting a group sets its tiles' group to null ("Other").
 - `tracker_events`: one row per time a tile was done.
 
@@ -64,7 +78,7 @@ can use data that is already there.
 
 1. Change the entities and bump `version` in `AppDatabase`.
 2. Build. Room exports the new schema to `app/schemas/`.
-3. Add a migration (see `AutoMigration(from = 1, to = 2)` in `AppDatabase`) so existing user data is kept.
+3. Add a migration (see the `AutoMigration`s in `AppDatabase`) so existing user data is kept.
 4. Extend `MigrationTest` and run it on a device or emulator: `./gradlew connectedDebugAndroidTest`.
 
 ## Building locally
@@ -83,7 +97,7 @@ The debug build installs as a separate app (`com.keeptrack.lasttime.debug`), so 
 `.github/workflows/build-apk.yml` runs on every push to `main`, on every pull request, and on manual dispatch:
 
 - runs the unit tests and builds a minified release APK
-- uploads it as a workflow artifact (`LastTime-<version>.apk`)
+- uploads it as a workflow artifact (`TimeClicker-<version>.apk`)
 - on a tag push `vX.Y.Z`, also creates a GitHub Release with the APK attached:
 
   ```bash
@@ -99,7 +113,7 @@ Without these secrets, CI signs with a throwaway key. Each build then needs an u
 which **erases your data**. Set up a permanent key:
 
 ```bash
-keytool -genkeypair -v -keystore release.jks -alias lasttime \
+keytool -genkeypair -v -keystore release.jks -alias timeclicker \
   -keyalg RSA -keysize 4096 -validity 10000
 ```
 
@@ -109,7 +123,7 @@ Then add these repository secrets (Settings → Secrets and variables → Action
 |--------|-------|
 | `KEYSTORE_BASE64` | `base64 -w0 release.jks` (on macOS: `base64 -i release.jks`) |
 | `KEYSTORE_PASSWORD` | the keystore password |
-| `KEY_ALIAS` | `lasttime` |
+| `KEY_ALIAS` | `timeclicker` (whatever alias you used) |
 | `KEY_PASSWORD` | the key password |
 
 Back up `release.jks` and its passwords outside the repo. If you lose them, you can't ship updates to an existing install.

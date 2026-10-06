@@ -10,10 +10,12 @@ plugins {
 val releaseKeystore: String? = System.getenv("KEYSTORE_FILE")
 
 android {
-    namespace = "com.keeptrack.lasttime"
+    namespace = "com.keeptrack.timeclicker"
     compileSdk = 37
 
     defaultConfig {
+        // Kept from the app's first name ("Last Time"): changing it would make Android treat
+        // Time Clicker as a different app, so updating would lose everyone's tiles and history.
         applicationId = "com.keeptrack.lasttime"
         minSdk = 26
         targetSdk = 37
@@ -54,6 +56,11 @@ android {
     buildFeatures {
         compose = true
     }
+
+    androidResources {
+        // Lists the translated languages for the per-app language setting (Android 13+).
+        generateLocaleConfig = true
+    }
 }
 
 room {
@@ -79,6 +86,7 @@ dependencies {
 
     implementation(libs.coil.compose)
     implementation(libs.reorderable)
+    implementation(libs.androidx.glance.appwidget)
 
     testImplementation(libs.junit)
 

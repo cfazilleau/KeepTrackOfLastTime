@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Home -->
+    <plurals name="things_count">
+        <item quantity="other">%d hal</item>
+    </plurals>
+    <plurals name="groups_count">
+        <item quantity="other">%d grup</item>
+    </plurals>
+    <string name="header_tracked">%1$s dilacak</string>
+    <string name="header_grouped">%1$s dalam %2$s</string>
+    <string name="chip_all">Semua</string>
+    <string name="chip_other">Lainnya</string>
+    <string name="section_oldest">terlama: %1$s</string>
+    <string name="empty_title">Belum ada yang dilacak</string>
+    <string name="empty_body">Ketuk + untuk menambahkan sesuatu, seperti “Menyiram tanaman”. Ketuk kartunya setiap kali kamu melakukannya lagi.</string>
+    <string name="empty_group">Belum ada kartu di grup ini. Ketuk + untuk menambahkan.</string>
+    <string name="snackbar_reset">“%1$s” direset ke sekarang</string>
+    <string name="tile_click_label">Tandai selesai sekarang</string>
+    <string name="tile_long_click_label">Edit kartu</string>
+
+    <!-- Elapsed time -->
+    <plurals name="elapsed_seconds">
+        <item quantity="other">%d detik</item>
+    </plurals>
+    <plurals name="elapsed_minutes">
+        <item quantity="other">%d menit</item>
+    </plurals>
+    <plurals name="elapsed_hours">
+        <item quantity="other">%d jam</item>
+    </plurals>
+    <plurals name="elapsed_days">
+        <item quantity="other">%d hari</item>
+    </plurals>
+    <plurals name="elapsed_years">
+        <item quantity="other">%d tahun</item>
+    </plurals>
+    <string name="elapsed_two_units">%1$s %2$s</string>
+    <string name="elapsed_ago">%1$s yang lalu</string>
+    <string name="elapsed_just_now">Baru saja</string>
+    <plurals name="press_count">
+        <item quantity="other">Ditekan %d kali</item>
+    </plurals>
+
+    <!-- Common actions -->
+    <string name="action_add_tile">Tambah kartu</string>
+    <string name="action_manage_groups">Kelola grup</string>
+    <string name="action_undo">Urungkan</string>
+    <string name="action_cancel">Batal</string>
+    <string name="action_save">Simpan</string>
+    <string name="action_done">Selesai</string>
+    <string name="action_add">Tambah</string>
+    <string name="action_rename">Ganti nama</string>
+    <string name="action_delete">Hapus</string>
+    <string name="action_back">Kembali</string>
+
+    <!-- Edit tile sheet -->
+    <string name="sheet_new_title">Kartu baru</string>
+    <string name="sheet_edit_title">Edit kartu</string>
+    <string name="label_name">Nama</string>
+    <string name="name_placeholder">mis. Menyiram tanaman</string>
+    <string name="label_group">Grup</string>
+    <string name="group_none">Tanpa grup</string>
+    <string name="group_new">Grup baru</string>
+    <string name="label_background">Latar</string>
+    <string name="background_colour">Warna</string>
+    <string name="background_photo">Foto</string>
+    <string name="photo_change">Ganti foto</string>
+    <string name="photo_remove">Hapus</string>
+    <string name="photo_hint">Disalin ke aplikasi, jadi tetap berfungsi saat offline.</string>
+    <string name="photo_error">Tidak dapat membaca foto itu. Coba foto lain.</string>
+    <string name="label_icon">Ikon</string>
+    <string name="label_size">Ukuran</string>
+    <string name="size_small">Kecil</string>
+    <string name="size_wide">Lebar</string>
+    <string name="size_tall">Tinggi</string>
+    <string name="label_counter">Penghitung</string>
+    <string name="counter_reset">Reset</string>
+    <string name="widget_add">Tambahkan ke layar utama</string>
+    <string name="widget_add_hint">Menampilkan kartu ini sebagai widget. Ketuk widget untuk menandainya selesai.</string>
+    <string name="delete_tile">Hapus kartu</string>
+    <string name="tile_preview">Pratinjau</string>
+    <string name="tile_preview_name">Kartu baru</string>
+
+    <string name="color_sage">Sage</string>
+    <string name="color_lavender">Lavender</string>
+    <string name="color_peach">Persik</string>
+    <string name="color_sky">Langit</string>
+    <string name="color_butter">Mentega</string>
+    <string name="color_rose">Mawar</string>
+    <string name="colors_wallpaper">Dari wallpaper kamu</string>
+    <string name="color_wallpaper_primary">Wallpaper: aksen</string>
+    <string name="color_wallpaper_secondary">Wallpaper: lembut</string>
+    <string name="color_wallpaper_tertiary">Wallpaper: kontras</string>
+    <string name="icon_choice">Ikon: %1$s</string>
+    <string name="icon_check">Centang</string>
+    <string name="icon_drop">Tetes air</string>
+    <string name="icon_leaf">Daun</string>
+    <string name="icon_grass">Rumput</string>
+    <string name="icon_flower">Bunga</string>
+    <string name="icon_bed">Kasur</string>
+    <string name="icon_coffee">Kopi</string>
+    <string name="icon_snow">Kepingan salju</string>
+    <string name="icon_trash">Tempat sampah</string>
+    <string name="icon_cart">Keranjang belanja</string>
+    <string name="icon_phone">Telepon</string>
+    <string name="icon_heart">Hati</string>
+    <string name="icon_pill">Pil</string>
+    <string name="icon_paw">Tapak kaki</string>
+    <string name="icon_scissors">Gunting</string>
+    <string name="icon_brush">Kuas</string>
+    <string name="icon_gauge">Pengukur</string>
+    <string name="icon_car">Mobil</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_delete_title">Hapus “%1$s”?</string>
+    <string name="dialog_delete_body">Riwayatnya juga akan dihapus.</string>
+    <string name="dialog_new_group_title">Grup baru</string>
+    <string name="dialog_rename_group_title">Ganti nama grup</string>
+    <string name="dialog_delete_group_title">Hapus grup “%1$s”?</string>
+    <string name="dialog_delete_group_body">Kartunya tetap disimpan dan dipindahkan ke “Lainnya”.</string>
+    <string name="dialog_reset_counter_title">Reset penghitung?</string>
+    <string name="dialog_reset_counter_body">Penghitung mulai lagi dari 0. Riwayat kartu dan waktu terakhirnya tetap disimpan.</string>
+
+    <!-- Groups screen -->
+    <string name="groups_title">Grup</string>
+    <string name="groups_intro">Seret untuk mengubah urutan. Urutan di sini adalah urutan chip dan bagian di layar utama.</string>
+    <string name="groups_empty">Belum ada grup. Tambahkan di bawah, lalu pilih saat mengedit kartu.</string>
+    <plurals name="tiles_count">
+        <item quantity="other">%d kartu</item>
+    </plurals>
+    <string name="groups_new_placeholder">mis. Kamar mandi, Hewan peliharaan, Kesehatan</string>
+    <string name="groups_note">Menghapus grup tidak menghapus kartunya; kartu dipindahkan ke “Lainnya”, bagian yang hanya muncul jika berisi kartu.</string>
+    <string name="group_options">Opsi %1$s</string>
+    <string name="group_drag">Seret untuk mengubah urutan %1$s</string>
+
+    <!-- Home-screen widget -->
+    <string name="widget_description">Satu kartu: sudah berapa lama sejak terakhir kamu melakukannya. Ketuk untuk menandai selesai.</string>
+    <string name="widget_open_app">Buka Time Clicker</string>
+    <string name="widget_choose_tile">Ketuk untuk memilih kartu</string>
+    <string name="widget_tile_deleted">Kartu ini telah dihapus</string>
+    <string name="widget_config_title">Pilih kartu untuk widget ini</string>
+    <string name="widget_config_empty">Belum ada kartu. Buka aplikasi dan ketuk + untuk menambahkan.</string>
+    <string name="widget_config_pick">Tampilkan di widget ini</string>
+    <string name="widget_preview_name">Menyiram tanaman</string>
+    <string name="widget_preview_elapsed">3 hari</string>
+</resources>

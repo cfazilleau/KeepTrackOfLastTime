@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Home -->
+    <plurals name="things_count">
+        <item quantity="other">%d件</item>
+    </plurals>
+    <plurals name="groups_count">
+        <item quantity="other">%dグループ</item>
+    </plurals>
+    <string name="header_tracked">%1$sを記録中</string>
+    <string name="header_grouped">%2$sに%1$s</string>
+    <string name="chip_all">すべて</string>
+    <string name="chip_other">その他</string>
+    <string name="section_oldest">最も古い: %1$s</string>
+    <string name="empty_title">まだ何も記録していません</string>
+    <string name="empty_body">+ をタップして「植物に水をやった」などを追加しましょう。またやったら、そのタイルをタップします。</string>
+    <string name="empty_group">このグループにはまだタイルがありません。+ をタップして追加しましょう。</string>
+    <string name="snackbar_reset">「%1$s」を今にリセットしました</string>
+    <string name="tile_click_label">今やったことにする</string>
+    <string name="tile_long_click_label">タイルを編集</string>
+
+    <!-- Elapsed time -->
+    <plurals name="elapsed_seconds">
+        <item quantity="other">%d秒</item>
+    </plurals>
+    <plurals name="elapsed_minutes">
+        <item quantity="other">%d分</item>
+    </plurals>
+    <plurals name="elapsed_hours">
+        <item quantity="other">%d時間</item>
+    </plurals>
+    <plurals name="elapsed_days">
+        <item quantity="other">%d日</item>
+    </plurals>
+    <plurals name="elapsed_years">
+        <item quantity="other">%d年</item>
+    </plurals>
+    <string name="elapsed_two_units">%1$s%2$s</string>
+    <string name="elapsed_ago">%1$s前</string>
+    <string name="elapsed_just_now">たった今</string>
+    <plurals name="press_count">
+        <item quantity="other">%d回押しました</item>
+    </plurals>
+
+    <!-- Common actions -->
+    <string name="action_add_tile">タイルを追加</string>
+    <string name="action_manage_groups">グループを管理</string>
+    <string name="action_undo">元に戻す</string>
+    <string name="action_cancel">キャンセル</string>
+    <string name="action_save">保存</string>
+    <string name="action_done">完了</string>
+    <string name="action_add">追加</string>
+    <string name="action_rename">名前を変更</string>
+    <string name="action_delete">削除</string>
+    <string name="action_back">戻る</string>
+
+    <!-- Edit tile sheet -->
+    <string name="sheet_new_title">新しいタイル</string>
+    <string name="sheet_edit_title">タイルを編集</string>
+    <string name="label_name">名前</string>
+    <string name="name_placeholder">例: 植物に水をやった</string>
+    <string name="label_group">グループ</string>
+    <string name="group_none">グループなし</string>
+    <string name="group_new">新しいグループ</string>
+    <string name="label_background">背景</string>
+    <string name="background_colour">色</string>
+    <string name="background_photo">写真</string>
+    <string name="photo_change">写真を変更</string>
+    <string name="photo_remove">削除</string>
+    <string name="photo_hint">アプリ内にコピーされるので、オフラインでも表示されます。</string>
+    <string name="photo_error">その写真を読み込めませんでした。別の写真をお試しください。</string>
+    <string name="label_icon">アイコン</string>
+    <string name="label_size">サイズ</string>
+    <string name="size_small">小</string>
+    <string name="size_wide">横長</string>
+    <string name="size_tall">縦長</string>
+    <string name="label_counter">カウンター</string>
+    <string name="counter_reset">リセット</string>
+    <string name="widget_add">ホーム画面に追加</string>
+    <string name="widget_add_hint">このタイルをウィジェットとして表示します。ウィジェットをタップすると完了にできます。</string>
+    <string name="delete_tile">タイルを削除</string>
+    <string name="tile_preview">プレビュー</string>
+    <string name="tile_preview_name">新しいタイル</string>
+
+    <string name="color_sage">セージ</string>
+    <string name="color_lavender">ラベンダー</string>
+    <string name="color_peach">ピーチ</string>
+    <string name="color_sky">スカイ</string>
+    <string name="color_butter">バター</string>
+    <string name="color_rose">ローズ</string>
+    <string name="colors_wallpaper">壁紙から</string>
+    <string name="color_wallpaper_primary">壁紙のアクセント</string>
+    <string name="color_wallpaper_secondary">壁紙のソフト</string>
+    <string name="color_wallpaper_tertiary">壁紙のコントラスト</string>
+    <string name="icon_choice">アイコン: %1$s</string>
+    <string name="icon_check">チェック</string>
+    <string name="icon_drop">しずく</string>
+    <string name="icon_leaf">葉</string>
+    <string name="icon_grass">草</string>
+    <string name="icon_flower">花</string>
+    <string name="icon_bed">ベッド</string>
+    <string name="icon_coffee">コーヒー</string>
+    <string name="icon_snow">雪の結晶</string>
+    <string name="icon_trash">ゴミ箱</string>
+    <string name="icon_cart">ショッピングカート</string>
+    <string name="icon_phone">電話</string>
+    <string name="icon_heart">ハート</string>
+    <string name="icon_pill">錠剤</string>
+    <string name="icon_paw">足あと</string>
+    <string name="icon_scissors">はさみ</string>
+    <string name="icon_brush">ブラシ</string>
+    <string name="icon_gauge">メーター</string>
+    <string name="icon_car">車</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_delete_title">「%1$s」を削除しますか？</string>
+    <string name="dialog_delete_body">履歴も削除されます。</string>
+    <string name="dialog_new_group_title">新しいグループ</string>
+    <string name="dialog_rename_group_title">グループ名を変更</string>
+    <string name="dialog_delete_group_title">グループ「%1$s」を削除しますか？</string>
+    <string name="dialog_delete_group_body">タイルは残り、「その他」に移動します。</string>
+    <string name="dialog_reset_counter_title">カウンターをリセットしますか？</string>
+    <string name="dialog_reset_counter_body">0から数え直します。タイルの履歴と最後の日時は残ります。</string>
+
+    <!-- Groups screen -->
+    <string name="groups_title">グループ</string>
+    <string name="groups_intro">ドラッグして並べ替えます。ここでの順番が、ホーム画面のチップとセクションの順番になります。</string>
+    <string name="groups_empty">まだグループがありません。下で追加して、タイルの編集時に選びましょう。</string>
+    <plurals name="tiles_count">
+        <item quantity="other">タイル%d個</item>
+    </plurals>
+    <string name="groups_new_placeholder">例: お風呂、ペット、健康</string>
+    <string name="groups_note">グループを削除してもタイルは残り、「その他」に移動します。「その他」はタイルがあるときだけ表示されます。</string>
+    <string name="group_options">%1$sのオプション</string>
+    <string name="group_drag">%1$sをドラッグして並べ替え</string>
+
+    <!-- Home-screen widget -->
+    <string name="widget_description">タイル1つ: 最後にやってからの時間を表示します。タップで完了にできます。</string>
+    <string name="widget_open_app">Time Clickerを開く</string>
+    <string name="widget_choose_tile">タップしてタイルを選択</string>
+    <string name="widget_tile_deleted">このタイルは削除されました</string>
+    <string name="widget_config_title">このウィジェットのタイルを選択</string>
+    <string name="widget_config_empty">まだタイルがありません。アプリを開いて + をタップして追加しましょう。</string>
+    <string name="widget_config_pick">このウィジェットに表示</string>
+    <string name="widget_preview_name">植物に水をやった</string>
+    <string name="widget_preview_elapsed">3日</string>
+</resources>
