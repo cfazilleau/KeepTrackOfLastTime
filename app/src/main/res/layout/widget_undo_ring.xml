@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The widget's undo countdown ring (see widget_undo_ring drawable), tinted from code. -->
+<ProgressBar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/undo_ring"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:indeterminate="true"
+    android:indeterminateOnly="true"
+    android:indeterminateDrawable="@drawable/widget_undo_ring" />

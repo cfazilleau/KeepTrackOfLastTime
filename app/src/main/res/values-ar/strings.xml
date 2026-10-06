@@ -6,8 +6,8 @@
     <string name="empty_title">لا يوجد شيء قيد التتبع بعد</string>
     <string name="empty_body">انقر على + لإضافة شيء، مثل «سقيت النباتات». ثم انقر على بطاقته كلما فعلته مجددًا.</string>
     <string name="empty_group">لا توجد بطاقات في هذه المجموعة بعد. انقر على + لإضافة واحدة.</string>
-    <string name="snackbar_reset">أُعيد ضبط «%1$s» إلى الآن</string>
     <string name="tile_click_label">تحديد كمنجز الآن</string>
+    <string name="tile_undo_hint">انقر مجددًا للتراجع</string>
     <string name="tile_long_click_label">تعديل البطاقة</string>
 
     <!-- Elapsed time -->

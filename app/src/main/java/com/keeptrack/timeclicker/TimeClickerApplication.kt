@@ -7,6 +7,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.drop
 import kotlinx.coroutines.flow.map
@@ -25,9 +26,12 @@ class TimeClickerApplication : Application() {
             runCatching { IconCatalog.load(this@TimeClickerApplication) }
         }
 
-        // Home-screen widgets follow every change to the tiles (done, undone, edited, deleted).
+        // Home-screen widgets follow every change to the tiles (done, undone, edited, deleted),
+        // and their undo windows opening and closing.
         CoroutineScope(SupervisorJob() + Dispatchers.Default).launch {
-            container.trackerRepository.observeTrackers()
+            combine(container.trackerRepository.observeTrackers(), container.tilePresses.undoable) { trackers, undoable ->
+                trackers to undoable.keys
+            }
                 .distinctUntilChanged()
                 .drop(1) // the tiles as they are at start-up: nothing changed yet
                 .collectLatest { TileWidgets.refresh(this@TimeClickerApplication) }

@@ -6,7 +6,9 @@ Each tile ("Watered the plants") shows how long ago it was last done, as its two
 Tap a tile when you do it again and it resets to now: the time disappears, then fades back in after a second.
 The number in the tile's bottom-right corner counts how many times it was pressed.
 
-- **Tap** a tile: mark it as done now. A snackbar offers **Undo**.
+- **Tap** a tile: mark it as done now. For the next 10 seconds the tile offers to undo it
+  ("Tap again to undo", with a ring counting down in its corner): tapping it again undoes the press.
+  Widgets do the same (before Android 12 their ring steps once a second), and a press on one can be undone on the other.
 - **Long-press** a tile: edit it in a sheet: name, group, colour or photo background, icon (or none; two rows of recent icons and your icon palette, plus a searchable list of every icon),
   size (Small / Wide / Tall), reset its press counter, add it to the home screen, or delete it.
   All sizes show the same content.
@@ -99,7 +101,7 @@ and the unit tests fail on lines for icons Lucide no longer has. Another languag
   Deleting a group sets its tiles' group to null (they then only show under "All").
 - `tracker_events`: one row per time a tile was done.
 
-A card's "last time" is its most recent event. Resetting a card inserts an event, and Undo deletes it.
+A card's "last time" is its most recent event. Resetting a card inserts an event, and tapping it again to undo deletes it.
 Because the full history is kept, future features (history view, stats, average interval, reminders)
 can use data that is already there.
 

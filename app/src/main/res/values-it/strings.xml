@@ -6,8 +6,8 @@
     <string name="empty_title">Ancora niente in elenco</string>
     <string name="empty_body">Tocca + per aggiungere qualcosa, come «Annaffiare le piante». Tocca il suo riquadro ogni volta che lo rifai.</string>
     <string name="empty_group">Nessun riquadro in questo gruppo. Tocca + per aggiungerne uno.</string>
-    <string name="snackbar_reset">«%1$s» segnato come fatto ora</string>
     <string name="tile_click_label">Segna come fatto ora</string>
+    <string name="tile_undo_hint">Ritocca per annullare</string>
     <string name="tile_long_click_label">Modifica riquadro</string>
 
     <!-- Elapsed time -->

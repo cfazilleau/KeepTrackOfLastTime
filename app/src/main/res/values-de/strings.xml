@@ -6,8 +6,8 @@
     <string name="empty_title">Noch nichts erfasst</string>
     <string name="empty_body">Tippe auf +, um etwas hinzuzufügen, z. B. „Pflanzen gegossen“. Tippe auf die Kachel, sobald du es wieder machst.</string>
     <string name="empty_group">Noch keine Kacheln in dieser Gruppe. Tippe auf +, um eine hinzuzufügen.</string>
-    <string name="snackbar_reset">„%1$s“ auf jetzt gesetzt</string>
     <string name="tile_click_label">Jetzt als erledigt markieren</string>
+    <string name="tile_undo_hint">Erneut tippen: rückgängig</string>
     <string name="tile_long_click_label">Kachel bearbeiten</string>
 
     <!-- Elapsed time -->

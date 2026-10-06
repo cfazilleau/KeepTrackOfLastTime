@@ -6,8 +6,8 @@
     <string name="empty_title">अभी कुछ भी ट्रैक नहीं हो रहा</string>
     <string name="empty_body">कुछ जोड़ने के लिए + पर टैप करें, जैसे “पौधों को पानी दिया”। जब भी आप इसे दोबारा करें, इसकी टाइल पर टैप करें।</string>
     <string name="empty_group">इस समूह में अभी कोई टाइल नहीं है। जोड़ने के लिए + पर टैप करें।</string>
-    <string name="snackbar_reset">“%1$s” को अभी पर रीसेट किया गया</string>
     <string name="tile_click_label">अभी हो गया मार्क करें</string>
+    <string name="tile_undo_hint">वापस लेने के लिए फिर से टैप करें</string>
     <string name="tile_long_click_label">टाइल बदलें</string>
 
     <!-- Elapsed time -->
