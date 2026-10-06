@@ -6,8 +6,8 @@
     <string name="empty_title">Nic jeszcze nie śledzisz</string>
     <string name="empty_body">Stuknij +, aby coś dodać, np. „Podlanie roślin”. Stuknij kafelek za każdym razem, gdy zrobisz to ponownie.</string>
     <string name="empty_group">Brak kafelków w tej grupie. Stuknij +, aby dodać.</string>
-    <string name="snackbar_reset">„%1$s”: ustawiono na teraz</string>
     <string name="tile_click_label">Oznacz jako zrobione teraz</string>
+    <string name="tile_undo_hint">Stuknij ponownie, aby cofnąć</string>
     <string name="tile_long_click_label">Edytuj kafelek</string>
 
     <!-- Elapsed time -->
@@ -250,6 +250,7 @@
 
     <!-- Credits -->
     <string name="settings_credits">Podziękowania</string>
+    <string name="settings_credits_hint">Projekty open source i ich licencje</string>
     <string name="credits_intro">Time Clicker powstał dzięki tym projektom open source. Dziękujemy! Stuknij jeden z nich, aby przeczytać jego licencję.</string>
     <string name="credit_icons">Ikony</string>
     <string name="credit_ui">Interfejs użytkownika</string>

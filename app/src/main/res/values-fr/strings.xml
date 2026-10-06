@@ -6,8 +6,8 @@
     <string name="empty_title">Rien n’est encore suivi</string>
     <string name="empty_body">Touchez + pour ajouter quelque chose, comme « Arroser les plantes ». Touchez sa tuile chaque fois que vous le refaites.</string>
     <string name="empty_group">Aucune tuile dans ce groupe. Touchez + pour en ajouter une.</string>
-    <string name="snackbar_reset">« %1$s » fait à l’instant</string>
     <string name="tile_click_label">Marquer comme fait maintenant</string>
+    <string name="tile_undo_hint">Retouchez pour annuler</string>
     <string name="tile_long_click_label">Modifier la tuile</string>
 
     <!-- Elapsed time -->
@@ -242,6 +242,7 @@
 
     <!-- Credits -->
     <string name="settings_credits">Crédits</string>
+    <string name="settings_credits_hint">Projets open source et leurs licences</string>
     <string name="credits_intro">Time Clicker est conçu avec ces projets open source. Merci ! Touchez-en un pour lire sa licence.</string>
     <string name="credit_icons">Icônes</string>
     <string name="credit_ui">Interface utilisateur</string>

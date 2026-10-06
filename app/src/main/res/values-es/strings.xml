@@ -6,8 +6,8 @@
     <string name="empty_title">Aún no sigues nada</string>
     <string name="empty_body">Toca + para añadir algo, como «Regar las plantas». Toca su tarjeta cada vez que lo vuelvas a hacer.</string>
     <string name="empty_group">Aún no hay tarjetas en este grupo. Toca + para añadir una.</string>
-    <string name="snackbar_reset">«%1$s» marcado como hecho ahora</string>
     <string name="tile_click_label">Marcar como hecho ahora</string>
+    <string name="tile_undo_hint">Toca de nuevo para deshacer</string>
     <string name="tile_long_click_label">Editar tarjeta</string>
 
     <!-- Elapsed time -->
@@ -242,6 +242,7 @@
 
     <!-- Credits -->
     <string name="settings_credits">Créditos</string>
+    <string name="settings_credits_hint">Proyectos de código abierto y sus licencias</string>
     <string name="credits_intro">Time Clicker está hecho con estos proyectos de código abierto. ¡Gracias! Toca uno para leer su licencia.</string>
     <string name="credit_icons">Iconos</string>
     <string name="credit_ui">Interfaz de usuario</string>

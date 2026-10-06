@@ -6,8 +6,8 @@
     <string name="empty_title">Belum ada yang dilacak</string>
     <string name="empty_body">Ketuk + untuk menambahkan sesuatu, seperti “Menyiram tanaman”. Ketuk kartunya setiap kali kamu melakukannya lagi.</string>
     <string name="empty_group">Belum ada kartu di grup ini. Ketuk + untuk menambahkan.</string>
-    <string name="snackbar_reset">“%1$s” direset ke sekarang</string>
     <string name="tile_click_label">Tandai selesai sekarang</string>
+    <string name="tile_undo_hint">Ketuk lagi untuk urungkan</string>
     <string name="tile_long_click_label">Edit kartu</string>
 
     <!-- Elapsed time -->
@@ -226,6 +226,7 @@
 
     <!-- Credits -->
     <string name="settings_credits">Kredit</string>
+    <string name="settings_credits_hint">Proyek open source dan lisensinya</string>
     <string name="credits_intro">Time Clicker dibuat dengan proyek open source berikut. Terima kasih! Ketuk salah satunya untuk membaca lisensinya.</string>
     <string name="credit_icons">Ikon</string>
     <string name="credit_ui">Antarmuka pengguna</string>

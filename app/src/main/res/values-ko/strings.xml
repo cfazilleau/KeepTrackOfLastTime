@@ -6,8 +6,8 @@
     <string name="empty_title">아직 기록한 항목이 없어요</string>
     <string name="empty_body">+를 눌러 “화분에 물 주기” 같은 항목을 추가하세요. 다시 할 때마다 해당 타일을 누르면 돼요.</string>
     <string name="empty_group">이 그룹에 아직 타일이 없어요. +를 눌러 추가하세요.</string>
-    <string name="snackbar_reset">“%1$s”을(를) 지금으로 재설정함</string>
     <string name="tile_click_label">지금 완료로 표시</string>
+    <string name="tile_undo_hint">다시 누르면 실행 취소</string>
     <string name="tile_long_click_label">타일 수정</string>
 
     <!-- Elapsed time -->
@@ -226,6 +226,7 @@
 
     <!-- Credits -->
     <string name="settings_credits">크레딧</string>
+    <string name="settings_credits_hint">오픈소스 프로젝트와 라이선스</string>
     <string name="credits_intro">Time Clicker는 다음 오픈소스 프로젝트로 만들어졌어요. 감사합니다! 프로젝트를 누르면 라이선스를 볼 수 있어요.</string>
     <string name="credit_icons">아이콘</string>
     <string name="credit_ui">사용자 인터페이스</string>

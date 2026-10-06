@@ -30,7 +30,7 @@ data class TileSpec(
     val icon: TileIcon,
     val size: TileSize,
     val photo: String?,
-    val reminder: Reminder?,
+    val reminder: Reminder? = null,
 )
 
 /** Stored by [key]; unknown keys (e.g. from a newer app version) fall back to the first entry. */

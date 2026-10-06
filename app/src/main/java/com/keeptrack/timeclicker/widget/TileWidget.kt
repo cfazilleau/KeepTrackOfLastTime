@@ -3,16 +3,22 @@ package com.keeptrack.timeclicker.widget
 import android.appwidget.AppWidgetManager
 import android.content.Context
 import android.content.Intent
+import android.content.res.ColorStateList
+import android.content.res.Configuration
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Paint
+import android.graphics.RectF
 import android.os.Build
+import android.os.SystemClock
+import android.widget.RemoteViews
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.graphics.PathParser
@@ -29,6 +35,7 @@ import androidx.glance.LocalGlanceId
 import androidx.glance.LocalSize
 import androidx.glance.action.actionParametersOf
 import androidx.glance.action.clickable
+import androidx.glance.appwidget.AndroidRemoteViews
 import androidx.glance.appwidget.GlanceAppWidget
 import androidx.glance.appwidget.GlanceAppWidgetManager
 import androidx.glance.appwidget.SizeMode
@@ -66,9 +73,11 @@ import coil3.toBitmap
 import com.keeptrack.timeclicker.MainActivity
 import com.keeptrack.timeclicker.R
 import com.keeptrack.timeclicker.data.IconCatalog
+import com.keeptrack.timeclicker.data.PendingUndo
 import com.keeptrack.timeclicker.data.TileColor
 import com.keeptrack.timeclicker.data.TimeDisplay
 import com.keeptrack.timeclicker.data.Tracker
+import com.keeptrack.timeclicker.data.UNDO_WINDOW_MS
 import com.keeptrack.timeclicker.ui.theme.IconPaths
 import com.keeptrack.timeclicker.ui.theme.TimeClickerPalette
 import com.keeptrack.timeclicker.ui.theme.TileColors
@@ -80,12 +89,13 @@ import com.keeptrack.timeclicker.ui.time.absoluteTime
 import com.keeptrack.timeclicker.ui.time.agoAffixes
 import com.keeptrack.timeclicker.ui.time.format
 import com.keeptrack.timeclicker.ui.time.formatAsSecond
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.first
 import java.text.NumberFormat
 import java.time.Instant
 import kotlin.math.roundToInt
 
-/** A tile on the home screen. Tap = done now; the icon opens the app. */
+/** A tile on the home screen. Tap = done now, tap again within the undo window = undo; the icon opens the app. */
 class TileWidget : GlanceAppWidget() {
 
     // Re-rendered for each exact size, so the headline can be sized to fit.
@@ -94,6 +104,7 @@ class TileWidget : GlanceAppWidget() {
     override suspend fun provideGlance(context: Context, id: GlanceId) {
         val repository = context.trackerRepository
         val trackers = repository.observeTrackers()
+        val undoable = context.tilePresses.undoable
         // Loaded up front so the first frame already shows the tile (and its photo), without a flash.
         val initial = trackers.first()
         val shownId = getAppWidgetState(context, PreferencesGlanceStateDefinition, id)[TileWidgets.TRACKER_ID]
@@ -109,13 +120,14 @@ class TileWidget : GlanceAppWidget() {
             // it would otherwise be skipped and keep showing the time of its last change.
             val now = remember(state[TileWidgets.REFRESHED_AT], all) { Instant.now() }
             val tracker = all.firstOrNull { it.id == trackerId }
+            val undoing by remember { undoable }.collectAsState()
             val photoName = tracker?.photo
             val photo by produceState(initialPhoto?.takeIf { it.first == photoName }?.second, photoName) {
                 value = photoName?.let { loadPhoto(context, it) }
             }
             GlanceTheme {
                 when {
-                    tracker != null -> TileContent(tracker, photo?.takeIf { photoName != null }, now, icons)
+                    tracker != null -> TileContent(tracker, photo?.takeIf { photoName != null }, now, icons, undoing[tracker.id])
                     else -> ChooseTile(deleted = trackerId != null)
                 }
             }
@@ -171,7 +183,7 @@ private fun widgetColors(tracker: Tracker, hasPhoto: Boolean): WidgetColors {
 }
 
 @Composable
-private fun TileContent(tracker: Tracker, photo: Bitmap?, now: Instant, icons: IconCatalog) {
+private fun TileContent(tracker: Tracker, photo: Bitmap?, now: Instant, icons: IconCatalog, pendingUndo: PendingUndo?) {
     val context = LocalContext.current
     val size = LocalSize.current
     val colors = widgetColors(tracker, hasPhoto = photo != null)
@@ -184,7 +196,9 @@ private fun TileContent(tracker: Tracker, photo: Bitmap?, now: Instant, icons: I
     val headline = absolute?.headline
         ?: elapsed.major?.format(context.resources)?.let { ago.prefix + it }?.replaceFirstChar { it.uppercase() }
         ?: context.getString(R.string.elapsed_under_a_minute)
+    val undo = pendingUndo != null
     val subline = when {
+        undo -> context.getString(R.string.tile_undo_hint)
         absolute != null -> absolute.detail
         elapsed.major == null -> ""
         else -> (elapsed.minor?.formatAsSecond(context.resources).orEmpty() + ago.suffix).trim()
@@ -236,6 +250,11 @@ private fun TileContent(tracker: Tracker, photo: Bitmap?, now: Instant, icons: I
                         )
                     }
                 }
+                // Only while a tap can be undone, as on the app's tiles.
+                if (pendingUndo != null) {
+                    Spacer(GlanceModifier.defaultWeight())
+                    UndoBubble(pendingUndo, colors)
+                }
             }
             Spacer(GlanceModifier.defaultWeight())
             Text(
@@ -265,6 +284,99 @@ private fun TileContent(tracker: Tracker, photo: Bitmap?, now: Instant, icons: I
                 }
             }
         }
+    }
+}
+
+private val UndoBubbleSize = 30
+
+/**
+ * The undo arrow, ringed by the time left to undo. From Android 12 the ring is an animation the launcher plays,
+ * so it drains smoothly as in the app; before that it can't be tinted to the tile, so it is redrawn once a second.
+ */
+@Composable
+private fun UndoBubble(pendingUndo: PendingUndo, colors: WidgetColors) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) SmoothUndoBubble(colors) else SteppedUndoBubble(pendingUndo, colors)
+}
+
+@Composable
+private fun SmoothUndoBubble(colors: WidgetColors) {
+    val context = LocalContext.current
+    val ring = RemoteViews(context.packageName, R.layout.widget_undo_ring).apply {
+        val (day, night) = listOf(false, true).map { night -> ColorStateList.valueOf(colors.content.getColor(context.inNightMode(night)).toArgb()) }
+        setColorStateList(R.id.undo_ring, "setIndeterminateTintList", day, night)
+    }
+    Box(
+        GlanceModifier.size(UndoBubbleSize.dp).cornerRadius((UndoBubbleSize / 2).dp).background(colors.glass),
+        contentAlignment = Alignment.Center,
+    ) {
+        AndroidRemoteViews(ring, GlanceModifier.size(UndoBubbleSize.dp))
+        Image(
+            ImageProvider(remember { undoBitmap(context, left = 0f) }),
+            contentDescription = context.getString(R.string.action_undo),
+            colorFilter = ColorFilter.tint(colors.content),
+            modifier = GlanceModifier.size(UndoBubbleSize.dp),
+        )
+    }
+}
+
+private fun Context.inNightMode(night: Boolean): Context {
+    val config = Configuration(resources.configuration)
+    val mode = if (night) Configuration.UI_MODE_NIGHT_YES else Configuration.UI_MODE_NIGHT_NO
+    config.uiMode = (config.uiMode and Configuration.UI_MODE_NIGHT_MASK.inv()) or mode
+    return createConfigurationContext(config)
+}
+
+@Composable
+private fun SteppedUndoBubble(pendingUndo: PendingUndo, colors: WidgetColors) {
+    val context = LocalContext.current
+    val secondsLeft by produceState(secondsLeft(pendingUndo), pendingUndo) {
+        while (value > 0) {
+            // Wakes on each whole second left, so the ring steps evenly.
+            delay((pendingUndo.until - SystemClock.elapsedRealtime()) % 1000 + 1)
+            value = secondsLeft(pendingUndo)
+        }
+    }
+    val windowSeconds = (UNDO_WINDOW_MS / 1000).toInt()
+    Box(
+        GlanceModifier.size(UndoBubbleSize.dp).cornerRadius((UndoBubbleSize / 2).dp).background(colors.glass),
+        contentAlignment = Alignment.Center,
+    ) {
+        Image(
+            ImageProvider(remember(secondsLeft) { undoBitmap(context, secondsLeft.toFloat() / windowSeconds) }),
+            contentDescription = context.getString(R.string.action_undo),
+            colorFilter = ColorFilter.tint(colors.content),
+            modifier = GlanceModifier.size(UndoBubbleSize.dp),
+        )
+    }
+}
+
+/** Whole seconds left in the undo window, rounded up: 10 right after the tap, 0 once it closes. */
+private fun secondsLeft(pendingUndo: PendingUndo): Int =
+    ((pendingUndo.until - SystemClock.elapsedRealtime()).coerceAtLeast(0) + 999).toInt() / 1000
+
+/** The undo bubble's content, in white to be tinted: the arrow, and a ring for the [left] share of the window. */
+private fun undoBitmap(context: Context, left: Float): Bitmap {
+    val density = context.resources.displayMetrics.density
+    val px = (UndoBubbleSize * density).roundToInt()
+    return createBitmap(px, px).also { bitmap ->
+        val canvas = Canvas(bitmap)
+        val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+            style = Paint.Style.STROKE
+            color = android.graphics.Color.WHITE
+            strokeCap = Paint.Cap.ROUND
+            strokeJoin = Paint.Join.ROUND
+        }
+        if (left > 0f) {
+            paint.strokeWidth = 2 * density
+            val inset = paint.strokeWidth / 2
+            canvas.drawArc(RectF(inset, inset, px - inset, px - inset), -90f, 360f * left, false, paint)
+        }
+        // The 16dp arrow, centred, from its 24x24 grid.
+        val icon = 16 * density
+        canvas.translate((px - icon) / 2, (px - icon) / 2)
+        canvas.scale(icon / 24f, icon / 24f)
+        paint.strokeWidth = IconPaths.UNDO_STROKE
+        canvas.drawPath(PathParser.createPathFromPathData(IconPaths.UNDO), paint)
     }
 }
 

@@ -7,19 +7,20 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.keeptrack.timeclicker.TimeClickerApplication
+import com.keeptrack.timeclicker.data.PendingUndo
 import com.keeptrack.timeclicker.data.SettingsRepository
+import com.keeptrack.timeclicker.data.TileColor
 import com.keeptrack.timeclicker.data.TileIcon
+import com.keeptrack.timeclicker.data.TilePresses
 import com.keeptrack.timeclicker.data.TileSize
+import com.keeptrack.timeclicker.data.TileSpec
 import com.keeptrack.timeclicker.data.Tracker
 import com.keeptrack.timeclicker.data.TrackerGroup
 import com.keeptrack.timeclicker.data.TrackerRepository
-import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import java.io.File
@@ -61,12 +62,10 @@ data class HomeUiState(
     val selectedPage: Int get() = pages.indexOfFirst { it.chip.filter == filter }.coerceAtLeast(0)
 }
 
-/** Emitted after a card is reset so the UI can offer an undo. */
-data class ResetDone(val trackerName: String, val eventId: Long)
-
 class HomeViewModel(
     private val repository: TrackerRepository,
     private val settings: SettingsRepository,
+    private val presses: TilePresses,
 ) : ViewModel() {
 
     private val filter = MutableStateFlow<GroupFilter>(GroupFilter.All)
@@ -76,47 +75,33 @@ class HomeViewModel(
         combine(repository.observeTrackers(), repository.observeGroups(), filter, ::buildState)
             .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
 
-    private val resetEvents = Channel<ResetDone>(Channel.BUFFERED)
-    val resets: Flow<ResetDone> = resetEvents.receiveAsFlow()
+    /** By tracker id: the tiles a press would undo rather than mark done. */
+    val undoable: StateFlow<Map<Long, PendingUndo>> = presses.undoable
 
     fun select(newFilter: GroupFilter) {
         filter.value = newFilter
     }
 
-    fun markDone(tracker: Tracker) {
+    /** A tile was tapped: marks it done now, or undoes that if it is still in its undo window. */
+    fun press(tracker: Tracker) {
+        viewModelScope.launch { presses.press(tracker.id) }
+    }
+
+    /** A new small tile from the "+" button: a random colour, no icon, filed in the group currently shown. */
+    fun create(name: String) {
+        val groupId = (state.value?.filter as? GroupFilter.Group)?.id
         viewModelScope.launch {
-            val eventId = repository.markDone(tracker.id)
-            resetEvents.send(ResetDone(tracker.name, eventId))
+            repository.addTracker(TileSpec(name.trim(), groupId, TileColor.pickable.random(), TileIcon.NONE, TileSize.SMALL, photo = null))
         }
     }
 
-    fun undoReset(reset: ResetDone) {
-        viewModelScope.launch { repository.undoMarkDone(reset.eventId) }
-    }
-
-    /** A blank tile for the "+" button, pre-filed in the group currently shown. */
-    suspend fun newDraft(): TileDraft = TileDraft(
-        trackerId = null,
-        name = "",
-        groupId = (state.value?.filter as? GroupFilter.Group)?.id,
-        color = repository.nextColor(),
-        icon = TileIcon.DEFAULT,
-        size = TileSize.SMALL,
-        photo = null,
-    )
-
-    /** Saves the sheet's [draft]; [saved] is the tile as it was before, null for a new one. */
-    fun save(draft: TileDraft, saved: Tracker?) {
+    /** Saves the edit sheet's [draft] of the [saved] tile. */
+    fun save(draft: TileDraft, saved: Tracker) {
         // Only a newly given icon counts as used: reopening a tile to rename it doesn't reorder the history.
-        if (draft.icon != saved?.icon) settings.recordIconUse(draft.icon)
+        if (draft.icon != saved.icon) settings.recordIconUse(draft.icon)
         viewModelScope.launch {
-            val spec = draft.toSpec()
-            if (draft.trackerId == null) {
-                repository.addTracker(spec)
-            } else {
-                repository.updateTracker(draft.trackerId, spec)
-                if (draft.resetCount) repository.resetCount(draft.trackerId)
-            }
+            repository.updateTracker(saved.id, draft.toSpec())
+            if (draft.resetCount) repository.resetCount(saved.id)
         }
     }
 
@@ -166,7 +151,7 @@ class HomeViewModel(
         val Factory = viewModelFactory {
             initializer {
                 val app = this[APPLICATION_KEY] as TimeClickerApplication
-                HomeViewModel(app.container.trackerRepository, app.container.settingsRepository)
+                HomeViewModel(app.container.trackerRepository, app.container.settingsRepository, app.container.tilePresses)
             }
         }
     }

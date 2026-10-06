@@ -6,8 +6,8 @@
     <string name="empty_title">まだ何も記録していません</string>
     <string name="empty_body">+ をタップして「植物に水をやった」などを追加しましょう。またやったら、そのタイルをタップします。</string>
     <string name="empty_group">このグループにはまだタイルがありません。+ をタップして追加しましょう。</string>
-    <string name="snackbar_reset">「%1$s」を今にリセットしました</string>
     <string name="tile_click_label">今やったことにする</string>
+    <string name="tile_undo_hint">もう一度タップで元に戻す</string>
     <string name="tile_long_click_label">タイルを編集</string>
 
     <!-- Elapsed time -->
@@ -226,6 +226,7 @@
 
     <!-- Credits -->
     <string name="settings_credits">クレジット</string>
+    <string name="settings_credits_hint">オープンソースプロジェクトとライセンス</string>
     <string name="credits_intro">Time Clicker は以下のオープンソースプロジェクトを利用して作られています。ありがとうございます！タップするとライセンスを確認できます。</string>
     <string name="credit_icons">アイコン</string>
     <string name="credit_ui">ユーザーインターフェース</string>

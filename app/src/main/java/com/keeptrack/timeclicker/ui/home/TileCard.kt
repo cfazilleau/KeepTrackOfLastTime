@@ -1,5 +1,13 @@
 package com.keeptrack.timeclicker.ui.home
 
+import android.os.SystemClock
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.scaleIn
+import androidx.compose.animation.scaleOut
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.snap
 import androidx.compose.animation.core.tween
@@ -16,21 +24,25 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.TextAutoSize
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.drawWithContent
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.layout.ContentScale
@@ -54,6 +66,7 @@ import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import com.keeptrack.timeclicker.R
 import com.keeptrack.timeclicker.data.TileSize
+import com.keeptrack.timeclicker.data.UNDO_WINDOW_MS
 import com.keeptrack.timeclicker.data.TimeDisplay
 import com.keeptrack.timeclicker.data.Tracker
 import com.keeptrack.timeclicker.ui.components.rememberPressAmount
@@ -87,6 +100,7 @@ private val PhotoTextShadow = TextShadow(Color(0x73000000), Offset(0f, 1f), 8f)
  * With [enabled] false it is a static preview. Every size shows the same content, only larger.
  *
  * The elapsed time ticks by itself. Right after a tap it is hidden; after a second it fades in.
+ * Until [undoUntil] (a [SystemClock.elapsedRealtime]) the tile offers to undo that tap: the next tap undoes it.
  */
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -98,6 +112,7 @@ fun TileCard(
     modifier: Modifier = Modifier,
     enabled: Boolean = true,
     onClickLabel: String = stringResource(R.string.tile_click_label),
+    undoUntil: Long? = null,
 ) {
     val palette = TimeClickerTheme.palette
     val hasPhoto = tracker.photo != null
@@ -119,6 +134,19 @@ fun TileCard(
         label = "elapsedAlpha",
     )
 
+    // The share of the undo window left, drained by the ring around the corner bubble.
+    val undoing = enabled && undoUntil != null
+    val undoLeft = remember { Animatable(0f) }
+    LaunchedEffect(undoUntil) {
+        if (undoUntil == null) {
+            undoLeft.snapTo(0f)
+        } else {
+            val remaining = (undoUntil - SystemClock.elapsedRealtime()).coerceIn(0L, UNDO_WINDOW_MS)
+            undoLeft.snapTo(remaining.toFloat() / UNDO_WINDOW_MS)
+            undoLeft.animateTo(0f, tween(durationMillis = remaining.toInt(), easing = LinearEasing))
+        }
+    }
+
     // Small translucent surfaces on top of the tile (icon chip, reset bubble, counter).
     val glass = when {
         hasPhoto -> Color.White.copy(alpha = 0.2f)
@@ -129,12 +157,15 @@ fun TileCard(
     val textShadow = if (hasPhoto) PhotoTextShadow else null
 
     val longClickLabel = stringResource(R.string.tile_long_click_label)
+    val clickLabel = if (undoing) stringResource(R.string.action_undo) else onClickLabel
+    val undoHint = stringResource(R.string.tile_undo_hint)
     val resources = LocalResources.current
     val description = listOfNotNull(
         tracker.name,
         if (elapsed.isEmpty) stringResource(R.string.elapsed_just_now) else stringResource(R.string.elapsed_ago, elapsed.format(resources)),
         pluralStringResource(R.plurals.press_count, tracker.pressCount, tracker.pressCount).takeIf { settings.showCounter },
         tracker.reminder?.let { stringResource(R.string.tile_reminder_description, reminderDelay(context, it)) },
+        undoHint.takeIf { undoing },
     ).joinToString(", ")
 
     Box(
@@ -148,10 +179,12 @@ fun TileCard(
                     Modifier.combinedClickable(
                         interactionSource = interaction,
                         indication = null,
-                        onClickLabel = onClickLabel,
+                        onClickLabel = clickLabel,
                         onLongClickLabel = longClickLabel.takeIf { onLongClick != null },
                         onClick = {
-                            if (settings.haptics) haptics.performHapticFeedback(HapticFeedbackType.Confirm)
+                            if (settings.haptics) {
+                                haptics.performHapticFeedback(if (undoing) HapticFeedbackType.Reject else HapticFeedbackType.Confirm)
+                            }
                             onClick()
                         },
                         onLongClick = onLongClick?.let {
@@ -197,7 +230,37 @@ fun TileCard(
                     }
                 }
                 Spacer(Modifier.weight(1f))
-                // A regular reminder is set.
+                // Only while a tap can be undone: the undo arrow, ringed by the time left to do it.
+                AnimatedVisibility(undoing, enter = fadeIn() + scaleIn(initialScale = 0.6f), exit = fadeOut() + scaleOut(targetScale = 0.6f)) {
+                    Box(
+                        Modifier
+                            .padding(end = if (tracker.reminder != null) 6.dp else 0.dp)
+                            .size(34.dp)
+                            .clip(CircleShape)
+                            .background(glass)
+                            .border(1.dp, glassBorder, CircleShape)
+                            .drawWithContent {
+                                drawContent()
+                                val left = undoLeft.value
+                                if (left > 0f) {
+                                    val stroke = 2.dp.toPx()
+                                    drawArc(
+                                        color = colors.content,
+                                        startAngle = -90f,
+                                        sweepAngle = 360f * left,
+                                        useCenter = false,
+                                        topLeft = Offset(stroke / 2, stroke / 2),
+                                        size = Size(size.width - stroke, size.height - stroke),
+                                        style = Stroke(stroke, cap = StrokeCap.Round),
+                                    )
+                                }
+                            },
+                        contentAlignment = Alignment.Center,
+                    ) {
+                        Icon(AppIcons.Undo, null, tint = colors.content, modifier = Modifier.size(16.dp))
+                    }
+                }
+                // A reminder is set: the bell, in the corner.
                 if (tracker.reminder != null) {
                     Box(
                         Modifier
@@ -209,17 +272,6 @@ fun TileCard(
                     ) {
                         Icon(AppIcons.Bell, null, tint = colors.content, modifier = Modifier.size(16.dp))
                     }
-                    Spacer(Modifier.width(6.dp))
-                }
-                Box(
-                    Modifier
-                        .size(34.dp)
-                        .clip(CircleShape)
-                        .background(glass)
-                        .border(1.dp, glassBorder, CircleShape),
-                    contentAlignment = Alignment.Center,
-                ) {
-                    Icon(AppIcons.Refresh, null, tint = colors.content, modifier = Modifier.size(16.dp))
                 }
             }
             Spacer(Modifier.weight(1f))
@@ -229,6 +281,7 @@ fun TileCard(
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text(
                     text = when {
+                        undoing -> undoHint
                         absoluteTime != null -> absoluteTime.detail
                         elapsed.isEmpty -> ""
                         // "5 hours ago" or "et 5 heures": the next unit, then the end of "… ago" (if the language puts it after).
@@ -238,7 +291,10 @@ fun TileCard(
                     color = colors.content,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
-                    modifier = Modifier.weight(1f).graphicsLayer { alpha = textAlpha },
+                    // The undo hint shrinks to fit a small tile rather than lose its end.
+                    autoSize = if (undoing) TextAutoSize.StepBased(minFontSize = 9.sp, maxFontSize = 12.5.sp) else null,
+                    // The undo hint shows at once, while the elapsed time is still hidden.
+                    modifier = Modifier.weight(1f).graphicsLayer { alpha = if (undoing) 1f else textAlpha },
                 )
                 // How many times the tile was pressed (since created, or since its counter was reset).
                 if (settings.showCounter) Text(

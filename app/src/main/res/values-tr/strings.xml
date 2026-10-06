@@ -6,8 +6,8 @@
     <string name="empty_title">Henüz takip edilen bir şey yok</string>
     <string name="empty_body">Bir şey eklemek için + simgesine dokunun, örneğin “Bitkiler sulandı”. Her tekrar yaptığınızda kutucuğuna dokunun.</string>
     <string name="empty_group">Bu grupta henüz kutucuk yok. Eklemek için + simgesine dokunun.</string>
-    <string name="snackbar_reset">“%1$s” şimdiye sıfırlandı</string>
     <string name="tile_click_label">Şimdi yapıldı olarak işaretle</string>
+    <string name="tile_undo_hint">Tekrar dokunun: geri al</string>
     <string name="tile_long_click_label">Kutucuğu düzenle</string>
 
     <!-- Elapsed time -->
@@ -234,6 +234,7 @@
 
     <!-- Credits -->
     <string name="settings_credits">Emeği geçenler</string>
+    <string name="settings_credits_hint">Açık kaynak projeler ve lisansları</string>
     <string name="credits_intro">Time Clicker bu açık kaynak projelerle geliştirildi. Teşekkürler! Lisansını okumak için birine dokunun.</string>
     <string name="credit_icons">Simgeler</string>
     <string name="credit_ui">Kullanıcı arayüzü</string>

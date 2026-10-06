@@ -6,8 +6,8 @@
     <string name="empty_title">Пока ничего не отслеживается</string>
     <string name="empty_body">Нажмите +, чтобы что-то добавить, например «Полить цветы». Нажимайте на плитку каждый раз, когда делаете это снова.</string>
     <string name="empty_group">В этой группе пока нет плиток. Нажмите +, чтобы добавить.</string>
-    <string name="snackbar_reset">«%1$s»: отмечено сейчас</string>
     <string name="tile_click_label">Отметить как сделанное сейчас</string>
+    <string name="tile_undo_hint">Нажмите ещё раз для отмены</string>
     <string name="tile_long_click_label">Изменить плитку</string>
 
     <!-- Elapsed time -->
@@ -250,6 +250,7 @@
 
     <!-- Credits -->
     <string name="settings_credits">Благодарности</string>
+    <string name="settings_credits_hint">Проекты с открытым исходным кодом и их лицензии</string>
     <string name="credits_intro">Time Clicker создан на основе этих проектов с открытым исходным кодом. Спасибо! Нажмите на проект, чтобы прочитать его лицензию.</string>
     <string name="credit_icons">Значки</string>
     <string name="credit_ui">Пользовательский интерфейс</string>

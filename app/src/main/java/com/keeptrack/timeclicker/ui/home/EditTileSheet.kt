@@ -73,11 +73,9 @@ import com.keeptrack.timeclicker.ui.theme.TileColors
 import com.keeptrack.timeclicker.ui.theme.rememberIconCatalog
 import kotlinx.coroutines.launch
 import java.io.File
-import java.time.Instant
 
-/** The tile being created ([trackerId] null) or edited in the sheet. */
+/** The tile being edited in the sheet. */
 data class TileDraft(
-    val trackerId: Long?,
     val name: String,
     val groupId: Long?,
     val color: TileColor,
@@ -92,8 +90,7 @@ data class TileDraft(
 
     companion object {
         fun of(tracker: Tracker) = TileDraft(
-            tracker.id, tracker.name, tracker.groupId, tracker.color, tracker.icon, tracker.size, tracker.photo,
-            tracker.reminder,
+            tracker.name, tracker.groupId, tracker.color, tracker.icon, tracker.size, tracker.photo, tracker.reminder,
         )
     }
 }
@@ -101,15 +98,14 @@ data class TileDraft(
 private enum class Background { COLOUR, PHOTO }
 
 /**
- * Bottom sheet to create or edit a tile. It can't be dragged, so scrolling never closes it by accident:
- * Back or a tap above it closes it, keeping edits; a new tile is only created with the Add button.
+ * Bottom sheet to edit a tile (new ones are made with [NewTileSheet]). It can't be dragged, so scrolling never
+ * closes it by accident: Back or a tap above it closes it, keeping edits.
  */
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
 @Composable
 fun EditTileSheet(
-    initial: TileDraft,
-    /** The saved tile being edited, null for a new one. */
-    saved: Tracker?,
+    /** The tile being edited, as saved. */
+    saved: Tracker,
     groups: List<TrackerGroup>,
     photoFile: (String) -> File,
     importPhoto: suspend (Uri) -> String?,
@@ -120,8 +116,7 @@ fun EditTileSheet(
     onAddWidget: (() -> Unit)?,
 ) {
     val palette = TimeClickerTheme.palette
-    val isNew = initial.trackerId == null
-    val openedAt = remember { Instant.now() }
+    val initial = remember { TileDraft.of(saved) }
     val scope = rememberCoroutineScope()
     val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
     val scrollState = rememberScrollState()
@@ -156,7 +151,7 @@ fun EditTileSheet(
     fun launchPicker() = pickPhoto.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
 
     ModalBottomSheet(
-        onDismissRequest = { if (isNew || !canSave) onDiscard() else onSave(draft) },
+        onDismissRequest = { if (canSave) onSave(draft) else onDiscard() },
         sheetState = sheetState,
         sheetGesturesEnabled = false,
         // No handle: the sheet can't be dragged.
@@ -172,18 +167,13 @@ fun EditTileSheet(
         ) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text(
-                    stringResource(if (isNew) R.string.sheet_new_title else R.string.sheet_edit_title),
+                    stringResource(R.string.sheet_edit_title),
                     style = MaterialTheme.typography.headlineSmall,
                     color = palette.text,
                     modifier = Modifier.weight(1f),
                 )
-                if (isNew) {
-                    TextButton(onClick = { close(save = false) }) {
-                        Text(stringResource(R.string.action_cancel), color = palette.muted)
-                    }
-                }
                 PillButton(
-                    text = stringResource(if (isNew) R.string.action_add else R.string.action_done),
+                    text = stringResource(R.string.action_done),
                     enabled = canSave,
                     onClick = { close(save = true) },
                 )
@@ -193,15 +183,15 @@ fun EditTileSheet(
                 val previewName = draft.name.ifBlank { stringResource(R.string.tile_preview_name) }
                 TileCard(
                     tracker = Tracker(
-                        id = draft.trackerId ?: -1,
+                        id = saved.id,
                         name = previewName,
-                        lastDoneAt = saved?.lastDoneAt ?: openedAt,
+                        lastDoneAt = saved.lastDoneAt,
                         groupId = draft.groupId,
                         color = draft.color,
                         icon = draft.icon,
                         size = TileSize.SMALL,
                         photo = draft.photo,
-                        pressCount = if (draft.resetCount) 0 else saved?.pressCount ?: 0,
+                        pressCount = if (draft.resetCount) 0 else saved.pressCount,
                         reminder = draft.reminder,
                     ),
                     photoFile = photoFile,
@@ -303,25 +293,23 @@ fun EditTileSheet(
 
             ReminderSection(reminder = draft.reminder, onChange = { draft = draft.copy(reminder = it) })
 
-            if (saved != null) {
-                val count = if (draft.resetCount) 0 else saved.pressCount
-                Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                    SectionLabel(stringResource(R.string.label_counter))
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        Text(
-                            pluralStringResource(R.plurals.press_count, count, count),
-                            style = MaterialTheme.typography.titleMedium,
-                            color = palette.text,
-                            modifier = Modifier.weight(1f),
-                        )
-                        if (count > 0) {
-                            SheetButton(stringResource(R.string.counter_reset), onClick = { confirmResetCount = true })
-                        }
+            val count = if (draft.resetCount) 0 else saved.pressCount
+            Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                SectionLabel(stringResource(R.string.label_counter))
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text(
+                        pluralStringResource(R.plurals.press_count, count, count),
+                        style = MaterialTheme.typography.titleMedium,
+                        color = palette.text,
+                        modifier = Modifier.weight(1f),
+                    )
+                    if (count > 0) {
+                        SheetButton(stringResource(R.string.counter_reset), onClick = { confirmResetCount = true })
                     }
                 }
             }
 
-            if (saved != null && onAddWidget != null) {
+            if (onAddWidget != null) {
                 Row(
                     Modifier
                         .fillMaxWidth()
@@ -340,10 +328,8 @@ fun EditTileSheet(
                 }
             }
 
-            if (!isNew) {
-                TextButton(onClick = { confirmDelete = true }, modifier = Modifier.fillMaxWidth()) {
-                    Text(stringResource(R.string.delete_tile), style = MaterialTheme.typography.titleMedium, color = palette.danger)
-                }
+            TextButton(onClick = { confirmDelete = true }, modifier = Modifier.fillMaxWidth()) {
+                Text(stringResource(R.string.delete_tile), style = MaterialTheme.typography.titleMedium, color = palette.danger)
             }
         }
     }
@@ -373,7 +359,7 @@ fun EditTileSheet(
     }
     if (confirmDelete) {
         ConfirmDialog(
-            title = stringResource(R.string.dialog_delete_title, initial.name),
+            title = stringResource(R.string.dialog_delete_title, saved.name),
             body = stringResource(R.string.dialog_delete_body),
             confirmLabel = stringResource(R.string.action_delete),
             onConfirm = {
