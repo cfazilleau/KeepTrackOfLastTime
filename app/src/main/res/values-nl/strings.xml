@@ -91,6 +91,8 @@
     <string name="color_system_secondary">Systeem: zacht</string>
     <string name="color_system_tertiary">Systeem: contrast</string>
     <string name="icon_choice">Pictogram: %1$s</string>
+    <string name="icon_all">Alle pictogrammen</string>
+    <string name="icon_chooser_title">Kies een pictogram</string>
     <string name="icon_none">Geen pictogram</string>
     <string name="icon_check">Vinkje</string>
     <string name="icon_drop">Waterdruppel</string>
@@ -208,7 +210,6 @@
     <string name="icon_palette_reset">Standaardpictogrammen herstellen</string>
     <string name="dialog_reset_palette_title">Pictogrampalet resetten?</string>
     <string name="dialog_reset_palette_body">Het palet krijgt weer de standaardpictogrammen. Tegels houden hun huidige pictogram.</string>
-    <string name="icon_palette_more">Meer pictogrammen in Instellingen › Pictogrampalet</string>
 
     <!-- Credits -->
     <string name="settings_credits">Credits</string>

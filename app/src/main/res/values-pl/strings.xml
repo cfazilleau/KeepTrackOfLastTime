@@ -103,6 +103,8 @@
     <string name="color_system_secondary">System: łagodny</string>
     <string name="color_system_tertiary">System: kontrast</string>
     <string name="icon_choice">Ikona: %1$s</string>
+    <string name="icon_all">Wszystkie ikony</string>
+    <string name="icon_chooser_title">Wybierz ikonę</string>
     <string name="icon_none">Bez ikony</string>
     <string name="icon_check">Ptaszek</string>
     <string name="icon_drop">Kropla wody</string>
@@ -222,7 +224,6 @@
     <string name="icon_palette_reset">Przywróć domyślne ikony</string>
     <string name="dialog_reset_palette_title">Zresetować paletę ikon?</string>
     <string name="dialog_reset_palette_body">Paleta wróci do domyślnych ikon. Kafelki zachowają swoje obecne ikony.</string>
-    <string name="icon_palette_more">Więcej ikon w Ustawienia › Paleta ikon</string>
 
     <!-- Credits -->
     <string name="settings_credits">Podziękowania</string>

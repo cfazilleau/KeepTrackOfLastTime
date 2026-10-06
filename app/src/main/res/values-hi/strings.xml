@@ -91,6 +91,8 @@
     <string name="color_system_secondary">सिस्टम सॉफ़्ट</string>
     <string name="color_system_tertiary">सिस्टम कंट्रास्ट</string>
     <string name="icon_choice">आइकन: %1$s</string>
+    <string name="icon_all">सभी आइकन</string>
+    <string name="icon_chooser_title">आइकन चुनें</string>
     <string name="icon_none">कोई आइकन नहीं</string>
     <string name="icon_check">सही का निशान</string>
     <string name="icon_drop">पानी की बूंद</string>
@@ -208,7 +210,6 @@
     <string name="icon_palette_reset">डिफ़ॉल्ट आइकन पर रीसेट करें</string>
     <string name="dialog_reset_palette_title">आइकन पैलेट रीसेट करें?</string>
     <string name="dialog_reset_palette_body">पैलेट डिफ़ॉल्ट आइकन पर वापस आ जाएगा। टाइलों के मौजूदा आइकन बने रहेंगे।</string>
-    <string name="icon_palette_more">सेटिंग › आइकन पैलेट में और आइकन देखें</string>
 
     <!-- Credits -->
     <string name="settings_credits">आभार</string>

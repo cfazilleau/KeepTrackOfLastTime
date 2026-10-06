@@ -97,6 +97,8 @@
     <string name="color_system_secondary">Tono tenue di sistema</string>
     <string name="color_system_tertiary">Contrasto di sistema</string>
     <string name="icon_choice">Icona: %1$s</string>
+    <string name="icon_all">Tutte le icone</string>
+    <string name="icon_chooser_title">Scegli un’icona</string>
     <string name="icon_none">Nessuna icona</string>
     <string name="icon_check">Spunta</string>
     <string name="icon_drop">Goccia d’acqua</string>
@@ -215,7 +217,6 @@
     <string name="icon_palette_reset">Ripristina le icone predefinite</string>
     <string name="dialog_reset_palette_title">Ripristinare la palette di icone?</string>
     <string name="dialog_reset_palette_body">Torna alle icone predefinite. I riquadri mantengono la loro icona attuale.</string>
-    <string name="icon_palette_more">Altre icone in Impostazioni › Palette di icone</string>
 
     <!-- Credits -->
     <string name="settings_credits">Riconoscimenti</string>

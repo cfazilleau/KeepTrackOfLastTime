@@ -97,6 +97,8 @@
     <string name="color_system_secondary">Tom suave do sistema</string>
     <string name="color_system_tertiary">Contraste do sistema</string>
     <string name="icon_choice">Ícone: %1$s</string>
+    <string name="icon_all">Todos os ícones</string>
+    <string name="icon_chooser_title">Escolha um ícone</string>
     <string name="icon_none">Sem ícone</string>
     <string name="icon_check">Marca de seleção</string>
     <string name="icon_drop">Gota d’água</string>
@@ -215,7 +217,6 @@
     <string name="icon_palette_reset">Redefinir para os ícones padrão</string>
     <string name="dialog_reset_palette_title">Redefinir a paleta de ícones?</string>
     <string name="dialog_reset_palette_body">Ela volta aos ícones padrão. Os cards mantêm o ícone que já têm.</string>
-    <string name="icon_palette_more">Mais ícones em Configurações › Paleta de ícones</string>
 
     <!-- Credits -->
     <string name="settings_credits">Créditos</string>

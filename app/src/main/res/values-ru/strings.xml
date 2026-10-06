@@ -103,6 +103,8 @@
     <string name="color_system_secondary">Система: мягкий</string>
     <string name="color_system_tertiary">Система: контраст</string>
     <string name="icon_choice">Значок: %1$s</string>
+    <string name="icon_all">Все значки</string>
+    <string name="icon_chooser_title">Выберите значок</string>
     <string name="icon_none">Без значка</string>
     <string name="icon_check">Галочка</string>
     <string name="icon_drop">Капля воды</string>
@@ -222,7 +224,6 @@
     <string name="icon_palette_reset">Вернуть значки по умолчанию</string>
     <string name="dialog_reset_palette_title">Сбросить палитру значков?</string>
     <string name="dialog_reset_palette_body">В ней снова будут значки по умолчанию. У плиток останутся их текущие значки.</string>
-    <string name="icon_palette_more">Больше значков в разделе Настройки › Палитра значков</string>
 
     <!-- Credits -->
     <string name="settings_credits">Благодарности</string>

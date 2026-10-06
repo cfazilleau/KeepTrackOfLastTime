@@ -85,6 +85,8 @@
     <string name="color_system_secondary">Sistem: lembut</string>
     <string name="color_system_tertiary">Sistem: kontras</string>
     <string name="icon_choice">Ikon: %1$s</string>
+    <string name="icon_all">Semua ikon</string>
+    <string name="icon_chooser_title">Pilih ikon</string>
     <string name="icon_none">Tanpa ikon</string>
     <string name="icon_check">Centang</string>
     <string name="icon_drop">Tetes air</string>
@@ -201,7 +203,6 @@
     <string name="icon_palette_reset">Reset ke ikon default</string>
     <string name="dialog_reset_palette_title">Reset palet ikon?</string>
     <string name="dialog_reset_palette_body">Palet kembali ke ikon default. Kartu tetap memakai ikonnya saat ini.</string>
-    <string name="icon_palette_more">Ikon lainnya di Setelan › Palet ikon</string>
 
     <!-- Credits -->
     <string name="settings_credits">Kredit</string>

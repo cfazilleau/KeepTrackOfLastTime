@@ -97,6 +97,8 @@
     <string name="color_system_secondary">Teinte douce du système</string>
     <string name="color_system_tertiary">Contraste du système</string>
     <string name="icon_choice">Icône : %1$s</string>
+    <string name="icon_all">Toutes les icônes</string>
+    <string name="icon_chooser_title">Choisir une icône</string>
     <string name="icon_none">Aucune icône</string>
     <string name="icon_check">Coche</string>
     <string name="icon_drop">Goutte d’eau</string>
@@ -215,7 +217,6 @@
     <string name="icon_palette_reset">Rétablir les icônes par défaut</string>
     <string name="dialog_reset_palette_title">Réinitialiser la palette d’icônes ?</string>
     <string name="dialog_reset_palette_body">Elle revient aux icônes par défaut. Les tuiles gardent leur icône actuelle.</string>
-    <string name="icon_palette_more">Plus d’icônes dans Paramètres › Palette d’icônes</string>
 
     <!-- Credits -->
     <string name="settings_credits">Crédits</string>

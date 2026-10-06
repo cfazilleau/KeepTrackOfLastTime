@@ -15,13 +15,13 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -44,9 +44,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.input.nestedscroll.NestedScrollConnection
-import androidx.compose.ui.input.nestedscroll.NestedScrollSource
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.pluralStringResource
@@ -55,7 +52,6 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.Velocity
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import com.keeptrack.timeclicker.R
@@ -69,6 +65,8 @@ import com.keeptrack.timeclicker.ui.components.NeuButton
 import com.keeptrack.timeclicker.ui.components.NeuTextField
 import com.keeptrack.timeclicker.ui.components.PillButton
 import com.keeptrack.timeclicker.ui.components.SegmentedControl
+import com.keeptrack.timeclicker.ui.components.SheetContentScroll
+import com.keeptrack.timeclicker.ui.icons.IconChooserSheet
 import com.keeptrack.timeclicker.ui.icons.iconLabel
 import com.keeptrack.timeclicker.ui.theme.AppIcons
 import com.keeptrack.timeclicker.ui.theme.TimeClickerTheme
@@ -99,38 +97,6 @@ data class TileDraft(
     }
 }
 
-/**
- * Decides which scrolls of the sheet's content may move the sheet itself.
- *
- * Only a drag that starts with the content already at the top reaches the sheet, so pulling down
- * there still drags it closed. A drag or fling that starts further down stops at the top instead:
- * otherwise its leftover would pull the sheet down, and a fast scroll back up closed it.
- * Upward flings never reach the sheet either: it is already fully open and would overshoot and
- * spring back, so the sheet bounced while scrolling down.
- */
-private class SheetContentScroll(private val content: ScrollState) : NestedScrollConnection {
-    private var inGesture = false
-    private var startedAtTop = true
-
-    override fun onPreScroll(available: Offset, source: NestedScrollSource): Offset {
-        if (source == NestedScrollSource.UserInput && !inGesture) {
-            inGesture = true
-            startedAtTop = content.value == 0
-        }
-        return Offset.Zero
-    }
-
-    override fun onPostScroll(consumed: Offset, available: Offset, source: NestedScrollSource): Offset =
-        if (startedAtTop) Offset.Zero else available.copy(x = 0f)
-
-    override suspend fun onPostFling(consumed: Velocity, available: Velocity): Velocity {
-        val keep = !startedAtTop || available.y < 0
-        inGesture = false
-        startedAtTop = true
-        return if (keep) available.copy(x = 0f) else Velocity.Zero
-    }
-}
-
 private enum class Background { COLOUR, PHOTO }
 
 /**
@@ -158,7 +124,7 @@ fun EditTileSheet(
     val scope = rememberCoroutineScope()
     val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
     val scrollState = rememberScrollState()
-    val contentScroll = remember(scrollState) { SheetContentScroll(scrollState) }
+    val contentScroll = remember(scrollState) { SheetContentScroll { scrollState.value == 0 } }
 
     var draft by remember { mutableStateOf(initial) }
     // Remembered so switching to Colour and back to Photo restores the picked photo.
@@ -524,8 +490,9 @@ private fun Swatch(color: TileColor, isSelected: Boolean, width: Dp, onSelect: (
 }
 
 /**
- * "No icon", the tile's own icon if the palette no longer has it, then the user's icon palette
- * (chosen in Settings); six per row, the last row aligned to the start.
+ * "No icon", icons picked from the full list, the tile's own icon if the palette no longer has it, then
+ * the user's icon palette (chosen in Settings): at most [IconRows] rows of six, the last cell opening
+ * every icon. The last row is aligned to the start.
  */
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
@@ -535,8 +502,12 @@ private fun IconPicker(selected: TileIcon, original: TileIcon, accent: TileColor
     val catalog = rememberIconCatalog()
     val columns = 6
     val iconPalette = TimeClickerTheme.settings.iconPalette
-    val icons = (listOf(TileIcon.NONE, original) + iconPalette).distinct()
+    // Icons chosen from the full list, latest first: kept in view even after tapping another icon.
+    var picked by remember { mutableStateOf(emptyList<TileIcon>()) }
+    var showAll by remember { mutableStateOf(false) }
+    val icons = (listOf(TileIcon.NONE) + picked + original + iconPalette).distinct()
         .filter { it.isNone || catalog?.get(it) != null }
+        .take(IconRows * columns - 1)
     FlowRow(
         Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.spacedBy(8.dp),
@@ -546,15 +517,11 @@ private fun IconPicker(selected: TileIcon, original: TileIcon, accent: TileColor
         icons.forEach { icon ->
             val isSelected = icon == selected
             val description = stringResource(R.string.icon_choice, iconLabel(resources, icon))
-            Box(
-                Modifier
-                    .weight(1f)
-                    .height(46.dp)
-                    .clip(RoundedCornerShape(14.dp))
-                    .background(if (isSelected) accent.background else palette.field)
+            IconPickerCell(
+                background = if (isSelected) accent.background else palette.field,
+                modifier = Modifier
                     .selectable(selected = isSelected, role = Role.RadioButton, onClick = { onSelect(icon) })
                     .semantics { contentDescription = description },
-                contentAlignment = Alignment.Center,
             ) {
                 val tint = if (isSelected) accent.content else palette.text
                 val vector = catalog?.let { AppIcons.tile(it, icon) }
@@ -565,10 +532,46 @@ private fun IconPicker(selected: TileIcon, original: TileIcon, accent: TileColor
                 }
             }
         }
+        val allIcons = stringResource(R.string.icon_all)
+        IconPickerCell(
+            background = palette.field,
+            modifier = Modifier
+                .clickable(role = Role.Button) { showAll = true }
+                .semantics { contentDescription = allIcons },
+        ) {
+            Icon(AppIcons.AllIcons, null, tint = palette.text, modifier = Modifier.size(22.dp))
+        }
         // Empty cells keep the last row's icons the same width as the others.
-        repeat((columns - icons.size % columns) % columns) { Spacer(Modifier.weight(1f)) }
+        repeat((columns - (icons.size + 1) % columns) % columns) { Spacer(Modifier.weight(1f)) }
     }
-    Text(stringResource(R.string.icon_palette_more), style = MaterialTheme.typography.bodySmall, color = palette.muted)
+
+    if (showAll) {
+        IconChooserSheet(
+            selected = selected,
+            accent = accent,
+            onSelect = { icon ->
+                if (icon !in icons) picked = listOf(icon) + picked
+                onSelect(icon)
+            },
+            onDismiss = { showAll = false },
+        )
+    }
+}
+
+/** How many rows of icons the picker shows before the full list. */
+private const val IconRows = 3
+
+@Composable
+private fun RowScope.IconPickerCell(background: Color, modifier: Modifier, content: @Composable () -> Unit) {
+    Box(
+        Modifier
+            .weight(1f)
+            .height(46.dp)
+            .clip(RoundedCornerShape(14.dp))
+            .background(background)
+            .then(modifier),
+        contentAlignment = Alignment.Center,
+    ) { content() }
 }
 
 private fun colorName(color: TileColor) = when (color) {

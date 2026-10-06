@@ -115,6 +115,8 @@
     <string name="color_system_secondary">لون النظام الهادئ</string>
     <string name="color_system_tertiary">لون النظام المتباين</string>
     <string name="icon_choice">الأيقونة: %1$s</string>
+    <string name="icon_all">كل الأيقونات</string>
+    <string name="icon_chooser_title">اختر أيقونة</string>
     <string name="icon_none">بلا أيقونة</string>
     <string name="icon_check">علامة صح</string>
     <string name="icon_drop">قطرة ماء</string>
@@ -236,7 +238,6 @@
     <string name="icon_palette_reset">استعادة الأيقونات الافتراضية</string>
     <string name="dialog_reset_palette_title">إعادة ضبط لوحة الأيقونات؟</string>
     <string name="dialog_reset_palette_body">ستعود إلى الأيقونات الافتراضية. تحتفظ البطاقات بأيقوناتها الحالية.</string>
-    <string name="icon_palette_more">المزيد من الأيقونات في الإعدادات › لوحة الأيقونات</string>
 
     <!-- Credits -->
     <string name="settings_credits">شكر وتقدير</string>
