@@ -1,0 +1,1 @@
+Bir şeyi en son ne zaman yaptığınızı görün. Tekrar yapınca kutucuğa dokunun.
