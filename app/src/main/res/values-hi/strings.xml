@@ -153,6 +153,29 @@
     <string name="icon_book">किताब</string>
     <string name="icon_wrench">रिंच</string>
     <string name="icon_star">तारा</string>
+    <string name="icon_broom">झाड़ू</string>
+    <string name="icon_shirt">शर्ट</string>
+    <string name="icon_bath">बाथटब</string>
+    <string name="icon_fridge">फ्रिज</string>
+    <string name="icon_lightbulb">बल्ब</string>
+    <string name="icon_air_vent">एयर वेंट</string>
+    <string name="icon_battery">बैटरी</string>
+    <string name="icon_toothbrush">टूथब्रश</string>
+    <string name="icon_stethoscope">स्टेथोस्कोप</string>
+    <string name="icon_syringe">सिरिंज</string>
+    <string name="icon_footprints">पैरों के निशान</string>
+    <string name="icon_bike">साइकिल</string>
+    <string name="icon_dog">कुत्ता</string>
+    <string name="icon_cat">बिल्ली</string>
+    <string name="icon_fish">मछली</string>
+    <string name="icon_people">लोग</string>
+    <string name="icon_gift">उपहार</string>
+    <string name="icon_cake">केक</string>
+    <string name="icon_receipt">रसीद</string>
+    <string name="icon_key">चाबी</string>
+    <string name="icon_mail">डाक</string>
+    <string name="icon_music">संगीत</string>
+    <string name="icon_plane">हवाई जहाज़</string>
 
     <!-- Dialogs -->
     <string name="dialog_delete_title">“%1$s” मिटाएं?</string>
@@ -214,8 +237,7 @@
     <!-- %1$s is a number of tiles, e.g. "3 tiles". -->
     <string name="import_done">बैकअप इंपोर्ट हो गया: %1$s</string>
     <string name="import_failed">यह फ़ाइल Time Clicker का बैकअप नहीं है, या इसे पढ़ा नहीं जा सका।</string>
-    <string name="support_text">हम जुनून से और लोगों की ज़िंदगी आसान बनाने के लिए चीज़ें बनाते हैं। हम ऐप में कभी भी विज्ञापन या पेड फ़ीचर नहीं जोड़ेंगे। योगदान देना कभी भी ज़रूरी नहीं है।</string>
-    <string name="action_donate">Ko-fi पर हमारा साथ दें</string>
+    <string name="support_text">हम जुनून से और लोगों की ज़िंदगी आसान बनाने के लिए चीज़ें बनाते हैं। हम ऐप में कभी भी विज्ञापन या पेड फ़ीचर नहीं जोड़ेंगे।</string>
     <string name="settings_version">वर्शन %1$s</string>
 
     <!-- Home-screen widget -->

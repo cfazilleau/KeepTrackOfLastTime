@@ -160,6 +160,29 @@
     <string name="icon_book">Livro</string>
     <string name="icon_wrench">Chave inglesa</string>
     <string name="icon_star">Estrela</string>
+    <string name="icon_broom">Vassoura</string>
+    <string name="icon_shirt">Camisa</string>
+    <string name="icon_bath">Banheira</string>
+    <string name="icon_fridge">Geladeira</string>
+    <string name="icon_lightbulb">Lâmpada</string>
+    <string name="icon_air_vent">Saída de ar</string>
+    <string name="icon_battery">Bateria</string>
+    <string name="icon_toothbrush">Escova de dentes</string>
+    <string name="icon_stethoscope">Estetoscópio</string>
+    <string name="icon_syringe">Seringa</string>
+    <string name="icon_footprints">Pegadas</string>
+    <string name="icon_bike">Bicicleta</string>
+    <string name="icon_dog">Cachorro</string>
+    <string name="icon_cat">Gato</string>
+    <string name="icon_fish">Peixe</string>
+    <string name="icon_people">Pessoas</string>
+    <string name="icon_gift">Presente</string>
+    <string name="icon_cake">Bolo</string>
+    <string name="icon_receipt">Recibo</string>
+    <string name="icon_key">Chave</string>
+    <string name="icon_mail">Correio</string>
+    <string name="icon_music">Música</string>
+    <string name="icon_plane">Avião</string>
 
     <!-- Dialogs -->
     <string name="dialog_delete_title">Excluir “%1$s”?</string>
@@ -222,8 +245,7 @@
     <!-- %1$s is a number of tiles, e.g. "3 tiles". -->
     <string name="import_done">Backup importado: %1$s</string>
     <string name="import_failed">Esse arquivo não é um backup do Time Clicker ou não pôde ser lido.</string>
-    <string name="support_text">Fazemos as coisas por paixão e para facilitar a vida das pessoas. Nunca vamos adicionar anúncios nem recursos pagos ao app. Contribuir nunca é obrigatório.</string>
-    <string name="action_donate">Apoie-nos no Ko-fi</string>
+    <string name="support_text">Fazemos as coisas por paixão e para facilitar a vida das pessoas. Nunca vamos adicionar anúncios nem recursos pagos ao app.</string>
     <string name="settings_version">Versão %1$s</string>
 
     <!-- Home-screen widget -->

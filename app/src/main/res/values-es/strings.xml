@@ -160,6 +160,29 @@
     <string name="icon_book">Libro</string>
     <string name="icon_wrench">Llave inglesa</string>
     <string name="icon_star">Estrella</string>
+    <string name="icon_broom">Escoba</string>
+    <string name="icon_shirt">Camisa</string>
+    <string name="icon_bath">Bañera</string>
+    <string name="icon_fridge">Nevera</string>
+    <string name="icon_lightbulb">Bombilla</string>
+    <string name="icon_air_vent">Rejilla de ventilación</string>
+    <string name="icon_battery">Batería</string>
+    <string name="icon_toothbrush">Cepillo de dientes</string>
+    <string name="icon_stethoscope">Estetoscopio</string>
+    <string name="icon_syringe">Jeringa</string>
+    <string name="icon_footprints">Huellas</string>
+    <string name="icon_bike">Bicicleta</string>
+    <string name="icon_dog">Perro</string>
+    <string name="icon_cat">Gato</string>
+    <string name="icon_fish">Pez</string>
+    <string name="icon_people">Personas</string>
+    <string name="icon_gift">Regalo</string>
+    <string name="icon_cake">Pastel</string>
+    <string name="icon_receipt">Recibo</string>
+    <string name="icon_key">Llave</string>
+    <string name="icon_mail">Correo</string>
+    <string name="icon_music">Música</string>
+    <string name="icon_plane">Avión</string>
 
     <!-- Dialogs -->
     <string name="dialog_delete_title">¿Eliminar «%1$s»?</string>
@@ -222,8 +245,7 @@
     <!-- %1$s is a number of tiles, e.g. "3 tiles". -->
     <string name="import_done">Copia de seguridad importada: %1$s</string>
     <string name="import_failed">Ese archivo no es una copia de seguridad de Time Clicker o no se pudo leer.</string>
-    <string name="support_text">Creamos cosas por pasión y para hacer la vida más fácil a la gente. Nunca añadiremos anuncios ni funciones de pago a la app. Contribuir nunca es obligatorio.</string>
-    <string name="action_donate">Apóyanos en Ko-fi</string>
+    <string name="support_text">Creamos cosas por pasión y para hacer la vida más fácil a la gente. Nunca añadiremos anuncios ni funciones de pago a la app.</string>
     <string name="settings_version">Versión %1$s</string>
 
     <!-- Home-screen widget -->

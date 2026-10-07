@@ -160,6 +160,29 @@
     <string name="icon_book">Libro</string>
     <string name="icon_wrench">Chiave inglese</string>
     <string name="icon_star">Stella</string>
+    <string name="icon_broom">Scopa</string>
+    <string name="icon_shirt">Camicia</string>
+    <string name="icon_bath">Vasca da bagno</string>
+    <string name="icon_fridge">Frigorifero</string>
+    <string name="icon_lightbulb">Lampadina</string>
+    <string name="icon_air_vent">Bocchetta d’aria</string>
+    <string name="icon_battery">Batteria</string>
+    <string name="icon_toothbrush">Spazzolino</string>
+    <string name="icon_stethoscope">Stetoscopio</string>
+    <string name="icon_syringe">Siringa</string>
+    <string name="icon_footprints">Impronte</string>
+    <string name="icon_bike">Bicicletta</string>
+    <string name="icon_dog">Cane</string>
+    <string name="icon_cat">Gatto</string>
+    <string name="icon_fish">Pesce</string>
+    <string name="icon_people">Persone</string>
+    <string name="icon_gift">Regalo</string>
+    <string name="icon_cake">Torta</string>
+    <string name="icon_receipt">Ricevuta</string>
+    <string name="icon_key">Chiave</string>
+    <string name="icon_mail">Posta</string>
+    <string name="icon_music">Musica</string>
+    <string name="icon_plane">Aereo</string>
 
     <!-- Dialogs -->
     <string name="dialog_delete_title">Eliminare «%1$s»?</string>
@@ -222,8 +245,7 @@
     <!-- %1$s is a number of tiles, e.g. "3 tiles". -->
     <string name="import_done">Backup importato: %1$s</string>
     <string name="import_failed">Quel file non è un backup di Time Clicker, oppure non è stato possibile leggerlo.</string>
-    <string name="support_text">Creiamo per passione e per rendere più facile la vita delle persone. Non aggiungeremo mai pubblicità o funzioni a pagamento all’app. Contribuire non è mai obbligatorio.</string>
-    <string name="action_donate">Sostienici su Ko-fi</string>
+    <string name="support_text">Creiamo per passione e per rendere più facile la vita delle persone. Non aggiungeremo mai pubblicità o funzioni a pagamento all’app.</string>
     <string name="settings_version">Versione %1$s</string>
 
     <!-- Home-screen widget -->

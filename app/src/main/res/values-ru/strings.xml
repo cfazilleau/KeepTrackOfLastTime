@@ -167,6 +167,29 @@
     <string name="icon_book">Книга</string>
     <string name="icon_wrench">Гаечный ключ</string>
     <string name="icon_star">Звезда</string>
+    <string name="icon_broom">Метла</string>
+    <string name="icon_shirt">Рубашка</string>
+    <string name="icon_bath">Ванна</string>
+    <string name="icon_fridge">Холодильник</string>
+    <string name="icon_lightbulb">Лампочка</string>
+    <string name="icon_air_vent">Вентиляция</string>
+    <string name="icon_battery">Батарейка</string>
+    <string name="icon_toothbrush">Зубная щётка</string>
+    <string name="icon_stethoscope">Стетоскоп</string>
+    <string name="icon_syringe">Шприц</string>
+    <string name="icon_footprints">Следы</string>
+    <string name="icon_bike">Велосипед</string>
+    <string name="icon_dog">Собака</string>
+    <string name="icon_cat">Кошка</string>
+    <string name="icon_fish">Рыба</string>
+    <string name="icon_people">Люди</string>
+    <string name="icon_gift">Подарок</string>
+    <string name="icon_cake">Торт</string>
+    <string name="icon_receipt">Чек</string>
+    <string name="icon_key">Ключ</string>
+    <string name="icon_mail">Почта</string>
+    <string name="icon_music">Музыка</string>
+    <string name="icon_plane">Самолёт</string>
 
     <!-- Dialogs -->
     <string name="dialog_delete_title">Удалить «%1$s»?</string>
@@ -230,8 +253,7 @@
     <!-- %1$s is a number of tiles, e.g. "3 tiles". -->
     <string name="import_done">Резервная копия импортирована: %1$s</string>
     <string name="import_failed">Этот файл не является резервной копией Time Clicker, или его не удалось прочитать.</string>
-    <string name="support_text">Мы делаем всё это из любви к своему делу и чтобы облегчить людям жизнь. Мы никогда не добавим в приложение рекламу или платные функции. Поддерживать нас никогда не обязательно.</string>
-    <string name="action_donate">Поддержите нас на Ko-fi</string>
+    <string name="support_text">Мы делаем всё это из любви к своему делу и чтобы облегчить людям жизнь. Мы никогда не добавим в приложение рекламу или платные функции.</string>
     <string name="settings_version">Версия %1$s</string>
 
     <!-- Home-screen widget -->

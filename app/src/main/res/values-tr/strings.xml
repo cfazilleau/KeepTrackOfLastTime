@@ -153,6 +153,29 @@
     <string name="icon_book">Kitap</string>
     <string name="icon_wrench">İngiliz anahtarı</string>
     <string name="icon_star">Yıldız</string>
+    <string name="icon_broom">Süpürge</string>
+    <string name="icon_shirt">Gömlek</string>
+    <string name="icon_bath">Küvet</string>
+    <string name="icon_fridge">Buzdolabı</string>
+    <string name="icon_lightbulb">Ampul</string>
+    <string name="icon_air_vent">Havalandırma</string>
+    <string name="icon_battery">Pil</string>
+    <string name="icon_toothbrush">Diş fırçası</string>
+    <string name="icon_stethoscope">Stetoskop</string>
+    <string name="icon_syringe">Şırınga</string>
+    <string name="icon_footprints">Ayak izleri</string>
+    <string name="icon_bike">Bisiklet</string>
+    <string name="icon_dog">Köpek</string>
+    <string name="icon_cat">Kedi</string>
+    <string name="icon_fish">Balık</string>
+    <string name="icon_people">Kişiler</string>
+    <string name="icon_gift">Hediye</string>
+    <string name="icon_cake">Pasta</string>
+    <string name="icon_receipt">Fiş</string>
+    <string name="icon_key">Anahtar</string>
+    <string name="icon_mail">Posta</string>
+    <string name="icon_music">Müzik</string>
+    <string name="icon_plane">Uçak</string>
 
     <!-- Dialogs -->
     <string name="dialog_delete_title">“%1$s” silinsin mi?</string>
@@ -214,8 +237,7 @@
     <!-- %1$s is a number of tiles, e.g. "3 tiles". -->
     <string name="import_done">Yedek içe aktarıldı: %1$s</string>
     <string name="import_failed">Bu dosya bir Time Clicker yedeği değil veya okunamadı.</string>
-    <string name="support_text">Bunu tutkuyla ve insanların hayatını kolaylaştırmak için yapıyoruz. Uygulamaya asla reklam veya ücretli özellik eklemeyeceğiz. Destek olmak hiçbir zaman zorunlu değildir.</string>
-    <string name="action_donate">Bizi Ko-fi’de destekleyin</string>
+    <string name="support_text">Bunu tutkuyla ve insanların hayatını kolaylaştırmak için yapıyoruz. Uygulamaya asla reklam veya ücretli özellik eklemeyeceğiz.</string>
     <string name="settings_version">Sürüm %1$s</string>
 
     <!-- Home-screen widget -->

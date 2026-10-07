@@ -146,6 +146,29 @@
     <string name="icon_book">书</string>
     <string name="icon_wrench">扳手</string>
     <string name="icon_star">星星</string>
+    <string name="icon_broom">扫帚</string>
+    <string name="icon_shirt">衬衫</string>
+    <string name="icon_bath">浴缸</string>
+    <string name="icon_fridge">冰箱</string>
+    <string name="icon_lightbulb">灯泡</string>
+    <string name="icon_air_vent">通风口</string>
+    <string name="icon_battery">电池</string>
+    <string name="icon_toothbrush">牙刷</string>
+    <string name="icon_stethoscope">听诊器</string>
+    <string name="icon_syringe">注射器</string>
+    <string name="icon_footprints">脚印</string>
+    <string name="icon_bike">自行车</string>
+    <string name="icon_dog">狗</string>
+    <string name="icon_cat">猫</string>
+    <string name="icon_fish">鱼</string>
+    <string name="icon_people">人们</string>
+    <string name="icon_gift">礼物</string>
+    <string name="icon_cake">蛋糕</string>
+    <string name="icon_receipt">收据</string>
+    <string name="icon_key">钥匙</string>
+    <string name="icon_mail">邮件</string>
+    <string name="icon_music">音乐</string>
+    <string name="icon_plane">飞机</string>
 
     <!-- Dialogs -->
     <string name="dialog_delete_title">删除“%1$s”？</string>
@@ -206,8 +229,7 @@
     <!-- %1$s is a number of tiles, e.g. "3 tiles". -->
     <string name="import_done">已导入备份：%1$s</string>
     <string name="import_failed">该文件不是 Time Clicker 备份，或无法读取。</string>
-    <string name="support_text">我们出于热爱而创作，只为让大家的生活更轻松。我们永远不会在应用中添加广告或付费功能。是否支持我们，完全自愿。</string>
-    <string name="action_donate">在 Ko-fi 上支持我们</string>
+    <string name="support_text">我们出于热爱而创作，只为让大家的生活更轻松。我们永远不会在应用中添加广告或付费功能。</string>
     <string name="settings_version">版本 %1$s</string>
 
     <!-- Home-screen widget -->

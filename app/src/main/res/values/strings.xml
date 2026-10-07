@@ -161,6 +161,29 @@
     <string name="icon_book">Book</string>
     <string name="icon_wrench">Wrench</string>
     <string name="icon_star">Star</string>
+    <string name="icon_broom">Broom</string>
+    <string name="icon_shirt">Shirt</string>
+    <string name="icon_bath">Bath</string>
+    <string name="icon_fridge">Fridge</string>
+    <string name="icon_lightbulb">Light bulb</string>
+    <string name="icon_air_vent">Air vent</string>
+    <string name="icon_battery">Battery</string>
+    <string name="icon_toothbrush">Toothbrush</string>
+    <string name="icon_stethoscope">Stethoscope</string>
+    <string name="icon_syringe">Syringe</string>
+    <string name="icon_footprints">Footprints</string>
+    <string name="icon_bike">Bike</string>
+    <string name="icon_dog">Dog</string>
+    <string name="icon_cat">Cat</string>
+    <string name="icon_fish">Fish</string>
+    <string name="icon_people">People</string>
+    <string name="icon_gift">Gift</string>
+    <string name="icon_cake">Cake</string>
+    <string name="icon_receipt">Receipt</string>
+    <string name="icon_key">Key</string>
+    <string name="icon_mail">Mail</string>
+    <string name="icon_music">Music</string>
+    <string name="icon_plane">Plane</string>
 
     <!-- Dialogs -->
     <string name="dialog_delete_title">Delete “%1$s”?</string>
@@ -222,8 +245,7 @@
     <!-- %1$s is a number of tiles, e.g. "3 tiles". -->
     <string name="import_done">Backup imported: %1$s</string>
     <string name="import_failed">That file isn’t a Time Clicker backup, or it couldn’t be read.</string>
-    <string name="support_text">We make things out of passion and to make people’s lives easier. We will never add ads or paid features to the app. Contributing is never mandatory.</string>
-    <string name="action_donate">Support us on Ko-fi</string>
+    <string name="support_text">We make things out of passion and to make people’s lives easier. We will never add ads or paid features to the app.</string>
     <string name="settings_version">Version %1$s</string>
 
     <!-- Home-screen widget -->
