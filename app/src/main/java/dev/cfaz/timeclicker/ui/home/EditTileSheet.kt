@@ -42,6 +42,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.pluralStringResource
@@ -113,6 +114,8 @@ fun EditTileSheet(
     onSave: (TileDraft) -> Unit,
     onDiscard: () -> Unit,
     onDelete: () -> Unit,
+    /** Deletes the tile's last counted press, straight away. */
+    onRevertLastPress: () -> Unit,
     onAddWidget: (() -> Unit)?,
 ) {
     val palette = TimeClickerTheme.palette
@@ -291,12 +294,10 @@ fun EditTileSheet(
                 )
             }
 
-            ReminderSection(reminder = draft.reminder, onChange = { draft = draft.copy(reminder = it) })
-
             val count = if (draft.resetCount) 0 else saved.pressCount
             Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 SectionLabel(stringResource(R.string.label_counter))
-                Row(verticalAlignment = Alignment.CenterVertically) {
+                Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                     Text(
                         pluralStringResource(R.plurals.press_count, count, count),
                         style = MaterialTheme.typography.titleMedium,
@@ -304,10 +305,13 @@ fun EditTileSheet(
                         modifier = Modifier.weight(1f),
                     )
                     if (count > 0) {
+                        SheetIconButton(AppIcons.Undo, stringResource(R.string.counter_undo_last), onClick = onRevertLastPress)
                         SheetButton(stringResource(R.string.counter_reset), onClick = { confirmResetCount = true })
                     }
                 }
             }
+
+            ReminderSection(reminder = draft.reminder, onChange = { draft = draft.copy(reminder = it) })
 
             if (onAddWidget != null) {
                 Row(
@@ -447,6 +451,22 @@ internal fun SheetButton(text: String, onClick: () -> Unit) {
     }
 }
 
+/** A [SheetButton] with an icon instead of text. */
+@Composable
+private fun SheetIconButton(icon: ImageVector, contentDescription: String, onClick: () -> Unit) {
+    val palette = TimeClickerTheme.palette
+    NeuButton(
+        onClick = onClick,
+        shape = RoundedCornerShape(12.dp),
+        background = palette.sheet,
+        distance = 4.dp,
+        blur = 10.dp,
+        modifier = Modifier.size(40.dp),
+    ) {
+        Icon(icon, contentDescription, tint = palette.text, modifier = Modifier.size(20.dp))
+    }
+}
+
 /** The pastel colours, in rows of six. */
 @Composable
 private fun ColourSwatches(selected: TileColor, onSelect: (TileColor) -> Unit) {
@@ -483,10 +503,9 @@ private fun Swatch(color: TileColor, isSelected: Boolean, width: Dp, onSelect: (
 }
 
 /**
- * The section's label, with an "All icons" link to the full list, then [IconRows] rows of six: "No icon" first,
- * then the icons last given to a tile (latest first, those just picked from the full list in front), the tile's
- * own icon if not shown yet, and the user's icon palette (chosen in Settings), which fills the rows while there's
- * little history. The last row is aligned to the start.
+ * The section's label, with an "All icons" link to the full list, then rows of six: "No icon" first, then the
+ * whole of the user's icon palette (chosen from the home screen's menu), then the tile's own icon and those just
+ * picked from the full list when they aren't in the palette. The last row is aligned to the start.
  */
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
@@ -496,12 +515,11 @@ private fun IconPicker(selected: TileIcon, original: TileIcon, accent: TileColor
     val catalog = rememberIconCatalog()
     val columns = 6
     val settings = TimeClickerTheme.settings
-    // Icons chosen from the full list, latest first: kept in view even after tapping another icon.
+    // Icons chosen from the full list, in the order picked: kept in view even after tapping another icon.
     var picked by remember { mutableStateOf(emptyList<TileIcon>()) }
     var showAll by remember { mutableStateOf(false) }
-    val icons = (picked + settings.recentIcons + original + settings.iconPalette).distinct()
+    val icons = (settings.iconPalette + original + picked).distinct()
         .filter { !it.isNone && catalog?.get(it) != null }
-        .take(IconRows * columns - 1)
     val choices = listOf(TileIcon.NONE) + icons
 
     Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
@@ -555,17 +573,14 @@ private fun IconPicker(selected: TileIcon, original: TileIcon, accent: TileColor
             selected = selected,
             accent = accent,
             onSelect = { icon ->
-                // Brought to the first row, where it can be seen.
-                if (!icon.isNone && icon !in choices.take(columns)) picked = listOf(icon) + picked
+                // Added after the palette, where it can be seen.
+                if (icon !in choices) picked = picked + icon
                 onSelect(icon)
             },
             onDismiss = { showAll = false },
         )
     }
 }
-
-/** How many rows of icons the picker shows before the full list. */
-private const val IconRows = 2
 
 private val IconGap = 8.dp
 private val IconCellHeight = 46.dp

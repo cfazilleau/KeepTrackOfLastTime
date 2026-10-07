@@ -75,22 +75,12 @@ value class TileIcon(val key: String) {
         val DEFAULT = TileIcon("circle-check")
 
         /**
-         * The icons offered when editing a tile, until the user picks their own palette. The tile editor shows the
-         * first ones (after the recent icons), so they cover the most common things to track; the rest lead the
-         * full icon list, by theme: home, health, sport, nature, pets, people, admin, hobbies.
+         * The icons offered when editing a tile, until the user picks their own palette: the most common things to
+         * track, eleven so that with "No icon" they fill two rows of six.
          */
         val defaultPalette: List<TileIcon> = listOf(
             "sprout", "shopping-cart", "broom", "trash", "bed", "pill", "scissors", "dumbbell", "phone",
             "paw-print", "car",
-            "washing-machine", "utensils", "coffee", "shirt", "bath", "refrigerator", "lightbulb", "air-vent",
-            "battery", "wrench",
-            "toothbrush", "stethoscope", "syringe",
-            "footprints", "bike",
-            "droplet", "flower-2", "snowflake",
-            "dog", "cat", "fish",
-            "users", "gift", "cake", "heart",
-            "receipt", "key", "mail",
-            "book-open", "music", "plane",
         ).map(::TileIcon)
 
         /**

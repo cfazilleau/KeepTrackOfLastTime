@@ -41,7 +41,7 @@ data class AppSettings(
     val showCounter: Boolean = true,
     /** The icons offered when editing a tile, in the order they were added. */
     val iconPalette: List<TileIcon> = TileIcon.defaultPalette,
-    /** The icons last given to a tile, latest first: offered first when editing a tile. */
+    /** The icons last given to a tile, latest first: shown first in the full icon list. */
     val recentIcons: List<TileIcon> = emptyList(),
 )
 
@@ -100,8 +100,8 @@ class SettingsRepository(context: Context) {
         const val ICON_PALETTE = "icon_palette"
         const val RECENT_ICONS = "recent_icons"
 
-        /** A few more than the icon picker shows: icons missing from the catalog are skipped. */
-        private const val RECENT_ICONS_KEPT = 8
+        /** A few more than the icon chooser shows: icons missing from the catalog are skipped. */
+        private const val RECENT_ICONS_KEPT = 16
 
         /** Icon names separated by commas (Lucide names have none); an empty palette is an empty string. */
         fun paletteToKeys(palette: List<TileIcon>): String = palette.joinToString(",") { it.key }

@@ -79,6 +79,7 @@
     <string name="size_tall">Uzun</string>
     <string name="label_counter">Sayaç</string>
     <string name="counter_reset">Sıfırla</string>
+    <string name="counter_undo_last">Son dokunuşu geri al</string>
     <string name="widget_add">Ana ekrana ekle</string>
     <string name="widget_add_hint">Bu kutucuğu widget olarak gösterir. Yapıldı olarak işaretlemek için widget’a dokunun.</string>
     <string name="label_reminder">Hatırlatıcı</string>
@@ -124,6 +125,7 @@
     <string name="icon_choice">Simge: %1$s</string>
     <string name="icon_all">Tüm simgeler</string>
     <string name="icon_chooser_title">Simge seçin</string>
+    <string name="icon_recent">Son kullanılanlar</string>
     <string name="icon_none">Simge yok</string>
     <string name="icon_check">Onay işareti</string>
     <string name="icon_drop">Su damlası</string>
@@ -256,6 +258,7 @@
     <string name="icon_palette_yours">Paletiniz</string>
     <string name="icon_palette_hint">Paletinize eklemek için bir simgeye dokunun; kaldırmak için yeniden dokunun.</string>
     <string name="icon_palette_empty">Paletiniz boş. Eklemek için aşağıdaki simgelere dokunun.</string>
+    <string name="icon_palette_none_fixed">“Simge yok” her zaman ilk sırada sunulur ve kaldırılamaz.</string>
     <string name="icon_palette_results">Sonuçlar</string>
     <string name="icon_palette_no_results">“%1$s” ile eşleşen simge yok.</string>
     <string name="icon_palette_reset">Varsayılan simgelere sıfırla</string>

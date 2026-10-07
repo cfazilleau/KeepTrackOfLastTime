@@ -91,6 +91,7 @@
     <string name="size_tall">Высокая</string>
     <string name="label_counter">Счётчик</string>
     <string name="counter_reset">Сбросить</string>
+    <string name="counter_undo_last">Отменить последнее нажатие</string>
     <string name="widget_add">Добавить на главный экран</string>
     <string name="widget_add_hint">Показывает эту плитку как виджет. Нажмите на виджет, чтобы отметить как сделанное.</string>
     <string name="label_reminder">Напоминание</string>
@@ -138,6 +139,7 @@
     <string name="icon_choice">Значок: %1$s</string>
     <string name="icon_all">Все значки</string>
     <string name="icon_chooser_title">Выберите значок</string>
+    <string name="icon_recent">Недавно использованные</string>
     <string name="icon_none">Без значка</string>
     <string name="icon_check">Галочка</string>
     <string name="icon_drop">Капля воды</string>
@@ -272,6 +274,7 @@
     <string name="icon_palette_yours">Ваша палитра</string>
     <string name="icon_palette_hint">Нажмите на значок, чтобы добавить его в палитру; нажмите ещё раз, чтобы убрать.</string>
     <string name="icon_palette_empty">Ваша палитра пуста. Нажмите на значки ниже, чтобы добавить их.</string>
+    <string name="icon_palette_none_fixed">«Без значка» всегда предлагается первым, и его нельзя убрать.</string>
     <string name="icon_palette_results">Результаты</string>
     <string name="icon_palette_no_results">Нет значков по запросу «%1$s».</string>
     <string name="icon_palette_reset">Вернуть значки по умолчанию</string>

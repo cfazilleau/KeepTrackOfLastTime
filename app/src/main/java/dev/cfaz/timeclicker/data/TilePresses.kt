@@ -56,4 +56,11 @@ class TilePresses(private val repository: TrackerRepository, private val scope: 
             true
         }
     }
+
+    /** Deletes the tile's last counted press, ending its undo window if it has one. False if there was none. */
+    suspend fun revertLast(trackerId: Long): Boolean = mutex.withLock {
+        expiries.remove(trackerId)?.cancel()
+        pending.update { it - trackerId }
+        repository.revertLastPress(trackerId)
+    }
 }

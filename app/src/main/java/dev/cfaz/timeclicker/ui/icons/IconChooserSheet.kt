@@ -29,7 +29,7 @@ import dev.cfaz.timeclicker.ui.theme.rememberIconCatalog
 import kotlinx.coroutines.launch
 
 /**
- * Every Lucide icon, the palette first, with search: tapping one chooses it for the tile and closes the sheet.
+ * Every Lucide icon, the recently used ones first, with search: tapping one chooses it for the tile and closes the sheet.
  * The chosen icon is highlighted in the tile's [accent] colours.
  */
 @OptIn(ExperimentalMaterial3Api::class)
@@ -58,7 +58,8 @@ fun IconChooserSheet(selected: TileIcon, accent: TileColors, onSelect: (TileIcon
                 IconGrid(
                     catalog,
                     query,
-                    TimeClickerTheme.settings.iconPalette,
+                    TimeClickerTheme.settings.recentIcons.take(RecentIconsShown),
+                    firstTitle = stringResource(R.string.icon_recent),
                     isHighlighted = { it == selected },
                     onClick = { icon ->
                         onSelect(icon)
@@ -75,3 +76,6 @@ fun IconChooserSheet(selected: TileIcon, accent: TileColors, onSelect: (TileIcon
         }
     }
 }
+
+/** How many of the recently used icons the chooser shows first: two rows on a phone. */
+private const val RecentIconsShown = 12

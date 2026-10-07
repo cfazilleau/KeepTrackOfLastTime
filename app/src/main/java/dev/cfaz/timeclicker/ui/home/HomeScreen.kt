@@ -131,8 +131,8 @@ fun HomeScreen(
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
 
-    // The tile open in the edit sheet.
-    var editing by remember { mutableStateOf<Tracker?>(null) }
+    // The tile open in the edit sheet, by id: the sheet follows its count and last time as they change.
+    var editingId by remember { mutableStateOf<Long?>(null) }
     var creating by remember { mutableStateOf(false) }
     // While on, tiles are held and dragged to a new place instead of tapped.
     var reordering by rememberSaveable { mutableStateOf(false) }
@@ -172,7 +172,7 @@ fun HomeScreen(
                         if (clickSound) TapSound.play(context)
                         viewModel.press(tracker)
                     },
-                    onLongClick = { editing = it },
+                    onLongClick = { editingId = it.id },
                 )
             }
         }
@@ -196,7 +196,7 @@ fun HomeScreen(
             onDismiss = { creating = false },
         )
     }
-    editing?.let { saved ->
+    editingId?.let { id -> state?.trackers?.find { it.id == id } }?.let { saved ->
         val canPin = remember { TileWidgets.canPin(context) }
         EditTileSheet(
             saved = saved,
@@ -204,9 +204,10 @@ fun HomeScreen(
             photoFile = viewModel::photoFile,
             importPhoto = viewModel::importPhoto,
             createGroup = viewModel::createGroup,
-            onSave = { viewModel.save(it, saved); editing = null },
-            onDiscard = { viewModel.discard(); editing = null },
-            onDelete = { viewModel.delete(saved.id); editing = null },
+            onSave = { viewModel.save(it, saved); editingId = null },
+            onDiscard = { viewModel.discard(); editingId = null },
+            onDelete = { viewModel.delete(saved.id); editingId = null },
+            onRevertLastPress = { viewModel.revertLastPress(saved) },
             onAddWidget = if (canPin) ({ scope.launch { TileWidgets.requestPin(context, saved.id) } }) else null,
         )
     }
@@ -297,7 +298,7 @@ private fun GroupPager(
                         alpha = lerp(1f, 0.35f, distance)
                     },
             ) {
-                if (state.trackerCount == 0) {
+                if (state.trackers.isEmpty()) {
                     EmptyState(Modifier.fillMaxSize())
                 } else {
                     PageList(page, undoable, reordering, onReorder, photoFile, onClick, onLongClick)

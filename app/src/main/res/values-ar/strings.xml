@@ -103,6 +103,7 @@
     <string name="size_tall">طويل</string>
     <string name="label_counter">العدّاد</string>
     <string name="counter_reset">إعادة الضبط</string>
+    <string name="counter_undo_last">تراجع عن آخر ضغطة</string>
     <string name="widget_add">إضافة إلى الشاشة الرئيسية</string>
     <string name="widget_add_hint">تعرض هذه البطاقة كأداة. انقر على الأداة لتحديدها كمنجزة.</string>
     <string name="label_reminder">تذكير</string>
@@ -152,6 +153,7 @@
     <string name="icon_choice">الأيقونة: %1$s</string>
     <string name="icon_all">كل الأيقونات</string>
     <string name="icon_chooser_title">اختر أيقونة</string>
+    <string name="icon_recent">المستخدمة مؤخرًا</string>
     <string name="icon_none">بلا أيقونة</string>
     <string name="icon_check">علامة صح</string>
     <string name="icon_drop">قطرة ماء</string>
@@ -288,6 +290,7 @@
     <string name="icon_palette_yours">لوحتك</string>
     <string name="icon_palette_hint">انقر على أيقونة لإضافتها إلى لوحتك؛ وانقر عليها مجددًا لإزالتها.</string>
     <string name="icon_palette_empty">لوحتك فارغة. انقر على الأيقونات أدناه لإضافتها.</string>
+    <string name="icon_palette_none_fixed">«بلا أيقونة» متاحة دائمًا في البداية ولا يمكن إزالتها.</string>
     <string name="icon_palette_results">النتائج</string>
     <string name="icon_palette_no_results">لا توجد أيقونات تطابق «%1$s».</string>
     <string name="icon_palette_reset">استعادة الأيقونات الافتراضية</string>

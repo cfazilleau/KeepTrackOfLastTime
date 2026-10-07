@@ -79,6 +79,7 @@
     <string name="size_tall">Hoog</string>
     <string name="label_counter">Teller</string>
     <string name="counter_reset">Resetten</string>
+    <string name="counter_undo_last">Laatste druk ongedaan maken</string>
     <string name="widget_add">Toevoegen aan startscherm</string>
     <string name="widget_add_hint">Toont deze tegel als widget. Tik op de widget om hem als gedaan te markeren.</string>
     <string name="label_reminder">Herinnering</string>
@@ -124,6 +125,7 @@
     <string name="icon_choice">Pictogram: %1$s</string>
     <string name="icon_all">Alle pictogrammen</string>
     <string name="icon_chooser_title">Kies een pictogram</string>
+    <string name="icon_recent">Recent gebruikt</string>
     <string name="icon_none">Geen pictogram</string>
     <string name="icon_check">Vinkje</string>
     <string name="icon_drop">Waterdruppel</string>
@@ -256,6 +258,7 @@
     <string name="icon_palette_yours">Jouw palet</string>
     <string name="icon_palette_hint">Tik op een pictogram om het aan je palet toe te voegen; tik er nog een keer op om het te verwijderen.</string>
     <string name="icon_palette_empty">Je palet is leeg. Tik hieronder op pictogrammen om ze toe te voegen.</string>
+    <string name="icon_palette_none_fixed">„Geen pictogram” wordt altijd als eerste aangeboden en kan niet worden verwijderd.</string>
     <string name="icon_palette_results">Resultaten</string>
     <string name="icon_palette_no_results">Geen pictogrammen gevonden voor „%1$s”.</string>
     <string name="icon_palette_reset">Standaardpictogrammen herstellen</string>

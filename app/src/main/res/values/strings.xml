@@ -84,6 +84,7 @@
     <string name="size_tall">Tall</string>
     <string name="label_counter">Counter</string>
     <string name="counter_reset">Reset</string>
+    <string name="counter_undo_last">Undo last press</string>
     <string name="widget_add">Add to home screen</string>
     <string name="widget_add_hint">Shows this tile as a widget. Tap the widget to mark it as done.</string>
     <string name="label_reminder">Reminder</string>
@@ -132,6 +133,7 @@
     <string name="icon_choice">Icon: %1$s</string>
     <string name="icon_all">All icons</string>
     <string name="icon_chooser_title">Choose an icon</string>
+    <string name="icon_recent">Recently used</string>
     <string name="icon_none">No icon</string>
     <string name="icon_check">Check</string>
     <string name="icon_drop">Water drop</string>
@@ -264,6 +266,7 @@
     <string name="icon_palette_yours">Your palette</string>
     <string name="icon_palette_hint">Tap an icon to add it to your palette; tap it again to remove it.</string>
     <string name="icon_palette_empty">Your palette is empty. Tap icons below to add them.</string>
+    <string name="icon_palette_none_fixed">“No icon” is always offered first and can’t be removed.</string>
     <string name="icon_palette_results">Results</string>
     <string name="icon_palette_no_results">No icons match “%1$s”.</string>
     <string name="icon_palette_reset">Reset to default icons</string>

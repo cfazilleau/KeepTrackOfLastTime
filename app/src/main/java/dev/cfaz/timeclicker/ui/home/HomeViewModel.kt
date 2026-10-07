@@ -52,7 +52,7 @@ data class SectionUi(val key: String, val title: SectionTitle, val trackers: Lis
 data class PageUi(val chip: FilterChipUi, val sections: List<SectionUi>)
 
 data class HomeUiState(
-    val trackerCount: Int,
+    val trackers: List<Tracker>,
     val groups: List<TrackerGroup>,
     /** In chip order: All, then each group. */
     val pages: List<PageUi>,
@@ -93,6 +93,11 @@ class HomeViewModel(
         viewModelScope.launch {
             repository.addTracker(TileSpec(name.trim(), groupId, TileColor.pickable.random(), TileIcon.NONE, TileSize.SMALL, photo = null))
         }
+    }
+
+    /** Deletes the tile's last counted press, from the edit sheet. */
+    fun revertLastPress(tracker: Tracker) {
+        viewModelScope.launch { presses.revertLast(tracker.id) }
     }
 
     /** Saves the edit sheet's [draft] of the [saved] tile. */
@@ -149,7 +154,7 @@ class HomeViewModel(
                 add(PageUi(FilterChipUi(GroupFilter.Group(g.id), g.name, inGroup.size), listOf(section)))
             }
         }
-        return HomeUiState(trackers.size, groups, pages, current)
+        return HomeUiState(trackers, groups, pages, current)
     }
 
     companion object {

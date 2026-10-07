@@ -85,6 +85,7 @@
     <string name="size_tall">Alto</string>
     <string name="label_counter">Contatore</string>
     <string name="counter_reset">Azzera</string>
+    <string name="counter_undo_last">Annulla l’ultima pressione</string>
     <string name="widget_add">Aggiungi alla schermata Home</string>
     <string name="widget_add_hint">Mostra questo riquadro come widget. Tocca il widget per segnarlo come fatto.</string>
     <string name="label_reminder">Promemoria</string>
@@ -131,6 +132,7 @@
     <string name="icon_choice">Icona: %1$s</string>
     <string name="icon_all">Tutte le icone</string>
     <string name="icon_chooser_title">Scegli un’icona</string>
+    <string name="icon_recent">Usate di recente</string>
     <string name="icon_none">Nessuna icona</string>
     <string name="icon_check">Spunta</string>
     <string name="icon_drop">Goccia d’acqua</string>
@@ -264,6 +266,7 @@
     <string name="icon_palette_yours">La tua palette</string>
     <string name="icon_palette_hint">Tocca un’icona per aggiungerla alla tua palette; toccala di nuovo per rimuoverla.</string>
     <string name="icon_palette_empty">La tua palette è vuota. Tocca le icone qui sotto per aggiungerle.</string>
+    <string name="icon_palette_none_fixed">«Nessuna icona» è sempre proposta per prima e non si può rimuovere.</string>
     <string name="icon_palette_results">Risultati</string>
     <string name="icon_palette_no_results">Nessuna icona corrisponde a «%1$s».</string>
     <string name="icon_palette_reset">Ripristina le icone predefinite</string>

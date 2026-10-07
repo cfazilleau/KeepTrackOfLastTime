@@ -85,6 +85,7 @@
     <string name="size_tall">Alto</string>
     <string name="label_counter">Contador</string>
     <string name="counter_reset">Zerar</string>
+    <string name="counter_undo_last">Desfazer o último toque</string>
     <string name="widget_add">Adicionar à tela inicial</string>
     <string name="widget_add_hint">Mostra este card como widget. Toque no widget para marcá-lo como feito.</string>
     <string name="label_reminder">Lembrete</string>
@@ -131,6 +132,7 @@
     <string name="icon_choice">Ícone: %1$s</string>
     <string name="icon_all">Todos os ícones</string>
     <string name="icon_chooser_title">Escolha um ícone</string>
+    <string name="icon_recent">Usados recentemente</string>
     <string name="icon_none">Sem ícone</string>
     <string name="icon_check">Marca de seleção</string>
     <string name="icon_drop">Gota d’água</string>
@@ -264,6 +266,7 @@
     <string name="icon_palette_yours">Sua paleta</string>
     <string name="icon_palette_hint">Toque em um ícone para adicioná-lo à sua paleta; toque de novo para removê-lo.</string>
     <string name="icon_palette_empty">Sua paleta está vazia. Toque nos ícones abaixo para adicioná-los.</string>
+    <string name="icon_palette_none_fixed">“Sem ícone” é sempre oferecido primeiro e não pode ser removido.</string>
     <string name="icon_palette_results">Resultados</string>
     <string name="icon_palette_no_results">Nenhum ícone corresponde a “%1$s”.</string>
     <string name="icon_palette_reset">Redefinir para os ícones padrão</string>
