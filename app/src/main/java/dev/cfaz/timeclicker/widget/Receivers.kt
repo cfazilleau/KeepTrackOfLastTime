@@ -46,12 +46,18 @@ class WidgetTickReceiver : BroadcastReceiver() {
     }
 }
 
-/** A widget requested with "Add to home screen" was placed: show the tile it was requested for. */
+/**
+ * A widget requested with "Add to home screen" was placed: show the tile it was requested for, then let the app
+ * close to the home screen (see MainActivity).
+ */
 class WidgetPinnedReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         val appWidgetId = intent.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID)
         val trackerId = TileWidgets.pinnedTrackerId(intent)
         if (appWidgetId == AppWidgetManager.INVALID_APPWIDGET_ID || trackerId == null) return
-        doAsync { TileWidgets.bind(context, appWidgetId, trackerId) }
+        doAsync {
+            TileWidgets.bind(context, appWidgetId, trackerId)
+            TileWidgets.notifyPlaced()
+        }
     }
 }

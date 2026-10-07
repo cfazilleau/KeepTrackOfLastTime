@@ -319,7 +319,8 @@ fun EditTileSheet(
                         .fillMaxWidth()
                         .clip(RoundedCornerShape(16.dp))
                         .background(palette.field)
-                        .clickable(role = Role.Button, onClick = onAddWidget)
+                        // Keeps the edits, so the widget shows them and they survive the app closing once it's placed.
+                        .clickable(role = Role.Button) { close(save = true); onAddWidget() }
                         .padding(horizontal = 16.dp, vertical = 14.dp),
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.spacedBy(12.dp),

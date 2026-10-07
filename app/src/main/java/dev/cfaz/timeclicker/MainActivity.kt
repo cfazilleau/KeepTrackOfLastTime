@@ -1,5 +1,6 @@
 package dev.cfaz.timeclicker
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.BackHandler
@@ -26,13 +27,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.LayoutDirection
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.lifecycleScope
 import dev.cfaz.timeclicker.ui.groups.GroupsScreen
 import dev.cfaz.timeclicker.ui.home.HomeScreen
 import dev.cfaz.timeclicker.ui.icons.IconPaletteScreen
 import dev.cfaz.timeclicker.ui.settings.AboutScreen
 import dev.cfaz.timeclicker.ui.settings.SettingsScreen
 import dev.cfaz.timeclicker.ui.theme.TimeClickerTheme
+import dev.cfaz.timeclicker.widget.TileWidgets
+import kotlinx.coroutines.launch
 
 private enum class Screen { HOME, GROUPS, SETTINGS, ICON_PALETTE, ABOUT }
 
@@ -45,6 +50,18 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         val settingsRepository = (application as TimeClickerApplication).container.settingsRepository
+        // Once a widget from "Add to home screen" is placed, close to the home screen so it can be seen there.
+        // If the user is already there (they dragged it into place), just close.
+        lifecycleScope.launch {
+            TileWidgets.placed.collect {
+                if (lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED)) {
+                    startActivity(
+                        Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    )
+                }
+                finish()
+            }
+        }
         setContent {
             val settings by settingsRepository.settings.collectAsStateWithLifecycle()
             TimeClickerTheme(settings) {
