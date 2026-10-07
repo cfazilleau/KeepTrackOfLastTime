@@ -41,6 +41,16 @@ object RelativeTime {
         )
     }
 
+    /**
+     * [duration] as one rounded unit, the largest that counts at least 2: "8 hours", "3 days", and "36 hours"
+     * rather than "1 day", which would read oddly in "every 1 day".
+     */
+    fun approximate(duration: Duration): TimePart {
+        val seconds = duration.seconds.coerceAtLeast(1)
+        val unit = TimeUnit.entries.firstOrNull { seconds / it.seconds >= 2 } ?: TimeUnit.SECOND
+        return TimePart(unit, (seconds + unit.seconds / 2) / unit.seconds)
+    }
+
     /** The first moment after [now] at which [split] of [from] reads differently, to refresh the display then. */
     fun nextChange(from: Instant, now: Instant, smallest: TimeUnit = TimeUnit.SECOND): Instant {
         val elapsed = Duration.between(from, now)

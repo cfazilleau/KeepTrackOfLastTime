@@ -97,12 +97,18 @@
     </plurals>
     <string name="reminder_remove">Kaldır</string>
     <string name="reminder_hint">%1$s boyunca yapılmazsa bildirim alırsınız.</string>
+    <string name="reminder_mode_auto">Otomatik</string>
+    <string name="reminder_mode_custom">Özel</string>
+    <string name="reminder_auto_hint">Bunu genellikle %1$s arayla yapıyorsunuz. Geciktiğinizde bildirim alırsınız, asla gece değil.</string>
+    <string name="reminder_auto_learning">Ne sıklıkla yaptığınızı anlamak için henüz yeterli düzenli dokunma yok. Hatırlatıcı, bir düzen oluşunca başlar (en az 5 dokunma).</string>
     <string name="reminder_notifications_off">Time Clicker bildirimleri kapalı, bu yüzden hatırlatıcılar görünemez. İzin vermek için dokunun.</string>
     <string name="reminder_notification_text">%1$s boyunca yapılmadı</string>
+    <string name="reminder_auto_notification_text">Bunu genellikle %1$s arayla yapıyorsunuz. Unuttunuz mu?</string>
     <string name="reminder_mark_done">Yapıldı olarak işaretle</string>
     <string name="reminder_channel">Hatırlatıcılar</string>
     <string name="reminder_channel_description">Hatırlatıcılı bir kutucuk bir süredir yapılmadığında.</string>
     <string name="tile_reminder_description">Hatırlatıcı: %1$s</string>
+    <string name="tile_reminder_auto_description">Otomatik hatırlatıcı</string>
     <string name="delete_tile">Kutucuğu sil</string>
     <string name="tile_preview">Önizleme</string>
     <string name="tile_preview_name">Yeni kutucuk</string>

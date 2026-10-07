@@ -80,6 +80,17 @@ class RelativeTimeTest {
     }
 
     @Test
+    fun approximateUsesOneUnitCountingAtLeastTwo() {
+        assertEquals(TimePart(TimeUnit.HOUR, 8), RelativeTime.approximate(Duration.ofHours(8).plusMinutes(12)))
+        assertEquals(TimePart(TimeUnit.HOUR, 24), RelativeTime.approximate(Duration.ofDays(1)))
+        assertEquals(TimePart(TimeUnit.HOUR, 36), RelativeTime.approximate(Duration.ofHours(36)))
+        assertEquals(TimePart(TimeUnit.DAY, 3), RelativeTime.approximate(Duration.ofHours(62)))
+        assertEquals(TimePart(TimeUnit.MINUTE, 90), RelativeTime.approximate(Duration.ofMinutes(90)))
+        assertEquals(TimePart(TimeUnit.DAY, 400), RelativeTime.approximate(Duration.ofDays(400)))
+        assertEquals(TimePart(TimeUnit.YEAR, 2), RelativeTime.approximate(Duration.ofDays(730)))
+    }
+
+    @Test
     fun nextChangeOfAFutureTimeIsThatTime() {
         assertEquals(now, RelativeTime.nextChange(now, now - Duration.ofMinutes(1)))
     }

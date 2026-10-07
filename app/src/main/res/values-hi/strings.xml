@@ -97,12 +97,18 @@
     </plurals>
     <string name="reminder_remove">हटाएं</string>
     <string name="reminder_hint">अगर %1$s तक नहीं किया गया, तो आपको नोटिफ़िकेशन मिलेगा।</string>
+    <string name="reminder_mode_auto">स्वचालित</string>
+    <string name="reminder_mode_custom">कस्टम</string>
+    <string name="reminder_auto_hint">आप इसे आमतौर पर हर %1$s में करते हैं। देर होने पर आपको सूचना मिलेगी, रात में कभी नहीं।</string>
+    <string name="reminder_auto_learning">अभी इतने नियमित टैप नहीं हैं कि पता चले आप इसे कितनी बार करते हैं। कोई पैटर्न बनते ही रिमाइंडर शुरू हो जाएगा, कम से कम 5 टैप के बाद।</string>
     <string name="reminder_notifications_off">Time Clicker के नोटिफ़िकेशन बंद हैं, इसलिए रिमाइंडर नहीं दिख सकते। अनुमति देने के लिए टैप करें।</string>
     <string name="reminder_notification_text">%1$s से नहीं किया गया</string>
+    <string name="reminder_auto_notification_text">आप इसे आमतौर पर हर %1$s में करते हैं। कहीं भूल तो नहीं गए?</string>
     <string name="reminder_mark_done">हो गया मार्क करें</string>
     <string name="reminder_channel">रिमाइंडर</string>
     <string name="reminder_channel_description">जब रिमाइंडर वाली कोई टाइल कुछ समय से न की गई हो।</string>
     <string name="tile_reminder_description">रिमाइंडर: %1$s</string>
+    <string name="tile_reminder_auto_description">स्वचालित रिमाइंडर</string>
     <string name="delete_tile">टाइल मिटाएं</string>
     <string name="tile_preview">झलक</string>
     <string name="tile_preview_name">नई टाइल</string>

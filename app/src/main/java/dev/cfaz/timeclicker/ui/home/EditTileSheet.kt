@@ -56,6 +56,7 @@ import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import dev.cfaz.timeclicker.R
 import dev.cfaz.timeclicker.data.Reminder
+import dev.cfaz.timeclicker.data.Rhythm
 import dev.cfaz.timeclicker.data.TileColor
 import dev.cfaz.timeclicker.data.TileIcon
 import dev.cfaz.timeclicker.data.TileSize
@@ -107,6 +108,8 @@ private enum class Background { COLOUR, PHOTO }
 fun EditTileSheet(
     /** The tile being edited, as saved. */
     saved: Tracker,
+    /** How often the tile is usually done, for an automatic reminder; null when it has no regular pace (yet). */
+    rhythm: Rhythm?,
     groups: List<TrackerGroup>,
     photoFile: (String) -> File,
     importPhoto: suspend (Uri) -> String?,
@@ -311,7 +314,7 @@ fun EditTileSheet(
                 }
             }
 
-            ReminderSection(reminder = draft.reminder, onChange = { draft = draft.copy(reminder = it) })
+            ReminderSection(reminder = draft.reminder, rhythm = rhythm, onChange = { draft = draft.copy(reminder = it) })
 
             if (onAddWidget != null) {
                 Row(

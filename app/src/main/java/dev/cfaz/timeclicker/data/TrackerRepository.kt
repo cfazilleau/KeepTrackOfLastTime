@@ -41,7 +41,7 @@ class TrackerRepository(
                 size = spec.size.key,
                 photo = spec.photo,
                 reminderEvery = spec.reminder?.every,
-                reminderUnit = spec.reminder?.unit?.key,
+                reminderUnit = spec.reminder?.unitKey,
             )
         )
         cleanUpPhotos()
@@ -51,7 +51,7 @@ class TrackerRepository(
     suspend fun updateTracker(trackerId: Long, spec: TileSpec) {
         dao.updateTracker(
             trackerId, spec.name, spec.groupId, spec.color.key, spec.icon.key, spec.size.key, spec.photo,
-            spec.reminder?.every, spec.reminder?.unit?.key,
+            spec.reminder?.every, spec.reminder?.unitKey,
         )
         cleanUpPhotos()
     }
@@ -63,6 +63,10 @@ class TrackerRepository(
 
     /** Reorders some trackers among themselves, e.g. one group's; the others don't move. */
     suspend fun reorderTrackers(orderedIds: List<Long>) = dao.reorderTrackers(orderedIds)
+
+    /** How often the tracker is usually done, from its recent history; null when it isn't regular. */
+    suspend fun rhythm(trackerId: Long): Rhythm? =
+        Rhythm.of(dao.recentEventTimes(trackerId, Rhythm.EVENTS_USED).map(Instant::ofEpochMilli))
 
     /** Records that the tracker was done now. Returns the event id, usable with [undoMarkDone]. */
     suspend fun markDone(trackerId: Long): Long =

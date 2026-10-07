@@ -16,6 +16,7 @@ import androidx.core.content.edit
 import dev.cfaz.timeclicker.MainActivity
 import dev.cfaz.timeclicker.R
 import dev.cfaz.timeclicker.TimeClickerApplication
+import dev.cfaz.timeclicker.data.Rhythm
 import dev.cfaz.timeclicker.data.Tracker
 import dev.cfaz.timeclicker.ui.time.RelativeTime
 import dev.cfaz.timeclicker.ui.time.TimeUnit
@@ -24,10 +25,12 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import java.time.Instant
+import java.time.ZoneId
 
 /**
  * Tile reminders: a notification once a tile with a [dev.cfaz.timeclicker.data.Reminder] hasn't been done for
- * its delay. One per lapse: done again, the wait starts over.
+ * its delay, or, for an automatic one, once it is late on its usual pace ([Rhythm]; never at night, and not until
+ * the tile has a regular pace). One per lapse: done again, the wait starts over.
  *
  * One alarm is set, for the next tile to become due. [update] posts the reminders of tiles that became due (each
  * remembered by its due time, so it is posted once), removes those of tiles done since, and sets the alarm again.
@@ -53,16 +56,23 @@ object Reminders {
         val app = context.applicationContext
         val posted = app.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
         val now = Instant.now()
+        val zone = ZoneId.systemDefault()
         val trackers = app.trackers().filter { it.reminder != null }
-        val due = trackers.filter { it.reminder!!.isDue(it.lastDoneAt, now) }
+        val rhythms = trackers.filter { it.reminder!!.auto }.associate { it.id to app.rhythm(it.id) }
+        // Null for an automatic reminder without a regular pace yet.
+        val dueTimes = trackers.associate { tracker ->
+            val reminder = tracker.reminder!!
+            tracker.id to if (reminder.auto) rhythms[tracker.id]?.dueAt(tracker.lastDoneAt, zone) else reminder.dueAt(tracker.lastDoneAt)
+        }
+        val due = trackers.filter { dueTimes[it.id]?.let { at -> at <= now } == true }
 
         ensureChannel(app)
-        val newlyDue = due.filter { posted.getLong(it.id.toString(), -1) != it.reminder!!.dueAt(it.lastDoneAt).toEpochMilli() }
-        newlyDue.forEach { notify(app, it, now) }
+        val newlyDue = due.filter { posted.getLong(it.id.toString(), -1) != dueTimes[it.id]!!.toEpochMilli() }
+        newlyDue.forEach { notify(app, it, rhythms[it.id], now) }
         posted.edit {
             // Tiles without a reminder (or deleted) are forgotten.
             clear()
-            due.forEach { putLong(it.id.toString(), it.reminder!!.dueAt(it.lastDoneAt).toEpochMilli()) }
+            due.forEach { putLong(it.id.toString(), dueTimes[it.id]!!.toEpochMilli()) }
         }
         // Done since, reminder removed, or tile deleted: the notification goes.
         val dueIds = due.map { it.id }.toSet()
@@ -70,7 +80,7 @@ object Reminders {
             .filter { it.tag == TAG && it.id.toLong() !in dueIds }
             .forEach { NotificationManagerCompat.from(app).cancel(TAG, it.id) }
 
-        schedule(app, trackers.map { it.reminder!!.dueAt(it.lastDoneAt) }.filter { it > now }.minOrNull())
+        schedule(app, dueTimes.values.filterNotNull().filter { it > now }.minOrNull())
     }
 
     /** Removes the reminder of a tile just done from its notification. */
@@ -92,10 +102,15 @@ object Reminders {
         if (next == null) alarms.cancel(alarm) else alarms.setWindow(AlarmManager.RTC_WAKEUP, next.toEpochMilli(), WINDOW_MILLIS, alarm)
     }
 
-    private fun notify(context: Context, tracker: Tracker, now: Instant) {
+    /** [rhythm]: the tile's usual pace, for an automatic reminder. */
+    private fun notify(context: Context, tracker: Tracker, rhythm: Rhythm?, now: Instant) {
         if (!canNotify(context)) return
         val resources = context.resources
-        val elapsed = RelativeTime.split(tracker.lastDoneAt, now, TimeUnit.MINUTE).format(resources)
+        val text = if (rhythm != null) {
+            resources.getString(R.string.reminder_auto_notification_text, RelativeTime.approximate(rhythm.typical).format(resources))
+        } else {
+            resources.getString(R.string.reminder_notification_text, RelativeTime.split(tracker.lastDoneAt, now, TimeUnit.MINUTE).format(resources))
+        }
         val id = tracker.id.toInt()
         val open = PendingIntent.getActivity(
             context, id,
@@ -110,7 +125,7 @@ object Reminders {
         val notification = NotificationCompat.Builder(context, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_notification)
             .setContentTitle(tracker.name)
-            .setContentText(resources.getString(R.string.reminder_notification_text, elapsed))
+            .setContentText(text)
             .setWhen(now.toEpochMilli())
             .setShowWhen(true)
             .setCategory(NotificationCompat.CATEGORY_REMINDER)
@@ -132,4 +147,7 @@ object Reminders {
 
     private suspend fun Context.trackers(): List<Tracker> =
         (this as TimeClickerApplication).container.trackerRepository.observeTrackers().first()
+
+    private suspend fun Context.rhythm(trackerId: Long): Rhythm? =
+        (this as TimeClickerApplication).container.trackerRepository.rhythm(trackerId)
 }

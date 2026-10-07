@@ -8,6 +8,7 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import dev.cfaz.timeclicker.TimeClickerApplication
 import dev.cfaz.timeclicker.data.PendingUndo
+import dev.cfaz.timeclicker.data.Rhythm
 import dev.cfaz.timeclicker.data.SettingsRepository
 import dev.cfaz.timeclicker.data.TileColor
 import dev.cfaz.timeclicker.data.TileIcon
@@ -127,6 +128,9 @@ class HomeViewModel(
     suspend fun createGroup(name: String): Long = repository.createGroup(name.trim())
 
     suspend fun importPhoto(uri: Uri): String? = repository.importPhoto(uri)
+
+    /** How often the tile is usually done, for its automatic reminder; null when it has no regular pace yet. */
+    suspend fun rhythm(trackerId: Long): Rhythm? = repository.rhythm(trackerId)
 
     fun photoFile(name: String): File = repository.photoFile(name)
 
