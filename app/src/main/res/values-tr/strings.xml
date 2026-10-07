@@ -182,8 +182,7 @@
     <!-- %1$s is a number of tiles, e.g. "3 tiles". -->
     <string name="import_done">Yedek içe aktarıldı: %1$s</string>
     <string name="import_failed">Bu dosya bir Time Clicker yedeği değil veya okunamadı.</string>
-    <string name="support_text">Bunu tutkuyla ve insanların hayatını kolaylaştırmak için yapıyoruz. Uygulamaya asla reklam veya ücretli özellik eklemeyeceğiz. Destek olmak hiçbir zaman zorunlu değildir.</string>
-    <string name="action_donate">Bizi Ko-fi’de destekleyin</string>
+    <string name="support_text">Bunu tutkuyla ve insanların hayatını kolaylaştırmak için yapıyoruz. Uygulamaya asla reklam veya ücretli özellik eklemeyeceğiz.</string>
     <string name="settings_version">Sürüm %1$s</string>
 
     <!-- Home-screen widget -->

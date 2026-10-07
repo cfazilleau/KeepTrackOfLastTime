@@ -196,8 +196,7 @@
     <!-- %1$s is a number of tiles, e.g. "3 tiles". -->
     <string name="import_done">Zaimportowano kopię zapasową: %1$s</string>
     <string name="import_failed">Ten plik nie jest kopią zapasową Time Clicker albo nie udało się go odczytać.</string>
-    <string name="support_text">Tworzymy z pasji i po to, by ułatwiać ludziom życie. Nigdy nie dodamy do aplikacji reklam ani płatnych funkcji. Wsparcie nigdy nie jest obowiązkowe.</string>
-    <string name="action_donate">Wesprzyj nas na Ko-fi</string>
+    <string name="support_text">Tworzymy z pasji i po to, by ułatwiać ludziom życie. Nigdy nie dodamy do aplikacji reklam ani płatnych funkcji.</string>
     <string name="settings_version">Wersja %1$s</string>
 
     <!-- Home-screen widget -->

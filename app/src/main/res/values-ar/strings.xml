@@ -210,8 +210,7 @@
     <!-- %1$s is a number of tiles, e.g. "3 tiles". -->
     <string name="import_done">استُوردت النسخة الاحتياطية: %1$s</string>
     <string name="import_failed">هذا الملف ليس نسخة احتياطية من Time Clicker، أو تعذّرت قراءته.</string>
-    <string name="support_text">نصنع ما نصنعه بشغف ولتسهيل حياة الناس. لن نضيف أبدًا إعلانات أو ميزات مدفوعة إلى التطبيق. المساهمة ليست إلزامية أبدًا.</string>
-    <string name="action_donate">ادعمنا على Ko-fi</string>
+    <string name="support_text">نصنع ما نصنعه بشغف ولتسهيل حياة الناس. لن نضيف أبدًا إعلانات أو ميزات مدفوعة إلى التطبيق.</string>
     <string name="settings_version">الإصدار %1$s</string>
 
     <!-- Home-screen widget -->

@@ -182,8 +182,7 @@
     <!-- %1$s is a number of tiles, e.g. "3 tiles". -->
     <string name="import_done">बैकअप इंपोर्ट हो गया: %1$s</string>
     <string name="import_failed">यह फ़ाइल Time Clicker का बैकअप नहीं है, या इसे पढ़ा नहीं जा सका।</string>
-    <string name="support_text">हम जुनून से और लोगों की ज़िंदगी आसान बनाने के लिए चीज़ें बनाते हैं। हम ऐप में कभी भी विज्ञापन या पेड फ़ीचर नहीं जोड़ेंगे। योगदान देना कभी भी ज़रूरी नहीं है।</string>
-    <string name="action_donate">Ko-fi पर हमारा साथ दें</string>
+    <string name="support_text">हम जुनून से और लोगों की ज़िंदगी आसान बनाने के लिए चीज़ें बनाते हैं। हम ऐप में कभी भी विज्ञापन या पेड फ़ीचर नहीं जोड़ेंगे।</string>
     <string name="settings_version">वर्शन %1$s</string>
 
     <!-- Home-screen widget -->

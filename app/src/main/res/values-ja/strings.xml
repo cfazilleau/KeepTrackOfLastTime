@@ -175,8 +175,7 @@
     <!-- %1$s is a number of tiles, e.g. "3 tiles". -->
     <string name="import_done">バックアップをインポートしました: %1$s</string>
     <string name="import_failed">このファイルはTime Clickerのバックアップではないか、読み込めませんでした。</string>
-    <string name="support_text">私たちは情熱を持って、そして人々の暮らしを少しでも楽にするためにアプリを作っています。広告や有料機能を追加することは決してありません。支援はあくまで任意です。</string>
-    <string name="action_donate">Ko-fiで支援する</string>
+    <string name="support_text">私たちは情熱を持って、そして人々の暮らしを少しでも楽にするためにアプリを作っています。広告や有料機能を追加することは決してありません。</string>
     <string name="settings_version">バージョン %1$s</string>
 
     <!-- Home-screen widget -->

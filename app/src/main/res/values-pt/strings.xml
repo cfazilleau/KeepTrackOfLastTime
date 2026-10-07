@@ -189,8 +189,7 @@
     <!-- %1$s is a number of tiles, e.g. "3 tiles". -->
     <string name="import_done">Backup importado: %1$s</string>
     <string name="import_failed">Esse arquivo não é um backup do Time Clicker ou não pôde ser lido.</string>
-    <string name="support_text">Fazemos as coisas por paixão e para facilitar a vida das pessoas. Nunca vamos adicionar anúncios nem recursos pagos ao app. Contribuir nunca é obrigatório.</string>
-    <string name="action_donate">Apoie-nos no Ko-fi</string>
+    <string name="support_text">Fazemos as coisas por paixão e para facilitar a vida das pessoas. Nunca vamos adicionar anúncios nem recursos pagos ao app.</string>
     <string name="settings_version">Versão %1$s</string>
 
     <!-- Home-screen widget -->

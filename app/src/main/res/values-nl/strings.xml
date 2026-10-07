@@ -182,8 +182,7 @@
     <!-- %1$s is a number of tiles, e.g. "3 tiles". -->
     <string name="import_done">Back-up geïmporteerd: %1$s</string>
     <string name="import_failed">Dat bestand is geen Time Clicker-back-up of kan niet worden gelezen.</string>
-    <string name="support_text">We maken dingen uit passie en om het leven van mensen makkelijker te maken. We voegen nooit advertenties of betaalde functies toe aan de app. Bijdragen is nooit verplicht.</string>
-    <string name="action_donate">Steun ons op Ko-fi</string>
+    <string name="support_text">We maken dingen uit passie en om het leven van mensen makkelijker te maken. We voegen nooit advertenties of betaalde functies toe aan de app.</string>
     <string name="settings_version">Versie %1$s</string>
 
     <!-- Home-screen widget -->

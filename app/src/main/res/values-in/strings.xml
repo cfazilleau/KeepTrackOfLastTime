@@ -175,8 +175,7 @@
     <!-- %1$s is a number of tiles, e.g. "3 tiles". -->
     <string name="import_done">Cadangan diimpor: %1$s</string>
     <string name="import_failed">File itu bukan cadangan Time Clicker, atau tidak dapat dibaca.</string>
-    <string name="support_text">Kami membuat ini karena kecintaan kami dan untuk memudahkan hidup orang lain. Kami tidak akan pernah menambahkan iklan atau fitur berbayar ke aplikasi. Berkontribusi tidak pernah wajib.</string>
-    <string name="action_donate">Dukung kami di Ko-fi</string>
+    <string name="support_text">Kami membuat ini karena kecintaan kami dan untuk memudahkan hidup orang lain. Kami tidak akan pernah menambahkan iklan atau fitur berbayar ke aplikasi.</string>
     <string name="settings_version">Versi %1$s</string>
 
     <!-- Home-screen widget -->

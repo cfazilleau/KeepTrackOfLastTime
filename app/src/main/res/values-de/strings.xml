@@ -182,8 +182,7 @@
     <!-- %1$s is a number of tiles, e.g. "3 tiles". -->
     <string name="import_done">Sicherung importiert: %1$s</string>
     <string name="import_failed">Diese Datei ist keine Time-Clicker-Sicherung oder konnte nicht gelesen werden.</string>
-    <string name="support_text">Wir entwickeln aus Leidenschaft und um das Leben der Menschen einfacher zu machen. Wir werden der App niemals Werbung oder kostenpflichtige Funktionen hinzufügen. Ein Beitrag ist niemals Pflicht.</string>
-    <string name="action_donate">Unterstütze uns auf Ko-fi</string>
+    <string name="support_text">Wir entwickeln aus Leidenschaft und um das Leben der Menschen einfacher zu machen. Wir werden der App niemals Werbung oder kostenpflichtige Funktionen hinzufügen.</string>
     <string name="settings_version">Version %1$s</string>
 
     <!-- Home-screen widget -->

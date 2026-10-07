@@ -189,8 +189,7 @@
     <!-- %1$s is a number of tiles, e.g. "3 tiles". -->
     <string name="import_done">Sauvegarde importée : %1$s</string>
     <string name="import_failed">Ce fichier n’est pas une sauvegarde Time Clicker, ou il n’a pas pu être lu.</string>
-    <string name="support_text">Nous créons par passion et pour faciliter la vie des gens. Nous n’ajouterons jamais de publicités ni de fonctionnalités payantes à l’app. Contribuer n’est jamais obligatoire.</string>
-    <string name="action_donate">Soutenez-nous sur Ko-fi</string>
+    <string name="support_text">Nous créons par passion et pour faciliter la vie des gens. Nous n’ajouterons jamais de publicités ni de fonctionnalités payantes à l’app.</string>
     <string name="settings_version">Version %1$s</string>
 
     <!-- Home-screen widget -->

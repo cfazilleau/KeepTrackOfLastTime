@@ -175,8 +175,7 @@
     <!-- %1$s is a number of tiles, e.g. "3 tiles". -->
     <string name="import_done">已导入备份：%1$s</string>
     <string name="import_failed">该文件不是 Time Clicker 备份，或无法读取。</string>
-    <string name="support_text">我们出于热爱而创作，只为让大家的生活更轻松。我们永远不会在应用中添加广告或付费功能。是否支持我们，完全自愿。</string>
-    <string name="action_donate">在 Ko-fi 上支持我们</string>
+    <string name="support_text">我们出于热爱而创作，只为让大家的生活更轻松。我们永远不会在应用中添加广告或付费功能。</string>
     <string name="settings_version">版本 %1$s</string>
 
     <!-- Home-screen widget -->

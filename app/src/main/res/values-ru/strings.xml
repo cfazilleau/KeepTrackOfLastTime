@@ -196,8 +196,7 @@
     <!-- %1$s is a number of tiles, e.g. "3 tiles". -->
     <string name="import_done">Резервная копия импортирована: %1$s</string>
     <string name="import_failed">Этот файл не является резервной копией Time Clicker, или его не удалось прочитать.</string>
-    <string name="support_text">Мы делаем всё это из любви к своему делу и чтобы облегчить людям жизнь. Мы никогда не добавим в приложение рекламу или платные функции. Поддерживать нас никогда не обязательно.</string>
-    <string name="action_donate">Поддержите нас на Ko-fi</string>
+    <string name="support_text">Мы делаем всё это из любви к своему делу и чтобы облегчить людям жизнь. Мы никогда не добавим в приложение рекламу или платные функции.</string>
     <string name="settings_version">Версия %1$s</string>
 
     <!-- Home-screen widget -->

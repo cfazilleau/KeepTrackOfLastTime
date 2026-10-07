@@ -175,8 +175,7 @@
     <!-- %1$s is a number of tiles, e.g. "3 tiles". -->
     <string name="import_done">백업을 가져왔어요: %1$s</string>
     <string name="import_failed">Time Clicker 백업 파일이 아니거나 파일을 읽을 수 없어요.</string>
-    <string name="support_text">저희는 열정으로, 그리고 사람들의 삶을 더 편하게 만들기 위해 앱을 만들어요. 앱에 광고나 유료 기능을 추가하는 일은 절대 없을 거예요. 후원은 언제나 선택이에요.</string>
-    <string name="action_donate">Ko-fi에서 후원하기</string>
+    <string name="support_text">저희는 열정으로, 그리고 사람들의 삶을 더 편하게 만들기 위해 앱을 만들어요. 앱에 광고나 유료 기능을 추가하는 일은 절대 없을 거예요.</string>
     <string name="settings_version">버전 %1$s</string>
 
     <!-- Home-screen widget -->
