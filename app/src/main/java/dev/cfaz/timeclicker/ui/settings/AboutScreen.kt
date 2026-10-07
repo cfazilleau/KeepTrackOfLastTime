@@ -94,7 +94,7 @@ private val credits = listOf(
     Credit("Kotlin & kotlinx.coroutines", R.string.credit_kotlin, "Apache 2.0", APACHE, "https://kotlinlang.org"),
 )
 
-/** The app's version, a way to support it, and the open-source projects it is built with (tap one for its licence). */
+/** The app's version, a way to support it, how it was made, and the open-source projects it is built with (tap one for its licence). */
 @Composable
 fun AboutScreen(onBack: () -> Unit) {
     val palette = TimeClickerTheme.palette
@@ -146,6 +146,13 @@ fun AboutScreen(onBack: () -> Unit) {
                                 // No browser.
                             }
                         },
+                        modifier = Modifier.padding(top = 16.dp),
+                    )
+                    Text(
+                        stringResource(R.string.about_made_with_claude),
+                        style = MaterialTheme.typography.labelSmall,
+                        color = palette.muted,
+                        textAlign = TextAlign.Center,
                         modifier = Modifier.padding(top = 16.dp),
                     )
                 }

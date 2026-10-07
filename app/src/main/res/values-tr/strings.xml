@@ -271,6 +271,7 @@
 
     <!-- About -->
     <string name="about_title">Hakkında</string>
+    <string name="about_made_with_claude">Bu uygulama tamamen Anthropic’in yapay zekâsı Claude ile oluşturuldu.</string>
 
     <!-- Credits -->
     <string name="credits_title">Emeği geçenler</string>

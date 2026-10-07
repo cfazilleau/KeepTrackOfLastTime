@@ -279,6 +279,7 @@
 
     <!-- About -->
     <string name="about_title">Informazioni</string>
+    <string name="about_made_with_claude">Questa app è stata creata interamente con Claude, un’IA di Anthropic.</string>
 
     <!-- Credits -->
     <string name="credits_title">Riconoscimenti</string>

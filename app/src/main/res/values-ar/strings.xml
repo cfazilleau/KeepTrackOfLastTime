@@ -303,6 +303,7 @@
 
     <!-- About -->
     <string name="about_title">حول التطبيق</string>
+    <string name="about_made_with_claude">أُنشئ هذا التطبيق بالكامل باستخدام Claude، وهو ذكاء اصطناعي من Anthropic.</string>
 
     <!-- Credits -->
     <string name="credits_title">شكر وتقدير</string>
