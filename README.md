@@ -62,7 +62,7 @@ tile photos are copied into the app's private storage too.
 ## Project layout
 
 ```
-app/src/main/java/com/keeptrack/timeclicker/
+app/src/main/java/dev/cfaz/timeclicker/
 ├── TimeClickerApplication.kt  # creates the AppContainer
 ├── AppContainer.kt            # manual dependency injection
 ├── MainActivity.kt            # Home <-> Groups screen switch
@@ -131,7 +131,7 @@ Requires JDK 17+ and the Android SDK (Android Studio sets this up).
 ./gradlew testDebugUnitTest      # unit tests
 ```
 
-The debug build installs as a separate app (`com.keeptrack.lasttime.debug`), so it can live next to the release build.
+The debug build installs as a separate app (`dev.cfaz.timeclicker.debug`), so it can live next to the release build.
 
 ## CI: building the APK on GitHub
 

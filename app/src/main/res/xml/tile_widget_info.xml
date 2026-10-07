@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- One tile per widget. The app refreshes widgets itself (alarm + data changes), so no updatePeriodMillis. -->
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
-    android:configure="com.keeptrack.timeclicker.widget.TileWidgetConfigActivity"
+    android:configure="dev.cfaz.timeclicker.widget.TileWidgetConfigActivity"
     android:description="@string/widget_description"
     android:initialLayout="@layout/glance_default_loading_layout"
     android:minWidth="110dp"

@@ -10,13 +10,11 @@ plugins {
 val releaseKeystore: String? = System.getenv("KEYSTORE_FILE")
 
 android {
-    namespace = "com.keeptrack.timeclicker"
+    namespace = "dev.cfaz.timeclicker"
     compileSdk = 37
 
     defaultConfig {
-        // Kept from the app's first name ("Last Time"): changing it would make Android treat
-        // Time Clicker as a different app, so updating would lose everyone's tiles and history.
-        applicationId = "com.keeptrack.lasttime"
+        applicationId = "dev.cfaz.timeclicker"
         minSdk = 26
         targetSdk = 37
         versionCode = System.getenv("VERSION_CODE")?.toIntOrNull() ?: 1
