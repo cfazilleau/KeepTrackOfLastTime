@@ -9,8 +9,8 @@ The number in the tile's bottom-right corner counts how many times it was presse
 - **Tap** a tile: mark it as done now. For the next 10 seconds the tile offers to undo it
   ("Tap again to undo", with a ring counting down in its corner): tapping it again undoes the press.
   Widgets do the same (before Android 12 their ring steps once a second), and a press on one can be undone on the other.
-- **Long-press** a tile: edit it in a sheet: name, group, colour or photo background, icon (or none; two rows of recent icons and your icon palette, plus a searchable list of every icon),
-  size (Small / Wide / Tall), a reminder, reset its press counter, add it to the home screen, or delete it.
+- **Long-press** a tile: edit it in a sheet: name, group, colour or photo background, icon (or none; your icon palette, plus a searchable list of every icon with the recently used ones first),
+  size (Small / Wide / Tall), undo its last press or reset its press counter, a reminder, add it to the home screen, or delete it.
   All sizes show the same content.
 - **Reminders**: a tile can notify you when it hasn't been done for a while (N hours, days or weeks since
   its last tap). It notifies once; tapping the tile (or "Mark as done" on the notification) starts the wait over.

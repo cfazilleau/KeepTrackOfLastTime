@@ -1,6 +1,7 @@
 package com.keeptrack.timeclicker.ui.icons
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -29,19 +30,27 @@ import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.PlainTooltip
 import androidx.compose.material3.Text
+import androidx.compose.material3.TooltipAnchorPosition
+import androidx.compose.material3.TooltipBox
+import androidx.compose.material3.TooltipDefaults
+import androidx.compose.material3.rememberTooltipState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
@@ -75,6 +84,7 @@ import com.keeptrack.timeclicker.ui.theme.TimeClickerTheme
 import com.keeptrack.timeclicker.ui.theme.rememberIconCatalog
 import java.text.Collator
 import java.text.Normalizer
+import kotlinx.coroutines.launch
 
 class IconPaletteViewModel(private val settings: SettingsRepository) : ViewModel() {
 
@@ -148,6 +158,7 @@ fun IconPaletteScreen(
                 catalog,
                 query,
                 iconPalette,
+                firstTitle = stringResource(R.string.icon_palette_yours),
                 isHighlighted = { it in selected },
                 onClick = viewModel::toggle,
                 editsPalette = true,
@@ -195,7 +206,8 @@ internal fun IconSearchField(query: String, onQueryChange: (String) -> Unit, gut
 }
 
 /**
- * The palette then every category; with a search, the matching icons instead.
+ * The [first] icons under [firstTitle] (the palette, or the recently used icons), then every category; with a
+ * search, the matching icons instead.
  * [editsPalette]: tapping an icon toggles it in the palette (with hints about it), rather than choosing it.
  * [gutter] pads the grid's sides.
  */
@@ -203,7 +215,8 @@ internal fun IconSearchField(query: String, onQueryChange: (String) -> Unit, gut
 internal fun IconGrid(
     catalog: IconCatalog,
     query: String,
-    iconPalette: List<TileIcon>,
+    first: List<TileIcon>,
+    firstTitle: String,
     isHighlighted: (TileIcon) -> Boolean,
     onClick: (TileIcon) -> Unit,
     editsPalette: Boolean,
@@ -243,7 +256,7 @@ internal fun IconGrid(
             words.all { word -> iconWords.any { it.startsWith(word) } }
         }
     }
-    val chosen = remember(catalog, iconPalette) { iconPalette.mapNotNull { catalog[it] } }
+    val chosen = remember(catalog, first) { first.mapNotNull { catalog[it] } }
 
     LazyVerticalGrid(
         columns = GridCells.Adaptive(56.dp),
@@ -268,9 +281,13 @@ internal fun IconGrid(
             if (results.isEmpty()) note("no-results", resources.getString(R.string.icon_palette_no_results, query.trim()))
             items(results, key = { "r:${it.icon.key}" }, contentType = { "icon" }) { cell(it) }
         } else {
-            if (editsPalette || chosen.isNotEmpty()) header("yours", resources.getString(R.string.icon_palette_yours), chosen.size)
+            if (editsPalette || chosen.isNotEmpty()) header("first", firstTitle, chosen.size)
             if (editsPalette) {
                 note("hint", resources.getString(if (chosen.isEmpty()) R.string.icon_palette_empty else R.string.icon_palette_hint))
+            }
+            // As in the edit sheet, where "No icon" comes before the palette; it can't be removed.
+            if (editsPalette) {
+                item(key = "none", contentType = "icon") { NoIconCell(iconLabel(resources, TileIcon.NONE)) }
             }
             items(chosen, key = { "p:${it.icon.key}" }, contentType = { "icon" }) { cell(it) }
             categories.forEach { category ->
@@ -338,6 +355,36 @@ private fun IconCell(
     ) {
         if (vector != null) {
             Icon(vector, null, tint = if (highlighted) onHighlight else palette.text, modifier = Modifier.size(24.dp))
+        }
+    }
+}
+
+/**
+ * "No icon", shown faded before the palette: it is always offered, so it can't be toggled.
+ * Tapping it says so in a tooltip.
+ */
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun NoIconCell(label: String) {
+    val palette = TimeClickerTheme.palette
+    val tooltip = rememberTooltipState()
+    val scope = rememberCoroutineScope()
+    TooltipBox(
+        positionProvider = TooltipDefaults.rememberTooltipPositionProvider(TooltipAnchorPosition.Above),
+        tooltip = { PlainTooltip { Text(stringResource(R.string.icon_palette_none_fixed)) } },
+        state = tooltip,
+    ) {
+        Box(
+            Modifier
+                .aspectRatio(1f)
+                .alpha(0.45f)
+                .clip(RoundedCornerShape(14.dp))
+                .background(palette.field)
+                .clickable(role = Role.Button) { scope.launch { tooltip.show() } }
+                .semantics { contentDescription = label },
+            contentAlignment = Alignment.Center,
+        ) {
+            Icon(AppIcons.NoIcon, null, tint = palette.text, modifier = Modifier.size(24.dp))
         }
     }
 }

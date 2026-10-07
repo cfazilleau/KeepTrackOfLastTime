@@ -104,6 +104,19 @@ interface TrackerDao {
     @Query("DELETE FROM tracker_events WHERE id = :eventId")
     suspend fun deleteEvent(eventId: Long)
 
+    /** Deletes the tracker's latest event counted by its press counter. Returns how many were deleted: 0 or 1. */
+    @Query(
+        """
+        DELETE FROM tracker_events WHERE id = (
+            SELECT e.id FROM tracker_events e JOIN trackers t ON t.id = e.tracker_id
+            WHERE e.tracker_id = :trackerId AND e.done_at > t.count_since
+            ORDER BY e.done_at DESC, e.id DESC
+            LIMIT 1
+        )
+        """
+    )
+    suspend fun deleteLastCountedEvent(trackerId: Long): Int
+
     // --- Groups ---
 
     @Query("SELECT * FROM tracker_groups ORDER BY position, id")

@@ -79,6 +79,7 @@
     <string name="size_tall">Hoch</string>
     <string name="label_counter">Zähler</string>
     <string name="counter_reset">Zurücksetzen</string>
+    <string name="counter_undo_last">Letzten Druck rückgängig machen</string>
     <string name="widget_add">Zum Startbildschirm hinzufügen</string>
     <string name="widget_add_hint">Zeigt diese Kachel als Widget. Tippe auf das Widget, um sie als erledigt zu markieren.</string>
     <string name="label_reminder">Erinnerung</string>
@@ -124,6 +125,7 @@
     <string name="icon_choice">Symbol: %1$s</string>
     <string name="icon_all">Alle Symbole</string>
     <string name="icon_chooser_title">Symbol auswählen</string>
+    <string name="icon_recent">Zuletzt verwendet</string>
     <string name="icon_none">Kein Symbol</string>
     <string name="icon_check">Häkchen</string>
     <string name="icon_drop">Wassertropfen</string>
@@ -234,6 +236,7 @@
     <string name="icon_palette_yours">Deine Palette</string>
     <string name="icon_palette_hint">Tippe auf ein Symbol, um es deiner Palette hinzuzufügen; tippe erneut darauf, um es zu entfernen.</string>
     <string name="icon_palette_empty">Deine Palette ist leer. Tippe unten auf Symbole, um sie hinzuzufügen.</string>
+    <string name="icon_palette_none_fixed">„Kein Symbol“ wird immer zuerst angeboten und kann nicht entfernt werden.</string>
     <string name="icon_palette_results">Ergebnisse</string>
     <string name="icon_palette_no_results">Keine Symbole für „%1$s“ gefunden.</string>
     <string name="icon_palette_reset">Auf Standardsymbole zurücksetzen</string>

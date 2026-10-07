@@ -91,6 +91,7 @@
     <string name="size_tall">Wysoki</string>
     <string name="label_counter">Licznik</string>
     <string name="counter_reset">Resetuj</string>
+    <string name="counter_undo_last">Cofnij ostatnie naciśnięcie</string>
     <string name="widget_add">Dodaj do ekranu głównego</string>
     <string name="widget_add_hint">Pokazuje ten kafelek jako widżet. Stuknij widżet, aby oznaczyć jako zrobione.</string>
     <string name="label_reminder">Przypomnienie</string>
@@ -138,6 +139,7 @@
     <string name="icon_choice">Ikona: %1$s</string>
     <string name="icon_all">Wszystkie ikony</string>
     <string name="icon_chooser_title">Wybierz ikonę</string>
+    <string name="icon_recent">Ostatnio używane</string>
     <string name="icon_none">Bez ikony</string>
     <string name="icon_check">Ptaszek</string>
     <string name="icon_drop">Kropla wody</string>
@@ -250,6 +252,7 @@
     <string name="icon_palette_yours">Twoja paleta</string>
     <string name="icon_palette_hint">Stuknij ikonę, aby dodać ją do palety; stuknij ponownie, aby ją usunąć.</string>
     <string name="icon_palette_empty">Twoja paleta jest pusta. Stuknij ikony poniżej, aby je dodać.</string>
+    <string name="icon_palette_none_fixed">„Bez ikony” jest zawsze dostępne jako pierwsze i nie można go usunąć.</string>
     <string name="icon_palette_results">Wyniki</string>
     <string name="icon_palette_no_results">Brak ikon pasujących do „%1$s”.</string>
     <string name="icon_palette_reset">Przywróć domyślne ikony</string>

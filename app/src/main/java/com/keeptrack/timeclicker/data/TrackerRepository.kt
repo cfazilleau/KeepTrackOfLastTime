@@ -70,6 +70,12 @@ class TrackerRepository(
 
     suspend fun undoMarkDone(eventId: Long) = dao.deleteEvent(eventId)
 
+    /**
+     * Deletes the tracker's last press counted by its counter; the tile's creation, and presses before a counter
+     * reset, are kept. False if there was none.
+     */
+    suspend fun revertLastPress(trackerId: Long): Boolean = dao.deleteLastCountedEvent(trackerId) > 0
+
     // --- Photos ---
 
     suspend fun importPhoto(uri: Uri): String? = photos.import(uri)

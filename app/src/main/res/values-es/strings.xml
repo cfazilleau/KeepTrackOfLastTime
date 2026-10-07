@@ -85,6 +85,7 @@
     <string name="size_tall">Alta</string>
     <string name="label_counter">Contador</string>
     <string name="counter_reset">Restablecer</string>
+    <string name="counter_undo_last">Deshacer la última pulsación</string>
     <string name="widget_add">Añadir a la pantalla de inicio</string>
     <string name="widget_add_hint">Muestra esta tarjeta como widget. Toca el widget para marcarla como hecha.</string>
     <string name="label_reminder">Recordatorio</string>
@@ -131,6 +132,7 @@
     <string name="icon_choice">Icono: %1$s</string>
     <string name="icon_all">Todos los iconos</string>
     <string name="icon_chooser_title">Elige un icono</string>
+    <string name="icon_recent">Usados recientemente</string>
     <string name="icon_none">Sin icono</string>
     <string name="icon_check">Marca</string>
     <string name="icon_drop">Gota de agua</string>
@@ -242,6 +244,7 @@
     <string name="icon_palette_yours">Tu paleta</string>
     <string name="icon_palette_hint">Toca un icono para añadirlo a tu paleta; vuelve a tocarlo para quitarlo.</string>
     <string name="icon_palette_empty">Tu paleta está vacía. Toca los iconos de abajo para añadirlos.</string>
+    <string name="icon_palette_none_fixed">«Sin icono» siempre se ofrece primero y no se puede quitar.</string>
     <string name="icon_palette_results">Resultados</string>
     <string name="icon_palette_no_results">Ningún icono coincide con «%1$s».</string>
     <string name="icon_palette_reset">Restablecer los iconos predeterminados</string>

@@ -79,6 +79,7 @@
     <string name="size_tall">लंबा</string>
     <string name="label_counter">काउंटर</string>
     <string name="counter_reset">रीसेट करें</string>
+    <string name="counter_undo_last">आखिरी टैप पूर्ववत करें</string>
     <string name="widget_add">होम स्क्रीन पर जोड़ें</string>
     <string name="widget_add_hint">इस टाइल को विजेट के रूप में दिखाता है। हो गया मार्क करने के लिए विजेट पर टैप करें।</string>
     <string name="label_reminder">रिमाइंडर</string>
@@ -124,6 +125,7 @@
     <string name="icon_choice">आइकन: %1$s</string>
     <string name="icon_all">सभी आइकन</string>
     <string name="icon_chooser_title">आइकन चुनें</string>
+    <string name="icon_recent">हाल ही में इस्तेमाल किए गए</string>
     <string name="icon_none">कोई आइकन नहीं</string>
     <string name="icon_check">सही का निशान</string>
     <string name="icon_drop">पानी की बूंद</string>
@@ -234,6 +236,7 @@
     <string name="icon_palette_yours">आपका पैलेट</string>
     <string name="icon_palette_hint">किसी आइकन को अपने पैलेट में जोड़ने के लिए उस पर टैप करें; हटाने के लिए फिर से टैप करें।</string>
     <string name="icon_palette_empty">आपका पैलेट खाली है। जोड़ने के लिए नीचे दिए गए आइकन पर टैप करें।</string>
+    <string name="icon_palette_none_fixed">“कोई आइकन नहीं” हमेशा सबसे पहले दिखता है और इसे हटाया नहीं जा सकता।</string>
     <string name="icon_palette_results">नतीजे</string>
     <string name="icon_palette_no_results">“%1$s” से मेल खाता कोई आइकन नहीं है।</string>
     <string name="icon_palette_reset">डिफ़ॉल्ट आइकन पर रीसेट करें</string>

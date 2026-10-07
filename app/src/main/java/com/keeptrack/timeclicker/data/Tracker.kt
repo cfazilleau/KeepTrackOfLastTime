@@ -70,11 +70,13 @@ value class TileIcon(val key: String) {
         val NONE = TileIcon("none")
         val DEFAULT = TileIcon("circle-check")
 
-        /** The icons offered when editing a tile, until the user picks their own palette. */
+        /**
+         * The icons offered when editing a tile, until the user picks their own palette: eleven, so that with
+         * "No icon" they fill two rows of six.
+         */
         val defaultPalette: List<TileIcon> = listOf(
-            "circle-check", "star", "heart", "house", "sparkles", "trash", "washing-machine", "bed", "utensils",
-            "coffee", "shopping-cart", "droplet", "leaf", "sprout", "flower-2", "snowflake", "pill", "dumbbell",
-            "book-open", "phone", "paw-print", "scissors", "paintbrush", "wrench", "car", "gauge",
+            "circle-check", "star", "house", "sparkles", "washing-machine", "trash", "utensils", "shopping-cart",
+            "sprout", "pill", "dumbbell",
         ).map(::TileIcon)
 
         /**

@@ -73,6 +73,7 @@
     <string name="size_tall">길게</string>
     <string name="label_counter">카운터</string>
     <string name="counter_reset">재설정</string>
+    <string name="counter_undo_last">마지막 누름 취소</string>
     <string name="widget_add">홈 화면에 추가</string>
     <string name="widget_add_hint">이 타일을 위젯으로 표시해요. 위젯을 누르면 완료로 표시돼요.</string>
     <string name="label_reminder">알림</string>
@@ -117,6 +118,7 @@
     <string name="icon_choice">아이콘: %1$s</string>
     <string name="icon_all">모든 아이콘</string>
     <string name="icon_chooser_title">아이콘 선택</string>
+    <string name="icon_recent">최근 사용한 아이콘</string>
     <string name="icon_none">아이콘 없음</string>
     <string name="icon_check">체크</string>
     <string name="icon_drop">물방울</string>
@@ -226,6 +228,7 @@
     <string name="icon_palette_yours">내 팔레트</string>
     <string name="icon_palette_hint">아이콘을 누르면 팔레트에 추가되고, 다시 누르면 삭제돼요.</string>
     <string name="icon_palette_empty">팔레트가 비어 있어요. 아래 아이콘을 눌러 추가하세요.</string>
+    <string name="icon_palette_none_fixed">“아이콘 없음”은 항상 맨 앞에 표시되며 삭제할 수 없어요.</string>
     <string name="icon_palette_results">검색 결과</string>
     <string name="icon_palette_no_results">“%1$s”와(과) 일치하는 아이콘이 없어요.</string>
     <string name="icon_palette_reset">기본 아이콘으로 재설정</string>
