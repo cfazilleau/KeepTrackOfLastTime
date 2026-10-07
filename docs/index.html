@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Time Clicker</title>
+<meta name="description" content="A small Android app that tracks when you last did something. Tap a tile when you do it again.">
+<meta name="theme-color" content="#ECEEF3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1B1D22" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="style.css">
+<style>
+  header { text-align: center; margin-bottom: 40px; }
+  .tagline { font-size: 1.15rem; color: var(--muted); margin: 0 auto 24px; max-width: 34em; }
+  .play-badge { display: inline-block; }
+  .play-badge img { display: block; height: 80px; width: auto; }
+  .apk { margin-top: 12px; font-size: .9rem; color: var(--muted); }
+
+  .features { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px 32px; }
+  .features li strong { display: block; }
+  .features li span { color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Time Clicker</h1>
+    <p class="tagline">Tracks <em>when you last did something</em>. Each tile shows how long ago, ticking live. Tap it when you do it again.</p>
+    <a class="play-badge" href="https://play.google.com/store/apps/details?id=dev.cfaz.timeclicker">
+      <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png">
+    </a>
+    <p class="apk">Or <a href="https://github.com/cfazilleau/KeepTrackOfLastTime/releases/latest">download the APK</a> from GitHub.</p>
+  </header>
+
+  <h2>Features</h2>
+  <ul class="features">
+    <li><strong>Undo</strong><span>Tap again within 10 seconds to undo a press.</span></li>
+    <li><strong>Groups</strong><span>Sort tiles into groups and swipe between them.</span></li>
+    <li><strong>Reminders</strong><span>Get notified when something hasn't been done for a while.</span></li>
+    <li><strong>Widgets</strong><span>Put any tile on your home screen and tap it there.</span></li>
+    <li><strong>Make it yours</strong><span>Colours, photos, about 1,900 icons, three tile sizes.</span></li>
+    <li><strong>Material You</strong><span>Light and dark themes, following your system colours on Android 12+.</span></li>
+    <li><strong>16 languages</strong><span>From English and French to Japanese and Arabic.</span></li>
+    <li><strong>Fully offline</strong><span>No account, no tracking. Your data stays on your phone; export it as one file.</span></li>
+  </ul>
+
+  <footer>
+    <p>Made by <a href="https://github.com/cfazilleau">cfazilleau</a>. Icons by <a href="https://lucide.dev">Lucide</a>.</p>
+    <p><a href="privacy.html">Privacy policy</a></p>
+    <p>Google Play and the Google Play logo are trademarks of Google LLC.</p>
+  </footer>
+</main>
+</body>
+</html>
