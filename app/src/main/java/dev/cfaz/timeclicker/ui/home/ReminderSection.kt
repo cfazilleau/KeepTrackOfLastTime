@@ -32,6 +32,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.style.TextAlign
@@ -41,18 +42,22 @@ import androidx.lifecycle.compose.LifecycleEventEffect
 import dev.cfaz.timeclicker.R
 import dev.cfaz.timeclicker.data.Reminder
 import dev.cfaz.timeclicker.data.ReminderUnit
+import dev.cfaz.timeclicker.data.Rhythm
 import dev.cfaz.timeclicker.reminder.Reminders
 import dev.cfaz.timeclicker.ui.components.NeuButton
 import dev.cfaz.timeclicker.ui.components.SegmentedControl
 import dev.cfaz.timeclicker.ui.theme.AppIcons
 import dev.cfaz.timeclicker.ui.theme.TimeClickerTheme
+import dev.cfaz.timeclicker.ui.time.RelativeTime
+import dev.cfaz.timeclicker.ui.time.format
 
 /**
- * The edit sheet's reminder: an "Add a reminder" button, or after how long without being done (N hours, days or
- * weeks) it comes. Notifications are asked for when a reminder is added (Android 13+).
+ * The edit sheet's reminder: an "Add a reminder" button, or when it comes: automatically, when the tile is late on
+ * its usual pace ([rhythm]), or after how long without being done (N hours, days or weeks). A new reminder is
+ * automatic when the tile already has a pace. Notifications are asked for when a reminder is added (Android 13+).
  */
 @Composable
-internal fun ReminderSection(reminder: Reminder?, onChange: (Reminder?) -> Unit) {
+internal fun ReminderSection(reminder: Reminder?, rhythm: Rhythm?, onChange: (Reminder?) -> Unit) {
     val palette = TimeClickerTheme.palette
     val context = LocalContext.current
     // Checked again on return from Android settings, where they may have been turned on.
@@ -81,7 +86,7 @@ internal fun ReminderSection(reminder: Reminder?, onChange: (Reminder?) -> Unit)
                 .clip(RoundedCornerShape(16.dp))
                 .background(palette.field)
                 .clickable(role = Role.Button) {
-                    onChange(Reminder.DEFAULT)
+                    onChange(if (rhythm != null) Reminder.AUTOMATIC else Reminder.DEFAULT)
                     if (!canNotify && Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) allowNotifications()
                 }
                 .padding(horizontal = 16.dp, vertical = 14.dp),
@@ -106,6 +111,52 @@ internal fun ReminderSection(reminder: Reminder?, onChange: (Reminder?) -> Unit)
                 }
             }
         }
+        SegmentedControl(
+            options = listOf(true, false),
+            selected = reminder.auto,
+            label = { auto -> stringResource(if (auto) R.string.reminder_mode_auto else R.string.reminder_mode_custom) },
+            onSelect = { auto ->
+                onChange(
+                    when {
+                        auto -> reminder.copy(auto = true)
+                        // A custom reminder starts from when the automatic one would come.
+                        reminder == Reminder.AUTOMATIC && rhythm != null -> Reminder.near(rhythm.typical + rhythm.slack)
+                        else -> reminder.copy(auto = false)
+                    }
+                )
+            },
+        )
+        if (reminder.auto) {
+            val resources = LocalResources.current
+            Text(
+                if (rhythm != null) {
+                    stringResource(R.string.reminder_auto_hint, RelativeTime.approximate(rhythm.typical).format(resources))
+                } else {
+                    stringResource(R.string.reminder_auto_learning)
+                },
+                style = MaterialTheme.typography.bodySmall,
+                color = palette.muted,
+            )
+        } else {
+            CustomReminder(reminder, onChange)
+        }
+        if (!canNotify) {
+            Text(
+                stringResource(R.string.reminder_notifications_off),
+                style = MaterialTheme.typography.bodySmall,
+                color = palette.danger,
+                modifier = Modifier.clip(RoundedCornerShape(8.dp)).clickable(role = Role.Button, onClick = ::allowNotifications),
+            )
+        }
+    }
+}
+
+/** After how long without being done the reminder comes: N hours, days or weeks. */
+@Composable
+private fun CustomReminder(reminder: Reminder, onChange: (Reminder?) -> Unit) {
+    val palette = TimeClickerTheme.palette
+    val context = LocalContext.current
+    Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(
                 stringResource(R.string.reminder_after),
@@ -146,14 +197,6 @@ internal fun ReminderSection(reminder: Reminder?, onChange: (Reminder?) -> Unit)
             style = MaterialTheme.typography.bodySmall,
             color = palette.muted,
         )
-        if (!canNotify) {
-            Text(
-                stringResource(R.string.reminder_notifications_off),
-                style = MaterialTheme.typography.bodySmall,
-                color = palette.danger,
-                modifier = Modifier.clip(RoundedCornerShape(8.dp)).clickable(role = Role.Button, onClick = ::allowNotifications),
-            )
-        }
     }
 }
 
@@ -172,7 +215,7 @@ private fun StepButton(icon: ImageVector, description: String, enabled: Boolean,
     }
 }
 
-/** "3 days", "1 week". */
+/** "3 days", "1 week": a custom reminder's delay. */
 fun reminderDelay(context: Context, reminder: Reminder): String =
     context.resources.getQuantityString(reminder.unit.plural(), reminder.every, reminder.every)
 

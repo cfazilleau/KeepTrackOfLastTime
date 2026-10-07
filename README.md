@@ -12,8 +12,10 @@ The number in the tile's bottom-right corner counts how many times it was presse
 - **Long-press** a tile: edit it in a sheet: name, group, colour or photo background, icon (or none; your icon palette, plus a searchable list of every icon with the recently used ones first),
   size (Small / Wide / Tall), undo its last press or reset its press counter, a reminder, add it to the home screen, or delete it.
   All sizes show the same content.
-- **Reminders**: a tile can notify you when it hasn't been done for a while (N hours, days or weeks since
-  its last tap). It notifies once; tapping the tile (or "Mark as done" on the notification) starts the wait over.
+- **Reminders**: a tile can notify you when it hasn't been done for a while. **Automatic**: when it's late on
+  how often you usually do it ("You usually do it every 8 hours. Did you forget?"), guessed from its history,
+  never at night; see [Automatic reminders](#automatic-reminders). **Custom**: N hours, days or weeks since
+  its last tap. It notifies once; tapping the tile (or "Mark as done" on the notification) starts the wait over.
   Tiles with a reminder show a bell in their top-right corner.
 - **+** button (bottom centre): add a new tile, pre-filed in the group currently shown.
 - **Group chips**, or **swiping left/right**, move between groups; "All" shows the tiles without a group,
@@ -68,7 +70,8 @@ app/src/main/java/dev/cfaz/timeclicker/
 ├── MainActivity.kt            # Home <-> Groups screen switch
 ├── data/
 │   ├── Tracker.kt             # domain model: tiles, groups, colour/size enums, icon (a Lucide name)
-│   ├── Reminder.kt            # a tile's reminder: after how long without being done
+│   ├── Reminder.kt            # a tile's reminder: automatic, or after how long without being done
+│   ├── Rhythm.kt              # how often a tile is usually done, guessed from its history
 │   ├── IconCatalog.kt         # the bundled Lucide icons: path data, categories, search tags
 │   ├── TrackerRepository.kt   # the single entry point the UI uses
 │   ├── PhotoStore.kt          # copies picked photos into private storage
@@ -109,13 +112,21 @@ and the unit tests fail on lines for icons Lucide no longer has. Another languag
 - `tracker_groups`: user-defined groups (name, display position).
 - `trackers`: one row per tile (name, group, colour, icon, size, photo file, display position,
   `count_since`: the press counter counts events after this time, and the reminder: `reminder_every` +
-  `reminder_unit`, null for none).
+  `reminder_unit`, null for none; `reminder_unit` is `auto` for an automatic reminder).
   Deleting a group sets its tiles' group to null (they then only show under "All").
 - `tracker_events`: one row per time a tile was done.
 
 A card's "last time" is its most recent event. Resetting a card inserts an event, and tapping it again to undo deletes it.
-Because the full history is kept, future features (history view, stats, average interval)
-can use data that is already there.
+Because the full history is kept, features like automatic reminders (and later a history view or stats)
+use data that is already there.
+
+### Automatic reminders
+
+`data/Rhythm.kt` guesses how often a tile is done from its last 11 presses: the usual gap is the median gap
+between presses (gaps under a minute are double taps and don't count). It needs at least 5 presses, with gaps
+regular enough: their median deviation at most half the usual gap. Until then, an automatic reminder waits.
+It comes once the tile is late by a quarter of its usual gap, or by 3 median deviations for a habit that varies
+more; due between 22:00 and 08:00, it waits for 08:00. Switching a tile to Custom starts from that delay.
 
 ### Extending the database
 

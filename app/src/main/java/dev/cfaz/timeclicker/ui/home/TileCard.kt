@@ -164,7 +164,10 @@ fun TileCard(
         tracker.name,
         if (elapsed.isEmpty) stringResource(R.string.elapsed_just_now) else stringResource(R.string.elapsed_ago, elapsed.format(resources)),
         pluralStringResource(R.plurals.press_count, tracker.pressCount, tracker.pressCount).takeIf { settings.showCounter },
-        tracker.reminder?.let { stringResource(R.string.tile_reminder_description, reminderDelay(context, it)) },
+        tracker.reminder?.let {
+            if (it.auto) stringResource(R.string.tile_reminder_auto_description)
+            else stringResource(R.string.tile_reminder_description, reminderDelay(context, it))
+        },
         undoHint.takeIf { undoing },
     ).joinToString(", ")
 

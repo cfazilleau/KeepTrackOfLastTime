@@ -66,6 +66,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.rememberUpdatedState
@@ -93,6 +94,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import dev.cfaz.timeclicker.R
 import dev.cfaz.timeclicker.data.PendingUndo
+import dev.cfaz.timeclicker.data.Rhythm
 import dev.cfaz.timeclicker.data.Tracker
 import dev.cfaz.timeclicker.ui.components.NeuButton
 import dev.cfaz.timeclicker.ui.components.NeuIconButton
@@ -198,8 +200,11 @@ fun HomeScreen(
     }
     editingId?.let { id -> state?.trackers?.find { it.id == id } }?.let { saved ->
         val canPin = remember { TileWidgets.canPin(context) }
+        // Read again when a press changes the tile's history.
+        val rhythm by produceState<Rhythm?>(null, saved.id, saved.lastDoneAt) { value = viewModel.rhythm(saved.id) }
         EditTileSheet(
             saved = saved,
+            rhythm = rhythm,
             groups = state?.groups.orEmpty(),
             photoFile = viewModel::photoFile,
             importPhoto = viewModel::importPhoto,

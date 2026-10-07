@@ -199,7 +199,7 @@ private fun TrackerEntity.toJson() = JSONObject()
 
 /** Older backups have no reminder fields: their tiles get none. */
 private fun TrackerEntity.withReminder(reminder: Reminder?) =
-    copy(reminderEvery = reminder?.every, reminderUnit = reminder?.unit?.key)
+    copy(reminderEvery = reminder?.every, reminderUnit = reminder?.unitKey)
 
 private fun TrackerEventEntity.toJson() = JSONObject().put("id", id).put("trackerId", trackerId).put("doneAt", doneAt)
 
