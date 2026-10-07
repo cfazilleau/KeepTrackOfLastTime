@@ -2,7 +2,6 @@
 <resources>
     <!-- Home -->
     <string name="chip_all">सभी</string>
-    <string name="section_oldest">सबसे पुराना: %1$s</string>
     <string name="empty_title">अभी कुछ भी ट्रैक नहीं हो रहा</string>
     <string name="empty_body">कुछ जोड़ने के लिए + पर टैप करें, जैसे “पौधों को पानी दिया”। जब भी आप इसे दोबारा करें, इसकी टाइल पर टैप करें।</string>
     <string name="empty_group">इस समूह में अभी कोई टाइल नहीं है। जोड़ने के लिए + पर टैप करें।</string>

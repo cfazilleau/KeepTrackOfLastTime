@@ -2,7 +2,6 @@
 <resources>
     <!-- Home -->
     <string name="chip_all">الكل</string>
-    <string name="section_oldest">الأقدم: %1$s</string>
     <string name="empty_title">لا يوجد شيء قيد التتبع بعد</string>
     <string name="empty_body">انقر على + لإضافة شيء، مثل «سقيت النباتات». ثم انقر على بطاقته كلما فعلته مجددًا.</string>
     <string name="empty_group">لا توجد بطاقات في هذه المجموعة بعد. انقر على + لإضافة واحدة.</string>

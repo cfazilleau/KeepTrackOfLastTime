@@ -2,7 +2,6 @@
 <resources>
     <!-- Home -->
     <string name="chip_all">Tutti</string>
-    <string name="section_oldest">più vecchio: %1$s</string>
     <string name="empty_title">Ancora niente in elenco</string>
     <string name="empty_body">Tocca + per aggiungere qualcosa, come «Annaffiare le piante». Tocca il suo riquadro ogni volta che lo rifai.</string>
     <string name="empty_group">Nessun riquadro in questo gruppo. Tocca + per aggiungerne uno.</string>

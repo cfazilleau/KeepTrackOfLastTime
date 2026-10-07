@@ -4,7 +4,6 @@
 
     <!-- Home -->
     <string name="chip_all">All</string>
-    <string name="section_oldest">oldest: %1$s</string>
     <string name="empty_title">Nothing tracked yet</string>
     <string name="empty_body">Tap + to add something, like “Watered the plants”. Tap its tile whenever you do it again.</string>
     <string name="empty_group">No tiles in this group yet. Tap + to add one.</string>

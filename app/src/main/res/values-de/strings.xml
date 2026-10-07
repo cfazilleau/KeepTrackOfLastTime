@@ -2,7 +2,6 @@
 <resources>
     <!-- Home -->
     <string name="chip_all">Alle</string>
-    <string name="section_oldest">älteste: %1$s</string>
     <string name="empty_title">Noch nichts erfasst</string>
     <string name="empty_body">Tippe auf +, um etwas hinzuzufügen, z. B. „Pflanzen gegossen“. Tippe auf die Kachel, sobald du es wieder machst.</string>
     <string name="empty_group">Noch keine Kacheln in dieser Gruppe. Tippe auf +, um eine hinzuzufügen.</string>

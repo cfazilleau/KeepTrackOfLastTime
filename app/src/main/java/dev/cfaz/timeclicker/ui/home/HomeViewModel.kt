@@ -127,6 +127,10 @@ class HomeViewModel(
 
     suspend fun createGroup(name: String): Long = repository.createGroup(name.trim())
 
+    fun renameGroup(group: TrackerGroup, name: String) {
+        viewModelScope.launch { repository.renameGroup(group.id, name.trim()) }
+    }
+
     suspend fun importPhoto(uri: Uri): String? = repository.importPhoto(uri)
 
     /** How often the tile is usually done, for its automatic reminder; null when it has no regular pace yet. */

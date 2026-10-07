@@ -2,7 +2,6 @@
 <resources>
     <!-- Home -->
     <string name="chip_all">Tout</string>
-    <string name="section_oldest">plus ancien : %1$s</string>
     <string name="empty_title">Rien n’est encore suivi</string>
     <string name="empty_body">Touchez + pour ajouter quelque chose, comme « Arroser les plantes ». Touchez sa tuile chaque fois que vous le refaites.</string>
     <string name="empty_group">Aucune tuile dans ce groupe. Touchez + pour en ajouter une.</string>

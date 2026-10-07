@@ -2,7 +2,6 @@
 <resources>
     <!-- Home -->
     <string name="chip_all">Alles</string>
-    <string name="section_oldest">oudste: %1$s</string>
     <string name="empty_title">Nog niets bijgehouden</string>
     <string name="empty_body">Tik op + om iets toe te voegen, zoals „Planten water gegeven”. Tik op de tegel telkens als je het weer doet.</string>
     <string name="empty_group">Nog geen tegels in deze groep. Tik op + om er een toe te voegen.</string>

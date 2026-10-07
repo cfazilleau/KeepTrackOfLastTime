@@ -2,7 +2,6 @@
 <resources>
     <!-- Home -->
     <string name="chip_all">全部</string>
-    <string name="section_oldest">最久：%1$s</string>
     <string name="empty_title">还没有记录任何事项</string>
     <string name="empty_body">点按 + 添加事项，比如“给植物浇水”。每次再做这件事时，点按它的卡片即可。</string>
     <string name="empty_group">此分组中还没有卡片。点按 + 添加一个。</string>

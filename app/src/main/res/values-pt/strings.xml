@@ -2,7 +2,6 @@
 <resources>
     <!-- Home -->
     <string name="chip_all">Todos</string>
-    <string name="section_oldest">mais antigo: %1$s</string>
     <string name="empty_title">Nada acompanhado ainda</string>
     <string name="empty_body">Toque em + para adicionar algo, como “Regar as plantas”. Toque no card sempre que fizer de novo.</string>
     <string name="empty_group">Ainda não há cards neste grupo. Toque em + para adicionar um.</string>

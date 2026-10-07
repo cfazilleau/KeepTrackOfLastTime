@@ -2,7 +2,6 @@
 <resources>
     <!-- Home -->
     <string name="chip_all">すべて</string>
-    <string name="section_oldest">最も古い: %1$s</string>
     <string name="empty_title">まだ何も記録していません</string>
     <string name="empty_body">+ をタップして「植物に水をやった」などを追加しましょう。またやったら、そのタイルをタップします。</string>
     <string name="empty_group">このグループにはまだタイルがありません。+ をタップして追加しましょう。</string>
