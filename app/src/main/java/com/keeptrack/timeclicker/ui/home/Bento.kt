@@ -11,6 +11,7 @@ import androidx.compose.animation.core.VisibilityThreshold
 import androidx.compose.foundation.gestures.detectDragGesturesAfterLongPress
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -30,7 +31,9 @@ import androidx.compose.ui.layout.LookaheadScope
 import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.unit.Constraints
+import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import com.keeptrack.timeclicker.data.TileSize
 import com.keeptrack.timeclicker.ui.theme.TimeClickerTheme
@@ -44,7 +47,17 @@ data class BentoCell(val column: Int, val row: Int, val columns: Int, val rows: 
     fun contains(x: Float, y: Float): Boolean = x >= column && x < column + columns && y >= row && y < row + rows
 }
 
+/** Tiles are at least this wide: as many columns fit as can, two on a phone, more on a tablet or in landscape. */
+val BentoMinCellWidth = 150.dp
+
 object Bento {
+    /** A phone's two columns, however narrow the screen. */
+    const val MIN_COLUMNS = 2
+
+    /** How many columns at least [minCellWidth] wide fit in [width], with [gap] between them (all in pixels). */
+    fun columnCount(width: Int, minCellWidth: Int, gap: Int): Int =
+        ((width + gap) / (minCellWidth + gap)).coerceAtLeast(MIN_COLUMNS)
+
     /**
      * Places tiles in order on a grid of [columnCount] columns, each at the first free spot
      * (top to bottom, left to right). Later small tiles fill holes left by wide/tall ones.
@@ -95,6 +108,14 @@ private val ElasticBounds = BoundsTransform { _, _ ->
     spring(dampingRatio = 0.7f, stiffness = Spring.StiffnessMediumLow, visibilityThreshold = Rect.VisibilityThreshold)
 }
 
+/** The bento grid's columns, for a lazy grid of small tiles. */
+object BentoColumns : GridCells {
+    override fun Density.calculateCrossAxisCellSizes(availableSize: Int, spacing: Int): List<Int> {
+        val count = Bento.columnCount(availableSize, BentoMinCellWidth.roundToPx(), spacing)
+        return with(GridCells.Fixed(count)) { calculateCrossAxisCellSizes(availableSize, spacing) }
+    }
+}
+
 /** How a held tile grows, to show it is lifted off the grid. */
 private const val HeldScale = 1.05f
 private val LiftSpring = spring<Float>(stiffness = Spring.StiffnessMedium)
@@ -117,8 +138,10 @@ private class BentoDrag<T> {
     var settleJob: Job? = null
 }
 
-/** The grid's cell size in pixels, from its last layout. */
+/** The grid's columns and cell size in pixels, and where the tiles were put, from its last layout. */
 private class BentoMetrics {
+    var columnCount = Bento.MIN_COLUMNS
+    var cells: List<BentoCell> = emptyList()
     var cellWidth = 0
     var rowHeight = 0
     var gap = 0
@@ -129,8 +152,8 @@ private class BentoMetrics {
 }
 
 /**
- * Lays out [items] as a 2-column bento grid; each item's size comes from [sizeOf].
- * When tiles are added, removed, resized or reordered, the others move to their new place.
+ * Lays out [items] as a bento grid of as many columns as fit (see [BentoMinCellWidth]); each item's size comes from [sizeOf].
+ * When tiles are added, removed, resized or reordered, or the screen rotates, the others move to their new place.
  *
  * With [onReorder], a tile can be held and dragged elsewhere; the others make room as it moves.
  * When it is dropped somewhere new, [onReorder] gets the new order.
@@ -151,7 +174,6 @@ fun <T> BentoGrid(
     val metrics = remember { BentoMetrics() }
     val order = drag.order ?: items
     val sizes = order.map(sizeOf)
-    val cells = remember(sizes) { Bento.pack(sizes) }
 
     // The gesture handlers outlive a composition; they read the latest of these.
     val latestItems by rememberUpdatedState(items)
@@ -167,7 +189,7 @@ fun <T> BentoGrid(
 
     fun cellOf(order: List<T>, tile: Any): BentoCell? {
         val index = order.indexOfFirst { latestKey(it) == tile }
-        return if (index < 0) null else Bento.pack(order.map(latestSizeOf))[index]
+        return if (index < 0) null else Bento.pack(order.map(latestSizeOf), metrics.columnCount)[index]
     }
 
     fun pickUp(tile: Any, at: Offset) {
@@ -188,7 +210,9 @@ fun <T> BentoGrid(
         drag.finger += amount
         val from = current.indexOfFirst { latestKey(it) == drag.key }
         if (from < 0) return
-        val to = Bento.dropIndex(current.map(latestSizeOf), from, metrics.columnAt(drag.finger.x), metrics.rowAt(drag.finger.y))
+        val to = Bento.dropIndex(
+            current.map(latestSizeOf), from, metrics.columnAt(drag.finger.x), metrics.rowAt(drag.finger.y), metrics.columnCount,
+        )
         if (to != null) {
             drag.order = current.moved(from, to)
             if (hapticsOn) haptics.performHapticFeedback(HapticFeedbackType.SegmentTick)
@@ -215,7 +239,7 @@ fun <T> BentoGrid(
 
     LookaheadScope {
         BentoLayout(
-            cells = cells,
+            sizes = sizes,
             cellHeight = cellHeight,
             spacing = spacing,
             metrics = metrics,
@@ -245,9 +269,10 @@ fun <T> BentoGrid(
                             // The held tile follows the finger rather than gliding to each new place.
                             .then(
                                 if (held) {
-                                    val cell = cells[index]
                                     Modifier.zIndex(1f).graphicsLayer {
-                                        val offset = if (drag.dropping) drag.settle.value else drag.finger - drag.grab - metrics.origin(cell)
+                                        // Its place in the layout, just measured: the grid lays out before it places this tile.
+                                        val origin = metrics.cells.getOrNull(index)?.let(metrics::origin) ?: Offset.Zero
+                                        val offset = if (drag.dropping) drag.settle.value else drag.finger - drag.grab - origin
                                         translationX = offset.x
                                         translationY = offset.y
                                         val scale = 1f + (HeldScale - 1f) * drag.lift.value
@@ -271,17 +296,23 @@ fun <T> BentoGrid(
 
 @Composable
 private fun BentoLayout(
-    cells: List<BentoCell>,
+    sizes: List<TileSize>,
     cellHeight: Dp,
     spacing: Dp,
     metrics: BentoMetrics,
     modifier: Modifier,
     content: @Composable () -> Unit,
 ) {
+    // Packed once per column count, not on every measure while tiles glide.
+    val packings = remember(sizes) { HashMap<Int, List<BentoCell>>() }
     Layout(content = content, modifier = modifier) { measurables, constraints ->
         val gap = spacing.roundToPx()
-        val cellWidth = (constraints.maxWidth - gap) / 2
+        val columnCount = Bento.columnCount(constraints.maxWidth, BentoMinCellWidth.roundToPx(), gap)
+        val cells = packings.getOrPut(columnCount) { Bento.pack(sizes, columnCount) }
+        val cellWidth = (constraints.maxWidth - (columnCount - 1) * gap) / columnCount
         val rowHeight = cellHeight.roundToPx()
+        metrics.columnCount = columnCount
+        metrics.cells = cells
         metrics.cellWidth = cellWidth
         metrics.rowHeight = rowHeight
         metrics.gap = gap

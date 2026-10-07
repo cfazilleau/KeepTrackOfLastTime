@@ -81,6 +81,27 @@
     <string name="counter_reset">Zurücksetzen</string>
     <string name="widget_add">Zum Startbildschirm hinzufügen</string>
     <string name="widget_add_hint">Zeigt diese Kachel als Widget. Tippe auf das Widget, um sie als erledigt zu markieren.</string>
+    <string name="label_reminder">Erinnerung</string>
+    <string name="reminder_add">Erinnerung hinzufügen</string>
+    <string name="reminder_add_hint">Eine Benachrichtigung, wenn es eine Weile nicht erledigt wurde.</string>
+    <string name="reminder_after">Erinnern nach</string>
+    <string name="reminder_less">Verringern</string>
+    <string name="reminder_more">Erhöhen</string>
+    <string name="reminder_unit_hours">Stunden</string>
+    <string name="reminder_unit_days">Tage</string>
+    <string name="reminder_unit_weeks">Wochen</string>
+    <plurals name="reminder_weeks">
+        <item quantity="one">%d Woche</item>
+        <item quantity="other">%d Wochen</item>
+    </plurals>
+    <string name="reminder_remove">Entfernen</string>
+    <string name="reminder_hint">Du bekommst eine Benachrichtigung, wenn es %1$s lang nicht erledigt wurde.</string>
+    <string name="reminder_notifications_off">Benachrichtigungen für Time Clicker sind aus, daher können keine Erinnerungen erscheinen. Tippe, um sie zu erlauben.</string>
+    <string name="reminder_notification_text">%1$s lang nicht erledigt</string>
+    <string name="reminder_mark_done">Als erledigt markieren</string>
+    <string name="reminder_channel">Erinnerungen</string>
+    <string name="reminder_channel_description">Wenn eine Kachel mit Erinnerung eine Weile nicht erledigt wurde.</string>
+    <string name="tile_reminder_description">Erinnerung: %1$s</string>
     <string name="delete_tile">Kachel löschen</string>
     <string name="tile_preview">Vorschau</string>
     <string name="tile_preview_name">Neue Kachel</string>

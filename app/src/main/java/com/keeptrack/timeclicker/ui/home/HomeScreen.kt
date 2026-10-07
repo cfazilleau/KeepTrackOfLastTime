@@ -169,8 +169,7 @@ fun HomeScreen(
                     onSelect = viewModel::select,
                     photoFile = viewModel::photoFile,
                     onClick = { tracker ->
-                        // The click is for marking done; an undo stays quiet.
-                        if (clickSound && tracker.id !in undoable) TapSound.play(context)
+                        if (clickSound) TapSound.play(context)
                         viewModel.press(tracker)
                     },
                     onLongClick = { editing = it },

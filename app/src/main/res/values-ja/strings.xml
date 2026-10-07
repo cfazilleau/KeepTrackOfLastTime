@@ -75,6 +75,26 @@
     <string name="counter_reset">リセット</string>
     <string name="widget_add">ホーム画面に追加</string>
     <string name="widget_add_hint">このタイルをウィジェットとして表示します。ウィジェットをタップすると完了にできます。</string>
+    <string name="label_reminder">リマインダー</string>
+    <string name="reminder_add">リマインダーを追加</string>
+    <string name="reminder_add_hint">しばらくやっていないときに通知します。</string>
+    <string name="reminder_after">通知までの時間</string>
+    <string name="reminder_less">減らす</string>
+    <string name="reminder_more">増やす</string>
+    <string name="reminder_unit_hours">時間</string>
+    <string name="reminder_unit_days">日</string>
+    <string name="reminder_unit_weeks">週</string>
+    <plurals name="reminder_weeks">
+        <item quantity="other">%d週間</item>
+    </plurals>
+    <string name="reminder_remove">削除</string>
+    <string name="reminder_hint">%1$sやっていないと通知します。</string>
+    <string name="reminder_notifications_off">Time Clicker の通知がオフのため、リマインダーを表示できません。タップして許可してください。</string>
+    <string name="reminder_notification_text">%1$sやっていません</string>
+    <string name="reminder_mark_done">完了にする</string>
+    <string name="reminder_channel">リマインダー</string>
+    <string name="reminder_channel_description">リマインダー付きのタイルをしばらくやっていないとき。</string>
+    <string name="tile_reminder_description">リマインダー: %1$s</string>
     <string name="delete_tile">タイルを削除</string>
     <string name="tile_preview">プレビュー</string>
     <string name="tile_preview_name">新しいタイル</string>

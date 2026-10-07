@@ -60,6 +60,7 @@ import com.keeptrack.timeclicker.R
 import com.keeptrack.timeclicker.data.AppSettings
 import com.keeptrack.timeclicker.data.ThemeMode
 import com.keeptrack.timeclicker.data.TimeDisplay
+import com.keeptrack.timeclicker.ui.components.GutteredColumn
 import com.keeptrack.timeclicker.ui.components.NeuIconButton
 import com.keeptrack.timeclicker.ui.components.SegmentedControl
 import com.keeptrack.timeclicker.ui.home.ConfirmDialog
@@ -107,13 +108,13 @@ fun SettingsScreen(
     fun update(transform: (AppSettings) -> AppSettings) = viewModel.update(transform)
 
     Box(Modifier.fillMaxSize().background(palette.ground)) {
-        Column(
+        GutteredColumn(
             Modifier
                 .fillMaxSize()
                 .windowInsetsPadding(WindowInsets.safeDrawing.only(WindowInsetsSides.Top + WindowInsetsSides.Horizontal)),
-        ) {
+        ) { gutter ->
             Row(
-                Modifier.fillMaxWidth().padding(start = 20.dp, end = 20.dp, top = 20.dp, bottom = 8.dp),
+                Modifier.fillMaxWidth().padding(start = gutter, end = gutter, top = 20.dp, bottom = 8.dp),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(14.dp),
             ) {
@@ -124,7 +125,7 @@ fun SettingsScreen(
                 LinearProgressIndicator(
                     color = palette.accent,
                     trackColor = palette.field,
-                    modifier = Modifier.fillMaxWidth().padding(horizontal = 20.dp).clip(CircleShape),
+                    modifier = Modifier.fillMaxWidth().padding(horizontal = gutter).clip(CircleShape),
                 )
             }
 
@@ -133,8 +134,8 @@ fun SettingsScreen(
                     .fillMaxSize()
                     .verticalScroll(rememberScrollState())
                     .padding(
-                        start = 20.dp,
-                        end = 20.dp,
+                        start = gutter,
+                        end = gutter,
                         top = 16.dp,
                         bottom = 40.dp + WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding(),
                     ),

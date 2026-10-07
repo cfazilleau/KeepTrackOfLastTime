@@ -12,6 +12,7 @@ import android.graphics.RectF
 import android.os.Build
 import android.os.SystemClock
 import android.widget.RemoteViews
+import androidx.annotation.RequiresApi
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -298,6 +299,7 @@ private fun UndoBubble(pendingUndo: PendingUndo, colors: WidgetColors) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) SmoothUndoBubble(colors) else SteppedUndoBubble(pendingUndo, colors)
 }
 
+@RequiresApi(Build.VERSION_CODES.S)
 @Composable
 private fun SmoothUndoBubble(colors: WidgetColors) {
     val context = LocalContext.current

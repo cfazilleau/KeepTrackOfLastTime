@@ -81,6 +81,27 @@
     <string name="counter_reset">Resetten</string>
     <string name="widget_add">Toevoegen aan startscherm</string>
     <string name="widget_add_hint">Toont deze tegel als widget. Tik op de widget om hem als gedaan te markeren.</string>
+    <string name="label_reminder">Herinnering</string>
+    <string name="reminder_add">Herinnering toevoegen</string>
+    <string name="reminder_add_hint">Een melding als het al een tijdje niet gedaan is.</string>
+    <string name="reminder_after">Melden na</string>
+    <string name="reminder_less">Verlagen</string>
+    <string name="reminder_more">Verhogen</string>
+    <string name="reminder_unit_hours">Uren</string>
+    <string name="reminder_unit_days">Dagen</string>
+    <string name="reminder_unit_weeks">Weken</string>
+    <plurals name="reminder_weeks">
+        <item quantity="one">%d week</item>
+        <item quantity="other">%d weken</item>
+    </plurals>
+    <string name="reminder_remove">Verwijderen</string>
+    <string name="reminder_hint">Je krijgt een melding als het %1$s niet gedaan is.</string>
+    <string name="reminder_notifications_off">Meldingen voor Time Clicker staan uit, dus herinneringen kunnen niet verschijnen. Tik om ze toe te staan.</string>
+    <string name="reminder_notification_text">Al %1$s niet gedaan</string>
+    <string name="reminder_mark_done">Markeren als gedaan</string>
+    <string name="reminder_channel">Herinneringen</string>
+    <string name="reminder_channel_description">Als een tegel met een herinnering al een tijdje niet gedaan is.</string>
+    <string name="tile_reminder_description">Herinnering: %1$s</string>
     <string name="delete_tile">Tegel verwijderen</string>
     <string name="tile_preview">Voorbeeld</string>
     <string name="tile_preview_name">Nieuwe tegel</string>

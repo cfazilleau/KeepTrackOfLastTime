@@ -75,6 +75,26 @@
     <string name="counter_reset">重置</string>
     <string name="widget_add">添加到主屏幕</string>
     <string name="widget_add_hint">以小部件形式显示此卡片。点按小部件即可标记为已完成。</string>
+    <string name="label_reminder">提醒</string>
+    <string name="reminder_add">添加提醒</string>
+    <string name="reminder_add_hint">一段时间未完成时发送通知。</string>
+    <string name="reminder_after">多久后提醒</string>
+    <string name="reminder_less">减少</string>
+    <string name="reminder_more">增加</string>
+    <string name="reminder_unit_hours">小时</string>
+    <string name="reminder_unit_days">天</string>
+    <string name="reminder_unit_weeks">周</string>
+    <plurals name="reminder_weeks">
+        <item quantity="other">%d周</item>
+    </plurals>
+    <string name="reminder_remove">移除</string>
+    <string name="reminder_hint">如果%1$s未完成，你会收到通知。</string>
+    <string name="reminder_notifications_off">Time Clicker 的通知已关闭，因此无法显示提醒。点按以允许通知。</string>
+    <string name="reminder_notification_text">已有%1$s未完成</string>
+    <string name="reminder_mark_done">标记为已完成</string>
+    <string name="reminder_channel">提醒</string>
+    <string name="reminder_channel_description">设有提醒的卡片一段时间未完成时。</string>
+    <string name="tile_reminder_description">提醒：%1$s</string>
     <string name="delete_tile">删除卡片</string>
     <string name="tile_preview">预览</string>
     <string name="tile_preview_name">新卡片</string>
