@@ -20,6 +20,9 @@ import dev.cfaz.timeclicker.ui.time.RelativeTime
 import dev.cfaz.timeclicker.ui.time.TimeUnit
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
@@ -47,6 +50,11 @@ object TileWidgets {
     private const val EXTRA_TRACKER_ID = "dev.cfaz.timeclicker.extra.TRACKER_ID"
 
     private val mutex = Mutex()
+
+    private val placedEvents = MutableSharedFlow<Unit>(extraBufferCapacity = 1)
+
+    /** Emits when a widget requested with [requestPin] has been placed and bound. Not replayed. */
+    val placed: SharedFlow<Unit> = placedEvents.asSharedFlow()
 
     /** Redraws every widget with the current time and tile data, then plans the next refresh. */
     suspend fun refresh(context: Context) = mutex.withLock {
@@ -101,6 +109,10 @@ object TileWidgets {
             receiver = TileWidgetReceiver::class.java,
             successCallback = callback,
         )
+    }
+
+    internal fun notifyPlaced() {
+        placedEvents.tryEmit(Unit)
     }
 
     internal fun pinnedTrackerId(intent: Intent): Long? =
