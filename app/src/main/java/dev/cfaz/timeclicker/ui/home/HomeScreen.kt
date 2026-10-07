@@ -52,7 +52,7 @@ import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.relocation.BringIntoViewRequester
 import androidx.compose.foundation.relocation.bringIntoViewRequester
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.selection.selectable
+import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.DropdownMenu
@@ -78,11 +78,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.semantics.CustomAccessibilityAction
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.customActions
+import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.DpOffset
@@ -99,10 +101,6 @@ import dev.cfaz.timeclicker.ui.components.NeuIconButton
 import dev.cfaz.timeclicker.ui.components.PillButton
 import dev.cfaz.timeclicker.ui.theme.AppIcons
 import dev.cfaz.timeclicker.ui.theme.TimeClickerTheme
-import dev.cfaz.timeclicker.ui.time.RelativeTime
-import dev.cfaz.timeclicker.ui.time.TimeUnit
-import dev.cfaz.timeclicker.ui.time.format
-import dev.cfaz.timeclicker.ui.time.rememberNow
 import dev.cfaz.timeclicker.widget.TileWidgets
 import kotlinx.coroutines.launch
 import java.io.File
@@ -134,6 +132,8 @@ fun HomeScreen(
     // The tile open in the edit sheet, by id: the sheet follows its count and last time as they change.
     var editingId by remember { mutableStateOf<Long?>(null) }
     var creating by remember { mutableStateOf(false) }
+    // The group whose chip was held, open in the rename dialog.
+    var renamingGroupId by remember { mutableStateOf<Long?>(null) }
     // While on, tiles are held and dragged to a new place instead of tapped.
     var reordering by rememberSaveable { mutableStateOf(false) }
     BackHandler(enabled = reordering) { reordering = false }
@@ -167,6 +167,7 @@ fun HomeScreen(
                     reordering = reordering,
                     onReorder = viewModel::reorder,
                     onSelect = viewModel::select,
+                    onEditGroup = { renamingGroupId = it },
                     photoFile = viewModel::photoFile,
                     onClick = { tracker ->
                         if (clickSound) TapSound.play(context)
@@ -211,6 +212,14 @@ fun HomeScreen(
             onAddWidget = if (canPin) ({ scope.launch { TileWidgets.requestPin(context, saved.id) } }) else null,
         )
     }
+    renamingGroupId?.let { id -> state?.groups?.find { it.id == id } }?.let { group ->
+        NameDialog(
+            title = stringResource(R.string.dialog_rename_group_title),
+            initialName = group.name,
+            onConfirm = { viewModel.renameGroup(group, it); renamingGroupId = null },
+            onDismiss = { renamingGroupId = null },
+        )
+    }
 }
 
 private val AddButtonSize = 64.dp
@@ -246,6 +255,7 @@ private fun GroupPager(
     reordering: Boolean,
     onReorder: (List<Long>) -> Unit,
     onSelect: (GroupFilter) -> Unit,
+    onEditGroup: (Long) -> Unit,
     photoFile: (String) -> File,
     onClick: (Tracker) -> Unit,
     onLongClick: (Tracker) -> Unit,
@@ -275,6 +285,7 @@ private fun GroupPager(
                 pages = pages,
                 selected = pagerState.currentPage,
                 onSelect = { index -> scope.launch { pagerState.animateScrollToPage(index, animationSpec = PageSpring) } },
+                onEditGroup = onEditGroup,
             )
         }
         HorizontalPager(
@@ -450,14 +461,18 @@ private fun HomeMenu(
     }
 }
 
-/** The group chips, scrolling sideways. */
+/** The group chips, scrolling sideways. Holding a group's chip opens it for editing. */
 @Composable
 private fun FilterChips(
     pages: List<PageUi>,
     selected: Int,
     onSelect: (Int) -> Unit,
+    onEditGroup: (Long) -> Unit,
 ) {
     val palette = TimeClickerTheme.palette
+    val haptics = LocalHapticFeedback.current
+    val hapticsOn = TimeClickerTheme.settings.haptics
+    val editLabel = stringResource(R.string.action_rename)
     // Padding inside the scroll area so the chips' shadows aren't clipped.
     Row(
         Modifier
@@ -474,6 +489,7 @@ private fun FilterChips(
             // Swiping to a group scrolls its chip into view.
             val bringIntoView = remember { BringIntoViewRequester() }
             LaunchedEffect(isSelected) { if (isSelected) bringIntoView.bringIntoView() }
+            val onLongClick = (chip.filter as? GroupFilter.Group)?.let { group -> { onEditGroup(group.id) } }
 
             val content: @Composable () -> Unit = {
                 Row(
@@ -493,7 +509,18 @@ private fun FilterChips(
                         .height(40.dp)
                         .clip(CircleShape)
                         .background(palette.accent)
-                        .selectable(selected = true, role = Role.Tab, onClick = {}),
+                        .combinedClickable(
+                            role = Role.Tab,
+                            onLongClickLabel = editLabel.takeIf { onLongClick != null },
+                            onLongClick = onLongClick?.let {
+                                {
+                                    if (hapticsOn) haptics.performHapticFeedback(HapticFeedbackType.LongPress)
+                                    it()
+                                }
+                            },
+                            onClick = {},
+                        )
+                        .semantics { this.selected = true },
                     contentAlignment = Alignment.Center,
                 ) { content() }
             } else {
@@ -502,6 +529,8 @@ private fun FilterChips(
                     shape = CircleShape,
                     distance = 5.dp,
                     blur = 12.dp,
+                    onLongClick = onLongClick,
+                    onLongClickLabel = editLabel.takeIf { onLongClick != null },
                     modifier = Modifier.bringIntoViewRequester(bringIntoView).height(40.dp),
                 ) { content() }
             }
@@ -527,20 +556,7 @@ private fun Section(
             SectionTitle.None -> null
         }
         if (title != null) {
-            Row(verticalAlignment = Alignment.Bottom) {
-                Text(title, style = MaterialTheme.typography.titleLarge, color = palette.text, modifier = Modifier.weight(1f))
-                // With a single tile the summary would just repeat it.
-                section.trackers.takeIf { it.size > 1 }?.minByOrNull { it.lastDoneAt }?.let { oldest ->
-                    val now = rememberNow(oldest.lastDoneAt, smallest = TimeUnit.MINUTE)
-                    RelativeTime.split(oldest.lastDoneAt, now, smallest = TimeUnit.MINUTE).major?.let { major ->
-                        Text(
-                            stringResource(R.string.section_oldest, major.format(LocalResources.current)),
-                            style = MaterialTheme.typography.labelLarge,
-                            color = palette.muted,
-                        )
-                    }
-                }
-            }
+            Text(title, style = MaterialTheme.typography.titleLarge, color = palette.text)
         }
         if (section.trackers.isEmpty()) {
             Text(stringResource(R.string.empty_group), style = MaterialTheme.typography.bodyMedium, color = palette.muted)

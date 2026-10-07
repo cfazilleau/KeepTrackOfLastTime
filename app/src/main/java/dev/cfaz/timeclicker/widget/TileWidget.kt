@@ -204,15 +204,17 @@ private fun TileContent(tracker: Tracker, photo: Bitmap?, now: Instant, icons: I
         elapsed.major == null -> ""
         else -> (elapsed.minor?.formatAsSecond(context.resources).orEmpty() + ago.suffix).trim()
     }
-    // Every size shows the same content; small widgets just get tighter padding.
-    val padding = if (size.height < 120.dp || size.width < 120.dp) 10.dp else 14.dp
+    // Down to one cell (1x1, or a single row): just the name and the time, centred.
+    val compact = size.width < 100.dp || size.height < 120.dp
+    // Otherwise every size shows the same content; small widgets just get tighter padding.
+    val padding = if (compact) 6.dp else if (size.height < 120.dp || size.width < 120.dp) 10.dp else 14.dp
 
     // Approximate auto-size: about 0.6em per character of a bold headline.
     // "Less than a minute ago" is long, so it may wrap onto a second line.
     val available = size.width.value - padding.value * 2
-    val maxHeadline = if (size.width > 200.dp && size.height > 160.dp) 40f else 30f
+    val maxHeadline = if (compact) 22f else if (size.width > 200.dp && size.height > 160.dp) 40f else 30f
     val headlineLines = if (underAMinute) 2 else 1
-    val minHeadline = if (underAMinute) 13f else 16f
+    val minHeadline = if (compact) 10f else if (underAMinute) 13f else 16f
     // Wrapped text fills its lines less evenly, hence the margin.
     val fill = if (underAMinute) headlineLines * 0.85f else 1f
     val headlineSize = (available * fill / (headline.length * 0.6f)).coerceIn(minHeadline, maxHeadline)
@@ -231,7 +233,28 @@ private fun TileContent(tracker: Tracker, photo: Bitmap?, now: Instant, icons: I
             Image(ImageProvider(photo), null, GlanceModifier.fillMaxSize(), contentScale = ContentScale.Crop)
             Image(ImageProvider(R.drawable.widget_photo_scrim), null, GlanceModifier.fillMaxSize(), contentScale = ContentScale.FillBounds)
         }
-        Column(GlanceModifier.fillMaxSize().padding(padding)) {
+        if (compact) Column(
+            GlanceModifier.fillMaxSize().padding(padding),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
+            Text(
+                tracker.name,
+                style = TextStyle(color = colors.content, fontSize = 12.sp, fontWeight = FontWeight.Bold, textAlign = TextAlign.Center),
+                maxLines = 1,
+            )
+            // No room for the undo hint: the ring alone says the next tap undoes.
+            if (pendingUndo != null) {
+                Spacer(GlanceModifier.height(4.dp))
+                UndoBubble(pendingUndo, colors)
+            } else {
+                Text(
+                    headline,
+                    style = TextStyle(color = colors.content, fontSize = headlineSize.sp, fontWeight = FontWeight.Bold, textAlign = TextAlign.Center),
+                    maxLines = headlineLines,
+                )
+            }
+        } else Column(GlanceModifier.fillMaxSize().padding(padding)) {
             Row(GlanceModifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
                 // Without an icon there is no "open app" button; the whole widget still marks the tile done.
                 icons.path(tracker.icon)?.let { path ->

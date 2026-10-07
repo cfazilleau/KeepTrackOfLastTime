@@ -2,7 +2,6 @@
 <resources>
     <!-- Home -->
     <string name="chip_all">Semua</string>
-    <string name="section_oldest">terlama: %1$s</string>
     <string name="empty_title">Belum ada yang dilacak</string>
     <string name="empty_body">Ketuk + untuk menambahkan sesuatu, seperti “Menyiram tanaman”. Ketuk kartunya setiap kali kamu melakukannya lagi.</string>
     <string name="empty_group">Belum ada kartu di grup ini. Ketuk + untuk menambahkan.</string>

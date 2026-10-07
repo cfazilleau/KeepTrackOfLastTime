@@ -6,6 +6,7 @@ import androidx.compose.animation.core.LinearOutSlowInEasing
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.interaction.InteractionSource
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.PressInteraction
@@ -35,6 +36,8 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
@@ -94,9 +97,13 @@ fun NeuButton(
     background: Color = TimeClickerTheme.palette.ground,
     distance: Dp = 6.dp,
     blur: Dp = 14.dp,
+    onLongClick: (() -> Unit)? = null,
+    onLongClickLabel: String? = null,
     content: @Composable () -> Unit,
 ) {
     val palette = TimeClickerTheme.palette
+    val haptics = LocalHapticFeedback.current
+    val hapticsOn = TimeClickerTheme.settings.haptics
     val interaction = remember { MutableInteractionSource() }
     val press = rememberPressAmount(interaction)
     Box(
@@ -106,7 +113,19 @@ fun NeuButton(
             .clip(shape)
             .background(background)
             .pressedIn(shape, palette.shadow, palette.highlight, distance * 0.6f, blur * 0.7f, amount = press)
-            .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onClick),
+            .combinedClickable(
+                interactionSource = interaction,
+                indication = null,
+                role = Role.Button,
+                onLongClickLabel = onLongClickLabel,
+                onLongClick = onLongClick?.let {
+                    {
+                        if (hapticsOn) haptics.performHapticFeedback(HapticFeedbackType.LongPress)
+                        it()
+                    }
+                },
+                onClick = onClick,
+            ),
         contentAlignment = Alignment.Center,
     ) { content() }
 }

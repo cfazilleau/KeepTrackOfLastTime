@@ -2,7 +2,6 @@
 <resources>
     <!-- Home -->
     <string name="chip_all">전체</string>
-    <string name="section_oldest">가장 오래됨: %1$s</string>
     <string name="empty_title">아직 기록한 항목이 없어요</string>
     <string name="empty_body">+를 눌러 “화분에 물 주기” 같은 항목을 추가하세요. 다시 할 때마다 해당 타일을 누르면 돼요.</string>
     <string name="empty_group">이 그룹에 아직 타일이 없어요. +를 눌러 추가하세요.</string>

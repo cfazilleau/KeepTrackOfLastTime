@@ -2,7 +2,6 @@
 <resources>
     <!-- Home -->
     <string name="chip_all">Wszystko</string>
-    <string name="section_oldest">najstarsze: %1$s</string>
     <string name="empty_title">Nic jeszcze nie śledzisz</string>
     <string name="empty_body">Stuknij +, aby coś dodać, np. „Podlanie roślin”. Stuknij kafelek za każdym razem, gdy zrobisz to ponownie.</string>
     <string name="empty_group">Brak kafelków w tej grupie. Stuknij +, aby dodać.</string>

@@ -126,6 +126,10 @@ class HomeViewModel(
 
     suspend fun createGroup(name: String): Long = repository.createGroup(name.trim())
 
+    fun renameGroup(group: TrackerGroup, name: String) {
+        viewModelScope.launch { repository.renameGroup(group.id, name.trim()) }
+    }
+
     suspend fun importPhoto(uri: Uri): String? = repository.importPhoto(uri)
 
     fun photoFile(name: String): File = repository.photoFile(name)

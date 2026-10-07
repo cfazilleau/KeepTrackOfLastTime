@@ -2,7 +2,6 @@
 <resources>
     <!-- Home -->
     <string name="chip_all">Tümü</string>
-    <string name="section_oldest">en eski: %1$s</string>
     <string name="empty_title">Henüz takip edilen bir şey yok</string>
     <string name="empty_body">Bir şey eklemek için + simgesine dokunun, örneğin “Bitkiler sulandı”. Her tekrar yaptığınızda kutucuğuna dokunun.</string>
     <string name="empty_group">Bu grupta henüz kutucuk yok. Eklemek için + simgesine dokunun.</string>

@@ -2,7 +2,6 @@
 <resources>
     <!-- Home -->
     <string name="chip_all">Все</string>
-    <string name="section_oldest">самое давнее: %1$s</string>
     <string name="empty_title">Пока ничего не отслеживается</string>
     <string name="empty_body">Нажмите +, чтобы что-то добавить, например «Полить цветы». Нажимайте на плитку каждый раз, когда делаете это снова.</string>
     <string name="empty_group">В этой группе пока нет плиток. Нажмите +, чтобы добавить.</string>

@@ -342,9 +342,21 @@ private fun TileTexts(tracker: Tracker, headline: AnnotatedString, textAlpha: ()
         TileSize.WIDE -> 32.sp
         TileSize.SMALL -> 26.sp
     }
+    // Grows with the tile, like the headline; two lines of it still fit a small tile under its icon.
+    val nameSize = when (tracker.size) {
+        TileSize.TALL -> 20.sp
+        TileSize.WIDE -> 17.sp
+        TileSize.SMALL -> 16.sp
+    }
     Text(
         text = tracker.name,
-        style = TextStyle(fontSize = 13.5.sp, fontWeight = FontWeight.Bold, lineHeight = 17.sp, shadow = shadow),
+        style = TextStyle(
+            fontSize = nameSize,
+            fontWeight = FontWeight.ExtraBold,
+            letterSpacing = (-0.01).em,
+            lineHeight = nameSize * 1.15f,
+            shadow = shadow,
+        ),
         color = color,
         maxLines = 2,
         overflow = TextOverflow.Ellipsis,

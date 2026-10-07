@@ -12,7 +12,6 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -20,7 +19,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -41,7 +39,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalResources
@@ -51,7 +48,6 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.semantics.semantics
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import dev.cfaz.timeclicker.R
@@ -468,39 +464,34 @@ private fun SheetIconButton(icon: ImageVector, contentDescription: String, onCli
     }
 }
 
-/** The pastel colours, in rows of six. */
+/** The pastel colours, in rows of six cells the same size as the icon picker's. */
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun ColourSwatches(selected: TileColor, onSelect: (TileColor) -> Unit) {
-    BoxWithConstraints(Modifier.fillMaxWidth()) {
-        val gap = 10.dp
-        val swatchWidth = (maxWidth - gap * (SwatchesPerRow - 1)) / SwatchesPerRow
-        Column(verticalArrangement = Arrangement.spacedBy(gap)) {
-            TileColor.pickable.chunked(SwatchesPerRow).forEach { row ->
-                Row(horizontalArrangement = Arrangement.spacedBy(gap)) {
-                    row.forEach { Swatch(it, it == selected, swatchWidth, onSelect) }
-                }
-            }
+    val choices = TileColor.pickable
+    FlowRow(
+        Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.spacedBy(PickerGap),
+        verticalArrangement = Arrangement.spacedBy(PickerGap),
+        maxItemsInEachRow = PickerColumns,
+    ) {
+        choices.forEach { color ->
+            val isSelected = color == selected
+            val colors = TimeClickerTheme.palette.tile(color)
+            val name = stringResource(colorName(color))
+            Box(
+                Modifier
+                    .weight(1f)
+                    .height(PickerCellHeight)
+                    .clip(PickerCellShape)
+                    .background(colors.background)
+                    .then(if (isSelected) Modifier.border(2.dp, colors.content, PickerCellShape) else Modifier)
+                    .selectable(selected = isSelected, role = Role.RadioButton, onClick = { onSelect(color) })
+                    .semantics { contentDescription = name },
+            )
         }
+        repeat((PickerColumns - choices.size % PickerColumns) % PickerColumns) { Spacer(Modifier.weight(1f)) }
     }
-}
-
-private const val SwatchesPerRow = 6
-
-@Composable
-private fun Swatch(color: TileColor, isSelected: Boolean, width: Dp, onSelect: (TileColor) -> Unit) {
-    val colors = TimeClickerTheme.palette.tile(color)
-    val name = stringResource(colorName(color))
-    Box(
-        Modifier
-            .width(width)
-            .height(48.dp)
-            .border(2.dp, if (isSelected) colors.content else Color.Transparent, RoundedCornerShape(16.dp))
-            .padding(4.dp)
-            .clip(RoundedCornerShape(12.dp))
-            .background(colors.background)
-            .selectable(selected = isSelected, role = Role.RadioButton, onClick = { onSelect(color) })
-            .semantics { contentDescription = name },
-    )
 }
 
 /**
@@ -514,7 +505,6 @@ private fun IconPicker(selected: TileIcon, original: TileIcon, accent: TileColor
     val palette = TimeClickerTheme.palette
     val resources = LocalResources.current
     val catalog = rememberIconCatalog()
-    val columns = 6
     val settings = TimeClickerTheme.settings
     // Icons chosen from the full list, in the order picked: kept in view even after tapping another icon.
     var picked by remember { mutableStateOf(emptyList<TileIcon>()) }
@@ -541,9 +531,9 @@ private fun IconPicker(selected: TileIcon, original: TileIcon, accent: TileColor
         }
         FlowRow(
             Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.spacedBy(IconGap),
-            verticalArrangement = Arrangement.spacedBy(IconGap),
-            maxItemsInEachRow = columns,
+            horizontalArrangement = Arrangement.spacedBy(PickerGap),
+            verticalArrangement = Arrangement.spacedBy(PickerGap),
+            maxItemsInEachRow = PickerColumns,
         ) {
             choices.forEach { icon ->
                 val isSelected = icon == selected
@@ -551,8 +541,8 @@ private fun IconPicker(selected: TileIcon, original: TileIcon, accent: TileColor
                 Box(
                     Modifier
                         .weight(1f)
-                        .height(IconCellHeight)
-                        .clip(IconCellShape)
+                        .height(PickerCellHeight)
+                        .clip(PickerCellShape)
                         .background(if (isSelected) accent.background else palette.field)
                         .selectable(selected = isSelected, role = Role.RadioButton, onClick = { onSelect(icon) })
                         .semantics { contentDescription = description },
@@ -565,7 +555,7 @@ private fun IconPicker(selected: TileIcon, original: TileIcon, accent: TileColor
                 }
             }
             // Empty cells keep the last row's icons the same width as the others.
-            repeat((columns - choices.size % columns) % columns) { Spacer(Modifier.weight(1f)) }
+            repeat((PickerColumns - choices.size % PickerColumns) % PickerColumns) { Spacer(Modifier.weight(1f)) }
         }
     }
 
@@ -583,9 +573,11 @@ private fun IconPicker(selected: TileIcon, original: TileIcon, accent: TileColor
     }
 }
 
-private val IconGap = 8.dp
-private val IconCellHeight = 46.dp
-private val IconCellShape = RoundedCornerShape(14.dp)
+// Shared by the colour and icon pickers so their cells line up.
+private const val PickerColumns = 6
+private val PickerGap = 8.dp
+private val PickerCellHeight = 46.dp
+private val PickerCellShape = RoundedCornerShape(14.dp)
 
 private fun colorName(color: TileColor) = when (color) {
     TileColor.SAGE -> R.string.color_sage
