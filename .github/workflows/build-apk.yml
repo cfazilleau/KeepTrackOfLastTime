@@ -1,4 +1,4 @@
-name: Build APK
+name: Build and release
 
 on:
   push:
@@ -6,6 +6,17 @@ on:
     tags: ["v*"]
   pull_request:
   workflow_dispatch:
+    inputs:
+      play-track:
+        description: Also upload the app bundle and the store listing to this Google Play track
+        type: choice
+        options: [none, internal, alpha, beta, production]
+        default: none
+      play-release-status:
+        description: Google Play release status (only "draft" until the app is first published)
+        type: choice
+        options: [draft, completed]
+        default: draft
 
 permissions:
   contents: read
@@ -14,11 +25,17 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  # A version tag publishes to Google Play: to the PLAY_TRACK repository variable's track (internal by default),
+  # as PLAY_RELEASE_STATUS (draft by default). A manual run publishes only when given a track.
+  PLAY_TRACK: ${{ startsWith(github.ref, 'refs/tags/v') && (vars.PLAY_TRACK || 'internal') || inputs.play-track || 'none' }}
+  PLAY_RELEASE_STATUS: ${{ startsWith(github.ref, 'refs/tags/v') && (vars.PLAY_RELEASE_STATUS || 'draft') || inputs.play-release-status || 'draft' }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      # Monotonic versionCode so each APK installs as an update over the previous one.
+      # Monotonic versionCode so each APK installs as an update over the previous one, and Play accepts each bundle.
       VERSION_CODE: ${{ github.run_number }}
     outputs:
       version-name: ${{ steps.version.outputs.name }}
@@ -60,24 +77,38 @@ jobs:
             done
             echo "$KEYSTORE_BASE64" | base64 --decode > "$RUNNER_TEMP/release.jks"
             echo "KEYSTORE_FILE=$RUNNER_TEMP/release.jks" >> "$GITHUB_ENV"
+          elif [ "$PLAY_TRACK" != none ]; then
+            echo "::error::Google Play only accepts bundles signed with your upload key: set the KEYSTORE_BASE64 secret. See README, Release signing."
+            exit 1
           else
             echo "::warning::KEYSTORE_BASE64 secret is not set. The APK is signed with a throwaway debug key, so it cannot be installed over a previous build without uninstalling (which erases app data). See README."
           fi
 
-      - name: Test and build release APK
+      - name: Test and build release APK and app bundle
         env:
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
-        run: ./gradlew testDebugUnitTest assembleRelease
+        run: ./gradlew testDebugUnitTest assembleRelease bundleRelease
 
-      - name: Rename APK
-        run: mv app/build/outputs/apk/release/app-release.apk "TimeClicker-${VERSION_NAME}.apk"
+      - name: Rename outputs
+        run: |
+          mv app/build/outputs/apk/release/app-release.apk "TimeClicker-${VERSION_NAME}.apk"
+          mv app/build/outputs/bundle/release/app-release.aab "TimeClicker-${VERSION_NAME}.aab"
 
       - uses: actions/upload-artifact@v7
         with:
           name: TimeClicker-${{ env.VERSION_NAME }}
           path: TimeClicker-*.apk
+          if-no-files-found: error
+
+      # The bundle for Google Play, with the R8 mapping that deobfuscates its crash reports.
+      - uses: actions/upload-artifact@v7
+        with:
+          name: TimeClicker-${{ env.VERSION_NAME }}-bundle
+          path: |
+            TimeClicker-*.aab
+            app/build/outputs/mapping/release/mapping.txt
           if-no-files-found: error
 
   release:
@@ -95,3 +126,44 @@ jobs:
         with:
           files: TimeClicker-*.apk
           generate_release_notes: true
+
+  google-play:
+    if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.play-track != 'none')
+    needs: build
+    runs-on: ubuntu-latest
+    # Required reviewers or branch rules can be added to this environment in the repository settings.
+    environment: google-play
+    steps:
+      # The store listing: fastlane/metadata/android, uploaded as committed (tools/store makes it).
+      - uses: actions/checkout@v7
+
+      - uses: actions/download-artifact@v8
+        with:
+          name: TimeClicker-${{ needs.build.outputs.version-name }}-bundle
+          path: bundle
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+
+      - name: Install fastlane
+        run: gem install fastlane --no-document
+
+      - name: Upload to Google Play
+        env:
+          SUPPLY_JSON_KEY_DATA: ${{ secrets.PLAY_SERVICE_ACCOUNT_JSON }}
+          SUPPLY_PACKAGE_NAME: dev.cfaz.timeclicker
+          SUPPLY_TRACK: ${{ env.PLAY_TRACK }}
+          SUPPLY_RELEASE_STATUS: ${{ env.PLAY_RELEASE_STATUS }}
+          SUPPLY_METADATA_PATH: fastlane/metadata/android
+          # Only images that changed since the last upload are sent again.
+          SUPPLY_SYNC_IMAGE_UPLOAD: "true"
+          SUPPLY_SKIP_UPLOAD_APK: "true"
+        run: |
+          if [ -z "$SUPPLY_JSON_KEY_DATA" ]; then
+            echo "::error::The PLAY_SERVICE_ACCOUNT_JSON secret is not set. See README, Publishing to Google Play."
+            exit 1
+          fi
+          fastlane supply \
+            --aab "bundle/TimeClicker-${{ needs.build.outputs.version-name }}.aab" \
+            --mapping bundle/app/build/outputs/mapping/release/mapping.txt

@@ -1,0 +1,211 @@
+{
+  "_comment": "Text drawn on the store graphics by compose.py. captions: one per raw phone scene (home, undo, edit, reminder, group, dark, icons, widgets); tagline: the feature graphic.",
+  "en-US": {
+    "tagline": "How long since you last did it?",
+    "captions": [
+      "See how long since you last did it",
+      "Did it again? Just tap",
+      "Make every tile your own",
+      "Get reminded when it’s been too long",
+      "Sort tiles into groups",
+      "Light and dark themes",
+      "About 1,900 icons",
+      "Tap it right from your home screen"
+    ]
+  },
+  "fr-FR": {
+    "tagline": "Depuis quand l’avez-vous fait ?",
+    "captions": [
+      "Voyez depuis quand vous l’avez fait",
+      "Refait ? Touchez la tuile",
+      "Personnalisez chaque tuile",
+      "Un rappel quand ça fait trop longtemps",
+      "Rangez vos tuiles par groupes",
+      "Thèmes clair et sombre",
+      "Environ 1 900 icônes",
+      "Touchez-la depuis l’écran d’accueil"
+    ]
+  },
+  "es-ES": {
+    "tagline": "¿Cuánto hace que lo hiciste?",
+    "captions": [
+      "Mira cuánto hace que lo hiciste",
+      "¿Otra vez? Solo toca",
+      "Personaliza cada tarjeta",
+      "Recordatorios cuando pase demasiado tiempo",
+      "Ordena tus tarjetas en grupos",
+      "Temas claro y oscuro",
+      "Unos 1900 iconos",
+      "Tócala desde la pantalla de inicio"
+    ]
+  },
+  "de-DE": {
+    "tagline": "Wie lange ist es her?",
+    "captions": [
+      "Sieh, wie lange es her ist",
+      "Wieder gemacht? Einfach tippen",
+      "Gestalte jede Kachel selbst",
+      "Erinnerungen, wenn es zu lange her ist",
+      "Kacheln in Gruppen sortieren",
+      "Helles und dunkles Design",
+      "Rund 1.900 Symbole",
+      "Direkt vom Startbildschirm aus"
+    ]
+  },
+  "it-IT": {
+    "tagline": "Quanto tempo è passato?",
+    "captions": [
+      "Scopri quanto tempo è passato",
+      "Rifatto? Basta un tocco",
+      "Personalizza ogni riquadro",
+      "Un promemoria quando è passato troppo",
+      "Organizza i riquadri in gruppi",
+      "Tema chiaro e scuro",
+      "Circa 1.900 icone",
+      "Toccalo dalla schermata Home"
+    ]
+  },
+  "pt-BR": {
+    "tagline": "Há quanto tempo você fez isso?",
+    "captions": [
+      "Veja há quanto tempo você fez",
+      "Fez de novo? É só tocar",
+      "Deixe cada card do seu jeito",
+      "Lembretes quando passar tempo demais",
+      "Organize os cards em grupos",
+      "Temas claro e escuro",
+      "Cerca de 1.900 ícones",
+      "Toque direto na tela inicial"
+    ]
+  },
+  "nl-NL": {
+    "tagline": "Hoe lang is het geleden?",
+    "captions": [
+      "Zie hoe lang het geleden is",
+      "Weer gedaan? Gewoon tikken",
+      "Maak elke tegel van jou",
+      "Een herinnering als het te lang duurt",
+      "Deel tegels in groepen in",
+      "Licht en donker thema",
+      "Zo’n 1900 pictogrammen",
+      "Tik erop vanaf je startscherm"
+    ]
+  },
+  "pl-PL": {
+    "tagline": "Ile czasu minęło?",
+    "captions": [
+      "Zobacz, ile czasu minęło",
+      "Znowu zrobione? Stuknij",
+      "Dopasuj każdy kafelek",
+      "Przypomnienie, gdy minie za dużo czasu",
+      "Kafelki w grupach",
+      "Jasny i ciemny motyw",
+      "Około 1900 ikon",
+      "Stuknij prosto z ekranu głównego"
+    ]
+  },
+  "ru-RU": {
+    "tagline": "Сколько времени прошло?",
+    "captions": [
+      "Сколько прошло с последнего раза",
+      "Сделали снова? Просто нажмите",
+      "Настройте каждую плитку",
+      "Напомним, если прошло слишком долго",
+      "Плитки по группам",
+      "Светлая и тёмная темы",
+      "Около 1900 значков",
+      "Отмечайте прямо с главного экрана"
+    ]
+  },
+  "tr-TR": {
+    "tagline": "En son ne zaman yaptınız?",
+    "captions": [
+      "Üzerinden ne kadar geçtiğini görün",
+      "Yine mi yaptınız? Dokunun yeter",
+      "Her kutucuğu size göre ayarlayın",
+      "Çok zaman geçince hatırlatma",
+      "Kutucukları gruplara ayırın",
+      "Açık ve koyu tema",
+      "Yaklaşık 1.900 simge",
+      "Ana ekrandan tek dokunuşla"
+    ]
+  },
+  "id": {
+    "tagline": "Sudah berapa lama?",
+    "captions": [
+      "Lihat sudah berapa lama",
+      "Sudah lagi? Cukup ketuk",
+      "Atur setiap kartu sesukamu",
+      "Pengingat saat sudah terlalu lama",
+      "Kelompokkan kartu ke dalam grup",
+      "Tema terang dan gelap",
+      "Sekitar 1.900 ikon",
+      "Ketuk langsung dari layar utama"
+    ]
+  },
+  "ar": {
+    "tagline": "كم مضى منذ آخر مرة؟",
+    "captions": [
+      "اعرف كم مضى منذ آخر مرة",
+      "فعلته مجددًا؟ انقر فقط",
+      "خصّص كل بطاقة على ذوقك",
+      "تذكير عندما يطول الوقت",
+      "رتّب البطاقات في مجموعات",
+      "مظهر فاتح وداكن",
+      "نحو 1900 أيقونة",
+      "انقر عليها من الشاشة الرئيسية مباشرةً"
+    ]
+  },
+  "hi-IN": {
+    "tagline": "आख़िरी बार कब किया था?",
+    "captions": [
+      "देखें कितना समय हो गया",
+      "फिर से किया? बस टैप करें",
+      "हर टाइल को अपने हिसाब से बनाएँ",
+      "बहुत देर होने पर रिमाइंडर",
+      "टाइलों को समूहों में बाँटें",
+      "लाइट और डार्क थीम",
+      "लगभग 1,900 आइकन",
+      "सीधे होम स्क्रीन से टैप करें"
+    ]
+  },
+  "ja-JP": {
+    "tagline": "最後にやったのはいつ？",
+    "captions": [
+      "最後にやってからの時間がわかる",
+      "またやったら、タップするだけ",
+      "タイルを自分好みに",
+      "時間が経ちすぎたらお知らせ",
+      "タイルをグループで整理",
+      "ライトとダークのテーマ",
+      "約1,900種類のアイコン",
+      "ホーム画面から直接タップ"
+    ]
+  },
+  "ko-KR": {
+    "tagline": "마지막으로 한 게 언제였죠?",
+    "captions": [
+      "마지막으로 한 뒤 얼마나 지났는지",
+      "또 했나요? 누르기만 하세요",
+      "타일을 나만의 스타일로",
+      "너무 오래되면 알려 드려요",
+      "타일을 그룹으로 정리",
+      "라이트 테마와 다크 테마",
+      "약 1,900개의 아이콘",
+      "홈 화면에서 바로 누르세요"
+    ]
+  },
+  "zh-CN": {
+    "tagline": "上次做是什么时候？",
+    "captions": [
+      "看看上次做过了多久",
+      "又做了？点一下就好",
+      "每张卡片随心定制",
+      "太久没做时提醒你",
+      "用分组整理卡片",
+      "浅色和深色主题",
+      "约 1,900 个图标",
+      "在主屏幕上直接点按"
+    ]
+  }
+}
