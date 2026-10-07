@@ -151,6 +151,29 @@
     <string name="icon_book">Buch</string>
     <string name="icon_wrench">Schraubenschlüssel</string>
     <string name="icon_star">Stern</string>
+    <string name="icon_broom">Besen</string>
+    <string name="icon_shirt">Hemd</string>
+    <string name="icon_bath">Badewanne</string>
+    <string name="icon_fridge">Kühlschrank</string>
+    <string name="icon_lightbulb">Glühbirne</string>
+    <string name="icon_air_vent">Lüftung</string>
+    <string name="icon_battery">Batterie</string>
+    <string name="icon_toothbrush">Zahnbürste</string>
+    <string name="icon_stethoscope">Stethoskop</string>
+    <string name="icon_syringe">Spritze</string>
+    <string name="icon_footprints">Fußspuren</string>
+    <string name="icon_bike">Fahrrad</string>
+    <string name="icon_dog">Hund</string>
+    <string name="icon_cat">Katze</string>
+    <string name="icon_fish">Fisch</string>
+    <string name="icon_people">Personen</string>
+    <string name="icon_gift">Geschenk</string>
+    <string name="icon_cake">Kuchen</string>
+    <string name="icon_receipt">Quittung</string>
+    <string name="icon_key">Schlüssel</string>
+    <string name="icon_mail">Post</string>
+    <string name="icon_music">Musik</string>
+    <string name="icon_plane">Flugzeug</string>
 
     <!-- Dialogs -->
     <string name="dialog_delete_title">„%1$s“ löschen?</string>

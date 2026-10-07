@@ -144,6 +144,29 @@
     <string name="icon_book">书</string>
     <string name="icon_wrench">扳手</string>
     <string name="icon_star">星星</string>
+    <string name="icon_broom">扫帚</string>
+    <string name="icon_shirt">衬衫</string>
+    <string name="icon_bath">浴缸</string>
+    <string name="icon_fridge">冰箱</string>
+    <string name="icon_lightbulb">灯泡</string>
+    <string name="icon_air_vent">通风口</string>
+    <string name="icon_battery">电池</string>
+    <string name="icon_toothbrush">牙刷</string>
+    <string name="icon_stethoscope">听诊器</string>
+    <string name="icon_syringe">注射器</string>
+    <string name="icon_footprints">脚印</string>
+    <string name="icon_bike">自行车</string>
+    <string name="icon_dog">狗</string>
+    <string name="icon_cat">猫</string>
+    <string name="icon_fish">鱼</string>
+    <string name="icon_people">人们</string>
+    <string name="icon_gift">礼物</string>
+    <string name="icon_cake">蛋糕</string>
+    <string name="icon_receipt">收据</string>
+    <string name="icon_key">钥匙</string>
+    <string name="icon_mail">邮件</string>
+    <string name="icon_music">音乐</string>
+    <string name="icon_plane">飞机</string>
 
     <!-- Dialogs -->
     <string name="dialog_delete_title">删除“%1$s”？</string>

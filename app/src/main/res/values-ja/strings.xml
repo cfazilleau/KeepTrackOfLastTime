@@ -144,6 +144,29 @@
     <string name="icon_book">本</string>
     <string name="icon_wrench">レンチ</string>
     <string name="icon_star">星</string>
+    <string name="icon_broom">ほうき</string>
+    <string name="icon_shirt">シャツ</string>
+    <string name="icon_bath">浴槽</string>
+    <string name="icon_fridge">冷蔵庫</string>
+    <string name="icon_lightbulb">電球</string>
+    <string name="icon_air_vent">通気口</string>
+    <string name="icon_battery">電池</string>
+    <string name="icon_toothbrush">歯ブラシ</string>
+    <string name="icon_stethoscope">聴診器</string>
+    <string name="icon_syringe">注射器</string>
+    <string name="icon_footprints">足跡</string>
+    <string name="icon_bike">自転車</string>
+    <string name="icon_dog">犬</string>
+    <string name="icon_cat">猫</string>
+    <string name="icon_fish">魚</string>
+    <string name="icon_people">人々</string>
+    <string name="icon_gift">プレゼント</string>
+    <string name="icon_cake">ケーキ</string>
+    <string name="icon_receipt">領収書</string>
+    <string name="icon_key">鍵</string>
+    <string name="icon_mail">郵便</string>
+    <string name="icon_music">音楽</string>
+    <string name="icon_plane">飛行機</string>
 
     <!-- Dialogs -->
     <string name="dialog_delete_title">「%1$s」を削除しますか？</string>

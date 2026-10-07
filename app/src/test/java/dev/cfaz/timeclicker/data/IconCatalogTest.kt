@@ -1,6 +1,7 @@
 package dev.cfaz.timeclicker.data
 
 import dev.cfaz.timeclicker.ui.icons.categoryNames
+import dev.cfaz.timeclicker.ui.icons.translatedNames
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
@@ -93,5 +94,12 @@ class IconCatalogTest {
                 assertTrue("${file.name}: bad words for $name", words.isNotEmpty() && words.none { it.isBlank() })
             }
         }
+    }
+
+    /** Screen readers and search name the default icons in the user's language, not in English. */
+    @Test
+    fun everyDefaultPaletteIconHasATranslatedName() {
+        val missing = TileIcon.defaultPalette.map { it.key } - translatedNames.keys
+        assertTrue("default icons without a translated name: $missing", missing.isEmpty())
     }
 }

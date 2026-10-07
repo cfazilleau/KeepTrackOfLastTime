@@ -144,6 +144,29 @@
     <string name="icon_book">책</string>
     <string name="icon_wrench">렌치</string>
     <string name="icon_star">별</string>
+    <string name="icon_broom">빗자루</string>
+    <string name="icon_shirt">셔츠</string>
+    <string name="icon_bath">욕조</string>
+    <string name="icon_fridge">냉장고</string>
+    <string name="icon_lightbulb">전구</string>
+    <string name="icon_air_vent">환기구</string>
+    <string name="icon_battery">배터리</string>
+    <string name="icon_toothbrush">칫솔</string>
+    <string name="icon_stethoscope">청진기</string>
+    <string name="icon_syringe">주사기</string>
+    <string name="icon_footprints">발자국</string>
+    <string name="icon_bike">자전거</string>
+    <string name="icon_dog">개</string>
+    <string name="icon_cat">고양이</string>
+    <string name="icon_fish">물고기</string>
+    <string name="icon_people">사람들</string>
+    <string name="icon_gift">선물</string>
+    <string name="icon_cake">케이크</string>
+    <string name="icon_receipt">영수증</string>
+    <string name="icon_key">열쇠</string>
+    <string name="icon_mail">우편</string>
+    <string name="icon_music">음악</string>
+    <string name="icon_plane">비행기</string>
 
     <!-- Dialogs -->
     <string name="dialog_delete_title">“%1$s”을(를) 삭제할까요?</string>

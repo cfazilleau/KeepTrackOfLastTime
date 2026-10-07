@@ -144,6 +144,29 @@
     <string name="icon_book">Buku</string>
     <string name="icon_wrench">Kunci pas</string>
     <string name="icon_star">Bintang</string>
+    <string name="icon_broom">Sapu</string>
+    <string name="icon_shirt">Kemeja</string>
+    <string name="icon_bath">Bak mandi</string>
+    <string name="icon_fridge">Kulkas</string>
+    <string name="icon_lightbulb">Bola lampu</string>
+    <string name="icon_air_vent">Ventilasi</string>
+    <string name="icon_battery">Baterai</string>
+    <string name="icon_toothbrush">Sikat gigi</string>
+    <string name="icon_stethoscope">Stetoskop</string>
+    <string name="icon_syringe">Suntikan</string>
+    <string name="icon_footprints">Jejak kaki</string>
+    <string name="icon_bike">Sepeda</string>
+    <string name="icon_dog">Anjing</string>
+    <string name="icon_cat">Kucing</string>
+    <string name="icon_fish">Ikan</string>
+    <string name="icon_people">Orang</string>
+    <string name="icon_gift">Hadiah</string>
+    <string name="icon_cake">Kue</string>
+    <string name="icon_receipt">Struk</string>
+    <string name="icon_key">Kunci</string>
+    <string name="icon_mail">Surat</string>
+    <string name="icon_music">Musik</string>
+    <string name="icon_plane">Pesawat</string>
 
     <!-- Dialogs -->
     <string name="dialog_delete_title">Hapus “%1$s”?</string>

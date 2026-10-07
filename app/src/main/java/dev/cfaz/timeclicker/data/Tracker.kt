@@ -42,8 +42,12 @@ enum class TileColor(val key: String) {
     PRIMARY("primary"), SECONDARY("secondary"), TERTIARY("tertiary");
 
     companion object {
-        /** The colours offered when editing a tile. System colours are no longer offered; tiles using them keep them. */
-        val pickable: List<TileColor> = entries.filter { it.ordinal < PRIMARY.ordinal }
+        /**
+         * The colours offered when editing a tile, by hue then the neutrals. System colours are no longer offered;
+         * tiles using them keep them.
+         */
+        val pickable: List<TileColor> =
+            listOf(ROSE, CORAL, PEACH, BUTTER, LIME, SAGE, TEAL, SKY, LAVENDER, ORCHID, SAND, SLATE)
 
         fun fromKey(key: String?) = entries.firstOrNull { it.key == key } ?: SAGE
     }
@@ -70,11 +74,23 @@ value class TileIcon(val key: String) {
         val NONE = TileIcon("none")
         val DEFAULT = TileIcon("circle-check")
 
-        /** The icons offered when editing a tile, until the user picks their own palette. */
+        /**
+         * The icons offered when editing a tile, until the user picks their own palette. The tile editor shows the
+         * first ones (after the recent icons), so they cover the most common things to track; the rest lead the
+         * full icon list, by theme: home, health, sport, nature, pets, people, admin, hobbies.
+         */
         val defaultPalette: List<TileIcon> = listOf(
-            "circle-check", "star", "heart", "house", "sparkles", "trash", "washing-machine", "bed", "utensils",
-            "coffee", "shopping-cart", "droplet", "leaf", "sprout", "flower-2", "snowflake", "pill", "dumbbell",
-            "book-open", "phone", "paw-print", "scissors", "paintbrush", "wrench", "car", "gauge",
+            "sprout", "shopping-cart", "broom", "trash", "bed", "pill", "scissors", "dumbbell", "phone",
+            "paw-print", "car",
+            "washing-machine", "utensils", "coffee", "shirt", "bath", "refrigerator", "lightbulb", "air-vent",
+            "battery", "wrench",
+            "toothbrush", "stethoscope", "syringe",
+            "footprints", "bike",
+            "droplet", "flower-2", "snowflake",
+            "dog", "cat", "fish",
+            "users", "gift", "cake", "heart",
+            "receipt", "key", "mail",
+            "book-open", "music", "plane",
         ).map(::TileIcon)
 
         /**

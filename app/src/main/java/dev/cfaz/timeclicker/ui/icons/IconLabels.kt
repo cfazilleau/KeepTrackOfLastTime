@@ -4,8 +4,8 @@ import android.content.res.Resources
 import dev.cfaz.timeclicker.R
 import dev.cfaz.timeclicker.data.TileIcon
 
-/** Translated names of the default palette's icons. */
-private val translatedNames: Map<String, Int> = mapOf(
+/** Translated names of the default palette's icons, current and past (tiles and palettes may still use them). */
+internal val translatedNames: Map<String, Int> = mapOf(
     "circle-check" to R.string.icon_check,
     "star" to R.string.icon_star,
     "heart" to R.string.icon_heart,
@@ -32,6 +32,29 @@ private val translatedNames: Map<String, Int> = mapOf(
     "wrench" to R.string.icon_wrench,
     "car" to R.string.icon_car,
     "gauge" to R.string.icon_gauge,
+    "broom" to R.string.icon_broom,
+    "shirt" to R.string.icon_shirt,
+    "bath" to R.string.icon_bath,
+    "refrigerator" to R.string.icon_fridge,
+    "lightbulb" to R.string.icon_lightbulb,
+    "air-vent" to R.string.icon_air_vent,
+    "battery" to R.string.icon_battery,
+    "toothbrush" to R.string.icon_toothbrush,
+    "stethoscope" to R.string.icon_stethoscope,
+    "syringe" to R.string.icon_syringe,
+    "footprints" to R.string.icon_footprints,
+    "bike" to R.string.icon_bike,
+    "dog" to R.string.icon_dog,
+    "cat" to R.string.icon_cat,
+    "fish" to R.string.icon_fish,
+    "users" to R.string.icon_people,
+    "gift" to R.string.icon_gift,
+    "cake" to R.string.icon_cake,
+    "receipt" to R.string.icon_receipt,
+    "key" to R.string.icon_key,
+    "mail" to R.string.icon_mail,
+    "music" to R.string.icon_music,
+    "plane" to R.string.icon_plane,
 )
 
 /**

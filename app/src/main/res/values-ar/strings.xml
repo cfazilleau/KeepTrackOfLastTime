@@ -179,6 +179,29 @@
     <string name="icon_book">كتاب</string>
     <string name="icon_wrench">مفتاح ربط</string>
     <string name="icon_star">نجمة</string>
+    <string name="icon_broom">مكنسة</string>
+    <string name="icon_shirt">قميص</string>
+    <string name="icon_bath">حوض الاستحمام</string>
+    <string name="icon_fridge">ثلاجة</string>
+    <string name="icon_lightbulb">مصباح</string>
+    <string name="icon_air_vent">فتحة تهوية</string>
+    <string name="icon_battery">بطارية</string>
+    <string name="icon_toothbrush">فرشاة أسنان</string>
+    <string name="icon_stethoscope">سماعة طبية</string>
+    <string name="icon_syringe">حقنة</string>
+    <string name="icon_footprints">آثار أقدام</string>
+    <string name="icon_bike">دراجة</string>
+    <string name="icon_dog">كلب</string>
+    <string name="icon_cat">قطة</string>
+    <string name="icon_fish">سمكة</string>
+    <string name="icon_people">أشخاص</string>
+    <string name="icon_gift">هدية</string>
+    <string name="icon_cake">كعكة</string>
+    <string name="icon_receipt">إيصال</string>
+    <string name="icon_key">مفتاح</string>
+    <string name="icon_mail">بريد</string>
+    <string name="icon_music">موسيقى</string>
+    <string name="icon_plane">طائرة</string>
 
     <!-- Dialogs -->
     <string name="dialog_delete_title">حذف «%1$s»؟</string>

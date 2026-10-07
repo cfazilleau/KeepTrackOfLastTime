@@ -151,6 +151,29 @@
     <string name="icon_book">Boek</string>
     <string name="icon_wrench">Moersleutel</string>
     <string name="icon_star">Ster</string>
+    <string name="icon_broom">Bezem</string>
+    <string name="icon_shirt">Shirt</string>
+    <string name="icon_bath">Bad</string>
+    <string name="icon_fridge">Koelkast</string>
+    <string name="icon_lightbulb">Gloeilamp</string>
+    <string name="icon_air_vent">Ventilatie</string>
+    <string name="icon_battery">Batterij</string>
+    <string name="icon_toothbrush">Tandenborstel</string>
+    <string name="icon_stethoscope">Stethoscoop</string>
+    <string name="icon_syringe">Injectiespuit</string>
+    <string name="icon_footprints">Voetstappen</string>
+    <string name="icon_bike">Fiets</string>
+    <string name="icon_dog">Hond</string>
+    <string name="icon_cat">Kat</string>
+    <string name="icon_fish">Vis</string>
+    <string name="icon_people">Mensen</string>
+    <string name="icon_gift">Cadeau</string>
+    <string name="icon_cake">Taart</string>
+    <string name="icon_receipt">Bon</string>
+    <string name="icon_key">Sleutel</string>
+    <string name="icon_mail">Post</string>
+    <string name="icon_music">Muziek</string>
+    <string name="icon_plane">Vliegtuig</string>
 
     <!-- Dialogs -->
     <string name="dialog_delete_title">„%1$s” verwijderen?</string>
