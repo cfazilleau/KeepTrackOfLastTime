@@ -16,16 +16,14 @@ class TileWidgetReceiver : GlanceAppWidgetReceiver() {
 }
 
 /**
- * Tapping a widget does what tapping the tile in the app does: marks it as done now (click sound included),
- * or undoes that when tapped again within its undo window.
+ * Tapping a widget does what tapping the tile in the app does: marks it as done now, or undoes that
+ * when tapped again within its undo window, with the click sound either way.
  */
 class MarkDoneAction : ActionCallback {
     override suspend fun onAction(context: Context, glanceId: GlanceId, parameters: ActionParameters) {
         val trackerId = parameters[TileWidgets.TrackerIdParam] ?: return
-        val presses = context.tilePresses
-        // The click is for marking done; an undo stays quiet.
-        if (context.appSettings.clickSound && trackerId !in presses.undoable.value) TapSound.play(context)
-        presses.press(trackerId)
+        if (context.appSettings.clickSound) TapSound.play(context)
+        context.tilePresses.press(trackerId)
         TileWidgets.refresh(context)
     }
 }
