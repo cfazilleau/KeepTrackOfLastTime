@@ -22,6 +22,18 @@ private fun TimeUnit.plural(): Int = when (this) {
 fun TimePart.format(resources: Resources): String =
     resources.getQuantityString(unit.plural(), count.toInt(), count.toInt())
 
+/**
+ * The second unit on its own line, with what joins it to the first: "45 seconds" in English,
+ * "et 45 secondes" in French. The joining words come from `elapsed_two_units`.
+ */
+fun TimePart.formatAsSecond(resources: Resources): String {
+    val first = "\u0000"
+    val second = "\u0001"
+    val template = resources.getString(R.string.elapsed_two_units, first, second)
+    val joiner = template.substring(template.indexOf(first) + first.length, template.indexOf(second)).trimStart()
+    return joiner + format(resources)
+}
+
 /** "2 minutes 45 seconds", localized; empty when nothing has elapsed yet. */
 fun Elapsed.format(resources: Resources): String {
     val major = major?.format(resources) ?: return ""

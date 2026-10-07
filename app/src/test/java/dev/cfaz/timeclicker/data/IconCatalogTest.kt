@@ -27,6 +27,14 @@ class IconCatalogTest {
     }
 
     @Test
+    fun parsesLocalTags() {
+        val tags = IconCatalog.parseTags("# test\nstar\tétoile,favori\nx\t\n")
+        assertEquals(listOf("étoile", "favori"), tags["star"])
+        assertEquals(emptyList<String>(), tags["x"])
+        assertNull(tags["heart"])
+    }
+
+    @Test
     fun iconKeysAreLucideNames() {
         // "check" is also a Lucide icon: stored now, it stays that icon.
         assertEquals(TileIcon("check"), TileIcon.fromKey("check"))
@@ -69,5 +77,21 @@ class IconCatalogTest {
         val missingNames = catalog.categories.keys - categoryNames.keys
         assertTrue("categories without a name: $missingNames", missingNames.isEmpty())
         catalog.icons.forEach { assertTrue("bad path for ${it.icon.key}", it.path.startsWith("M")) }
+    }
+
+    /** The hand-written search words in other languages must be for icons that still exist, each with some words. */
+    @Test
+    fun localTagsAreForBundledIcons() {
+        val catalog = IconCatalog.parse(File("src/main/assets/lucide/icons.tsv").readText())
+        val files = File("src/main/assets/lucide").listFiles { file -> file.name.startsWith("tags-") }.orEmpty()
+        assertTrue(files.isNotEmpty())
+        files.forEach { file ->
+            val tags = IconCatalog.parseTags(file.readText())
+            val unknown = tags.keys.filter { catalog[TileIcon(it)] == null }
+            assertTrue("${file.name}: icons not in the catalog: $unknown", unknown.isEmpty())
+            tags.forEach { (name, words) ->
+                assertTrue("${file.name}: bad words for $name", words.isNotEmpty() && words.none { it.isBlank() })
+            }
+        }
     }
 }

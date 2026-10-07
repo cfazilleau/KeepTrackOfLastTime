@@ -6,8 +6,8 @@
     <string name="empty_title">Rien n’est encore suivi</string>
     <string name="empty_body">Touchez + pour ajouter quelque chose, comme « Arroser les plantes ». Touchez sa tuile chaque fois que vous le refaites.</string>
     <string name="empty_group">Aucune tuile dans ce groupe. Touchez + pour en ajouter une.</string>
-    <string name="snackbar_reset">« %1$s » fait à l’instant</string>
     <string name="tile_click_label">Marquer comme fait maintenant</string>
+    <string name="tile_undo_hint">Retouchez pour annuler</string>
     <string name="tile_long_click_label">Modifier la tuile</string>
 
     <!-- Elapsed time -->
@@ -36,7 +36,7 @@
         <item quantity="many">%d ans</item>
         <item quantity="other">%d ans</item>
     </plurals>
-    <string name="elapsed_two_units">%1$s %2$s</string>
+    <string name="elapsed_two_units">%1$s et %2$s</string>
     <string name="elapsed_ago">il y a %1$s</string>
     <string name="elapsed_just_now">À l’instant</string>
     <string name="elapsed_under_a_minute">Il y a moins d’une minute</string>
@@ -58,6 +58,10 @@
     <string name="action_rename">Renommer</string>
     <string name="action_delete">Supprimer</string>
     <string name="action_back">Retour</string>
+    <string name="action_menu">Menu</string>
+    <!-- Accessibility actions on a tile while reordering. -->
+    <string name="action_move_earlier">Déplacer avant</string>
+    <string name="action_move_later">Déplacer après</string>
 
     <!-- Edit tile sheet -->
     <string name="sheet_new_title">Nouvelle tuile</string>
@@ -83,6 +87,28 @@
     <string name="counter_reset">Réinitialiser</string>
     <string name="widget_add">Ajouter à l’écran d’accueil</string>
     <string name="widget_add_hint">Affiche cette tuile en widget. Touchez le widget pour la marquer comme faite.</string>
+    <string name="label_reminder">Rappel</string>
+    <string name="reminder_add">Ajouter un rappel</string>
+    <string name="reminder_add_hint">Une notification quand ce n’est pas fait depuis un moment.</string>
+    <string name="reminder_after">Me prévenir après</string>
+    <string name="reminder_less">Diminuer</string>
+    <string name="reminder_more">Augmenter</string>
+    <string name="reminder_unit_hours">Heures</string>
+    <string name="reminder_unit_days">Jours</string>
+    <string name="reminder_unit_weeks">Semaines</string>
+    <plurals name="reminder_weeks">
+        <item quantity="one">%d semaine</item>
+        <item quantity="many">%d semaines</item>
+        <item quantity="other">%d semaines</item>
+    </plurals>
+    <string name="reminder_remove">Retirer</string>
+    <string name="reminder_hint">Une notification si ce n’est pas fait depuis %1$s.</string>
+    <string name="reminder_notifications_off">Les notifications de Time Clicker sont désactivées : les rappels ne peuvent pas s’afficher. Touchez pour les autoriser.</string>
+    <string name="reminder_notification_text">Pas fait depuis %1$s</string>
+    <string name="reminder_mark_done">Marquer comme fait</string>
+    <string name="reminder_channel">Rappels</string>
+    <string name="reminder_channel_description">Quand une tuile avec un rappel n’a pas été faite depuis un moment.</string>
+    <string name="tile_reminder_description">Rappel : %1$s</string>
     <string name="delete_tile">Supprimer la tuile</string>
     <string name="tile_preview">Aperçu</string>
     <string name="tile_preview_name">Nouvelle tuile</string>
@@ -93,6 +119,12 @@
     <string name="color_sky">Ciel</string>
     <string name="color_butter">Beurre</string>
     <string name="color_rose">Rose</string>
+    <string name="color_teal">Turquoise</string>
+    <string name="color_orchid">Orchidée</string>
+    <string name="color_coral">Corail</string>
+    <string name="color_slate">Ardoise</string>
+    <string name="color_lime">Citron vert</string>
+    <string name="color_sand">Sable</string>
     <string name="color_system_primary">Accent du système</string>
     <string name="color_system_secondary">Teinte douce du système</string>
     <string name="color_system_tertiary">Contraste du système</string>
@@ -174,7 +206,6 @@
     <string name="settings_counter">Afficher le compteur d’appuis</string>
     <string name="settings_counter_hint">Le nombre d’appuis sur chaque tuile, sur les tuiles et les widgets.</string>
     <string name="settings_section_general">Général</string>
-    <string name="settings_groups_hint">Créer, renommer, réorganiser et supprimer des groupes.</string>
     <string name="settings_language">Langue</string>
     <string name="settings_language_hint">Choisissez la langue de l’app dans les paramètres d’Android.</string>
     <string name="settings_section_data">Vos données</string>
@@ -205,7 +236,6 @@
 
     <!-- Icon palette -->
     <string name="settings_icon_palette">Palette d’icônes</string>
-    <string name="settings_icon_palette_hint">Choisissez les icônes que vous pouvez attribuer à une tuile</string>
     <string name="icon_palette_search">Rechercher des icônes</string>
     <string name="icon_palette_clear_search">Effacer la recherche</string>
     <string name="icon_palette_yours">Votre palette</string>
@@ -217,8 +247,15 @@
     <string name="dialog_reset_palette_title">Réinitialiser la palette d’icônes ?</string>
     <string name="dialog_reset_palette_body">Elle revient aux icônes par défaut. Les tuiles gardent leur icône actuelle.</string>
 
+    <!-- Reordering the tiles of the page shown -->
+    <string name="reorder_tiles">Réorganiser les tuiles</string>
+    <string name="reorder_hint">Maintenez une tuile, puis faites-la glisser à sa nouvelle place.</string>
+
+    <!-- About -->
+    <string name="about_title">À propos</string>
+
     <!-- Credits -->
-    <string name="settings_credits">Crédits</string>
+    <string name="credits_title">Crédits</string>
     <string name="credits_intro">Time Clicker est conçu avec ces projets open source. Merci ! Touchez-en un pour lire sa licence.</string>
     <string name="credit_icons">Icônes</string>
     <string name="credit_ui">Interface utilisateur</string>

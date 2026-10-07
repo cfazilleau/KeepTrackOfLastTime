@@ -3,7 +3,13 @@ package dev.cfaz.timeclicker.ui.components
 import android.content.Context
 import android.media.AudioAttributes
 import android.media.SoundPool
+<<<<<<< HEAD:app/src/main/java/dev/cfaz/timeclicker/ui/components/TapSound.kt
 import dev.cfaz.timeclicker.R
+=======
+import dev.cfaz.timeclicker.R
+import kotlin.math.pow
+import kotlin.random.Random
+>>>>>>> origin/main:app/src/main/java/dev/cfaz/timeclicker/ui/components/TapSound.kt
 
 /**
  * The short click played when a tile is marked as done, in the app or from a widget. One small pool
@@ -12,6 +18,9 @@ import dev.cfaz.timeclicker.R
  * It plays on the media stream (like a game's sounds), so it is heard when the phone is on silent or
  * vibrate, at the media volume. Loading is asynchronous: call [preload] early. A click requested before
  * the sound is loaded (a widget tap that just started the app) plays as soon as it is.
+ *
+ * Each click is played at a slightly different pitch, so repeated taps sound lively rather than
+ * mechanical.
  */
 object TapSound {
     private var pool: SoundPool? = null
@@ -35,15 +44,20 @@ object TapSound {
     @Synchronized
     fun play(context: Context) {
         preload(context)
-        if (loaded) pool?.play(soundId, VOLUME, VOLUME, 1, 0, 1f) else playWhenLoaded = true
+        if (loaded) pool?.play(soundId, VOLUME, VOLUME, 1, 0, randomRate()) else playWhenLoaded = true
     }
 
     @Synchronized
     private fun onLoaded(pool: SoundPool, success: Boolean) {
         loaded = success
-        if (success && playWhenLoaded) pool.play(soundId, VOLUME, VOLUME, 1, 0, 1f)
+        if (success && playWhenLoaded) pool.play(soundId, VOLUME, VOLUME, 1, 0, randomRate())
         playWhenLoaded = false
     }
 
+    /** A playback rate up to [PITCH_SEMITONES] semitones above or below the original pitch. */
+    private fun randomRate(): Float =
+        2f.pow((Random.nextFloat() * 2f - 1f) * PITCH_SEMITONES / 12f)
+
     private const val VOLUME = 0.7f
+    private const val PITCH_SEMITONES = 2f
 }

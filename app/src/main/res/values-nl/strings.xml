@@ -6,8 +6,8 @@
     <string name="empty_title">Nog niets bijgehouden</string>
     <string name="empty_body">Tik op + om iets toe te voegen, zoals „Planten water gegeven”. Tik op de tegel telkens als je het weer doet.</string>
     <string name="empty_group">Nog geen tegels in deze groep. Tik op + om er een toe te voegen.</string>
-    <string name="snackbar_reset">„%1$s” teruggezet naar nu</string>
     <string name="tile_click_label">Nu als gedaan markeren</string>
+    <string name="tile_undo_hint">Tik nogmaals: ongedaan maken</string>
     <string name="tile_long_click_label">Tegel bewerken</string>
 
     <!-- Elapsed time -->
@@ -52,6 +52,10 @@
     <string name="action_rename">Hernoemen</string>
     <string name="action_delete">Verwijderen</string>
     <string name="action_back">Terug</string>
+    <string name="action_menu">Menu</string>
+    <!-- Accessibility actions on a tile while reordering. -->
+    <string name="action_move_earlier">Naar voren</string>
+    <string name="action_move_later">Naar achteren</string>
 
     <!-- Edit tile sheet -->
     <string name="sheet_new_title">Nieuwe tegel</string>
@@ -77,6 +81,27 @@
     <string name="counter_reset">Resetten</string>
     <string name="widget_add">Toevoegen aan startscherm</string>
     <string name="widget_add_hint">Toont deze tegel als widget. Tik op de widget om hem als gedaan te markeren.</string>
+    <string name="label_reminder">Herinnering</string>
+    <string name="reminder_add">Herinnering toevoegen</string>
+    <string name="reminder_add_hint">Een melding als het al een tijdje niet gedaan is.</string>
+    <string name="reminder_after">Melden na</string>
+    <string name="reminder_less">Verlagen</string>
+    <string name="reminder_more">Verhogen</string>
+    <string name="reminder_unit_hours">Uren</string>
+    <string name="reminder_unit_days">Dagen</string>
+    <string name="reminder_unit_weeks">Weken</string>
+    <plurals name="reminder_weeks">
+        <item quantity="one">%d week</item>
+        <item quantity="other">%d weken</item>
+    </plurals>
+    <string name="reminder_remove">Verwijderen</string>
+    <string name="reminder_hint">Je krijgt een melding als het %1$s niet gedaan is.</string>
+    <string name="reminder_notifications_off">Meldingen voor Time Clicker staan uit, dus herinneringen kunnen niet verschijnen. Tik om ze toe te staan.</string>
+    <string name="reminder_notification_text">Al %1$s niet gedaan</string>
+    <string name="reminder_mark_done">Markeren als gedaan</string>
+    <string name="reminder_channel">Herinneringen</string>
+    <string name="reminder_channel_description">Als een tegel met een herinnering al een tijdje niet gedaan is.</string>
+    <string name="tile_reminder_description">Herinnering: %1$s</string>
     <string name="delete_tile">Tegel verwijderen</string>
     <string name="tile_preview">Voorbeeld</string>
     <string name="tile_preview_name">Nieuwe tegel</string>
@@ -87,6 +112,12 @@
     <string name="color_sky">Hemelsblauw</string>
     <string name="color_butter">Botergeel</string>
     <string name="color_rose">Roze</string>
+    <string name="color_teal">Petrol</string>
+    <string name="color_orchid">Orchidee</string>
+    <string name="color_coral">Koraal</string>
+    <string name="color_slate">Leisteen</string>
+    <string name="color_lime">Limoen</string>
+    <string name="color_sand">Zand</string>
     <string name="color_system_primary">Systeem: accent</string>
     <string name="color_system_secondary">Systeem: zacht</string>
     <string name="color_system_tertiary">Systeem: contrast</string>
@@ -167,7 +198,6 @@
     <string name="settings_counter">Teller tonen</string>
     <string name="settings_counter_hint">Hoe vaak elke tegel is ingedrukt, op tegels en widgets.</string>
     <string name="settings_section_general">Algemeen</string>
-    <string name="settings_groups_hint">Groepen maken, hernoemen, herordenen en verwijderen.</string>
     <string name="settings_language">Taal</string>
     <string name="settings_language_hint">Kies de taal van de app in de Android-instellingen.</string>
     <string name="settings_section_data">Je gegevens</string>
@@ -198,7 +228,6 @@
 
     <!-- Icon palette -->
     <string name="settings_icon_palette">Pictogrampalet</string>
-    <string name="settings_icon_palette_hint">Kies welke pictogrammen je aan een tegel kunt geven</string>
     <string name="icon_palette_search">Pictogrammen zoeken</string>
     <string name="icon_palette_clear_search">Zoekopdracht wissen</string>
     <string name="icon_palette_yours">Jouw palet</string>
@@ -210,8 +239,15 @@
     <string name="dialog_reset_palette_title">Pictogrampalet resetten?</string>
     <string name="dialog_reset_palette_body">Het palet krijgt weer de standaardpictogrammen. Tegels houden hun huidige pictogram.</string>
 
+    <!-- Reordering the tiles of the page shown -->
+    <string name="reorder_tiles">Tegels ordenen</string>
+    <string name="reorder_hint">Houd een tegel vast en sleep hem naar zijn nieuwe plek.</string>
+
+    <!-- About -->
+    <string name="about_title">Over</string>
+
     <!-- Credits -->
-    <string name="settings_credits">Credits</string>
+    <string name="credits_title">Credits</string>
     <string name="credits_intro">Time Clicker is gemaakt met deze opensourceprojecten. Bedankt! Tik op een project om de licentie te lezen.</string>
     <string name="credit_icons">Pictogrammen</string>
     <string name="credit_ui">Gebruikersinterface</string>

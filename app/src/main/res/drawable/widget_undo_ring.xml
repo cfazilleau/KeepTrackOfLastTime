@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The widget's undo countdown: a ring draining from the top, anticlockwise, like the app's.
+  Played once by the launcher as a spinner's drawable, so it runs smoothly without updates from the app.
+  Its duration is the undo window (UNDO_WINDOW_MS).
+-->
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <aapt:attr name="android:drawable">
+        <vector
+            android:width="30dp"
+            android:height="30dp"
+            android:viewportWidth="30"
+            android:viewportHeight="30">
+            <path
+                android:name="ring"
+                android:pathData="M15,1 A14,14 0 1,1 15,29 A14,14 0 1,1 15,1"
+                android:strokeWidth="2"
+                android:strokeColor="#FFFFFFFF"
+                android:strokeLineCap="round" />
+        </vector>
+    </aapt:attr>
+    <target android:name="ring">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="10000"
+                android:interpolator="@android:anim/linear_interpolator"
+                android:propertyName="trimPathEnd"
+                android:valueFrom="1"
+                android:valueTo="0" />
+        </aapt:attr>
+    </target>
+</animated-vector>

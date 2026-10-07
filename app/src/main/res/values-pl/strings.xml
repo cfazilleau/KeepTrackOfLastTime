@@ -6,8 +6,8 @@
     <string name="empty_title">Nic jeszcze nie śledzisz</string>
     <string name="empty_body">Stuknij +, aby coś dodać, np. „Podlanie roślin”. Stuknij kafelek za każdym razem, gdy zrobisz to ponownie.</string>
     <string name="empty_group">Brak kafelków w tej grupie. Stuknij +, aby dodać.</string>
-    <string name="snackbar_reset">„%1$s”: ustawiono na teraz</string>
     <string name="tile_click_label">Oznacz jako zrobione teraz</string>
+    <string name="tile_undo_hint">Stuknij ponownie, aby cofnąć</string>
     <string name="tile_long_click_label">Edytuj kafelek</string>
 
     <!-- Elapsed time -->
@@ -64,6 +64,10 @@
     <string name="action_rename">Zmień nazwę</string>
     <string name="action_delete">Usuń</string>
     <string name="action_back">Wstecz</string>
+    <string name="action_menu">Menu</string>
+    <!-- Accessibility actions on a tile while reordering. -->
+    <string name="action_move_earlier">Przesuń wcześniej</string>
+    <string name="action_move_later">Przesuń dalej</string>
 
     <!-- Edit tile sheet -->
     <string name="sheet_new_title">Nowy kafelek</string>
@@ -89,6 +93,29 @@
     <string name="counter_reset">Resetuj</string>
     <string name="widget_add">Dodaj do ekranu głównego</string>
     <string name="widget_add_hint">Pokazuje ten kafelek jako widżet. Stuknij widżet, aby oznaczyć jako zrobione.</string>
+    <string name="label_reminder">Przypomnienie</string>
+    <string name="reminder_add">Dodaj przypomnienie</string>
+    <string name="reminder_add_hint">Powiadomienie, gdy coś od dawna nie było zrobione.</string>
+    <string name="reminder_after">Przypomnij po</string>
+    <string name="reminder_less">Zmniejsz</string>
+    <string name="reminder_more">Zwiększ</string>
+    <string name="reminder_unit_hours">Godziny</string>
+    <string name="reminder_unit_days">Dni</string>
+    <string name="reminder_unit_weeks">Tygodnie</string>
+    <plurals name="reminder_weeks">
+        <item quantity="one">%d tydzień</item>
+        <item quantity="few">%d tygodnie</item>
+        <item quantity="many">%d tygodni</item>
+        <item quantity="other">%d tygodnia</item>
+    </plurals>
+    <string name="reminder_remove">Usuń</string>
+    <string name="reminder_hint">Dostaniesz powiadomienie, gdy od ostatniego razu minie: %1$s.</string>
+    <string name="reminder_notifications_off">Powiadomienia Time Clicker są wyłączone, więc przypomnienia nie mogą się pojawić. Stuknij, aby je zezwolić.</string>
+    <string name="reminder_notification_text">Nie zrobione od %1$s</string>
+    <string name="reminder_mark_done">Oznacz jako zrobione</string>
+    <string name="reminder_channel">Przypomnienia</string>
+    <string name="reminder_channel_description">Gdy kafelek z przypomnieniem od dawna nie był zrobiony.</string>
+    <string name="tile_reminder_description">Przypomnienie: %1$s</string>
     <string name="delete_tile">Usuń kafelek</string>
     <string name="tile_preview">Podgląd</string>
     <string name="tile_preview_name">Nowy kafelek</string>
@@ -99,6 +126,12 @@
     <string name="color_sky">Błękit</string>
     <string name="color_butter">Masło</string>
     <string name="color_rose">Róż</string>
+    <string name="color_teal">Morski</string>
+    <string name="color_orchid">Orchidea</string>
+    <string name="color_coral">Koralowy</string>
+    <string name="color_slate">Łupkowy</string>
+    <string name="color_lime">Limonkowy</string>
+    <string name="color_sand">Piaskowy</string>
     <string name="color_system_primary">System: akcent</string>
     <string name="color_system_secondary">System: łagodny</string>
     <string name="color_system_tertiary">System: kontrast</string>
@@ -181,7 +214,6 @@
     <string name="settings_counter">Pokazuj licznik naciśnięć</string>
     <string name="settings_counter_hint">Ile razy naciśnięto każdy kafelek – na kafelkach i widżetach.</string>
     <string name="settings_section_general">Ogólne</string>
-    <string name="settings_groups_hint">Twórz, zmieniaj nazwy, porządkuj i usuwaj grupy.</string>
     <string name="settings_language">Język</string>
     <string name="settings_language_hint">Wybierz język aplikacji w ustawieniach Androida.</string>
     <string name="settings_section_data">Twoje dane</string>
@@ -212,7 +244,6 @@
 
     <!-- Icon palette -->
     <string name="settings_icon_palette">Paleta ikon</string>
-    <string name="settings_icon_palette_hint">Wybierz, które ikony możesz przypisać kafelkowi</string>
     <string name="icon_palette_search">Szukaj ikon</string>
     <string name="icon_palette_clear_search">Wyczyść wyszukiwanie</string>
     <string name="icon_palette_yours">Twoja paleta</string>
@@ -224,8 +255,15 @@
     <string name="dialog_reset_palette_title">Zresetować paletę ikon?</string>
     <string name="dialog_reset_palette_body">Paleta wróci do domyślnych ikon. Kafelki zachowają swoje obecne ikony.</string>
 
+    <!-- Reordering the tiles of the page shown -->
+    <string name="reorder_tiles">Zmień kolejność kafelków</string>
+    <string name="reorder_hint">Przytrzymaj kafelek, a potem przeciągnij go na nowe miejsce.</string>
+
+    <!-- About -->
+    <string name="about_title">O aplikacji</string>
+
     <!-- Credits -->
-    <string name="settings_credits">Podziękowania</string>
+    <string name="credits_title">Podziękowania</string>
     <string name="credits_intro">Time Clicker powstał dzięki tym projektom open source. Dziękujemy! Stuknij jeden z nich, aby przeczytać jego licencję.</string>
     <string name="credit_icons">Ikony</string>
     <string name="credit_ui">Interfejs użytkownika</string>

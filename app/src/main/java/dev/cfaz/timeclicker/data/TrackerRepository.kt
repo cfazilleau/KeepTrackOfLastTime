@@ -26,9 +26,6 @@ class TrackerRepository(
         rows.map { it.toModel() }
     }
 
-    /** New tiles cycle through the palette so neighbours differ. */
-    suspend fun nextColor(): TileColor = TileColor.pickable[dao.trackerCount() % TileColor.pickable.size]
-
     /** Restarts the tile's press counter at 0; its history is kept. */
     suspend fun resetCount(trackerId: Long) = dao.resetCount(trackerId, clock.millis())
 
@@ -43,6 +40,8 @@ class TrackerRepository(
                 icon = spec.icon.key,
                 size = spec.size.key,
                 photo = spec.photo,
+                reminderEvery = spec.reminder?.every,
+                reminderUnit = spec.reminder?.unit?.key,
             )
         )
         cleanUpPhotos()
@@ -50,7 +49,10 @@ class TrackerRepository(
     }
 
     suspend fun updateTracker(trackerId: Long, spec: TileSpec) {
-        dao.updateTracker(trackerId, spec.name, spec.groupId, spec.color.key, spec.icon.key, spec.size.key, spec.photo)
+        dao.updateTracker(
+            trackerId, spec.name, spec.groupId, spec.color.key, spec.icon.key, spec.size.key, spec.photo,
+            spec.reminder?.every, spec.reminder?.unit?.key,
+        )
         cleanUpPhotos()
     }
 
@@ -58,6 +60,9 @@ class TrackerRepository(
         dao.deleteTracker(trackerId)
         cleanUpPhotos()
     }
+
+    /** Reorders some trackers among themselves, e.g. one group's; the others don't move. */
+    suspend fun reorderTrackers(orderedIds: List<Long>) = dao.reorderTrackers(orderedIds)
 
     /** Records that the tracker was done now. Returns the event id, usable with [undoMarkDone]. */
     suspend fun markDone(trackerId: Long): Long =
@@ -97,4 +102,5 @@ private fun TrackerWithLastDone.toModel() = Tracker(
     size = TileSize.fromKey(tracker.size),
     photo = tracker.photo,
     pressCount = pressCount,
+    reminder = Reminder.fromColumns(tracker.reminderEvery, tracker.reminderUnit),
 )

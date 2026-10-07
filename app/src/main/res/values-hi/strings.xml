@@ -6,8 +6,8 @@
     <string name="empty_title">अभी कुछ भी ट्रैक नहीं हो रहा</string>
     <string name="empty_body">कुछ जोड़ने के लिए + पर टैप करें, जैसे “पौधों को पानी दिया”। जब भी आप इसे दोबारा करें, इसकी टाइल पर टैप करें।</string>
     <string name="empty_group">इस समूह में अभी कोई टाइल नहीं है। जोड़ने के लिए + पर टैप करें।</string>
-    <string name="snackbar_reset">“%1$s” को अभी पर रीसेट किया गया</string>
     <string name="tile_click_label">अभी हो गया मार्क करें</string>
+    <string name="tile_undo_hint">वापस लेने के लिए फिर से टैप करें</string>
     <string name="tile_long_click_label">टाइल बदलें</string>
 
     <!-- Elapsed time -->
@@ -52,6 +52,10 @@
     <string name="action_rename">नाम बदलें</string>
     <string name="action_delete">मिटाएं</string>
     <string name="action_back">वापस</string>
+    <string name="action_menu">मेन्यू</string>
+    <!-- Accessibility actions on a tile while reordering. -->
+    <string name="action_move_earlier">पहले ले जाएं</string>
+    <string name="action_move_later">बाद में ले जाएं</string>
 
     <!-- Edit tile sheet -->
     <string name="sheet_new_title">नई टाइल</string>
@@ -77,6 +81,27 @@
     <string name="counter_reset">रीसेट करें</string>
     <string name="widget_add">होम स्क्रीन पर जोड़ें</string>
     <string name="widget_add_hint">इस टाइल को विजेट के रूप में दिखाता है। हो गया मार्क करने के लिए विजेट पर टैप करें।</string>
+    <string name="label_reminder">रिमाइंडर</string>
+    <string name="reminder_add">रिमाइंडर जोड़ें</string>
+    <string name="reminder_add_hint">कुछ समय से न होने पर एक नोटिफ़िकेशन पाएं।</string>
+    <string name="reminder_after">इतने समय बाद बताएं</string>
+    <string name="reminder_less">घटाएं</string>
+    <string name="reminder_more">बढ़ाएं</string>
+    <string name="reminder_unit_hours">घंटे</string>
+    <string name="reminder_unit_days">दिन</string>
+    <string name="reminder_unit_weeks">हफ़्ते</string>
+    <plurals name="reminder_weeks">
+        <item quantity="one">%d हफ़्ता</item>
+        <item quantity="other">%d हफ़्ते</item>
+    </plurals>
+    <string name="reminder_remove">हटाएं</string>
+    <string name="reminder_hint">अगर %1$s तक नहीं किया गया, तो आपको नोटिफ़िकेशन मिलेगा।</string>
+    <string name="reminder_notifications_off">Time Clicker के नोटिफ़िकेशन बंद हैं, इसलिए रिमाइंडर नहीं दिख सकते। अनुमति देने के लिए टैप करें।</string>
+    <string name="reminder_notification_text">%1$s से नहीं किया गया</string>
+    <string name="reminder_mark_done">हो गया मार्क करें</string>
+    <string name="reminder_channel">रिमाइंडर</string>
+    <string name="reminder_channel_description">जब रिमाइंडर वाली कोई टाइल कुछ समय से न की गई हो।</string>
+    <string name="tile_reminder_description">रिमाइंडर: %1$s</string>
     <string name="delete_tile">टाइल मिटाएं</string>
     <string name="tile_preview">झलक</string>
     <string name="tile_preview_name">नई टाइल</string>
@@ -87,6 +112,12 @@
     <string name="color_sky">आसमानी</string>
     <string name="color_butter">मक्खनी</string>
     <string name="color_rose">गुलाबी</string>
+    <string name="color_teal">टील</string>
+    <string name="color_orchid">ऑर्किड</string>
+    <string name="color_coral">मूंगा</string>
+    <string name="color_slate">स्लेटी</string>
+    <string name="color_lime">नींबू हरा</string>
+    <string name="color_sand">रेतीला</string>
     <string name="color_system_primary">सिस्टम एक्सेंट</string>
     <string name="color_system_secondary">सिस्टम सॉफ़्ट</string>
     <string name="color_system_tertiary">सिस्टम कंट्रास्ट</string>
@@ -167,7 +198,6 @@
     <string name="settings_counter">दबाने की गिनती दिखाएं</string>
     <string name="settings_counter_hint">हर टाइल कितनी बार दबाई गई, यह टाइलों और विजेट पर दिखता है।</string>
     <string name="settings_section_general">सामान्य</string>
-    <string name="settings_groups_hint">समूह बनाएं, उनका नाम बदलें, क्रम बदलें और उन्हें मिटाएं।</string>
     <string name="settings_language">भाषा</string>
     <string name="settings_language_hint">ऐप की भाषा Android सेटिंग में चुनें।</string>
     <string name="settings_section_data">आपका डेटा</string>
@@ -198,7 +228,6 @@
 
     <!-- Icon palette -->
     <string name="settings_icon_palette">आइकन पैलेट</string>
-    <string name="settings_icon_palette_hint">चुनें कि आप टाइल को कौन-से आइकन दे सकते हैं</string>
     <string name="icon_palette_search">आइकन खोजें</string>
     <string name="icon_palette_clear_search">खोज साफ़ करें</string>
     <string name="icon_palette_yours">आपका पैलेट</string>
@@ -210,8 +239,15 @@
     <string name="dialog_reset_palette_title">आइकन पैलेट रीसेट करें?</string>
     <string name="dialog_reset_palette_body">पैलेट डिफ़ॉल्ट आइकन पर वापस आ जाएगा। टाइलों के मौजूदा आइकन बने रहेंगे।</string>
 
+    <!-- Reordering the tiles of the page shown -->
+    <string name="reorder_tiles">टाइल का क्रम बदलें</string>
+    <string name="reorder_hint">किसी टाइल को दबाकर रखें, फिर उसे नई जगह पर खींचें।</string>
+
+    <!-- About -->
+    <string name="about_title">ऐप के बारे में</string>
+
     <!-- Credits -->
-    <string name="settings_credits">आभार</string>
+    <string name="credits_title">आभार</string>
     <string name="credits_intro">Time Clicker इन ओपन-सोर्स प्रोजेक्ट से बना है। धन्यवाद! किसी प्रोजेक्ट का लाइसेंस पढ़ने के लिए उस पर टैप करें।</string>
     <string name="credit_icons">आइकन</string>
     <string name="credit_ui">यूज़र इंटरफ़ेस</string>

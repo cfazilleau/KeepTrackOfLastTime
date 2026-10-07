@@ -21,7 +21,6 @@ import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.windowInsetsPadding
-import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material3.MaterialTheme
@@ -37,6 +36,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import dev.cfaz.timeclicker.R
 import dev.cfaz.timeclicker.TimeClickerApplication
+import dev.cfaz.timeclicker.ui.home.BentoColumns
 import dev.cfaz.timeclicker.ui.home.TileCard
 import dev.cfaz.timeclicker.ui.theme.TimeClickerTheme
 import kotlinx.coroutines.launch
@@ -88,7 +88,7 @@ class TileWidgetConfigActivity : ComponentActivity() {
                         }
                     } else if (list != null) {
                         LazyVerticalGrid(
-                            columns = GridCells.Fixed(2),
+                            columns = BentoColumns,
                             contentPadding = PaddingValues(
                                 start = 20.dp,
                                 end = 20.dp,

@@ -6,8 +6,8 @@
     <string name="empty_title">まだ何も記録していません</string>
     <string name="empty_body">+ をタップして「植物に水をやった」などを追加しましょう。またやったら、そのタイルをタップします。</string>
     <string name="empty_group">このグループにはまだタイルがありません。+ をタップして追加しましょう。</string>
-    <string name="snackbar_reset">「%1$s」を今にリセットしました</string>
     <string name="tile_click_label">今やったことにする</string>
+    <string name="tile_undo_hint">もう一度タップで元に戻す</string>
     <string name="tile_long_click_label">タイルを編集</string>
 
     <!-- Elapsed time -->
@@ -46,6 +46,10 @@
     <string name="action_rename">名前を変更</string>
     <string name="action_delete">削除</string>
     <string name="action_back">戻る</string>
+    <string name="action_menu">メニュー</string>
+    <!-- Accessibility actions on a tile while reordering. -->
+    <string name="action_move_earlier">前に移動</string>
+    <string name="action_move_later">後ろに移動</string>
 
     <!-- Edit tile sheet -->
     <string name="sheet_new_title">新しいタイル</string>
@@ -71,6 +75,26 @@
     <string name="counter_reset">リセット</string>
     <string name="widget_add">ホーム画面に追加</string>
     <string name="widget_add_hint">このタイルをウィジェットとして表示します。ウィジェットをタップすると完了にできます。</string>
+    <string name="label_reminder">リマインダー</string>
+    <string name="reminder_add">リマインダーを追加</string>
+    <string name="reminder_add_hint">しばらくやっていないときに通知します。</string>
+    <string name="reminder_after">通知までの時間</string>
+    <string name="reminder_less">減らす</string>
+    <string name="reminder_more">増やす</string>
+    <string name="reminder_unit_hours">時間</string>
+    <string name="reminder_unit_days">日</string>
+    <string name="reminder_unit_weeks">週</string>
+    <plurals name="reminder_weeks">
+        <item quantity="other">%d週間</item>
+    </plurals>
+    <string name="reminder_remove">削除</string>
+    <string name="reminder_hint">%1$sやっていないと通知します。</string>
+    <string name="reminder_notifications_off">Time Clicker の通知がオフのため、リマインダーを表示できません。タップして許可してください。</string>
+    <string name="reminder_notification_text">%1$sやっていません</string>
+    <string name="reminder_mark_done">完了にする</string>
+    <string name="reminder_channel">リマインダー</string>
+    <string name="reminder_channel_description">リマインダー付きのタイルをしばらくやっていないとき。</string>
+    <string name="tile_reminder_description">リマインダー: %1$s</string>
     <string name="delete_tile">タイルを削除</string>
     <string name="tile_preview">プレビュー</string>
     <string name="tile_preview_name">新しいタイル</string>
@@ -81,6 +105,12 @@
     <string name="color_sky">スカイ</string>
     <string name="color_butter">バター</string>
     <string name="color_rose">ローズ</string>
+    <string name="color_teal">ティール</string>
+    <string name="color_orchid">オーキッド</string>
+    <string name="color_coral">コーラル</string>
+    <string name="color_slate">スレート</string>
+    <string name="color_lime">ライム</string>
+    <string name="color_sand">サンド</string>
     <string name="color_system_primary">システムのアクセント</string>
     <string name="color_system_secondary">システムのソフト</string>
     <string name="color_system_tertiary">システムのコントラスト</string>
@@ -160,7 +190,6 @@
     <string name="settings_counter">押した回数を表示</string>
     <string name="settings_counter_hint">各タイルを押した回数をタイルとウィジェットに表示します。</string>
     <string name="settings_section_general">一般</string>
-    <string name="settings_groups_hint">グループの作成、名前の変更、並べ替え、削除を行います。</string>
     <string name="settings_language">言語</string>
     <string name="settings_language_hint">アプリの言語は Android の設定で選択できます。</string>
     <string name="settings_section_data">データ</string>
@@ -191,7 +220,6 @@
 
     <!-- Icon palette -->
     <string name="settings_icon_palette">アイコンパレット</string>
-    <string name="settings_icon_palette_hint">タイルに設定できるアイコンを選びます</string>
     <string name="icon_palette_search">アイコンを検索</string>
     <string name="icon_palette_clear_search">検索をクリア</string>
     <string name="icon_palette_yours">マイパレット</string>
@@ -203,8 +231,15 @@
     <string name="dialog_reset_palette_title">アイコンパレットをリセットしますか？</string>
     <string name="dialog_reset_palette_body">デフォルトのアイコンに戻ります。タイルのアイコンはそのまま残ります。</string>
 
+    <!-- Reordering the tiles of the page shown -->
+    <string name="reorder_tiles">タイルを並べ替え</string>
+    <string name="reorder_hint">タイルを長押しして、新しい位置までドラッグします。</string>
+
+    <!-- About -->
+    <string name="about_title">このアプリについて</string>
+
     <!-- Credits -->
-    <string name="settings_credits">クレジット</string>
+    <string name="credits_title">クレジット</string>
     <string name="credits_intro">Time Clicker は以下のオープンソースプロジェクトを利用して作られています。ありがとうございます！タップするとライセンスを確認できます。</string>
     <string name="credit_icons">アイコン</string>
     <string name="credit_ui">ユーザーインターフェース</string>

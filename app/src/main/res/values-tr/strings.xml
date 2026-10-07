@@ -6,8 +6,8 @@
     <string name="empty_title">Henüz takip edilen bir şey yok</string>
     <string name="empty_body">Bir şey eklemek için + simgesine dokunun, örneğin “Bitkiler sulandı”. Her tekrar yaptığınızda kutucuğuna dokunun.</string>
     <string name="empty_group">Bu grupta henüz kutucuk yok. Eklemek için + simgesine dokunun.</string>
-    <string name="snackbar_reset">“%1$s” şimdiye sıfırlandı</string>
     <string name="tile_click_label">Şimdi yapıldı olarak işaretle</string>
+    <string name="tile_undo_hint">Tekrar dokunun: geri al</string>
     <string name="tile_long_click_label">Kutucuğu düzenle</string>
 
     <!-- Elapsed time -->
@@ -52,6 +52,10 @@
     <string name="action_rename">Yeniden adlandır</string>
     <string name="action_delete">Sil</string>
     <string name="action_back">Geri</string>
+    <string name="action_menu">Menü</string>
+    <!-- Accessibility actions on a tile while reordering. -->
+    <string name="action_move_earlier">Öne taşı</string>
+    <string name="action_move_later">Arkaya taşı</string>
 
     <!-- Edit tile sheet -->
     <string name="sheet_new_title">Yeni kutucuk</string>
@@ -77,6 +81,27 @@
     <string name="counter_reset">Sıfırla</string>
     <string name="widget_add">Ana ekrana ekle</string>
     <string name="widget_add_hint">Bu kutucuğu widget olarak gösterir. Yapıldı olarak işaretlemek için widget’a dokunun.</string>
+    <string name="label_reminder">Hatırlatıcı</string>
+    <string name="reminder_add">Hatırlatıcı ekle</string>
+    <string name="reminder_add_hint">Bir süredir yapılmadığında bildirim alın.</string>
+    <string name="reminder_after">Şu süre sonra bildir</string>
+    <string name="reminder_less">Azalt</string>
+    <string name="reminder_more">Artır</string>
+    <string name="reminder_unit_hours">Saat</string>
+    <string name="reminder_unit_days">Gün</string>
+    <string name="reminder_unit_weeks">Hafta</string>
+    <plurals name="reminder_weeks">
+        <item quantity="one">%d hafta</item>
+        <item quantity="other">%d hafta</item>
+    </plurals>
+    <string name="reminder_remove">Kaldır</string>
+    <string name="reminder_hint">%1$s boyunca yapılmazsa bildirim alırsınız.</string>
+    <string name="reminder_notifications_off">Time Clicker bildirimleri kapalı, bu yüzden hatırlatıcılar görünemez. İzin vermek için dokunun.</string>
+    <string name="reminder_notification_text">%1$s boyunca yapılmadı</string>
+    <string name="reminder_mark_done">Yapıldı olarak işaretle</string>
+    <string name="reminder_channel">Hatırlatıcılar</string>
+    <string name="reminder_channel_description">Hatırlatıcılı bir kutucuk bir süredir yapılmadığında.</string>
+    <string name="tile_reminder_description">Hatırlatıcı: %1$s</string>
     <string name="delete_tile">Kutucuğu sil</string>
     <string name="tile_preview">Önizleme</string>
     <string name="tile_preview_name">Yeni kutucuk</string>
@@ -87,6 +112,12 @@
     <string name="color_sky">Gökyüzü</string>
     <string name="color_butter">Tereyağı</string>
     <string name="color_rose">Gül</string>
+    <string name="color_teal">Deniz mavisi</string>
+    <string name="color_orchid">Orkide</string>
+    <string name="color_coral">Mercan</string>
+    <string name="color_slate">Arduvaz</string>
+    <string name="color_lime">Limon yeşili</string>
+    <string name="color_sand">Kum</string>
     <string name="color_system_primary">Sistem: vurgu</string>
     <string name="color_system_secondary">Sistem: yumuşak</string>
     <string name="color_system_tertiary">Sistem: kontrast</string>
@@ -167,7 +198,6 @@
     <string name="settings_counter">Basma sayacını göster</string>
     <string name="settings_counter_hint">Her kutucuğa kaç kez basıldığı; kutucuklarda ve widget’larda.</string>
     <string name="settings_section_general">Genel</string>
-    <string name="settings_groups_hint">Grup oluşturun, yeniden adlandırın, sıralayın ve silin.</string>
     <string name="settings_language">Dil</string>
     <string name="settings_language_hint">Uygulamanın dilini Android ayarlarından seçin.</string>
     <string name="settings_section_data">Verileriniz</string>
@@ -198,7 +228,6 @@
 
     <!-- Icon palette -->
     <string name="settings_icon_palette">Simge paleti</string>
-    <string name="settings_icon_palette_hint">Bir kutucuğa verebileceğiniz simgeleri seçin</string>
     <string name="icon_palette_search">Simge ara</string>
     <string name="icon_palette_clear_search">Aramayı temizle</string>
     <string name="icon_palette_yours">Paletiniz</string>
@@ -210,8 +239,15 @@
     <string name="dialog_reset_palette_title">Simge paleti sıfırlansın mı?</string>
     <string name="dialog_reset_palette_body">Palet varsayılan simgelere döner. Kutucuklar mevcut simgelerini korur.</string>
 
+    <!-- Reordering the tiles of the page shown -->
+    <string name="reorder_tiles">Kutucukları sırala</string>
+    <string name="reorder_hint">Bir kutucuğu basılı tutun, ardından yeni yerine sürükleyin.</string>
+
+    <!-- About -->
+    <string name="about_title">Hakkında</string>
+
     <!-- Credits -->
-    <string name="settings_credits">Emeği geçenler</string>
+    <string name="credits_title">Emeği geçenler</string>
     <string name="credits_intro">Time Clicker bu açık kaynak projelerle geliştirildi. Teşekkürler! Lisansını okumak için birine dokunun.</string>
     <string name="credit_icons">Simgeler</string>
     <string name="credit_ui">Kullanıcı arayüzü</string>

@@ -6,8 +6,8 @@
     <string name="empty_title">Noch nichts erfasst</string>
     <string name="empty_body">Tippe auf +, um etwas hinzuzufügen, z. B. „Pflanzen gegossen“. Tippe auf die Kachel, sobald du es wieder machst.</string>
     <string name="empty_group">Noch keine Kacheln in dieser Gruppe. Tippe auf +, um eine hinzuzufügen.</string>
-    <string name="snackbar_reset">„%1$s“ auf jetzt gesetzt</string>
     <string name="tile_click_label">Jetzt als erledigt markieren</string>
+    <string name="tile_undo_hint">Erneut tippen: rückgängig</string>
     <string name="tile_long_click_label">Kachel bearbeiten</string>
 
     <!-- Elapsed time -->
@@ -52,6 +52,10 @@
     <string name="action_rename">Umbenennen</string>
     <string name="action_delete">Löschen</string>
     <string name="action_back">Zurück</string>
+    <string name="action_menu">Menü</string>
+    <!-- Accessibility actions on a tile while reordering. -->
+    <string name="action_move_earlier">Nach vorne</string>
+    <string name="action_move_later">Nach hinten</string>
 
     <!-- Edit tile sheet -->
     <string name="sheet_new_title">Neue Kachel</string>
@@ -77,6 +81,27 @@
     <string name="counter_reset">Zurücksetzen</string>
     <string name="widget_add">Zum Startbildschirm hinzufügen</string>
     <string name="widget_add_hint">Zeigt diese Kachel als Widget. Tippe auf das Widget, um sie als erledigt zu markieren.</string>
+    <string name="label_reminder">Erinnerung</string>
+    <string name="reminder_add">Erinnerung hinzufügen</string>
+    <string name="reminder_add_hint">Eine Benachrichtigung, wenn es eine Weile nicht erledigt wurde.</string>
+    <string name="reminder_after">Erinnern nach</string>
+    <string name="reminder_less">Verringern</string>
+    <string name="reminder_more">Erhöhen</string>
+    <string name="reminder_unit_hours">Stunden</string>
+    <string name="reminder_unit_days">Tage</string>
+    <string name="reminder_unit_weeks">Wochen</string>
+    <plurals name="reminder_weeks">
+        <item quantity="one">%d Woche</item>
+        <item quantity="other">%d Wochen</item>
+    </plurals>
+    <string name="reminder_remove">Entfernen</string>
+    <string name="reminder_hint">Du bekommst eine Benachrichtigung, wenn es %1$s lang nicht erledigt wurde.</string>
+    <string name="reminder_notifications_off">Benachrichtigungen für Time Clicker sind aus, daher können keine Erinnerungen erscheinen. Tippe, um sie zu erlauben.</string>
+    <string name="reminder_notification_text">%1$s lang nicht erledigt</string>
+    <string name="reminder_mark_done">Als erledigt markieren</string>
+    <string name="reminder_channel">Erinnerungen</string>
+    <string name="reminder_channel_description">Wenn eine Kachel mit Erinnerung eine Weile nicht erledigt wurde.</string>
+    <string name="tile_reminder_description">Erinnerung: %1$s</string>
     <string name="delete_tile">Kachel löschen</string>
     <string name="tile_preview">Vorschau</string>
     <string name="tile_preview_name">Neue Kachel</string>
@@ -87,6 +112,12 @@
     <string name="color_sky">Himmel</string>
     <string name="color_butter">Butter</string>
     <string name="color_rose">Rosé</string>
+    <string name="color_teal">Petrol</string>
+    <string name="color_orchid">Orchidee</string>
+    <string name="color_coral">Koralle</string>
+    <string name="color_slate">Schiefer</string>
+    <string name="color_lime">Limette</string>
+    <string name="color_sand">Sand</string>
     <string name="color_system_primary">System: Akzent</string>
     <string name="color_system_secondary">System: sanft</string>
     <string name="color_system_tertiary">System: Kontrast</string>
@@ -167,7 +198,6 @@
     <string name="settings_counter">Zähler anzeigen</string>
     <string name="settings_counter_hint">Wie oft jede Kachel gedrückt wurde, auf Kacheln und Widgets.</string>
     <string name="settings_section_general">Allgemein</string>
-    <string name="settings_groups_hint">Gruppen erstellen, umbenennen, sortieren und löschen.</string>
     <string name="settings_language">Sprache</string>
     <string name="settings_language_hint">Wähle die Sprache der App in den Android-Einstellungen.</string>
     <string name="settings_section_data">Deine Daten</string>
@@ -198,7 +228,6 @@
 
     <!-- Icon palette -->
     <string name="settings_icon_palette">Symbolpalette</string>
-    <string name="settings_icon_palette_hint">Wähle, welche Symbole du einer Kachel geben kannst</string>
     <string name="icon_palette_search">Symbole suchen</string>
     <string name="icon_palette_clear_search">Suche löschen</string>
     <string name="icon_palette_yours">Deine Palette</string>
@@ -210,8 +239,15 @@
     <string name="dialog_reset_palette_title">Symbolpalette zurücksetzen?</string>
     <string name="dialog_reset_palette_body">Die Palette enthält dann wieder die Standardsymbole. Kacheln behalten ihr aktuelles Symbol.</string>
 
+    <!-- Reordering the tiles of the page shown -->
+    <string name="reorder_tiles">Kacheln anordnen</string>
+    <string name="reorder_hint">Kachel gedrückt halten, dann an ihren neuen Platz ziehen.</string>
+
+    <!-- About -->
+    <string name="about_title">Über die App</string>
+
     <!-- Credits -->
-    <string name="settings_credits">Danksagungen</string>
+    <string name="credits_title">Danksagungen</string>
     <string name="credits_intro">Time Clicker basiert auf diesen Open-Source-Projekten. Danke! Tippe auf eines, um seine Lizenz zu lesen.</string>
     <string name="credit_icons">Symbole</string>
     <string name="credit_ui">Benutzeroberfläche</string>

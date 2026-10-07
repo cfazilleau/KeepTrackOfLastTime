@@ -14,6 +14,7 @@ import androidx.glance.appwidget.state.updateAppWidgetState
 import androidx.glance.state.PreferencesGlanceStateDefinition
 import dev.cfaz.timeclicker.TimeClickerApplication
 import dev.cfaz.timeclicker.data.AppSettings
+import dev.cfaz.timeclicker.data.TilePresses
 import dev.cfaz.timeclicker.data.TrackerRepository
 import dev.cfaz.timeclicker.ui.time.RelativeTime
 import dev.cfaz.timeclicker.ui.time.TimeUnit
@@ -108,6 +109,9 @@ object TileWidgets {
 
 internal val Context.trackerRepository: TrackerRepository
     get() = (applicationContext as TimeClickerApplication).container.trackerRepository
+
+internal val Context.tilePresses: TilePresses
+    get() = (applicationContext as TimeClickerApplication).container.tilePresses
 
 internal val Context.appSettings: AppSettings
     get() = (applicationContext as TimeClickerApplication).container.settingsRepository.settings.value

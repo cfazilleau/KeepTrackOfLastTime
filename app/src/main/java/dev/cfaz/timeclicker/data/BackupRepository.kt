@@ -134,7 +134,7 @@ class BackupRepository(
                 size = TileSize.fromKey(it.optString("size")).key,
                 photo = it.optStringOrNull("photo")?.takeIf { name -> SafeName.matches(name) },
                 countSince = it.optLong("countSince", createdAt),
-            )
+            ).withReminder(Reminder.fromColumns(it.optIntOrNull("reminderEvery"), it.optStringOrNull("reminderUnit")))
         }
         val trackerIds = trackers.map { it.id }.toSet()
         val events = json.getJSONArray("events").objects()
@@ -194,6 +194,12 @@ private fun TrackerEntity.toJson() = JSONObject()
     .put("size", size)
     .put("photo", photo ?: JSONObject.NULL)
     .put("countSince", countSince)
+    .put("reminderEvery", reminderEvery ?: JSONObject.NULL)
+    .put("reminderUnit", reminderUnit ?: JSONObject.NULL)
+
+/** Older backups have no reminder fields: their tiles get none. */
+private fun TrackerEntity.withReminder(reminder: Reminder?) =
+    copy(reminderEvery = reminder?.every, reminderUnit = reminder?.unit?.key)
 
 private fun TrackerEventEntity.toJson() = JSONObject().put("id", id).put("trackerId", trackerId).put("doneAt", doneAt)
 
@@ -202,3 +208,5 @@ private fun JSONArray.objects(): List<JSONObject> = List(length()) { getJSONObje
 private fun JSONObject.optLongOrNull(key: String): Long? = if (isNull(key)) null else getLong(key)
 
 private fun JSONObject.optStringOrNull(key: String): String? = if (isNull(key)) null else getString(key)
+
+private fun JSONObject.optIntOrNull(key: String): Int? = if (isNull(key)) null else optInt(key, 0)

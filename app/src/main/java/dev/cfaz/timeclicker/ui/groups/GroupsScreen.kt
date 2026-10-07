@@ -46,6 +46,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil3.compose.AsyncImage
+<<<<<<< HEAD:app/src/main/java/dev/cfaz/timeclicker/ui/groups/GroupsScreen.kt
 import dev.cfaz.timeclicker.R
 import dev.cfaz.timeclicker.data.Tracker
 import dev.cfaz.timeclicker.data.TrackerGroup
@@ -58,6 +59,21 @@ import dev.cfaz.timeclicker.ui.theme.AppIcons
 import dev.cfaz.timeclicker.ui.theme.TimeClickerTheme
 import dev.cfaz.timeclicker.ui.theme.pressedIn
 import dev.cfaz.timeclicker.ui.theme.raised
+=======
+import dev.cfaz.timeclicker.R
+import dev.cfaz.timeclicker.data.Tracker
+import dev.cfaz.timeclicker.data.TrackerGroup
+import dev.cfaz.timeclicker.ui.components.GutteredColumn
+import dev.cfaz.timeclicker.ui.components.NeuIconButton
+import dev.cfaz.timeclicker.ui.components.NeuTextField
+import dev.cfaz.timeclicker.ui.components.PillButton
+import dev.cfaz.timeclicker.ui.home.ConfirmDialog
+import dev.cfaz.timeclicker.ui.home.NameDialog
+import dev.cfaz.timeclicker.ui.theme.AppIcons
+import dev.cfaz.timeclicker.ui.theme.TimeClickerTheme
+import dev.cfaz.timeclicker.ui.theme.pressedIn
+import dev.cfaz.timeclicker.ui.theme.raised
+>>>>>>> origin/main:app/src/main/java/dev/cfaz/timeclicker/ui/groups/GroupsScreen.kt
 import sh.calvin.reorderable.ReorderableItem
 import sh.calvin.reorderable.rememberReorderableLazyListState
 import java.io.File
@@ -91,14 +107,14 @@ fun GroupsScreen(
         }
     }
 
-    Column(
+    GutteredColumn(
         Modifier
             .fillMaxSize()
             .background(palette.ground)
             .windowInsetsPadding(WindowInsets.safeDrawing.only(WindowInsetsSides.Top + WindowInsetsSides.Horizontal)),
-    ) {
+    ) { gutter ->
         Row(
-            Modifier.fillMaxWidth().padding(start = 20.dp, end = 20.dp, top = 20.dp, bottom = 8.dp),
+            Modifier.fillMaxWidth().padding(start = gutter, end = gutter, top = 20.dp, bottom = 8.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(14.dp),
         ) {
@@ -109,7 +125,7 @@ fun GroupsScreen(
         LazyColumn(
             state = listState,
             modifier = Modifier.fillMaxSize(),
-            contentPadding = PaddingValues(start = 20.dp, end = 20.dp, top = 12.dp, bottom = 40.dp),
+            contentPadding = PaddingValues(start = gutter, end = gutter, top = 12.dp, bottom = 40.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
             item(key = "intro") {

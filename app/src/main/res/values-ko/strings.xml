@@ -6,8 +6,8 @@
     <string name="empty_title">아직 기록한 항목이 없어요</string>
     <string name="empty_body">+를 눌러 “화분에 물 주기” 같은 항목을 추가하세요. 다시 할 때마다 해당 타일을 누르면 돼요.</string>
     <string name="empty_group">이 그룹에 아직 타일이 없어요. +를 눌러 추가하세요.</string>
-    <string name="snackbar_reset">“%1$s”을(를) 지금으로 재설정함</string>
     <string name="tile_click_label">지금 완료로 표시</string>
+    <string name="tile_undo_hint">다시 누르면 실행 취소</string>
     <string name="tile_long_click_label">타일 수정</string>
 
     <!-- Elapsed time -->
@@ -46,6 +46,10 @@
     <string name="action_rename">이름 변경</string>
     <string name="action_delete">삭제</string>
     <string name="action_back">뒤로</string>
+    <string name="action_menu">메뉴</string>
+    <!-- Accessibility actions on a tile while reordering. -->
+    <string name="action_move_earlier">앞으로 이동</string>
+    <string name="action_move_later">뒤로 이동</string>
 
     <!-- Edit tile sheet -->
     <string name="sheet_new_title">새 타일</string>
@@ -71,6 +75,26 @@
     <string name="counter_reset">재설정</string>
     <string name="widget_add">홈 화면에 추가</string>
     <string name="widget_add_hint">이 타일을 위젯으로 표시해요. 위젯을 누르면 완료로 표시돼요.</string>
+    <string name="label_reminder">알림</string>
+    <string name="reminder_add">알림 추가</string>
+    <string name="reminder_add_hint">한동안 하지 않으면 알림을 받아요.</string>
+    <string name="reminder_after">알림까지 시간</string>
+    <string name="reminder_less">줄이기</string>
+    <string name="reminder_more">늘리기</string>
+    <string name="reminder_unit_hours">시간</string>
+    <string name="reminder_unit_days">일</string>
+    <string name="reminder_unit_weeks">주</string>
+    <plurals name="reminder_weeks">
+        <item quantity="other">%d주</item>
+    </plurals>
+    <string name="reminder_remove">삭제</string>
+    <string name="reminder_hint">%1$s 동안 하지 않으면 알려 드려요.</string>
+    <string name="reminder_notifications_off">Time Clicker 알림이 꺼져 있어 알림을 표시할 수 없어요. 탭해서 허용하세요.</string>
+    <string name="reminder_notification_text">%1$s 동안 하지 않음</string>
+    <string name="reminder_mark_done">완료로 표시</string>
+    <string name="reminder_channel">알림</string>
+    <string name="reminder_channel_description">알림이 설정된 타일을 한동안 하지 않았을 때.</string>
+    <string name="tile_reminder_description">알림: %1$s</string>
     <string name="delete_tile">타일 삭제</string>
     <string name="tile_preview">미리보기</string>
     <string name="tile_preview_name">새 타일</string>
@@ -81,6 +105,12 @@
     <string name="color_sky">하늘색</string>
     <string name="color_butter">버터</string>
     <string name="color_rose">로즈</string>
+    <string name="color_teal">청록</string>
+    <string name="color_orchid">오키드</string>
+    <string name="color_coral">코랄</string>
+    <string name="color_slate">슬레이트</string>
+    <string name="color_lime">라임</string>
+    <string name="color_sand">샌드</string>
     <string name="color_system_primary">시스템 강조색</string>
     <string name="color_system_secondary">시스템 부드러운 색</string>
     <string name="color_system_tertiary">시스템 대비색</string>
@@ -160,7 +190,6 @@
     <string name="settings_counter">누른 횟수 표시</string>
     <string name="settings_counter_hint">각 타일을 누른 횟수를 타일과 위젯에 표시해요.</string>
     <string name="settings_section_general">일반</string>
-    <string name="settings_groups_hint">그룹을 만들고, 이름을 바꾸고, 순서를 정하고, 삭제해요.</string>
     <string name="settings_language">언어</string>
     <string name="settings_language_hint">Android 설정에서 앱 언어를 선택하세요.</string>
     <string name="settings_section_data">내 데이터</string>
@@ -191,7 +220,6 @@
 
     <!-- Icon palette -->
     <string name="settings_icon_palette">아이콘 팔레트</string>
-    <string name="settings_icon_palette_hint">타일에 지정할 수 있는 아이콘을 선택하세요</string>
     <string name="icon_palette_search">아이콘 검색</string>
     <string name="icon_palette_clear_search">검색어 지우기</string>
     <string name="icon_palette_yours">내 팔레트</string>
@@ -203,8 +231,15 @@
     <string name="dialog_reset_palette_title">아이콘 팔레트를 재설정할까요?</string>
     <string name="dialog_reset_palette_body">기본 아이콘으로 돌아가요. 타일은 현재 아이콘을 그대로 유지해요.</string>
 
+    <!-- Reordering the tiles of the page shown -->
+    <string name="reorder_tiles">타일 순서 바꾸기</string>
+    <string name="reorder_hint">타일을 길게 누른 다음 새 위치로 드래그하세요.</string>
+
+    <!-- About -->
+    <string name="about_title">앱 정보</string>
+
     <!-- Credits -->
-    <string name="settings_credits">크레딧</string>
+    <string name="credits_title">크레딧</string>
     <string name="credits_intro">Time Clicker는 다음 오픈소스 프로젝트로 만들어졌어요. 감사합니다! 프로젝트를 누르면 라이선스를 볼 수 있어요.</string>
     <string name="credit_icons">아이콘</string>
     <string name="credit_ui">사용자 인터페이스</string>

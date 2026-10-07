@@ -12,13 +12,11 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
@@ -54,7 +52,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -63,6 +60,7 @@ import dev.cfaz.timeclicker.R
 import dev.cfaz.timeclicker.data.AppSettings
 import dev.cfaz.timeclicker.data.ThemeMode
 import dev.cfaz.timeclicker.data.TimeDisplay
+import dev.cfaz.timeclicker.ui.components.GutteredColumn
 import dev.cfaz.timeclicker.ui.components.NeuIconButton
 import dev.cfaz.timeclicker.ui.components.SegmentedControl
 import dev.cfaz.timeclicker.ui.home.ConfirmDialog
@@ -72,14 +70,9 @@ import dev.cfaz.timeclicker.ui.theme.raised
 import dev.cfaz.timeclicker.ui.theme.supportsDynamicColor
 import java.time.LocalDate
 
-/** The app's website, shown under the support text. */
-private const val WEBSITE_HOST = "timeclicker.cfaz.dev"
-
 @Composable
 fun SettingsScreen(
     onBack: () -> Unit,
-    onManageGroups: () -> Unit,
-    onOpenIconPalette: () -> Unit,
     viewModel: SettingsViewModel = viewModel(factory = SettingsViewModel.Factory),
 ) {
     val palette = TimeClickerTheme.palette
@@ -115,13 +108,13 @@ fun SettingsScreen(
     fun update(transform: (AppSettings) -> AppSettings) = viewModel.update(transform)
 
     Box(Modifier.fillMaxSize().background(palette.ground)) {
-        Column(
+        GutteredColumn(
             Modifier
                 .fillMaxSize()
                 .windowInsetsPadding(WindowInsets.safeDrawing.only(WindowInsetsSides.Top + WindowInsetsSides.Horizontal)),
-        ) {
+        ) { gutter ->
             Row(
-                Modifier.fillMaxWidth().padding(start = 20.dp, end = 20.dp, top = 20.dp, bottom = 8.dp),
+                Modifier.fillMaxWidth().padding(start = gutter, end = gutter, top = 20.dp, bottom = 8.dp),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(14.dp),
             ) {
@@ -132,7 +125,7 @@ fun SettingsScreen(
                 LinearProgressIndicator(
                     color = palette.accent,
                     trackColor = palette.field,
-                    modifier = Modifier.fillMaxWidth().padding(horizontal = 20.dp).clip(CircleShape),
+                    modifier = Modifier.fillMaxWidth().padding(horizontal = gutter).clip(CircleShape),
                 )
             }
 
@@ -141,8 +134,8 @@ fun SettingsScreen(
                     .fillMaxSize()
                     .verticalScroll(rememberScrollState())
                     .padding(
-                        start = 20.dp,
-                        end = 20.dp,
+                        start = gutter,
+                        end = gutter,
                         top = 16.dp,
                         bottom = 40.dp + WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding(),
                     ),
@@ -211,25 +204,11 @@ fun SettingsScreen(
                         checked = settings.showCounter,
                         onCheckedChange = { on -> update { it.copy(showCounter = on) } },
                     )
-                    RowDivider()
-                    ActionRow(
-                        icon = AppIcons.Palette,
-                        title = stringResource(R.string.settings_icon_palette),
-                        hint = stringResource(R.string.settings_icon_palette_hint),
-                        onClick = onOpenIconPalette,
-                    )
                 }
 
-                Section(stringResource(R.string.settings_section_general)) {
-                    ActionRow(
-                        icon = AppIcons.Groups,
-                        title = stringResource(R.string.action_manage_groups),
-                        hint = stringResource(R.string.settings_groups_hint),
-                        onClick = onManageGroups,
-                    )
-                    // The per-app language setting exists from Android 13.
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                        RowDivider()
+                // The per-app language setting exists from Android 13.
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                    Section(stringResource(R.string.settings_section_general)) {
                         ActionRow(
                             icon = AppIcons.Language,
                             title = stringResource(R.string.settings_language),
@@ -263,26 +242,6 @@ fun SettingsScreen(
                         onClick = { confirmImport = true },
                     )
                 }
-
-                SupportSection(
-                    onOpenWebsite = {
-                        try {
-                            context.startActivity(Intent(Intent.ACTION_VIEW, "https://$WEBSITE_HOST".toUri()))
-                        } catch (e: ActivityNotFoundException) {
-                            // No browser.
-                        }
-                    },
-                )
-
-                CreditsSection()
-
-                Text(
-                    stringResource(R.string.settings_version, appVersion(context)),
-                    style = MaterialTheme.typography.labelMedium,
-                    color = palette.muted,
-                    textAlign = TextAlign.Center,
-                    modifier = Modifier.fillMaxWidth(),
-                )
             }
         }
 
@@ -320,21 +279,20 @@ fun SettingsScreen(
 
 private const val BACKUP_MIME = "application/zip"
 
-private fun appVersion(context: android.content.Context): String =
-    context.packageManager.getPackageInfo(context.packageName, 0).versionName.orEmpty()
-
-/** A titled group of rows on a raised card. */
+/** A group of rows on a raised card, under its title if it has one. */
 @Composable
-internal fun Section(title: String, content: @Composable () -> Unit) {
+internal fun Section(title: String?, content: @Composable () -> Unit) {
     val palette = TimeClickerTheme.palette
     val shape = RoundedCornerShape(24.dp)
     Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-        Text(
-            title,
-            style = MaterialTheme.typography.labelLarge,
-            color = palette.muted,
-            modifier = Modifier.padding(start = 4.dp),
-        )
+        if (title != null) {
+            Text(
+                title,
+                style = MaterialTheme.typography.labelLarge,
+                color = palette.muted,
+                modifier = Modifier.padding(start = 4.dp),
+            )
+        }
         Column(
             Modifier
                 .fillMaxWidth()
@@ -404,38 +362,5 @@ private fun ActionRow(icon: ImageVector, title: String, hint: String?, onClick: 
         }
         RowTexts(title, hint, Modifier.weight(1f))
         Icon(AppIcons.Chevron, null, tint = palette.muted, modifier = Modifier.size(18.dp))
-    }
-}
-
-/** Why the app is free, and a link to its website. */
-@Composable
-private fun SupportSection(onOpenWebsite: () -> Unit) {
-    val palette = TimeClickerTheme.palette
-    Column(
-        Modifier.fillMaxWidth().padding(top = 4.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(14.dp),
-    ) {
-        Text(
-            stringResource(R.string.support_text),
-            style = MaterialTheme.typography.bodySmall,
-            color = palette.muted,
-            textAlign = TextAlign.Center,
-            modifier = Modifier.padding(horizontal = 12.dp),
-        )
-        Row(
-            Modifier
-                .height(48.dp)
-                .clip(CircleShape)
-                .background(palette.accent)
-                .clickable(role = Role.Button, onClick = onOpenWebsite)
-                .padding(horizontal = 22.dp),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(10.dp),
-        ) {
-            Icon(AppIcons.ExternalLink, null, tint = palette.onAccent, modifier = Modifier.size(18.dp))
-            Text(WEBSITE_HOST, style = MaterialTheme.typography.labelLarge, color = palette.onAccent)
-        }
-        Spacer(Modifier.height(4.dp))
     }
 }

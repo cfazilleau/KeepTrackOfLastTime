@@ -36,6 +36,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
@@ -44,6 +45,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
@@ -64,6 +66,7 @@ import dev.cfaz.timeclicker.data.CatalogIcon
 import dev.cfaz.timeclicker.data.IconCatalog
 import dev.cfaz.timeclicker.data.SettingsRepository
 import dev.cfaz.timeclicker.data.TileIcon
+import dev.cfaz.timeclicker.ui.components.GutteredColumn
 import dev.cfaz.timeclicker.ui.components.NeuIconButton
 import dev.cfaz.timeclicker.ui.components.NeuTextField
 import dev.cfaz.timeclicker.ui.home.ConfirmDialog
@@ -98,7 +101,7 @@ private class CategoryUi(val id: String, val name: String, val icons: List<Catal
 /**
  * Every Lucide icon, by category, to choose the icons offered when editing a tile.
  * The palette comes first; tapping any icon adds it to the palette or removes it. Search looks at the
- * icon names, Lucide's (English) tags and the translated category names.
+ * icon names, Lucide's (English) tags, the search words in the app's language and the translated category names.
  */
 @Composable
 fun IconPaletteScreen(
@@ -111,14 +114,14 @@ fun IconPaletteScreen(
     var query by rememberSaveable { mutableStateOf("") }
     var confirmReset by remember { mutableStateOf(false) }
 
-    Column(
+    GutteredColumn(
         Modifier
             .fillMaxSize()
             .background(palette.ground)
             .windowInsetsPadding(WindowInsets.safeDrawing.only(WindowInsetsSides.Top + WindowInsetsSides.Horizontal)),
-    ) {
+    ) { gutter ->
         Row(
-            Modifier.fillMaxWidth().padding(start = 20.dp, end = 20.dp, top = 20.dp, bottom = 8.dp),
+            Modifier.fillMaxWidth().padding(start = gutter, end = gutter, top = 20.dp, bottom = 8.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(14.dp),
         ) {
@@ -137,7 +140,7 @@ fun IconPaletteScreen(
                 shape = CircleShape,
             )
         }
-        IconSearchField(query, onQueryChange = { query = it })
+        IconSearchField(query, onQueryChange = { query = it }, gutter = gutter)
 
         if (catalog != null) {
             val selected = remember(iconPalette) { iconPalette.toSet() }
@@ -151,6 +154,7 @@ fun IconPaletteScreen(
                 highlight = palette.accent,
                 onHighlight = palette.onAccent,
                 bottomPadding = 40.dp + WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding(),
+                gutter = gutter,
             )
         }
     }
@@ -169,9 +173,9 @@ fun IconPaletteScreen(
     }
 }
 
-/** Search field for [IconGrid]. */
+/** Search field for [IconGrid]; [gutter] pads its sides. */
 @Composable
-internal fun IconSearchField(query: String, onQueryChange: (String) -> Unit) {
+internal fun IconSearchField(query: String, onQueryChange: (String) -> Unit, gutter: Dp = 20.dp) {
     val palette = TimeClickerTheme.palette
     val clearButton: @Composable () -> Unit = {
         IconButton(onClick = { onQueryChange("") }) {
@@ -186,13 +190,14 @@ internal fun IconSearchField(query: String, onQueryChange: (String) -> Unit) {
         leadingIcon = AppIcons.Search,
         capitalization = KeyboardCapitalization.None,
         trailing = clearButton.takeIf { query.isNotEmpty() },
-        modifier = Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 8.dp),
+        modifier = Modifier.fillMaxWidth().padding(horizontal = gutter, vertical = 8.dp),
     )
 }
 
 /**
  * The palette then every category; with a search, the matching icons instead.
  * [editsPalette]: tapping an icon toggles it in the palette (with hints about it), rather than choosing it.
+ * [gutter] pads the grid's sides.
  */
 @Composable
 internal fun IconGrid(
@@ -206,27 +211,37 @@ internal fun IconGrid(
     onHighlight: Color,
     bottomPadding: Dp,
     modifier: Modifier = Modifier,
+    gutter: Dp = 20.dp,
     state: LazyGridState = rememberLazyGridState(),
 ) {
     val resources = LocalResources.current
+    val context = LocalContext.current
     val locale = LocalConfiguration.current.locales[0]
+    // Lucide's tags are English: search also looks at the words in the app's language, where there are some.
+    val localTags by produceState(emptyMap<String, List<String>>(), locale.language) {
+        value = IconCatalog.localTags(context.applicationContext, locale.language)
+    }
     val categories = remember(catalog, resources, locale) {
         val collator = Collator.getInstance(locale)
         catalog.categories.mapNotNull { (id, icons) ->
             categoryNames[id]?.let { CategoryUi(id, resources.getString(it), icons) }
         }.sortedWith(compareBy(collator) { it.name })
     }
-    // Every icon's searchable text, lower-cased and without accents ("étoile" is found with "etoile").
-    val searchText = remember(catalog, categories) {
+    // Every icon's searchable words, lower-cased and without accents ("étoile" is found with "etoile").
+    val searchWords = remember(catalog, categories, localTags) {
         val categoryLabels = categories.associate { it.id to it.name }
         catalog.icons.associateWith { icon ->
-            (listOf(icon.icon.key.replace('-', ' '), iconLabel(resources, icon.icon)) + icon.tags +
-                icon.categories.mapNotNull(categoryLabels::get)).joinToString(" ").simplified()
+            (listOf(icon.icon.key, iconLabel(resources, icon.icon)) + icon.tags + localTags[icon.icon.key].orEmpty() +
+                icon.categories.mapNotNull(categoryLabels::get)).flatMap { it.searchWords() }.toSet()
         }
     }
-    val words = query.simplified().split(' ').filter { it.isNotBlank() }
-    val results = remember(searchText, words) {
-        if (words.isEmpty()) emptyList() else catalog.icons.filter { icon -> words.all { it in searchText.getValue(icon) } }
+    // Each word typed must start one of the icon's words: "vélo" finds "vélo" but not "développer".
+    val words = query.searchWords()
+    val results = remember(searchWords, words) {
+        if (words.isEmpty()) emptyList() else catalog.icons.filter { icon ->
+            val iconWords = searchWords.getValue(icon)
+            words.all { word -> iconWords.any { it.startsWith(word) } }
+        }
     }
     val chosen = remember(catalog, iconPalette) { iconPalette.mapNotNull { catalog[it] } }
 
@@ -235,8 +250,8 @@ internal fun IconGrid(
         modifier = modifier.fillMaxSize(),
         state = state,
         contentPadding = PaddingValues(
-            start = 20.dp,
-            end = 20.dp,
+            start = gutter,
+            end = gutter,
             top = 12.dp,
             bottom = bottomPadding,
         ),
@@ -327,6 +342,11 @@ private fun IconCell(
     }
 }
 
-/** Lower case, without accents, for matching search words. */
-private fun String.simplified(): String =
-    Normalizer.normalize(lowercase(), Normalizer.Form.NFD).replace(Regex("\\p{Mn}+"), "")
+private val accents = Regex("\\p{Mn}+")
+private val separators = Regex("[^\\p{L}\\p{N}]+")
+
+/** The words of a text, in lower case, without accents or ligatures: "Lave-linge, cœur" → lave, linge, coeur. */
+internal fun String.searchWords(): List<String> =
+    Normalizer.normalize(lowercase(), Normalizer.Form.NFD).replace(accents, "")
+        .replace("œ", "oe").replace("æ", "ae")
+        .split(separators).filter { it.isNotEmpty() }

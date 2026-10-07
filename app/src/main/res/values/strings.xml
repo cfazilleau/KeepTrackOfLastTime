@@ -8,8 +8,8 @@
     <string name="empty_title">Nothing tracked yet</string>
     <string name="empty_body">Tap + to add something, like “Watered the plants”. Tap its tile whenever you do it again.</string>
     <string name="empty_group">No tiles in this group yet. Tap + to add one.</string>
-    <string name="snackbar_reset">“%1$s” reset to now</string>
     <string name="tile_click_label">Mark as done now</string>
+    <string name="tile_undo_hint">Tap again to undo</string>
     <string name="tile_long_click_label">Edit tile</string>
 
     <!-- Elapsed time: the two largest units, e.g. "2 minutes 45 seconds", "1 year 12 days". -->
@@ -33,7 +33,7 @@
         <item quantity="one">%d year</item>
         <item quantity="other">%d years</item>
     </plurals>
-    <!-- Joins the two units: "2 minutes" + "45 seconds". Languages written without spaces can drop it. -->
+    <!-- Joins the two units: "2 minutes" + "45 seconds", or "5 heures et 3 minutes". Languages written without spaces can drop the space. On tiles the second unit has its own line, with the words before it ("et 3 minutes"). -->
     <string name="elapsed_two_units">%1$s %2$s</string>
     <!-- Screen readers: "2 minutes 45 seconds ago". -->
     <string name="elapsed_ago">%1$s ago</string>
@@ -57,6 +57,10 @@
     <string name="action_rename">Rename</string>
     <string name="action_delete">Delete</string>
     <string name="action_back">Back</string>
+    <string name="action_menu">Menu</string>
+    <!-- Accessibility actions on a tile while reordering. -->
+    <string name="action_move_earlier">Move earlier</string>
+    <string name="action_move_later">Move later</string>
 
     <!-- Edit tile sheet -->
     <string name="sheet_new_title">New tile</string>
@@ -82,6 +86,29 @@
     <string name="counter_reset">Reset</string>
     <string name="widget_add">Add to home screen</string>
     <string name="widget_add_hint">Shows this tile as a widget. Tap the widget to mark it as done.</string>
+    <string name="label_reminder">Reminder</string>
+    <string name="reminder_add">Add a reminder</string>
+    <string name="reminder_add_hint">Get a notification when it hasn’t been done for a while.</string>
+    <string name="reminder_after">Notify after</string>
+    <string name="reminder_less">Decrease</string>
+    <string name="reminder_more">Increase</string>
+    <string name="reminder_unit_hours">Hours</string>
+    <string name="reminder_unit_days">Days</string>
+    <string name="reminder_unit_weeks">Weeks</string>
+    <plurals name="reminder_weeks">
+        <item quantity="one">%d week</item>
+        <item quantity="other">%d weeks</item>
+    </plurals>
+    <string name="reminder_remove">Remove</string>
+    <!-- %1$s is how long, e.g. "3 days". -->
+    <string name="reminder_hint">You’ll get a notification if it hasn’t been done for %1$s.</string>
+    <string name="reminder_notifications_off">Notifications are off for Time Clicker, so reminders can’t show. Tap to allow them.</string>
+    <!-- In the notification: "Not done for 3 days 2 hours". -->
+    <string name="reminder_notification_text">Not done for %1$s</string>
+    <string name="reminder_mark_done">Mark as done</string>
+    <string name="reminder_channel">Reminders</string>
+    <string name="reminder_channel_description">When a tile with a reminder hasn’t been done for a while.</string>
+    <string name="tile_reminder_description">Reminder: %1$s</string>
     <string name="delete_tile">Delete tile</string>
     <string name="tile_preview">Preview</string>
     <string name="tile_preview_name">New tile</string>
@@ -92,6 +119,12 @@
     <string name="color_sky">Sky</string>
     <string name="color_butter">Butter</string>
     <string name="color_rose">Rose</string>
+    <string name="color_teal">Teal</string>
+    <string name="color_orchid">Orchid</string>
+    <string name="color_coral">Coral</string>
+    <string name="color_slate">Slate</string>
+    <string name="color_lime">Lime</string>
+    <string name="color_sand">Sand</string>
     <!-- Material You: the system colours (Android 12+), kept for tiles that already use them. -->
     <string name="color_system_primary">System accent</string>
     <string name="color_system_secondary">System soft</string>
@@ -173,7 +206,6 @@
     <string name="settings_counter">Show press counter</string>
     <string name="settings_counter_hint">How many times each tile was pressed, on tiles and widgets.</string>
     <string name="settings_section_general">General</string>
-    <string name="settings_groups_hint">Create, rename, reorder and delete groups.</string>
     <string name="settings_language">Language</string>
     <string name="settings_language_hint">Choose the app’s language in Android settings.</string>
     <string name="settings_section_data">Your data</string>
@@ -204,7 +236,6 @@
 
     <!-- Icon palette -->
     <string name="settings_icon_palette">Icon palette</string>
-    <string name="settings_icon_palette_hint">Choose which icons you can give a tile</string>
     <string name="icon_palette_search">Search icons</string>
     <string name="icon_palette_clear_search">Clear search</string>
     <string name="icon_palette_yours">Your palette</string>
@@ -216,8 +247,15 @@
     <string name="dialog_reset_palette_title">Reset the icon palette?</string>
     <string name="dialog_reset_palette_body">It goes back to the default icons. Tiles keep the icon they have.</string>
 
+    <!-- Reordering the tiles of the page shown -->
+    <string name="reorder_tiles">Reorder tiles</string>
+    <string name="reorder_hint">Hold a tile, then drag it to its new place.</string>
+
+    <!-- About -->
+    <string name="about_title">About</string>
+
     <!-- Credits -->
-    <string name="settings_credits">Credits</string>
+    <string name="credits_title">Credits</string>
     <string name="credits_intro">Time Clicker is built with these open-source projects. Thank you! Tap one to read its licence.</string>
     <string name="credit_icons">Icons</string>
     <string name="credit_ui">User interface</string>

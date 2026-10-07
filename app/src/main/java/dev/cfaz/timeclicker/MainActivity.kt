@@ -27,13 +27,22 @@ import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+<<<<<<< HEAD:app/src/main/java/dev/cfaz/timeclicker/MainActivity.kt
 import dev.cfaz.timeclicker.ui.groups.GroupsScreen
 import dev.cfaz.timeclicker.ui.home.HomeScreen
 import dev.cfaz.timeclicker.ui.icons.IconPaletteScreen
 import dev.cfaz.timeclicker.ui.settings.SettingsScreen
 import dev.cfaz.timeclicker.ui.theme.TimeClickerTheme
+=======
+import dev.cfaz.timeclicker.ui.groups.GroupsScreen
+import dev.cfaz.timeclicker.ui.home.HomeScreen
+import dev.cfaz.timeclicker.ui.icons.IconPaletteScreen
+import dev.cfaz.timeclicker.ui.settings.AboutScreen
+import dev.cfaz.timeclicker.ui.settings.SettingsScreen
+import dev.cfaz.timeclicker.ui.theme.TimeClickerTheme
+>>>>>>> origin/main:app/src/main/java/dev/cfaz/timeclicker/MainActivity.kt
 
-private enum class Screen { HOME, GROUPS, SETTINGS, ICON_PALETTE }
+private enum class Screen { HOME, GROUPS, SETTINGS, ICON_PALETTE, ABOUT }
 
 private const val ScreenMillis = 300
 // Material's "shared axis": the old screen fades out quickly, then the new one fades in as both slide.
@@ -77,15 +86,14 @@ class MainActivity : ComponentActivity() {
                         when (screen) {
                             Screen.HOME -> HomeScreen(
                                 onManageGroups = { open(Screen.GROUPS) },
+                                onOpenIconPalette = { open(Screen.ICON_PALETTE) },
                                 onOpenSettings = { open(Screen.SETTINGS) },
+                                onOpenAbout = { open(Screen.ABOUT) },
                             )
                             Screen.GROUPS -> GroupsScreen(onBack = ::back)
-                            Screen.SETTINGS -> SettingsScreen(
-                                onBack = ::back,
-                                onManageGroups = { open(Screen.GROUPS) },
-                                onOpenIconPalette = { open(Screen.ICON_PALETTE) },
-                            )
+                            Screen.SETTINGS -> SettingsScreen(onBack = ::back)
                             Screen.ICON_PALETTE -> IconPaletteScreen(onBack = ::back)
+                            Screen.ABOUT -> AboutScreen(onBack = ::back)
                         }
                     }
                 }

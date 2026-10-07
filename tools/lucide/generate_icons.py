@@ -11,6 +11,9 @@ circles, rectangles and lines become path commands, and every arc flag is spelle
 
 Tile icons are stored by Lucide name, so an icon removed or renamed upstream would disappear
 from tiles that use it: check the diff of icons.tsv for removed names before committing.
+
+Lucide's tags are only in English. The search words in other languages, tags-<language>.tsv next to icons.tsv
+(name <TAB> words, comma-separated), are written by hand: this script lists the icons they lack or no longer have.
 """
 import io
 import json
@@ -155,6 +158,16 @@ def main():
     (OUT_DIR / "LICENSE").write_text(licence, encoding="utf-8", newline="\n")
     uncategorized = [n for n in nodes if not categories.get(n)]
     print(f"{len(nodes)} icons written; {len(uncategorized)} without a category (only found by search)")
+
+    for path in sorted(OUT_DIR.glob("tags-*.tsv")):
+        named = {line.split("\t", 1)[0] for line in path.read_text(encoding="utf-8").splitlines()
+                 if line.strip() and not line.startswith("#")}
+        removed = sorted(named - nodes.keys())
+        missing = sorted(nodes.keys() - named)
+        more = "…" if len(missing) > 20 else ""
+        print(f"{path.name}: {len(missing)} icons without words" + (f" ({', '.join(missing[:20])}{more})" if missing else ""))
+        if removed:
+            print(f"{path.name}: remove the lines of icons no longer in Lucide: {', '.join(removed)}")
 
 
 if __name__ == "__main__":
