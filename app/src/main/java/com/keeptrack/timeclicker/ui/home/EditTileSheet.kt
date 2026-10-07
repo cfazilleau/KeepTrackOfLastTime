@@ -447,18 +447,23 @@ internal fun SheetButton(text: String, onClick: () -> Unit) {
     }
 }
 
-/** The six pastel colours. */
+/** The pastel colours, in rows of six. */
 @Composable
 private fun ColourSwatches(selected: TileColor, onSelect: (TileColor) -> Unit) {
-    val colors = TileColor.pickable
     BoxWithConstraints(Modifier.fillMaxWidth()) {
         val gap = 10.dp
-        val swatchWidth = (maxWidth - gap * (colors.size - 1)) / colors.size
-        Row(horizontalArrangement = Arrangement.spacedBy(gap)) {
-            colors.forEach { Swatch(it, it == selected, swatchWidth, onSelect) }
+        val swatchWidth = (maxWidth - gap * (SwatchesPerRow - 1)) / SwatchesPerRow
+        Column(verticalArrangement = Arrangement.spacedBy(gap)) {
+            TileColor.pickable.chunked(SwatchesPerRow).forEach { row ->
+                Row(horizontalArrangement = Arrangement.spacedBy(gap)) {
+                    row.forEach { Swatch(it, it == selected, swatchWidth, onSelect) }
+                }
+            }
         }
     }
 }
+
+private const val SwatchesPerRow = 6
 
 @Composable
 private fun Swatch(color: TileColor, isSelected: Boolean, width: Dp, onSelect: (TileColor) -> Unit) {
@@ -573,6 +578,12 @@ private fun colorName(color: TileColor) = when (color) {
     TileColor.SKY -> R.string.color_sky
     TileColor.BUTTER -> R.string.color_butter
     TileColor.ROSE -> R.string.color_rose
+    TileColor.TEAL -> R.string.color_teal
+    TileColor.ORCHID -> R.string.color_orchid
+    TileColor.CORAL -> R.string.color_coral
+    TileColor.SLATE -> R.string.color_slate
+    TileColor.LIME -> R.string.color_lime
+    TileColor.SAND -> R.string.color_sand
     TileColor.PRIMARY -> R.string.color_system_primary
     TileColor.SECONDARY -> R.string.color_system_secondary
     TileColor.TERTIARY -> R.string.color_system_tertiary

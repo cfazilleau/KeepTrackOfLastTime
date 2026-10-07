@@ -52,6 +52,10 @@
     <string name="action_rename">Umbenennen</string>
     <string name="action_delete">Löschen</string>
     <string name="action_back">Zurück</string>
+    <string name="action_menu">Menü</string>
+    <!-- Accessibility actions on a tile while reordering. -->
+    <string name="action_move_earlier">Nach vorne</string>
+    <string name="action_move_later">Nach hinten</string>
 
     <!-- Edit tile sheet -->
     <string name="sheet_new_title">Neue Kachel</string>
@@ -108,6 +112,12 @@
     <string name="color_sky">Himmel</string>
     <string name="color_butter">Butter</string>
     <string name="color_rose">Rosé</string>
+    <string name="color_teal">Petrol</string>
+    <string name="color_orchid">Orchidee</string>
+    <string name="color_coral">Koralle</string>
+    <string name="color_slate">Schiefer</string>
+    <string name="color_lime">Limette</string>
+    <string name="color_sand">Sand</string>
     <string name="color_system_primary">System: Akzent</string>
     <string name="color_system_secondary">System: sanft</string>
     <string name="color_system_tertiary">System: Kontrast</string>
@@ -188,7 +198,6 @@
     <string name="settings_counter">Zähler anzeigen</string>
     <string name="settings_counter_hint">Wie oft jede Kachel gedrückt wurde, auf Kacheln und Widgets.</string>
     <string name="settings_section_general">Allgemein</string>
-    <string name="settings_groups_hint">Gruppen erstellen, umbenennen, sortieren und löschen.</string>
     <string name="settings_language">Sprache</string>
     <string name="settings_language_hint">Wähle die Sprache der App in den Android-Einstellungen.</string>
     <string name="settings_section_data">Deine Daten</string>
@@ -220,7 +229,6 @@
 
     <!-- Icon palette -->
     <string name="settings_icon_palette">Symbolpalette</string>
-    <string name="settings_icon_palette_hint">Wähle, welche Symbole du einer Kachel geben kannst</string>
     <string name="icon_palette_search">Symbole suchen</string>
     <string name="icon_palette_clear_search">Suche löschen</string>
     <string name="icon_palette_yours">Deine Palette</string>
@@ -232,9 +240,15 @@
     <string name="dialog_reset_palette_title">Symbolpalette zurücksetzen?</string>
     <string name="dialog_reset_palette_body">Die Palette enthält dann wieder die Standardsymbole. Kacheln behalten ihr aktuelles Symbol.</string>
 
+    <!-- Reordering the tiles of the page shown -->
+    <string name="reorder_tiles">Kacheln anordnen</string>
+    <string name="reorder_hint">Kachel gedrückt halten, dann an ihren neuen Platz ziehen.</string>
+
+    <!-- About -->
+    <string name="about_title">Über die App</string>
+
     <!-- Credits -->
-    <string name="settings_credits">Danksagungen</string>
-    <string name="settings_credits_hint">Open-Source-Projekte und ihre Lizenzen</string>
+    <string name="credits_title">Danksagungen</string>
     <string name="credits_intro">Time Clicker basiert auf diesen Open-Source-Projekten. Danke! Tippe auf eines, um seine Lizenz zu lesen.</string>
     <string name="credit_icons">Symbole</string>
     <string name="credit_ui">Benutzeroberfläche</string>

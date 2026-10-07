@@ -58,6 +58,10 @@
     <string name="action_rename">Renomear</string>
     <string name="action_delete">Excluir</string>
     <string name="action_back">Voltar</string>
+    <string name="action_menu">Menu</string>
+    <!-- Accessibility actions on a tile while reordering. -->
+    <string name="action_move_earlier">Mover para antes</string>
+    <string name="action_move_later">Mover para depois</string>
 
     <!-- Edit tile sheet -->
     <string name="sheet_new_title">Novo card</string>
@@ -115,6 +119,12 @@
     <string name="color_sky">Céu</string>
     <string name="color_butter">Manteiga</string>
     <string name="color_rose">Rosa</string>
+    <string name="color_teal">Verde-azulado</string>
+    <string name="color_orchid">Orquídea</string>
+    <string name="color_coral">Coral</string>
+    <string name="color_slate">Ardósia</string>
+    <string name="color_lime">Lima</string>
+    <string name="color_sand">Areia</string>
     <string name="color_system_primary">Destaque do sistema</string>
     <string name="color_system_secondary">Tom suave do sistema</string>
     <string name="color_system_tertiary">Contraste do sistema</string>
@@ -196,7 +206,6 @@
     <string name="settings_counter">Mostrar contador de toques</string>
     <string name="settings_counter_hint">Quantas vezes cada card foi tocado, nos cards e nos widgets.</string>
     <string name="settings_section_general">Geral</string>
-    <string name="settings_groups_hint">Crie, renomeie, reordene e exclua grupos.</string>
     <string name="settings_language">Idioma</string>
     <string name="settings_language_hint">Escolha o idioma do app nas configurações do Android.</string>
     <string name="settings_section_data">Seus dados</string>
@@ -228,7 +237,6 @@
 
     <!-- Icon palette -->
     <string name="settings_icon_palette">Paleta de ícones</string>
-    <string name="settings_icon_palette_hint">Escolha quais ícones você pode dar a um card</string>
     <string name="icon_palette_search">Pesquisar ícones</string>
     <string name="icon_palette_clear_search">Limpar pesquisa</string>
     <string name="icon_palette_yours">Sua paleta</string>
@@ -240,9 +248,15 @@
     <string name="dialog_reset_palette_title">Redefinir a paleta de ícones?</string>
     <string name="dialog_reset_palette_body">Ela volta aos ícones padrão. Os cards mantêm o ícone que já têm.</string>
 
+    <!-- Reordering the tiles of the page shown -->
+    <string name="reorder_tiles">Reordenar cards</string>
+    <string name="reorder_hint">Toque e segure um card, depois arraste-o para o novo lugar.</string>
+
+    <!-- About -->
+    <string name="about_title">Sobre</string>
+
     <!-- Credits -->
-    <string name="settings_credits">Créditos</string>
-    <string name="settings_credits_hint">Projetos de código aberto e suas licenças</string>
+    <string name="credits_title">Créditos</string>
     <string name="credits_intro">O Time Clicker é feito com estes projetos de código aberto. Obrigado! Toque em um deles para ler a licença.</string>
     <string name="credit_icons">Ícones</string>
     <string name="credit_ui">Interface do usuário</string>

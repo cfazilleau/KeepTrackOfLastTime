@@ -4,6 +4,7 @@ import com.keeptrack.timeclicker.data.TileSize.SMALL
 import com.keeptrack.timeclicker.data.TileSize.TALL
 import com.keeptrack.timeclicker.data.TileSize.WIDE
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNull
 import org.junit.Test
 
 class BentoTest {
@@ -67,5 +68,34 @@ class BentoTest {
         // Exactly four tiles of 150 and three gaps.
         assertEquals(4, Bento.columnCount(width = 648, minCellWidth = 150, gap = 16))
         assertEquals(7, Bento.columnCount(width = 1240, minCellWidth = 150, gap = 16))
+    }
+
+    @Test
+    fun draggedTileStaysWhileTheFingerIsOnIt() {
+        assertNull(Bento.dropIndex(listOf(SMALL, SMALL, SMALL), from = 0, x = 0.9f, y = 0.5f))
+    }
+
+    @Test
+    fun draggedTileMovesToWhereTheFingerIs() {
+        // Bottom right of a 2x2 grid of small tiles is the last place.
+        assertEquals(3, Bento.dropIndex(listOf(SMALL, SMALL, SMALL, SMALL), from = 0, x = 1.5f, y = 1.5f))
+        // And back to the top left.
+        assertEquals(0, Bento.dropIndex(listOf(SMALL, SMALL, SMALL, SMALL), from = 3, x = 0.2f, y = 0.2f))
+    }
+
+    @Test
+    fun wideTileMovesUpToTheTop() {
+        assertEquals(0, Bento.dropIndex(listOf(SMALL, SMALL, WIDE), from = 2, x = 1.5f, y = 0.5f))
+    }
+
+    @Test
+    fun noMoveWhenNoOrderPutsTheTileUnderTheFinger() {
+        // A small tile after the wide one would fill the hole above it, never land beside the finger below.
+        assertNull(Bento.dropIndex(listOf(SMALL, SMALL, WIDE), from = 0, x = 0.5f, y = 2.5f))
+    }
+
+    @Test
+    fun draggedTileMovesToTheThirdColumnOnAWiderGrid() {
+        assertEquals(2, Bento.dropIndex(listOf(SMALL, SMALL, SMALL), from = 0, x = 2.5f, y = 0.5f, columnCount = 3))
     }
 }

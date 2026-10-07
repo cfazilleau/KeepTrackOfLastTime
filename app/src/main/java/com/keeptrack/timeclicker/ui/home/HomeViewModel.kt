@@ -114,6 +114,11 @@ class HomeViewModel(
         viewModelScope.launch { repository.delete(trackerId) }
     }
 
+    /** The tiles of one section, dragged into a new order. */
+    fun reorder(orderedIds: List<Long>) {
+        viewModelScope.launch { repository.reorderTrackers(orderedIds) }
+    }
+
     suspend fun createGroup(name: String): Long = repository.createGroup(name.trim())
 
     suspend fun importPhoto(uri: Uri): String? = repository.importPhoto(uri)

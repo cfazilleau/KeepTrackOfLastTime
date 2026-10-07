@@ -61,6 +61,9 @@ class TrackerRepository(
         cleanUpPhotos()
     }
 
+    /** Reorders some trackers among themselves, e.g. one group's; the others don't move. */
+    suspend fun reorderTrackers(orderedIds: List<Long>) = dao.reorderTrackers(orderedIds)
+
     /** Records that the tracker was done now. Returns the event id, usable with [undoMarkDone]. */
     suspend fun markDone(trackerId: Long): Long =
         dao.insertEvent(TrackerEventEntity(trackerId = trackerId, doneAt = clock.millis()))
