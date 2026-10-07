@@ -148,15 +148,17 @@ The debug build installs as a separate app (`dev.cfaz.timeclicker.debug`), so it
   git tag v1.0.0 && git push origin v1.0.0
   ```
 
-`versionCode` is the workflow run number, so each new APK installs as an update over the previous one,
-and each bundle is newer than the last one on Play.
+A tag `vX.Y.Z` sets the version to `X.Y.Z` and `versionCode` to X×10000 + Y×100 + Z (`v1.6.2`: 10602; minor and
+patch stay below 100), so each release installs as an update over the previous one and Play accepts it. Other builds
+(pull requests, `main`) are for testing: version `0.0.<run number>-<commit>`, `versionCode` the run number.
 
 ### Publishing to Google Play
 
 The `google-play` job uploads the bundle with [fastlane supply](https://docs.fastlane.tools/actions/supply/), along with
 the store listing as committed in `fastlane/metadata/android` (text, screenshots, feature graphic, release notes from
 `changelogs/default.txt`); it doesn't regenerate it. Images already on Play are only sent again when they change.
-It runs on version tags, or from **Actions → Build and release → Run workflow** with a track picked.
+It runs when a version tag is pushed, or from **Actions → Build and release → Run workflow** on a version tag
+(picked under "Use workflow from") with a track picked.
 
 Setup, once:
 
