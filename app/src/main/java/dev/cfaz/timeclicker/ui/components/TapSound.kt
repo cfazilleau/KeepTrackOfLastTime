@@ -3,13 +3,9 @@ package dev.cfaz.timeclicker.ui.components
 import android.content.Context
 import android.media.AudioAttributes
 import android.media.SoundPool
-<<<<<<< HEAD:app/src/main/java/dev/cfaz/timeclicker/ui/components/TapSound.kt
-import dev.cfaz.timeclicker.R
-=======
 import dev.cfaz.timeclicker.R
 import kotlin.math.pow
 import kotlin.random.Random
->>>>>>> origin/main:app/src/main/java/dev/cfaz/timeclicker/ui/components/TapSound.kt
 
 /**
  * The short click played when a tile is marked as done, in the app or from a widget. One small pool

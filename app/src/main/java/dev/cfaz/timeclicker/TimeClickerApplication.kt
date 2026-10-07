@@ -1,14 +1,9 @@
 package dev.cfaz.timeclicker
 
 import android.app.Application
-<<<<<<< HEAD:app/src/main/java/dev/cfaz/timeclicker/TimeClickerApplication.kt
-import dev.cfaz.timeclicker.data.IconCatalog
-import dev.cfaz.timeclicker.widget.TileWidgets
-=======
 import dev.cfaz.timeclicker.data.IconCatalog
 import dev.cfaz.timeclicker.reminder.Reminders
 import dev.cfaz.timeclicker.widget.TileWidgets
->>>>>>> origin/main:app/src/main/java/dev/cfaz/timeclicker/TimeClickerApplication.kt
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

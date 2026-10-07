@@ -33,9 +33,6 @@ import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.Dp
-<<<<<<< HEAD:app/src/main/java/dev/cfaz/timeclicker/ui/home/Bento.kt
-import dev.cfaz.timeclicker.data.TileSize
-=======
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import dev.cfaz.timeclicker.data.TileSize
@@ -43,7 +40,6 @@ import dev.cfaz.timeclicker.ui.theme.TimeClickerTheme
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlin.math.abs
->>>>>>> origin/main:app/src/main/java/dev/cfaz/timeclicker/ui/home/Bento.kt
 
 /** Where a tile sits in the bento grid, in cells. */
 data class BentoCell(val column: Int, val row: Int, val columns: Int, val rows: Int) {

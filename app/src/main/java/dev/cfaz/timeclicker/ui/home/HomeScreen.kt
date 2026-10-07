@@ -91,20 +91,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.lerp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-<<<<<<< HEAD:app/src/main/java/dev/cfaz/timeclicker/ui/home/HomeScreen.kt
-import dev.cfaz.timeclicker.R
-import dev.cfaz.timeclicker.data.Tracker
-import dev.cfaz.timeclicker.ui.components.NeuButton
-import dev.cfaz.timeclicker.ui.components.NeuIconButton
-import dev.cfaz.timeclicker.ui.theme.AppIcons
-import dev.cfaz.timeclicker.ui.theme.TimeClickerTheme
-import dev.cfaz.timeclicker.ui.time.RelativeTime
-import dev.cfaz.timeclicker.ui.time.TimeUnit
-import dev.cfaz.timeclicker.ui.time.format
-import dev.cfaz.timeclicker.ui.time.rememberNow
-import dev.cfaz.timeclicker.widget.TileWidgets
-import kotlinx.coroutines.flow.collectLatest
-=======
 import dev.cfaz.timeclicker.R
 import dev.cfaz.timeclicker.data.PendingUndo
 import dev.cfaz.timeclicker.data.Tracker
@@ -118,7 +104,6 @@ import dev.cfaz.timeclicker.ui.time.TimeUnit
 import dev.cfaz.timeclicker.ui.time.format
 import dev.cfaz.timeclicker.ui.time.rememberNow
 import dev.cfaz.timeclicker.widget.TileWidgets
->>>>>>> origin/main:app/src/main/java/dev/cfaz/timeclicker/ui/home/HomeScreen.kt
 import kotlinx.coroutines.launch
 import java.io.File
 import kotlin.math.absoluteValue

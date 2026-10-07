@@ -46,20 +46,6 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil3.compose.AsyncImage
-<<<<<<< HEAD:app/src/main/java/dev/cfaz/timeclicker/ui/groups/GroupsScreen.kt
-import dev.cfaz.timeclicker.R
-import dev.cfaz.timeclicker.data.Tracker
-import dev.cfaz.timeclicker.data.TrackerGroup
-import dev.cfaz.timeclicker.ui.components.NeuIconButton
-import dev.cfaz.timeclicker.ui.components.NeuTextField
-import dev.cfaz.timeclicker.ui.components.PillButton
-import dev.cfaz.timeclicker.ui.home.ConfirmDialog
-import dev.cfaz.timeclicker.ui.home.NameDialog
-import dev.cfaz.timeclicker.ui.theme.AppIcons
-import dev.cfaz.timeclicker.ui.theme.TimeClickerTheme
-import dev.cfaz.timeclicker.ui.theme.pressedIn
-import dev.cfaz.timeclicker.ui.theme.raised
-=======
 import dev.cfaz.timeclicker.R
 import dev.cfaz.timeclicker.data.Tracker
 import dev.cfaz.timeclicker.data.TrackerGroup
@@ -73,7 +59,6 @@ import dev.cfaz.timeclicker.ui.theme.AppIcons
 import dev.cfaz.timeclicker.ui.theme.TimeClickerTheme
 import dev.cfaz.timeclicker.ui.theme.pressedIn
 import dev.cfaz.timeclicker.ui.theme.raised
->>>>>>> origin/main:app/src/main/java/dev/cfaz/timeclicker/ui/groups/GroupsScreen.kt
 import sh.calvin.reorderable.ReorderableItem
 import sh.calvin.reorderable.rememberReorderableLazyListState
 import java.io.File

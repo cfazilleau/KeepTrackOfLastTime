@@ -27,20 +27,12 @@ import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-<<<<<<< HEAD:app/src/main/java/dev/cfaz/timeclicker/MainActivity.kt
-import dev.cfaz.timeclicker.ui.groups.GroupsScreen
-import dev.cfaz.timeclicker.ui.home.HomeScreen
-import dev.cfaz.timeclicker.ui.icons.IconPaletteScreen
-import dev.cfaz.timeclicker.ui.settings.SettingsScreen
-import dev.cfaz.timeclicker.ui.theme.TimeClickerTheme
-=======
 import dev.cfaz.timeclicker.ui.groups.GroupsScreen
 import dev.cfaz.timeclicker.ui.home.HomeScreen
 import dev.cfaz.timeclicker.ui.icons.IconPaletteScreen
 import dev.cfaz.timeclicker.ui.settings.AboutScreen
 import dev.cfaz.timeclicker.ui.settings.SettingsScreen
 import dev.cfaz.timeclicker.ui.theme.TimeClickerTheme
->>>>>>> origin/main:app/src/main/java/dev/cfaz/timeclicker/MainActivity.kt
 
 private enum class Screen { HOME, GROUPS, SETTINGS, ICON_PALETTE, ABOUT }
 

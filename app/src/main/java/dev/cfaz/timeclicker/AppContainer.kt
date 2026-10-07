@@ -1,13 +1,6 @@
 package dev.cfaz.timeclicker
 
 import android.content.Context
-<<<<<<< HEAD:app/src/main/java/dev/cfaz/timeclicker/AppContainer.kt
-import dev.cfaz.timeclicker.data.BackupRepository
-import dev.cfaz.timeclicker.data.PhotoStore
-import dev.cfaz.timeclicker.data.SettingsRepository
-import dev.cfaz.timeclicker.data.TrackerRepository
-import dev.cfaz.timeclicker.data.local.AppDatabase
-=======
 import dev.cfaz.timeclicker.data.BackupRepository
 import dev.cfaz.timeclicker.data.PhotoStore
 import dev.cfaz.timeclicker.data.SettingsRepository
@@ -17,7 +10,6 @@ import dev.cfaz.timeclicker.data.local.AppDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
->>>>>>> origin/main:app/src/main/java/dev/cfaz/timeclicker/AppContainer.kt
 
 /** Manual dependency container; swap for Hilt/Koin if the object graph grows. */
 class AppContainer(context: Context) {

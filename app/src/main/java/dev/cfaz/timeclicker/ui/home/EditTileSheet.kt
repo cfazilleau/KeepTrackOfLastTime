@@ -53,25 +53,6 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-<<<<<<< HEAD:app/src/main/java/dev/cfaz/timeclicker/ui/home/EditTileSheet.kt
-import dev.cfaz.timeclicker.R
-import dev.cfaz.timeclicker.data.TileColor
-import dev.cfaz.timeclicker.data.TileIcon
-import dev.cfaz.timeclicker.data.TileSize
-import dev.cfaz.timeclicker.data.TileSpec
-import dev.cfaz.timeclicker.data.Tracker
-import dev.cfaz.timeclicker.data.TrackerGroup
-import dev.cfaz.timeclicker.ui.components.NeuButton
-import dev.cfaz.timeclicker.ui.components.NeuTextField
-import dev.cfaz.timeclicker.ui.components.PillButton
-import dev.cfaz.timeclicker.ui.components.SegmentedControl
-import dev.cfaz.timeclicker.ui.icons.IconChooserSheet
-import dev.cfaz.timeclicker.ui.icons.iconLabel
-import dev.cfaz.timeclicker.ui.theme.AppIcons
-import dev.cfaz.timeclicker.ui.theme.TimeClickerTheme
-import dev.cfaz.timeclicker.ui.theme.TileColors
-import dev.cfaz.timeclicker.ui.theme.rememberIconCatalog
-=======
 import dev.cfaz.timeclicker.R
 import dev.cfaz.timeclicker.data.Reminder
 import dev.cfaz.timeclicker.data.TileColor
@@ -90,7 +71,6 @@ import dev.cfaz.timeclicker.ui.theme.AppIcons
 import dev.cfaz.timeclicker.ui.theme.TimeClickerTheme
 import dev.cfaz.timeclicker.ui.theme.TileColors
 import dev.cfaz.timeclicker.ui.theme.rememberIconCatalog
->>>>>>> origin/main:app/src/main/java/dev/cfaz/timeclicker/ui/home/EditTileSheet.kt
 import kotlinx.coroutines.launch
 import java.io.File
 

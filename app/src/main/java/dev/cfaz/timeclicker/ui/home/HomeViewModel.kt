@@ -6,17 +6,6 @@ import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.AP
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-<<<<<<< HEAD:app/src/main/java/dev/cfaz/timeclicker/ui/home/HomeViewModel.kt
-import dev.cfaz.timeclicker.TimeClickerApplication
-import dev.cfaz.timeclicker.data.SettingsRepository
-import dev.cfaz.timeclicker.data.TileIcon
-import dev.cfaz.timeclicker.data.TileSize
-import dev.cfaz.timeclicker.data.Tracker
-import dev.cfaz.timeclicker.data.TrackerGroup
-import dev.cfaz.timeclicker.data.TrackerRepository
-import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.flow.Flow
-=======
 import dev.cfaz.timeclicker.TimeClickerApplication
 import dev.cfaz.timeclicker.data.PendingUndo
 import dev.cfaz.timeclicker.data.SettingsRepository
@@ -28,7 +17,6 @@ import dev.cfaz.timeclicker.data.TileSpec
 import dev.cfaz.timeclicker.data.Tracker
 import dev.cfaz.timeclicker.data.TrackerGroup
 import dev.cfaz.timeclicker.data.TrackerRepository
->>>>>>> origin/main:app/src/main/java/dev/cfaz/timeclicker/ui/home/HomeViewModel.kt
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
