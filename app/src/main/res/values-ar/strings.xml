@@ -76,6 +76,10 @@
     <string name="action_rename">إعادة تسمية</string>
     <string name="action_delete">حذف</string>
     <string name="action_back">رجوع</string>
+    <string name="action_menu">القائمة</string>
+    <!-- Accessibility actions on a tile while reordering. -->
+    <string name="action_move_earlier">نقل إلى الأمام</string>
+    <string name="action_move_later">نقل إلى الخلف</string>
 
     <!-- Edit tile sheet -->
     <string name="sheet_new_title">بطاقة جديدة</string>
@@ -111,6 +115,12 @@
     <string name="color_sky">سماوي</string>
     <string name="color_butter">زبدي</string>
     <string name="color_rose">وردي</string>
+    <string name="color_teal">أزرق مخضر</string>
+    <string name="color_orchid">أوركيدي</string>
+    <string name="color_coral">مرجاني</string>
+    <string name="color_slate">رمادي أردوازي</string>
+    <string name="color_lime">ليموني</string>
+    <string name="color_sand">رملي</string>
     <string name="color_system_primary">لون النظام المميز</string>
     <string name="color_system_secondary">لون النظام الهادئ</string>
     <string name="color_system_tertiary">لون النظام المتباين</string>
@@ -195,7 +205,6 @@
     <string name="settings_counter">إظهار عدّاد الضغطات</string>
     <string name="settings_counter_hint">عدد مرات الضغط على كل بطاقة، في البطاقات والأدوات.</string>
     <string name="settings_section_general">عام</string>
-    <string name="settings_groups_hint">إنشاء المجموعات وإعادة تسميتها وترتيبها وحذفها.</string>
     <string name="settings_language">اللغة</string>
     <string name="settings_language_hint">اختر لغة التطبيق من إعدادات Android.</string>
     <string name="settings_section_data">بياناتك</string>
@@ -227,7 +236,6 @@
 
     <!-- Icon palette -->
     <string name="settings_icon_palette">لوحة الأيقونات</string>
-    <string name="settings_icon_palette_hint">اختر الأيقونات التي يمكنك تعيينها للبطاقات</string>
     <string name="icon_palette_search">البحث عن أيقونات</string>
     <string name="icon_palette_clear_search">مسح البحث</string>
     <string name="icon_palette_yours">لوحتك</string>
@@ -239,9 +247,15 @@
     <string name="dialog_reset_palette_title">إعادة ضبط لوحة الأيقونات؟</string>
     <string name="dialog_reset_palette_body">ستعود إلى الأيقونات الافتراضية. تحتفظ البطاقات بأيقوناتها الحالية.</string>
 
+    <!-- Reordering the tiles of the page shown -->
+    <string name="reorder_tiles">إعادة ترتيب البطاقات</string>
+    <string name="reorder_hint">اضغط مطولًا على بطاقة، ثم اسحبها إلى مكانها الجديد.</string>
+
+    <!-- About -->
+    <string name="about_title">حول التطبيق</string>
+
     <!-- Credits -->
-    <string name="settings_credits">شكر وتقدير</string>
-    <string name="settings_credits_hint">المشاريع مفتوحة المصدر وتراخيصها</string>
+    <string name="credits_title">شكر وتقدير</string>
     <string name="credits_intro">بُني Time Clicker باستخدام هذه المشاريع مفتوحة المصدر. شكرًا لكم! انقر على أحدها لقراءة ترخيصه.</string>
     <string name="credit_icons">الأيقونات</string>
     <string name="credit_ui">واجهة المستخدم</string>

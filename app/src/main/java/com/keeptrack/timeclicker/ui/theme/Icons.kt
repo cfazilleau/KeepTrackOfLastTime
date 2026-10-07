@@ -76,7 +76,8 @@ object AppIcons {
             "M4 14h5a1 1 0 0 1 1 1v5a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1v-5a1 1 0 0 1 1 -1z" +
             "M14 17.5a3.5 3.5 0 1 0 7 0a3.5 3.5 0 1 0 -7 0z",
     )
-    val Search = strokeIcon("search", "M21 21l-4.34 -4.34M3 11a8 8 0 1 0 16 0a8 8 0 1 0 -16 0z", 2.2f)
+    val Reorder = strokeIcon("reorder", "M21 16l-4 4 -4 -4M17 20V4M3 8l4 -4 4 4M7 4v16")
+    val Search =strokeIcon("search", "M21 21l-4.34 -4.34M3 11a8 8 0 1 0 16 0a8 8 0 1 0 -16 0z", 2.2f)
     val Close = strokeIcon("close", "M18 6L6 18M6 6l12 12", 2.2f)
     val Chevron = strokeIcon("chevron", "M9 18l6 -6 -6 -6", 2.2f)
     /** The "no icon" choice in the icon picker. */

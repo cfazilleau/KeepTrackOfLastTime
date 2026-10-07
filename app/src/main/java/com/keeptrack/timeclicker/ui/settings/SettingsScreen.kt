@@ -12,13 +12,11 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
@@ -54,7 +52,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -72,15 +69,9 @@ import com.keeptrack.timeclicker.ui.theme.raised
 import com.keeptrack.timeclicker.ui.theme.supportsDynamicColor
 import java.time.LocalDate
 
-/** Where the "Support us" button leads. */
-private const val DONATE_URL = "https://ko-fi.com/cfaz"
-
 @Composable
 fun SettingsScreen(
     onBack: () -> Unit,
-    onManageGroups: () -> Unit,
-    onOpenIconPalette: () -> Unit,
-    onOpenCredits: () -> Unit,
     viewModel: SettingsViewModel = viewModel(factory = SettingsViewModel.Factory),
 ) {
     val palette = TimeClickerTheme.palette
@@ -212,25 +203,11 @@ fun SettingsScreen(
                         checked = settings.showCounter,
                         onCheckedChange = { on -> update { it.copy(showCounter = on) } },
                     )
-                    RowDivider()
-                    ActionRow(
-                        icon = AppIcons.Palette,
-                        title = stringResource(R.string.settings_icon_palette),
-                        hint = stringResource(R.string.settings_icon_palette_hint),
-                        onClick = onOpenIconPalette,
-                    )
                 }
 
-                Section(stringResource(R.string.settings_section_general)) {
-                    ActionRow(
-                        icon = AppIcons.Groups,
-                        title = stringResource(R.string.action_manage_groups),
-                        hint = stringResource(R.string.settings_groups_hint),
-                        onClick = onManageGroups,
-                    )
-                    // The per-app language setting exists from Android 13.
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                        RowDivider()
+                // The per-app language setting exists from Android 13.
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                    Section(stringResource(R.string.settings_section_general)) {
                         ActionRow(
                             icon = AppIcons.Language,
                             title = stringResource(R.string.settings_language),
@@ -245,13 +222,6 @@ fun SettingsScreen(
                             },
                         )
                     }
-                    RowDivider()
-                    ActionRow(
-                        icon = AppIcons.Info,
-                        title = stringResource(R.string.settings_credits),
-                        hint = stringResource(R.string.settings_credits_hint),
-                        onClick = onOpenCredits,
-                    )
                 }
 
                 Section(stringResource(R.string.settings_section_data)) {
@@ -271,24 +241,6 @@ fun SettingsScreen(
                         onClick = { confirmImport = true },
                     )
                 }
-
-                SupportSection(
-                    onDonate = {
-                        try {
-                            context.startActivity(Intent(Intent.ACTION_VIEW, DONATE_URL.toUri()))
-                        } catch (e: ActivityNotFoundException) {
-                            // No browser.
-                        }
-                    },
-                )
-
-                Text(
-                    stringResource(R.string.settings_version, appVersion(context)),
-                    style = MaterialTheme.typography.labelMedium,
-                    color = palette.muted,
-                    textAlign = TextAlign.Center,
-                    modifier = Modifier.fillMaxWidth(),
-                )
             }
         }
 
@@ -325,9 +277,6 @@ fun SettingsScreen(
 }
 
 private const val BACKUP_MIME = "application/zip"
-
-private fun appVersion(context: android.content.Context): String =
-    context.packageManager.getPackageInfo(context.packageName, 0).versionName.orEmpty()
 
 /** A group of rows on a raised card, under its title if it has one. */
 @Composable
@@ -412,38 +361,5 @@ private fun ActionRow(icon: ImageVector, title: String, hint: String?, onClick: 
         }
         RowTexts(title, hint, Modifier.weight(1f))
         Icon(AppIcons.Chevron, null, tint = palette.muted, modifier = Modifier.size(18.dp))
-    }
-}
-
-/** Why the app is free, and a way to chip in. */
-@Composable
-private fun SupportSection(onDonate: () -> Unit) {
-    val palette = TimeClickerTheme.palette
-    Column(
-        Modifier.fillMaxWidth().padding(top = 4.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(14.dp),
-    ) {
-        Text(
-            stringResource(R.string.support_text),
-            style = MaterialTheme.typography.bodySmall,
-            color = palette.muted,
-            textAlign = TextAlign.Center,
-            modifier = Modifier.padding(horizontal = 12.dp),
-        )
-        Row(
-            Modifier
-                .height(48.dp)
-                .clip(CircleShape)
-                .background(palette.accent)
-                .clickable(role = Role.Button, onClick = onDonate)
-                .padding(horizontal = 22.dp),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(10.dp),
-        ) {
-            Icon(AppIcons.Heart, null, tint = palette.onAccent, modifier = Modifier.size(18.dp))
-            Text(stringResource(R.string.action_donate), style = MaterialTheme.typography.labelLarge, color = palette.onAccent)
-        }
-        Spacer(Modifier.height(4.dp))
     }
 }

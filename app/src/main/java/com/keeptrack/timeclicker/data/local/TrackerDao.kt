@@ -70,6 +70,26 @@ interface TrackerDao {
     @Query("UPDATE trackers SET count_since = :since WHERE id = :id")
     suspend fun resetCount(id: Long, since: Long)
 
+    @Query("SELECT id FROM trackers ORDER BY position, created_at")
+    suspend fun orderedTrackerIds(): List<Long>
+
+    @Query("UPDATE trackers SET position = :position WHERE id = :id")
+    suspend fun setTrackerPosition(id: Long, position: Int)
+
+    /**
+     * Puts [orderedIds] in that order, in the places they already take among all trackers:
+     * the other trackers keep theirs. Every tracker is renumbered, so positions stay distinct.
+     */
+    @Transaction
+    suspend fun reorderTrackers(orderedIds: List<Long>) {
+        val all = orderedTrackerIds()
+        val moved = orderedIds.filter { it in all }
+        val movedSet = moved.toSet()
+        val next = moved.iterator()
+        all.map { id -> if (id in movedSet) next.next() else id }
+            .forEachIndexed { index, id -> setTrackerPosition(id, index) }
+    }
+
     @Query("SELECT photo FROM trackers WHERE photo IS NOT NULL")
     suspend fun photoNames(): List<String>
 

@@ -46,6 +46,10 @@
     <string name="action_rename">名前を変更</string>
     <string name="action_delete">削除</string>
     <string name="action_back">戻る</string>
+    <string name="action_menu">メニュー</string>
+    <!-- Accessibility actions on a tile while reordering. -->
+    <string name="action_move_earlier">前に移動</string>
+    <string name="action_move_later">後ろに移動</string>
 
     <!-- Edit tile sheet -->
     <string name="sheet_new_title">新しいタイル</string>
@@ -81,6 +85,12 @@
     <string name="color_sky">スカイ</string>
     <string name="color_butter">バター</string>
     <string name="color_rose">ローズ</string>
+    <string name="color_teal">ティール</string>
+    <string name="color_orchid">オーキッド</string>
+    <string name="color_coral">コーラル</string>
+    <string name="color_slate">スレート</string>
+    <string name="color_lime">ライム</string>
+    <string name="color_sand">サンド</string>
     <string name="color_system_primary">システムのアクセント</string>
     <string name="color_system_secondary">システムのソフト</string>
     <string name="color_system_tertiary">システムのコントラスト</string>
@@ -160,7 +170,6 @@
     <string name="settings_counter">押した回数を表示</string>
     <string name="settings_counter_hint">各タイルを押した回数をタイルとウィジェットに表示します。</string>
     <string name="settings_section_general">一般</string>
-    <string name="settings_groups_hint">グループの作成、名前の変更、並べ替え、削除を行います。</string>
     <string name="settings_language">言語</string>
     <string name="settings_language_hint">アプリの言語は Android の設定で選択できます。</string>
     <string name="settings_section_data">データ</string>
@@ -192,7 +201,6 @@
 
     <!-- Icon palette -->
     <string name="settings_icon_palette">アイコンパレット</string>
-    <string name="settings_icon_palette_hint">タイルに設定できるアイコンを選びます</string>
     <string name="icon_palette_search">アイコンを検索</string>
     <string name="icon_palette_clear_search">検索をクリア</string>
     <string name="icon_palette_yours">マイパレット</string>
@@ -204,9 +212,15 @@
     <string name="dialog_reset_palette_title">アイコンパレットをリセットしますか？</string>
     <string name="dialog_reset_palette_body">デフォルトのアイコンに戻ります。タイルのアイコンはそのまま残ります。</string>
 
+    <!-- Reordering the tiles of the page shown -->
+    <string name="reorder_tiles">タイルを並べ替え</string>
+    <string name="reorder_hint">タイルを長押しして、新しい位置までドラッグします。</string>
+
+    <!-- About -->
+    <string name="about_title">このアプリについて</string>
+
     <!-- Credits -->
-    <string name="settings_credits">クレジット</string>
-    <string name="settings_credits_hint">オープンソースプロジェクトとライセンス</string>
+    <string name="credits_title">クレジット</string>
     <string name="credits_intro">Time Clicker は以下のオープンソースプロジェクトを利用して作られています。ありがとうございます！タップするとライセンスを確認できます。</string>
     <string name="credit_icons">アイコン</string>
     <string name="credit_ui">ユーザーインターフェース</string>

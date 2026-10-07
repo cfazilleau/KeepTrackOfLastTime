@@ -64,6 +64,10 @@
     <string name="action_rename">Zmień nazwę</string>
     <string name="action_delete">Usuń</string>
     <string name="action_back">Wstecz</string>
+    <string name="action_menu">Menu</string>
+    <!-- Accessibility actions on a tile while reordering. -->
+    <string name="action_move_earlier">Przesuń wcześniej</string>
+    <string name="action_move_later">Przesuń dalej</string>
 
     <!-- Edit tile sheet -->
     <string name="sheet_new_title">Nowy kafelek</string>
@@ -99,6 +103,12 @@
     <string name="color_sky">Błękit</string>
     <string name="color_butter">Masło</string>
     <string name="color_rose">Róż</string>
+    <string name="color_teal">Morski</string>
+    <string name="color_orchid">Orchidea</string>
+    <string name="color_coral">Koralowy</string>
+    <string name="color_slate">Łupkowy</string>
+    <string name="color_lime">Limonkowy</string>
+    <string name="color_sand">Piaskowy</string>
     <string name="color_system_primary">System: akcent</string>
     <string name="color_system_secondary">System: łagodny</string>
     <string name="color_system_tertiary">System: kontrast</string>
@@ -181,7 +191,6 @@
     <string name="settings_counter">Pokazuj licznik naciśnięć</string>
     <string name="settings_counter_hint">Ile razy naciśnięto każdy kafelek – na kafelkach i widżetach.</string>
     <string name="settings_section_general">Ogólne</string>
-    <string name="settings_groups_hint">Twórz, zmieniaj nazwy, porządkuj i usuwaj grupy.</string>
     <string name="settings_language">Język</string>
     <string name="settings_language_hint">Wybierz język aplikacji w ustawieniach Androida.</string>
     <string name="settings_section_data">Twoje dane</string>
@@ -213,7 +222,6 @@
 
     <!-- Icon palette -->
     <string name="settings_icon_palette">Paleta ikon</string>
-    <string name="settings_icon_palette_hint">Wybierz, które ikony możesz przypisać kafelkowi</string>
     <string name="icon_palette_search">Szukaj ikon</string>
     <string name="icon_palette_clear_search">Wyczyść wyszukiwanie</string>
     <string name="icon_palette_yours">Twoja paleta</string>
@@ -225,9 +233,15 @@
     <string name="dialog_reset_palette_title">Zresetować paletę ikon?</string>
     <string name="dialog_reset_palette_body">Paleta wróci do domyślnych ikon. Kafelki zachowają swoje obecne ikony.</string>
 
+    <!-- Reordering the tiles of the page shown -->
+    <string name="reorder_tiles">Zmień kolejność kafelków</string>
+    <string name="reorder_hint">Przytrzymaj kafelek, a potem przeciągnij go na nowe miejsce.</string>
+
+    <!-- About -->
+    <string name="about_title">O aplikacji</string>
+
     <!-- Credits -->
-    <string name="settings_credits">Podziękowania</string>
-    <string name="settings_credits_hint">Projekty open source i ich licencje</string>
+    <string name="credits_title">Podziękowania</string>
     <string name="credits_intro">Time Clicker powstał dzięki tym projektom open source. Dziękujemy! Stuknij jeden z nich, aby przeczytać jego licencję.</string>
     <string name="credit_icons">Ikony</string>
     <string name="credit_ui">Interfejs użytkownika</string>

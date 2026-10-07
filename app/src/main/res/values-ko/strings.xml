@@ -46,6 +46,10 @@
     <string name="action_rename">이름 변경</string>
     <string name="action_delete">삭제</string>
     <string name="action_back">뒤로</string>
+    <string name="action_menu">메뉴</string>
+    <!-- Accessibility actions on a tile while reordering. -->
+    <string name="action_move_earlier">앞으로 이동</string>
+    <string name="action_move_later">뒤로 이동</string>
 
     <!-- Edit tile sheet -->
     <string name="sheet_new_title">새 타일</string>
@@ -81,6 +85,12 @@
     <string name="color_sky">하늘색</string>
     <string name="color_butter">버터</string>
     <string name="color_rose">로즈</string>
+    <string name="color_teal">청록</string>
+    <string name="color_orchid">오키드</string>
+    <string name="color_coral">코랄</string>
+    <string name="color_slate">슬레이트</string>
+    <string name="color_lime">라임</string>
+    <string name="color_sand">샌드</string>
     <string name="color_system_primary">시스템 강조색</string>
     <string name="color_system_secondary">시스템 부드러운 색</string>
     <string name="color_system_tertiary">시스템 대비색</string>
@@ -160,7 +170,6 @@
     <string name="settings_counter">누른 횟수 표시</string>
     <string name="settings_counter_hint">각 타일을 누른 횟수를 타일과 위젯에 표시해요.</string>
     <string name="settings_section_general">일반</string>
-    <string name="settings_groups_hint">그룹을 만들고, 이름을 바꾸고, 순서를 정하고, 삭제해요.</string>
     <string name="settings_language">언어</string>
     <string name="settings_language_hint">Android 설정에서 앱 언어를 선택하세요.</string>
     <string name="settings_section_data">내 데이터</string>
@@ -192,7 +201,6 @@
 
     <!-- Icon palette -->
     <string name="settings_icon_palette">아이콘 팔레트</string>
-    <string name="settings_icon_palette_hint">타일에 지정할 수 있는 아이콘을 선택하세요</string>
     <string name="icon_palette_search">아이콘 검색</string>
     <string name="icon_palette_clear_search">검색어 지우기</string>
     <string name="icon_palette_yours">내 팔레트</string>
@@ -204,9 +212,15 @@
     <string name="dialog_reset_palette_title">아이콘 팔레트를 재설정할까요?</string>
     <string name="dialog_reset_palette_body">기본 아이콘으로 돌아가요. 타일은 현재 아이콘을 그대로 유지해요.</string>
 
+    <!-- Reordering the tiles of the page shown -->
+    <string name="reorder_tiles">타일 순서 바꾸기</string>
+    <string name="reorder_hint">타일을 길게 누른 다음 새 위치로 드래그하세요.</string>
+
+    <!-- About -->
+    <string name="about_title">앱 정보</string>
+
     <!-- Credits -->
-    <string name="settings_credits">크레딧</string>
-    <string name="settings_credits_hint">오픈소스 프로젝트와 라이선스</string>
+    <string name="credits_title">크레딧</string>
     <string name="credits_intro">Time Clicker는 다음 오픈소스 프로젝트로 만들어졌어요. 감사합니다! 프로젝트를 누르면 라이선스를 볼 수 있어요.</string>
     <string name="credit_icons">아이콘</string>
     <string name="credit_ui">사용자 인터페이스</string>

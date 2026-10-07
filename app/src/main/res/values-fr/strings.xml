@@ -58,6 +58,10 @@
     <string name="action_rename">Renommer</string>
     <string name="action_delete">Supprimer</string>
     <string name="action_back">Retour</string>
+    <string name="action_menu">Menu</string>
+    <!-- Accessibility actions on a tile while reordering. -->
+    <string name="action_move_earlier">Déplacer avant</string>
+    <string name="action_move_later">Déplacer après</string>
 
     <!-- Edit tile sheet -->
     <string name="sheet_new_title">Nouvelle tuile</string>
@@ -93,6 +97,12 @@
     <string name="color_sky">Ciel</string>
     <string name="color_butter">Beurre</string>
     <string name="color_rose">Rose</string>
+    <string name="color_teal">Turquoise</string>
+    <string name="color_orchid">Orchidée</string>
+    <string name="color_coral">Corail</string>
+    <string name="color_slate">Ardoise</string>
+    <string name="color_lime">Citron vert</string>
+    <string name="color_sand">Sable</string>
     <string name="color_system_primary">Accent du système</string>
     <string name="color_system_secondary">Teinte douce du système</string>
     <string name="color_system_tertiary">Contraste du système</string>
@@ -174,7 +184,6 @@
     <string name="settings_counter">Afficher le compteur d’appuis</string>
     <string name="settings_counter_hint">Le nombre d’appuis sur chaque tuile, sur les tuiles et les widgets.</string>
     <string name="settings_section_general">Général</string>
-    <string name="settings_groups_hint">Créer, renommer, réorganiser et supprimer des groupes.</string>
     <string name="settings_language">Langue</string>
     <string name="settings_language_hint">Choisissez la langue de l’app dans les paramètres d’Android.</string>
     <string name="settings_section_data">Vos données</string>
@@ -206,7 +215,6 @@
 
     <!-- Icon palette -->
     <string name="settings_icon_palette">Palette d’icônes</string>
-    <string name="settings_icon_palette_hint">Choisissez les icônes que vous pouvez attribuer à une tuile</string>
     <string name="icon_palette_search">Rechercher des icônes</string>
     <string name="icon_palette_clear_search">Effacer la recherche</string>
     <string name="icon_palette_yours">Votre palette</string>
@@ -218,9 +226,15 @@
     <string name="dialog_reset_palette_title">Réinitialiser la palette d’icônes ?</string>
     <string name="dialog_reset_palette_body">Elle revient aux icônes par défaut. Les tuiles gardent leur icône actuelle.</string>
 
+    <!-- Reordering the tiles of the page shown -->
+    <string name="reorder_tiles">Réorganiser les tuiles</string>
+    <string name="reorder_hint">Maintenez une tuile, puis faites-la glisser à sa nouvelle place.</string>
+
+    <!-- About -->
+    <string name="about_title">À propos</string>
+
     <!-- Credits -->
-    <string name="settings_credits">Crédits</string>
-    <string name="settings_credits_hint">Projets open source et leurs licences</string>
+    <string name="credits_title">Crédits</string>
     <string name="credits_intro">Time Clicker est conçu avec ces projets open source. Merci ! Touchez-en un pour lire sa licence.</string>
     <string name="credit_icons">Icônes</string>
     <string name="credit_ui">Interface utilisateur</string>

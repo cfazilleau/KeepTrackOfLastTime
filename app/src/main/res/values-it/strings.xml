@@ -58,6 +58,10 @@
     <string name="action_rename">Rinomina</string>
     <string name="action_delete">Elimina</string>
     <string name="action_back">Indietro</string>
+    <string name="action_menu">Menu</string>
+    <!-- Accessibility actions on a tile while reordering. -->
+    <string name="action_move_earlier">Sposta prima</string>
+    <string name="action_move_later">Sposta dopo</string>
 
     <!-- Edit tile sheet -->
     <string name="sheet_new_title">Nuovo riquadro</string>
@@ -93,6 +97,12 @@
     <string name="color_sky">Cielo</string>
     <string name="color_butter">Burro</string>
     <string name="color_rose">Rosa</string>
+    <string name="color_teal">Verde acqua</string>
+    <string name="color_orchid">Orchidea</string>
+    <string name="color_coral">Corallo</string>
+    <string name="color_slate">Ardesia</string>
+    <string name="color_lime">Lime</string>
+    <string name="color_sand">Sabbia</string>
     <string name="color_system_primary">Accento di sistema</string>
     <string name="color_system_secondary">Tono tenue di sistema</string>
     <string name="color_system_tertiary">Contrasto di sistema</string>
@@ -174,7 +184,6 @@
     <string name="settings_counter">Mostra contatore pressioni</string>
     <string name="settings_counter_hint">Quante volte è stato premuto ogni riquadro, sui riquadri e nei widget.</string>
     <string name="settings_section_general">Generali</string>
-    <string name="settings_groups_hint">Crea, rinomina, riordina ed elimina gruppi.</string>
     <string name="settings_language">Lingua</string>
     <string name="settings_language_hint">Scegli la lingua dell’app nelle impostazioni di Android.</string>
     <string name="settings_section_data">I tuoi dati</string>
@@ -206,7 +215,6 @@
 
     <!-- Icon palette -->
     <string name="settings_icon_palette">Palette di icone</string>
-    <string name="settings_icon_palette_hint">Scegli quali icone puoi assegnare a un riquadro</string>
     <string name="icon_palette_search">Cerca icone</string>
     <string name="icon_palette_clear_search">Cancella ricerca</string>
     <string name="icon_palette_yours">La tua palette</string>
@@ -218,9 +226,15 @@
     <string name="dialog_reset_palette_title">Ripristinare la palette di icone?</string>
     <string name="dialog_reset_palette_body">Torna alle icone predefinite. I riquadri mantengono la loro icona attuale.</string>
 
+    <!-- Reordering the tiles of the page shown -->
+    <string name="reorder_tiles">Riordina i riquadri</string>
+    <string name="reorder_hint">Tieni premuto un riquadro, poi trascinalo nella nuova posizione.</string>
+
+    <!-- About -->
+    <string name="about_title">Informazioni</string>
+
     <!-- Credits -->
-    <string name="settings_credits">Riconoscimenti</string>
-    <string name="settings_credits_hint">Progetti open source e relative licenze</string>
+    <string name="credits_title">Riconoscimenti</string>
     <string name="credits_intro">Time Clicker è realizzato con questi progetti open source. Grazie! Toccane uno per leggerne la licenza.</string>
     <string name="credit_icons">Icone</string>
     <string name="credit_ui">Interfaccia utente</string>

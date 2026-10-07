@@ -64,6 +64,10 @@
     <string name="action_rename">Переименовать</string>
     <string name="action_delete">Удалить</string>
     <string name="action_back">Назад</string>
+    <string name="action_menu">Меню</string>
+    <!-- Accessibility actions on a tile while reordering. -->
+    <string name="action_move_earlier">Переместить раньше</string>
+    <string name="action_move_later">Переместить дальше</string>
 
     <!-- Edit tile sheet -->
     <string name="sheet_new_title">Новая плитка</string>
@@ -99,6 +103,12 @@
     <string name="color_sky">Небо</string>
     <string name="color_butter">Сливки</string>
     <string name="color_rose">Роза</string>
+    <string name="color_teal">Бирюзовый</string>
+    <string name="color_orchid">Орхидея</string>
+    <string name="color_coral">Коралловый</string>
+    <string name="color_slate">Сланцевый</string>
+    <string name="color_lime">Лаймовый</string>
+    <string name="color_sand">Песочный</string>
     <string name="color_system_primary">Система: акцент</string>
     <string name="color_system_secondary">Система: мягкий</string>
     <string name="color_system_tertiary">Система: контраст</string>
@@ -181,7 +191,6 @@
     <string name="settings_counter">Показывать счётчик нажатий</string>
     <string name="settings_counter_hint">Сколько раз нажимали на каждую плитку — на плитках и виджетах.</string>
     <string name="settings_section_general">Общие</string>
-    <string name="settings_groups_hint">Создание, переименование, сортировка и удаление групп.</string>
     <string name="settings_language">Язык</string>
     <string name="settings_language_hint">Язык приложения можно выбрать в настройках Android.</string>
     <string name="settings_section_data">Ваши данные</string>
@@ -213,7 +222,6 @@
 
     <!-- Icon palette -->
     <string name="settings_icon_palette">Палитра значков</string>
-    <string name="settings_icon_palette_hint">Выберите, какие значки можно назначать плиткам</string>
     <string name="icon_palette_search">Поиск значков</string>
     <string name="icon_palette_clear_search">Очистить поиск</string>
     <string name="icon_palette_yours">Ваша палитра</string>
@@ -225,9 +233,15 @@
     <string name="dialog_reset_palette_title">Сбросить палитру значков?</string>
     <string name="dialog_reset_palette_body">В ней снова будут значки по умолчанию. У плиток останутся их текущие значки.</string>
 
+    <!-- Reordering the tiles of the page shown -->
+    <string name="reorder_tiles">Изменить порядок плиток</string>
+    <string name="reorder_hint">Удерживайте плитку, затем перетащите её на новое место.</string>
+
+    <!-- About -->
+    <string name="about_title">О приложении</string>
+
     <!-- Credits -->
-    <string name="settings_credits">Благодарности</string>
-    <string name="settings_credits_hint">Проекты с открытым исходным кодом и их лицензии</string>
+    <string name="credits_title">Благодарности</string>
     <string name="credits_intro">Time Clicker создан на основе этих проектов с открытым исходным кодом. Спасибо! Нажмите на проект, чтобы прочитать его лицензию.</string>
     <string name="credit_icons">Значки</string>
     <string name="credit_ui">Пользовательский интерфейс</string>

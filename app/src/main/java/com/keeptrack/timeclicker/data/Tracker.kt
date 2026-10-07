@@ -34,6 +34,7 @@ data class TileSpec(
 /** Stored by [key]; unknown keys (e.g. from a newer app version) fall back to the first entry. */
 enum class TileColor(val key: String) {
     SAGE("sage"), LAVENDER("lavender"), PEACH("peach"), SKY("sky"), BUTTER("butter"), ROSE("rose"),
+    TEAL("teal"), ORCHID("orchid"), CORAL("coral"), SLATE("slate"), LIME("lime"), SAND("sand"),
 
     /** Material You: follow the system colours on Android 12+. */
     PRIMARY("primary"), SECONDARY("secondary"), TERTIARY("tertiary");
