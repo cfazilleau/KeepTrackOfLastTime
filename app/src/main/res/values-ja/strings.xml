@@ -263,6 +263,7 @@
 
     <!-- About -->
     <string name="about_title">このアプリについて</string>
+    <string name="about_made_with_claude">このアプリは、Anthropic の AI「Claude」を使ってすべて作られました。</string>
 
     <!-- Credits -->
     <string name="credits_title">クレジット</string>

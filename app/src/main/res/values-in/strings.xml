@@ -263,6 +263,7 @@
 
     <!-- About -->
     <string name="about_title">Tentang</string>
+    <string name="about_made_with_claude">Aplikasi ini sepenuhnya dibuat dengan Claude, AI dari Anthropic.</string>
 
     <!-- Credits -->
     <string name="credits_title">Kredit</string>

@@ -271,6 +271,7 @@
 
     <!-- About -->
     <string name="about_title">Over</string>
+    <string name="about_made_with_claude">Deze app is volledig gemaakt met Claude, een AI van Anthropic.</string>
 
     <!-- Credits -->
     <string name="credits_title">Credits</string>

@@ -263,6 +263,7 @@
 
     <!-- About -->
     <string name="about_title">앱 정보</string>
+    <string name="about_made_with_claude">이 앱은 Anthropic의 AI인 Claude로 전부 만들어졌어요.</string>
 
     <!-- Credits -->
     <string name="credits_title">크레딧</string>

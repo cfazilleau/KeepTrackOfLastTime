@@ -287,6 +287,7 @@
 
     <!-- About -->
     <string name="about_title">О приложении</string>
+    <string name="about_made_with_claude">Это приложение полностью создано с помощью Claude — ИИ от Anthropic.</string>
 
     <!-- Credits -->
     <string name="credits_title">Благодарности</string>

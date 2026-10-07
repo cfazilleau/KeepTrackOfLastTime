@@ -263,6 +263,7 @@
 
     <!-- About -->
     <string name="about_title">关于</string>
+    <string name="about_made_with_claude">本应用完全由 Anthropic 的 AI Claude 创建。</string>
 
     <!-- Credits -->
     <string name="credits_title">致谢</string>
