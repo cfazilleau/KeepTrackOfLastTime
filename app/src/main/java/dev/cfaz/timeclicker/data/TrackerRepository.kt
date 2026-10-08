@@ -113,4 +113,6 @@ private fun TrackerWithLastDone.toModel() = Tracker(
     photo = tracker.photo,
     pressCount = pressCount,
     reminder = Reminder.fromColumns(tracker.reminderEvery, tracker.reminderUnit),
+    // Creation records the tile's first event, so a press is any event after it.
+    hasPressed = lastDoneAt != null && lastDoneAt > tracker.createdAt,
 )

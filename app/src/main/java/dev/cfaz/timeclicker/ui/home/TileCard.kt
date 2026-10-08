@@ -127,7 +127,7 @@ fun TileCard(
     val absolute = settings.timeDisplay == TimeDisplay.ABSOLUTE
     val absoluteTime = if (absolute) remember(tracker.lastDoneAt) { absoluteTime(context, tracker.lastDoneAt) } else null
     // Relative time: hidden at once on a reset, then fades in when the first second is shown.
-    val hidden = elapsed.isEmpty && !absolute
+    val hidden = !tracker.hasPressed || (elapsed.isEmpty && !absolute)
     val textAlpha by animateFloatAsState(
         targetValue = if (hidden) 0f else 1f,
         animationSpec = if (hidden) snap() else tween(durationMillis = 700),
@@ -162,7 +162,11 @@ fun TileCard(
     val resources = LocalResources.current
     val description = listOfNotNull(
         tracker.name,
-        if (elapsed.isEmpty) stringResource(R.string.elapsed_just_now) else stringResource(R.string.elapsed_ago, elapsed.format(resources)),
+        when {
+            !tracker.hasPressed -> null
+            elapsed.isEmpty -> stringResource(R.string.elapsed_just_now)
+            else -> stringResource(R.string.elapsed_ago, elapsed.format(resources))
+        },
         pluralStringResource(R.plurals.press_count, tracker.pressCount, tracker.pressCount).takeIf { settings.showCounter },
         tracker.reminder?.let {
             if (it.auto) stringResource(R.string.tile_reminder_auto_description)
@@ -279,12 +283,17 @@ fun TileCard(
             }
             Spacer(Modifier.weight(1f))
             val ago = agoAffixes(resources)
-            val headline = absoluteTime?.let { AnnotatedString(it.headline) } ?: relativeHeadline(elapsed, ago.prefix)
+            val headline = when {
+                !tracker.hasPressed -> AnnotatedString(" ")
+                absoluteTime != null -> AnnotatedString(absoluteTime.headline)
+                else -> relativeHeadline(elapsed, ago.prefix)
+            }
             TileTexts(tracker, headline, { textAlpha }, colors.content, textShadow)
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text(
                     text = when {
                         undoing -> undoHint
+                        !tracker.hasPressed -> ""
                         absoluteTime != null -> absoluteTime.detail
                         elapsed.isEmpty -> ""
                         // "5 hours ago" or "et 5 heures": the next unit, then the end of "… ago" (if the language puts it after).
