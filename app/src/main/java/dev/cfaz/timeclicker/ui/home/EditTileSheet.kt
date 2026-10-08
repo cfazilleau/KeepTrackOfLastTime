@@ -195,6 +195,7 @@ fun EditTileSheet(
                         photo = draft.photo,
                         pressCount = if (draft.resetCount) 0 else saved.pressCount,
                         reminder = draft.reminder,
+                        hasPressed = saved.hasPressed,
                     ),
                     photoFile = photoFile,
                     onClick = {},

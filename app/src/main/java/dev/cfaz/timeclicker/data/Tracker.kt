@@ -15,6 +15,11 @@ data class Tracker(
     /** Times the tile was pressed since it was created or its counter was reset. */
     val pressCount: Int = 0,
     val reminder: Reminder? = null,
+    /**
+     * Whether the tile was ever pressed. Until then [lastDoneAt] is the tile's creation: it still dates reminders,
+     * but no elapsed time is shown.
+     */
+    val hasPressed: Boolean = true,
 )
 
 data class TrackerGroup(
