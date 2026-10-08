@@ -39,6 +39,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalResources
@@ -290,6 +291,7 @@ fun EditTileSheet(
                         )
                     },
                     onSelect = { draft = draft.copy(size = it) },
+                    icon = { size, color -> TileSizeGlyph(size, color) },
                 )
             }
 
@@ -581,6 +583,17 @@ private const val PickerColumns = 6
 private val PickerGap = 8.dp
 private val PickerCellHeight = 46.dp
 private val PickerCellShape = RoundedCornerShape(14.dp)
+
+/** Tiny shape previewing a tile size: a square, a horizontal bar or a vertical bar. */
+@Composable
+private fun TileSizeGlyph(size: TileSize, color: Color) {
+    val (width, height) = when (size) {
+        TileSize.SMALL -> 12.dp to 12.dp
+        TileSize.WIDE -> 18.dp to 8.dp
+        TileSize.TALL -> 8.dp to 18.dp
+    }
+    Box(Modifier.size(width, height).clip(RoundedCornerShape(3.dp)).background(color))
+}
 
 private fun colorName(color: TileColor) = when (color) {
     TileColor.SAGE -> R.string.color_sage

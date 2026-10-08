@@ -222,6 +222,7 @@ fun <T> SegmentedControl(
     label: @Composable (T) -> String,
     onSelect: (T) -> Unit,
     modifier: Modifier = Modifier,
+    icon: (@Composable (T, Color) -> Unit)? = null,
 ) {
     val palette = TimeClickerTheme.palette
     Row(
@@ -243,11 +244,11 @@ fun <T> SegmentedControl(
                     .selectable(selected = isSelected, role = Role.RadioButton, onClick = { onSelect(option) }),
                 contentAlignment = Alignment.Center,
             ) {
-                Text(
-                    label(option),
-                    style = MaterialTheme.typography.titleSmall,
-                    color = if (isSelected) palette.text else palette.muted,
-                )
+                val color = if (isSelected) palette.text else palette.muted
+                Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    icon?.invoke(option, color)
+                    Text(label(option), style = MaterialTheme.typography.titleSmall, color = color)
+                }
             }
         }
     }
