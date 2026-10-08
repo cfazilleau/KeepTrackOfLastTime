@@ -108,18 +108,24 @@ interface TrackerDao {
     @Query("SELECT done_at FROM tracker_events WHERE tracker_id = :trackerId ORDER BY done_at DESC LIMIT :limit")
     suspend fun recentEventTimes(trackerId: Long, limit: Int): List<Long>
 
-    /** Deletes the tracker's latest event counted by its press counter. Returns how many were deleted: 0 or 1. */
+    /** The tracker's latest event counted by its press counter. */
     @Query(
         """
-        DELETE FROM tracker_events WHERE id = (
-            SELECT e.id FROM tracker_events e JOIN trackers t ON t.id = e.tracker_id
-            WHERE e.tracker_id = :trackerId AND e.done_at > t.count_since
-            ORDER BY e.done_at DESC, e.id DESC
-            LIMIT 1
-        )
+        SELECT e.* FROM tracker_events e JOIN trackers t ON t.id = e.tracker_id
+        WHERE e.tracker_id = :trackerId AND e.done_at > t.count_since
+        ORDER BY e.done_at DESC, e.id DESC
+        LIMIT 1
         """
     )
-    suspend fun deleteLastCountedEvent(trackerId: Long): Int
+    suspend fun lastCountedEvent(trackerId: Long): TrackerEventEntity?
+
+    /** Deletes the tracker's latest event counted by its press counter. Returns its time, null if there was none. */
+    @Transaction
+    suspend fun deleteLastCountedEvent(trackerId: Long): Long? {
+        val event = lastCountedEvent(trackerId) ?: return null
+        deleteEvent(event.id)
+        return event.doneAt
+    }
 
     // --- Groups ---
 

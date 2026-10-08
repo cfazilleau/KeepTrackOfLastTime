@@ -85,6 +85,7 @@
     <string name="label_counter">Compteur</string>
     <string name="counter_reset">Réinitialiser</string>
     <string name="counter_undo_last">Annuler le dernier appui</string>
+    <string name="counter_redo_last">Rétablir l’appui qui vient d’être supprimé</string>
     <string name="widget_add">Ajouter à l’écran d’accueil</string>
     <string name="widget_add_hint">Affiche cette tuile en widget. Touchez le widget pour la marquer comme faite.</string>
     <string name="label_reminder">Rappel</string>

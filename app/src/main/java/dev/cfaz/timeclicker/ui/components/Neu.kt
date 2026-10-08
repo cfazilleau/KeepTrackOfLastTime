@@ -99,6 +99,8 @@ fun NeuButton(
     blur: Dp = 14.dp,
     onLongClick: (() -> Unit)? = null,
     onLongClickLabel: String? = null,
+    /** A disabled button is flat and faded, and ignores taps. */
+    enabled: Boolean = true,
     content: @Composable () -> Unit,
 ) {
     val palette = TimeClickerTheme.palette
@@ -108,12 +110,16 @@ fun NeuButton(
     val press = rememberPressAmount(interaction)
     Box(
         modifier
-            .graphicsLayer { val s = 1f - 0.03f * press(); scaleX = s; scaleY = s }
-            .raised(shape, palette.shadow, palette.highlight, distance, blur, pressed = press)
+            .graphicsLayer {
+                val s = 1f - 0.03f * press(); scaleX = s; scaleY = s
+                alpha = if (enabled) 1f else 0.4f
+            }
+            .then(if (enabled) Modifier.raised(shape, palette.shadow, palette.highlight, distance, blur, pressed = press) else Modifier)
             .clip(shape)
             .background(background)
             .pressedIn(shape, palette.shadow, palette.highlight, distance * 0.6f, blur * 0.7f, amount = press)
             .combinedClickable(
+                enabled = enabled,
                 interactionSource = interaction,
                 indication = null,
                 role = Role.Button,

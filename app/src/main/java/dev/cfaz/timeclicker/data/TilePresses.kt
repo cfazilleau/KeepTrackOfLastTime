@@ -57,10 +57,15 @@ class TilePresses(private val repository: TrackerRepository, private val scope: 
         }
     }
 
-    /** Deletes the tile's last counted press, ending its undo window if it has one. False if there was none. */
-    suspend fun revertLast(trackerId: Long): Boolean = mutex.withLock {
+    /** Deletes the tile's last counted press, ending its undo window if it has one. Returns its time; null if none. */
+    suspend fun revertLast(trackerId: Long): Long? = mutex.withLock {
         expiries.remove(trackerId)?.cancel()
         pending.update { it - trackerId }
         repository.revertLastPress(trackerId)
+    }
+
+    /** Puts back a press deleted by [revertLast], at its original time. */
+    suspend fun restore(trackerId: Long, doneAt: Long) = mutex.withLock {
+        repository.restorePress(trackerId, doneAt)
     }
 }
