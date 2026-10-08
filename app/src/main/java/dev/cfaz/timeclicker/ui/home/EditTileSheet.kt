@@ -109,7 +109,7 @@ fun EditTileSheet(
     groups: List<TrackerGroup>,
     photoFile: (String) -> File,
     importPhoto: suspend (Uri) -> String?,
-    createGroup: suspend (String) -> Long,
+    createGroup: suspend (String, TileIcon) -> Long,
     onSave: (TileDraft) -> Unit,
     onDiscard: () -> Unit,
     onDelete: () -> Unit,
@@ -339,12 +339,13 @@ fun EditTileSheet(
     }
 
     if (newGroupDialog) {
-        NameDialog(
+        GroupDialog(
             title = stringResource(R.string.dialog_new_group_title),
             initialName = "",
-            onConfirm = { name ->
+            initialIcon = TileIcon.NONE,
+            onConfirm = { name, icon ->
                 newGroupDialog = false
-                scope.launch { draft = draft.copy(groupId = createGroup(name)) }
+                scope.launch { draft = draft.copy(groupId = createGroup(name, icon)) }
             },
             onDismiss = { newGroupDialog = false },
         )

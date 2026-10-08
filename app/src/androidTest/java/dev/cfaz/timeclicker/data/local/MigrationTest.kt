@@ -109,6 +109,21 @@ class MigrationTest {
     }
 
     @Test
+    fun migrate5To6_groupsStartWithoutIcon() {
+        helper.createDatabase(DB_V6, 5).use { db ->
+            db.execSQL("INSERT INTO tracker_groups (id, name, position) VALUES (1, 'Garden', 0)")
+        }
+
+        helper.runMigrationsAndValidate(DB_V6, 6, true).use { db ->
+            db.query("SELECT name, icon FROM tracker_groups WHERE id = 1").use { c ->
+                c.moveToFirst()
+                assertEquals("Garden", c.getString(0))
+                assertEquals("none", c.getString(1))
+            }
+        }
+    }
+
+    @Test
     fun deletingGroupKeepsItsTrackers() {
         helper.createDatabase(DB_V2, 2).use { db ->
             db.execSQL("PRAGMA foreign_keys = ON")
@@ -128,5 +143,6 @@ class MigrationTest {
         const val DB_V3 = "counter-test"
         const val DB_V4 = "icons-test"
         const val DB_V5 = "reminders-test"
+        const val DB_V6 = "group-icons-test"
     }
 }

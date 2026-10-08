@@ -47,6 +47,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil3.compose.AsyncImage
 import dev.cfaz.timeclicker.R
+import dev.cfaz.timeclicker.data.TileIcon
 import dev.cfaz.timeclicker.data.Tracker
 import dev.cfaz.timeclicker.data.TrackerGroup
 import dev.cfaz.timeclicker.ui.components.GutteredColumn
@@ -54,10 +55,11 @@ import dev.cfaz.timeclicker.ui.components.NeuIconButton
 import dev.cfaz.timeclicker.ui.components.NeuTextField
 import dev.cfaz.timeclicker.ui.components.PillButton
 import dev.cfaz.timeclicker.ui.home.ConfirmDialog
-import dev.cfaz.timeclicker.ui.home.NameDialog
+import dev.cfaz.timeclicker.ui.home.GroupDialog
 import dev.cfaz.timeclicker.ui.theme.AppIcons
 import dev.cfaz.timeclicker.ui.theme.TimeClickerTheme
 import dev.cfaz.timeclicker.ui.theme.pressedIn
+import dev.cfaz.timeclicker.ui.theme.rememberTileIcon
 import dev.cfaz.timeclicker.ui.theme.raised
 import sh.calvin.reorderable.ReorderableItem
 import sh.calvin.reorderable.rememberReorderableLazyListState
@@ -87,7 +89,7 @@ fun GroupsScreen(
     var deleting by remember { mutableStateOf<TrackerGroup?>(null) }
     fun addGroup() {
         if (newName.isNotBlank()) {
-            viewModel.add(newName)
+            viewModel.add(newName, TileIcon.NONE)
             newName = ""
         }
     }
@@ -168,10 +170,11 @@ fun GroupsScreen(
     }
 
     renaming?.let { group ->
-        NameDialog(
-            title = stringResource(R.string.dialog_rename_group_title),
+        GroupDialog(
+            title = stringResource(R.string.dialog_edit_group_title),
             initialName = group.name,
-            onConfirm = { viewModel.rename(group, it); renaming = null },
+            initialIcon = group.icon,
+            onConfirm = { name, icon -> viewModel.update(group, name, icon); renaming = null },
             onDismiss = { renaming = null },
         )
     }
@@ -222,7 +225,10 @@ private fun GroupRow(
         }
         TileThumbnails(row.tiles, photoFile)
         Column(Modifier.weight(1f)) {
-            Text(row.group.name, style = MaterialTheme.typography.titleMedium, color = palette.text)
+            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                rememberTileIcon(row.group.icon)?.let { Icon(it, null, tint = palette.text, modifier = Modifier.size(18.dp)) }
+                Text(row.group.name, style = MaterialTheme.typography.titleMedium, color = palette.text)
+            }
             Text(
                 pluralStringResource(R.plurals.tiles_count, row.tiles.size, row.tiles.size),
                 style = MaterialTheme.typography.labelMedium,
@@ -234,7 +240,7 @@ private fun GroupRow(
                 Icon(AppIcons.More, stringResource(R.string.group_options, row.group.name), tint = palette.text)
             }
             DropdownMenu(expanded = menuOpen, onDismissRequest = { menuOpen = false }) {
-                DropdownMenuItem(text = { Text(stringResource(R.string.action_rename)) }, onClick = { menuOpen = false; onRename() })
+                DropdownMenuItem(text = { Text(stringResource(R.string.action_edit)) }, onClick = { menuOpen = false; onRename() })
                 DropdownMenuItem(
                     text = { Text(stringResource(R.string.action_delete), color = palette.danger) },
                     onClick = { menuOpen = false; onDelete() },

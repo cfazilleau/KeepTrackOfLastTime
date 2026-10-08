@@ -133,11 +133,11 @@ interface TrackerDao {
     suspend fun nextGroupPosition(): Int
 
     @Transaction
-    suspend fun createGroup(name: String): Long =
-        insertGroup(GroupEntity(name = name, position = nextGroupPosition()))
+    suspend fun createGroup(name: String, icon: String): Long =
+        insertGroup(GroupEntity(name = name, position = nextGroupPosition(), icon = icon))
 
-    @Query("UPDATE tracker_groups SET name = :name WHERE id = :id")
-    suspend fun renameGroup(id: Long, name: String)
+    @Query("UPDATE tracker_groups SET name = :name, icon = :icon WHERE id = :id")
+    suspend fun updateGroup(id: Long, name: String, icon: String)
 
     @Query("DELETE FROM tracker_groups WHERE id = :id")
     suspend fun deleteGroup(id: Long)

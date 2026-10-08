@@ -20,6 +20,7 @@ data class Tracker(
 data class TrackerGroup(
     val id: Long,
     val name: String,
+    val icon: TileIcon = TileIcon.NONE,
 )
 
 /** Everything the user can edit on a tile. */

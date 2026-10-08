@@ -55,6 +55,7 @@
     <string name="action_done">Terminé</string>
     <string name="action_add">Ajouter</string>
     <string name="action_rename">Renommer</string>
+    <string name="action_edit">Modifier</string>
     <string name="action_delete">Supprimer</string>
     <string name="action_back">Retour</string>
     <string name="action_menu">Menu</string>
@@ -194,6 +195,8 @@
     <string name="dialog_delete_body">Son historique sera aussi supprimé.</string>
     <string name="dialog_new_group_title">Nouveau groupe</string>
     <string name="dialog_rename_group_title">Renommer le groupe</string>
+    <string name="dialog_edit_group_title">Modifier le groupe</string>
+    <string name="group_icon_remove">Retirer l’icône</string>
     <string name="dialog_delete_group_title">Supprimer le groupe « %1$s » ?</string>
     <string name="dialog_delete_group_body">Ses tuiles sont conservées et restent dans « Tout ».</string>
     <string name="dialog_reset_counter_title">Réinitialiser le compteur ?</string>
