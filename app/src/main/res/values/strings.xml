@@ -84,6 +84,7 @@
     <string name="label_counter">Counter</string>
     <string name="counter_reset">Reset</string>
     <string name="counter_undo_last">Undo last press</string>
+    <string name="counter_redo_last">Restore the press just deleted</string>
     <string name="widget_add">Add to home screen</string>
     <string name="widget_add_hint">Shows this tile as a widget. Tap the widget to mark it as done.</string>
     <string name="label_reminder">Reminder</string>

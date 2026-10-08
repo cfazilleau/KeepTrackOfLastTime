@@ -96,10 +96,11 @@ class HomeViewModel(
         }
     }
 
-    /** Deletes the tile's last counted press, from the edit sheet. */
-    fun revertLastPress(tracker: Tracker) {
-        viewModelScope.launch { presses.revertLast(tracker.id) }
-    }
+    /** Deletes the tile's last counted press, from the edit sheet. Returns its time, for [restorePress]; null if none. */
+    suspend fun revertLastPress(tracker: Tracker): Long? = presses.revertLast(tracker.id)
+
+    /** Puts back a press deleted by [revertLastPress], from the edit sheet. */
+    suspend fun restorePress(tracker: Tracker, doneAt: Long) = presses.restore(tracker.id, doneAt)
 
     /** Saves the edit sheet's [draft] of the [saved] tile. */
     fun save(draft: TileDraft, saved: Tracker) {

@@ -36,6 +36,8 @@ object IconPaths {
 
     /** The "press again to undo" arrow, on tiles and widgets. */
     const val UNDO = "M9 14L4 9l5 -5M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1 -5.5 5.5H11"
+    /** [UNDO] mirrored. */
+    const val REDO = "M15 14l5 -5 -5 -5M20 9H9.5a5.5 5.5 0 0 0 -5.5 5.5a5.5 5.5 0 0 0 5.5 5.5H13"
     const val UNDO_STROKE = 2.4f
 }
 
@@ -50,6 +52,7 @@ object AppIcons {
             "A6 6 0 0 0 6 8c0 4.499 -1.411 5.956 -2.738 7.326",
     )
     val Undo = strokeIcon("undo", IconPaths.UNDO, IconPaths.UNDO_STROKE)
+    val Redo = strokeIcon("redo", IconPaths.REDO, IconPaths.UNDO_STROKE)
     val Back = strokeIcon("back", "M15 18l-6 -6 6 -6", 2.2f)
     val Groups = strokeIcon("groups", "M10 5H3M12 19H3M14 3v4M16 17v4M21 12h-9M21 19h-5M21 5h-7M8 10v4M8 12H3")
     val Info = strokeIcon("info", "M2 12a10 10 0 1 0 20 0a10 10 0 1 0 -20 0zM12 16v-4M12 8h.01")

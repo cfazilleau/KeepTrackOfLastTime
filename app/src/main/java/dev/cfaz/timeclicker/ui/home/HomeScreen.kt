@@ -214,6 +214,7 @@ fun HomeScreen(
             onDiscard = { viewModel.discard(); editingId = null },
             onDelete = { viewModel.delete(saved.id); editingId = null },
             onRevertLastPress = { viewModel.revertLastPress(saved) },
+            onRestorePress = { viewModel.restorePress(saved, it) },
             onAddWidget = if (canPin) ({ scope.launch { TileWidgets.requestPin(context, saved.id) } }) else null,
         )
     }

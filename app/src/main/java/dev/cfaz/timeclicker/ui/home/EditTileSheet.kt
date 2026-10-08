@@ -32,6 +32,7 @@ import androidx.compose.material3.TextButton
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -113,8 +114,10 @@ fun EditTileSheet(
     onSave: (TileDraft) -> Unit,
     onDiscard: () -> Unit,
     onDelete: () -> Unit,
-    /** Deletes the tile's last counted press, straight away. */
-    onRevertLastPress: () -> Unit,
+    /** Deletes the tile's last counted press, straight away. Returns its time, null if there was none. */
+    onRevertLastPress: suspend () -> Long?,
+    /** Puts back a press deleted by [onRevertLastPress], given its time. */
+    onRestorePress: suspend (Long) -> Unit,
     onAddWidget: (() -> Unit)?,
 ) {
     val palette = TimeClickerTheme.palette
@@ -130,6 +133,8 @@ fun EditTileSheet(
     var newGroupDialog by remember { mutableStateOf(false) }
     var confirmDelete by remember { mutableStateOf(false) }
     var confirmResetCount by remember { mutableStateOf(false) }
+    // Times of the presses deleted from here, latest deleted last. Lost when the sheet closes.
+    val redoStack = remember { mutableStateListOf<Long>() }
 
     val canSave = draft.name.isNotBlank()
     fun close(save: Boolean) {
@@ -303,10 +308,22 @@ fun EditTileSheet(
                         color = palette.text,
                         modifier = Modifier.weight(1f),
                     )
-                    if (count > 0) {
-                        SheetIconButton(AppIcons.Undo, stringResource(R.string.counter_undo_last), onClick = onRevertLastPress)
-                        SheetButton(stringResource(R.string.counter_reset), onClick = { confirmResetCount = true })
-                    }
+                    SheetIconButton(
+                        AppIcons.Undo,
+                        stringResource(R.string.counter_undo_last),
+                        enabled = count > 0,
+                        onClick = { scope.launch { onRevertLastPress()?.let { redoStack.add(it) } } },
+                    )
+                    SheetIconButton(
+                        AppIcons.Redo,
+                        stringResource(R.string.counter_redo_last),
+                        enabled = redoStack.isNotEmpty() && !draft.resetCount,
+                        onClick = {
+                            val doneAt = redoStack.removeLastOrNull()
+                            if (doneAt != null) scope.launch { onRestorePress(doneAt) }
+                        },
+                    )
+                    SheetButton(stringResource(R.string.counter_reset), enabled = count > 0, onClick = { confirmResetCount = true })
                 }
             }
 
@@ -356,6 +373,7 @@ fun EditTileSheet(
             confirmLabel = stringResource(R.string.counter_reset),
             onConfirm = {
                 confirmResetCount = false
+                redoStack.clear()
                 draft = draft.copy(resetCount = true)
             },
             onDismiss = { confirmResetCount = false },
@@ -437,10 +455,11 @@ private fun PhotoRow(file: File, onChange: () -> Unit, onRemove: () -> Unit) {
 
 /** A small raised button on the sheet. */
 @Composable
-internal fun SheetButton(text: String, onClick: () -> Unit) {
+internal fun SheetButton(text: String, enabled: Boolean = true, onClick: () -> Unit) {
     val palette = TimeClickerTheme.palette
     NeuButton(
         onClick = onClick,
+        enabled = enabled,
         shape = RoundedCornerShape(12.dp),
         background = palette.sheet,
         distance = 4.dp,
@@ -453,10 +472,11 @@ internal fun SheetButton(text: String, onClick: () -> Unit) {
 
 /** A [SheetButton] with an icon instead of text. */
 @Composable
-private fun SheetIconButton(icon: ImageVector, contentDescription: String, onClick: () -> Unit) {
+private fun SheetIconButton(icon: ImageVector, contentDescription: String, enabled: Boolean, onClick: () -> Unit) {
     val palette = TimeClickerTheme.palette
     NeuButton(
         onClick = onClick,
+        enabled = enabled,
         shape = RoundedCornerShape(12.dp),
         background = palette.sheet,
         distance = 4.dp,

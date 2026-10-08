@@ -76,9 +76,14 @@ class TrackerRepository(
 
     /**
      * Deletes the tracker's last press counted by its counter; the tile's creation, and presses before a counter
-     * reset, are kept. False if there was none.
+     * reset, are kept. Returns the deleted press's time, usable with [restorePress]; null if there was none.
      */
-    suspend fun revertLastPress(trackerId: Long): Boolean = dao.deleteLastCountedEvent(trackerId) > 0
+    suspend fun revertLastPress(trackerId: Long): Long? = dao.deleteLastCountedEvent(trackerId)
+
+    /** Puts back a press deleted by [revertLastPress], at its original time. */
+    suspend fun restorePress(trackerId: Long, doneAt: Long) {
+        dao.insertEvent(TrackerEventEntity(trackerId = trackerId, doneAt = doneAt))
+    }
 
     // --- Photos ---
 
