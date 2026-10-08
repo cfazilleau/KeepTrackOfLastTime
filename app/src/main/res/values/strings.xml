@@ -230,6 +230,16 @@
     <string name="time_display_relative">Relative</string>
     <!-- "6 Oct, 14:32" -->
     <string name="time_display_absolute">Absolute</string>
+    <!-- %1$s: "3 days ago" -->
+    <string name="time_info_pressed_relative">This tile was last pressed %1$s</string>
+    <!-- %1$s: "14 March 2015 at 9:26" -->
+    <string name="time_info_pressed_absolute">This tile was last pressed on %1$s</string>
+    <string name="time_info_created_relative">This tile was created %1$s</string>
+    <string name="time_info_created_absolute">This tile was created on %1$s</string>
+    <string name="time_info_installed_relative">The app was installed %1$s</string>
+    <string name="time_info_installed_absolute">The app was installed on %1$s</string>
+    <!-- %1$s: the date, %2$s: the time. "14 March 2015 at 9:26" -->
+    <string name="date_at_time">%1$s at %2$s</string>
     <string name="settings_haptics">Vibrate on tap</string>
     <string name="settings_haptics_hint">A short vibration when you tap or hold a tile.</string>
     <string name="settings_click_sound">Click sound</string>

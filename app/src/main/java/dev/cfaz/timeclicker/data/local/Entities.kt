@@ -45,6 +45,8 @@ data class TrackerEntity(
     /** Reminder after [reminderEvery] [reminderUnit] ("hours", "days", "weeks") without being done; null for none. */
     @ColumnInfo(name = "reminder_every") val reminderEvery: Int? = null,
     @ColumnInfo(name = "reminder_unit") val reminderUnit: String? = null,
+    /** "relative" or "absolute" for this tile; null follows the app setting. */
+    @ColumnInfo(name = "time_display") val timeDisplay: String? = null,
 )
 
 /**
