@@ -69,6 +69,13 @@ data class TrackerEventEntity(
     @ColumnInfo(name = "done_at") val doneAt: Long,
 )
 
+/** A press: the event [id] and when it happened. */
+data class RecentPress(
+    @ColumnInfo(name = "tracker_id") val trackerId: Long,
+    val id: Long,
+    @ColumnInfo(name = "done_at") val doneAt: Long,
+)
+
 /** A tracker with its last-done time and how many times it was pressed since [TrackerEntity.countSince]. */
 data class TrackerWithLastDone(
     @Embedded val tracker: TrackerEntity,

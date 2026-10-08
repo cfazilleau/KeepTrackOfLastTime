@@ -21,7 +21,7 @@ data class PendingUndo(val eventId: Long, val until: Long)
 /**
  * Presses on tiles, in the app or on a widget. A press marks the tile done; pressing it again within
  * [UNDO_WINDOW_MS] undoes that instead. Shared, so a press on a widget can be undone in the app and the other way round.
- * Kept in memory only: an undo window doesn't outlive the app's process.
+ * The windows are kept in memory, and rebuilt from the stored presses' times when the app's process restarts.
  */
 class TilePresses(private val repository: TrackerRepository, private val scope: CoroutineScope) {
 
@@ -35,6 +35,31 @@ class TilePresses(private val repository: TrackerRepository, private val scope: 
     // Presses are handled one at a time, so a quick second press sees the first one's event.
     private val mutex = Mutex()
 
+    init {
+        scope.launch { restore() }
+    }
+
+    /** Reopens the undo window of each tile pressed less than [UNDO_WINDOW_MS] ago, e.g. before the app was closed. */
+    private suspend fun restore() = mutex.withLock {
+        for ((trackerId, press) in repository.recentPresses(UNDO_WINDOW_MS)) {
+            val (eventId, age) = press
+            if (trackerId in pending.value) continue
+            open(trackerId, eventId, UNDO_WINDOW_MS - age)
+        }
+    }
+
+    // Must be called with the mutex held.
+    private fun open(trackerId: Long, eventId: Long, remainingMs: Long) {
+        pending.update { it + (trackerId to PendingUndo(eventId, SystemClock.elapsedRealtime() + remainingMs)) }
+        expiries[trackerId] = scope.launch {
+            delay(remainingMs)
+            mutex.withLock {
+                expiries.remove(trackerId)
+                pending.update { it - trackerId }
+            }
+        }
+    }
+
     /** Marks the tile done now, or undoes its last press if still in its undo window. True if it was marked done. */
     suspend fun press(trackerId: Long): Boolean = mutex.withLock {
         expiries.remove(trackerId)?.cancel()
@@ -45,14 +70,7 @@ class TilePresses(private val repository: TrackerRepository, private val scope: 
             false
         } else {
             val eventId = repository.markDone(trackerId)
-            pending.update { it + (trackerId to PendingUndo(eventId, SystemClock.elapsedRealtime() + UNDO_WINDOW_MS)) }
-            expiries[trackerId] = scope.launch {
-                delay(UNDO_WINDOW_MS)
-                mutex.withLock {
-                    expiries.remove(trackerId)
-                    pending.update { it - trackerId }
-                }
-            }
+            open(trackerId, eventId, UNDO_WINDOW_MS)
             true
         }
     }
