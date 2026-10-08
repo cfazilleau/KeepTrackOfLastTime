@@ -108,6 +108,10 @@ interface TrackerDao {
     @Query("SELECT done_at FROM tracker_events WHERE tracker_id = :trackerId ORDER BY done_at DESC LIMIT :limit")
     suspend fun recentEventTimes(trackerId: Long, limit: Int): List<Long>
 
+    /** Events at or after [since] (millis), oldest first. */
+    @Query("SELECT tracker_id, id, done_at FROM tracker_events WHERE done_at >= :since ORDER BY done_at, id")
+    suspend fun eventsSince(since: Long): List<RecentPress>
+
     /** Deletes the tracker's latest event counted by its press counter. Returns how many were deleted: 0 or 1. */
     @Query(
         """

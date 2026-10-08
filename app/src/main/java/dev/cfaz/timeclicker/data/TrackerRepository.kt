@@ -72,6 +72,12 @@ class TrackerRepository(
     suspend fun markDone(trackerId: Long): Long =
         dao.insertEvent(TrackerEventEntity(trackerId = trackerId, doneAt = clock.millis()))
 
+    /** Each tracker's latest press made within the last [windowMs], with its age in millis, by tracker id. */
+    suspend fun recentPresses(windowMs: Long): Map<Long, Pair<Long, Long>> {
+        val now = clock.millis()
+        return dao.eventsSince(now - windowMs).associate { it.trackerId to (it.id to (now - it.doneAt).coerceAtLeast(0)) }
+    }
+
     suspend fun undoMarkDone(eventId: Long) = dao.deleteEvent(eventId)
 
     /**
