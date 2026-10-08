@@ -182,6 +182,14 @@ fun SettingsScreen(
                             },
                             onSelect = { display -> update { it.copy(timeDisplay = display) } },
                         )
+                        Text(
+                            stringResource(
+                                if (settings.timeDisplay == TimeDisplay.RELATIVE) R.string.time_display_relative_example
+                                else R.string.time_display_absolute_example
+                            ),
+                            style = MaterialTheme.typography.bodySmall,
+                            color = TimeClickerTheme.palette.muted,
+                        )
                     }
                     RowDivider()
                     SwitchRow(
