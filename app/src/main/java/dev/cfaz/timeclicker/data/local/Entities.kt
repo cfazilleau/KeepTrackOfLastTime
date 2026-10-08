@@ -13,6 +13,8 @@ data class GroupEntity(
     val name: String,
     /** Display order of chips and sections; lower comes first. */
     val position: Int,
+    /** Lucide icon name, or "none" for a group without an icon. */
+    @ColumnInfo(defaultValue = "none") val icon: String = "none",
 )
 
 @Entity(

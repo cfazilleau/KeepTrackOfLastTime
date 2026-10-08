@@ -54,6 +54,7 @@
     <string name="action_done">Done</string>
     <string name="action_add">Add</string>
     <string name="action_rename">Rename</string>
+    <string name="action_edit">Edit</string>
     <string name="action_delete">Delete</string>
     <string name="action_back">Back</string>
     <string name="action_menu">Menu</string>
@@ -196,6 +197,8 @@
     <string name="dialog_delete_body">Its history will be deleted too.</string>
     <string name="dialog_new_group_title">New group</string>
     <string name="dialog_rename_group_title">Rename group</string>
+    <string name="dialog_edit_group_title">Edit group</string>
+    <string name="group_icon_remove">Remove icon</string>
     <string name="dialog_delete_group_title">Delete group “%1$s”?</string>
     <string name="dialog_delete_group_body">Its tiles are kept and stay in “All”.</string>
     <string name="dialog_reset_counter_title">Reset the counter?</string>

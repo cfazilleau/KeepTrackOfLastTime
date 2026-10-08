@@ -118,7 +118,13 @@ class BackupRepository(
         val iconFromKey: (String?) -> TileIcon = if (version < 2) TileIcon.Companion::fromLegacyKey else TileIcon.Companion::fromKey
 
         val groups = json.getJSONArray("groups").objects().map {
-            GroupEntity(id = it.getLong("id"), name = it.getString("name"), position = it.getInt("position"))
+            // Older backups have no group icons.
+            GroupEntity(
+                id = it.getLong("id"),
+                name = it.getString("name"),
+                position = it.getInt("position"),
+                icon = it.optStringOrNull("icon") ?: TileIcon.NONE.key,
+            )
         }
         val groupIds = groups.map { it.id }.toSet()
         val trackers = json.getJSONArray("trackers").objects().map {
@@ -181,7 +187,7 @@ class BackupRepository(
     }
 }
 
-private fun GroupEntity.toJson() = JSONObject().put("id", id).put("name", name).put("position", position)
+private fun GroupEntity.toJson() = JSONObject().put("id", id).put("name", name).put("position", position).put("icon", icon)
 
 private fun TrackerEntity.toJson() = JSONObject()
     .put("id", id)

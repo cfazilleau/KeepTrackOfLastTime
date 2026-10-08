@@ -91,16 +91,16 @@ class TrackerRepository(
 
     // --- Groups ---
 
-    suspend fun createGroup(name: String): Long = dao.createGroup(name)
+    suspend fun createGroup(name: String, icon: TileIcon = TileIcon.NONE): Long = dao.createGroup(name, icon.key)
 
-    suspend fun renameGroup(groupId: Long, name: String) = dao.renameGroup(groupId, name)
+    suspend fun updateGroup(groupId: Long, name: String, icon: TileIcon) = dao.updateGroup(groupId, name, icon.key)
 
     suspend fun deleteGroup(groupId: Long) = dao.deleteGroup(groupId)
 
     suspend fun reorderGroups(orderedIds: List<Long>) = dao.reorderGroups(orderedIds)
 }
 
-private fun GroupEntity.toModel() = TrackerGroup(id, name)
+private fun GroupEntity.toModel() = TrackerGroup(id, name, TileIcon.fromKey(icon))
 
 private fun TrackerWithLastDone.toModel() = Tracker(
     id = tracker.id,

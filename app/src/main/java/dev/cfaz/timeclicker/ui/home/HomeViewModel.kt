@@ -39,7 +39,7 @@ sealed interface GroupFilter {
         }
 }
 
-data class FilterChipUi(val filter: GroupFilter, val label: String?, val count: Int)
+data class FilterChipUi(val filter: GroupFilter, val label: String?, val count: Int, val icon: TileIcon = TileIcon.NONE)
 
 sealed interface SectionTitle {
     data class Group(val name: String) : SectionTitle
@@ -125,10 +125,10 @@ class HomeViewModel(
         viewModelScope.launch { repository.reorderTrackers(orderedIds) }
     }
 
-    suspend fun createGroup(name: String): Long = repository.createGroup(name.trim())
+    suspend fun createGroup(name: String, icon: TileIcon): Long = repository.createGroup(name.trim(), icon)
 
-    fun renameGroup(group: TrackerGroup, name: String) {
-        viewModelScope.launch { repository.renameGroup(group.id, name.trim()) }
+    fun updateGroup(group: TrackerGroup, name: String, icon: TileIcon) {
+        viewModelScope.launch { repository.updateGroup(group.id, name.trim(), icon) }
     }
 
     suspend fun importPhoto(uri: Uri): String? = repository.importPhoto(uri)
@@ -159,7 +159,7 @@ class HomeViewModel(
             groups.forEach { g ->
                 val inGroup = byGroup[g.id].orEmpty()
                 val section = SectionUi("group-${g.id}", SectionTitle.Group(g.name), inGroup)
-                add(PageUi(FilterChipUi(GroupFilter.Group(g.id), g.name, inGroup.size), listOf(section)))
+                add(PageUi(FilterChipUi(GroupFilter.Group(g.id), g.name, inGroup.size, g.icon), listOf(section)))
             }
         }
         return HomeUiState(trackers, groups, pages, current)

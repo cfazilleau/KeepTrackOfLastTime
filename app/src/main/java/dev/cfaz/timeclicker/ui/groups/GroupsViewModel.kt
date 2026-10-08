@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import dev.cfaz.timeclicker.TimeClickerApplication
+import dev.cfaz.timeclicker.data.TileIcon
 import dev.cfaz.timeclicker.data.Tracker
 import dev.cfaz.timeclicker.data.TrackerGroup
 import dev.cfaz.timeclicker.data.TrackerRepository
@@ -27,12 +28,12 @@ class GroupsViewModel(private val repository: TrackerRepository) : ViewModel() {
             groups.map { GroupRowUi(it, byGroup[it.id].orEmpty()) }
         }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
 
-    fun add(name: String) {
-        viewModelScope.launch { repository.createGroup(name.trim()) }
+    fun add(name: String, icon: TileIcon) {
+        viewModelScope.launch { repository.createGroup(name.trim(), icon) }
     }
 
-    fun rename(group: TrackerGroup, name: String) {
-        viewModelScope.launch { repository.renameGroup(group.id, name.trim()) }
+    fun update(group: TrackerGroup, name: String, icon: TileIcon) {
+        viewModelScope.launch { repository.updateGroup(group.id, name.trim(), icon) }
     }
 
     fun delete(group: TrackerGroup) {
