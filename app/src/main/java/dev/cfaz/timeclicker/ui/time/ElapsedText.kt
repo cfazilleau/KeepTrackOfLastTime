@@ -5,6 +5,7 @@ import android.content.res.Resources
 import android.text.format.DateFormat
 import androidx.annotation.PluralsRes
 import dev.cfaz.timeclicker.R
+import dev.cfaz.timeclicker.data.TimeDisplay
 import java.time.Instant
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
@@ -69,4 +70,49 @@ fun absoluteTime(context: Context, at: Instant, now: Instant = Instant.now()): A
     fun format(skeleton: String) =
         DateTimeFormatter.ofPattern(DateFormat.getBestDateTimePattern(locale, skeleton), locale).format(date)
     return AbsoluteTime(format(dateSkeleton), format(timeSkeleton))
+}
+
+/** The full date and time in one line, "14 March 2015 at 9:26" / "14 mars 2015 à 09:26". */
+fun fullDateTime(context: Context, at: Instant): String {
+    val date = at.atZone(ZoneId.systemDefault())
+    val locale = context.resources.configuration.locales[0]
+    val timeSkeleton = if (DateFormat.is24HourFormat(context)) "Hm" else "hm"
+    fun format(skeleton: String) =
+        DateTimeFormatter.ofPattern(DateFormat.getBestDateTimePattern(locale, skeleton), locale).format(date)
+    return context.getString(R.string.date_at_time, format("dMMMMy"), format(timeSkeleton))
+}
+
+/** [at] as "3 days ago" (or "just now"), or as a full date and time, following [display]. */
+private fun timeText(context: Context, display: TimeDisplay, at: Instant): String = when (display) {
+    TimeDisplay.ABSOLUTE -> fullDateTime(context, at)
+    TimeDisplay.RELATIVE -> {
+        val elapsed = RelativeTime.split(at, Instant.now(), TimeUnit.MINUTE)
+        // Mid-sentence: "just now", not "Just now".
+        if (elapsed.isEmpty) context.getString(R.string.elapsed_just_now).replaceFirstChar { it.lowercase() }
+        else context.getString(R.string.elapsed_ago, elapsed.format(context.resources))
+    }
+}
+
+/** The sentence in a tile's edit sheet: when it was last pressed, or created if it never was. */
+fun tileTimeInfo(context: Context, display: TimeDisplay, at: Instant, pressed: Boolean): String {
+    val text = timeText(context, display, at)
+    val template = when {
+        pressed && display == TimeDisplay.ABSOLUTE -> R.string.time_info_pressed_absolute
+        pressed -> R.string.time_info_pressed_relative
+        display == TimeDisplay.ABSOLUTE -> R.string.time_info_created_absolute
+        else -> R.string.time_info_created_relative
+    }
+    return context.getString(template, text)
+}
+
+/** The sentence in the settings: when the app was installed. */
+fun installTimeInfo(context: Context, display: TimeDisplay): String? {
+    val installedAt = runCatching {
+        context.packageManager.getPackageInfo(context.packageName, 0).firstInstallTime
+    }.getOrNull() ?: return null
+    val text = timeText(context, display, Instant.ofEpochMilli(installedAt))
+    return context.getString(
+        if (display == TimeDisplay.ABSOLUTE) R.string.time_info_installed_absolute else R.string.time_info_installed_relative,
+        text,
+    )
 }

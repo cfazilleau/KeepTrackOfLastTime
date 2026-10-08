@@ -59,7 +59,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import dev.cfaz.timeclicker.R
 import dev.cfaz.timeclicker.data.AppSettings
 import dev.cfaz.timeclicker.data.ThemeMode
-import dev.cfaz.timeclicker.data.TimeDisplay
+import dev.cfaz.timeclicker.ui.time.TimeDisplayPicker
+import dev.cfaz.timeclicker.ui.time.installTimeInfo
 import dev.cfaz.timeclicker.ui.components.GutteredColumn
 import dev.cfaz.timeclicker.ui.components.NeuIconButton
 import dev.cfaz.timeclicker.ui.components.SegmentedControl
@@ -174,13 +175,10 @@ fun SettingsScreen(
                 Section(stringResource(R.string.settings_section_tiles)) {
                     Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
                         RowTexts(stringResource(R.string.settings_time_display), stringResource(R.string.settings_time_display_hint))
-                        SegmentedControl(
-                            options = TimeDisplay.entries,
+                        TimeDisplayPicker(
                             selected = settings.timeDisplay,
-                            label = {
-                                stringResource(if (it == TimeDisplay.RELATIVE) R.string.time_display_relative else R.string.time_display_absolute)
-                            },
                             onSelect = { display -> update { it.copy(timeDisplay = display) } },
+                            info = installTimeInfo(context, settings.timeDisplay),
                         )
                     }
                     RowDivider()

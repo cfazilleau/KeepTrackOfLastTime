@@ -124,7 +124,7 @@ fun TileCard(
     val now = rememberNow(tracker.lastDoneAt)
     val elapsed = RelativeTime.split(tracker.lastDoneAt, now)
     val context = LocalContext.current
-    val absolute = settings.timeDisplay == TimeDisplay.ABSOLUTE
+    val absolute = (tracker.timeDisplay ?: settings.timeDisplay) == TimeDisplay.ABSOLUTE
     val absoluteTime = if (absolute) remember(tracker.lastDoneAt) { absoluteTime(context, tracker.lastDoneAt) } else null
     // Relative time: hidden at once on a reset, then fades in when the first second is shown.
     val hidden = elapsed.isEmpty && !absolute

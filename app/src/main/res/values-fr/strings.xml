@@ -229,6 +229,13 @@
     <string name="time_display_relative">Relatif</string>
     <!-- "6 Oct, 14:32" -->
     <string name="time_display_absolute">Absolu</string>
+    <string name="time_info_pressed_relative">Cette tuile a été pressée la dernière fois %1$s</string>
+    <string name="time_info_pressed_absolute">Cette tuile a été pressée la dernière fois le %1$s</string>
+    <string name="time_info_created_relative">Cette tuile a été créée %1$s</string>
+    <string name="time_info_created_absolute">Cette tuile a été créée le %1$s</string>
+    <string name="time_info_installed_relative">L’application a été installée %1$s</string>
+    <string name="time_info_installed_absolute">L’application a été installée le %1$s</string>
+    <string name="date_at_time">%1$s à %2$s</string>
     <string name="settings_haptics">Vibrer au toucher</string>
     <string name="settings_haptics_hint">Une courte vibration quand vous touchez ou maintenez une tuile.</string>
     <string name="settings_click_sound">Son de clic</string>

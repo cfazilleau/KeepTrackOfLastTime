@@ -191,7 +191,7 @@ private fun TileContent(tracker: Tracker, photo: Bitmap?, now: Instant, icons: I
     val elapsed = RelativeTime.split(tracker.lastDoneAt, now, TimeUnit.MINUTE)
     // "3 days" + "5 hours ago", or "il y a 3 jours" + "et 5 heures": "… ago" wraps the whole time.
     val ago = agoAffixes(context.resources)
-    val absolute = if (context.appSettings.timeDisplay == TimeDisplay.ABSOLUTE) absoluteTime(context, tracker.lastDoneAt, now) else null
+    val absolute = if ((tracker.timeDisplay ?: context.appSettings.timeDisplay) == TimeDisplay.ABSOLUTE) absoluteTime(context, tracker.lastDoneAt, now) else null
     // Widgets refresh once a minute, so they can't count the seconds: under a minute, say so.
     val underAMinute = absolute == null && elapsed.major == null
     val headline = absolute?.headline

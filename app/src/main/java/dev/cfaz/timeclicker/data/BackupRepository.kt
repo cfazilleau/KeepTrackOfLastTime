@@ -134,6 +134,7 @@ class BackupRepository(
                 size = TileSize.fromKey(it.optString("size")).key,
                 photo = it.optStringOrNull("photo")?.takeIf { name -> SafeName.matches(name) },
                 countSince = it.optLong("countSince", createdAt),
+                timeDisplay = it.optStringOrNull("timeDisplay")?.let { key -> TimeDisplay.fromKey(key).key },
             ).withReminder(Reminder.fromColumns(it.optIntOrNull("reminderEvery"), it.optStringOrNull("reminderUnit")))
         }
         val trackerIds = trackers.map { it.id }.toSet()
@@ -196,6 +197,7 @@ private fun TrackerEntity.toJson() = JSONObject()
     .put("countSince", countSince)
     .put("reminderEvery", reminderEvery ?: JSONObject.NULL)
     .put("reminderUnit", reminderUnit ?: JSONObject.NULL)
+    .put("timeDisplay", timeDisplay ?: JSONObject.NULL)
 
 /** Older backups have no reminder fields: their tiles get none. */
 private fun TrackerEntity.withReminder(reminder: Reminder?) =
